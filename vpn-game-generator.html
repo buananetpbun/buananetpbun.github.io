@@ -7,7 +7,7 @@
       <meta content='index, follow, noodp' name='robots'/>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
-         body { font-family: Helvetica, Arial, sans-serif; background-color:white;margin:20px;margin-top:-10px;overflow-x: hidden;}
+         body { font-family: courier;Helvetica, Arial, sans-serif; font-size:12px; background-color:white;margin:20px;margin-top:-10px;overflow-x: hidden;}
          * {
          box-sizing: border-box;
          }
@@ -23,9 +23,9 @@
          .column-left {
          font-size:12px;
          float: left;
-         width: 250px;
+         width: 290px;
          padding: 10px;
-         height: 634px;
+         height: 645px;
 		 position:absolute;
          }
          .column-right {
@@ -33,8 +33,8 @@
          float: left;
          width: 1000px;
          padding: 10px;
-         height: 634px;
-		 margin-left:250px
+         height: 645px;
+		 margin-left:290px
          }
          .row:after {
          content: "";
@@ -108,7 +108,7 @@
 		 overflow-x: hidden;
          width: 100%;
          padding: 3px;
-         border: 0px solid rgba(0,0,0,0.25)
+         border-bottom: 1px solid #ddd
          }
       </style>
 
@@ -140,8 +140,7 @@
          <input type="text" id="vpn-username" placeholder="username"/><br>
          <label>Password VPN <span style="color:red">*</span></label><br>
          <input type="text" id="vpn-password" placeholder="password"/><br><br>
-         <input type="checkbox" id="ip-gateway-check">
-         <label for="ip-gateway-check">IP gateway ISP Game (tidak wajib)</label>
+         <input type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check">IP gateway ISP Game (tidak wajib)</label>
          <input disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
          <label>Pilih Mangle Games:</label><br>
          <div class="list-game">
@@ -176,19 +175,19 @@
       <div class="column-right" style="border-top:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd">
          <span style="border-bottom:1px solid #ccc; padding-bottom:5px; font-weight:bold">Copy paste script dibawah ini ke terminal dan pastikan posisi scrip pada mangle berada di posisi paling atas:</span><br><br>
          <div class="list-mangle">
-            <table id="showScript" style="background-color:#fff;border:0px solid #ddd; padding:0px">
+            <table id="showScript" style="background-color:#fff;border-bottom:0px solid #ddd; padding:3px">
                <tr>
                   <td>
                      <span style="color:green;">
-                     #########################################<br>
+                     ###############################################<br>
                      # Vpn Game Script Generator By Buananet Secure!<br>
                      # Time/Date: <span id="tanggalwaktu"></span><br>
                      # https://fb.me/buananet.pbun<br>
                      # Type VPN -> <span id="vpn-list-text-info" style="color:black; font-weight:bold;text-transform: uppercase">PPTP</span><br>
-                     #########################################<br><br>
+                     ###############################################<br><br>
                      </span>
                      <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
-                     add connect-to="<span id="vpn-ip-text">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1">VPN-GAME</span>" user="<span id="vpn-username-text">*******</span>" password="<span id="vpn-password-text">******</span>" comment="<span id="vpn-name-text4">VPN-GAME</span>"<br>
+                     add connect-to="<span id="vpn-ip-text">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1">VPN-GAME</span>" user="<span id="vpn-username-text">******</span>" password="<span id="vpn-password-text">******</span>" comment="<span id="vpn-name-text4">VPN-GAME</span>"<br>
                      <span style="color:black;font-weight:bold">/ip firewall nat</span><br>
                      add chain=srcnat out-interface="<span id="vpn-name-text2">VPN-GAME</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-GAME</span>"<br>
                      <span style="color:black;font-weight:bold">/ip route</span><br>
