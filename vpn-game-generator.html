@@ -7,7 +7,7 @@
       <meta content='index, follow, noodp' name='robots'/>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
-         body { font-family: Helvetica, Arial, sans-serif; background-color:white}
+         body { font-family: Helvetica, Arial, sans-serif; background-color:white;margin:20px;margin-top:-10px}
          * {
          box-sizing: border-box;
          }
@@ -17,20 +17,24 @@
          border-color: #4CAF50;
          border:none;
          padding:10px;
+		 width:150px;
+
          }
          .column-left {
          font-size:12px;
          float: left;
-         width: 15%;
+         width: 250px;
          padding: 10px;
-         height: 100%;
+         height: 634px;
+		 position:absolute;
          }
          .column-right {
          font-size:12px;
          float: left;
-         width: 85%;
+         width: 1000px;
          padding: 10px;
          height: 634px;
+		 margin-left:250px
          }
          .row:after {
          content: "";
@@ -98,17 +102,17 @@
          }
          .list-mangle {
          height: 530px;
-         background:#f8f8f8;
+         background:#fff;
          overflow: scroll;
          width: 100%;
          padding: 3px;
-         border: 1px solid rgba(0,0,0,0.25)
+         border: 0px solid rgba(0,0,0,0.25)
          }
       </style>
-      <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
+
    </head>
    <body>
-      <pre><span style="color:black;font-weight:bold">
+<pre><span style="color:black;font-weight:bold">
  ______  _     _        ______         ______  _______ _______ 
 (____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)©
  ____)  ) |   | | /  \ | |   | | /  \ | |   | |_____   _       
@@ -118,7 +122,7 @@
 <span style="font-size:11px; color:green;font-weight:normal">© Copyright 2021 BuanaNET SECURE! - <a href="https://www.facebook.com/buananet.pbun">https://www.facebook.com/buananet.pbun</a></span>
 </span>
 </pre>
-      <p style="font-weight:bold">STATIC ROUTING VPN GAME SCRIPT GENERATOR</p>
+      <p style="font-weight:bold;">STATIC ROUTING VPN GAME SCRIPT GENERATOR</p>
       <div class="column-left" style="background-color:#eee;border:1px solid #ddd; ">
          <label>Pilih koneksi VPN</label><br>
          <select id="vpn-list">
@@ -139,8 +143,8 @@
          <input disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
          <label>Pilih Mangle Games:</label><br>
          <div class="list-game">
-            <label style="font-weight:bold">Mobile Games:</label></span><br>
-            <input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label><br>
+            <label style="font-weight:bold:">Mobile Games:</label></span><br>
+            <input style="position:relative" type="checkbox" id="ArenaOfValor-Mobile"><label style="position:relative" for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label><br>
             <input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label><br>
             <input type="checkbox" id="BooyaDominoQiuqiu-Mobile"><label for="BooyaDominoQiuqiu-Mobile">Booya Domino Qiuqiu - Mobile</label><br>
             <input type="checkbox" id="ClashOfClans-Mobile"><label for="ClashOfClans-Mobile">Clash Of Clans - Mobile</label><br>
@@ -168,9 +172,9 @@
          <br>
       </div>
       <div class="column-right" style="border-top:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd">
-         <span style="font-size:14px; border-bottom:1px solid #ddd; padding-bottom:5px">Copy paste script dibawah ini ke terminal dan pastikan posisi scrip pada mangle berada di posisi paling atas:</span><br><br>
+         <span style="border-bottom:2px solid orange; padding-bottom:3px; font-weight:bold">Copy paste script dibawah ini ke terminal dan pastikan posisi scrip pada mangle berada di posisi paling atas:</span><br><br>
          <div class="list-mangle">
-            <table id="showScript" style="background-color:#f8f8f8;border:0px solid #ddd; padding:5px">
+            <table id="showScript" style="background-color:#fff;border:0px solid #ddd; padding:0px">
                <tr>
                   <td>
                      <span style="color:green;">
@@ -178,7 +182,7 @@
                      # Vpn Game Script Generator By Buananet Secure!<br>
                      # Time/Date: <span id="tanggalwaktu"></span><br>
                      # https://fb.me/buananet.pbun<br>
-                     # Type VPN -> <span id="vpn-list-text-info" style="color:blue; font-weight:bold;text-transform: uppercase">PPTP</span><br>
+                     # Type VPN -> <span id="vpn-list-text-info" style="color:black; font-weight:bold;text-transform: uppercase">PPTP</span><br>
                      #########################################<br><br>
                      </span>
                      <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
@@ -221,13 +225,15 @@
          </div>
          <br>
          <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button>
+		 <br><br><br>
       </div>
       </div>
       <script>
-         document.getElementById('ip-gateway-check').onchange = function() {
-         document.getElementById('ip-gateway-input').disabled = !this.checked;
-         var myscript2 = document.getElementById("ip-gateway-check");
-         var myscript3 = document.getElementById("ip-gateway-text");
+
+        document.getElementById('ip-gateway-check').onchange = function() {
+        document.getElementById('ip-gateway-input').disabled = !this.checked;
+        var myscript2 = document.getElementById("ip-gateway-check");
+        var myscript3 = document.getElementById("ip-gateway-text");
             if ( myscript2.checked ) {
                myscript3.style.display = 'block';
             } else {
@@ -235,61 +241,17 @@
              }
          };
          
-         $(document).ready(function() {
-           $('#sendButton').click(function() {
-             var value1 = document.getElementById('vpn-name').value;
-             if (value1 === '') {
-             document.getElementById("vpn-name-text1").innerHTML = "Error! Nama VPN";
-         	document.getElementById("vpn-name-text2").innerHTML = "Error! Nama VPN";
-         	document.getElementById("vpn-name-text3").innerHTML = "Error! Nama VPN";
-         
-             }
-           })
-         });	
-         $(document).ready(function() {
-           $('#sendButton').click(function() {
-             var value2 = document.getElementById('vpn-ip').value;
-             if (value2 === '') {
-               document.getElementById("vpn-ip-text").innerHTML = "<span style='color:red; font-weight:bold'>***Error! IP VPN***<span>";
-             }
-           })
-         });	
-         $(document).ready(function() {
-           $('#sendButton').click(function() {
-             var value3 = document.getElementById('vpn-username').value;
-             if (value3 === '') {
-              document.getElementById("vpn-username-text").innerHTML = "<span style='color:red; font-weight:bold'>***Error! Username VPN***<span>";
-             }
-           })
-         });	
-         $(document).ready(function() {
-           $('#sendButton').click(function() {
-             var value4 = document.getElementById('vpn-password').value;
-             if (value4 === '') {
-              document.getElementById("vpn-password-text").innerHTML = "<span style='color:red; font-weight:bold'>***Error! Password VPN***<span>";
-             }
-           })
-         });	
-         
-         $(document).ready(function() {
-           $('#sendButton').click(function() {
-             var value5 = document.getElementById('ip-gateway-input').value;
-             if (value5 === '') {
-              document.getElementById("ip-gateway-game").innerHTML = "<span style='color:red; font-weight:bold'>***Error! IP Gateway ISP Game***<span>";
-             }
-           })
-         });	
-         
-         var dt = new Date();
+        var dt = new Date();
          document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
          
-         function myFunction() {
-         	
-         var vpnlist = document.getElementById("vpn-list").value;
+        function myFunction() {
+
+        var vpnlist = document.getElementById("vpn-list").value;
          document.getElementById("vpn-list-text").innerHTML = vpnlist;
          document.getElementById("vpn-list-text-info").innerHTML = vpnlist;
          
-         var vpnname = document.getElementById("vpn-name").value;
+        var vpnname = document.getElementById("vpn-name").value;
+		if (vpnname != '' && vpnname != null){
          document.getElementById("vpn-name-text1").innerHTML = vpnname;
          document.getElementById("vpn-name-text2").innerHTML = vpnname;
          document.getElementById("vpn-name-text3").innerHTML = vpnname;
@@ -297,21 +259,40 @@
          document.getElementById("vpn-name-text5").innerHTML = vpnname;
          document.getElementById("vpn-name-text6").innerHTML = vpnname;
          document.getElementById("vpn-name-text7").innerHTML = vpnname;
-         
+		} else {
+             document.getElementById("vpn-name-text1").innerHTML = "<span style='color:red; font-weight:bold'>[Isi Nama VPN]<span>";
+		}       
+        
          var vpnip = document.getElementById("vpn-ip").value;
+		 if (vpnip != '' && vpnip != null){
          document.getElementById("vpn-ip-text").innerHTML = vpnip;
          document.getElementById("vpn-ip-text2").innerHTML = vpnip;
-         
+		} else {
+         document.getElementById("vpn-ip-text").innerHTML = "<span style='color:red; font-weight:bold'>[Isi IP VPN]<span>"
+		}       
+        
          var vpnusername = document.getElementById("vpn-username").value;
-         document.getElementById("vpn-username-text").innerHTML = vpnusername;
+		 if (vpnusername != '' && vpnusername != null){
+		document.getElementById("vpn-username-text").innerHTML = vpnusername;
+		} else {
+         document.getElementById("vpn-username-text").innerHTML = "<span style='color:red; font-weight:bold'>[Isi IP VPN]<span>"
+		}       
+         
          
          var vpnpassword = document.getElementById("vpn-password").value;
-         document.getElementById("vpn-password-text").innerHTML = vpnpassword;
+        if (vpnpassword != '' && vpnpassword != null){
+		 document.getElementById("vpn-password-text").innerHTML = vpnpassword;
+		} else {
+          document.getElementById("vpn-password-text").innerHTML = "<span style='color:red; font-weight:bold'>[Isi Password VPN]<span>";
+		}       
          
-         var ipgateway = document.getElementById("ip-gateway-input").value;
-         document.getElementById("ip-gateway-game").innerHTML = ipgateway;
-         
-         
+        var ipgateway = document.getElementById("ip-gateway-input").value;
+		   if (ipgateway != '' && ipgateway != null){
+		  document.getElementById("ip-gateway-game").innerHTML = ipgateway;
+		} else {
+          document.getElementById("ip-gateway-game").innerHTML = "<span style='color:red; font-weight:bold'>[Isi P Gateway ISP]<span>";
+		}   
+          
          var ArenaOfValorMobile = document.getElementById("ArenaOfValor-Mobile");
          toggleSub(ArenaOfValorMobile , 'ArenaOfValorMobile');
          
@@ -378,6 +359,7 @@
          var ShinobiHeroesMobile = document.getElementById("ShinobiHeroes-Mobile");
          toggleSub(ShinobiHeroesMobile , 'ShinobiHeroesMobile');
          }
+		 
          function toggleSub(box, id) {
              var el = document.getElementById(id);
              
@@ -387,6 +369,7 @@
                  el.style.display = 'none';
              }
          }
+		 
         function selectElementContents(el) {
                          var body = document.body, range, sel;
                          if (document.createRange && window.getSelection) {
