@@ -17,7 +17,7 @@
          border-color: #4CAF50;
          border:none;
          padding:8px;
-		 width:150px;
+		 width:130px;
 		 font-size:13px;
 		 font-weight:bold;
          }
@@ -99,17 +99,19 @@
          overflow: scroll;
 		 overflow-x: hidden;
          width: 100%;
+		 margin-top:2px;
          padding: 3px;
          border: 1px solid rgba(0,0,0,0.25)
          }
          .list-mangle {
-         height: 557px;
+         height: 560px;
          background:#fff;
          overflow: scroll;
 		 overflow-x: hidden;
          width: 100%;
-         padding: 3px;
-         border-bottom: 1px solid#ccc
+         padding: 0px;
+		 margin-top:16px;
+         border-bottom: 1px solid#ccc'
          }
       </style>
    </head>
@@ -128,46 +130,45 @@
 
       <div class="column-left" style="background-color:#eee;border:1px solid#ccc; ">
          <label>Pilih koneksi VPN</label><br>
-         <select id="vpn-list">
+         <select onclick="myFunction()" id="vpn-list">
             <option value="pptp">PPTP</option>
             <option value="l2tp">L2TP</option>
          </select>
          <br>
          <label>Nama VPN di Interface <span style="color:red">*</span></label><br>
-         <input class="border-customized-input"  type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME"><br>
+         <input onkeyup="myFunction()"  type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME"><br>
          <label>IP Adrress VPN <span style="color:red">*</span></label><br>
-         <input type="text" id="vpn-ip" placeholder="contoh:137.129.63.112"/><br>
+         <input  onkeyup="myFunction()" type="text" id="vpn-ip" placeholder="contoh:137.129.63.112"/><br>
          <label>Username VPN <span style="color:red">*</span></label><br>
-         <input type="text" id="vpn-username" placeholder="username"/><br>
+         <input onkeyup="myFunction()" type="text" id="vpn-username" placeholder="username"/><br>
          <label>Password VPN <span style="color:red">*</span></label><br>
-         <input type="text" id="vpn-password" placeholder="password"/><br><br>
+         <input onkeyup="myFunction()" type="text" id="vpn-password" placeholder="password"/><br><br>
          <input type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check">IP Gateway ISP Game (tidak wajib)</label>
-         <input disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
-         <label>Pilih Mangle Games:</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="cari game.."> <br>
+         <input onkeyup="myFunction()" disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
+         <label>Pilih Mangle Games:</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Cari Game.."> 
 		 <div class="list-game">
 		 <table id="myTable" style="border:0"
  			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">MOBILE GAMES</label></span></td></tr>
             <tr><td><input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label></td></tr>
 			<tr><td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td></tr>
-            <tr><td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="BooyaDominoQiuqiu-Mobile"><label for="BooyaDominoQiuqiu-Mobile">Booya Domino Qiuqiu - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="ClashOfClans-Mobile"><label for="ClashOfClans-Mobile">Clash Of Clans - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="ClashRoyale-Mobile"><label for="ClashRoyale-Mobile">Clash Royale - Mobile</label></td></tr>
-            <tr><td><input type="checkbox" id="CODCallOfDuty-Mobile"><label for="CODCallOfDuty-Mobile">COD - Call Of Duty - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="CODCallOfDuty-Mobile"><label for="CODCallOfDuty-Mobile">Call of Duty (COD) - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="DominoQq-Mobile"><label for="DominoQq-Mobile">Domino Qq - Mobile</label></td></tr>
-            <tr><td><input type="checkbox" id="DragonNest-Mobile"><label for="DragonNest-Mobile">Dragon Nest - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="DragonNest-Mobile"><label for="DragonNest-Mobile">DragonNest - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="DreamLeagueSoccer-Mobile"><label for="DreamLeagueSoccer-Mobile">Dream League Soccer - Mobile</label></td></tr>
-            <tr><td><input type="checkbox" id="FreeFire-Mobile"><label for="FreeFire-Mobile">Free Fire - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="FreeFire-Mobile"><label for="FreeFire-Mobile">(FreeFire (FF) - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="LastEmpireWarZ-Mobile"><label for="LastEmpireWarZ-Mobile">Last Empire War Z - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="LineLetsGetRich-Mobile"><label for="LineLetsGetRich-Mobile">Line Lets Get Rich - Mobile</label></td></tr>
-            <tr><td><input type="checkbox" id="MobileLegends-Mobile"><label for="MobileLegends-Mobile">Mobile Legends - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="MobileLegends-Mobile"><label for="MobileLegends-Mobile">Mobile Legends (ML) - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="Mostly-Mobile"><label for="Mostly-Mobile">Mostly - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="NarutoLittleNinja-Mobile"><label for="NarutoLittleNinja-Mobile">Naruto Little Ninja - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="Netmarble-Mobile"><label for="Netmarble-Mobile">Netmarble - Mobile</label></td></tr>
-            <tr><td><input type="checkbox" id="PointBlank-Mobile"><label for="PointBlank-Mobile">Point Blank - Mobile </label></td></tr>
+            <tr><td><input type="checkbox" id="PointBlank-Mobile"><label for="PointBlank-Mobile">PointBlank (PB) - Mobile </label></td></tr>
             <tr><td><input type="checkbox" id="PUBG-Mobile"><label for="PUBG-Mobile">PUBG - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="RpgToramOnline-Mobile"><label for="RpgToramOnline-Mobile">Rpg Toram Online - Mobile</label></td></tr>
-            <tr><td><input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">Rules Of Survival - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">RulesOfSurvival (ROS) - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="ShinobiHeroes-Mobile"><label for="ShinobiHeroes-Mobile">Shinobi Heroes - Mobile</label></td></tr>
 		    
 			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">WEB GAMES</label></span></td></tr>
@@ -185,80 +186,81 @@
 			<tr><td><input type="checkbox" id="WildOnes-WebGames"><label for="WildOnes-WebGames">WildOnes - WebGames</label></td></tr>
 	       
 		    <tr><td><label style="font-weight:bold;color:green;padding-left:5px">DEKSTOP / PC Games</label></span></td></tr>
-			<tr><td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">Ayodance - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="OriginAPEXLegends-PC"><label for="OriginAPEXLegends-PC">APEX Legends - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="BlackDesertOnline-PC"><label for="BlackDesertOnline-PC">Black Desert - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="BlackDesertOnlinePS-PC"><label for="BlackDesertOnlinePS-PC">Black Desert - Playstaion</label></td></tr>
-			<tr><td><input type="checkbox" id="BlackDesertOnlineSteam-PC"><label for="BlackDesertOnlineSteam-PC">Black Desert Steam - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="BlackDesertOnlineXbox-PC"><label for="BlackDesertOnlineXbox-PC">Black Desert - Xbox</label></td></tr>
-			<tr><td><input type="checkbox" id="Blackretribution-PC"><label for="Blackretribution-PC">Blackretribution - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="BlizzardBattleNet-PC"><label for="BlizzardBattleNet-PC">Blizzard BattleNet - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="BountyHound-PC"><label for="BountyHound-PC">Bounty Hound - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CabalExtremePrivate-PC"><label for="CabalExtremePrivate-PC">Cabal Extreme Private PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CabalIndonesia-PC"><label for="CabalIndonesia-PC">Cabal Indonesia - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CallofDutyBO-PC"><label for="CallofDutyBO-PC">Call of Duty BO - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CallofDutyBOPS-PC"><label for="CallofDutyBOPS-PC">Call of Duty BO PS - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CallofDutyBOXBox-PC"><label for="CallofDutyBOXBox-PC">Call of Duty BO XBox - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CallofDutyMWPC-PC"><label for="CallofDutyMWPC-PC">Call of Duty MW PC - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CallofDutyMWPS-PC"><label for="CallofDutyMWPS-PC">Call of Duty MW PS - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CallofDutyMWXBox-PC"><label for="CallofDutyMWXBox-PC">Call of Duty MW XBox - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="ClashofGod-PC"><label for="ClashofGod-PC">Clash of God - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CSGOPlaystation-PC"><label for="CSGOPlaystation-PC">CSGO Playstation - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CSGOSteam-PC"><label for="CSGOSteam-PC">CSGO Steam - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CSGOXbox-PC"><label for="CSGOXbox-PC">CSGO Xbox - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="CrossFireindonesia-PC"><label for="CrossFireindonesia-PC">Cross Fire indonesia - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="DiabloIII-PC"><label for="DiabloIII-PC">Diablo III - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="DiabloII-PC"><label for="DiabloII-PC">Diablo II - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Diablo-PC"><label for="Diablo-PC">Diablo - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Dota2Steam-PC"><label for="Dota2Steam-PC">Dota 2 Steam - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="DragonNest-PC"><label for="DragonNest-PC">Dragon Nest - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Dragona-PC"><label for="Dragona-PC">Dragona - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="FifaOnline3-PC"><label for="FifaOnline3-PC">Fifa Online 3 - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="FORTNITEEPICGAMES-PC"><label for="FORTNITEEPICGAMES-PC">Fortnite Epic - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="LeagueofLegend-PC"><label for="LeagueofLegend-PC">League of Legend - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="GrandChase-PC"><label for="GrandChase-PC">Grand Chase - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Hearthstone-PC"><label for="Hearthstone-PC">Hearthstone - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="HeroesoftheStorm-PC"><label for="HeroesoftheStorm-PC">Heroes of the Storm - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="HONHeroesofNewerth-PC"><label for="HONHeroesofNewerth-PC">Heroes of Newerth - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="HeroesofAtarsia-PC"><label for="HeroesofAtarsia-PC">Heroes of Atarsia - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="IdolStreet-PC"><label for="IdolStreet-PC">Idol Street - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Left4Dead2Steam-PC"><label for="Left4Dead2Steam-PC">Left4Dead 2 Steam - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Lineage2-PC"><label for="Lineage2-PC">Lineage 2 - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="LostSaga-PC"><label for="LostSaga-PC">Lost Saga - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Luneofeden-PC"><label for="Luneofeden-PC">Lune of eden - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Mercenaryops-PC"><label for="Mercenaryops-PC">Mercenary ops - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Mircovolt-PC"><label for="Mircovolt-PC">Mircovolt - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="ModoMarble-PC"><label for="ModoMarble-PC">Modo Marble - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Overwatch-PC"><label for="Overwatch-PC">Overwatch - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="PaladinsHiRez-PC"><label for="PaladinsHiRez-PC">Paladins Hi-Rez - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="PointBlank-PC"><label for="PointBlank-PC">Point Blank - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="PUBG-PC"><label for="PUBG-PC">PUBG - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Ragnarok2-PC"><label for="Ragnarok2-PC">Ragnarok 2 - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="RFRisingForce-PC"><label for="RFRisingForce-PC">RF Rising Force - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="ROERingofElysium-PC"><label for="ROERingofElysium-PC">ROE RingofElysium - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="ROSRulesOfSurvival-PC"><label for="ROSRulesOfSurvival-PC">ROS RulesOfSurvival - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="SealOnline-PC"><label for="SealOnline-PC">Seal Online - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="SpecialForce-PC"><label for="SpecialForce-PC">Special Force - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="StarCraftII-PC"><label for="StarCraftII-PC">StarCraft II - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="StarCraft-PC"><label for="StarCraft-PC">StarCraft - PC Games</label></td></tr>
-			<tr><td><input type="checkbox" id="WarcraftIIBattleNet-PC"><label for="WarcraftIIBattleNet-PC">Warcraft II - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="WarcraftIII-PC"><label for="WarcraftIII-PC">Warcraft III - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="WorldofTanks-PC"><label for="WorldofTanks-PC">World of Tanks - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="WorldofWarcraft-PC"><label for="WorldofWarcraft-PC">World of Warcraft - PCGames</label></td></tr>
-			<tr><td><input type="checkbox" id="XshotIndonesia-PC"><label for="XshotIndonesia-PC">X-shot Indonesia - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">Ayodance - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="OriginAPEXLegends-PC"><label for="OriginAPEXLegends-PC">APEX Legends - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="BlackDesertOnline-PC"><label for="BlackDesertOnline-PC">BlackDesert (BDO) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="BlackDesertOnlinePS-PC"><label for="BlackDesertOnlinePS-PC">BlackDesert (BDO) - Playstaion</label></td></tr>
+			<tr><td><input type="checkbox" id="BlackDesertOnlineSteam-PC"><label for="BlackDesertOnlineSteam-PC">BlackDesert Steam (BDO) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="BlackDesertOnlineXbox-PC"><label for="BlackDesertOnlineXbox-PC">Black Desert (BDO) - Xbox</label></td></tr>
+			<tr><td><input type="checkbox" id="Blackretribution-PC"><label for="Blackretribution-PC">Blackretribution - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="BlizzardBattleNet-PC"><label for="BlizzardBattleNet-PC">Blizzard BattleNet - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="BountyHound-PC"><label for="BountyHound-PC">Bounty Hound - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="CabalExtremePrivate-PC"><label for="CabalExtremePrivate-PC">Cabal Extreme - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="CabalIndonesia-PC"><label for="CabalIndonesia-PC">Cabal Indonesia - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyBO-PC"><label for="CallofDutyBO-PC">CallofDuty(COD)BO - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyBOPS-PC"><label for="CallofDutyBOPS-PC">CallofDuty(COD)BO Playstation</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyBOXBox-PC"><label for="CallofDutyBOXBox-PC">CallofDuty(COD)BO - XBox</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyMWPC-PC"><label for="CallofDutyMWPC-PC">CallofDuty(COD)MW - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyMWPS-PC"><label for="CallofDutyMWPS-PC">CallofDuty COD)MW - Playstation</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyMWXBox-PC"><label for="CallofDutyMWXBox-PC">Call of Duty MW - XBox </label></td></tr>
+			<tr><td><input type="checkbox" id="ClashofGod-PC"><label for="ClashofGod-PC">Clash of God - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="CSGOPlaystation-PC"><label for="CSGOPlaystation-PC">CSGO Playstation</label></td></tr>
+			<tr><td><input type="checkbox" id="CSGOSteam-PC"><label for="CSGOSteam-PC">CSGO Steam - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="CSGOXbox-PC"><label for="CSGOXbox-PC">CSGO Xbox - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="CrossFireindonesia-PC"><label for="CrossFireindonesia-PC">Cross Fire indonesia - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="DiabloIII-PC"><label for="DiabloIII-PC">Diablo III - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="DiabloII-PC"><label for="DiabloII-PC">Diablo II - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Diablo-PC"><label for="Diablo-PC">Diablo I - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Dota2Steam-PC"><label for="Dota2Steam-PC">DOTA 2 Steam - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="DragonNest-PC"><label for="DragonNest-PC">DragonNest - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Dragona-PC"><label for="Dragona-PC">Dragona - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="FifaOnline3-PC"><label for="FifaOnline3-PC">Fifa Online 3 (F03)) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="FORTNITEEPICGAMES-PC"><label for="FORTNITEEPICGAMES-PC">Fortnite Epic - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="LeagueofLegend-PC"><label for="LeagueofLegend-PC">League of Legend (LOL) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="GrandChase-PC"><label for="GrandChase-PC">Grand Chase - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Hearthstone-PC"><label for="Hearthstone-PC">Hearthstone - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="HeroesoftheStorm-PC"><label for="HeroesoftheStorm-PC">Heroes of the Storm - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="HONHeroesofNewerth-PC"><label for="HONHeroesofNewerth-PC">Heroes of Newerth - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="HeroesofAtarsia-PC"><label for="HeroesofAtarsia-PC">Heroes of Atarsia - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="IdolStreet-PC"><label for="IdolStreet-PC">Idol Street - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Left4Dead2Steam-PC"><label for="Left4Dead2Steam-PC">Left4Dead 2 Steam - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Lineage2-PC"><label for="Lineage2-PC">Lineage 2 - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="LostSaga-PC"><label for="LostSaga-PC">LostSaga (LS) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Luneofeden-PC"><label for="Luneofeden-PC">Lune of eden - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Mercenaryops-PC"><label for="Mercenaryops-PC">Mercenary ops - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Mircovolt-PC"><label for="Mircovolt-PC">Mircovolt - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="ModoMarble-PC"><label for="ModoMarble-PC">Modo Marble - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Overwatch-PC"><label for="Overwatch-PC">Overwatch - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="PaladinsHiRez-PC"><label for="PaladinsHiRez-PC">Paladins Hi-Rez - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="PointBlank-PC"><label for="PointBlank-PC">PointBlank - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="PUBG-PC"><label for="PUBG-PC">PUBG - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Ragnarok2-PC"><label for="Ragnarok2-PC">Ragnarok 2 - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="RFRisingForce-PC"><label for="RFRisingForce-PC">RF Rising Force - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="ROERingofElysium-PC"><label for="ROERingofElysium-PC">Ring of Elysium (ROE) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="ROSRulesOfSurvival-PC"><label for="ROSRulesOfSurvival-PC">Rules Of Survival (ROS) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="SealOnline-PC"><label for="SealOnline-PC">Seal Online - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="SpecialForce-PC"><label for="SpecialForce-PC">Special Force - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="StarCraftII-PC"><label for="StarCraftII-PC">StarCraft II - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="StarCraft-PC"><label for="StarCraft-PC">StarCraft - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Valorant-PC"><label for="Valorant-PC">Valorant (RIOT) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="WarcraftIIBattleNet-PC"><label for="WarcraftIIBattleNet-PC">Warcraft II - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="WarcraftIII-PC"><label for="WarcraftIII-PC">Warcraft III - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="WorldofTanks-PC"><label for="WorldofTanks-PC">World of Tanks (WOT) - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="WorldofWarcraft-PC"><label for="WorldofWarcraft-PC">World of Warcraft - PC</label></td></tr>
+			<tr><td><input type="checkbox" id="XshotIndonesia-PC"><label for="XshotIndonesia-PC">X-shot Indonesia - PC</label></td></tr>
 	     </table>
          </div>
          <br>
-         <button type="button" onclick="myFunction()">GENERATE</button> 
+         <button type="button" onclick="myFunction()">Masukan</button> <button type="button" onclick="location.reload()">Hapus Semua</button> 
          <br>
       </div>
       <div class="column-right" style="border-top:1px solid#ccc;border-bottom:1px solid#ccc;border-right:1px solid#ccc">
-         <span style="background-color:#f0f0f0; border-bottom:1px solid #ccc; padding:5px; font-weight:bold">SCRIPT RESULT</span><br><br>
+         <span style="background-color:#eee; border-bottom:1px solid #ccc; padding:4px; font-weight:normal">HASIL SCRIPT VPN GAME GENERATOR</span><br>
          <div class="list-mangle">
-            <table id="showScript" style="background-color:#fff;border-bottom:0px solid#ccc; padding:3px">
+            <table id="showScript" style="background-color:#fff;border-bottom:0px solid #ccc; padding:3px">
                <tr>
                   <td>
                      <span style="color:green;">
@@ -318,75 +320,76 @@
 					<td id="WarflareWebGames" style="display:none"><span style="color:green"># Warflare - Web Games</span><br>add action=mark-routing chain=prerouting comment="Warflare - Web Games" dst-port=64990-65010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="WildOnesWebGames" style="display:none"><span style="color:green"># WildOnes - Web Games</span><br>add action=mark-routing chain=prerouting comment="WildOnes - Web Games" dst-port=8000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 				   
-					<td id="AtlanticaPC" style="display:none"><span style="color:green"># Atlantica - PCGames</span><br>add action=mark-routing chain=prerouting comment="Atlantica - PCGames" dst-port=4300 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="AuraKingdomPC" style="display:none"><span style="color:green"># Aura Kingdom - PCGames</span><br>add action=mark-routing chain=prerouting comment="Aura Kingdom - PCGames" dst-port=5540-5580 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="AyodancePC" style="display:none"><span style="color:green"># Ayo Dance - PCGames</span><br>add action=mark-routing chain=prerouting comment="Ayodance - PCGames" dst-port=18900-18910 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="OriginAPEXLegendsPC" style="display:none"><span style="color:green"># Origin APEX Legends - PCGames</span><br>add action=mark-routing chain=prerouting comment="Origin APEX Legends - PCGames" dst-port=9960-9969,1024-1124,3216,18000,18120,18060,27900,28910,29900 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1024-1124,18000,29900,37000-40000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="BlackDesertOnlinePC" style="display:none"><span style="color:green"># Black Desert Online - PCGames</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online - PCGames" dst-port=8888,9991-9993 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=8888,9991-9993 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="AtlanticaPC" style="display:none"><span style="color:green"># Atlantica - PC</span><br>add action=mark-routing chain=prerouting comment="Atlantica - PC" dst-port=4300 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="AuraKingdomPC" style="display:none"><span style="color:green"># Aura Kingdom - PC</span><br>add action=mark-routing chain=prerouting comment="Aura Kingdom - PC" dst-port=5540-5580 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="AyodancePC" style="display:none"><span style="color:green"># Ayo Dance - PC</span><br>add action=mark-routing chain=prerouting comment="Ayodance - PC" dst-port=18900-18910 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="OriginAPEXLegendsPC" style="display:none"><span style="color:green"># Origin APEX Legends - PC</span><br>add action=mark-routing chain=prerouting comment="Origin APEX Legends - PC" dst-port=9960-9969,1024-1124,3216,18000,18120,18060,27900,28910,29900 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1024-1124,18000,29900,37000-40000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="BlackDesertOnlinePC" style="display:none"><span style="color:green"># Black Desert Online - PC</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online - PC" dst-port=8888,9991-9993 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=8888,9991-9993 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="BlackDesertOnlinePSPC" style="display:none"><span style="color:green"># Black Desert Online - Playstation </span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Playstation" dst-port=1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="BlackDesertOnlineSteamPC" style="display:none"><span style="color:green"># Black Desert Online Steam - PCGames</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Steam - PCGames" dst-port=8888,9991-9993,27015-27030,27036-27037 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=4380,8888,9991-9993,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="BlackDesertOnlineXboxPC" style="display:none"><span style="color:green"># Black Desert Online - Xbox</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Xbox - PCGames" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="BlackretributionPC" style="display:none"><span style="color:green"># Black retribution - PCGames</span><br>add action=mark-routing chain=prerouting comment="Blackretribution - PCGames" dst-port=7020-7050,8200-8220,9000-9020 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="BlizzardBattleNetPC" style="display:none"><span style="color:green"># Blizzard BattleNet - PCGames</span><br>add action=mark-routing chain=prerouting comment="Blizzard BattleNet - PCGames" dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="BountyHoundPC" style="display:none"><span style="color:green"># Bounty Hound - PCGames</span><br>add action=mark-routing chain=prerouting comment="Bounty Hound - PCGames" dst-port=9810-9860 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="CabalExtremePrivatePC" style="display:none"><span style="color:green"># Cabal Extreme Private - PCGames</span><br>add action=mark-routing chain=prerouting comment="Cabal Extreme Private - PCGames" dst-port=60170-60180,63000-64000,38101,38110-38600 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="CabalIndonesiaPC" style="display:none"><span style="color:green"># Cabal Indonesia - PCGames</span><br>add action=mark-routing chain=prerouting comment="Cabal Indonesia - PCGames" dst-port=63000-64000,38101,38110-38130 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="CallofDutyBOPC" style="display:none"><span style="color:green"># Call of Duty BO - PCGames</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - PCGames" dst-port=3074,27014-27050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478,4379-4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="CallofDutyBOPSPC" style="display:none"><span style="color:green"># Callof Duty BO - Playstation</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO PS - PCGames" dst-port=80,443,1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="CallofDutyBOXBoxPC" style="display:none"><span style="color:green"># Call of Duty BO - XBox</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO XBox - PCGames" dst-port=53,80,3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3075,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="CallofDutyMWPCPC" style="display:none"><span style="color:green"># Call of Duty MW - PCGames</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW PC - PCGames" dst-port=3074,27014-27050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478,4379-4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="CallofDutyMWPSPC" style="display:none"><span style="color:green"># Call of Duty MW - Playstation</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW PS - PCGames" dst-port=1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="CallofDutyMWXBoxPC" style="display:none"><span style="color:green"># Call of Duty MW - XBox</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW XBox - PCGames" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3075,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="ClashofGodPC" style="display:none"><span style="color:green"># Clash of God - PCGames</span><br>add action=mark-routing chain=prerouting comment="Clash of God - PCGames" dst-port=9430-9450,5220-5230 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="CSGOPlaystationPC" style="display:none"><span style="color:green"># CSGO - Playstation </span><br>add action=mark-routing chain=prerouting comment="CSGO Playstation - PCGames" dst-port=3478-3480,5223,8080 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479,3658 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="CSGOSteamPC" style="display:none"><span style="color:green"># CSGO Steam - PCGames</span><br>add action=mark-routing chain=prerouting comment="CSGO Steam - PCGames" dst-port=27015-27030,27036-27037 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="CSGOXboxPC" style="display:none"><span style="color:green"># CSGO - Xbox</span><br>add action=mark-routing chain=prerouting comment="CSGO Xbox - PCGames" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,3074 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="CrossFireindonesiaPC" style="display:none"><span style="color:green"># CrossFire indonesia - PCGames</span><br>add action=mark-routing chain=prerouting comment="Cross Fire indonesia - PCGames" dst-port=10009,13008,16666,28012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12020-12080,13000-13080 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="DiabloIIIPC" style="display:none"><span style="color:green"># Diablo III - PCGames</span><br>add action=mark-routing chain=prerouting comment="Diablo III - PCGames" dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119,6120 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="DiabloIIPC" style="display:none"><span style="color:green"># Diablo II - PCGames</span><br>add action=mark-routing chain=prerouting comment="Diablo II - PCGames" dst-port=6112,4000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="DiabloPC" style="display:none"><span style="color:green"># Diablo I - PCGames</span><br>add action=mark-routing chain=prerouting comment="Diablo - PCGames" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="Dota2SteamPC" style="display:none"><span style="color:green"># DOTA2 Steam - PCGames</span><br>add action=mark-routing chain=prerouting comment="Dota 2 Steam - PCGames" dst-port=9100-9200,8230-8250,8110-8120 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=28010-28200,27010-27200,39000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="DragonNestPC" style="display:none"><span style="color:green"># Dragon Nest - PCGames</span><br>add action=mark-routing chain=prerouting comment="Dragon Nest - PCGames" dst-port=14300-15512 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=15000-15500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="DragonaPC" style="display:none"><span style="color:green"># Dragona - PCGames</span><br>add action=mark-routing chain=prerouting comment="Dragona - PCGames" dst-port=10000-10030 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="FifaOnline3PC" style="display:none"><span style="color:green"># Fifa Online 3 - PCGames</span><br>add action=mark-routing chain=prerouting comment="Fifa Online 3 - PCGames" dst-port=7770-7790 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=16300-16350 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="FORTNITEEPICGAMESPC" style="display:none"><span style="color:green"># FORTNITE EPIC GAMES - PCGames</span><br>add action=mark-routing chain=prerouting comment="FORTNITE EPIC GAMES - PCGames" dst-port=9000-9100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="LeagueofLegendPC" style="display:none"><span style="color:green"># League of Legend - PCGames</span><br>add action=mark-routing chain=prerouting comment="League of Legend - PCGames" dst-port=2080-2099 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port="5100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="GrandChasePC" style="display:none"><span style="color:green"># Grand Chase - PCGames</span><br>add action=mark-routing chain=prerouting comment="Grand Chase - PCGames" dst-port=9300,9400,9700 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="HearthstonePC" style="display:none"><span style="color:green"># Hearthstone - PCGames</span><br>add action=mark-routing chain=prerouting comment="Hearthstone - PCGames" dst-port=1119,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port="1119,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="HeroesoftheStormPC" style="display:none"><span style="color:green"># Heroes of the Storm - PCGames</span><br>add action=mark-routing chain=prerouting comment="Heroes of the Storm - PCGames" dst-port=1119-1120,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119-1120,3478-3479,3724,5060,5062,6113,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="HONHeroesofNewerthPC" style="display:none"><span style="color:green"># HON Heroes of Newerth - PCGames</span><br>add action=mark-routing chain=prerouting comment="HON Heroes of Newerth - PCGames" dst-port=9100-9200,11200-11500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="HeroesofAtarsiaPC" style="display:none"><span style="color:green"># Heroes of Atarsia - PCGames</span><br>add action=mark-routing chain=prerouting comment="Heroes of Atarsia - PCGames" dst-port=7777,9400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="IdolStreetPC" style="display:none"><span style="color:green"># Idol Street - PCGames</span><br>add action=mark-routing chain=prerouting comment="Idol Street - PCGames" dst-port=2001-2010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="Left4Dead2SteamPC" style="display:none"><span style="color:green"># Left4Dead 2 Steam - PCGames</span><br>add action=mark-routing chain=prerouting comment="Left4Dead 2 Steam - PCGames" dst-port=4360-4390 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="Lineage2PC" style="display:none"><span style="color:green"># Lineage 2 - PC Games</span><br>add action=mark-routing chain=prerouting comment="Lineage 2 - PC Games" dst-port=7777,10000,11000,13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="LostSagaPC" style="display:none"><span style="color:green"># Lost Saga - PC Games</span><br>add action=mark-routing chain=prerouting comment="Lost Saga - PC Games" dst-port=14000-14010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=14000-14010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="LuneofedenPC" style="display:none"><span style="color:green"># Lune of eden - PC Games</span><br>add action=mark-routing chain=prerouting comment="Lune of eden - PC Games" dst-port=8400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="MercenaryopsPC" style="display:none"><span style="color:green"># Mercenary ops - PC Games</span><br>add action=mark-routing chain=prerouting comment="Mercenary ops - PC Games" dst-port=6000-6125 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="MircovoltPC" style="display:none"><span style="color:green"># Mircovolt - PC Games</span><br>add action=mark-routing chain=prerouting comment="Mircovolt - PC Games" dst-port=13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="ModoMarblePC" style="display:none"><span style="color:green"># Modo Marble - PC Games</span><br>add action=mark-routing chain=prerouting comment="Modo Marble - PC Games" dst-port=28900-28914 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="OverwatchPC" style="display:none"><span style="color:green"># Overwatch - PC Games</span><br>add action=mark-routing chain=prerouting comment="Overwatch - PC Games" dst-port=1119,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479,5060,5062,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="PaladinsHiRezPC" style="display:none"><span style="color:green"># Paladins Hi-Rez - PC Games</span><br>add action=mark-routing chain=prerouting comment="Paladins Hi-Rez - PC Games" dst-port=9000-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9002-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="PointBlankPC" style="display:none"><span style="color:green"># Point Blank - PC Games</span><br>add action=mark-routing chain=prerouting comment="Point Blank - PC Games" dst-port=39190-39200 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=40000-40010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="PUBGPC" style="display:none"><span style="color:green"># PUBG Playerunknown Battlegrounds - PC Games</span><br>add action=mark-routing chain=prerouting comment="PUBG Playerunknown Battlegrounds - PC Games" dst-port=7080-8000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="Ragnarok2PC" style="display:none"><span style="color:green"># Ragnarok 2 - PC Games</span><br>add action=mark-routing chain=prerouting comment="Ragnarok 2 - PC Games" dst-port=7201-7210,7401-7410 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="RFRisingForcePC" style="display:none"><span style="color:green"># RF Rising Force - PC Games</span><br>add action=mark-routing chain=prerouting comment="RF Rising Force - PC Games" dst-port=27780 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="ROERingofElysiumPC" style="display:none"><span style="color:green"># ROE Ring of Elysium - PC Games</span><br>add action=mark-routing chain=prerouting comment="ROE Ring of Elysium - PC Games" dst-port=9002,10000-10015 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="ROSRulesOfSurvivalPC" style="display:none"><span style="color:green"># ROS Rules Of Survival - PC Games</span><br>add action=mark-routing chain=prerouting comment="ROS Rules Of Survival - PC Games" dst-port=24000-24100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="SealOnlinePC" style="display:none"><span style="color:green"># Seal Online - PC Games</span><br>add action=mark-routing chain=prerouting comment="Seal Online - PC Games" dst-port=1818 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="SpecialForcePC" style="display:none"><span style="color:green"># Special Force - PC Games</span><br>add action=mark-routing chain=prerouting comment="Special Force - PC Games" dst-port=27920-27940 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=30000-30030 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="StarCraftIIPC" style="display:none"><span style="color:green"># StarCraft II - PC Games</span><br>add action=mark-routing chain=prerouting comment="StarCraft II - PC Games" dst-port=1119,6113,1120,80,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119,6113,1120,80,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="StarCraftPC" style="display:none"><span style="color:green"># StarCraft - PC Games</span><br>add action=mark-routing chain=prerouting comment="StarCraft - PC Games" dst-port=6112 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9401,9600,16440-16450 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="WarcraftIIBattleNetPC" style="display:none"><span style="color:green"># Warcraft II BattleNet - PC Games</span><br>add action=mark-routing chain=prerouting comment="Warcraft II BattleNet - PC Games" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="WarcraftIIIPC" style="display:none"><span style="color:green"># Warcraft III - PC Games</span><br>add action=mark-routing chain=prerouting comment="Warcraft III - PC Games" dst-port=6112,6113-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="WarframePC" style="display:none"><span style="color:green"># Warframe - PC Games</span><br>add action=mark-routing chain=prerouting comment="Warframe - PC Games" dst-port=4950-4955 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6695-6699 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="WorldofTanksPC" style="display:none"><span style="color:green"># World of Tanks - PC Games</span><br>add action=mark-routing chain=prerouting comment="World of Tanks - PC Games" dst-port=20000-25000,8081,8088,32801,3280 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12000-29999,32801-32825, 5060,5062,3478,3479,20014 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="WorldofWarcraftPC" style="display:none"><span style="color:green"># World of Warcraft - PC Games</span><br>add action=mark-routing chain=prerouting comment="World of Warcraft - PC Games" dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="XshotIndonesiaPC" style="display:none"><span style="color:green"># Xshot Indonesia - PC Games</span><br>add action=mark-routing chain=prerouting comment="Xshot Indonesia - PC Games" dst-port=7320-7350 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7800-7850,30000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>			
+					<td id="BlackDesertOnlineSteamPC" style="display:none"><span style="color:green"># Black Desert Online Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Steam - PC" dst-port=8888,9991-9993,27015-27030,27036-27037 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=4380,8888,9991-9993,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="BlackDesertOnlineXboxPC" style="display:none"><span style="color:green"># Black Desert Online - Xbox</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Xbox - PC" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="BlackretributionPC" style="display:none"><span style="color:green"># Black retribution - PC</span><br>add action=mark-routing chain=prerouting comment="Blackretribution - PC" dst-port=7020-7050,8200-8220,9000-9020 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="BlizzardBattleNetPC" style="display:none"><span style="color:green"># Blizzard BattleNet - PC</span><br>add action=mark-routing chain=prerouting comment="Blizzard BattleNet - PC" dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="BountyHoundPC" style="display:none"><span style="color:green"># Bounty Hound - PC</span><br>add action=mark-routing chain=prerouting comment="Bounty Hound - PC" dst-port=9810-9860 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="CabalExtremePrivatePC" style="display:none"><span style="color:green"># Cabal Extreme Private - PC</span><br>add action=mark-routing chain=prerouting comment="Cabal Extreme Private - PC" dst-port=60170-60180,63000-64000,38101,38110-38600 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="CabalIndonesiaPC" style="display:none"><span style="color:green"># Cabal Indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Cabal Indonesia - PC" dst-port=63000-64000,38101,38110-38130 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="CallofDutyBOPC" style="display:none"><span style="color:green"># Call of Duty BO - PC</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - PC" dst-port=3074,27014-27050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478,4379-4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="CallofDutyBOPSPC" style="display:none"><span style="color:green"># Callof Duty BO - Playstation</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - Playstation" dst-port=80,443,1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="CallofDutyBOXBoxPC" style="display:none"><span style="color:green"># Call of Duty BO - XBox</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - XBox" dst-port=53,80,3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3075,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="CallofDutyMWPCPC" style="display:none"><span style="color:green"># Call of Duty MW - PC</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW PC - PC" dst-port=3074,27014-27050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478,4379-4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="CallofDutyMWPSPC" style="display:none"><span style="color:green"># Call of Duty MW - Playstation</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW Playstation" dst-port=1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="CallofDutyMWXBoxPC" style="display:none"><span style="color:green"># Call of Duty MW - XBox</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW - XBox" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3075,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="ClashofGodPC" style="display:none"><span style="color:green"># Clash of God - PC</span><br>add action=mark-routing chain=prerouting comment="Clash of God - PC" dst-port=9430-9450,5220-5230 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="CSGOPlaystationPC" style="display:none"><span style="color:green"># CSGO - Playstation </span><br>add action=mark-routing chain=prerouting comment="CSGO - Playstation" dst-port=3478-3480,5223,8080 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479,3658 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="CSGOSteamPC" style="display:none"><span style="color:green"># CSGO Steam - PC</span><br>add action=mark-routing chain=prerouting comment="CSGO Steam - PC" dst-port=27015-27030,27036-27037 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="CSGOXboxPC" style="display:none"><span style="color:green"># CSGO - Xbox</span><br>add action=mark-routing chain=prerouting comment="CSGO - Xbox" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,3074 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="CrossFireindonesiaPC" style="display:none"><span style="color:green"># CrossFire indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Cross Fire indonesia - PC" dst-port=10009,13008,16666,28012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12020-12080,13000-13080 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="DiabloIIIPC" style="display:none"><span style="color:green"># Diablo III - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo III - PC" dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119,6120 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="DiabloIIPC" style="display:none"><span style="color:green"># Diablo II - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo II - PC" dst-port=6112,4000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="DiabloPC" style="display:none"><span style="color:green"># Diablo I - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo - PC" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="Dota2SteamPC" style="display:none"><span style="color:green"># DOTA2 Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Dota 2 Steam - PC" dst-port=9100-9200,8230-8250,8110-8120 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=28010-28200,27010-27200,39000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="DragonNestPC" style="display:none"><span style="color:green"># Dragon Nest - PC</span><br>add action=mark-routing chain=prerouting comment="Dragon Nest - PC" dst-port=14300-15512 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=15000-15500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="DragonaPC" style="display:none"><span style="color:green"># Dragona - PC</span><br>add action=mark-routing chain=prerouting comment="Dragona - PC" dst-port=10000-10030 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="FifaOnline3PC" style="display:none"><span style="color:green"># Fifa Online 3 - PC</span><br>add action=mark-routing chain=prerouting comment="Fifa Online 3 - PC" dst-port=7770-7790 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=16300-16350 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="FORTNITEEPICGAMESPC" style="display:none"><span style="color:green"># FORTNITE EPIC GAMES - PC</span><br>add action=mark-routing chain=prerouting comment="FORTNITE EPIC GAMES - PC" dst-port=9000-9100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="LeagueofLegendPC" style="display:none"><span style="color:green"># League of Legend - PC</span><br>add action=mark-routing chain=prerouting comment="League of Legend - PC" dst-port=2080-2099 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port="5100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="GrandChasePC" style="display:none"><span style="color:green"># Grand Chase - PC</span><br>add action=mark-routing chain=prerouting comment="Grand Chase - PC" dst-port=9300,9400,9700 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="HearthstonePC" style="display:none"><span style="color:green"># Hearthstone - PC</span><br>add action=mark-routing chain=prerouting comment="Hearthstone - PC" dst-port=1119,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port="1119,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="HeroesoftheStormPC" style="display:none"><span style="color:green"># Heroes of the Storm - PC</span><br>add action=mark-routing chain=prerouting comment="Heroes of the Storm - PC" dst-port=1119-1120,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119-1120,3478-3479,3724,5060,5062,6113,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="HONHeroesofNewerthPC" style="display:none"><span style="color:green"># HON Heroes of Newerth - PC</span><br>add action=mark-routing chain=prerouting comment="HON Heroes of Newerth - PC" dst-port=9100-9200,11200-11500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="HeroesofAtarsiaPC" style="display:none"><span style="color:green"># Heroes of Atarsia - PC</span><br>add action=mark-routing chain=prerouting comment="Heroes of Atarsia - PC" dst-port=7777,9400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="IdolStreetPC" style="display:none"><span style="color:green"># Idol Street - PC</span><br>add action=mark-routing chain=prerouting comment="Idol Street - PC" dst-port=2001-2010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="Left4Dead2SteamPC" style="display:none"><span style="color:green"># Left4Dead 2 Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Left4Dead 2 Steam - PC" dst-port=4360-4390 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="Lineage2PC" style="display:none"><span style="color:green"># Lineage 2 - PC</span><br>add action=mark-routing chain=prerouting comment="Lineage 2 - PC" dst-port=7777,10000,11000,13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="LostSagaPC" style="display:none"><span style="color:green"># Lost Saga - PC</span><br>add action=mark-routing chain=prerouting comment="Lost Saga - PC" dst-port=14000-14010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=14000-14010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="LuneofedenPC" style="display:none"><span style="color:green"># Lune of eden - PC</span><br>add action=mark-routing chain=prerouting comment="Lune of eden - PC" dst-port=8400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="MercenaryopsPC" style="display:none"><span style="color:green"># Mercenary ops - PC</span><br>add action=mark-routing chain=prerouting comment="Mercenary ops - PC" dst-port=6000-6125 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="MircovoltPC" style="display:none"><span style="color:green"># Mircovolt - PC</span><br>add action=mark-routing chain=prerouting comment="Mircovolt - PC" dst-port=13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="ModoMarblePC" style="display:none"><span style="color:green"># Modo Marble - PC</span><br>add action=mark-routing chain=prerouting comment="Modo Marble - PC" dst-port=28900-28914 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="OverwatchPC" style="display:none"><span style="color:green"># Overwatch - PC</span><br>add action=mark-routing chain=prerouting comment="Overwatch - PC" dst-port=1119,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479,5060,5062,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="PaladinsHiRezPC" style="display:none"><span style="color:green"># Paladins Hi-Rez - PC</span><br>add action=mark-routing chain=prerouting comment="Paladins Hi-Rez - PC" dst-port=9000-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9002-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="PointBlankPC" style="display:none"><span style="color:green"># Point Blank - PC</span><br>add action=mark-routing chain=prerouting comment="Point Blank - PC" dst-port=39190-39200 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=40000-40010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="PUBGPC" style="display:none"><span style="color:green"># PUBG Playerunknown Battlegrounds - PC</span><br>add action=mark-routing chain=prerouting comment="PUBG Playerunknown Battlegrounds - PC" dst-port=7080-8000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="Ragnarok2PC" style="display:none"><span style="color:green"># Ragnarok 2 - PC</span><br>add action=mark-routing chain=prerouting comment="Ragnarok 2 - PC" dst-port=7201-7210,7401-7410 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="RFRisingForcePC" style="display:none"><span style="color:green"># RF Rising Force - PC</span><br>add action=mark-routing chain=prerouting comment="RF Rising Force - PC" dst-port=27780 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="ROERingofElysiumPC" style="display:none"><span style="color:green"># ROE Ring of Elysium - PC</span><br>add action=mark-routing chain=prerouting comment="ROE Ring of Elysium - PC" dst-port=9002,10000-10015 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="ROSRulesOfSurvivalPC" style="display:none"><span style="color:green"># ROS Rules Of Survival - PC</span><br>add action=mark-routing chain=prerouting comment="ROS Rules Of Survival - PC" dst-port=24000-24100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="SealOnlinePC" style="display:none"><span style="color:green"># Seal Online - PC</span><br>add action=mark-routing chain=prerouting comment="Seal Online - PC" dst-port=1818 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="SpecialForcePC" style="display:none"><span style="color:green"># Special Force - PC</span><br>add action=mark-routing chain=prerouting comment="Special Force - PC" dst-port=27920-27940 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=30000-30030 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="StarCraftIIPC" style="display:none"><span style="color:green"># StarCraft II - PC</span><br>add action=mark-routing chain=prerouting comment="StarCraft II - PC" dst-port=1119,6113,1120,80,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119,6113,1120,80,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="StarCraftPC" style="display:none"><span style="color:green"># StarCraft - PC</span><br>add action=mark-routing chain=prerouting comment="StarCraft - PC" dst-port=6112 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9401,9600,16440-16450 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="ValorantPC" style="display:none"><span style="color:green"># Valorant - PC Games</span><br>add action=mark-routing chain=prerouting comment="Valorant - PC Games" dst-port=2099,5222-5223,8088,8393-8400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7000-7500,8088 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="WarcraftIIBattleNetPC" style="display:none"><span style="color:green"># Warcraft II BattleNet - PC</span><br>add action=mark-routing chain=prerouting comment="Warcraft II BattleNet - PC" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="WarcraftIIIPC" style="display:none"><span style="color:green"># Warcraft III - PC</span><br>add action=mark-routing chain=prerouting comment="Warcraft III - PC" dst-port=6112,6113-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
+					<td id="WarframePC" style="display:none"><span style="color:green"># Warframe - PC</span><br>add action=mark-routing chain=prerouting comment="Warframe - PC" dst-port=4950-4955 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6695-6699 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="WorldofTanksPC" style="display:none"><span style="color:green"># World of Tanks - PC</span><br>add action=mark-routing chain=prerouting comment="World of Tanks - PC" dst-port=20000-25000,8081,8088,32801,3280 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12000-29999,32801-32825, 5060,5062,3478,3479,20014 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="WorldofWarcraftPC" style="display:none"><span style="color:green"># World of Warcraft - PC</span><br>add action=mark-routing chain=prerouting comment="World of Warcraft - PC" dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="XshotIndonesiaPC" style="display:none"><span style="color:green"># Xshot Indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Xshot Indonesia - PC" dst-port=7320-7350 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7800-7850,30000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>			
 			   </tr>
             </table>
          </div>
          <br>
-         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">COPY SCRIPT</button>    <span style="color:333;background-color:#f0f0f0; border:1px solid #ccc; padding:5px; font-weight:bold;margin-left:20px">Cara Pakai: Copy paste script diatas langsung ke terminal dan pastikan posisi scrip pada mangle berada di posisi paling atas:</span>
+         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button><span style="color:333;background-color:#f0f0f0; border:1px solid #ccc; padding:7px; font-weight:bold;margin-left:20px">Cara Pakai: Copy paste script diatas langsung ke terminal dan pastikan posisi scrip pada mangle berada di posisi paling atas</span>
 		 <br><br>
       </div>
           
@@ -554,7 +557,7 @@
 		 var WildOnesWebGames = document.getElementById("WildOnes-WebGames");
 		 toggleSub(WildOnesWebGames , 'WildOnesWebGames');
 
-// PC Games  
+// PCGames  
 		 
 		var AtlanticaPC = document.getElementById("Atlantica-PC");
 		toggleSub(AtlanticaPC , 'AtlanticaPC');
@@ -728,6 +731,9 @@
 
 		var StarCraftPC = document.getElementById("StarCraft-PC");
 		toggleSub(StarCraftPC , 'StarCraftPC');
+
+		var ValorantPC = document.getElementById("Valorant-PC");
+		toggleSub(ValorantPC , 'ValorantPC');
 
 		var WarcraftIIBattleNetPC = document.getElementById("WarcraftIIBattleNet-PC");
 		toggleSub(WarcraftIIBattleNetPC , 'WarcraftIIBattleNetPC');
