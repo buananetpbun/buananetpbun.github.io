@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -227,7 +228,7 @@
 			<input type="checkbox" id="Mircovolt-PC"><label for="Mircovolt-PC">Mircovolt - PCGames</label><br>
 			<input type="checkbox" id="ModoMarble-PC"><label for="ModoMarble-PC">Modo Marble - PCGames</label><br>
 			<input type="checkbox" id="Overwatch-PC"><label for="Overwatch-PC">Overwatch - PCGames</label><br>
-			<input type="checkbox" id="ParadinsHiRez-PC"><label for="ParadinsHiRez-PC">Paradins Hi-Rez - PCGames</label><br>
+			<input type="checkbox" id="PaladinsHiRez-PC"><label for="PaladinsHiRez-PC">Paladins Hi-Rez - PCGames</label><br>
 			<input type="checkbox" id="PointBlank-PC"><label for="PointBlank-PC">Point Blank - PCGames</label><br>
 			<input type="checkbox" id="PUBG-PC"><label for="PUBG-PC">PUBG - PCGames</label><br>
 			<input type="checkbox" id="Ragnarok2-PC"><label for="Ragnarok2-PC">Ragnarok 2 - PCGames</label><br>
@@ -360,7 +361,7 @@
 					<td id="MircovoltPC" style="display:none"><span style="color:green"># Mircovolt - PC Games</span><br>add action=mark-routing chain=prerouting comment="Mircovolt - PC Games" dst-port=13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="ModoMarblePC" style="display:none"><span style="color:green"># Modo Marble - PC Games</span><br>add action=mark-routing chain=prerouting comment="Modo Marble - PC Games" dst-port=28900-28914 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="OverwatchPC" style="display:none"><span style="color:green"># Overwatch - PC Games</span><br>add action=mark-routing chain=prerouting comment="Overwatch - PC Games" dst-port=1119,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479,5060,5062,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
-					<td id="ParadinsHiRezPC" style="display:none"><span style="color:green"># Paradins Hi-Rez - PC Games</span><br>add action=mark-routing chain=prerouting comment="Paradins Hi-Rez - PC Games" dst-port=9000-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9002-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
+					<td id="PaladinsHiRezPC" style="display:none"><span style="color:green"># Paladins Hi-Rez - PC Games</span><br>add action=mark-routing chain=prerouting comment="Paladins Hi-Rez - PC Games" dst-port=9000-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9002-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="PointBlankPC" style="display:none"><span style="color:green"># Point Blank - PC Games</span><br>add action=mark-routing chain=prerouting comment="Point Blank - PC Games" dst-port=39190-39200 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=40000-40010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="PUBGPC" style="display:none"><span style="color:green"># PUBG Playerunknown Battlegrounds - PC Games</span><br>add action=mark-routing chain=prerouting comment="PUBG Playerunknown Battlegrounds - PC Games" dst-port=7080-8000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="Ragnarok2PC" style="display:none"><span style="color:green"># Ragnarok 2 - PC Games</span><br>add action=mark-routing chain=prerouting comment="Ragnarok 2 - PC Games" dst-port=7201-7210,7401-7410 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
@@ -693,8 +694,8 @@
 		var OverwatchPC = document.getElementById("Overwatch-PC");
 		toggleSub(OverwatchPC , 'OverwatchPC');
 
-		var ParadinsHiRezPC = document.getElementById("ParadinsHi-Rez-PC");
-		toggleSub(ParadinsHiRezPC , 'ParadinsHiRezPC');
+		var PaladinsHiRezPC = document.getElementById("PaladinsHiRez-PC");
+		toggleSub(PaladinsHiRezPC , 'PaladinsHiRezPC');
 
 		var PointBlankPC = document.getElementById("PointBlank-PC");
 		toggleSub(PointBlankPC , 'PointBlankPC');
