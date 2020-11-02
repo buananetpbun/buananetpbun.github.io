@@ -104,7 +104,7 @@
          border: 1px solid rgba(0,0,0,0.25)
          }
          .list-mangle {
-         height: 567px;
+         height: 568px;
          background:#fff;
          overflow: scroll;
 		 overflow-x: hidden;
@@ -118,7 +118,7 @@
    </head>
 <body>
 <pre>
-<span">
+<span>
  ______  _     _        ______         ______  _______ _______ 
 (____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)©
  ____)  ) |   | | /  \ | |   | | /  \ | |   | |_____   _       
@@ -149,8 +149,8 @@
          <label>Pilih Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Cari Game.."> 
 		 <div class="list-game">
 		 <table id="myTable" style="border:0"
-		 <!--MOBILE GAMES -->
- 			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">MOBILE GAMES</label></span></td></tr>
+		 <!-- MOBILE GAMES -->
+ 			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">MOBILE GAMES</label></td></tr>
             <tr><td><input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label></td></tr>
 			<tr><td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="BooyaDominoQiuqiu-Mobile"><label for="BooyaDominoQiuqiu-Mobile">Booya Domino Qiuqiu - Mobile</label></td></tr>
@@ -173,7 +173,7 @@
             <tr><td><input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">RulesOfSurvival (ROS) - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="ShinobiHeroes-Mobile"><label for="ShinobiHeroes-Mobile">Shinobi Heroes - Mobile</label></td></tr>
 		<!-- WEB GAMES -->   
-			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">WEB GAMES</label></span></td></tr>
+			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">WEB GAMES</label></td></tr>
 			<tr><td><input type="checkbox" id="BallPool-WebGames"><label for="BallPool-WebGames">8 Ball Pool - WebGames</label></td></tr>
 			<tr><td><input type="checkbox" id="CastleVille-WebGames"><label for="CastleVille-WebGames">Castle Ville - WebGames</label></td></tr>
 			<tr><td><input type="checkbox" id="Headshot-WebGames"><label for="Headshot-WebGames">Headshot - WebGames</label></td></tr>
@@ -187,7 +187,7 @@
 			<tr><td><input type="checkbox" id="Warflare-WebGames"><label for="Warflare-WebGames">Warflare - WebGames</label></td></tr>
 			<tr><td><input type="checkbox" id="WildOnes-WebGames"><label for="WildOnes-WebGames">WildOnes - WebGames</label></td></tr>
 		<!-- DEKSTOP / PC GAMES -->    
-		    <tr><td><label style="font-weight:bold;color:green;padding-left:5px">DEKSTOP / PC GAMES</label></span></td></tr>
+		    <tr><td><label style="font-weight:bold;color:green;padding-left:5px">DEKSTOP / PC GAMES</label></td></tr>
 			<tr><td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PC</label></td></tr>
 			<tr><td><input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PC</label></td></tr>
 			<tr><td><input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">Ayodance - PC</label></td></tr>
@@ -268,9 +268,9 @@
                      <span style="color:green;">
                      ###############################################<br>
                      # Vpn Game Script Generator By Buananet Secure!<br>
-                     # Time/Date: <span id="tanggalwaktu"></span><br>
+                     # Date/Time: <span id="tanggalwaktu"></span><br>
                      # https://fb.me/buananet.pbun<br>
-                     # Type VPN -> <span id="vpn-list-text-info" style="color:black; font-weight:bold;text-transform: uppercase">PPTP</span><br>
+                     # Type VPN -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
                      ###############################################<br><br>
                      </span>
                      <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
@@ -287,6 +287,7 @@
                   </td>
                </tr>
                <tr>
+			   <!-- MOBILE GAMES -->
                   <td id="ArenaOfValorMobile" style="display:none"><span style="color:green"># Arena Of Valor - Mobile</span><br>add action=mark-routing chain=prerouting comment="Arena Of Valor - Mobile" dst-port=10001-10094 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=10080,17000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
                   <td id="BooyaCapsaSusunMobile" style="display:none"><span style="color:green"># Booya Capsa Susun - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Capsa Susun - Mobile" dst-port=7090-7100 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
                   <td id="BooyaDominoQiuqiuMobile" style="display:none"><span style="color:green"># Booya Domino Qiuqiu - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Domino Qiuqiu - Mobile" dst-port=7020-7030 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
@@ -308,7 +309,7 @@
                   <td id="RpgToramOnlineMobile" style="display:none"><span style="color:green"># Rpg Toram Online - Mobile</span><br>add action=mark-routing chain=prerouting comment="Rpg Toram Online - Mobile" dst-port=30100-30110 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
                   <td id="RulesOfSurvivalMobile" style="display:none"><span style="color:green"># Rules Of Survival - Mobile</span><br>add action=mark-routing chain=prerouting comment="Rules Of Survival - Mobile" dst-port=24000-24050 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
                   <td id="ShinobiHeroesMobile" style="display:none"><span style="color:green"># Shinobi Heroes - Mobile</span><br>add action=mark-routing chain=prerouting comment="Shinobi Heroes - Mobile" dst-port=10005-10020 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-				
+				<!-- WEB GAMES -->
 					<td id="BallPoolWebGames" style="display:none"><span style="color:green"># 8 Ball Pool - Web Games</span><br>add action=mark-routing chain=prerouting comment="8 Ball Pool (Miniclips - Web Games" dst-port=4000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="CastleVilleWebGames" style="display:none"><span style="color:green">#CastleVille - Web Games</span><br>add action=mark-routing chain=prerouting comment="CastleVille - Web Games" dst-port=8890 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="HeadshotWebGames" style="display:none"><span style="color:green"># Headshot - Web Games</span><br>add action=mark-routing chain=prerouting comment="Headshot - Web Games" dst-port=1800-1810 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1845-1860 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
@@ -321,7 +322,7 @@
 					<td id="TexasHoldEmPokerWebGames" style="display:none"><span style="color:green"># Texas HoldEm Poker - Games Web</span><br>add action=mark-routing chain=prerouting comment="Texas HoldEm Poker - Games Web" dst-port=9339 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="WarflareWebGames" style="display:none"><span style="color:green"># Warflare - Web Games</span><br>add action=mark-routing chain=prerouting comment="Warflare - Web Games" dst-port=64990-65010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="WildOnesWebGames" style="display:none"><span style="color:green"># WildOnes - Web Games</span><br>add action=mark-routing chain=prerouting comment="WildOnes - Web Games" dst-port=8000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-				   
+				   <!-- DEKSTOP / PC GAMES -->
 					<td id="AtlanticaPC" style="display:none"><span style="color:green"># Atlantica - PC</span><br>add action=mark-routing chain=prerouting comment="Atlantica - PC" dst-port=4300 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="AuraKingdomPC" style="display:none"><span style="color:green"># Aura Kingdom - PC</span><br>add action=mark-routing chain=prerouting comment="Aura Kingdom - PC" dst-port=5540-5580 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
 					<td id="AyodancePC" style="display:none"><span style="color:green"># Ayo Dance - PC</span><br>add action=mark-routing chain=prerouting comment="Ayodance - PC" dst-port=18900-18910 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
@@ -776,8 +777,7 @@
                              range.select();
                          }
                      document.execCommand("copy"); 
-                     }
-					 
+                     }	 
 		 function toggleSub(box, id) {
              var el = document.getElementById(id);
              
@@ -787,7 +787,6 @@
                  el.style.display = 'none';
              }
          }			 
-		 
 		 function myFunctionGames() {
 		  var input, filter, table, tr, td, i, txtValue;
 		  input = document.getElementById("myInput");
@@ -806,7 +805,6 @@
 			}       
 		  }
 		}
-		
       </script>
    </body>
 </html>
