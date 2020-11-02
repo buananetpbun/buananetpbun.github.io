@@ -111,26 +111,27 @@
          width: 100%;
          padding: 0px;
 		 margin-top:8px;
-         border: 1px solid #ccc;
-
+         border-top: 2px dotted #ccc;
+		 border-bottom: 2px dotted #ccc;
          }
       </style>
    </head>
 <body>
-<pre><span style="color:black;font-weight:bold">
+<pre>
+<span">
  ______  _     _        ______         ______  _______ _______ 
 (____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)©
  ____)  ) |   | | /  \ | |   | | /  \ | |   | |_____   _       
 |  __  (| |   | |/ /\ \| |   | |/ /\ \| |   | |  ___) | |      
 | |__)  ) |___| | |__| | |   | | |__| | |   | | |_____| |_____ 
 |______/ \______|______|_|   |_|______|_|   |_|_______)\______)
-<span style="font-size:11px; color:green;font-weight:normal">© Copyright 2021 BuanaNET SECURE! - <a href="https://www.facebook.com/buananet.pbun">https://www.facebook.com/buananet.pbun</a></span>
+<span style="font-size:11px; color:green;font-weight:normal">© Copyright 2021 BuanaNET SECURE! By Agus Ramadhani <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a></span>
 </span>
 <span style="font-weight:bold;font-size:15px; ">MIKROTIK - STATIC ROUTING VPN GAME SCRIPT GENERATOR</span>
 </pre>
 
       <div class="column-left" style="background-color:#eee;border:1px solid #ccc; ">
-         <label>Pilih koneksi VPN</label><br>
+         <label>Pilih Tipe VPN</label><br>
          <select id="vpn-list">
             <option value="pptp">PPTP</option>
             <option value="l2tp">L2TP</option>
@@ -146,7 +147,7 @@
          <input type="text" id="vpn-password" placeholder="password"/><br><br>
          <input type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check">IP Gateway ISP Game (tidak wajib)</label>
          <input disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
-         <label>Pilih Mangle Games:</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Cari Game.."> 
+         <label>Pilih Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Cari Game.."> 
 		 <div class="list-game">
 		 <table id="myTable" style="border:0"
  			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">MOBILE GAMES</label></span></td></tr>
@@ -286,6 +287,7 @@
                   </td>
                </tr>
                <tr>
+			   </span SyntaxHighlighter.Highlighter()>/interface pptp-client[/ROS]
                   <td id="ArenaOfValorMobile" style="display:none"><span style="color:green"># Arena Of Valor - Mobile</span><br>add action=mark-routing chain=prerouting comment="Arena Of Valor - Mobile" dst-port=10001-10094 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=10080,17000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
                   <td id="BooyaCapsaSusunMobile" style="display:none"><span style="color:green"># Booya Capsa Susun - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Capsa Susun - Mobile" dst-port=7090-7100 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
                   <td id="BooyaDominoQiuqiuMobile" style="display:none"><span style="color:green"># Booya Domino Qiuqiu - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Domino Qiuqiu - Mobile" dst-port=7020-7030 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
@@ -386,11 +388,12 @@
 					<td id="WorldofTanksPC" style="display:none"><span style="color:green"># World of Tanks - PC</span><br>add action=mark-routing chain=prerouting comment="World of Tanks - PC" dst-port=20000-25000,8081,8088,32801,3280 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12000-29999,32801-32825, 5060,5062,3478,3479,20014 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="WorldofWarcraftPC" style="display:none"><span style="color:green"># World of Warcraft - PC</span><br>add action=mark-routing chain=prerouting comment="World of Warcraft - PC" dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="XshotIndonesiaPC" style="display:none"><span style="color:green"># Xshot Indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Xshot Indonesia - PC" dst-port=7320-7350 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7800-7850,30000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>			
+			   
 			   </tr>
             </table>
          </div>
          <br>
-         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button><span style="color:333;background-color:#f0f0f0; border:1px solid #ccc; padding:7px; font-weight:bold;margin-left:20px">Cara Pakai: Copy paste script diatas langsung ke terminal dan pastikan posisi scrip pada mangle berada di posisi paling atas</span>
+         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button><span style="color:333;background-color:#fff; border:0px solid #ccc; padding:7px; font-weight:normal;margin-left:20px"><b>Cara Pakai:</b> Copy paste script diatas langsung ke terminal dan pastikan posisi Script pada Mangle berada di posisi paling atas</span>
 		 <br><br>
       </div>
           
@@ -804,6 +807,7 @@
 			}       
 		  }
 		}
+		
       </script>
    </body>
 </html>
