@@ -129,7 +129,6 @@
 </span>
 <span style="font-weight:bold;font-size:15px; ">MIKROTIK - STATIC ROUTING VPN GAME SCRIPT GENERATOR</span>
 </pre>
-
       <div class="column-left" style="background-color:#eee;border:1px solid #ccc; ">
          <label>Pilih Tipe VPN</label><br>
          <select id="vpn-list">
@@ -150,6 +149,7 @@
          <label>Pilih Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Cari Game.."> 
 		 <div class="list-game">
 		 <table id="myTable" style="border:0"
+		 <!--MOBILE GAMES -->
  			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">MOBILE GAMES</label></span></td></tr>
             <tr><td><input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label></td></tr>
 			<tr><td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td></tr>
@@ -172,7 +172,7 @@
             <tr><td><input type="checkbox" id="RpgToramOnline-Mobile"><label for="RpgToramOnline-Mobile">Rpg Toram Online - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">RulesOfSurvival (ROS) - Mobile</label></td></tr>
             <tr><td><input type="checkbox" id="ShinobiHeroes-Mobile"><label for="ShinobiHeroes-Mobile">Shinobi Heroes - Mobile</label></td></tr>
-		    
+		<!-- WEB GAMES -->   
 			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">WEB GAMES</label></span></td></tr>
 			<tr><td><input type="checkbox" id="BallPool-WebGames"><label for="BallPool-WebGames">8 Ball Pool - WebGames</label></td></tr>
 			<tr><td><input type="checkbox" id="CastleVille-WebGames"><label for="CastleVille-WebGames">Castle Ville - WebGames</label></td></tr>
@@ -186,8 +186,8 @@
 			<tr><td><input type="checkbox" id="TexasHoldEmPoker-WebGames"><label for="TexasHoldEmPoker-WebGames">Texas Hold EmPoker - WebGames</label></td></tr>
 			<tr><td><input type="checkbox" id="Warflare-WebGames"><label for="Warflare-WebGames">Warflare - WebGames</label></td></tr>
 			<tr><td><input type="checkbox" id="WildOnes-WebGames"><label for="WildOnes-WebGames">WildOnes - WebGames</label></td></tr>
-	       
-		    <tr><td><label style="font-weight:bold;color:green;padding-left:5px">DEKSTOP / PC Games</label></span></td></tr>
+		<!-- DEKSTOP / PC GAMES -->    
+		    <tr><td><label style="font-weight:bold;color:green;padding-left:5px">DEKSTOP / PC GAMES</label></span></td></tr>
 			<tr><td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PC</label></td></tr>
 			<tr><td><input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PC</label></td></tr>
 			<tr><td><input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">Ayodance - PC</label></td></tr>
@@ -256,7 +256,7 @@
 	     </table>
          </div>
          <br>
-         <button type="button" onclick="myFunction()">Masukan</button> <button type="button" onclick="location.reload()">Hapus Semua</button> 
+         <button type="button" onclick="myFunction()">Buat Script</button> <button type="button" onclick="location.reload()">Hapus Semua</button> 
          <br>
       </div>
       <div class="column-right" style="border-top:1px solid#ccc;border-bottom:1px solid#ccc;border-right:1px solid#ccc">
@@ -455,7 +455,7 @@
           document.getElementById("ip-gateway-game").innerHTML = "<span style='color:red; font-weight:bold'>[IP Gateway ISP Kosong]<span>";
 		}   
 		
-  // MOBILE GAMES        
+	// MOBILE GAMES        
          var ArenaOfValorMobile = document.getElementById("ArenaOfValor-Mobile");
          toggleSub(ArenaOfValorMobile , 'ArenaOfValorMobile');
          
@@ -522,7 +522,7 @@
          var ShinobiHeroesMobile = document.getElementById("ShinobiHeroes-Mobile");
          toggleSub(ShinobiHeroesMobile , 'ShinobiHeroesMobile');
 
-// WEB GAMES        
+	// WEB GAMES        
 		 
 		 var BallPoolWebGames = document.getElementById("BallPool-WebGames");
          toggleSub(BallPoolWebGames , 'BallPoolWebGames');
@@ -560,7 +560,7 @@
 		 var WildOnesWebGames = document.getElementById("WildOnes-WebGames");
 		 toggleSub(WildOnesWebGames , 'WildOnesWebGames');
 
-// PCGames  
+	// PC GAMES
 		 
 		var AtlanticaPC = document.getElementById("Atlantica-PC");
 		toggleSub(AtlanticaPC , 'AtlanticaPC');
