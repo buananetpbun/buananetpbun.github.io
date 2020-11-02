@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
    <head>
@@ -242,7 +241,6 @@
 			<input type="checkbox" id="WarcraftIIBattleNet-PC"><label for="WarcraftIIBattleNet-PC">Warcraft II - PCGames</label><br>
 			<input type="checkbox" id="WarcraftIII-PC"><label for="WarcraftIII-PC">Warcraft III - PCGames</label><br>
 			<input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PCGames</label><br>
-			<input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PCGames</label><br>
 			<input type="checkbox" id="WorldofTanks-PC"><label for="WorldofTanks-PC">World of Tanks - PCGames</label><br>
 			<input type="checkbox" id="WorldofWarcraft-PC"><label for="WorldofWarcraft-PC">World of Warcraft - PCGames</label><br>
 			<input type="checkbox" id="XshotIndonesia-PC"><label for="XshotIndonesia-PC">X-shot Indonesia - PCGames</label><br>
@@ -374,7 +372,6 @@
 					<td id="StarCraftPC" style="display:none"><span style="color:green"># StarCraft - PC Games</span><br>add action=mark-routing chain=prerouting comment="StarCraft - PC Games" dst-port=6112 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9401,9600,16440-16450 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="WarcraftIIBattleNetPC" style="display:none"><span style="color:green"># Warcraft II BattleNet - PC Games</span><br>add action=mark-routing chain=prerouting comment="Warcraft II BattleNet - PC Games" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="WarcraftIIIPC" style="display:none"><span style="color:green"># Warcraft III - PC Games</span><br>add action=mark-routing chain=prerouting comment="Warcraft III - PC Games" dst-port=6112,6113-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</td>
-					<td id="WarframePC" style="display:none"><span style="color:green"># Warframe - PC Games</span><br>add action=mark-routing chain=prerouting comment="Warframe - PC Games" dst-port=4950-4955 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6695-6699 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="WarframePC" style="display:none"><span style="color:green"># Warframe - PC Games</span><br>add action=mark-routing chain=prerouting comment="Warframe - PC Games" dst-port=4950-4955 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6695-6699 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="WorldofTanksPC" style="display:none"><span style="color:green"># World of Tanks - PC Games</span><br>add action=mark-routing chain=prerouting comment="World of Tanks - PC Games" dst-port=20000-25000,8081,8088,32801,3280 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12000-29999,32801-32825, 5060,5062,3478,3479,20014 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
 					<td id="WorldofWarcraftPC" style="display:none"><span style="color:green"># World of Warcraft - PC Games</span><br>add action=mark-routing chain=prerouting comment="World of Warcraft - PC Games" dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</td>
@@ -731,9 +728,6 @@
 
 		var WarcraftIIIPC = document.getElementById("WarcraftIII-PC");
 		toggleSub(WarcraftIIIPC , 'WarcraftIIIPC');
-
-		var WarframePC = document.getElementById("Warframe-PC");
-		toggleSub(WarframePC , 'WarframePC');
 
 		var WarframePC = document.getElementById("Warframe-PC");
 		toggleSub(WarframePC , 'WarframePC');
