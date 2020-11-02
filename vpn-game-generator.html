@@ -16,15 +16,17 @@
          background-color: #4CAF50;
          border-color: #4CAF50;
          border:none;
-         padding:10px;
+         padding:8px;
 		 width:150px;
+		 font-size:13px;
+		 font-weight:bold;
          }
          .column-left {
          font-size:12px;
          float: left;
          width: 290px;
          padding: 10px;
-         height: 645px;
+         height: 665px;
 		 position:absolute;
          }
          .column-right {
@@ -32,7 +34,7 @@
          float: left;
          width: 1100px;
          padding: 10px;
-         height: 645px;
+         height: 665px;
 		 margin-left:290px
          }
          .row:after {
@@ -101,7 +103,7 @@
          border: 1px solid rgba(0,0,0,0.25)
          }
          .list-mangle {
-         height: 530px;
+         height: 557px;
          background:#fff;
          overflow: scroll;
 		 overflow-x: hidden;
@@ -121,8 +123,9 @@
 |______/ \______|______|_|   |_|______|_|   |_|_______)\______)
 <span style="font-size:11px; color:green;font-weight:normal">© Copyright 2021 BuanaNET SECURE! - <a href="https://www.facebook.com/buananet.pbun">https://www.facebook.com/buananet.pbun</a></span>
 </span>
+<span style="font-weight:bold;font-size:15px; ">MIKROTIK - STATIC ROUTING VPN GAME SCRIPT GENERATOR</span>
 </pre>
-      <p style="font-weight:bold;font-size:20px; ">MIKROTIK - STATIC ROUTING VPN GAME SCRIPT GENERATOR</p>
+
       <div class="column-left" style="background-color:#eee;border:1px solid#ccc; ">
          <label>Pilih koneksi VPN</label><br>
          <select id="vpn-list">
@@ -140,117 +143,120 @@
          <input type="text" id="vpn-password" placeholder="password"/><br><br>
          <input type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check">IP Gateway ISP Game (tidak wajib)</label>
          <input disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
-         <label>Pilih Mangle Games:</label><br>
-         <div class="list-game">
-            <label style="font-weight:bold;color:green;padding-left:5px">MOBILE GAMES</label></span><br>
-            <input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label><br>
-            <input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label><br>
-            <input type="checkbox" id="BooyaDominoQiuqiu-Mobile"><label for="BooyaDominoQiuqiu-Mobile">Booya Domino Qiuqiu - Mobile</label><br>
-            <input type="checkbox" id="ClashOfClans-Mobile"><label for="ClashOfClans-Mobile">Clash Of Clans - Mobile</label><br>
-            <input type="checkbox" id="ClashRoyale-Mobile"><label for="ClashRoyale-Mobile">Clash Royale - Mobile</label><br>
-            <input type="checkbox" id="CODCallOfDuty-Mobile"><label for="CODCallOfDuty-Mobile">COD - Call Of Duty - Mobile</label><br>
-            <input type="checkbox" id="DominoQq-Mobile"><label for="DominoQq-Mobile">Domino Qq - Mobile</label><br>
-            <input type="checkbox" id="DragonNest-Mobile"><label for="DragonNest-Mobile">Dragon Nest - Mobile</label><br>
-            <input type="checkbox" id="DreamLeagueSoccer-Mobile"><label for="DreamLeagueSoccer-Mobile">Dream League Soccer - Mobile</label><br>
-            <input type="checkbox" id="FreeFire-Mobile"><label for="FreeFire-Mobile">Free Fire - Mobile</label><br>
-            <input type="checkbox" id="LastEmpireWarZ-Mobile"><label for="LastEmpireWarZ-Mobile">Last Empire War Z - Mobile</label><br>
-            <input type="checkbox" id="LineLetsGetRich-Mobile"><label for="LineLetsGetRich-Mobile">Line Lets Get Rich - Mobile</label><br>
-            <input type="checkbox" id="MobileLegends-Mobile"><label for="MobileLegends-Mobile">Mobile Legends - Mobile</label><br>
-            <input type="checkbox" id="Mostly-Mobile"><label for="Mostly-Mobile">Mostly - Mobile</label><br>
-            <input type="checkbox" id="NarutoLittleNinja-Mobile"><label for="NarutoLittleNinja-Mobile">Naruto Little Ninja - Mobile</label><br>
-            <input type="checkbox" id="Netmarble-Mobile"><label for="Netmarble-Mobile">Netmarble - Mobile</label><br>
-            <input type="checkbox" id="PointBlank-Mobile"><label for="PointBlank-Mobile">Point Blank - Mobile </label><br>
-            <input type="checkbox" id="PUBG-Mobile"><label for="PUBG-Mobile">PUBG - Mobile</label><br>
-            <input type="checkbox" id="RpgToramOnline-Mobile"><label for="RpgToramOnline-Mobile">Rpg Toram Online - Mobile</label><br>
-            <input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">Rules Of Survival - Mobile</label><br>
-            <input type="checkbox" id="ShinobiHeroes-Mobile"><label for="ShinobiHeroes-Mobile">Shinobi Heroes - Mobile</label><br>
+         <label>Pilih Mangle Games:</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="cari game.."> <br>
+		 <div class="list-game">
+		 <table id="myTable" style="border:0"
+ 			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">MOBILE GAMES</label></span></td></tr>
+            <tr><td><input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label></td></tr>
+			<tr><td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="BooyaDominoQiuqiu-Mobile"><label for="BooyaDominoQiuqiu-Mobile">Booya Domino Qiuqiu - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="ClashOfClans-Mobile"><label for="ClashOfClans-Mobile">Clash Of Clans - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="ClashRoyale-Mobile"><label for="ClashRoyale-Mobile">Clash Royale - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="CODCallOfDuty-Mobile"><label for="CODCallOfDuty-Mobile">COD - Call Of Duty - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="DominoQq-Mobile"><label for="DominoQq-Mobile">Domino Qq - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="DragonNest-Mobile"><label for="DragonNest-Mobile">Dragon Nest - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="DreamLeagueSoccer-Mobile"><label for="DreamLeagueSoccer-Mobile">Dream League Soccer - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="FreeFire-Mobile"><label for="FreeFire-Mobile">Free Fire - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="LastEmpireWarZ-Mobile"><label for="LastEmpireWarZ-Mobile">Last Empire War Z - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="LineLetsGetRich-Mobile"><label for="LineLetsGetRich-Mobile">Line Lets Get Rich - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="MobileLegends-Mobile"><label for="MobileLegends-Mobile">Mobile Legends - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="Mostly-Mobile"><label for="Mostly-Mobile">Mostly - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="NarutoLittleNinja-Mobile"><label for="NarutoLittleNinja-Mobile">Naruto Little Ninja - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="Netmarble-Mobile"><label for="Netmarble-Mobile">Netmarble - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="PointBlank-Mobile"><label for="PointBlank-Mobile">Point Blank - Mobile </label></td></tr>
+            <tr><td><input type="checkbox" id="PUBG-Mobile"><label for="PUBG-Mobile">PUBG - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="RpgToramOnline-Mobile"><label for="RpgToramOnline-Mobile">Rpg Toram Online - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">Rules Of Survival - Mobile</label></td></tr>
+            <tr><td><input type="checkbox" id="ShinobiHeroes-Mobile"><label for="ShinobiHeroes-Mobile">Shinobi Heroes - Mobile</label></td></tr>
 		    
-			<label style="font-weight:bold;color:green;padding-left:5px">WEB GAMES</label></span><br>
-			<input type="checkbox" id="BallPool-WebGames"><label for="BallPool-WebGames">8 Ball Pool - WebGames</label><br>
-			<input type="checkbox" id="CastleVille-WebGames"><label for="CastleVille-WebGames">Castle Ville - WebGames</label><br>
-			<input type="checkbox" id="Headshot-WebGames"><label for="Headshot-WebGames">Headshot - WebGames</label><br>
-			<input type="checkbox" id="EmpireAllies-WebGames"><label for="EmpireAllies-WebGames">Empire Allies - WebGames</label><br>
-			<input type="checkbox" id="LeagueofAngels-WebGames"><label for="LeagueofAngels-WebGames">League of Angels 2 - WebGames</label><br>
-			<input type="checkbox" id="MegarealmRiseOfChaos-WebGames"><label for="MegarealmRiseOfChaos-WebGames">Megarealm RiseOfChaos-WebGames</label><br>
-			<input type="checkbox" id="PerjuanganSemut-WebGames"><label for="PerjuanganSemut-WebGames">Perjuangan Semut - WebGames</label><br>
-			<input type="checkbox" id="Roblox-WebGames"><label for="Roblox-WebGames">Roblox - WebGames</label><br>
-			<input type="checkbox" id="SwordofAngels-WebGames"><label for="SwordofAngels-WebGames">Sword of Angels - WebGames</label><br>
-			<input type="checkbox" id="TexasHoldEmPoker-WebGames"><label for="TexasHoldEmPoker-WebGames">Texas Hold EmPoker - WebGames</label><br>
-			<input type="checkbox" id="Warflare-WebGames"><label for="Warflare-WebGames">Warflare - WebGames</label><br>
-			<input type="checkbox" id="WildOnes-WebGames"><label for="WildOnes-WebGames">WildOnes - WebGames</label><br>
+			<tr><td><label style="font-weight:bold;color:green;padding-left:5px">WEB GAMES</label></span></td></tr>
+			<tr><td><input type="checkbox" id="BallPool-WebGames"><label for="BallPool-WebGames">8 Ball Pool - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CastleVille-WebGames"><label for="CastleVille-WebGames">Castle Ville - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Headshot-WebGames"><label for="Headshot-WebGames">Headshot - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="EmpireAllies-WebGames"><label for="EmpireAllies-WebGames">Empire Allies - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="LeagueofAngels-WebGames"><label for="LeagueofAngels-WebGames">League of Angels 2 - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="MegarealmRiseOfChaos-WebGames"><label for="MegarealmRiseOfChaos-WebGames">Megarealm RiseOfChaos-WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="PerjuanganSemut-WebGames"><label for="PerjuanganSemut-WebGames">Perjuangan Semut - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Roblox-WebGames"><label for="Roblox-WebGames">Roblox - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="SwordofAngels-WebGames"><label for="SwordofAngels-WebGames">Sword of Angels - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="TexasHoldEmPoker-WebGames"><label for="TexasHoldEmPoker-WebGames">Texas Hold EmPoker - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Warflare-WebGames"><label for="Warflare-WebGames">Warflare - WebGames</label></td></tr>
+			<tr><td><input type="checkbox" id="WildOnes-WebGames"><label for="WildOnes-WebGames">WildOnes - WebGames</label></td></tr>
 	       
-		    <label style="font-weight:bold;color:green;padding-left:5px">DEKSTOP / PC Games</label></span><br>
-			<input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PCGames</label><br>
-			<input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PCGames</label><br>
-			<input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">Ayodance - PCGames</label><br>
-			<input type="checkbox" id="OriginAPEXLegends-PC"><label for="OriginAPEXLegends-PC">APEX Legends - PCGames</label><br>
-			<input type="checkbox" id="BlackDesertOnline-PC"><label for="BlackDesertOnline-PC">Black Desert - PCGames</label><br>
-			<input type="checkbox" id="BlackDesertOnlinePS-PC"><label for="BlackDesertOnlinePS-PC">Black Desert - Playstaion</label><br>
-			<input type="checkbox" id="BlackDesertOnlineSteam-PC"><label for="BlackDesertOnlineSteam-PC">Black Desert Steam - PCGames</label><br>
-			<input type="checkbox" id="BlackDesertOnlineXbox-PC"><label for="BlackDesertOnlineXbox-PC">Black Desert - Xbox</label><br>
-			<input type="checkbox" id="Blackretribution-PC"><label for="Blackretribution-PC">Blackretribution - PCGames</label><br>
-			<input type="checkbox" id="BlizzardBattleNet-PC"><label for="BlizzardBattleNet-PC">Blizzard BattleNet - PCGames</label><br>
-			<input type="checkbox" id="BountyHound-PC"><label for="BountyHound-PC">Bounty Hound - PCGames</label><br>
-			<input type="checkbox" id="CabalExtremePrivate-PC"><label for="CabalExtremePrivate-PC">Cabal Extreme Private PCGames</label><br>
-			<input type="checkbox" id="CabalIndonesia-PC"><label for="CabalIndonesia-PC">Cabal Indonesia - PCGames</label><br>
-			<input type="checkbox" id="CallofDutyBO-PC"><label for="CallofDutyBO-PC">Call of Duty BO - PCGames</label><br>
-			<input type="checkbox" id="CallofDutyBOPS-PC"><label for="CallofDutyBOPS-PC">Call of Duty BO PS - PCGames</label><br>
-			<input type="checkbox" id="CallofDutyBOXBox-PC"><label for="CallofDutyBOXBox-PC">Call of Duty BO XBox - PCGames</label><br>
-			<input type="checkbox" id="CallofDutyMWPC-PC"><label for="CallofDutyMWPC-PC">Call of Duty MW PC - PCGames</label><br>
-			<input type="checkbox" id="CallofDutyMWPS-PC"><label for="CallofDutyMWPS-PC">Call of Duty MW PS - PCGames</label><br>
-			<input type="checkbox" id="CallofDutyMWXBox-PC"><label for="CallofDutyMWXBox-PC">Call of Duty MW XBox - PCGames</label><br>
-			<input type="checkbox" id="ClashofGod-PC"><label for="ClashofGod-PC">Clash of God - PCGames</label><br>
-			<input type="checkbox" id="CSGOPlaystation-PC"><label for="CSGOPlaystation-PC">CSGO Playstation - PCGames</label><br>
-			<input type="checkbox" id="CSGOSteam-PC"><label for="CSGOSteam-PC">CSGO Steam - PCGames</label><br>
-			<input type="checkbox" id="CSGOXbox-PC"><label for="CSGOXbox-PC">CSGO Xbox - PCGames</label><br>
-			<input type="checkbox" id="CrossFireindonesia-PC"><label for="CrossFireindonesia-PC">Cross Fire indonesia - PCGames</label><br>
-			<input type="checkbox" id="DiabloIII-PC"><label for="DiabloIII-PC">Diablo III - PCGames</label><br>
-			<input type="checkbox" id="DiabloII-PC"><label for="DiabloII-PC">Diablo II - PCGames</label><br>
-			<input type="checkbox" id="Diablo-PC"><label for="Diablo-PC">Diablo - PCGames</label><br>
-			<input type="checkbox" id="Dota2Steam-PC"><label for="Dota2Steam-PC">Dota 2 Steam - PCGames</label><br>
-			<input type="checkbox" id="DragonNest-PC"><label for="DragonNest-PC">Dragon Nest - PCGames</label><br>
-			<input type="checkbox" id="Dragona-PC"><label for="Dragona-PC">Dragona - PCGames</label><br>
-			<input type="checkbox" id="FifaOnline3-PC"><label for="FifaOnline3-PC">Fifa Online 3 - PCGames</label><br>
-			<input type="checkbox" id="FORTNITEEPICGAMES-PC"><label for="FORTNITEEPICGAMES-PC">Fortnite Epic - PCGames</label><br>
-			<input type="checkbox" id="LeagueofLegend-PC"><label for="LeagueofLegend-PC">League of Legend - PCGames</label><br>
-			<input type="checkbox" id="GrandChase-PC"><label for="GrandChase-PC">Grand Chase - PCGames</label><br>
-			<input type="checkbox" id="Hearthstone-PC"><label for="Hearthstone-PC">Hearthstone - PCGames</label><br>
-			<input type="checkbox" id="HeroesoftheStorm-PC"><label for="HeroesoftheStorm-PC">Heroes of the Storm - PCGames</label><br>
-			<input type="checkbox" id="HONHeroesofNewerth-PC"><label for="HONHeroesofNewerth-PC">Heroes of Newerth - PCGames</label><br>
-			<input type="checkbox" id="HeroesofAtarsia-PC"><label for="HeroesofAtarsia-PC">Heroes of Atarsia - PCGames</label><br>
-			<input type="checkbox" id="IdolStreet-PC"><label for="IdolStreet-PC">Idol Street - PCGames</label><br>
-			<input type="checkbox" id="Left4Dead2Steam-PC"><label for="Left4Dead2Steam-PC">Left4Dead 2 Steam - PCGames</label><br>
-			<input type="checkbox" id="Lineage2-PC"><label for="Lineage2-PC">Lineage 2 - PCGames</label><br>
-			<input type="checkbox" id="LostSaga-PC"><label for="LostSaga-PC">Lost Saga - PCGames</label><br>
-			<input type="checkbox" id="Luneofeden-PC"><label for="Luneofeden-PC">Lune of eden - PCGames</label><br>
-			<input type="checkbox" id="Mercenaryops-PC"><label for="Mercenaryops-PC">Mercenary ops - PCGames</label><br>
-			<input type="checkbox" id="Mircovolt-PC"><label for="Mircovolt-PC">Mircovolt - PCGames</label><br>
-			<input type="checkbox" id="ModoMarble-PC"><label for="ModoMarble-PC">Modo Marble - PCGames</label><br>
-			<input type="checkbox" id="Overwatch-PC"><label for="Overwatch-PC">Overwatch - PCGames</label><br>
-			<input type="checkbox" id="PaladinsHiRez-PC"><label for="PaladinsHiRez-PC">Paladins Hi-Rez - PCGames</label><br>
-			<input type="checkbox" id="PointBlank-PC"><label for="PointBlank-PC">Point Blank - PCGames</label><br>
-			<input type="checkbox" id="PUBG-PC"><label for="PUBG-PC">PUBG - PCGames</label><br>
-			<input type="checkbox" id="Ragnarok2-PC"><label for="Ragnarok2-PC">Ragnarok 2 - PCGames</label><br>
-			<input type="checkbox" id="RFRisingForce-PC"><label for="RFRisingForce-PC">RF Rising Force - PCGames</label><br>
-			<input type="checkbox" id="ROERingofElysium-PC"><label for="ROERingofElysium-PC">ROE RingofElysium - PCGames</label><br>
-			<input type="checkbox" id="ROSRulesOfSurvival-PC"><label for="ROSRulesOfSurvival-PC">ROS RulesOfSurvival - PCGames</label><br>
-			<input type="checkbox" id="SealOnline-PC"><label for="SealOnline-PC">Seal Online - PCGames</label><br>
-			<input type="checkbox" id="SpecialForce-PC"><label for="SpecialForce-PC">Special Force - PCGames</label><br>
-			<input type="checkbox" id="StarCraftII-PC"><label for="StarCraftII-PC">StarCraft II - PCGames</label><br>
-			<input type="checkbox" id="StarCraft-PC"><label for="StarCraft-PC">StarCraft - PC Games</label><br>
-			<input type="checkbox" id="WarcraftIIBattleNet-PC"><label for="WarcraftIIBattleNet-PC">Warcraft II - PCGames</label><br>
-			<input type="checkbox" id="WarcraftIII-PC"><label for="WarcraftIII-PC">Warcraft III - PCGames</label><br>
-			<input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PCGames</label><br>
-			<input type="checkbox" id="WorldofTanks-PC"><label for="WorldofTanks-PC">World of Tanks - PCGames</label><br>
-			<input type="checkbox" id="WorldofWarcraft-PC"><label for="WorldofWarcraft-PC">World of Warcraft - PCGames</label><br>
-			<input type="checkbox" id="XshotIndonesia-PC"><label for="XshotIndonesia-PC">X-shot Indonesia - PCGames</label><br>
+		    <tr><td><label style="font-weight:bold;color:green;padding-left:5px">DEKSTOP / PC Games</label></span></td></tr>
+			<tr><td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">Ayodance - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="OriginAPEXLegends-PC"><label for="OriginAPEXLegends-PC">APEX Legends - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="BlackDesertOnline-PC"><label for="BlackDesertOnline-PC">Black Desert - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="BlackDesertOnlinePS-PC"><label for="BlackDesertOnlinePS-PC">Black Desert - Playstaion</label></td></tr>
+			<tr><td><input type="checkbox" id="BlackDesertOnlineSteam-PC"><label for="BlackDesertOnlineSteam-PC">Black Desert Steam - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="BlackDesertOnlineXbox-PC"><label for="BlackDesertOnlineXbox-PC">Black Desert - Xbox</label></td></tr>
+			<tr><td><input type="checkbox" id="Blackretribution-PC"><label for="Blackretribution-PC">Blackretribution - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="BlizzardBattleNet-PC"><label for="BlizzardBattleNet-PC">Blizzard BattleNet - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="BountyHound-PC"><label for="BountyHound-PC">Bounty Hound - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CabalExtremePrivate-PC"><label for="CabalExtremePrivate-PC">Cabal Extreme Private PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CabalIndonesia-PC"><label for="CabalIndonesia-PC">Cabal Indonesia - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyBO-PC"><label for="CallofDutyBO-PC">Call of Duty BO - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyBOPS-PC"><label for="CallofDutyBOPS-PC">Call of Duty BO PS - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyBOXBox-PC"><label for="CallofDutyBOXBox-PC">Call of Duty BO XBox - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyMWPC-PC"><label for="CallofDutyMWPC-PC">Call of Duty MW PC - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyMWPS-PC"><label for="CallofDutyMWPS-PC">Call of Duty MW PS - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CallofDutyMWXBox-PC"><label for="CallofDutyMWXBox-PC">Call of Duty MW XBox - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="ClashofGod-PC"><label for="ClashofGod-PC">Clash of God - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CSGOPlaystation-PC"><label for="CSGOPlaystation-PC">CSGO Playstation - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CSGOSteam-PC"><label for="CSGOSteam-PC">CSGO Steam - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CSGOXbox-PC"><label for="CSGOXbox-PC">CSGO Xbox - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="CrossFireindonesia-PC"><label for="CrossFireindonesia-PC">Cross Fire indonesia - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="DiabloIII-PC"><label for="DiabloIII-PC">Diablo III - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="DiabloII-PC"><label for="DiabloII-PC">Diablo II - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Diablo-PC"><label for="Diablo-PC">Diablo - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Dota2Steam-PC"><label for="Dota2Steam-PC">Dota 2 Steam - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="DragonNest-PC"><label for="DragonNest-PC">Dragon Nest - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Dragona-PC"><label for="Dragona-PC">Dragona - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="FifaOnline3-PC"><label for="FifaOnline3-PC">Fifa Online 3 - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="FORTNITEEPICGAMES-PC"><label for="FORTNITEEPICGAMES-PC">Fortnite Epic - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="LeagueofLegend-PC"><label for="LeagueofLegend-PC">League of Legend - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="GrandChase-PC"><label for="GrandChase-PC">Grand Chase - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Hearthstone-PC"><label for="Hearthstone-PC">Hearthstone - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="HeroesoftheStorm-PC"><label for="HeroesoftheStorm-PC">Heroes of the Storm - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="HONHeroesofNewerth-PC"><label for="HONHeroesofNewerth-PC">Heroes of Newerth - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="HeroesofAtarsia-PC"><label for="HeroesofAtarsia-PC">Heroes of Atarsia - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="IdolStreet-PC"><label for="IdolStreet-PC">Idol Street - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Left4Dead2Steam-PC"><label for="Left4Dead2Steam-PC">Left4Dead 2 Steam - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Lineage2-PC"><label for="Lineage2-PC">Lineage 2 - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="LostSaga-PC"><label for="LostSaga-PC">Lost Saga - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Luneofeden-PC"><label for="Luneofeden-PC">Lune of eden - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Mercenaryops-PC"><label for="Mercenaryops-PC">Mercenary ops - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Mircovolt-PC"><label for="Mircovolt-PC">Mircovolt - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="ModoMarble-PC"><label for="ModoMarble-PC">Modo Marble - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Overwatch-PC"><label for="Overwatch-PC">Overwatch - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="PaladinsHiRez-PC"><label for="PaladinsHiRez-PC">Paladins Hi-Rez - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="PointBlank-PC"><label for="PointBlank-PC">Point Blank - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="PUBG-PC"><label for="PUBG-PC">PUBG - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Ragnarok2-PC"><label for="Ragnarok2-PC">Ragnarok 2 - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="RFRisingForce-PC"><label for="RFRisingForce-PC">RF Rising Force - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="ROERingofElysium-PC"><label for="ROERingofElysium-PC">ROE RingofElysium - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="ROSRulesOfSurvival-PC"><label for="ROSRulesOfSurvival-PC">ROS RulesOfSurvival - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="SealOnline-PC"><label for="SealOnline-PC">Seal Online - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="SpecialForce-PC"><label for="SpecialForce-PC">Special Force - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="StarCraftII-PC"><label for="StarCraftII-PC">StarCraft II - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="StarCraft-PC"><label for="StarCraft-PC">StarCraft - PC Games</label></td></tr>
+			<tr><td><input type="checkbox" id="WarcraftIIBattleNet-PC"><label for="WarcraftIIBattleNet-PC">Warcraft II - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="WarcraftIII-PC"><label for="WarcraftIII-PC">Warcraft III - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="WorldofTanks-PC"><label for="WorldofTanks-PC">World of Tanks - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="WorldofWarcraft-PC"><label for="WorldofWarcraft-PC">World of Warcraft - PCGames</label></td></tr>
+			<tr><td><input type="checkbox" id="XshotIndonesia-PC"><label for="XshotIndonesia-PC">X-shot Indonesia - PCGames</label></td></tr>
+	     </table>
          </div>
          <br>
-         <button style="font-size:15px;font-weight:bold" type="button" onclick="myFunction()">Jalankan</button>
+         <button type="button" onclick="myFunction()">GENERATE</button> 
          <br>
       </div>
       <div class="column-right" style="border-top:1px solid#ccc;border-bottom:1px solid#ccc;border-right:1px solid#ccc">
-         <span style="background-color:#f0f0f0; border-bottom:1px solid #ccc; padding:5px; font-weight:bold">HASIL SCRIPT:</span><br><br>
+         <span style="background-color:#f0f0f0; border-bottom:1px solid #ccc; padding:5px; font-weight:bold">SCRIPT RESULT</span><br><br>
          <div class="list-mangle">
             <table id="showScript" style="background-color:#fff;border-bottom:0px solid#ccc; padding:3px">
                <tr>
@@ -380,10 +386,10 @@
             </table>
          </div>
          <br>
-         <button style="font-size:15px;font-weight:bold" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button>    <span style="color:333;background-color:#f0f0f0; border:1px solid #ccc; padding:5px; font-weight:bold;margin-left:20px">Cara Pakai: Copy paste script diatas langsung ke terminal dan pastikan posisi scrip pada mangle berada di posisi paling atas:</span><br>
-		 <br><br><br>
+         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">COPY SCRIPT</button>    <span style="color:333;background-color:#f0f0f0; border:1px solid #ccc; padding:5px; font-weight:bold;margin-left:20px">Cara Pakai: Copy paste script diatas langsung ke terminal dan pastikan posisi scrip pada mangle berada di posisi paling atas:</span>
+		 <br><br>
       </div>
-      </div>
+          
       <script>
         
 		var dt = new Date();
@@ -741,17 +747,7 @@
 		var XshotIndonesiaPC = document.getElementById("XshotIndonesia-PC");
 		toggleSub(XshotIndonesiaPC , 'XshotIndonesiaPC');
 	}
-        
-        function toggleSub(box, id) {
-             var el = document.getElementById(id);
-             
-             if ( box.checked ) {
-                 el.style.display = 'block';
-             } else {
-                 el.style.display = 'none';
-             }
-         }
-		 
+        	 
         function selectElementContents(el) {
                          var body = document.body, range, sel;
                          if (document.createRange && window.getSelection) {
@@ -772,6 +768,35 @@
                          }
                      document.execCommand("copy"); 
                      }
+					 
+		 function toggleSub(box, id) {
+             var el = document.getElementById(id);
+             
+             if ( box.checked ) {
+                 el.style.display = 'block';
+             } else {
+                 el.style.display = 'none';
+             }
+         }			 
+		 
+		 function myFunctionGames() {
+		  var input, filter, table, tr, td, i, txtValue;
+		  input = document.getElementById("myInput");
+		  filter = input.value.toUpperCase();
+		  table = document.getElementById("myTable");
+		  tr = table.getElementsByTagName("tr");
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[0];
+			if (td) {
+			  txtValue = td.textContent || td.innerText;
+			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			  } else {
+				tr[i].style.display = "none";
+			  }
+			}       
+		  }
+		}
       </script>
    </body>
 </html>
