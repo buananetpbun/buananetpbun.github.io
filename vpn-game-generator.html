@@ -104,13 +104,15 @@
          border: 1px solid rgba(0,0,0,0.25)
          }
          .list-mangle {
-         height: 560px;
+         height: 567px;
          background:#fff;
          overflow: scroll;
+		 overflow-x: hidden;
          width: 100%;
          padding: 0px;
-		 margin-top:16px;
-         border-bottom: 1px solid#ccc'
+		 margin-top:8px;
+         border: 1px solid #ccc;
+
          }
       </style>
    </head>
@@ -127,23 +129,23 @@
 <span style="font-weight:bold;font-size:15px; ">MIKROTIK - STATIC ROUTING VPN GAME SCRIPT GENERATOR</span>
 </pre>
 
-      <div class="column-left" style="background-color:#eee;border:1px solid#ccc; ">
+      <div class="column-left" style="background-color:#eee;border:1px solid #ccc; ">
          <label>Pilih koneksi VPN</label><br>
-         <select onclick="myFunction()" id="vpn-list">
+         <select id="vpn-list">
             <option value="pptp">PPTP</option>
             <option value="l2tp">L2TP</option>
          </select>
          <br>
          <label>Nama VPN di Interface <span style="color:red">*</span></label><br>
-         <input onkeyup="myFunction()"  type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME"><br>
+         <input type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME"><br>
          <label>IP Adrress VPN <span style="color:red">*</span></label><br>
-         <input  onkeyup="myFunction()" type="text" id="vpn-ip" placeholder="contoh:137.129.63.112"/><br>
+         <input type="text" id="vpn-ip" placeholder="contoh:137.129.63.112"/><br>
          <label>Username VPN <span style="color:red">*</span></label><br>
-         <input onkeyup="myFunction()" type="text" id="vpn-username" placeholder="username"/><br>
+         <input type="text" id="vpn-username" placeholder="username"/><br>
          <label>Password VPN <span style="color:red">*</span></label><br>
-         <input onkeyup="myFunction()" type="text" id="vpn-password" placeholder="password"/><br><br>
+         <input type="text" id="vpn-password" placeholder="password"/><br><br>
          <input type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check">IP Gateway ISP Game (tidak wajib)</label>
-         <input onkeyup="myFunction()" disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
+         <input disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
          <label>Pilih Mangle Games:</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Cari Game.."> 
 		 <div class="list-game">
 		 <table id="myTable" style="border:0"
@@ -257,7 +259,7 @@
          <br>
       </div>
       <div class="column-right" style="border-top:1px solid#ccc;border-bottom:1px solid#ccc;border-right:1px solid#ccc">
-         <span style="background-color:#eee; border-bottom:1px solid #ccc; padding:4px; font-weight:normal">HASIL SCRIPT VPN GAME GENERATOR</span><br>
+         <span style="background-color:#fff; padding-top:5px; ">Hasil Script Vpn Game Generator</span><br>
          <div class="list-mangle">
             <table id="showScript" style="background-color:#fff;border-bottom:0px solid #ccc; padding:3px">
                <tr>
