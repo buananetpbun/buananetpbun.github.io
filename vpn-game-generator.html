@@ -1,18 +1,64 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Static Routing Vpn Game Script Generator - BuanaNET Secure!</title>
-      <meta content='Vpn Game Script Generator For Mikrotik Routeros' name='description'/>
-      <meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
-      <meta content='index, follow, noodp' name='robots'/>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-	  *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-	  body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-         body { font-family: Courier, Helvetica, Arial; margin:20px;}
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Static Routing Vpn Game Script Generator - BuanaNET Secure!</title>
+<meta content='Vpn Game Script Generator For Mikrotik Routeros' name='description'/>
+<meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<style>
+        body { font-family: Courier, Helvetica, Arial; margin:20px;}
          * {
          box-sizing: border-box;
          }
+		#wrap{
+		width:1200px;
+		margin:0 auto;
+		}
+		.header{
+		height:150px; 
+		width:auto;
+		margin-bottom:1px;
+		}
+		.main-wrap{
+		background-color:green;
+		}     
+		.content{
+		float:right;
+		width:75%;
+		font-size:12px;
+		padding: 10px;
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		border-right:1px solid #ccc;
+		background:#eee;
+		}
+		.sidebar{
+		overflow:hidden;
+		float:left;
+		width:25%;
+		font-size:12px;
+		padding: 10px;
+		background-color:#eee;
+		border:1px solid #ccc; 
+		}
+		.footer{
+		clear:both;
+		width:auto;
+		}
+		@media screen and (max-width: 1024px){
+		#wrap{
+		width:90%;
+		}
+		}
+		@media screen and (max-width:768px){
+		.sidebar, .content{
+		float:none;
+		display:block;
+		width:auto;
+		}
+		}
 		h1 {
 		color:#555;
 		font-size:20px;
@@ -41,28 +87,6 @@
 		 font-size:13px;
 		 font-weight:bold;
          }
-         .column-left {
-         font-size:12px;
-         float: left;
-         width: 290px;
-         padding: 10px;
-         height: 665px;
-		 position:absolute;
-		 background-color:#eee;
-		 border:1px solid #ccc; 
-         }
-         .column-right {
-         font-size:12px;
-         float: left;
-         width: 1000px;
-         padding: 10px;
-         height: 665px;
-		 margin-left:290px;
-		 border-top:1px solid #ccc;
-		 border-bottom:1px solid #ccc;
-		 border-right:1px solid #ccc;
-		 background:#eee;
-         }
          .row:after {
          content: "";
          display: table;
@@ -76,7 +100,7 @@
          resize: vertical;
          }
          label {
-         padding: 4px 4px 4px 0;
+         padding: 5px 5px 5px 0;
          display: inline-block;
          }
          input[type=submit] {
@@ -107,13 +131,6 @@
          display: table;
          clear: both;
          }
-         /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-         @media screen and (max-width: 600px) {
-         .col-25, .col-75, input[type=submit] {
-         width: 100%;
-         margin-top: 0;
-         }
-         }
          .list-game {
          height: 200px;
          background:white;
@@ -122,13 +139,17 @@
          width: 100%;
 		 margin-top:2px;
          padding: 3px;
-         border: 1px solid rgba(0,0,0,0.25)
+         border: 1px solid rgba(0,0,0,0.25);
          }
+		 .list-game label {
+		 padding: 0;
+		 display: inline-block;
+         } 
          .list-mangle {
-         height: 567px;
+         height: 572px;
          background:#fff;
-         overflow: scroll;
-		 overflow-x: hidden;
+         overflow: auto;
+		 overflow-x: auto;
          width: 100%;
          padding: 4px;
 		 margin-top:8px;
@@ -137,9 +158,11 @@
 		 table, tr, td {
 		border: none;
 		}
-      </style>
-   </head>
+</style>
+</head>
 <body>
+<div id="wrap">
+<div class="header">
 <pre>
  ______  _     _        ______         ______  _______ _______ 
 (____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)©
@@ -150,9 +173,10 @@
 <span style="font-size:11px; color:green;font-weight:normal">© Copyright 2021 BuanaNET SECURE! By Agus Ramadhani - <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a></span>
 </pre>
 <h1>MIKROTIK - STATIC ROUTING VPN GAME SCRIPT GENERATOR</h1>
-      <div class="column-left">
+</div>
+    <div class="sidebar">
          <label>Pilih Koneksi VPN</label><br>
-         <select id="vpn-list">
+         <select onchange="myFunction()" id="vpn-list">
             <option value="pptp">PPTP</option>
             <option value="l2tp">L2TP</option>
          </select>
@@ -164,9 +188,11 @@
          <label>Username VPN</label><br>
          <input type="text" id="vpn-username" placeholder="username"/><br>
          <label>Password VPN</label><br>
-         <input type="text" id="vpn-password" placeholder="password"/><br><br>
-         <input type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check">IP Gateway ISP Jalur Game</label>
-         <input disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br><br>
+         <input onchange="myFunction()" type="text" id="vpn-password" placeholder="password"/>
+         <div style="margin-top:10px;margin-bottom:10px">
+		 <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Jalur Game</label>
+         <input onchange="myFunction()" disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1"  ><br>
+		 </div>
          <label>Pilih Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Cari Game.."> 
 		 <div class="list-game">
 		 <table id="myTable">
@@ -279,20 +305,20 @@
          <br>
          <button type="button" onclick="myFunction()">Buat Script</button> <button type="button" onclick="location.reload()">Hapus Script</button> 
          <br>
-      </div>
-      <div class="column-right">
-         <span style="margin-left:2px">Hasil Script Generator</span>
+    </div>
+    <div class="content"> 
+        <span style="margin-left:2px">Hasil Script Generator</span>
          <div class="list-mangle">
-            <table id="showScript" style="padding:4px">
+            <table id="showScript" style="padding:5px;">
                <tr>
                   <td>
                      <span style="color:green;">
-                     ###############################################<br>
+                     ################################################<br>
                      # Vpn Game Script Generator By Buananet Secure!<br>
                      # Date/Time: <span id="tanggalwaktu"></span><br>
                      # https://fb.me/buananet.pbun<br>
                      # Type VPN -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
-                     ###############################################<br><br>
+                     ################################################<br><br>
                      </span>
                      <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
                      add connect-to="<span id="vpn-ip-text">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1">VPN-GAME</span>" user="<span id="vpn-username-text">******</span>" password="<span id="vpn-password-text">******</span>" comment="<span id="vpn-name-text4">VPN-GAME</span>"<br>
@@ -411,13 +437,14 @@
 			</table>
          </div>
          <br>
-         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Cara Pakai: </b><span style="color:green;"><b>Copy-Paste Script ke Terminal, pastikan posisi Script ini dalam Mangle geser ke paling atas :)</b></span></span>
-      </div>      
-      <script>
-        
+         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script ke Terminal, pastikan posisi Script ini dalam Mangle geser ke paling atas :)</b></span>
+    </div>
+   <div class="footer">
+   </div>
+ </div>
+     <script>  
 		var dt = new Date();
         document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
-        
 		document.getElementById('ip-gateway-check').onchange = function() {
         document.getElementById('ip-gateway-input').disabled = !this.checked;
         var myscript2 = document.getElementById("ip-gateway-check");
@@ -428,7 +455,6 @@
                 myscript3.style.display = 'none';
              }
          };
-		 
 	   function myFunction() {
          var vpnlist = document.getElementById("vpn-list").value;
          document.getElementById("vpn-list-text").innerHTML = vpnlist;
@@ -443,7 +469,13 @@
          document.getElementById("vpn-name-text6").innerHTML = vpnname;
          document.getElementById("vpn-name-text7").innerHTML = vpnname;
 		} else {
-             document.getElementById("vpn-name-text1").innerHTML = "<span style='color:red; font-weight:bold'>[Nama VPN kosong]<span>";
+		 document.getElementById("vpn-name-text1").innerHTML = "<span style='color:red; font-weight:bold'>[Nama VPN kosong]<span>";
+         document.getElementById("vpn-name-text2").innerHTML = "<span style='color:red; font-weight:bold'>[Nama VPN kosong]<span>";
+         document.getElementById("vpn-name-text3").innerHTML = "<span style='color:red; font-weight:bold'>[Nama VPN kosong]<span>";
+         document.getElementById("vpn-name-text4").innerHTML = "<span style='color:red; font-weight:bold'>[Nama VPN kosong]<span>";
+         document.getElementById("vpn-name-text5").innerHTML = "<span style='color:red; font-weight:bold'>[Nama VPN kosong]<span>";
+         document.getElementById("vpn-name-text6").innerHTML = "<span style='color:red; font-weight:bold'>[Nama VPN kosong]<span>";
+         document.getElementById("vpn-name-text7").innerHTML = "<span style='color:red; font-weight:bold'>[Nama VPN kosong]<span>";
 		}       
          var vpnip = document.getElementById("vpn-ip").value;
 		 if (vpnip != '' && vpnip != null){
@@ -822,5 +854,5 @@
 		  }
 		}
       </script>
-   </body>
+</body>
 </html>
