@@ -47,6 +47,7 @@
 		border:1px solid #ccc; 
 		}
 		.footer{
+		font-size:12px;
 		clear:both;
 		width:auto;
 		}
@@ -515,6 +516,15 @@
          <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script ke Terminal, Pastikan Script Games Pada Mangle Berada Paling Atas :)</b></span>
     </div>
    <div class="footer">
+<br>   
+<span style="color:#ff6600"><b># Script dbawah ini untuk menghapus semua setingan dari Generator ini:</b></span><br>
+/interface pptp-client remove [find comment="VPN-GAME"]<br>
+/interface l2tp-client remove [find comment="VPN-GAME"]<br>
+/ip route remove [find comment="VPN-GAME"]<br>
+/ip firewall nat remove [find comment="VPN-GAME"]<br>
+/ip firewall mangle remove [find new-routing-mark="vpn-routing-game"]<br>
+/ip firewall raw remove [find address-list="List-IP-Games"]<br>
+/ip firewall address-list remove [find list="List-IP-Games"]<br>  
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- github vpn generator -->
 <ins class="adsbygoogle"
