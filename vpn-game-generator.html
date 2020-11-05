@@ -9,7 +9,9 @@
 <meta content='index, follow, noodp' name='robots'/>
 <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
-        body { font-family: Courier, Helvetica, Arial; margin:20px;}
+	  *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+	  body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+         body { font-family: Courier, Helvetica, Arial; margin:20px;}
          * {
          box-sizing: border-box;
          }
@@ -18,7 +20,7 @@
 		margin:0 auto;
 		}
 		.header{
-		height:150px; 
+		height:200px; 
 		width:auto;
 		margin-bottom:1px;
 		}
@@ -77,6 +79,47 @@
 		}
 		a:active {
 		  color: #08c;
+		}
+		.menu {
+		margin-bottom:10px;
+		clear:both;
+		width:auto;
+		}
+		.menu1 {
+		width:300px;
+		margin-bottom:1px;
+	    font-weight:bold;
+		background-color:#4CAF50;
+		padding:6px;
+		color:white;
+		display: inline-block;
+		margin:0;
+		}
+		.menu1 a:link {
+		text-decoration:none;
+		color:white;
+		}
+		.menu1 a:visited{
+		text-decoration:none;
+		color:white;
+		}
+		.menu2 {
+		width:300px;
+		margin-bottom:1px;
+	    font-weight:bold;
+		background-color:#ff6600;
+		padding:6px;
+		color:white;
+		display: inline-block;
+		margin:0;
+		}
+		.menu2 a:link{
+		text-decoration:none;
+		color:white;
+		}
+		.menu2 a:visited{
+		text-decoration:none;
+		color:white;
 		}
 		 button {
          color: #fff;
@@ -184,7 +227,20 @@
 |______/ \______|______|_|   |_|______|_|   |_|_______)\______)
 <span style="font-size:11px; color:green;font-weight:normal">© Copyright 2021 BuanaNET SECURE! By Agus Ramadhani - <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a></span>
 </pre>
-<h1>MIKROTIK - STATIC ROUTING VPN GAME SCRIPT GENERATOR</h1>
+<br>
+<div class="menu">
+<div class="menu1">
+<center>
+<a href='https://buananetpbun.github.io/vpn-game-generator.html'>METODE ROUTING PORT GAME</a>
+</center>
+</div>
+<div class="menu2">
+<center>
+<a href='https://buananetpbun.github.io/vpn-game-generator2.html'>METODE ROUTING IP GAME</a>
+</center>
+</div>
+</div>
+<h1>STATIC ROUTING VPN GAME SCRIPT GENERATOR <span style="color:#4CAF50">{METODE ROUTING PORT GAME}</span></h1>
 </div>
     <div class="sidebar">
          <label>Pilih Koneksi VPN</label><br>
@@ -466,6 +522,7 @@
      <script>  
 		var dt = new Date();
         document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+		
 		document.getElementById('ip-gateway-check').onchange = function() {
         document.getElementById('ip-gateway-input').disabled = !this.checked;
         var myscript2 = document.getElementById("ip-gateway-check");
