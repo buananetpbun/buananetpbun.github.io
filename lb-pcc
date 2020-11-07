@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Static Routing Vpn Game Script Generator - BuanaNET Secure!</title>
+<meta content='Vpn Game Script Generator For Mikrotik Routeros' name='description'/>
+<meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+<style>
+/* --------------------------------------------
+################################################
+# Vpn Game Script Generator By Buananet Secure!
+# Date/Time : 11/8/2020, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNET
+# Version   : v1.0 Beta
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+################################################
+----------------------------------------------- */  
+		*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+		body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+    body { font-family: Courier, Helvetica, Arial; margin:20px;}
+    * {
+    box-sizing: border-box;
+    }
+		#wrap{
+		width:1200px;
+		margin:0 auto;
+		}
+		.header{
+		height:145px; 
+		width:auto;
+		margin-bottom:1px;
+		}
+		.main-wrap{
+		background-color:#a8328b;
+		}     
+		.content{
+		float:right;
+		width:75%;
+		font-size:12px;
+		padding: 10px;
+		border-top:1px solid #bbb;
+		border-bottom:1px solid #bbb;
+		border-right:1px solid #bbb;
+		background:#ddd;
+		}
+		.sidebar{
+		overflow:hidden;
+		float:left;
+		width:25%;
+		font-size:12px;
+		padding: 10px;
+		background-color:#ddd;
+		border:1px solid #bbb; 
+		}
+		.footer{
+		font-size:12px;
+		clear:both;
+		width:auto;
+		}
+		@media screen and (max-width: 1024px){
+		#wrap{
+		width:90%;
+		}
+		}
+		@media screen and (max-width:768px){
+		.sidebar, .content{
+		float:none;
+		display:block;
+		width:auto;
+		}
+		}
+		h1 {
+		color:#555;
+		font-size:20px;
+		margin-bottom:10px;
+		margin-top:10px;
+		}
+		a:link {
+		  color: #08c;
+		}
+		a:visited {
+		  color: #08c;
+		}
+		a:hover {
+		  color: #08c;
+		}
+		a:active {
+		  color: #08c;
+		}
+		.menu {
+		clear:both;
+		width:auto;
+		padding-bottom:13px;
+		}
+		.menu1 {
+		width:360px;
+		margin-bottom:1px;
+	    font-weight:bold;
+		background-color:#4CAF50;
+		padding:6px;
+		color:white;
+		display: inline-block;
+		margin:0;
+		}
+		.menu1 a:link {
+		text-decoration:none;
+		color:white;
+		}
+		.menu1 a:visited{
+		text-decoration:none;
+		color:white;
+		}
+		.menu2 {
+		width:300px;
+		margin-bottom:1px;
+	    font-weight:bold;
+		background-color:#bbb;
+		padding:6px;
+		color:white;
+		display: inline-block;
+		margin:0;
+		}
+		.menu2 a:link{
+		text-decoration:none;
+		color:white;
+		}
+		.menu2 a:visited{
+		text-decoration:none;
+		color:white;
+		}
+		 button {
+         color: #fff;
+         background-color: #a8328b;
+         border-color: #a8328b;
+         border:none;
+         padding:8px;
+		 width:135px;
+		 font-size:13px;
+		 font-weight:bold;
+         }
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }  
+         input[type=text], select, textarea {
+         width: 100%;
+         padding: 5px;
+         border: 1px solid #bbb;
+         border-radius: 1px;
+         resize: vertical;
+		 margin-bottom:5px
+         }
+         label {
+         padding: 5px 5px 5px 0;
+         display: inline-block;
+         }
+         input[type=submit] {
+         background-color: #a8328b;
+         color: white;
+         padding: 12px 20px;
+         border: none;
+         border-radius: 1px;
+         cursor: pointer;
+         float: right;
+         }
+         input[type=submit]:hover {
+         background-color: #45a049;
+         }
+         .col-25 {
+         float: left;
+         width: 25%;
+         margin-top: 6px;
+         }
+         .col-75 {
+         float: left;
+         width: 75%;
+         margin-top: 6px;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         .list-game {
+         height: 200px;
+         background:white;
+         overflow: scroll;
+		 overflow-x: hidden;
+         width: 100%;
+		 margin-top:2px;
+         padding: 3px;
+         border: 1px solid rgba(0,0,0,0.25);
+         }
+		 .list-game label {
+		 padding: 0;
+		 display: inline-block;
+         } 
+         .list-mangle {
+         height: 530px;
+         background:#fff;
+         overflow: auto;
+		 overflow-x: auto;
+         width: 100%;
+         padding: 4px;
+		 margin-top:8px;
+		 border: 1px solid #ccc;
+         }
+		 table, tr, td {
+		border: none;
+		}
+</style>
+</head>
+<body>
+<div id="wrap">
+<div class="header">
+<div style="float:right">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github vpn generator -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9740800920365268"
+     data-ad-slot="6321952926"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<pre>
+ ______  _     _        ______         ______  _______ _______ 
+(____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)©
+ ____)  ) |   | | /  \ | |   | | /  \ | |   | |_____   _       
+|  __  (| |   | |/ /\ \| |   | |/ /\ \| |   | |  ___) | |      
+| |__)  ) |___| | |__| | |   | | |__| | |   | | |_____| |_____ 
+|______/ \______|______|_|   |_|______|_|   |_|_______)\______)
+<span style="font-size:11px; color:#a8328b;font-weight:normal">© Copyright 2021 BuanaNET SECURE! By Agus Ramadhani - <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a></span>
+</pre>
+<h1>LOAD BALANCING <span style="color:#a8328b">PCC</span> / <span style="color:orange">NTH</span> / <span style="color:green">ECMP</span> SCRIPT GENERATOR</h1>
+</div>
+    <div class="sidebar">
+         <label>Jumlah Line ISP</label><br>
+         <select id="wan-list" onclick="myFunctionOuput()">
+            <option value="line2">2 Line ISP</option>
+            <option value="line3">3 Line ISP</option>
+			<option value="line4">4 Line ISP</option>
+			<option value="line5">5 Line ISP</option>
+			<option value="line6">6 Line ISP</option>
+         </select>
+		 <label>Metode Load Balancing</label><br>
+         <select onchange="myFunctionInput()" id="vpn-list">
+            <option value="pcc">Metode LB PCC</option>
+            <option value="nth">Metode LB NTH</option>
+			<option value="ecmp">Metode LB ECMP</option>
+         </select>
+         <br>
+		 <label style="color:#a8328b; border:1px solid #a8328b; padding:7px;margin-top:5px;margin-bottom:5px"><b>Penting! Sesuaikan Nama Interface WAN dengan kondisi router masing-masing, contoh: ether1 atau E1-WAN atau ether1-myrep atau e1-indihome</b></label><br>
+         <div style="float:left; width:134px;">
+		 <label>Nama WAN ISP-1</label><br>
+         <input type="text" id="wan1-isp" placeholder="Ex: ether1">
+		 </div>
+		 <div style="float:left; width:134px;margin-left:10px">
+         <label>IP Gateway ISP-1</label><br>
+         <input type="text" id="wan1-isp-ip"  placeholder="Ex: 192.168.1.1" onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+		 </div>
+		 <br>
+		 <div style="float:left; width:134px;">
+		 <label>Nama WAN ISP-2</label><br>
+         <input type="text" id="wan2-isp" placeholder="Ex: ether2">
+		 </div>
+		 <div style="float:left; width:134px;margin-left:10px">
+         <label>IP Gateway ISP-2</label><br>
+         <input type="text" id="wan2-isp-ip" placeholder="Ex: 192.168.2.1" onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+		 </div>
+		 <br>
+		  <div style="float:left; width:134px;">
+		 <label>Nama WAN ISP-3</label><br>
+         <input type="text" id="wan3-isp" placeholder="Ex: ether3" disabled>
+		 </div>
+		 <div style="float:left; width:134px;margin-left:10px">
+         <label>IP Gateway ISP-3</label><br>
+         <input type="text" id="wan3-isp-ip" placeholder="Ex: 192.168.3.1" disabled onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+		 </div>
+		 <br>
+		  <div style="float:left; width:134px;">
+		 <label>Nama WAN ISP-4</label><br>
+         <input type="text" id="wan4-isp" placeholder="Ex: ether4" disabled>
+		 </div>
+		 <div style="float:left; width:134px;margin-left:10px">
+         <label>IP Gateway ISP-4</label><br>
+         <input type="text" id="wan4-isp-ip" placeholder="Ex: 192.168.4.1" disabled onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+		 </div>
+		 <br>
+		 <div style="float:left; width:134px;">
+		 <label>Nama WAN ISP-5</label><br>
+         <input type="text" id="wan5-isp" placeholder="Ex: ether5" disabled >
+		 </div>
+		 <div style="float:left; width:134px;margin-left:10px">
+         <label>IP Gateway ISP-5</label><br>
+         <input type="text" id="wan5-isp-ip" placeholder="Ex: 192.168.5.1" disabled onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+		 </div>
+
+         <br>
+		 <div style="float:left; width:134px;">
+		 <label>Nama WAN ISP-6</label><br>
+         <input type="text" id="wan6-isp" placeholder="Ex: ether6" disabled>
+		 </div>
+		 <div style="float:left; width:134px;margin-left:10px;margin-bottom:10px">
+         <label>IP Gateway ISP-6</label><br>
+         <input type="text" id="wan6-isp-ip" placeholder="Ex: 192.168.6.1" disabled onchange="ValidateIPaddressOnChange(this, 'ipaddress')" >
+		 </div>
+         <button type="button" onclick="myFunctionInput()">Generate Script</button> <button type="button" onclick="location.reload()">Hapus Script</button> 
+         <br>
+    </div>
+    <div class="content"> 
+        <span style="margin-left:2px">Hasil Script Generator</span>
+         <div class="list-mangle">
+            <table id="showScript" style="padding:5px; white-space: nowrap;">
+               <tr>
+                  <td>
+                     <span style="color:#a8328b;">
+                     ################################################<br>
+                     # Vpn Game Script Generator By Buananet Secure!<br>
+                     # Date/Time: <span id="tanggalwaktu"></span><br>
+                     # https://fb.me/buananet.pbun<br>
+                     # Load Balancing Metode -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PCC</span><br>
+                     ################################################<br><br>
+                     </span>
+					 <b>/ip firewall address-list</b><br>
+					 add address=192.168.0.0/16 list=LOCAL-IP comment="LB By BNT"<br>
+					 add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT" <br>
+					 add address=10.0.0.0/8 list=LOCAL-IP comment="LB By BNT"<br>
+					 
+					<b>/ip firewall nat</b><br>
+					<span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan3-nat" style="display:none">add chain=srcnat out-interface="<span id="wan3-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+
+					<b>/ip route</b><br>
+					<span id="wan1-route">add check-gateway=ping  gateway="<span id="wan1-route-text"></span>" routing-mark="<span id="wan1-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan2-route">add check-gateway=ping  gateway="<span id="wan2-route-text"></span>" routing-mark="<span id="wan2-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan3-route" style="display:none">add check-gateway=ping gateway="<span id="wan3-route-text"></span>" routing-mark="<span id="wan3-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan4-route" style="display:none">add check-gateway=ping gateway="<span id="wan4-route-text"></span>" routing-mark="<span id="wan4-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan5-route" style="display:none">add check-gateway=ping gateway="<span id="wan5-route-text"></span>" routing-mark="<span id="wan5-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan6-route" style="display:none">add check-gateway=ping gateway="<span id="wan6-route-text"></span>" routing-mark="<span id="wan6-route-text-r"></span>" comment="LB By BNT"<br></span>
+
+					<b>/ip firewall mangle</b><br>
+					<span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan4-mangle-input-text"></span>" new-connection-mark="<span id="wan4-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan5-mangle-input-text"></span>" new-connection-mark="<span id="wan5-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan6-mangle-input-text"></span>" new-connection-mark="<span id="wan6-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+
+					<span id="wan1-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan1-mangle-output-text"></span>" new-routing-mark="<span id="wan1-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan2-mangle-output-text"></span>" new-routing-mark="<span id="wan2-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan3-mangle-output-text"></span>" new-routing-mark="<span id="wan3-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan4-mangle-output-text"></span>" new-routing-mark="<span id="wan4-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan5-mangle-output-text"></span>" new-routing-mark="<span id="wan5-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan6-mangle-output-text"></span>" new-routing-mark="<span id="wan6-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+
+					<span id="wan1-mangle-pcc">add action=mark-connection chain=prerouting dst-address-list=!IP-LOCAL dst-address-type=!local new-connection-mark="<span id="wan1-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan1-mangle-pcc-both"><span style='color:#a8328b; font-weight:bold'>2/0</span></span> src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-pcc">add action=mark-connection chain=prerouting dst-address-list=!IP-LOCAL dst-address-type=!local  new-connection-mark="<span id="wan2-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan2-mangle-pcc-both"><span style='color:#a8328b; font-weight:bold'>2/1</span></span> src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!IP-LOCAL dst-address-type=!local new-connection-mark="<span id="wan3-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan3-mangle-pcc-both"></span> src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!IP-LOCAL dst-address-type=!local  new-connection-mark="<span id="wan4-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan4-mangle-pcc-both"></span> src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!IP-LOCAL  dst-address-type=!local  new-connection-mark="<span id="wan5-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan5-mangle-pcc-both"></span> src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!IP-LOCAL  dst-address-type=!local  new-connection-mark="<span id="wan6-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan6-mangle-pcc-both"></span> src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+								 
+					<span id="wan1-mangle-pre">add action=mark-routing chain=prerouting connection-mark="<span id="wan1-mangle-pre-text"></span>" dst-address-list=!IP-LOCAL new-routing-mark="<span id="wan1-mangle-pre-text-r"></span>" passthrough=yes src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-pre">add action=mark-routing chain=prerouting connection-mark="<span id="wan2-mangle-pre-text"></span>" dst-address-list=!IP-LOCAL new-routing-mark="<span id="wan2-mangle-pre-text-r"></span>" passthrough=yes src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan3-mangle-pre-text"></span>" dst-address-list=!IP-LOCAL new-routing-mark="<span id="wan3-mangle-pre-text-r"></span>" passthrough=yes src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan4-mangle-pre-text"></span>" dst-address-list=!IP-LOCAL new-routing-mark="<span id="wan4-mangle-pre-text-r"></span>" passthrough=yes src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan5-mangle-pre-text"></span>" dst-address-list=!IP-LOCAL new-routing-mark="<span id="wan5-mangle-pre-text-r"></span>" passthrough=yes src-address-list=IP-LOCAL comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan6-mangle-pre-text"></span>" dst-address-list=!IP-LOCAL new-routing-mark="<span id="wan6-mangle-pre-text-r"></span>" passthrough=yes src-address-list=IP-LOCAL comment="LB By BNT"<br></span> 
+						
+				</td>
+				</tr>			
+			</table>
+         </div>
+         <br>
+         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script ke Terminal, Pastikan Script Load balancing Pada Mangle Berada Paling Atas :)</b></span>
+    </div>
+   <div class="footer">
+   <br>
+<span style="color:#a8328b"><b># Script dbawah ini untuk menghapus semua setingan dari Generator ini:</b></span><br>
+/ip firewall nat remove [find comment="LB By BNT"]<br>
+/ip route remove [find comment="LB By BNT"]<br>
+/ip firewall mangle remove [find comment="LB By BNT"]<br>
+/ip firewall address-list remove [find list="LB By BNT"]<br> 
+   </div>
+ </div>
+     <script>  
+		var dt = new Date();
+        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+
+		function myFunctionInput(){
+			var wan1isp = document.getElementById("wan1-isp").value;
+			var wan1ispip = document.getElementById("wan1-isp-ip").value;
+			document.getElementById("wan1-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1isp + "<span>";
+			document.getElementById("wan1-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1ispip + "<span>";
+			document.getElementById("wan1-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-pcc-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-pre-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-pre-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan1isp + "<span>";
+
+			var wan2isp = document.getElementById("wan2-isp").value;
+			var wan2ispip = document.getElementById("wan2-isp-ip").value;
+			document.getElementById("wan2-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2isp + "<span>";
+			document.getElementById("wan2-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2ispip + "<span>";
+			document.getElementById("wan2-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-pcc-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-pre-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-pre-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan2isp + "<span>";
+
+			var wan3isp = document.getElementById("wan3-isp").value;
+			var wan3ispip = document.getElementById("wan3-isp-ip").value;
+			document.getElementById("wan3-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3isp + "<span>";
+			document.getElementById("wan3-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3ispip + "<span>";
+			document.getElementById("wan3-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-pcc-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-pre-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-pre-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan3isp + "<span>";
+
+			var wan4isp = document.getElementById("wan4-isp").value;
+			var wan4ispip = document.getElementById("wan4-isp-ip").value;
+			document.getElementById("wan4-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4isp + "<span>";
+			document.getElementById("wan4-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4ispip + "<span>";
+			document.getElementById("wan4-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-pcc-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-pre-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-pre-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan4isp + "<span>";
+
+			var wan5isp = document.getElementById("wan5-isp").value;
+			var wan5ispip = document.getElementById("wan5-isp-ip").value;
+			document.getElementById("wan5-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5isp + "<span>";
+			document.getElementById("wan5-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5ispip + "<span>";
+			document.getElementById("wan5-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-pcc-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-pre-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-pre-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan5isp + "<span>";
+
+			var wan6isp = document.getElementById("wan6-isp").value;
+			var wan6ispip = document.getElementById("wan6-isp-ip").value;
+			document.getElementById("wan6-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6isp + "<span>";
+			document.getElementById("wan6-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6ispip + "<span>";
+			document.getElementById("wan6-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-pcc-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-pre-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-pre-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan6isp + "<span>";
+		}
+
+		function myFunctionOuput() {
+			if (document.getElementById('wan-list').value == "line2"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>2/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>2/1<span>";;
+
+				document.getElementById("wan3-isp").disabled = true;
+				document.getElementById("wan3-isp-ip").disabled = true;
+				document.getElementById("wan3-nat").style.display = "none";
+				document.getElementById("wan3-route").style.display = "none";
+				document.getElementById("wan3-mangle-input").style.display = "none";
+				document.getElementById("wan3-mangle-output").style.display = "none";
+				document.getElementById("wan3-mangle-pcc").style.display = "none";
+				document.getElementById("wan3-mangle-pre").style.display = "none";
+				
+				document.getElementById("wan4-isp").disabled = true;
+				document.getElementById("wan4-isp-ip").disabled = true;
+				document.getElementById("wan4-nat").style.display = "none";
+				document.getElementById("wan4-route").style.display = "none";
+				document.getElementById("wan4-mangle-input").style.display = "none";
+				document.getElementById("wan4-mangle-output").style.display = "none";
+				document.getElementById("wan4-mangle-pcc").style.display = "none";
+				document.getElementById("wan4-mangle-pre").style.display = "none";
+				
+				document.getElementById("wan5-isp").disabled = true;
+				document.getElementById("wan5-isp-ip").disabled = true;
+				document.getElementById("wan5-nat").style.display = "none";
+				document.getElementById("wan5-route").style.display = "none";
+				document.getElementById("wan5-mangle-input").style.display = "none";
+				document.getElementById("wan5-mangle-output").style.display = "none";
+				document.getElementById("wan5-mangle-pcc").style.display = "none";
+				document.getElementById("wan5-mangle-pre").style.display = "none";
+				
+				document.getElementById("wan6-isp").disabled = true;
+				document.getElementById("wan6-isp-ip").disabled = true;
+				document.getElementById("wan6-nat").style.display = "none";
+				document.getElementById("wan6-route").style.display = "none";
+				document.getElementById("wan6-mangle-input").style.display = "none";
+				document.getElementById("wan6-mangle-output").style.display = "none";
+				document.getElementById("wan6-mangle-pcc").style.display = "none";
+				document.getElementById("wan6-mangle-pre").style.display = "none";
+			}
+			
+			if (document.getElementById('wan-list').value == "line3"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>3/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>3/1<span>";
+				document.getElementById("wan3-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>3/2<span>";
+
+				document.getElementById('wan3-isp').disabled = false;
+				document.getElementById("wan3-isp-ip").disabled = false;
+				document.getElementById("wan3-nat").style.display = "block";
+				document.getElementById("wan3-route").style.display = "block";
+				document.getElementById("wan3-mangle-input").style.display = "block";
+				document.getElementById("wan3-mangle-output").style.display = "block";
+				document.getElementById("wan3-mangle-pcc").style.display = "block";
+				document.getElementById("wan3-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan4-isp").disabled = true;
+				document.getElementById("wan4-isp-ip").disabled = true;
+				document.getElementById("wan4-nat").style.display = "none";
+				document.getElementById("wan4-route").style.display = "none";
+				document.getElementById("wan4-mangle-input").style.display = "none";
+				document.getElementById("wan4-mangle-output").style.display = "none";
+				document.getElementById("wan4-mangle-pcc").style.display = "none";
+				document.getElementById("wan4-mangle-pre").style.display = "none";
+				
+				document.getElementById("wan5-isp").disabled = true;
+				document.getElementById("wan5-isp-ip").disabled = true;
+				document.getElementById("wan5-nat").style.display = "none";
+				document.getElementById("wan5-route").style.display = "none";
+				document.getElementById("wan5-mangle-input").style.display = "none";
+				document.getElementById("wan5-mangle-output").style.display = "none";
+				document.getElementById("wan5-mangle-pcc").style.display = "none";
+				document.getElementById("wan5-mangle-pre").style.display = "none";
+				
+				document.getElementById("wan6-isp").disabled = true;
+				document.getElementById("wan6-isp-ip").disabled = true;
+				document.getElementById("wan6-nat").style.display = "none";
+				document.getElementById("wan6-route").style.display = "none";
+				document.getElementById("wan6-mangle-input").style.display = "none";
+				document.getElementById("wan6-mangle-output").style.display = "none";
+				document.getElementById("wan6-mangle-pcc").style.display = "none";
+				document.getElementById("wan6-mangle-pre").style.display = "none";
+			}
+			
+			if (document.getElementById('wan-list').value == "line4"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>4/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>4/1<span>";
+				document.getElementById("wan3-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>4/2<span>";
+				document.getElementById("wan4-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>4/3<span>";
+
+				document.getElementById("wan3-isp").disabled = false;
+				document.getElementById("wan3-isp-ip").disabled = false;
+				document.getElementById("wan3-nat").style.display = "block";
+				document.getElementById("wan3-route").style.display = "block";
+				document.getElementById("wan3-mangle-input").style.display = "block";
+				document.getElementById("wan3-mangle-output").style.display = "block";
+				document.getElementById("wan3-mangle-pcc").style.display = "block";
+				document.getElementById("wan3-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan4-isp").disabled = false;
+				document.getElementById("wan4-isp-ip").disabled = false;
+				document.getElementById("wan4-nat").style.display = "block";
+				document.getElementById("wan4-route").style.display = "block";
+				document.getElementById("wan4-mangle-input").style.display = "block";
+				document.getElementById("wan4-mangle-output").style.display = "block";
+				document.getElementById("wan4-mangle-pcc").style.display = "block";
+				document.getElementById("wan4-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan5-isp").disabled = true;
+				document.getElementById("wan5-isp-ip").disabled = true;
+				document.getElementById("wan5-nat").style.display = "none";
+				document.getElementById("wan5-route").style.display = "none";
+				document.getElementById("wan5-mangle-input").style.display = "none";
+				document.getElementById("wan5-mangle-output").style.display = "none";
+				document.getElementById("wan5-mangle-pcc").style.display = "none";
+				document.getElementById("wan5-mangle-pre").style.display = "none";
+				
+				document.getElementById("wan6-isp").disabled = true;
+				document.getElementById("wan6-isp-ip").disabled = true;
+				document.getElementById("wan6-nat").style.display = "none";
+				document.getElementById("wan6-route").style.display = "none";
+				document.getElementById("wan6-mangle-input").style.display = "none";
+				document.getElementById("wan6-mangle-output").style.display = "none";
+				document.getElementById("wan6-mangle-pcc").style.display = "none";
+				document.getElementById("wan6-mangle-pre").style.display = "none";
+			}
+			
+			if (document.getElementById('wan-list').value == "line5"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>5/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>5/1<span>";
+				document.getElementById("wan3-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>5/2<span>";
+				document.getElementById("wan4-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>5/3<span>";
+				document.getElementById("wan5-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>5/4<span>";
+
+				document.getElementById("wan3-isp").disabled = false;
+				document.getElementById("wan3-isp-ip").disabled = false;
+				document.getElementById("wan3-nat").style.display = "block";
+				document.getElementById("wan3-route").style.display = "block";
+				document.getElementById("wan3-mangle-input").style.display = "block";
+				document.getElementById("wan3-mangle-output").style.display = "block";
+				document.getElementById("wan3-mangle-pcc").style.display = "block";
+				document.getElementById("wan3-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan4-isp").disabled = false;
+				document.getElementById("wan4-isp-ip").disabled = false;
+				document.getElementById("wan4-isp-ip").disabled = false;
+				document.getElementById("wan4-nat").style.display = "block";
+				document.getElementById("wan4-route").style.display = "block";
+				document.getElementById("wan4-mangle-input").style.display = "block";
+				document.getElementById("wan4-mangle-output").style.display = "block";
+				document.getElementById("wan4-mangle-pcc").style.display = "block";
+				document.getElementById("wan4-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan5-isp").disabled = false;
+				document.getElementById("wan5-isp-ip").disabled = false;
+				document.getElementById("wan5-nat").style.display = "block";
+				document.getElementById("wan5-route").style.display = "block";
+				document.getElementById("wan5-mangle-input").style.display = "block";
+				document.getElementById("wan5-mangle-output").style.display = "block";
+				document.getElementById("wan5-mangle-pcc").style.display = "block";
+				document.getElementById("wan5-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan6-isp").disabled = true;
+				document.getElementById("wan6-isp-ip").disabled = true;
+				document.getElementById("wan6-nat").style.display = "none";
+				document.getElementById("wan6-route").style.display = "none";
+				document.getElementById("wan6-mangle-input").style.display = "none";
+				document.getElementById("wan6-mangle-output").style.display = "none";
+				document.getElementById("wan6-mangle-pcc").style.display = "none";
+				document.getElementById("wan6-mangle-pre").style.display = "none";
+			}
+
+			if (document.getElementById('wan-list').value == "line6"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>6/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>6/1<span>";
+				document.getElementById("wan3-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>6/2<span>";
+				document.getElementById("wan4-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>6/3<span>";
+				document.getElementById("wan5-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>6/4<span>";
+				document.getElementById("wan6-mangle-pcc-both").innerHTML = "<span style='color:#a8328b; font-weight:bold'>6/5<span>";
+
+				document.getElementById("wan3-isp").disabled = false;
+				document.getElementById("wan3-isp-ip").disabled = false;
+				document.getElementById("wan3-nat").style.display = "block";
+				document.getElementById("wan3-route").style.display = "block";
+				document.getElementById("wan3-mangle-input").style.display = "block";
+				document.getElementById("wan3-mangle-output").style.display = "block";
+				document.getElementById("wan3-mangle-pcc").style.display = "block";
+				document.getElementById("wan3-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan4-isp").disabled = false;
+				document.getElementById("wan4-isp-ip").disabled = false;
+				document.getElementById("wan4-nat").style.display = "block";
+				document.getElementById("wan4-route").style.display = "block";
+				document.getElementById("wan4-mangle-input").style.display = "block";
+				document.getElementById("wan4-mangle-output").style.display = "block";
+				document.getElementById("wan4-mangle-pcc").style.display = "block";
+				document.getElementById("wan4-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan5-isp").disabled = false;
+				document.getElementById("wan5-isp-ip").disabled = false;
+				document.getElementById("wan5-nat").style.display = "block";
+				document.getElementById("wan5-route").style.display = "block";
+				document.getElementById("wan5-mangle-input").style.display = "block";
+				document.getElementById("wan5-mangle-output").style.display = "block";
+				document.getElementById("wan5-mangle-pcc").style.display = "block";
+				document.getElementById("wan5-mangle-pre").style.display = "block";
+				
+				document.getElementById("wan6-isp").disabled = false;
+				document.getElementById("wan6-isp-ip").disabled = false;
+				document.getElementById("wan6-nat").style.display = "block";
+				document.getElementById("wan6-route").style.display = "block";
+				document.getElementById("wan6-mangle-input").style.display = "block";
+				document.getElementById("wan6-mangle-output").style.display = "block";
+				document.getElementById("wan6-mangle-pcc").style.display = "block";
+				document.getElementById("wan6-mangle-pre").style.display = "block";
+			}
+		}
+		 function selectElementContents(el) {
+            var body = document.body, range, sel;
+            if (document.createRange && window.getSelection) {
+                range = document.createRange();
+                sel = window.getSelection();
+                sel.removeAllRanges();
+                try {
+                     range.selectNodeContents(el);
+                     sel.addRange(range);
+                         } catch (e) {
+                                 range.selectNode(el);
+                                 sel.addRange(range);
+                         }
+                         } else if (body.createTextRange) {
+                             range = body.createTextRange();
+                             range.moveToElementText(el);
+                             range.select();
+                         }
+             document.execCommand("copy"); 
+        }
+		
+		function ValidateIPaddressOnChange(input, type) 
+		{
+			var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+
+			var strtype = "";
+
+			switch(type){
+				case "ipaddress": strtype = "IP Address"; break;
+				case "gateway": strtype = "gateway"; break;
+				case "dns": strtype = "DNS"; break;
+				case "subnet":  strtype = "subnet mask"; break;
+			}
+
+			if(!input.value.match(ipformat)) {
+				input.focus();
+				alert("Perhatian! Validasi IP Address Salah! Silahkan Cek Kembali");
+			}
+		}
+      </script>
+	</body>
+</html>
