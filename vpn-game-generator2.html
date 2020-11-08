@@ -238,40 +238,40 @@
 |______/ \______|______|_|   |_|______|_|   |_|_______)\______)
 <span style="font-size:11px; color:#ff6600;font-weight:normal">© Copyright 2021 BuanaNET SECURE! By Agus Ramadhani - <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a></span>
 </pre>
-<h1>STATIC ROUTING VPN GAME SCRIPT GENERATOR <span style="color:#ff6600">{METODE ROUTING IP-ADDRESS GAME}</span></h1>
+<h1>STATIC ROUTING VPN GAME SCRIPT GENERATOR <span style="color:#ff6600">{IP GAME ROUTING METHOD}</span></h1>
 </div>
 <div class="menu">
 <div class="menu2">
 <center>
-METODE ROUTING IP GAME
+IP GAME ROUTING METHOD
 </center>
 </div>
 <div class="menu1">
 <center>
-<a href='https://buananetpbun.github.io/vpn-game-generator.html'>RUBAH KE METODE ROUTING PORT GAME</a>
+<a href='https://buananetpbun.github.io/vpn-game-generator.html'>CHANGE TO PORT GAME ROUTING METHOD</a>
 </center>
 </div>
 </div>
     <div class="sidebar">
-         <label>Pilih Koneksi VPN</label><br>
+         <label>Select VPN Connection</label><br>
          <select onchange="myFunction()" id="vpn-list">
-            <option value="pptp">PPTP</option>
-            <option value="l2tp">L2TP</option>
+            <option value="pptp">PPTP - Point to Point Tunneling Protocol</option>
+            <option value="l2tp">L2TP - Layer Two Tunneling Protocol</option>
          </select>
          <br>
-         <label>Nama VPN di Interface</label><br>
+         <label>Create VPN Name on Interface</label><br>
          <input type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME"><br>
-         <label>IP Address VPN</label><br>
-         <input type="text" id="vpn-ip" placeholder="contoh:137.129.63.112" onchange="ValidateIPaddressOnChange(this, 'ipaddress')"><br>
-         <label>Username VPN</label><br>
+         <label>VPN IP Address</label><br>
+         <input type="text" id="vpn-ip" placeholder="example:137.129.63.112" onchange="ValidateIPaddressOnChange(this, 'ipaddress')"><br>
+         <label>VPN Username</label><br>
          <input type="text" id="vpn-username" placeholder="username"><br>
-         <label>Password VPN</label><br>
+         <label>VPN Password</label><br>
          <input type="text" id="vpn-password" placeholder="password">
          <div style="margin-top:10px;margin-bottom:10px">
-		 <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Jalur Game (optional)</label>
-         <input disabled type="text" id="ip-gateway-input" placeholder="contoh:192.168.2.1" onchange="ValidateIPaddressOnChange(this, 'ipaddress')"><br>
+		 <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Line Game (optional)</label>
+         <input disabled type="text" id="ip-gateway-input" placeholder="example:192.168.2.1" onchange="ValidateIPaddressOnChange(this, 'ipaddress')"><br>
 		 </div>
-         <label>Pilih Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Cari Game.."> 
+         <label>Select Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
 		 <div class="list-game">
 		 <table id="myTable">
 			<!-- MOBILE GAMES -->
@@ -381,11 +381,11 @@ METODE ROUTING IP GAME
 	     </table>
          </div>
          <br>
-         <button type="button" onclick="myFunction()">Buat Script</button> <button type="button" onclick="location.reload()">Hapus Script</button> 
+         <button type="button" onclick="myFunction()">Generate Script</button> <button type="button" onclick="location.reload()">Clear All Script</button> 
          <br>
     </div>
     <div class="content"> 
-        <span style="margin-left:2px">Hasil Script Generator</span>
+        <span style="margin-left:2px">Script Generator Result</span>
          <div class="list-mangle">
             <table id="showScript" style="padding:5px;">
                <tr>
@@ -521,7 +521,7 @@ METODE ROUTING IP GAME
 			</table>
          </div>
          <br>
-         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Salin Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script ke Terminal, Pastikan Script Games Pada Mangle Berada Paling Atas :)</b></span>
+         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Please Copy-Paste the Script into the Terminal, make sure your LB Script in the Mangle is at the Top!</b></span>
     </div>
    <div class="footer">
 <br>   
@@ -540,7 +540,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4474003&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
 </div>   
-<span style="color:#ff6600"><b># Script dbawah ini untuk menghapus semua setingan dari Generator ini:</b></span><br>
+<span style="color:#ff6600"><b># This Script for remover all Script from this Generator:</b></span><br>
 /interface pptp-client remove [find comment="VPN-GAME"]<br>
 /interface l2tp-client remove [find comment="VPN-GAME"]<br>
 /ip route remove [find comment="VPN-GAME"]<br>
