@@ -319,7 +319,7 @@
                      # LOAD BALANCING ECMP SCRIPT GENERATOR<br>
                      # Date/Time: <span id="tanggalwaktu"></span><br>
                      # https://fb.me/buananet.pbun<br>
-                     # Load Balancing <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">ECMP (Equal Cost Multi Path)</span><br>
+                     # Load Balancing Method <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">ECMP (Equal Cost Multi Path)</span><br>
                      ################################################<br><br>
                      </span>
 					<b>/ip firewall nat</b><br>
@@ -340,20 +340,20 @@
 					<span id="wan6-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan6-route-text"></span>" routing-mark="<span id="wan6-route-text-r"></span>" comment="LB By BNT"<br></span>
 
 					<b>/ip firewall mangle</b><br>
-					<span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan4-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan4-mangle-input-text"></span>" new-connection-mark="<span id="wan4-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan5-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan5-mangle-input-text"></span>" new-connection-mark="<span id="wan5-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan6-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan6-mangle-input-text"></span>" new-connection-mark="<span id="wan6-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan4-mangle-input-text"></span>" new-connection-mark="<span id="wan4-mangle-input-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan5-mangle-input-text"></span>" new-connection-mark="<span id="wan5-mangle-input-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan6-mangle-input-text"></span>" new-connection-mark="<span id="wan6-mangle-input-text-r"></span>" comment="LB By BNT"<br></span>
 
 
-					<span id="wan1-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan1-mangle-output-text"></span>" new-routing-mark="<span id="wan1-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan2-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan2-mangle-output-text"></span>" new-routing-mark="<span id="wan2-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan3-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan3-mangle-output-text"></span>" new-routing-mark="<span id="wan3-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan4-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan4-mangle-output-text"></span>" new-routing-mark="<span id="wan4-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan5-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan5-mangle-output-text"></span>" new-routing-mark="<span id="wan5-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-					<span id="wan6-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan6-mangle-output-text"></span>" new-routing-mark="<span id="wan6-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan1-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan1-mangle-output-text"></span>" new-routing-mark="<span id="wan1-mangle-output-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan2-mangle-output-text"></span>" new-routing-mark="<span id="wan2-mangle-output-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan3-mangle-output-text"></span>" new-routing-mark="<span id="wan3-mangle-output-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan4-mangle-output-text"></span>" new-routing-mark="<span id="wan4-mangle-output-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan5-mangle-output-text"></span>" new-routing-mark="<span id="wan5-mangle-output-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan6-mangle-output-text"></span>" new-routing-mark="<span id="wan6-mangle-output-text-r"></span>" comment="LB By BNT"<br></span>
 				</td>
 				</tr>			
 			</table>
@@ -376,69 +376,69 @@
 		function myFunctionInput(){
 			var wan1isp = document.getElementById("wan1-isp").value;
 			var wan1ispip = document.getElementById("wan1-isp-ip").value;
-			document.getElementById("wan1-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1isp + "<span>";
-			document.getElementById("wan1-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1ispip + "<span>";
-			document.getElementById("wan1-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan1isp + "<span>";
-			document.getElementById("wan1-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1isp + "<span>";
-			document.getElementById("wan1-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan1isp + "<span>";
-			document.getElementById("wan1-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan1isp + "<span>";
-			document.getElementById("wan1-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan1isp + "<span>";
-			document.getElementById("wan1-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1ispip + "<span>";
+			document.getElementById("wan1-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1isp + "</span>";
+			document.getElementById("wan1-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1ispip + "</span>";
+			document.getElementById("wan1-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan1isp + "</span>";
+			document.getElementById("wan1-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1isp + "</span>";
+			document.getElementById("wan1-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan1isp + "</span>";
+			document.getElementById("wan1-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan1isp + "</span>";
+			document.getElementById("wan1-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan1isp + "</span>";
+			document.getElementById("wan1-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan1ispip + "</span>";
 			
 			var wan2isp = document.getElementById("wan2-isp").value;
 			var wan2ispip = document.getElementById("wan2-isp-ip").value;
-			document.getElementById("wan2-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2isp + "<span>";
-			document.getElementById("wan2-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2ispip + "<span>";
-			document.getElementById("wan2-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan2isp + "<span>";
-			document.getElementById("wan2-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2isp + "<span>";
-			document.getElementById("wan2-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan2isp + "<span>";
-			document.getElementById("wan2-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan2isp + "<span>";
-			document.getElementById("wan2-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan2isp + "<span>";
-			document.getElementById("wan2-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2ispip + "<span>";
+			document.getElementById("wan2-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2isp + "</span>";
+			document.getElementById("wan2-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2ispip + "</span>";
+			document.getElementById("wan2-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan2isp + "</span>";
+			document.getElementById("wan2-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2isp + "</span>";
+			document.getElementById("wan2-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan2isp + "</span>";
+			document.getElementById("wan2-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan2isp + "</span>";
+			document.getElementById("wan2-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan2isp + "</span>";
+			document.getElementById("wan2-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan2ispip + "</span>";
 
 			var wan3isp = document.getElementById("wan3-isp").value;
 			var wan3ispip = document.getElementById("wan3-isp-ip").value;
-			document.getElementById("wan3-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3isp + "<span>";
-			document.getElementById("wan3-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3ispip + "<span>";
-			document.getElementById("wan3-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan3isp + "<span>";
-			document.getElementById("wan3-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3isp + "<span>";
-			document.getElementById("wan3-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan3isp + "<span>";
-			document.getElementById("wan3-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan3isp + "<span>";
-			document.getElementById("wan3-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan3isp + "<span>";
-			document.getElementById("wan3-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3ispip + "<span>";
+			document.getElementById("wan3-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3isp + "</span>";
+			document.getElementById("wan3-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3ispip + "</span>";
+			document.getElementById("wan3-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan3isp + "</span>";
+			document.getElementById("wan3-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3isp + "</span>";
+			document.getElementById("wan3-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan3isp + "</span>";
+			document.getElementById("wan3-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan3isp + "</span>";
+			document.getElementById("wan3-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan3isp + "</span>";
+			document.getElementById("wan3-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan3ispip + "</span>";
 			
 			var wan4isp = document.getElementById("wan4-isp").value;
 			var wan4ispip = document.getElementById("wan4-isp-ip").value;
-			document.getElementById("wan4-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4isp + "<span>";
-			document.getElementById("wan4-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4ispip + "<span>";
-			document.getElementById("wan4-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan4isp + "<span>";
-			document.getElementById("wan4-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4isp + "<span>";
-			document.getElementById("wan4-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan4isp + "<span>";
-			document.getElementById("wan4-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan4isp + "<span>";
-			document.getElementById("wan4-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan4isp + "<span>";
-			document.getElementById("wan4-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4ispip + "<span>";
+			document.getElementById("wan4-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4isp + "</span>";
+			document.getElementById("wan4-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4ispip + "</span>";
+			document.getElementById("wan4-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan4isp + "</span>";
+			document.getElementById("wan4-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4isp + "</span>";
+			document.getElementById("wan4-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan4isp + "</span>";
+			document.getElementById("wan4-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan4isp + "</span>";
+			document.getElementById("wan4-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan4isp + "</span>";
+			document.getElementById("wan4-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan4ispip + "</span>";
 
 			var wan5isp = document.getElementById("wan5-isp").value;
 			var wan5ispip = document.getElementById("wan5-isp-ip").value;
-			document.getElementById("wan5-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5isp + "<span>";
-			document.getElementById("wan5-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5ispip + "<span>";
-			document.getElementById("wan5-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan5isp + "<span>";
-			document.getElementById("wan5-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5isp + "<span>";
-			document.getElementById("wan5-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan5isp + "<span>";
-			document.getElementById("wan5-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan5isp + "<span>";
-			document.getElementById("wan5-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan5isp + "<span>";
-			document.getElementById("wan5-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5ispip + "<span>";	
+			document.getElementById("wan5-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5isp + "</span>";
+			document.getElementById("wan5-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5ispip + "</span>";
+			document.getElementById("wan5-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan5isp + "</span>";
+			document.getElementById("wan5-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5isp + "</span>";
+			document.getElementById("wan5-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan5isp + "</span>";
+			document.getElementById("wan5-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan5isp + "</span>";
+			document.getElementById("wan5-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan5isp + "</span>";
+			document.getElementById("wan5-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan5ispip + "</span>";	
 
 			var wan6isp = document.getElementById("wan6-isp").value;
 			var wan6ispip = document.getElementById("wan6-isp-ip").value;
-			document.getElementById("wan6-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6isp + "<span>";
-			document.getElementById("wan6-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6ispip + "<span>";
-			document.getElementById("wan6-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan6isp + "<span>";
-			document.getElementById("wan6-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6isp + "<span>";
-			document.getElementById("wan6-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan6isp + "<span>";
-			document.getElementById("wan6-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan6isp + "<span>";
-			document.getElementById("wan6-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan6isp + "<span>";
-			document.getElementById("wan6-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6ispip + "<span>";
+			document.getElementById("wan6-nat-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6isp + "</span>";
+			document.getElementById("wan6-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6ispip + "</span>";
+			document.getElementById("wan6-route-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan6isp + "</span>";
+			document.getElementById("wan6-mangle-input-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6isp + "</span>";
+			document.getElementById("wan6-mangle-input-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan6isp + "</span>";
+			document.getElementById("wan6-mangle-output-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>cm-" + wan6isp + "</span>";
+			document.getElementById("wan6-mangle-output-text-r").innerHTML = "<span style='color:#a8328b; font-weight:bold'>to-" + wan6isp + "</span>";
+			document.getElementById("wan6-nth-route-text").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + wan6ispip + "</span>";
 		}
 
 		function myFunctionOuput() {
@@ -451,7 +451,7 @@
 				document.getElementById("wan3-route").style.display = "none";
 				document.getElementById("wan3-mangle-input").style.display = "none";
 				document.getElementById("wan3-mangle-output").style.display = "none";
-					
+				
 				document.getElementById("wan4-isp").disabled = true;
 				document.getElementById("wan4-isp-ip").disabled = true;
 				document.getElementById("wan4-nat").style.display = "none";
@@ -472,7 +472,6 @@
 				document.getElementById("wan6-route").style.display = "none";
 				document.getElementById("wan6-mangle-input").style.display = "none";
 				document.getElementById("wan6-mangle-output").style.display = "none";
-
 			}
 			
 			if (document.getElementById('wan-list').value == "line3"){
@@ -483,7 +482,7 @@
 				document.getElementById("wan3-route").style.display = "block";
 				document.getElementById("wan3-mangle-input").style.display = "block";
 				document.getElementById("wan3-mangle-output").style.display = "block";
-		
+				
 				document.getElementById("wan4-isp").disabled = true;
 				document.getElementById("wan4-isp-ip").disabled = true;
 				document.getElementById("wan4-nat").style.display = "none";
@@ -561,7 +560,6 @@
 				document.getElementById("wan5-mangle-input").style.display = "block";
 				document.getElementById("wan5-mangle-output").style.display = "block";
 
-				
 				document.getElementById("wan6-isp").disabled = true;
 				document.getElementById("wan6-isp-ip").disabled = true;
 				document.getElementById("wan6-nat").style.display = "none";
@@ -579,7 +577,6 @@
 				document.getElementById("wan3-route").style.display = "block";
 				document.getElementById("wan3-mangle-input").style.display = "block";
 				document.getElementById("wan3-mangle-output").style.display = "block";
-
 				
 				document.getElementById("wan4-isp").disabled = false;
 				document.getElementById("wan4-isp-ip").disabled = false;
@@ -587,7 +584,6 @@
 				document.getElementById("wan4-route").style.display = "block";
 				document.getElementById("wan4-mangle-input").style.display = "block";
 				document.getElementById("wan4-mangle-output").style.display = "block";
-
 				
 				document.getElementById("wan5-isp").disabled = false;
 				document.getElementById("wan5-isp-ip").disabled = false;
@@ -595,7 +591,6 @@
 				document.getElementById("wan5-route").style.display = "block";
 				document.getElementById("wan5-mangle-input").style.display = "block";
 				document.getElementById("wan5-mangle-output").style.display = "block";
-
 				
 				document.getElementById("wan6-isp").disabled = false;
 				document.getElementById("wan6-isp-ip").disabled = false;
@@ -603,7 +598,6 @@
 				document.getElementById("wan6-route").style.display = "block";
 				document.getElementById("wan6-mangle-input").style.display = "block";
 				document.getElementById("wan6-mangle-output").style.display = "block";
-
 			}
 		}
 		 function selectElementContents(el) {
