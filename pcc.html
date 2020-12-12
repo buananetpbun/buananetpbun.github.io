@@ -591,11 +591,11 @@
 					<span id="wan6-route-failover" style="display:none">add check-gateway=ping distance=6 gateway="<span id="wan6-route-failover-text"></span>" comment="LB By BNT"<br></span>
 
 					<b>/ip firewall mangle</b><br>
-			  		add action=mark-packet chain=prerouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"
-					add action=mark-packet chain=postrouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"
-					add action=mark-packet chain=forward dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"
-					add action=mark-packet chain=input dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"
-					add action=mark-packet chain=output dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"
+			  		<span>add action=mark-packet chain=prerouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"<br></span>
+					<span>add action=mark-packet chain=postrouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"<br></span>
+					<span>add action=mark-packet chain=forward dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"<br></span>
+					<span>add action=mark-packet chain=input dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"<br></span>
+					<span>add action=mark-packet chain=output dst-address-list=LOCAL-IP src-address-list=LOCAL-IP new-packet-mark=local-traffic passthrough=no comment="LB By BNT"<br></span>
 					<span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
 					<span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
 					<span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
