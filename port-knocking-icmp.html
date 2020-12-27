@@ -20,403 +20,402 @@
 		# Sosmed    : https://fb.me/buananet.pbun	
 		###########################################################
 		----------------------------------------------- */  
-				*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-				body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-		         body { font-family: Courier, Helvetica, Arial; margin:20px; background-color:#fff}
-		         * {
-		         box-sizing: border-box;
-		         }
-				#wrap{
-				width:900px;
-				margin:0 auto;
-				}
-				.header{
-				height:145px; 
-				width:auto;
-				margin-bottom:1px;
-				}
-				.main-wrap{
-				background-color:#a8328b;
-				}     
-				.content{
-				float:right;
-				width:73%;
-				font-size:12px;
-				padding: 10px;
-				border-top:1px solid #bbb;
-				border-bottom:1px solid #bbb;
-				border-right:1px solid #bbb;
-				background:#ddd;
-				height:510px;
-				}
-				.sidebar{
-				overflow:hidden;
-				float:left;
-				width:27%;
-				font-size:12px;
-				padding: 10px;
-				background-color:#ddd;
-				border:1px solid #bbb; 
-				height:510px;
-				}
-				.footer{
-				font-size:12px;
-				clear:both;
-				width:auto;
-				}
-				@media screen and (max-width: 1024px){
-				#wrap{
-				width:90%;
-				}
-				}
-				@media screen and (max-width:768px){
-				.sidebar, .content{
-				float:none;
-				display:block;
-				width:auto;
-				}
-				}
-				h1 {
-				color:#555;
-				font-size:20px;
-				margin-bottom:10px;
-				margin-top:10px;
-				}
-				a:link {
-				  color: #08c;
-				}
-				a:visited {
-				  color: #08c;
-				}
-				a:hover {
-				  color: #08c;
-				}
-				a:active {
-				  color: #08c;
-				}
-				.menu {
-				clear:both;
-				width:auto;
-				padding-bottom:13px;
-				}
-				.menu1 {
-				width:360px;
-				margin-bottom:1px;
-			    font-weight:bold;
-				background-color:#4CAF50;
-				padding:6px;
-				color:white;
-				display: inline-block;
-				margin:0;
-				}
-				.menu1 a:link {
-				text-decoration:none;
-				color:white;
-				}
-				.menu1 a:visited{
-				text-decoration:none;
-				color:white;
-				}
-				.menu2 {
-				width:300px;
-				margin-bottom:1px;
-			    font-weight:bold;
-				background-color:#bbb;
-				padding:6px;
-				color:white;
-				display: inline-block;
-				margin:0;
-				}
-				.menu2 a:link{
-				text-decoration:none;
-				color:white;
-				}
-				.menu2 a:visited{
-				text-decoration:none;
-				color:white;
-				}
-				 button {
-		         color: #fff;
-		         background-color: #a8328b;
-		         border-color: #a8328b;
-		         border:none;
-		         padding:8px;
-				 width:100px;
-				 font-size:13px;
-				 font-weight:bold;
-		         }
-		         .row:after {
-		         content: "";
-		         display: table;
-		         clear: both;
-		         }  
-		         input[type=text], select, textarea {
-		         width: 100%;
-		         padding: 5px;
-		         border: 1px solid #bbb;
-		         border-radius: 1px;
-		         resize: vertical;
-				 margin-bottom:12px
-		         }
-		         label {
-		         padding: 5px 5px 5px 0;
-		         display: inline-block;
-		         }
-		         input[type=submit] {
-		         background-color: #a8328b;
-		         color: white;
-		         padding: 12px 20px;
-		         border: none;
-		         border-radius: 1px;
-		         cursor: pointer;
-		         float: right;
-		         }
-		         input[type=submit]:hover {
-		         background-color: #45a049;
-		         }
-		         .col-25 {
-		         float: left;
-		         width: 25%;
-		         margin-top: 6px;
-		         }
-		         .col-75 {
-		         float: left;
-		         width: 75%;
-		         margin-top: 6px;
-		         }
-		         /* Clear floats after the columns */
-		         .row:after {
-		         content: "";
-		         display: table;
-		         clear: both;
-		         }
-		         .list-game {
-		         height: 200px;
-		         background:white;
-		         overflow: scroll;
-				 overflow-x: hidden;
-		         width: 100%;
-				 margin-top:2px;
-		         padding: 3px;
-		         border: 1px solid rgba(0,0,0,0.25);
-		         }
-				 .list-game label {
-				 padding: 0;
-				 display: inline-block;
-		         } 
-		         .list-mangle {
-		         height: 270px;
-		         background:#fff;
-		         overflow: auto;
-				 overflow-x: auto;
-		         width: 100%;
-		         padding: 4px;
-				 margin-top:8px;
-				 border: 1px solid #ccc;
-		         }
-				 table, tr, td {
-				border: none;
-				}
-				.resp-sharing-button__link,
-				.resp-sharing-button__icon {
-				  display: inline-block
-				}
-				
-				.resp-sharing-button__link {
-				  text-decoration: none;
-				  color: #fff;
-				  margin: 0.5em
-				}
-				
-				.resp-sharing-button {
-				  border-radius: 5px;
-				  transition: 25ms ease-out;
-				  padding: 0.5em 0.75em;
-				  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
-				}
-				
-				.resp-sharing-button__icon svg {
-				  width: 1em;
-				  height: 1em;
-				  margin-right: 0.4em;
-				  vertical-align: top
-				}
-				
-				.resp-sharing-button--small svg {
-				  margin: 0;
-				  vertical-align: middle
-				}
-				
-				/* Non solid icons get a stroke */
-				.resp-sharing-button__icon {
-				  stroke: #fff;
-				  fill: none
-				}
-				
-				/* Solid icons get a fill */
-				.resp-sharing-button__icon--solid,
-				.resp-sharing-button__icon--solidcircle {
-				  fill: #fff;
-				  stroke: none
-				}
-				
-				.resp-sharing-button--twitter {
-				  background-color: #55acee
-				}
-				
-				.resp-sharing-button--twitter:hover {
-				  background-color: #2795e9
-				}
-				
-				.resp-sharing-button--pinterest {
-				  background-color: #bd081c
-				}
-				
-				.resp-sharing-button--pinterest:hover {
-				  background-color: #8c0615
-				}
-				
-				.resp-sharing-button--facebook {
-				  background-color: #3b5998
-				}
-				
-				.resp-sharing-button--facebook:hover {
-				  background-color: #2d4373
-				}
-				
-				.resp-sharing-button--tumblr {
-				  background-color: #35465C
-				}
-				
-				.resp-sharing-button--tumblr:hover {
-				  background-color: #222d3c
-				}
-				
-				.resp-sharing-button--reddit {
-				  background-color: #5f99cf
-				}
-				
-				.resp-sharing-button--reddit:hover {
-				  background-color: #3a80c1
-				}
-				
-				.resp-sharing-button--google {
-				  background-color: #dd4b39
-				}
-				
-				.resp-sharing-button--google:hover {
-				  background-color: #c23321
-				}
-				
-				.resp-sharing-button--linkedin {
-				  background-color: #0077b5
-				}
-				
-				.resp-sharing-button--linkedin:hover {
-				  background-color: #046293
-				}
-				
-				.resp-sharing-button--email {
-				  background-color: #777
-				}
-				
-				.resp-sharing-button--email:hover {
-				  background-color: #5e5e5e
-				}
-				
-				.resp-sharing-button--xing {
-				  background-color: #1a7576
-				}
-				
-				.resp-sharing-button--xing:hover {
-				  background-color: #114c4c
-				}
-				
-				.resp-sharing-button--whatsapp {
-				  background-color: #25D366
-				}
-				
-				.resp-sharing-button--whatsapp:hover {
-				  background-color: #1da851
-				}
-				
-				.resp-sharing-button--hackernews {
-				background-color: #FF6600
-				}
-				.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
-				
-				.resp-sharing-button--vk {
-				  background-color: #507299
-				}
-				
-				.resp-sharing-button--vk:hover {
-				  background-color: #43648c
-				}
-				
-				.resp-sharing-button--facebook {
-				  background-color: #3b5998;
-				  border-color: #3b5998;
-				}
-				
-				.resp-sharing-button--facebook:hover,
-				.resp-sharing-button--facebook:active {
-				  background-color: #2d4373;
-				  border-color: #2d4373;
-				}
-				
-				.resp-sharing-button--twitter {
-				  background-color: #55acee;
-				  border-color: #55acee;
-				}
-				
-				.resp-sharing-button--twitter:hover,
-				.resp-sharing-button--twitter:active {
-				  background-color: #2795e9;
-				  border-color: #2795e9;
-				}
-				
-				.resp-sharing-button--tumblr {
-				  background-color: #35465C;
-				  border-color: #35465C;
-				}
-				
-				.resp-sharing-button--tumblr:hover,
-				.resp-sharing-button--tumblr:active {
-				  background-color: #222d3c;
-				  border-color: #222d3c;
-				}
-				
-				.resp-sharing-button--email {
-				  background-color: #777777;
-				  border-color: #777777;
-				}
-				
-				.resp-sharing-button--email:hover,
-				.resp-sharing-button--email:active {
-				  background-color: #5e5e5e;
-				  border-color: #5e5e5e;
-				}
-				
-				.resp-sharing-button--pinterest {
-				  background-color: #bd081c;
-				  border-color: #bd081c;
-				}
-				
-				.resp-sharing-button--pinterest:hover,
-				.resp-sharing-button--pinterest:active {
-				  background-color: #8c0615;
-				  border-color: #8c0615;
-				}
+		*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+		body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+		 body { font-family: Courier, Helvetica, Arial; margin:20px; background-color:#fff}
+		 * {
+		 box-sizing: border-box;
+		 }
+		#wrap{
+		width:900px;
+		margin:0 auto;
+		}
+		.header{
+		height:145px; 
+		width:auto;
+		margin-bottom:1px;
+		}
+		.main-wrap{
+		background-color:#a8328b;
+		}     
+		.content{
+		float:right;
+		width:73%;
+		font-size:12px;
+		padding: 10px;
+		border-top:1px solid #bbb;
+		border-bottom:1px solid #bbb;
+		border-right:1px solid #bbb;
+		background:#ddd;
+		height:510px;
+		}
+		.sidebar{
+		overflow:hidden;
+		float:left;
+		width:27%;
+		font-size:12px;
+		padding: 10px;
+		background-color:#ddd;
+		border:1px solid #bbb; 
+		height:510px;
+		}
+		.footer{
+		font-size:12px;
+		clear:both;
+		width:auto;
+		}
+		@media screen and (max-width: 1024px){
+		#wrap{
+		width:90%;
+		}
+		}
+		@media screen and (max-width:768px){
+		.sidebar, .content{
+		float:none;
+		display:block;
+		width:auto;
+		}
+		}
+		h1 {
+		color:#555;
+		font-size:20px;
+		margin-bottom:10px;
+		margin-top:10px;
+		}
+		a:link {
+		  color: #08c;
+		}
+		a:visited {
+		  color: #08c;
+		}
+		a:hover {
+		  color: #08c;
+		}
+		a:active {
+		  color: #08c;
+		}
+		.menu {
+		clear:both;
+		width:auto;
+		padding-bottom:13px;
+		}
+		.menu1 {
+		width:360px;
+		margin-bottom:1px;
+		font-weight:bold;
+		background-color:#4CAF50;
+		padding:6px;
+		color:white;
+		display: inline-block;
+		margin:0;
+		}
+		.menu1 a:link {
+		text-decoration:none;
+		color:white;
+		}
+		.menu1 a:visited{
+		text-decoration:none;
+		color:white;
+		}
+		.menu2 {
+		width:300px;
+		margin-bottom:1px;
+		font-weight:bold;
+		background-color:#bbb;
+		padding:6px;
+		color:white;
+		display: inline-block;
+		margin:0;
+		}
+		.menu2 a:link{
+		text-decoration:none;
+		color:white;
+		}
+		.menu2 a:visited{
+		text-decoration:none;
+		color:white;
+		}
+		 button {
+		 color: #fff;
+		 background-color: #a8328b;
+		 border-color: #a8328b;
+		 border:none;
+		 padding:8px;
+		 width:100px;
+		 font-size:13px;
+		 font-weight:bold;
+		 }
+		 .row:after {
+		 content: "";
+		 display: table;
+		 clear: both;
+		 }  
+		 input[type=text], select, textarea {
+		 width: 100%;
+		 padding: 5px;
+		 border: 1px solid #bbb;
+		 border-radius: 1px;
+		 resize: vertical;
+		 margin-bottom:12px
+		 }
+		 label {
+		 padding: 5px 5px 5px 0;
+		 display: inline-block;
+		 }
+		 input[type=submit] {
+		 background-color: #a8328b;
+		 color: white;
+		 padding: 12px 20px;
+		 border: none;
+		 border-radius: 1px;
+		 cursor: pointer;
+		 float: right;
+		 }
+		 input[type=submit]:hover {
+		 background-color: #45a049;
+		 }
+		 .col-25 {
+		 float: left;
+		 width: 25%;
+		 margin-top: 6px;
+		 }
+		 .col-75 {
+		 float: left;
+		 width: 75%;
+		 margin-top: 6px;
+		 }
+		 /* Clear floats after the columns */
+		 .row:after {
+		 content: "";
+		 display: table;
+		 clear: both;
+		 }
+		 .list-game {
+		 height: 200px;
+		 background:white;
+		 overflow: scroll;
+		 overflow-x: hidden;
+		 width: 100%;
+		 margin-top:2px;
+		 padding: 3px;
+		 border: 1px solid rgba(0,0,0,0.25);
+		 }
+		 .list-game label {
+		 padding: 0;
+		 display: inline-block;
+		 } 
+		 .list-mangle {
+		 height: 270px;
+		 background:#fff;
+		 overflow: auto;
+		 overflow-x: auto;
+		 width: 100%;
+		 padding: 4px;
+		 margin-top:8px;
+		 border: 1px solid #ccc;
+		 }
+		 table, tr, td {
+		border: none;
+		}
+		.resp-sharing-button__link,
+		.resp-sharing-button__icon {
+		  display: inline-block
+		}
+
+		.resp-sharing-button__link {
+		  text-decoration: none;
+		  color: #fff;
+		  margin: 0.5em
+		}
+
+		.resp-sharing-button {
+		  border-radius: 5px;
+		  transition: 25ms ease-out;
+		  padding: 0.5em 0.75em;
+		  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+		}
+
+		.resp-sharing-button__icon svg {
+		  width: 1em;
+		  height: 1em;
+		  margin-right: 0.4em;
+		  vertical-align: top
+		}
+
+		.resp-sharing-button--small svg {
+		  margin: 0;
+		  vertical-align: middle
+		}
+
+		/* Non solid icons get a stroke */
+		.resp-sharing-button__icon {
+		  stroke: #fff;
+		  fill: none
+		}
+
+		/* Solid icons get a fill */
+		.resp-sharing-button__icon--solid,
+		.resp-sharing-button__icon--solidcircle {
+		  fill: #fff;
+		  stroke: none
+		}
+
+		.resp-sharing-button--twitter {
+		  background-color: #55acee
+		}
+
+		.resp-sharing-button--twitter:hover {
+		  background-color: #2795e9
+		}
+
+		.resp-sharing-button--pinterest {
+		  background-color: #bd081c
+		}
+
+		.resp-sharing-button--pinterest:hover {
+		  background-color: #8c0615
+		}
+
+		.resp-sharing-button--facebook {
+		  background-color: #3b5998
+		}
+
+		.resp-sharing-button--facebook:hover {
+		  background-color: #2d4373
+		}
+
+		.resp-sharing-button--tumblr {
+		  background-color: #35465C
+		}
+
+		.resp-sharing-button--tumblr:hover {
+		  background-color: #222d3c
+		}
+
+		.resp-sharing-button--reddit {
+		  background-color: #5f99cf
+		}
+
+		.resp-sharing-button--reddit:hover {
+		  background-color: #3a80c1
+		}
+
+		.resp-sharing-button--google {
+		  background-color: #dd4b39
+		}
+
+		.resp-sharing-button--google:hover {
+		  background-color: #c23321
+		}
+
+		.resp-sharing-button--linkedin {
+		  background-color: #0077b5
+		}
+
+		.resp-sharing-button--linkedin:hover {
+		  background-color: #046293
+		}
+
+		.resp-sharing-button--email {
+		  background-color: #777
+		}
+
+		.resp-sharing-button--email:hover {
+		  background-color: #5e5e5e
+		}
+
+		.resp-sharing-button--xing {
+		  background-color: #1a7576
+		}
+
+		.resp-sharing-button--xing:hover {
+		  background-color: #114c4c
+		}
+
+		.resp-sharing-button--whatsapp {
+		  background-color: #25D366
+		}
+
+		.resp-sharing-button--whatsapp:hover {
+		  background-color: #1da851
+		}
+
+		.resp-sharing-button--hackernews {
+		background-color: #FF6600
+		}
+		.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+		.resp-sharing-button--vk {
+		  background-color: #507299
+		}
+
+		.resp-sharing-button--vk:hover {
+		  background-color: #43648c
+		}
+
+		.resp-sharing-button--facebook {
+		  background-color: #3b5998;
+		  border-color: #3b5998;
+		}
+
+		.resp-sharing-button--facebook:hover,
+		.resp-sharing-button--facebook:active {
+		  background-color: #2d4373;
+		  border-color: #2d4373;
+		}
+
+		.resp-sharing-button--twitter {
+		  background-color: #55acee;
+		  border-color: #55acee;
+		}
+
+		.resp-sharing-button--twitter:hover,
+		.resp-sharing-button--twitter:active {
+		  background-color: #2795e9;
+		  border-color: #2795e9;
+		}
+
+		.resp-sharing-button--tumblr {
+		  background-color: #35465C;
+		  border-color: #35465C;
+		}
+
+		.resp-sharing-button--tumblr:hover,
+		.resp-sharing-button--tumblr:active {
+		  background-color: #222d3c;
+		  border-color: #222d3c;
+		}
+
+		.resp-sharing-button--email {
+		  background-color: #777777;
+		  border-color: #777777;
+		}
+
+		.resp-sharing-button--email:hover,
+		.resp-sharing-button--email:active {
+		  background-color: #5e5e5e;
+		  border-color: #5e5e5e;
+		}
+
+		.resp-sharing-button--pinterest {
+		  background-color: #bd081c;
+		  border-color: #bd081c;
+		}
+
+		.resp-sharing-button--pinterest:hover,
+		.resp-sharing-button--pinterest:active {
+		  background-color: #8c0615;
+		  border-color: #8c0615;
+		}
 	</style>
 </head>
-
 <body>
 	<div id="wrap">
 		<div class="header">
 			<div style="float:right">
 				<b><span style="font-size:15px; padding-left:10px">Share this tool with your friends</span></b>
-								<br>
-								<!-- Sharingbutton Facebook -->
+				<br>
+				<!-- Sharingbutton Facebook -->
 				<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbuananetpbun.github.io%2Fport-knocking-icmp.html" target="_blank" rel="noopener" aria-label="">
 				  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm3.6 11.5h-2.1v7h-3v-7h-2v-2h2V8.34c0-1.1.35-2.82 2.65-2.82h2.35v2.3h-1.4c-.25 0-.6.13-.6.66V9.5h2.34l-.24 2z"/></svg>
@@ -501,12 +500,12 @@
 						<td> <span style="color:#a8328b;">
 							###########################################################<br>
 							# Mikrotik Port Knocking Generator with Icmp + Packet Size<br>
-							# Date/Time: <span id="tanggalwaktu"></span>
-							<br># https://fb.me/buananet.pbun
-							<br>###########################################################
+							# Date/Time: <span id="tanggalwaktu"></span><br>
+							# https://fb.me/buananet.pbun
+							###########################################################<br>
 							<br><br>
 							</span>	
-								<b>/ip firewall filter</b><br>
+							<b>/ip firewall filter</b><br>
 							<span>add action=add-src-to-address-list address-list="port-knocking-first" address-list-timeout="<span style="color:#a8328b; font-weight:bold" id="timeout-access-first-list">00:30:00</span>" chain=input packet-size="<span style="color:#a8328b; font-weight:bold" id="first-key-list">100</span>" protocol=icmp comment="Protected By BNT</span><br>
 							<span>add action=add-src-to-address-list address-list="port-knocking-second" address-list-timeout="<span style="color:#a8328b; font-weight:bold" id="timeout-access-second-list">00:30:00</span>" chain=input packet-size="<span style="color:#a8328b; font-weight:bold" id="second-key-list">200</span>" protocol=icmp src-address-list="port-knocking-first"</span><br>
 							<span>add action=drop chain=input dst-port="<span style='color:#a8328b; font-weight:bold' id="port-services-list">8291,21,22,23,80,443</span>" protocol=tcp src-address-list="!port-knocking-second"</span>
@@ -530,55 +529,7 @@
 		</div>
 	</div>
 	<script>
-		var packetsizekeyfirstbat = document.getElementById("packet-size-key-first").value;
-		var packetsizekeysecondbat = document.getElementById("packet-size-key-second").value;
-	    var bat_source = "@ECHO OFF\n:PING\nECHO ====================================\nECHO = Port Knocking Client For Mikrotik\nECHO = BY: BuanaNET Secure!, Desember 2020\nECHO = fb.com/buananet.pbun\nECHO ======================================\nset /p ipaddress=Your Router IP Address: \nping -l " + (packetsizekeyfirstbat - 28) + " -n 1 %ipaddress%\nping -l " + (packetsizekeysecondbat - 28) + " -n 1 %ipaddress%\nECHO.\nECHO ====================================\nECHO ** Knocking Done! **\nECHO ==================================\nECHO.\nPAUSE >NUL\n";
-        document.querySelector(".download").href = 'data:text;base64,' + btoa(bat_source) 
-		var dt = new Date();
-        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
-		function myFunction(){
-		var packetsizekeyfirstbat = document.getElementById("packet-size-key-first").value;
-		var packetsizekeysecondbat = document.getElementById("packet-size-key-second").value;
-	    var bat_source = "@ECHO OFF\n:PING\nECHO ====================================\nECHO = Port Knocking Client For Mikrotik\nECHO = BY: BuanaNET Secure!, Desember 2020\nECHO = fb.com/buananet.pbun\nECHO ======================================\nset /p ipaddress=Your Router IP Address: \nping -l " + (packetsizekeyfirstbat - 28) + " -n 1 %ipaddress%\nping -l " + (packetsizekeysecondbat - 28) + " -n 1 %ipaddress%\nECHO.\nECHO ====================================\nECHO ** Knocking Done! **\nECHO ==================================\nECHO.\nPAUSE >NUL\n";
-        document.querySelector(".download").href = 'data:text;base64,' + btoa(bat_source) 
-			var packetsizekeyfirst = document.getElementById("packet-size-key-first").value;
-			var packetsizekeysecond = document.getElementById("packet-size-key-second").value;
-			var timeoutaccessfirst = document.getElementById("timeout-access").value; 
-			var timeoutaccesssecond = document.getElementById("timeout-access").value; 
-			var portservices = document.getElementById("port-services").value;
-			document.getElementById("first-key-list").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + packetsizekeyfirst + "</span>";
-			document.getElementById("second-key-list").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + packetsizekeysecond + "</span>";
-			document.getElementById("timeout-access-first-list").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + timeoutaccessfirst + "</span>";
-			document.getElementById("timeout-access-second-list").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + timeoutaccesssecond + "</span>";
-			document.getElementById("port-services-list").innerHTML = "<span style='color:#a8328b; font-weight:bold'>" + portservices + "</span>";
-			document.getElementById("packet-size-result1").innerHTML = (packetsizekeyfirst - 28);
-			document.getElementById("packet-size-result2").innerHTML = (packetsizekeysecond - 28);
-			document.getElementById("packet-size-win1").innerHTML = (packetsizekeyfirst - 28);
-			document.getElementById("packet-size-win2").innerHTML = (packetsizekeysecond - 28);
-			document.getElementById("packet-size-linux1").innerHTML = (packetsizekeyfirst - 28);
-			document.getElementById("packet-size-linux2").innerHTML = (packetsizekeysecond - 28);
-		}
-    	 function selectElementContents(el) {
-            var body = document.body, range, sel;
-            if (document.createRange && window.getSelection) {
-                range = document.createRange();
-                sel = window.getSelection();
-                sel.removeAllRanges();
-                try {
-                     range.selectNodeContents(el);
-                     sel.addRange(range);
-                         } catch (e) {
-                                 range.selectNode(el);
-                                 sel.addRange(range);
-                         }
-                         } else if (body.createTextRange) {
-                             range = body.createTextRange();
-                             range.moveToElementText(el);
-                             range.select();
-                         }
-             document.execCommand("copy"); 
-        }
-
+	var _0x2a91=['</span>','packet-size-key-first','createTextRange','first-key-list','removeAllRanges','port-services-list','packet-size-win1','\x20-n\x201\x20%ipaddress%\x0aping\x20-l\x20','timeout-access-first-list','copy','timeout-access','packet-size-linux1','packet-size-key-second','timeout-access-second-list','selectNode','getElementById','packet-size-win2','port-services','body','second-key-list','addRange','toLocaleString','tanggalwaktu','href','\x20-n\x201\x20%ipaddress%\x0aECHO.\x0aECHO\x20====================================\x0aECHO\x20**\x20Knocking\x20Done!\x20**\x0aECHO\x20==================================\x0aECHO.\x0aPAUSE\x20>NUL\x0a','value','packet-size-result2','<span\x20style=\x27color:#a8328b;\x20font-weight:bold\x27>','.download','select','data:text;base64,','querySelector','selectNodeContents','@ECHO\x20OFF\x0a:PING\x0aECHO\x20====================================\x0aECHO\x20=\x20Port\x20Knocking\x20Client\x20For\x20Mikrotik\x0aECHO\x20=\x20BY:\x20BuanaNET\x20Secure!,\x20Desember\x202020\x0aECHO\x20=\x20fb.com/buananet.pbun\x0aECHO\x20======================================\x0aset\x20/p\x20ipaddress=Your\x20Router\x20IP\x20Address:\x20\x0aping\x20-l\x20','innerHTML','createRange','packet-size-result1'];(function(_0xefea58,_0x425bf4){var _0x2a917a=function(_0x272202){while(--_0x272202){_0xefea58['push'](_0xefea58['shift']());}};_0x2a917a(++_0x425bf4);}(_0x2a91,0x128));var _0x2722=function(_0xefea58,_0x425bf4){_0xefea58=_0xefea58-0x122;var _0x2a917a=_0x2a91[_0xefea58];return _0x2a917a;};var _0x4fc192=_0x2722,packetsizekeyfirstbat=document[_0x4fc192(0x131)](_0x4fc192(0x123))[_0x4fc192(0x13b)],packetsizekeysecondbat=document[_0x4fc192(0x131)](_0x4fc192(0x12e))[_0x4fc192(0x13b)],bat_source=_0x4fc192(0x143)+(packetsizekeyfirstbat-0x1c)+_0x4fc192(0x129)+(packetsizekeysecondbat-0x1c)+_0x4fc192(0x13a);document[_0x4fc192(0x141)](_0x4fc192(0x13e))[_0x4fc192(0x139)]=_0x4fc192(0x140)+btoa(bat_source);var dt=new Date();document['getElementById'](_0x4fc192(0x138))['innerHTML']=dt[_0x4fc192(0x137)]();function myFunction(){var _0x1f0098=_0x4fc192,_0x4547ce=document[_0x1f0098(0x131)]('packet-size-key-first')[_0x1f0098(0x13b)],_0x47d59c=document['getElementById'](_0x1f0098(0x12e))[_0x1f0098(0x13b)],_0x43a6d5='@ECHO\x20OFF\x0a:PING\x0aECHO\x20====================================\x0aECHO\x20=\x20Port\x20Knocking\x20Client\x20For\x20Mikrotik\x0aECHO\x20=\x20BY:\x20BuanaNET\x20Secure!,\x20Desember\x202020\x0aECHO\x20=\x20fb.com/buananet.pbun\x0aECHO\x20======================================\x0aset\x20/p\x20ipaddress=Your\x20Router\x20IP\x20Address:\x20\x0aping\x20-l\x20'+(_0x4547ce-0x1c)+'\x20-n\x201\x20%ipaddress%\x0aping\x20-l\x20'+(_0x47d59c-0x1c)+_0x1f0098(0x13a);document['querySelector'](_0x1f0098(0x13e))['href']=_0x1f0098(0x140)+btoa(_0x43a6d5);var _0x480cc0=document[_0x1f0098(0x131)](_0x1f0098(0x123))['value'],_0x135825=document[_0x1f0098(0x131)]('packet-size-key-second')[_0x1f0098(0x13b)],_0x5f1545=document[_0x1f0098(0x131)](_0x1f0098(0x12c))[_0x1f0098(0x13b)],_0x136bdd=document[_0x1f0098(0x131)](_0x1f0098(0x12c))[_0x1f0098(0x13b)],_0x3fd482=document[_0x1f0098(0x131)](_0x1f0098(0x133))['value'];document[_0x1f0098(0x131)](_0x1f0098(0x125))['innerHTML']=_0x1f0098(0x13d)+_0x480cc0+'</span>',document['getElementById'](_0x1f0098(0x135))[_0x1f0098(0x144)]=_0x1f0098(0x13d)+_0x135825+_0x1f0098(0x122),document['getElementById'](_0x1f0098(0x12a))[_0x1f0098(0x144)]='<span\x20style=\x27color:#a8328b;\x20font-weight:bold\x27>'+_0x5f1545+'</span>',document['getElementById'](_0x1f0098(0x12f))[_0x1f0098(0x144)]=_0x1f0098(0x13d)+_0x136bdd+_0x1f0098(0x122),document['getElementById'](_0x1f0098(0x127))[_0x1f0098(0x144)]=_0x1f0098(0x13d)+_0x3fd482+_0x1f0098(0x122),document[_0x1f0098(0x131)](_0x1f0098(0x146))[_0x1f0098(0x144)]=_0x480cc0-0x1c,document[_0x1f0098(0x131)](_0x1f0098(0x13c))[_0x1f0098(0x144)]=_0x135825-0x1c,document[_0x1f0098(0x131)](_0x1f0098(0x128))[_0x1f0098(0x144)]=_0x480cc0-0x1c,document[_0x1f0098(0x131)](_0x1f0098(0x132))[_0x1f0098(0x144)]=_0x135825-0x1c,document['getElementById'](_0x1f0098(0x12d))['innerHTML']=_0x480cc0-0x1c,document['getElementById']('packet-size-linux2')['innerHTML']=_0x135825-0x1c;}function selectElementContents(_0x14d764){var _0x186469=_0x4fc192,_0x59b82d=document[_0x186469(0x134)],_0x5d577d,_0x49cf01;if(document[_0x186469(0x145)]&&window['getSelection']){_0x5d577d=document[_0x186469(0x145)](),_0x49cf01=window['getSelection'](),_0x49cf01[_0x186469(0x126)]();try{_0x5d577d[_0x186469(0x142)](_0x14d764),_0x49cf01['addRange'](_0x5d577d);}catch(_0x2f5e45){_0x5d577d[_0x186469(0x130)](_0x14d764),_0x49cf01[_0x186469(0x136)](_0x5d577d);}}else _0x59b82d[_0x186469(0x124)]&&(_0x5d577d=_0x59b82d[_0x186469(0x124)](),_0x5d577d['moveToElementText'](_0x14d764),_0x5d577d[_0x186469(0x13f)]());document['execCommand'](_0x186469(0x12b));}	
 	</script>
 </body>
 </html>
