@@ -519,9 +519,9 @@
 							###########################################################<br><br>
 							</span>	
 							<b>/ip firewall filter</b><br>
-							<span>add action=add-src-to-address-list address-list="port-knocking-first" address-list-timeout="<span style="color:#a8328b; font-weight:bold" id="timeout-access-first-list">00:30:00</span>" chain=input packet-size="<span style="color:#a8328b; font-weight:bold" id="first-key-list">100</span>" protocol=icmp comment="Protected By BNT</span><br>
-							<span>add action=add-src-to-address-list address-list="port-knocking-second" address-list-timeout="<span style="color:#a8328b; font-weight:bold" id="timeout-access-second-list">00:30:00</span>" chain=input packet-size="<span style="color:#a8328b; font-weight:bold" id="second-key-list">200</span>" protocol=icmp src-address-list="port-knocking-first"</span><br>
-							<span>add action=drop chain=input dst-port="<span style='color:#a8328b; font-weight:bold' id="port-services-list">8291,21,22,23,80,443</span>" protocol=tcp src-address-list="!port-knocking-second"</span>
+							<span>add action=add-src-to-address-list address-list="port-knocking-first" address-list-timeout="<span style="color:#a8328b; font-weight:bold" id="timeout-access-first-list"></span>" chain=input packet-size="<span style="color:#a8328b; font-weight:bold" id="first-key-list"></span>" protocol=icmp comment="Protected By BNT</span><br>
+							<span>add action=add-src-to-address-list address-list="port-knocking-second" address-list-timeout="<span style="color:#a8328b; font-weight:bold" id="timeout-access-second-list"></span>" chain=input packet-size="<span style="color:#a8328b; font-weight:bold" id="second-key-list"></span>" protocol=icmp src-address-list="port-knocking-first"</span><br>
+							<span>add action=drop chain=input dst-port="<span style='color:#a8328b; font-weight:bold' id="port-services-list"></span>" protocol=tcp src-address-list="!port-knocking-second"</span>
 						</td>
 					</tr>
 				</table>
