@@ -1,3 +1,120 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+
+
+  <title>CodePen - Simple JS Dragbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+  
+<style>
+* {
+  box-sizing: border-box;
+}
+
+p {
+  color: darkslategray;
+}
+
+.drag-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+[class^=panel] {
+  padding: 60px 24px;
+  background-color: whitesmoke;
+}
+
+.panel-one {
+  width: 40%;
+}
+
+.panel-two {
+  flex: 1;
+  width: 60%;
+}
+
+.dragbar {
+  padding: 6px;
+  cursor: col-resize;
+  background-color: silver;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="drag-container">
+  <div class="panel-one" id="drag-left">
+    <h2>Panel 1</h2>
+    <p>Fry, we have a crate to deliver. I feel like I was mauled by Jesus. Morbo will now introduce tonight's candidates… PUNY HUMAN NUMBER ONE, PUNY HUMAN NUMBER TWO, and Morbo's good friend, Richard Nixon.</p>
+    <p>OK, this has gotta stop. I'm going to remind Fry of his humanity the way only a woman can. For the last time, I don't like lilacs! Your 'first' wife was the one who liked lilacs! Oh, I always feared he might run off like this. Why, why, why didn't I break his legs?</p>
+    <p>But existing is basically all I do! Actually, that's still true. For the last time, I don't like lilacs! Your 'first' wife was the one who liked lilacs! Spare me your space age technobabble, Attila the Hun!</p>
+    <p>What are you hacking off? Is it my torso?! 'It is!' My precious torso! You wouldn't. Ask anyway! If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right. Hey, whatcha watching?</p>
+    <p>Look, everyone wants to be like Germany, but do we really have the pure strength of 'will'? But I know you in the future. I cleaned your poop. Large bet on myself in round one. Take me to your leader! My fellow Earthicans, as I have explained in my book 'Earth in the Balance'', and the much more popular ''Harry Potter and the Balance of Earth', we need to defend our planet against pollution. Also dark wizards.</p>
+  </div>
+  <div class="dragbar" id="dragbar"></div>
+  <div class="panel-two" id="drag-right">
+    <h2>Panel 2</h2>
+    <p>Bender, we're trying our best. This is the worst part. The calm before the battle. Bender, quit destroying the universe! It must be wonderful.</p>
+    <p>Say what? I saw you with those two "ladies of the evening" at Elzars. Explain that. THE BIG BRAIN AM WINNING AGAIN! I AM THE GREETEST! NOW I AM LEAVING EARTH, FOR NO RAISEN! We can't compete with Mom! Her company is big and evil! Ours is small and neutral!</p>
+    <p>Ah, yes! John Quincy Adding Machine. He struck a chord with the voters when he pledged not to go on a killing spree. I saw you with those two "ladies of the evening" at Elzars. Explain that. Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!</p>
+    <p>And I'm his friend Jesus. Ugh, it's filthy! Why not create a National Endowment for Strip Clubs while we're at it? It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels.</p>
+    <p>So, how 'bout them Knicks? You guys go on without me! I'm going to go… look for more stuff to steal! Guards! Bring me the forms I need to fill out to have her taken away! Do a flip! Calculon is gonna kill us and it's all everybody else's fault!</p>
+  </div>
+</div>
+
+  
+      <script id="rendered-js" >
+var left = document.getElementById('drag-left');
+var right = document.getElementById('drag-right');
+var bar = document.getElementById('dragbar');
+
+const drag = e => {
+  document.selection ? document.selection.empty() : window.getSelection().removeAllRanges();
+  left.style.width = e.pageX - bar.offsetWidth / 2 + 'px';
+};
+
+bar.addEventListener('mousedown', () => {
+  document.addEventListener('mousemove', drag);
+});
+
+bar.addEventListener('mouseup', () => {
+  document.removeEventListener('mousemove', drag);
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
+
+
 <object data="https:/buananetpbun.github.io/myscript/tracert.txt" width="100%" height="100%">
 Not supported
 </object>
