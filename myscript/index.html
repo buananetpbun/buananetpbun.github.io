@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -16,6 +14,25 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
   
 <style>
+/* unvisited link */
+a:link {
+  color: #08c;
+  text-decoration:none
+}
+/* visited link */
+a:visited {
+  color: #08c;
+  text-decoration:none
+}
+/* mouse over link */
+a:hover {
+  color: #08c;
+}
+/* selected link */
+a:active {
+  color: #08c;
+  text-decoration:none
+}
 * {
   box-sizing: border-box;
 }
@@ -30,7 +47,7 @@ p {
 }
 
 [class^=panel] {
-  padding: 60px 24px;
+  padding: 10px 24px;
   background-color: whitesmoke;
 }
 
@@ -44,7 +61,7 @@ p {
 }
 
 .dragbar {
-  padding: 6px;
+  padding: 3px;
   cursor: col-resize;
   background-color: silver;
 }
@@ -65,20 +82,24 @@ p {
 
 </head>
 
-<body translate="no" >
+<body translate="no" onload="sortList()" >
+
   <div class="drag-container">
   <div class="panel-one" id="drag-left">
-    <h2>SELECT SCRIPT</h2>
-   -> Mangle<br>  
-      <a href="#" onclick="content('https://buananetpbun.github.io/myscript/tracert.txt')">How To Block Tracert</a><br>
-      <a href="#" onclick="content('https://buananetpbun.github.io/myscript/fail-over-recursive-gateway.txt')">FailOver 2 ISP dengan Recursive Gateway</a><br>
-   -> Firewall<br>  
-<a href="#" onclick="content('https://buananetpbun.github.io/myscript/tracert.txt')">How To Block Tracert</a><br>
-      <a href="#" onclick="content('https://buananetpbun.github.io/myscript/fail-over-recursive-gateway.txt')">FailOver 2 ISP dengan Recursive Gateway</a><br>  
+   Contribution your script -> <a href="#" onclick="content('https://buananetpbun.github.io/myscript/tracert.txt')">Upload</a><br><br>
+   <h2>MikroTik Script</h2>
+    <span id="id01">
+	<li><a href="#" onclick="content('https://buananetpbun.github.io/myscript/tracert.txt')">Filter - How To Block Tracert</a></li>
+     <li><a href="#" onclick="content('https://buananetpbun.github.io/myscript/fail-over-recursive-gateway.txt')">Route - Recursive Gateway Fail over</a></li>
+   </span>
+
+
+
   </div>
   <div class="dragbar" id="dragbar"></div>
   <div class="panel-two" id="drag-right">
-    <h2>RESULT</h2>
+  Disclaimer! We are not responsible for errors or damage or your router accidental factors, you should ask for help with your friend who understands for trying it.<br><br>
+    <h2>Result Script</h2>
 <object id="change" data="" width="100%" height="100%">
 
 </object>
@@ -115,11 +136,41 @@ function content(text){
 
 
       }
-
+function sortList() {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById("id01");
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // start by saying: no switching is done:
+    switching = false;
+    b = list.getElementsByTagName("LI");
+    // Loop through all list-items:
+    for (i = 0; i < (b.length - 1); i++) {
+      // start by saying there should be no switching:
+      shouldSwitch = false;
+      /* check if the next item should
+      switch place with the current item: */
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        /* if next item is alphabetically
+        lower than current item, mark as a switch
+        and break the loop: */
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark the switch as done: */
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+  }
   </script>
   
 
 </body>
 
 </html>
- 
