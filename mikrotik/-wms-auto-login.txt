@@ -1,3 +1,5 @@
+Other - WMS Wifi.id Auto Login
+
 How to Auto Login WMS (wifi.id) on Mikrotik
 -------------------------------------------
 
