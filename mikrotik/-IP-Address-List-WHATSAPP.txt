@@ -1,3 +1,6 @@
+IP Address List for WhatsApp
+----------------------------
+
 /ip firewall address-list
 add address=31.13.64.51 list=whatsapp_list
 add address=31.13.65.49 list=whatsapp_list
