@@ -1,5 +1,5 @@
-How to Block Traceroute / Tracert
----------------------------------
+Firewall Filter - How to Block Traceroute / Tracert
+---------------------------------------------------
 
 /ip firewall filter
 add action=drop chain=forward icmp-options=11:0 protocol=icmp
