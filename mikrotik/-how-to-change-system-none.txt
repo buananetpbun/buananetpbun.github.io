@@ -1,5 +1,8 @@
-#cara mengganti system note di terminal
-#sesuaikan dengan tulisan anda sendiri
+Note - How To Change System Note from Terminal
+
+Copy-Paste Script In to terminal
+free ascii creator http://www.network-science.de/ascii
+------------------------------------------------------
 
 /system note
 set note=" ______  _     _        ______         ______  _______ _______ \
