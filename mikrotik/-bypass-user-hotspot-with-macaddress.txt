@@ -1,0 +1,6 @@
+#how to bypass user hotspot with mac-address
+-------------------------------------------
+
+# change xx:xx:xx:xx:xx:xx with mac-address for bypass
+/ip hotspot ip-binding add mac-address=xx:xx:xx:xx:xx:xx type=bypassed
+
