@@ -1,0 +1,46 @@
+Write simple queue stats in multiple files
+------------------------------------------
+
+Lets consider queue namings are "some text.1" so we can search queues by last number right after the dot.
+
+:local entriesPerFile 10;
+:local currentQueue 0;
+:local queuesInFile 0;
+:local fileContent "";
+
+# determine needed file count
+:local numQueues [/queue simple print count-only] ;
+:local fileCount ($numQueues / $entriesPerFile);
+:if ( ($fileCount * $entriesPerFile) != $numQueues) do={
+   :set fileCount ($fileCount + 1);
+}
+
+# remove old files 
+/file remove [find name~"stats"];
+:put "fileCount=$fileCount";
+:for i from=1 to=$fileCount do={
+
+#create file
+   /file print file="stats$i.txt";
+   
+#clear content
+   /file set [find name="stats$i.txt"] contents="";
+
+   :while ($queuesInFile < $entriesPerFile) do={
+     :if ($currentQueue < $numQueues) do={
+         :set currentQueue ($currentQueue +1);
+         :put $currentQueue ;
+         /queue simple
+         :local internalID [find name~"\\.$currentQueue\$"];
+         :put "internalID=$internalID";
+         :set fileContent ($fileContent . [get $internalID target-address] . \
+           " " . [get $internalID total-bytes] . "\r\n");
+     }
+     :set queuesInFile ($queuesInFile +1);
+     
+   }
+   /file set "stats$i.txt" contents=$fileContent;
+   :set fileContent "";
+   :set queuesInFile 0;
+
+}
