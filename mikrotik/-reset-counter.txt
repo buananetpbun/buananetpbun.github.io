@@ -1,4 +1,5 @@
-Script untuk mereset counter di mikrotik
+Script for reset all counter
+---------------------------
 
 /ip firewall filter reset-counters-all
 /ip firewall nat reset-counters-all
