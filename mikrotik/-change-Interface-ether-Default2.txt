@@ -1,0 +1,30 @@
+#####################################
+# Script by Agus Ramadhani
+# fb.com/buananet.pangkalanbun
+# http://www.o-om.com
+# SCRIPT name interface to default
+######################################
+/interface ethernet
+set [ find default-name=ether1 ] name=ether1
+set [ find default-name=ether2 ] name=ether2
+set [ find default-name=ether3 ] name=ether3
+set [ find default-name=ether4 ] name=ether4
+set [ find default-name=ether5 ] name=ether5
+set [ find default-name=ether6 ] name=ether6
+set [ find default-name=ether7 ] name=ether7
+set [ find default-name=ether8 ] name=ether8
+set [ find default-name=ether9 ] name=ether9
+set [ find default-name=ether10 ] name=ether10
+set [ find default-name=ether11 ] name=ether11
+set [ find default-name=ether12 ] name=ether12
+set [ find default-name=ether13 ] name=ether13
+set [ find default-name=combo1 ] name=combo1
+set [ find default-name=combo2 ] name=combo2
+set [ find default-name=wlan1 ] name=wlan1
+set [ find default-name=wlan2 ] name=wlan2
+set [ find default-name=sfp1 ] name=sfp1
+set [ find default-name=sfp2 ] name=sfp2
+set [ find default-name=sfp3 ] name=sfp3
+set [ find default-name=sfp4 ] name=sfp4
+set [ find default-name=sfp-sfpplus1 ] name=sfp-sfpplus1
+set [ find default-name=sfp-sfpplus2 ] name=sfp-sfpplus2
