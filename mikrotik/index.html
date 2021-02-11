@@ -1,21 +1,27 @@
-
 <!DOCTYPE html>
-<html lang="en" >
-
+<html>
 <head>
-
-  <meta charset="UTF-8">
-  
-
-
-  <title>Mikrotik Script DataBase Unoffical</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-  <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Mikrotik Script DataBase Unoffical</title>
+<meta content='Mikrotik Script DataBase Unoffical By BuanaNET Secure!' name='description'/>
+<meta content='Mikrotik Script, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
-	body {font-size: 13px}
+/* --------------------------------------------
+#################################################
+# Remote IP Public Static For Secondary Gateway Mikrotik
+# Date/Time : 11/8/2020, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNET
+# Version   : v1.0 Beta
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+#################################################
+----------------------------------------------- */  
+body {font-size: 13px}
 /* unvisited link */
 a:link {
   color: #08c;
@@ -77,30 +83,24 @@ p {
     padding:0 0 0 0;
     margin:0;
 }
-
+.myDIV {display:none}
 </style>
 
-  <script>
-  window.console = window.console || function(t) {};
+<script>
+window.console = window.console || function(t) {};
 </script>
-
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
+<script>
+if (document.location.search.match(/type=embed/gi)) {
     window.parent.postMessage("resize", "*");
-  }
+}
 </script>
-
-
 </head>
-
 <body>
 
-  <div class="drag-container">
-  <div class="panel-one" id="drag-left">
-	<span style="font-size:12px">	  
-	<pre>
+<div class="drag-container">
+<div class="panel-one" id="drag-left">
+<span style="font-size:12px">	  
+<pre>
  ______  _     _        ______         ______  _______ _______ 
 (____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)
  ____)  ) |   | | /  \ | |   | | /  \ | |   | |_____   _       
@@ -110,19 +110,18 @@ p {
 Copyright 2021 is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNET-SECURE</a>
 </pre>	
 </span>  
-   <h3>MIKROTIK SCRIPT DATABASE</h3>
-   Contribution your script -> <a href="#">Upload</a>
-   <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find script.." style="width:100%; margin-bottom:20px;margin-top:20px"> 
+<h3>MIKROTIK SCRIPT DATABASE</h3>
+Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a>
+<input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find script.." style="width:100%; margin-bottom:20px;margin-top:20px"> 
   
-     <span id="id01">
-	 <table id="myTable">
-	
-	<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-block-tracert.txt')">How To Block Tracert / Traceroute</a></p></tr></td>
-    <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-fail-over-recursive-gateway.txt')">Recursive Gateway Fail over</a></p></tr></td>
-	<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-wms-auto-login.txt')"> WMS Wifi.id Auto Login</a></p></tr></td>
-	<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-how-to-change-system-none.txt')">Change System Note</a></p></tr></td>
-	<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-IP-Address-List-WHATSAPP.txt')">IP Address list WhatsApp</a></p></tr></td>
-	<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-Speedtest-domain-List.txt')">Domain list SpeedTest</a></p></tr></td>  
+<span id="id01">
+<table id="myTable">
+<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-block-tracert.txt')">How To Block Tracert / Traceroute</a></p></tr></td>
+<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-fail-over-recursive-gateway.txt')">Recursive Gateway Fail over</a></p></tr></td>
+<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-wms-auto-login.txt')"> WMS Wifi.id Auto Login</a></p></tr></td>
+<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-how-to-change-system-none.txt')">Change System Note</a></p></tr></td>
+<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-IP-Address-List-WHATSAPP.txt')">IP Address list WhatsApp</a></p></tr></td>
+<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-Speedtest-domain-List.txt')">Domain list SpeedTest</a></p></tr></td>  
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-clear-log-Mikrotik.txt')">How To Clear LOG info from Terminal</a></p></tr></td>  
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-dns-chace-flush.txt')">How To DNS Cache Flush</a></p></tr></td>  
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-reset-counter.txt')">How To Reset All Counter</a></p></tr></td>  
@@ -138,52 +137,63 @@ Copyright 2021 is proudly powered by <a href="https://www.facebook.com/buananetm
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-strip-netmask.txt')">Strip IP Address without netmask</a></p></tr></td>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-Resolve-host-name.txt')">How To Resolve host-name</a></p></tr></td>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-Write simple queue stats in multiple files.txt')">Write simple queue stats in multiple files</a></p></tr></td>
-
 </table>
 </span>
+</div>
 
-
-
-  </div>
-  <div class="dragbar" id="dragbar"></div>
-  <div class="panel-two" id="drag-right">
-  
-    <h3>RESULT SCRIPT</h3>
+ <div class="dragbar" id="dragbar"></div>
+ 
+<div class="panel-two" id="drag-right">
+<div class="myDIV" id="myDIV">
+<h3>SUBMIT YOUR SCRIPT</h3>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform" width="100%" height="800″ frameborder="0″ marginheight="0″ marginwidth="0″>Loading…</iframe>	
+</div>	
+<div id="myDIV2">
+<h3>RESULT SCRIPT</h3>
 <object id="change" data="" width="100%" height="100%">
 </object>
+</div>
   </div>
 </div> 
-      <script id="rendered-js" >
+
+<script id="rendered-js" >
 var left = document.getElementById('drag-left');
 var right = document.getElementById('drag-right');
 var bar = document.getElementById('dragbar');
-
 const drag = e => {
   document.selection ? document.selection.empty() : window.getSelection().removeAllRanges();
   left.style.width = e.pageX - bar.offsetWidth / 2 + 'px';
 };
-
 bar.addEventListener('mousedown', () => {
   document.addEventListener('mousemove', drag);
 });
-
 bar.addEventListener('mouseup', () => {
   document.removeEventListener('mousemove', drag);
 });
 //# sourceURL=pen.js
     </script>
 	<script>
+	
+function myshowhide() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+  var y = document.getElementById("myDIV2");
+  if (y.style.display === "none") {
+    y.style.display = "block";
+  } else {
+    y.style.display = "none";
+  }
+}
 
 function content(text){
         // native
         var element =  document.getElementById("change");
-
         element.setAttribute("data", text);
-
-
       }
-
-  
   		 function myFunctionGames() {
 		  var input, filter, table, tr, td, i, txtValue;
 		  input = document.getElementById("myInput");
@@ -204,7 +214,6 @@ function content(text){
 		}
   </script>
   
-
 </body>
-
 </html>
+
