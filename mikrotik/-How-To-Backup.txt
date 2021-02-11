@@ -1,0 +1,8 @@
+How To Backup Mikrotik
+----------------------
+
+# backup all script to (file .rsc) 
+/exp file=namafile
+
+# backup all script to (file .backup) 
+/system backup save name=namafile.backup
