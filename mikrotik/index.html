@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,16 @@
 # Sosmed    : https://fb.me/buananet.pbun	
 #################################################
 ----------------------------------------------- */  
-body {font-size: 13px}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding:0;
+  font-size:13px;
+  border:1px solid #ccc
+}
+.full-height {
+
+}
 /* unvisited link */
 a:link {
   color: #08c;
@@ -51,7 +61,8 @@ p {
 
 .drag-container {
   display: flex;
- min-height: 99vh;
+height: 100%;
+overflow:hidden
 }
 
 [class^=panel] {
@@ -60,13 +71,14 @@ p {
 }
 
 .panel-one {
-  width: 23%;
+  width: 395px;
 	background-color: #f0f0f0;
+	overflow-y:scroll
 	}
 
 .panel-two {
   flex: 1;
-  width: 87%;
+  width: 605px;
 	background-color: #fff;
 
 }
@@ -74,7 +86,7 @@ p {
 .dragbar {
   padding: 2px;
   cursor: col-resize;
-  background-color: #555;
+  background-color: #f0f0f0;
 }
 
 p {
@@ -84,7 +96,7 @@ p {
     margin:0;
 }
 
-	button {
+button {
 color: #fff;
 background-color: #4CAF50;
 border-color: #4CAF50;
@@ -139,7 +151,9 @@ font-weight:bold;
  clear: both;
  }
 .myDIV {display:none}
-.myDIV2 {height:90%;}
+.myDIV2 {height:90%; widht:100%}
+
+
 </style>
 
 <script>
@@ -166,12 +180,10 @@ if (document.location.search.match(/type=embed/gi)) {
 Copyright 2021 is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNET-SECURE</a>
 </pre>	
 </span>  
-<h3>MIKROTIK SCRIPT DATABASE</h3>
+<h3>MIKROTIK <span style="color:red"><</span> script <span style="color:red">></span> DATABASE</h3>
 Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a>
-<input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find script.." style="width:100%; margin-bottom:20px;margin-top:20px"> 
-  
-<span id="id01">
-<table id="myTable">
+<input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find script.." style="width:100%; margin-bottom:10px;margin-top:10px"> 
+  <table id="myTable">
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-block-tracert.txt')">How To Block Tracert / Traceroute</a></p></tr></td>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-fail-over-recursive-gateway.txt')">Recursive Gateway Fail over</a></p></tr></td>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-wms-auto-login.txt')"> WMS Wifi.id Auto Login</a></p></tr></td>
@@ -213,12 +225,11 @@ Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-Read and write large files.txt')">Read and Write Large Files</a></p></tr></td>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-Include custom function in another script.txt')">Include custom function in another script</a></p></tr></td>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/-Auto upgrade script V3x.txt')">Auto upgrade script V3.x</a></p></tr></td>
-
 </table>
 </span>
 </div>
 
- <div class="dragbar" id="dragbar"></div>
+
  
 <div class="panel-two" id="drag-right">
 <div class="myDIV" id="myDIV">
