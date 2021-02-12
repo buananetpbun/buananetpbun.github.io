@@ -1,0 +1,63 @@
+Backup Graphing Data
+--------------------
+
+RouterOS shows graphs of queues, interfaces, memory, cpu, and disk usage. This script will allow you to backup such graphing data on RouterOS to files that are directly accessible.
+
+Update: 3/10/2010: Now captures weekly.gif (missing from previous release)
+
+# Backup graphing data
+:local graphaddress "127.0.0.1"
+:local graphport 80
+:local graphimages "daily.gif, weekly.gif, monthly.gif, yearly.gif"
+
+# Internal processing...
+:local graphpath
+
+# Main graphs page
+:set graphpath ("graphs/")
+/tool fetch address=$graphaddress port=$graphport mode=http \
+	src-path=($graphpath) dst-path=($graphpath . "index.html")
+
+
+# Resource graphs
+:foreach g in=[:toarray "cpu,ram,hdd"] do={
+   :set graphpath ("graphs/" . [:tostr $g] . "/")
+
+   /tool fetch address=$graphaddress port=$graphport mode=http \
+	src-path=($graphpath) dst-path=($graphpath . "index.html")
+
+   :foreach i in=[:toarray $graphimages] do={
+      /tool fetch address=$graphaddress port=$graphport mode=http \
+	src-path=($graphpath . [:tostr $i]) dst-path=($graphpath . [:tostr $i])
+   }
+}
+
+# Queue graphs
+# Only simple queues are available (both enabled and disabled)
+:foreach g in=[/queue simple find] do={
+   :set graphpath ("graphs/queue/" . [/queue simple get $g name] . "/")
+
+   /tool fetch address=$graphaddress port=$graphport mode=http \
+	src-path=($graphpath) dst-path=($graphpath . "index.html")
+
+   :foreach i in=[:toarray $graphimages] do={
+      /tool fetch address=$graphaddress port=$graphport mode=http \
+	src-path=($graphpath . [:tostr $i]) dst-path=($graphpath . [:tostr $i])
+   }
+}
+
+# Interface graphs
+# Only running interfaces are available
+:foreach g in=[/interface find] do={
+   :if ([/interface get $g running] = [:tobool true]) do={
+      :set graphpath ("graphs/iface/" . [/interface get $g name] . "/")
+
+      /tool fetch address=$graphaddress port=$graphport mode=http \
+	src-path=($graphpath) dst-path=($graphpath . "index.html")
+
+      :foreach i in=[:toarray $graphimages] do={
+         /tool fetch address=127.0.0.1 port=8000 mode=http \
+	src-path=($graphpath . [:tostr $i]) dst-path=($graphpath . [:tostr $i])
+      }
+   }
+}
