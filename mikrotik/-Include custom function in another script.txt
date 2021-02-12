@@ -1,0 +1,11 @@
+Include custom function in another script
+-----------------------------------------
+
+This example will show where to store and how to include your cool custom created functions into another scripts
+
+- In router's file root directory create subdirectory named 'lua'
+- On your PC create new file named customprint.lua and write this function in it.
+- Upload newly created file in router's 'lua' directory that we made in first step
+- Now you can test your custom lua function
+
+[:lua "require 'customprint'\n print('hello from custom print function')"]
