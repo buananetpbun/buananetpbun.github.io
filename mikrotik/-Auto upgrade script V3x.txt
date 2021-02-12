@@ -1,0 +1,64 @@
+Auto upgrade script V3.x
+------------------------
+
+One little script to upgrade RrouterBoards automatically.
+-) fetch file from main router containing latest ROS version number;
+-) get currently running version number;
+-) extract minor and major version numbers and compare them;
+-) if version fetched from main router is newer then download combined package directly from mikrotik.com
+-) reboot.
+At first you should create file containing newest version number on main router.
+
+/file print file="latestVer";
+/file set latestVer.txt content="3.24";
+Now we are ready to run scripts on other routers:
+
+#########################################################################
+# download and upgrade
+#########################################################################
+
+# newest version
+:local lMajor;
+:local lMinor;
+
+# current version
+:local vMajor;
+:local vMinor;
+
+:local myVer [/system resource get version];
+
+:for i from=0 to=([:len $myVer] - 1) do={  
+	:if ( [:pick $myVer $i] = ".") do={ 
+		:set vMajor [:tonum [:pick $myVer 0 $i]]; 
+		:set vMinor [:tonum [:pick $myVer ($i + 1) [:len $myVer]]] ;
+	}
+}
+
+:if ($vMajor < 3) do={
+	:log warning "RouterOS version too old ($vMajor.$vMinor),  update script not compatible";
+} else={ 
+
+#      detect platform (architecture-name is not available in older 3.x versions)
+       :local platform [/system resource get architecture-name];
+
+
+#      fetch latest version
+       /tool fetch address="172.16.0.1" src-path="latestVer.txt" user="admin" password="" mode=ftp;
+       :local lVer [/file get latestVer.txt content];
+
+
+	:for i from=0 to=([:len $lVer] - 1) do={  
+		:if ( [:pick $lVer $i] = ".") do={ 
+			:set lMajor [:tonum [:pick $lVer 0 $i]]; 
+			:set lMinor [:tonum [:pick $lVer ($i + 1) [:len $lVer]]] ;
+		}
+	}
+
+	:if (($vMajor = $lMajor) && ($vMinor < $lMinor)) do={
+		:local pckgName "routeros-$platform-$lMajor.$lMinor.npk";
+		/tool fetch address=[:resolve "www.mikrotik.com"] host="www.mikrotik.com" mode=http src-path="download/$pckgName";
+		/system reboot;
+	} else={
+                :log info "Upgrade_script: already latest version";
+        }
+}
