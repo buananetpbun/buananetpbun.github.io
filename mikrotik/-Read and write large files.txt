@@ -1,0 +1,15 @@
+Read and Write Large Files
+--------------------------
+
+Many users requested ability to work with files. Now you can do it without limitations.
+
+Create and write to file:
+
+:global newContent "new file content\r\nanother line\r\n";
+[/lua "local f=assert(io.open('/test.txt', 'w+')); f:write(newContent); f:close()" ];
+
+Read file content to variable:
+
+:global cnt ""
+[/lua "local f=assert(io.open('/test.txt', 'r')); cnt=f:read('*all'); f:close()" ];
+:put $cnt
