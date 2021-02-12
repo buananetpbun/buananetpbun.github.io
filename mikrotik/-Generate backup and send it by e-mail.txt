@@ -1,0 +1,9 @@
+Generate backup and send it by e-mail
+-------------------------------------
+
+This script generates backup file and sends it to specified e-mail address. Mail subject contains router's name, current date and time.
+Note that smtp server must be configured before this script can be used. See /tool e-mail for configuration options.
+
+/system backup save name=email_backup
+/tool e-mail send file=email_backup.backup to="me@test.com" body="See attached file" \
+   subject="$[/system identity get name] $[/system clock get time] $[/system clock get date] Backup")
