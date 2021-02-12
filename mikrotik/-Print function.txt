@@ -1,0 +1,22 @@
+Print Function
+--------------
+
+As stated in Lua documentation, 'print' command is not available in RouterOS compared to standard Lua release. This example will show you how to get back 'print' command
+
+-- ------------------------------------------------------------------------
+-- Print function
+-- ------------------------------------------------------------------------    
+function print (...)
+   local strPrintResult = ""
+   if ... then
+      local targs = {...}
+      for i,v in ipairs(targs) do
+        strPrintResult = strPrintResult .. tostring(v) .. "  "
+      end
+      strPrintResult = strPrintResult .. "\r\n"
+      io.write(strPrintResult)
+   end
+end
+
+Now you can include this custom function to other scripts and use this cool custom print function :)
+You can also modify this function to write messages in RouterOS log.
