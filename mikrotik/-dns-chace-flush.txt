@@ -1,5 +1,0 @@
-How To Clear DNS Cache with DNS Flush
---------------------------------------
-
-# You can try  form terminal or create from schedular
-/ip dns cache flush
