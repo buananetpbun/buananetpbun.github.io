@@ -1,5 +1,0 @@
-How to Rebuild DataBase On User Manager
----------------------------------------
-
-#Copy Paste this script on Terminal
-/tool user-manager database rebuild
