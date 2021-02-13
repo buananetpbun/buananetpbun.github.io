@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Converting network and gateway from routing table to hexadecimal string - Mikrotik Script</title>
+<meta content='Converting network and gateway from routing table to hexadecimal string - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Converting network and gateway from routing table to hexadecimal string - Mikrotik Script</h2>
+
+Version of the script giving result as DHCP option 121 (RFC 3442)
+#
+# Second script converting network and gateway from routing table to hexadecimal string
+# according to RFC 3442 - DHCP option 121
+# result=0x<prefix><network><gateway>
+# example: dst-address=192.168.2.0/24 gateway=192.168.1.1 => result=0x18c0a802c0a80101
+#
+# Network can have 0 to 4 octets:
+# Width of subnet mask     Number of significant octets
+#              0                     0
+#           1- 8                     1
+#           9-16                     2
+#          17-24                     3
+#          25-32                     4
+#
+# (c) Daniel Starnowski 2011
+#
+:foreach route in=[/ip route find] do={
+:local dst [/ip route get $route dst-address];
+:local gateway [/ip route get $route gateway];
+:if ($gateway=[:toip $gateway]) do={
+  :local total ($dst . "." . $gateway);
+  :local result "0x";
+  :local hextable [:toarray "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f"];
+  :local total2 "";
+  :local decimal;
+  :local division;
+  :local i;
+  :local j;
+  :for i from=1 to=[:len $total] step=1 do={
+   :set j [:pick $total ($i-1) $i];
+   :if (($j=".") or ($j="/")) do={:set j ","};
+   :set total2 ($total2 . $j);
+   };
+  :set total2 [:toarray $total2];
+
+  :set decimal [:pick $total2 4]
+  :set division ($decimal / 16);
+  :set result ($result . [:pick $hextable $division]);
+  :set result ($result . [:pick $hextable ($decimal - (16 * $division))]);
+  :local omit ((32-[:pick $total2 4]) / 8);
+
+  :for i from=($omit+1) to=8 step=1 do={
+   :set j $i;
+   :if ($j<5) do={:set j ($j-1-$omit);};
+   :set decimal [:pick $total2 $j]
+   :set division ($decimal / 16);
+   :set result ($result . [:pick $hextable $division]);
+   :set result ($result . [:pick $hextable ($decimal - (16 * $division))]);
+   };
+  :put ($result . " for " . $dst);
+} else={:put ("Gateway is not a single IP address for ".$dst);}
+}
+
+Version of the script with full 4 bytes of destination network
+#
+# Script converting network and gateway from routing table to hexadecimal string
+# dst-address=192.168.2.0/24 gateway=192.168.1.1 => result=0x18c0a80200c0a80101
+#
+# (c) Daniel Starnowski 2011
+#
+:foreach route in=[/ip route find] do={
+:local dst [/ip route get $route dst-address];
+:local gateway [/ip route get $route gateway];
+:if ($gateway=[:toip $gateway]) do={
+  :local total ($dst . "." . $gateway);
+  :local result "0x";
+  :local hextable [:toarray "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f"];
+  :local total2 "";
+  :local decimal;
+  :local division;
+  :local i;
+  :local j;
+  :for i from=1 to=[:len $total] step=1 do={
+   :set j [:pick $total ($i-1) $i];
+   :if (($j=".") or ($j="/")) do={:set j ","};
+   :set total2 ($total2 . $j);
+   };
+  :set total2 [:toarray $total2];
+
+  :for i from=0 to=8 step=1 do={
+   :set j $i;
+   :if ($j<5) do={if ($j=0) do={:set j 4;} else={:set j ($j-1);};};
+   :set decimal [:pick $total2 $j ($j+1)]
+   :set division ($decimal / 16);
+   :set result ($result . [:pick $hextable $division]);
+   :set result ($result . [:pick $hextable ($decimal - (16 * $division))]);
+   };
+  :put $result;
+} else={:put ("Gateway is not a single IP address for ".$dst);}
+}
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
