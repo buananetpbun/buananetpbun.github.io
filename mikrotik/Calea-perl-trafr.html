@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Calea perl trafr - Mikrotik Script</title>
+<meta content='Calea perl trafr - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Calea perl trafr - Mikrotik Script</h2>
+
+Calea perl trafr
+System independent trafr script
+This small article describe the script wrote on perl which help you to get packets encapsulated by calea and captured by tcpdump or wireshark. You could upgrade it to catch traffic without tcpdump or wireshark.
+
+#!/usr/bin/perl -w
+#
+#  TZSP headers remover
+#
+#  You need this modules:
+#  Data-HexDump		0.02
+#  Net-Pcap		0.16
+#  Net-Pcap-Reassemble	0.04
+#  NetPacket		0.41.1
+#  
+# usage: trafr -r filename.pcap [ -s observed_ip ] [ -d ] [ -c count ]
+
+use strict;
+use Net::Pcap qw ( :datalink :functions );
+use NetPacket::Ethernet;
+use NetPacket::IP;
+use NetPacket::UDP;
+use Data::HexDump;
+use Getopt::Std;
+
+our($opt_d, $opt_r, $opt_c, $opt_s);
+my ($err,$dumpOUT,$errdumpOUT,$count,$pcap,$dumper,$errdumper);
+
+getopt('rcs');
+getopts('d');
+
+my $dumpIN = $opt_r or die "No input file!\nUse -r\n";	# input pcap file
+my $debug = $opt_d;					# do you need debug?
+print "test: ".$debug."\n" if ($debug);
+if (!$opt_c) { $count = -1}
+else { $count = $opt_c}					# how many packets to process? (for debug)
+my $counter = 1;
+my $observedIP = $opt_s;				# ip that you looking for
+#my $errdumpOUT = 'errpackets.pcap';			# file for errors packets (for debug)
+$dumper = undef;						# output file
+my $destport=37008;					# Port used for TZSP streaming (default 37008)
+
+# --- Output file name
+if ($dumpIN !~ m/^(\S+)\.pcap$/i){ $dumpOUT = $dumpIN.'.ok.pcap'}
+else { $dumpOUT = $1.'.ok.pcap'}
+
+# --- Errors packets file name
+if ($debug){
+   if ($dumpIN !~ m/^(\S+)\.pcap$/i){ $errdumpOUT = $dumpIN.'.err.pcap'}
+   else { $errdumpOUT = $1.'.err.pcap'}
+}
+
+# --- Open input file
+$pcap = Net::Pcap::pcap_open_offline($dumpIN, \$err)
+   or die $err;
+
+
+# --- Open file for errors packets
+# --- (for debug)
+$errdumper = Net::Pcap::pcap_dump_open($pcap,$errdumpOUT) if ($debug);
+
+# --- Process
+Net::Pcap::pcap_loop($pcap, $count, \&headoff_tzsp, "user data");
+
+# --- Close all open files
+Net::Pcap::close($pcap);
+Net::Pcap::pcap_dump_close($dumper) if ($dumper);
+Net::Pcap::pcap_dump_close($errdumper) if ($debug);
+
+# --- Delete error file if it empty
+if ($debug) {
+   if ( -e $errdumpOUT and -s $errdumpOUT == 24){
+	system("rm $errdumpOUT") == 0
+	or die "rm -f ".$errdumpOUT." failed: $?";
+   }
+}
+
+# --- TZSP head remove function
+sub headoff_tzsp {
+
+   print STDOUT "\n=============================================================================\n" if ($debug);
+   my($user_data, $header, $packet) = @_;
+    
+   # --- Decapsulate packet
+   my $ether = NetPacket::Ethernet->decode($packet);
+   if ( $ether->{type} ne NetPacket::Ethernet->ETH_TYPE_IP) {
+	print STDOUT "Not an IP packet. Type = $ether->{type} instead of " . NetPacket::Ethernet->ETH_TYPE_IP if ($debug);
+	$counter++;
+	return;
+   }
+   my $ip = NetPacket::IP->decode($ether->{data});
+   if ( $ip->{proto} ne NetPacket::IP->IP_PROTO_UDP ) {
+	print STDOUT "Not an UDP packet. Proto = $ip->{proto} instead of " . NetPacket::IP->IP_PROTO_UDP if ($debug);
+	$counter++;
+	return;
+   }
+   my $udp = NetPacket::UDP->decode($ip->{data});
+   if ( $udp->{dest_port} ne 37008 ) {
+	print STDOUT "Wrong Dest port. Dest_port=$udp->{dest_port} instead of 37008" if ($debug);
+	$counter++;
+	return;
+   }
+
+   # --- For debug
+#    print STDOUT $counter," ",
+#        $ip->{'src_ip'}, ":", $udp->{'src_port'}, " -> ",
+#        $ip->{'dest_ip'}, ":", $udp->{'dest_port'}, 
+#	" length: ", $udp->{'len'}, " chksum: ",$udp->{'cksum'},
+#	" fragment: ",$ip->{'foffset'},"\n" if ($debug);
+#    print STDOUT HexDump $udp->{data} if($debug);
+    
+   # --- Cut TZSP bytes
+   my $tzspheader = substr $udp->{data}, 0, 5;
+   my $tzspdata = substr $udp->{data}, 5;
+#    print STDOUT HexDump $tzspheader if($debug);
+   
+   # --- Check is the header is TZSP
+   if (unpack ('H*',$tzspheader) eq '010000120a'){
+	if (!$dumper) {
+		# --- Open output file as IEEE802.11
+		my $linktype = Net::Pcap::datalink_name_to_val('IEEE802_11');
+		my $dummy=Net::Pcap::open_dead($linktype,2500);
+		$dumper = Net::Pcap::pcap_dump_open($dummy, $dumpOUT);
+	}
+   } elsif (unpack ('H*',$tzspheader) eq '0100000101'){
+	if (!$dumper) {
+		# --- Open output file as Ethernet
+		my $linktype = Net::Pcap::datalink_name_to_val('EN10MB');
+		my $dummy=Net::Pcap::open_dead($linktype,2500);
+		$dumper = Net::Pcap::pcap_dump_open($dummy, $dumpOUT);
+	}
+   } else {
+	print STDERR $counter," Maybe wrong tzsp header? -> ",unpack ('H*',$tzspheader),"\n" if ($debug);
+	Net::Pcap::pcap_dump($errdumper, $header, $packet) if ($debug);
+	$counter++;
+	return;
+   }
+#    print STDOUT HexDump $tzspdata if($debug);
+   
+   # --- Process included packet
+   my $ethertzsp = NetPacket::Ethernet->decode($tzspdata);
+   my $iptzsp = NetPacket::IP->decode($ethertzsp->{data});
+	
+   # --- If it's the right ip
+   if (!$observedIP || ( $iptzsp->{'src_ip'} eq $observedIP or $iptzsp->{'dest_ip'} eq $observedIP)){
+#	Net::Pcap::pcap_dump($dumper, $header, $packet) if ($debug);
+	# --- If yes, add it to output file
+	Net::Pcap::pcap_dump($dumper, $header, $tzspdata);
+   }
+   else {
+	print STDERR $counter," Maybe wrong include packet? ",$iptzsp->{'src_ip'}," -> ",$iptzsp->{'dest_ip'},"\n";
+   }
+   $counter++;
+}
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
