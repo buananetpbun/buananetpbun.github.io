@@ -1,3 +1,22 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Calculates day of the week for a givien date - Mirotik Script</title>
+<meta content='Calculates day of the week for a givien date - Mirotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Calculates day of the week for a givien date - Mikrotik Script</h2>
+
 # Calculates day of the week for a givien date
 # Month: jan,feb ... nov,dec   (must be lower-case)
 # Day: 1 - 31
@@ -38,3 +57,8 @@
 :set sum ($sum - (($sum / 7) * 7))
 :set result [:pick $daytbl $sum]
 :log info "Today is $result"
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
