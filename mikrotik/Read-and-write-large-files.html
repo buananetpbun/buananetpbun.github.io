@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Read and Write Large Files - Mikrotik Script</title>
+<meta content='Read and Write Large Files - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Read and Write Large Files - Mikrotik Script</h2>
+
+How To Read and Write Large Files
+
+Many users requested ability to work with files. Now you can do it without limitations.
+
+Create and write to file:
+
+:global newContent "new file content\r\nanother line\r\n";
+[/lua "local f=assert(io.open('/test.txt', 'w+')); f:write(newContent); f:close()" ];
+
+Read file content to variable:
+
+:global cnt ""
+[/lua "local f=assert(io.open('/test.txt', 'r')); cnt=f:read('*all'); f:close()" ];
+:put $cnt
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
