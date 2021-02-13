@@ -1,0 +1,40 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Check Bandwidth and Add Limitations - Mirotik Script</title>
+<meta content='Check Bandwidth and Add Limitations - Mirotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Check Bandwidth and Add Limitations - Mikrotik Script</h2>
+
+This script checks if download on interface is more than 512kbps, if true then queue is added to limit speed to 256kbps.
+
+:foreach i in=[/interface find] do={
+    /interface monitor-traffic $i once do={
+        :if ($"received-bits-per-second" > 0 ) do={
+            :local tmpIP [/ip address get [/ip address find interface=$i] address] ;
+            #:log warning $tmpIP ;
+            :for j from=( [:len $tmpIP] - 1) to=0 do={
+                :if ( [:pick $tmpIP $j] = "/") do={
+                    /queue simple add name=$i max-limit=256000/256000 dst-address=[:pick $tmpIP 0 $j] ;
+                } 
+            }
+        }
+    }
+}
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
