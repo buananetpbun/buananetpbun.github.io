@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Route - Recursive Gateway Fail over - Mikrotik Script</title>
+<meta content='Route - Recursive Gateway Fail over - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Route - Recursive Gateway Fail over - Mikrotik Script</h2>
+
+How To Recursive Gateway Fail over
+
+Fail Over 2 ISP with Recursive Gateway
+WAN-1 = IP: 192.168.2.2/24
+WAN-2 = IP: 192.168.3.2/24
+--------------------------------------
+
+/ip route
+add check-gateway=ping distance=2 gateway=8.8.8.8 target-scope=30
+add check-gateway=ping distance=1 gateway=8.8.4.4 target-scope=30
+add check-gateway=ping distance=1 dst-address=8.8.8.8/32 gateway=192.168.3.1 target-scope=10
+add check-gateway=ping distance=1 dst-address=8.8.4.4/32 gateway=192.168.2.1 target-scope=10
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
