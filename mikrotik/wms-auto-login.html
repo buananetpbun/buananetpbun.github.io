@@ -1,0 +1,36 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Auto Login WMS or wifi.id- Mirotik Script</title>
+<meta content='Auto Login WMS  or wifi.id - Mirotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Auto Login WMS or wifi.id - Mikrotik Script</h2>
+
+:if ([/ping address=1.1.1.1 count=5] = 0) do={
+/ip dns cache flush
+/ip dhcp-client release [find interface=WLAN-INTERFACE]
+delay 5
+log error ("WMS Down")
+:local ip [/ip address get [/ip address find interface="WLAN-INTERFACE"] address];
+:local mac [/interface wireless get [ find default-name="WLAN-INTERFACE" ] mac-address];
+:local ip [put [:pick $ip 0 [:find $ip "/"]]];
+/tool fetch http-method=post http-data="username=username@freeMS&password=password" url=("https://welcome2.wifi.id/wms/?gw_id=GWID&client_mac=xxxxxxxxxxxx&wlan=xxxxxxxxxxxxxxxxxx:SSID%20WMS") keep-result=no;
+} else {
+log warning ("WMS UP")
+}
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
