@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Check if IP on interface have changed - Mikrotik Script</title>
+<meta content='Check if IP on interface have changed - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Check if IP on interface have changed - Mikrotik Script</h2>
+
+Check if IP on interface have changed
+-------------------------------------
+
+Sometimes provider gives dynamic IP addresses. This script will compare if dynamic IP address is changed.
+
+:global currentIP;
+:local newIP [/ip address get [find interface="ether1"] address];
+:if ($newIP != $currentIP) do={
+    :put "ip address $currentIP changed to $newIP";
+    :set currentIP $newIP;
+}
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
