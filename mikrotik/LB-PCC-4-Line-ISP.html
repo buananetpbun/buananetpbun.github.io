@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Load Balancing LB PCC 4 Line ISP Failover - Mikrotik Script</title>
+<meta content='Load Balancing LB PCC 4 Line ISP Failover - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Load Balancing LB PCC 4 Line ISP Failover - Mikrotik Script</h2>
+
+################################################
+# LOAD BALANCING (LB) PCC SCRIPT GENERATOR
+# Date/Time: 2/13/2021, 9:19:38 PM
+# https://fb.me/buananet.pbun
+# Load Balancing Metode -> PCC
+################################################
+
+/ip firewall address-list
+add address=192.168.0.0/16 list=LOCAL-IP
+add address=172.16.0.0/12 list=LOCAL-IP
+add address=10.0.0.0/8 list=LOCAL-IP
+
+/ip firewall nat
+add chain=srcnat out-interface="ether1" action=masquerade
+add chain=srcnat out-interface="ether2" action=masquerade
+add chain=srcnat out-interface="ether3" action=masquerade
+add chain=srcnat out-interface="ether4" action=masquerade
+
+/ip route
+add check-gateway=ping distance=1 gateway="192.168.1.1" routing-mark="to-ether1"
+add check-gateway=ping distance=1 gateway="192.168.2.1" routing-mark="to-ether2"
+add check-gateway=ping distance=1 gateway="192.168.3.1" routing-mark="to-ether3"
+add check-gateway=ping distance=1 gateway="192.168.4.1" routing-mark="to-ether4"
+add check-gateway=ping distance=1 gateway="192.168.1.1"
+add check-gateway=ping distance=2 gateway="192.168.2.1"
+add check-gateway=ping distance=3 gateway="192.168.3.1"
+add check-gateway=ping distance=4 gateway="192.168.4.1"
+
+/ip firewall mangle
+add action=mark-connection chain=input in-interface="ether1" new-connection-mark="cm-ether1" passthrough=yes
+add action=mark-connection chain=input in-interface="ether2" new-connection-mark="cm-ether2" passthrough=yes
+add action=mark-connection chain=input in-interface="ether3" new-connection-mark="cm-ether3" passthrough=yes
+add action=mark-connection chain=input in-interface="ether4" new-connection-mark="cm-ether4" passthrough=yes
+add action=mark-routing chain=output connection-mark="cm-ether1" new-routing-mark="to-ether1" passthrough=yes
+add action=mark-routing chain=output connection-mark="cm-ether2" new-routing-mark="to-ether2" passthrough=yes
+add action=mark-routing chain=output connection-mark="cm-ether3" new-routing-mark="to-ether3" passthrough=yes
+add action=mark-routing chain=output connection-mark="cm-ether4" new-routing-mark="to-ether4" passthrough=yes
+add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP dst-address-type=!local new-connection-mark="cm-ether1" passthrough=yes per-connection-classifier=both-addresses-and-ports:4/0 src-address-list=LOCAL-IP
+add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP dst-address-type=!local new-connection-mark="cm-ether2" passthrough=yes per-connection-classifier=both-addresses-and-ports:4/1 src-address-list=LOCAL-IP
+add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP dst-address-type=!local new-connection-mark="cm-ether3" passthrough=yes per-connection-classifier=both-addresses-and-ports:4/2 src-address-list=LOCAL-IP
+add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP dst-address-type=!local new-connection-mark="cm-ether4" passthrough=yes per-connection-classifier=both-addresses-and-ports:4/3 src-address-list=LOCAL-IP
+add action=mark-routing chain=prerouting connection-mark="cm-ether1" dst-address-list=!LOCAL-IP new-routing-mark="to-ether1" passthrough=yes src-address-list=LOCAL-IP
+add action=mark-routing chain=prerouting connection-mark="cm-ether2" dst-address-list=!LOCAL-IP new-routing-mark="to-ether2" passthrough=yes src-address-list=LOCAL-IP
+add action=mark-routing chain=prerouting connection-mark="cm-ether3" dst-address-list=!LOCAL-IP new-routing-mark="to-ether3" passthrough=yes src-address-list=LOCAL-IP
+add action=mark-routing chain=prerouting connection-mark="cm-ether4" dst-address-list=!LOCAL-IP new-routing-mark="to-ether4" passthrough=yes src-address-list=LOCAL-IP
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
