@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>A Bit of Sounds - Mikrotik Script</title>
+<meta content='A Bit of Sounds - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>A Bit of Sounds - Mikrotik Script</h2>
+
+Part One: SQUAWK
+The scripts below are based on SQUAWK program (C) 1987 Merlin R. Null.
+
+SQUAWK Chang
+------------
+ :for j from=1 to=4 step=1 do={
+   :for i from=2000 to=50 step=-400 do={
+     :beep frequency=$i length=11ms;
+     :delay 11ms;
+   }
+   :for i from=800 to=2000 step=400 do={
+     :beep frequency=$i length=11ms;
+     :delay 11ms;
+   }
+ }
+ 
+SQUAWK Coo
+----------
+ :for i from=0 to=150 step=10 do={
+   :beep frequency=(1295 - i) length=22ms;
+   :delay 22ms;
+   :beep frequency=(1095 + i) length=22ms;
+   :delay 22ms;
+ }
+ 
+SQUAWK Oh!
+----------
+ :for i from=800 to=2000 step=100 do={
+   :beep frequency=$i length=11ms;
+   :delay 11ms;
+ }
+ :for i from=2000 to=50 step=-100 do={
+   :beep frequency=$i length=11ms;
+   :delay 11ms;
+ }
+ 
+SQUAWK Phone 1
+--------------
+ :for i from=1 to=10 step=1 do={
+   :beep frequency=1195 length=22ms;
+   :delay 22ms;
+   :beep frequency=2571 length=22ms;
+   :delay 22ms;
+ }
+ 
+SQUAWK Siren
+------------
+ :for i from=1 to=3 step=1 do={
+   :beep frequency=550 length=494ms;
+   :delay 494ms;
+   :beep frequency=400 length=494ms;
+   :delay 494ms;
+ }
+ 
+SQUAWK Space 1
+--------------
+ :for i from=1000 to=40 step=-20 do={
+   :beep frequency=$i length=11ms;
+   :delay 11ms;
+ }
+ 
+SQUAWK Space 2
+--------------
+ :for i from=10000 to=500 step=-500 do={
+   :beep frequency=$i length=11ms;
+   :delay 11ms;
+ }
+ 
+Phone Call
+----------
+ :for i from=1 to=10 do={
+   /system script run "SQUAWK Phone 1";
+   :delay 400ms;
+   /system script run "SQUAWK Phone 1";
+   :delay 2000ms;
+ }
+ 
+ 
+Part Two: Adams
+The scripts below are based on the code from Lee Adams' book "Grafik, Animation, Simulation fur Personalcomputer" (ISBN 3890905722, Markt&Technik, 1989).
+
+Adams Fanfare
+-------------
+ :for t from=1200 to=350 step=-50 do={
+   :beep frequency=$t length=33ms;
+   :delay 33ms;
+ }
+ 
+Adams Larm
+----------
+ :for t1 from=1 to=10 step=1 do={
+   :for t2 from=300 to=1800 step=40 do={
+     :beep frequency=$t2 length=11ms;
+     :delay 11ms;
+   }
+ }
+ 
+Adams Maschinengewehr
+---------------------
+ :for t from=1 to=20 step=1 do={
+   :beep frequency=40 length=33ms;
+   :delay 33ms;
+   :delay 55ms;
+ }
+ 
+Adams Telefone
+--------------
+ :for t1 from=1 to=4 step=1 do={
+   :for t2 from=1 to=25 step=1 do={
+     :beep frequency=540 length=33ms;
+     :delay 33ms;
+     :beep frequency=650 length=27ms;
+     :delay 27ms;
+   }
+   :delay 2000ms;
+ }
+ 
+Adams Tonarkade
+---------------
+ :for t1 from=1 to=8 step=1 do={
+     :for t2 from=600 to=750 step=8 do={
+     :beep frequency=$t2 length=11ms;
+     :delay 11ms;
+   }
+ }
+ 
+Adams Tonarkade 2
+-----------------
+ :for t from=1250 to=600 step=-8 do={
+   :beep frequency=$t length=11ms;
+   :delay 11ms;
+ }
+ 
+ 
+Part Three: Miklavcic
+The scripts below are based on the code from http://snipplr.com/view/9220/simple-tic-tac-toe/
+
+Miklavcic Sad
+-------------
+ :beep frequency=784 length=500ms;
+ :delay 500ms;
+ 
+ :beep frequency=738 length=500ms;
+ :delay 500ms;
+ 
+ :beep frequency=684 length=500ms;
+ :delay 500ms;
+ 
+ :beep frequency=644 length=1000ms;
+ :delay 1000ms;
+ 
+Miklavcic Victory
+-----------------
+ :beep frequency=523 length=200ms;
+ :delay 1000ms;
+ 
+ :beep frequency=523 length=200ms;
+ :delay 1000ms;
+ 
+ :beep frequency=523 length=200ms;
+ :delay 1000ms;
+ 
+ :beep frequency=659 length=700ms;
+ :delay 700ms;
+ 
+ :beep frequency=784 length=500ms;
+ :delay 500ms;
+ 
+ :beep frequency=523 length=200ms;
+ :delay 1000ms;
+ 
+ :beep frequency=523 length=200ms;
+ :delay 1000ms;
+ 
+ :beep frequency=523 length=200ms;
+ :delay 1000ms;
+ 
+ :beep frequency=659 length=700ms;
+ :delay 700ms;
+ 
+ :beep frequency=784 length=500ms;
+ :delay 800ms;
+ 
+ :beep frequency=784 length=400ms;
+ :delay 400ms;
+ 
+ :beep frequency=884 length=200ms;
+ :delay 200ms;
+ 
+ :beep frequency=784 length=200ms;
+ :delay 200ms;
+ 
+ :beep frequency=687 length=200ms;
+ :delay 200ms;
+ 
+ :beep frequency=659 length=200ms;
+ :delay 200ms;
+ 
+ :beep frequency=579 length=200ms;
+ :delay 200ms;
+ 
+ :beep frequency=519 length=400ms;
+ :delay 400ms;
+ 
+ 
+Part Z: Assorted Sounds
+Sound 1
+-----------------------
+ :beep frequency=600 length=165ms;
+ :delay 165ms;
+ 
+ :beep frequency=50 length=83ms;
+ :delay 83ms;
+ 
+ :beep frequency=600 length=165ms;
+ :delay 165ms;
+ 
+ :beep frequency=50 length=83ms;
+ :delay 83ms;
+ 
+ :beep frequency=650 length=165ms;
+ :delay 165ms;
+ 
+ :beep frequency=600 length=165ms;
+ :delay 165ms;
+ 
+ :beep frequency=50 length=83ms;
+ :delay 83ms;
+ 
+ :beep frequency=600 length=165ms;
+ :delay 165ms;
+ 
+ :beep frequency=700 length=275ms;
+ :delay 275ms;
+ 
+ :beep frequency=800 length=275ms;
+ :delay 275ms;
+ 
+ :beep frequency=900 length=110ms;
+ :delay 110ms;
+ 
+ </pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
