@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Change Name Interface or Ether To Default Auto - Mikrotik Script</title>
+<meta content='Change Name Interface or Ether To Default Auto - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Change Name Interface or Ether To Default Auto - Mikrotik Script</h2>
+
+#####################################
+# Script by Agus Ramadhani
+# fb.com/buananet.pangkalanbun
+# http://www.o-om.com
+# SCRIPT name interface to default
+######################################
+:foreach i in=[/interface ethernet find ] do={ 
+:local y [/interface ethernet get $i name] ;
+:local x [/interface ethernet get $i default-name];
+:log warning "Change interface Name $y => $x"
+/interface set $y name=$x;
+}
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
