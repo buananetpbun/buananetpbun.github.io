@@ -1,7 +1,0 @@
-How to Create a file
---------------------
-
-In v3.x it is not possible to create file directly, however there is a workaround
-
-/file print file=myFile
-/file set myFile.txt contents=""
