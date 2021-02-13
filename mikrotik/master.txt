@@ -12,7 +12,7 @@
 <h2>Calculate With Decimal Numbers - Mikrotik Script</h2>
 </pre>
 <br>
-<a target="_blank" href="https://buananetpbun.github.io/mikrotik" ><< Back To Home >> </a>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
 <body>
 <html>
 <head> 
