@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Audible signal test - Mikrotik Script</title>
+<meta content='Audible signal test - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Audible signal test - Mikrotik Script</h2>
+
+Script for audible signal test on boards with beeper:
+
+Code compatible with version 2.9:
+
+:local beep "10ms";
+:local no "2400ms";
+:local 90 "1290ms";
+:local 85 "790ms";
+:local 80 "590ms";
+:local 77 "390ms";
+:local 74 "290ms";
+:local 71 "240ms";
+:local 68 "190ms";
+:local 65 "140ms";
+:local 62 "90ms";
+:local 59 "60ms";
+:local 56 "40ms";
+:local 53 "20ms";
+:local 50 "10ms";
+:for i from=1 to=100 do={
+/interface wireless monitor wlan1 interval=1 do={
+ :if ($signal-strength <= -90) do={
+  :delay $no;
+  }
+ :if ($signal-strength <= -85 && $signal-strength > -90) do={
+  :for i from=1 to=2 do={ :beep length=$beep; :delay $90; }
+  }  
+ :if ($signal-strength <= -80 && $signal-strength > -85) do={
+  :for i from=1 to=3 do={ :beep length=$beep; :delay $85; }
+  }
+ :if ($signal-strength <= -77 && $signal-strength > -80) do={
+  :for i from=1 to=4 do={ :beep length=$beep; :delay $80; }
+  }  
+ :if ($signal-strength <= -74 && $signal-strength > -77) do={
+  :for i from=1 to=6 do={ :beep length=$beep; :delay $77; }
+  }  
+ :if ($signal-strength <= -71 && $signal-strength > -74) do={
+  :for i from=1 to=8 do={ :beep length=$beep; :delay $74; }
+  }  
+ :if ($signal-strength <= -68 && $signal-strength > -71) do={
+  :for i from=1 to=10 do={ :beep length=$beep; :delay $71; }
+  }  
+ :if ($signal-strength <= -65 && $signal-strength > -68) do={
+  :for i from=1 to=12 do={ :beep length=$beep; :delay $68; }
+  }  
+ :if ($signal-strength <= -62 && $signal-strength > -65) do={
+  :for i from=1 to=16 do={ :beep length=$beep; :delay $65; }
+  }  
+ :if ($signal-strength <= -59 && $signal-strength > -62) do={
+  :for i from=1 to=24 do={ :beep length=$beep; :delay $62; }
+  }  
+ :if ($signal-strength <= -56 && $signal-strength > -59) do={
+  :for i from=1 to=34 do={ :beep length=$beep; :delay $59; }
+  }  
+ :if ($signal-strength <= -53 && $signal-strength > -56) do={
+  :for i from=1 to=48 do={ :beep length=$beep; :delay $56; }
+  }
+ :if ($signal-strength <= -50 && $signal-strength > -53) do={
+  :for i from=1 to=80 do={ :beep length=$beep; :delay $53; }
+  }  
+ :if ($signal-strength <= -20 && $signal-strength > -50) do={
+  :for i from=1 to=120 do={ :beep length=$beep; :delay $50; }
+  }  
+ }
+}
+
+Code compatible with version 3:
+
+:local beep "10ms";
+:local no "2400ms";
+:local s90 "1290ms";
+:local s85 "790ms";
+:local s80 "590ms";
+:local s77 "390ms";
+:local s74 "290ms";
+:local s71 "240ms";
+:local s68 "190ms";
+:local s65 "140ms";
+:local s62 "90ms";
+:local s59 "60ms";
+:local s56 "40ms";
+:local s53 "20ms";
+:local s50 "10ms";
+:for i from=1 to=100 do={
+/interface wireless monitor wlan1 interval=1 do={
+ :if ($"signal-strength" <= -90) do={
+  :delay $no;
+  }
+ :if ($"signal-strength" <= -85 && $"signal-strength" > -90) do={
+  :for i from=1 to=2 do={ :beep length=$beep; :delay $s90; }
+  }  
+ :if ($"signal-strength" <= -80 && $"signal-strength" > -85) do={
+  :for i from=1 to=3 do={ :beep length=$beep; :delay $s85; }
+  }
+ :if ($"signal-strength" <= -77 && $"signal-strength" > -80) do={
+  :for i from=1 to=4 do={ :beep length=$beep; :delay $s80; }
+  }  
+ :if ($"signal-strength" <= -74 && $"signal-strength" > -77) do={
+  :for i from=1 to=6 do={ :beep length=$beep; :delay $s77; }
+  }  
+ :if ($"signal-strength" <= -71 && $"signal-strength" > -74) do={
+  :for i from=1 to=8 do={ :beep length=$beep; :delay $s74; }
+  }  
+ :if ($"signal-strength" <= -68 && $"signal-strength" > -71) do={
+  :for i from=1 to=10 do={ :beep length=$beep; :delay $s71; }
+  }  
+ :if ($"signal-strength" <= -65 && $"signal-strength" > -68) do={
+  :for i from=1 to=12 do={ :beep length=$beep; :delay $s68; }
+  }  
+ :if ($"signal-strength" <= -62 && $"signal-strength" > -65) do={
+  :for i from=1 to=16 do={ :beep length=$beep; :delay $s65; }
+  }  
+ :if ($"signal-strength" <= -59 && $"signal-strength" > -62) do={
+  :for i from=1 to=24 do={ :beep length=$beep; :delay $s62; }
+  }  
+ :if ($"signal-strength" <= -56 && $"signal-strength" > -59) do={
+  :for i from=1 to=34 do={ :beep length=$beep; :delay $s59; }
+  }  
+ :if ($"signal-strength" <= -53 && $"signal-strength" > -56) do={
+  :for i from=1 to=48 do={ :beep length=$beep; :delay $s56; }
+  }
+ :if ($"signal-strength" <= -50 && $"signal-strength" > -53) do={
+  :for i from=1 to=80 do={ :beep length=$beep; :delay $s53; }
+  }  
+ :if ($"signal-strength" <= -20 && $"signal-strength" > -50) do={
+  :for i from=1 to=120 do={ :beep length=$beep; :delay $s50; }
+  }  
+ }
+}
+
+Code for RouterBoard 411 with led and sound aligment:
+
+:local beep "10ms";
+:local no "2400ms";
+:local s90 "1290ms";
+:local s85 "790ms";
+:local s80 "590ms";
+:local s77 "390ms";
+:local s74 "290ms";
+:local s71 "240ms";
+:local s68 "190ms";
+:local s65 "140ms";
+:local s62 "90ms";
+:local s59 "60ms";
+:local s56 "40ms";
+:local s53 "20ms";
+:local s50 "10ms";
+:for i from=1 to=100 do={
+/interface wireless monitor wlan1 interval=1 do={
+ :if ($"signal-strength" <= -90) do={
+  :delay $no;
+  }
+ :if ($"signal-strength" <= -85 && $"signal-strength" > -90) do={
+  :for i from=1 to=2 do={ :beep length=$beep; :delay $s90; :led led1=yes led2=no led3=no led4=no led5=no }
+  }  
+ :if ($"signal-strength" <= -80 && $"signal-strength" > -85) do={
+  :for i from=1 to=3 do={ :beep length=$beep; :delay $s85; :led led1=yes led2=no led3=no led4=no led5=no }
+  }
+ :if ($"signal-strength" <= -77 && $"signal-strength" > -80) do={
+  :for i from=1 to=4 do={ :beep length=$beep; :delay $s80; :led led1=yes led2=yes led3=no led4=no led5=no }
+  }  
+ :if ($"signal-strength" <= -74 && $"signal-strength" > -77) do={
+  :for i from=1 to=6 do={ :beep length=$beep; :delay $s77; :led led1=yes led2=yes led3=no led4=no led5=no }
+  }  
+ :if ($"signal-strength" <= -71 && $"signal-strength" > -74) do={
+  :for i from=1 to=8 do={ :beep length=$beep; :delay $s74; :led led1=yes led2=yes led3=yes led4=no led5=no }
+  }  
+ :if ($"signal-strength" <= -68 && $"signal-strength" > -71) do={
+  :for i from=1 to=10 do={ :beep length=$beep; :delay $s71; :led led1=yes led2=yes led3=yes led4=no led5=no }
+  }  
+ :if ($"signal-strength" <= -65 && $"signal-strength" > -68) do={
+  :for i from=1 to=12 do={ :beep length=$beep; :delay $s68; :led led1=yes led2=yes led3=yes led4=yes led5=no }
+  }  
+ :if ($"signal-strength" <= -62 && $"signal-strength" > -65) do={
+  :for i from=1 to=16 do={ :beep length=$beep; :delay $s65; :led led1=yes led2=yes led3=yes led4=yes led5=no }
+  }  
+ :if ($"signal-strength" <= -59 && $"signal-strength" > -62) do={
+  :for i from=1 to=24 do={ :beep length=$beep; :delay $s62; :led led1=yes led2=yes led3=yes led4=yes led5=no }
+  }  
+ :if ($"signal-strength" <= -56 && $"signal-strength" > -59) do={
+  :for i from=1 to=34 do={ :beep length=$beep; :delay $s59; :led led1=yes led2=yes led3=yes led4=yes led5=yes }
+  }  
+ :if ($"signal-strength" <= -53 && $"signal-strength" > -56) do={
+  :for i from=1 to=48 do={ :beep length=$beep; :delay $s56; :led led1=yes led2=yes led3=yes led4=yes led5=yes }
+  }
+ :if ($"signal-strength" <= -50 && $"signal-strength" > -53) do={
+  :for i from=1 to=80 do={ :beep length=$beep; :delay $s53; :led led1=yes led2=yes led3=yes led4=yes led5=yes }
+  }  
+ :if ($"signal-strength" <= -20 && $"signal-strength" > -50) do={
+  :for i from=1 to=120 do={ :beep length=$beep; :delay $s50; :led led1=yes led2=yes led3=yes led4=yes led5=yes }
+  }  
+ }
+}
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
