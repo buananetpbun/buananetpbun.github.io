@@ -15,10 +15,9 @@ h1, h2, h3, h4, h5, h6{margin:0; padding:0}
 <body>
 <pre> 
 <h2>Automated Usage Script without usermanager - Mikrotik Script</h2>
+
 Last Updated: 15th June 2009 Current version: v1.4
-
 An updated version of this script is available at: MikroTik-RouterOS.com
-
 If you have any questions you can also email me: admin ( at ) mikrotik-routeros ( dot ) com
 
 Contents
@@ -37,22 +36,15 @@ Contents
 
 Summary
 I wrote a usage tracking script based on the original Automated Billing Script
-
 The way I run it is using a Mikrotik box setup to pass everything through transparently then I generated a Queue per IP address to keep track of the usage. On my test box (A PowerRouter 732) I currently have 3 class C blocks passing through with only 3% cpu (Multi CPU enabled).
-
 This system is built for download-based billing only and will report the amount of downloads used by an IP address (or group if you setup a queue with multiple IP's) each month. (This could easily be switched around thou)
-
 If you use the alternate version of the monthend script you can set the scheduler to run overseer every 1hour without having to worry about multiple reports coming through.
-
 Additional, I've since written a smaller manual script for accounts so they can run this at any time and have the usage reports emailed through (see the manual usage report script)
 
 Todo
 - ability to backup to a file on the mikrotik so it will count both data in the queue currently + data usage saved in the file (in case you lose power to the device or have to restart it at any time) Rethought - now saves downloaded data onto the end of comment, so scripts can also be exported if required. Page now updated to save data in the newly added comment field (I've been using this since v3.24)
-
 - modifying the monthend script further so that it can only be triggered on the last hour of the last day of the month. This means you could then run the usage script hourly to get more frequent updates. This has been done, see original and alternate versions of the Monthend Script See below the script for details on how it works.
-
 - modify the usage and monthly report scripts to use kbyte variables instead of bytes (this shouldn't be any major issue thou, as the integer variables mikroik have allowed are 64bit, so a number can be as high as 9223372036854775807.
-
 - allow sending to a client email address AND local support crew. Done: now you can specify a default email address in the usagereport (for sending to your support/accounts people) and the address in the queue becomes the client address to email, if you leave it blank eg: Client!50#!00#0000 instead of Client!50#client@example.com!00#0000 it will just skip sending the report email to the client but still send one to the support/accounts email address
 
 Current known bugs
@@ -364,7 +356,6 @@ Quick trick to generate queues
 would generate queues for 10.0.0.2-10.0.0.254 for you.
 
 note: the queue=default is important, as of v3.12 default-small queues with no child queues will be treated as if there was no queue at all (aka: unmonitored)
-
 </pre>
 <br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik">[ Back To Home ]</a>
