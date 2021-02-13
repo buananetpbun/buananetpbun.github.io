@@ -1,0 +1,46 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Hotspot Auto User logout user When internet Down - Mirotik Script</title>
+<meta content='Hotspot Auto User logout user When internet Down - Mirotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Hotspot Auto User logout user When internet Down - Mikrotik Script</h2>
+
+Hotspot Auto User logout user When internet Down
+-------------------------------------------------------
+
+This script is useful for automatic user logout and cookies when the internet is down or totally dead
+
+1. Open Winbox, Click Tools> Netwatch
+2. Click the "+" sign to add a new item
+3. Host: enter the ip address which is rarely down for example Google DNS 8.8.8.8
+4. Click the Down tab
+5. then enter in On Down: with the script below
+
+# SCRIPT REMOVE USER ACTIVE
+:local activelist [/ip hotspot active find]
+:foreach i in=$activelist do={
+    /ip hotspot active remove $i
+}
+
+# SCRIPT REMOVE COOKIE ACTIVE
+:local activelist [/ip hotspot cookie find]
+:foreach i in=$activelist do={
+    /ip hotspot cookie remove $i
+}
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
