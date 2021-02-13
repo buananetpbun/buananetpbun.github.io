@@ -3,8 +3,8 @@
 <head>
 <meta charset='utf-8'/>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<title>Calculate With Decimal Numbers - Mikrotik Script</title>
-<meta content='Calculate With Decimal Numbers - Mikrotik Script' name='description'/>
+<title>XXXXX - Mikrotik Script</title>
+<meta content='XXXXX - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
  <style id='page-skin-1' type='text/css'>
@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6{margin:0; padding:0}
 </head>  
 <body>
 <pre>
-<h2>Calculate With Decimal Numbers - Mikrotik Script</h2>
+<h2>XXXXXX - Mikrotik Script</h2>
 </pre>
 <br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
