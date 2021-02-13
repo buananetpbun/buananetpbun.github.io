@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Dial PPPoE until a Certain IP Range is Obtained - Mikrotik Script</title>
+<meta content='Dial PPPoE until a Certain IP Range is Obtained - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Dial PPPoE until a Certain IP Range is Obtained - Mikrotik Script</h2>
+
+Dial PPPoE until a Certain IP Range is Obtained
+This script is for those who wants a certain IP range when connecting with PPPoE to your ISP. Instead of constantly disabling and enabling the pppoe client, all you have to do is run this script.
+
+You may want a certain IP range for any number of reasons. Sometimes I use this to check the routes that my ISP uses. The routes they use differs for certain IP ranges. Hope someone finds this useful.
+Forum thread for discussion
+3 variables to set, if, targetip and pppoedelay. if: name of your pppoe-client interface targetip: eg: 177.0.0.0/8 or 65.50.0.0/16 pppoedelay: Enough delay so that your ISP gives a new IP instead of the previous one. You can play around with this.
+
+:global if "pppoe-out1"
+:global targetip 210.0.0.0/8
+:global currentip [/ip address get [/ip address find interface=$if ] address]
+:global ip $currentip
+:global pppoedelay 10s
+
+:put "Current IP: $currentip\r\nTarget: $targetip\r\n"
+
+:while (!($currentip in $targetip)) do={
+     put "$currentip is not in $targetip. Getting new IP. $pppoedelay delay"
+     /interface disable $if
+     :delay $pppoedelay
+     /interface enable $if
+     :do {delay 1s; put "waiting for pppoe-server"} while=( [/interface get unifi running]=false)
+     :set currentip [/ip address get [/ip address find interface=$if ] address]
+     :set currentip ([[:parse ":return $currentip"]])
+     :set ip $currentip
+     }
+:put "Target obtained: $currentip"
+Best to run from the CLI so you can see the output. Example:
+
+[admin@RB2011UAS] /system script> run pppoe-ip-cidr 
+Current IP: 175.144.175.247/32
+Target: 210.0.0.0/8
+
+175.144.175.247/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+175.144.175.247/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+175.136.3.130/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+175.136.3.130/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+118.101.248.194/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+175.144.175.247/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+118.100.151.60/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+Target obtained: 210.187.203.102/32
+[admin@RB2011UAS] /system script> 
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
