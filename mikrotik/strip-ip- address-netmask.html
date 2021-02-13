@@ -1,0 +1,42 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Strip IP Address without netmask - Mikrotik Script</title>
+<meta content='Strip IP Address without netmask - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Strip IP Address without netmask - Mikrotik Script</h2>
+
+Strip IP Address without netmask
+--------------------------------
+This script is useful if you need ip address without netmask (for example to use it in firewall), but "/ip address get [id] address" returns ip address and netmask.
+
+# Code:
+------
+:global ipaddress 10.1.101.1/24
+:for i from=( [:len $ipaddress] - 1) to=0 do={ 
+	:if ( [:pick $ipaddress $i] = "/") do={ 
+		:put [:pick $ipaddress 0 $i]
+	} 
+}
+
+# Another much more simple way:
+------------------------------
+:global ipaddress 10.1.101.1/24
+:put [:pick $ipaddress 0 [:find $ipaddress "/"]]
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
