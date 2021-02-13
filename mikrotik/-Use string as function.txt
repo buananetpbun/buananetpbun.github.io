@@ -1,5 +1,0 @@
-Use string as function
-----------------------
-
-:global printA [:parse ":local A; :put \$A;" ];   
-$printA 
