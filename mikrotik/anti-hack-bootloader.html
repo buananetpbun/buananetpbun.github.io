@@ -48,15 +48,15 @@ Several locations can be installed to run the script:
 :set logprotectedrouterboot "$[/system routerboard setting get protected-routerboot]"
 :set logreformatholdbutton "$[/system routerboard setting get reformat-hold-button]"
 :set logreformatholdbuttonmax "$[/system routerboard setting get reformat-hold-button-max]"
-# Cek jika Bootloader diubah ke Enable
+# Ckeck if Bootloader change to Enable
 :if ($logprotectedrouterboot ="enabled") do={
-# Set info reformat hold button di Identity di winbox untuk jaga-jaga
+# Set info reformat hold button on Identity
 /system identity set name="BOOTLOADER > Min:$logreformatholdbutton - Max:$logreformatholdbuttonmax"
-# Kembalikan BootLoader Kepengaturan Awal
+# Set back BootLoader to default config
 /system routerboard setting set protected-routerboot disabled
 /system routerboard setting set reformat-hold-button=20s
 /system routerboard setting set reformat-hold-button-max=10m
-# tahan 5 detik
+# delay 5 second
 :delay 5s
 # Shutdown mikrotik or use /system reboot
 /system shutdown
