@@ -16,7 +16,8 @@ h1, h2, h3, h4, h5, h6{margin:0; padding:0}
 <pre>
 <h2>Protect Router From DDOS Attacks - Mikrotik Script</h2>
 
-Anticipate DDoS attacks, namely by limiting the number of connections in firewall rules. When there is a DDoS attack, the system detects the number of connection requests exceeding the specified limit.
+Anticipate DDoS attacks, namely by limiting the number of connections in firewall rules. 
+When there is a DDoS attack, the system detects the number of connection requests exceeding the specified limit.
 
 /ip firewall filter
 add chain=forward connection-state=new action=jump jump-target=block-ddos
