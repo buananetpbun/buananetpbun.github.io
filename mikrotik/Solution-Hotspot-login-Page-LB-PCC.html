@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Solution For Hotspot Login Page with LB PCC - Mikrotik Script</title>
+<meta content='Solution For Hotspot Login Page with LB PCC - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Solution For Hotspot Login Page with LB PCC - Mikrotik Script</h2>
+
+Having trouble with the Hotspot Login Page in PCC Load Balancing which often fails to appear or doesn't automatically redirect?
+
+Just add this in NAT for hotspot=auth
+
+
+Still failing too? we play a little with hotspot = auth in Load balancing PCC in mangle, adjust it to each condition, for example like this, just add hotspot=auth
+
+/ip firewall nat add action=accept chain=pre-hotspot disabled=no dst-address-type=!local hotspot=auth
+
+
+Still failed too? delete all the above methods and try to bypass all local traffic, make sure it is located at the top of the mangle (LOCAL-IP respectively, enter in the add-list)
+
+add action=mark-connection chain=prerouting dst-address-list=!IP-LAN dst-address-type=!local hotspot=auth new-connection-mark=E1-WAN_connmark passthrough=yes per-connection-classifier=both-addresses-and-ports:2/0 src-address-list=IP-LAN
+add action=mark-connection chain=prerouting dst-address-list=!IP-LAN dst-address-type=!local hotspot=auth new-connection-mark=E2-WAN_connmark passthrough=yes per-connection-classifier=both-addresses-and-ports:2/1 src-address-list=IP-LAN
+
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
