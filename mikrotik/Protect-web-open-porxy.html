@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Protect Open Web proxy Mikrotik - Mikrotik Script</title>
+<meta content='Protect Open Web proxy Mikrotik - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Protect Open Web proxy Mikrotik - Mikrotik Script</h2>
+
+Prevent the Open proxy from being misused by outsiders.
+
+/ip firewall filter
+add action=drop chain=input dst-port=3128,8080  in-interface-list=WAN protocol=tcp
+add action=drop chain=input dst-rt=3128,8080 in-interface-list=WAN protocol=udp
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
