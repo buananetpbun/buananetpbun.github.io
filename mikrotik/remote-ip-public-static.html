@@ -1,0 +1,45 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Remote IP Public Static For Secondary Gateway - Mikrotik Script</title>
+<meta content='Remote IP Public Static For Secondary Gateway - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>Remote IP Public Static For Secondary Gateway - Mikrotik Script</h2>
+
+So that the Public Static IP can be used for remote even though not as the main gateway
+
+An easy example like this ... suppose we use Indihome as the main gateway and Astinet as a backup gateway, 
+in the standard routing concept, of course, Public IP Astinet cannot be used for remote because its position is only as a backup gateway, 
+so that Astinet Public IP can still be used for example. Winbox remote needs are very easy, and this method can also be applied to all ISP that have Public Static IP
+
+Or you can use <a target="_blank" href="https://buananetpbun.github.io/remote-ip-public-static.html" >Script Maker or Generator</a>
+
+####################################################################
+# Remote IP Public Static For Secondary Gateway Mikrotik
+# Date/Time: 2/14/2021, 1:40:07 PM
+# By BuanaNET Secure! https://fb.me/buananet.pbun
+####################################################################
+
+/ip firewall mangle
+add action=mark-connection chain=input in-interface="ether2" new-connection-mark=ip-public passthrough=yes
+add action=mark-routing chain=output connection-mark=ip-public new-routing-mark=ip-public passthrough=no
+
+/ip route
+add check-gateway=ping gateway="192.168.10.1" routing-mark=ip-public
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
