@@ -16,6 +16,8 @@ h1, h2, h3, h4, h5, h6{margin:0; padding:0}
 <pre>
 <h2>Protect Connection With ANTI NETCUT - Mikrotik Script</h2>
 
+Anti Netcut, Netcut broadcasts ARP and attacks on Layer2, but at least with the script below we are able to answer who is naughty who wants to cut our network.
+
 /ip firewall address-list add list=netcut address=www.arcai.com
 /ip firewall mangle add action=add-src-to-address-list address-list=NetcutUser address-list-timeout=1h5m chain=prerouting dst-address-list=netcut dst-port=80 protocol=tcp
 /ip firewall filter add action=drop chain=forward comment=NetCut src-address-list=NetcutUser
