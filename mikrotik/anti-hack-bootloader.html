@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Anti Hack BootLoader - Mikrotik Script</title>
+<meta content=' Anti Hack BootLoader - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2> Anti Hack BootLoader - Mikrotik Script</h2>
+
+The way this script works is simple but smart, this script will monitor anyone who intends to activate the Mirotik Protected Bootloader, 
+it will be detected immediately and the router will automatically shutdown immediately, when the router is turned on again, 
+all the Protected Bootloader settings will be returned to the default setting, so any prank actions of malicious intruders before will be in vain ..
+
+If after installing this script the router shuts down itself, don't panic yet, it could be that the script is working and it might mean that someone is trying
+to activate the bootloader on the router illegally, if it's true, this can be seen by changing the window caption or 
+identity in Winbox to BOOTLOADER> Min: 00:00:20 - Max: 00:10:00
+
+Why does this script have to change the identity or caption in Winbox? I am trying to think if the reset button and NetInstall don't work 
+at least we know how much time for the "reformat hold button" it takes and how long it takes to press the reset button for it to work.
+Please modify it, if you want it to be good, we can also add other information such as sending it to email or to telegram 🙂
+
+For additional information, actually this script can not only be run through a schedule, because there are still many gaps that we can use to install the script.
+Several locations can be installed to run the script:
+
+DHCP Client
+DHCP Server
+Hotspot Profile
+PPP Profile
+Netwatch tool
+
+#=====================================================
+# ANTI HACKER PROTECTED BOOTLOADER BY BUANANET SECURE!
+#=====================================================
+# Set Local String
+:local logprotectedrouterboot;
+:local logreformatholdbutton;
+:local logreformatholdbuttonmax;
+# Set local Input
+:set logprotectedrouterboot "$[/system routerboard setting get protected-routerboot]"
+:set logreformatholdbutton "$[/system routerboard setting get reformat-hold-button]"
+:set logreformatholdbuttonmax "$[/system routerboard setting get reformat-hold-button-max]"
+# Cek jika Bootloader diubah ke Enable
+:if ($logprotectedrouterboot ="enabled") do={
+# Set info reformat hold button di Identity di winbox untuk jaga-jaga
+/system identity set name="BOOTLOADER > Min:$logreformatholdbutton - Max:$logreformatholdbuttonmax"
+# Kembalikan BootLoader Kepengaturan Awal
+/system routerboard setting set protected-routerboot disabled
+/system routerboard setting set reformat-hold-button=20s
+/system routerboard setting set reformat-hold-button-max=10m
+# tahan 5 detik
+:delay 5s
+# Shutdown mikrotik atau bisa gunakan /system reboot
+/system shutdown
+}
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
