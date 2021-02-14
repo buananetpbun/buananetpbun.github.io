@@ -28,7 +28,7 @@ html, body {
   font-size:13px;
 
 }
-.full-height { 
+.full-height {
 
 }
 /* unvisited link */
@@ -78,7 +78,6 @@ overflow:hidden
   flex: 1;
   width: auto;
 	background-color: #fff;
-	overflow-y:scroll
 
 }
 
@@ -154,6 +153,7 @@ font-weight:bold;
 height:83%; 
 width:100%;
 white-space: normal;
+overflow-x:none;
 }
 
 .h_iframe iframe {
@@ -166,73 +166,6 @@ white-space: normal;
 	white-space: normal;
 	overflow-x:none;
 }
-	
-	/* -- RESPONSIVE -- */
-@media screen and (max-width: 3000px){
-.panel-one {
-width: 30%;
-background-color: #f0f0f0;
-overflow-y:scroll
-}
-.panel-two {
-flex: 1;
-width: 70%;
-background-color: #fff;
-}
-}
-@media screen and (max-width: 1300px){
-.panel-one {
-width: 30%;
-background-color: #f0f0f0;
-overflow-y:scroll
-}
-.panel-two {
-flex: 1;
-width: 70%;
-background-color: #fff;
-}
-}
-@media screen and (max-width: 1024px) {
-.panel-one {
-width: 30%;
-background-color: #f0f0f0;
-overflow-y:scroll
-}
-.panel-two {
-flex: 1;
-width: 70%;
-background-color: #fff;
-}
-}
-@media screen and (max-width: 992px) {
-}
-@media screen and (max-width:880px){
-}
-@media screen and (max-width:768px){
-}
-@media screen and (max-width:684px){
-}
-@media screen and (max-width:600px){
-}
-@media screen and (max-width:480px){
-}
-@media screen and (max-width:429px){
-}
-@media screen and (max-width:320px){
-}
-@media screen and (max-width:240px){
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-/* -- 2x -- */
-}
-/* -- Print -- */
-@media print {
-body, .body-fauxcolumn-outer {
-background: none !important;
-font-size: 10pt;
-}
-}
-	
 </style>
 
 <script>
@@ -248,6 +181,18 @@ if (document.location.search.match(/type=embed/gi)) {
 
 <div class="drag-container">
 <div class="panel-one" id="drag-left">
+<span style="font-size:11px">	  
+<pre>
+ ______  _     _        ______         ______  _______ _______ 
+(____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)
+ ____)  ) |   | | /  \ | |   | | /  \ | |   | |_____   _       
+|  __  (| |   | |/ /\ \| |   | |/ /\ \| |   | |  ___) | |      
+| |__)  ) |___| | |__| | |   | | |__| | |   | | |_____| |_____ 
+|______/ \______|______|_|   |_|______|_|   |_|_______)\______)
+
+Copyright 2021 is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNET-SECURE</a>  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
+</pre>	
+</span>	
 <h3>MIKROTIK <span style="color:red">[</span> script <span style="color:red">]</span> DATABASE</h3>
 Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a> 
 <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Find Script.." style="width:100%; margin-bottom:10px;margin-top:10px"> 
@@ -261,13 +206,13 @@ Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Auto-upgrade-script-V3x.html')">Auto upgrade script V3.x</a></p></td></tr>
 <!-- B -->
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup.html')">Backup Mikrotik File .Backup</a></p></td></tr>	
-<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-import-rsc.html')">Backup Import File .rsc</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-Export-rsc.html')">Backup Export File .rsc</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-hide-sensitive.html')">Backup Export File .rsc Hide-Sensitive</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-compact.html')">Backup Export File .rsc Compact</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-terse.html')">Backup Export File .rsc Terse</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-verbose.html')">Backup Export File .rsc Verbose</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-combination.html')">Backup Export File .rsc With Combination</a></p></td></tr>
+<tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-import-rsc.html')">Backup Import File .rsc</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Bypass-Local-Connection.html')">Bypass Local Connection / Local IP</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/bypass-user-hotspot-with-macaddress.html')">Bypass Hotspot User With Mac-Address</a></p></td></tr>
 <tr><td><p><a href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-access-to-specific-websites.html')">Blocking Access To Specific Websites</a></p></td></tr>
@@ -469,4 +414,3 @@ function content(text){
   
 </body>
 </html>
-
