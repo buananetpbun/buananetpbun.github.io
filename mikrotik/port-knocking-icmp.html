@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>How Port Knocking Maker - Mikrotik Script</title>
+<meta content='How Port Knocking Maker - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+ <style id='page-skin-1' type='text/css'>
+body {background-color:#fff;color: #222;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+</style>   
+</head>  
+<body>
+<pre>
+<h2>How Port Knocking Maker - Mikrotik Script</h2>
+
+###########################################################
+# Mikrotik Port Knocking Generator with Icmp + Packet Size
+# Date/Time: 2/14/2021, 12:14:10 PM
+# https://fb.me/buananet.pbun
+###########################################################
+
+/ip firewall filter
+add action=add-src-to-address-list address-list="port-knocking-first" address-list-timeout="00:00:00" chain=input packet-size="100" protocol=icmp comment="Port Knocking By BNT
+add action=add-src-to-address-list address-list="port-knocking-second" address-list-timeout="00:00:00" chain=input packet-size="200" protocol=icmp src-address-list="port-knocking-first"
+add action=accept chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="port-knocking-second"
+add action=drop chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="!port-knocking-second"
+
+Copy-Paste Firewall Script into the Terminal!
+
+Unique Packet Size For Key Knocking: 72 and 172
+
+Example Manually Open Key Ping in CMD Windows:
+First Key Knock -> ping -l 72 (IP Adrress)
+Second Key Knock -> ping -l 172 (IP Adrress)
+
+Example Manually Open Key Ping in Terminal Linux or MacOS:
+First Key Knock -> ping -s 72 (IP Adrress)
+Second Key Knock -> ping -s 172 (IP Adrress)
+
+or you can use <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >Port Knocking Maker or Generator</a>
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
