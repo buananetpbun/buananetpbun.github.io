@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,7 +77,8 @@ overflow:hidden
 
 .panel-two {
   flex: 1;
-  width: auto;
+  width: 100%;
+	heigth: 100%;
 	background-color: #fff;
 
 }
@@ -148,14 +150,25 @@ font-weight:bold;
  display: table;
  clear: both;
  }
-.myDIV {display:none}
-.myDIV2 {
-height:83%; 
+.myDIV {display:none;
+height:80%; 
 width:100%;
 white-space: normal;
 overflow-x:none;
-}
-
+	}
+.myDIV2 {
+height:80%; 
+width:100%;
+white-space: normal;
+overflow-x:none;
+}	
+pre {
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+}  
 .h_iframe iframe {
     width:100%;
     height:100%;
@@ -163,8 +176,6 @@ overflow-x:none;
 .h_iframe {
     height: 100%;
     width:100%;
-	white-space: normal;
-	overflow-x:none;
 }
 </style>
 
@@ -181,19 +192,14 @@ if (document.location.search.match(/type=embed/gi)) {
 
 <div class="drag-container">
 <div class="panel-one" id="drag-left">
-<span style="font-size:11px">	  
-<pre>
- ______  _     _        ______         ______  _______ _______ 
-(____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)
- ____)  ) |   | | /  \ | |   | | /  \ | |   | |_____   _       
-|  __  (| |   | |/ /\ \| |   | |/ /\ \| |   | |  ___) | |      
-| |__)  ) |___| | |__| | |   | | |__| | |   | | |_____| |_____ 
-|______/ \______|______|_|   |_|______|_|   |_|_______)\______)
+<div style="font-size:25pt;">	  
+<b>BuanaNET</b> <img style="margin-left:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
+<div style="font-size:11px; margin-bottom:20px">
+Copyright 2021 is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNET-SECURE</a>  
+</div>	
+</div>	
 
-Copyright 2021 is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNET-SECURE</a>  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
-</pre>	
-</span>	
-<h3>MIKROTIK <span style="color:red">[</span> script <span style="color:red">]</span> DATABASE</h3>
+<h2>MIKROTIK <span style="color:red">[</span> script <span style="color:red">]</span> DATABASE</h2>
 Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a> 
 <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Find Script.." style="width:100%; margin-bottom:10px;margin-top:10px"> 
 <table id="myTable">
@@ -311,8 +317,6 @@ Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a>
 </table>
 </div>
  
-<div class="dragbar" id="dragbar"></div>
-	
 <div class="panel-two" id="drag-right">
 <div class="myDIV" id="myDIV">
 <h3>SUBMIT YOUR SCRIPT</h3>
@@ -334,11 +338,11 @@ Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>	
-<br>	
+
 <div class="h_iframe">
- <iframe id="change" src="welcome.html" frameborder="0" allowfullscreen></iframe>
- </div>
-<br>
+ <iframe id="change" src="welcome.html" frameborder="0" style="widht:100%, weight:100%"></iframe>
+</div>
+<br>	
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- MIKROTIK SCRIPT DB 2 -->
 <ins class="adsbygoogle"
