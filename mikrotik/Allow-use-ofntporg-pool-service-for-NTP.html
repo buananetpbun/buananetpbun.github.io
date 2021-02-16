@@ -10,8 +10,6 @@
  <style id='page-skin-1' type='text/css'>
 body {background-color:#fff;color: #222; padding-left:0;}
 h1, h2, h3, h4, h5, h6{margin:0; padding:0}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>    
 pre {
     white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
     white-space: -pre-wrap; /* Opera */
@@ -19,11 +17,13 @@ pre {
     white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
     word-wrap: break-word; /* IE 5.5+ */
 }  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>  
 </style>   
 </head>  
 <body>
 <pre>
-<h2>Allow Use Of ntp.org Pool Service For NTP - Mikrotik Script</h2>
+<h1>Allow Use Of ntp.org Pool Service For NTP - Mikrotik Script</h1>
 
 This script resolves the hostnames of two NTP servers, compares the result with the current NTP settings and changes the addresses if they're different. This script is required as RouterOS does not allow hostnames to be used in the NTP configuration. Two scripts are used. The first defines some system variables which are used in other scripts and the second does the grunt work:
 
