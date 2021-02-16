@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Automatic Expired Hotspot Page Without A Proxy - Mikrotik Script</title>
+<meta content='Automatic Expired Hotspot Page Without A Proxy - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<style id='page-skin-1' type='text/css'>
+body {color: #111;font-size:13px;padding-left:20px}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+pre {
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+}  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>  
+</style> 
+</head>  
+<body>
+<pre>
+<h1>Automatic Expired Hotspot Page Without A Proxy - Mikrotik Script</h1>
+
+Create an automatic expired hotspot page without a proxy
+
+First download "expired.html" <a target="_blank" href="https://drive.google.com/file/d/1tAukNei3AXqfo0pXmjI226UpTHJAZLtc/view?usp=sharing" >here</a>
+
+if you have entered "expired.html" into the hotspot folder section, then please edit the "login.html" page
+
+search for tag </body> and place the script below above it
+
+<script type="text/javascript">
+var error = "$(error)";
+if (error == "user $(username) has reached uptime limit") {
+window.location.href = "http://$(hostname)/expired.html";
+} else if (error == "user $(username) has reached traffic limit") {
+window.location.href = "http://$(hostname)/expired.html";
+} else if (error == "no more sessions are allowed for user $(username)") {
+window.location.href = "http://$(hostname)/expired.html";
+} else if (error == "session limit reached ($(error-orig))") {
+window.location.href = "http://$(hostname)/expired.html";
+} else if (error !== "") {
+window.location.href = "http://$(hostname)/error.html";
+} else { document.write("$(error)"); }
+</script>
+
+good luck: D
+
+notes: this script is not made by me, I just modified it, whoever owns it, because I have been using it for a long time.
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
