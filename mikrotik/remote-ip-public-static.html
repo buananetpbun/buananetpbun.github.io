@@ -11,17 +11,24 @@
  <style id='page-skin-1' type='text/css'>
 body {background-color:#fff;color: #222;}
 h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+pre {
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+}  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>     
 </style>   
 </head>  
 <body>
 <pre>
-<h2>Remote IP Public Static For Secondary Gateway - Mikrotik Script</h2>
+<h1>Remote IP Public Static For Secondary Gateway - Mikrotik Script</h1>
 
 So that the Public Static IP can be used for remote even though not as the main gateway
 
-An easy example like this ... suppose we use Indihome as the main gateway and Astinet as a backup gateway, 
-in the standard routing concept, of course, Public IP Astinet cannot be used for remote because its position is only as a backup gateway, 
-so that Astinet Public IP can still be used for example. Winbox remote needs are very easy, and this method can also be applied to all ISP that have Public Static IP
+An easy example like this ... suppose we use Indihome as the main gateway and Astinet as a backup gateway, in the standard routing concept, of course, Public IP Astinet cannot be used for remote because its position is only as a backup gateway, so that Astinet Public IP can still be used for example. Winbox remote needs are very easy, and this method can also be applied to all ISP that have Public Static IP
 
 Or you can use <a target="_blank" href="https://buananetpbun.github.io/remote-ip-public-static.html" >Script Maker or Generator</a>
 
