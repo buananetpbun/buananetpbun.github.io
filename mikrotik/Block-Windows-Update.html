@@ -39,7 +39,7 @@ add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-
 
 or
 
-/ip firewall Filter
+/ip firewall filter
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=windowsupdate.microsoft.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=download.microsoft.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=test.stats.update.microsoft.com
