@@ -23,7 +23,7 @@ pre {
 </head>  
 <body>
 <pre>
-<h2>XXXXXX - Mikrotik Script</h2>
+<h1>XXXXXX - Mikrotik Script</h1>
 </pre>
 <br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
