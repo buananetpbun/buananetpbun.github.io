@@ -11,20 +11,20 @@
  <style id='page-skin-1' type='text/css'>
 body {background-color:#fff;color: #222;}
 h1, h2, h3, h4, h5, h6{margin:0; padding:0}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>    
 pre {
     white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
     white-space: -pre-wrap; /* Opera */
     white-space: -o-pre-wrap; /* Opera */
     white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
     word-wrap: break-word; /* IE 5.5+ */
-}   
+}  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>  
 </style>   
 </head>  
 <body>
 <pre>
-<h2>A script to set up WAN/LAN/WLAN to get you started - Mikrotik Script</h2>
+<h1>A script to set up WAN/LAN/WLAN to get you started - Mikrotik Script</h1>
 
 NOTE - This script only works on ROS 4.6-5.x it does not work on ROS 6.x
 In version 4.6, MikroTik deprecated some commands. The script has been edited to support the new command set and consequently won't work on any version prior to 4.6. The method of checking the version number appears to be broken in 5.0beta2 and so there is no longer any check before the script is run. If you run it on a version <4.6 or >=6, it'll just crash nastily instead.
