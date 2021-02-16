@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Check if RTO and send to Telegram - Mikrotik Script</title>
+<meta content='Check if RTO and send to Telegram - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<style id='page-skin-1' type='text/css'>
+body {color: #111;font-size:13px;padding-left:20px}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0}
+pre {
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+}  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>  
+</style> 
+</head>  
+<body>
+<pre>
+<h1>Check if RTO and send to Telegram - Mikrotik Script</h1>
+
+Mikrotik script to check RTO on the routing path and send info directly to Telegram
+
+just adjust "WAN-1" in the script with the name of each routing-table and for ip can be changed for example to 8.8.8.8
+
+for telegram please learn how to make the boot yourself
+
+:if ([/ping 1.1.1.1 routing-table=WAN-1 count=5] = 0) do={
+:local datetime1 [/system clock get date]
+:local datetime2 [/system clock get time]
+:log error "RTO pada jam [ $datetime2 ] tanggal [ $datetime1 ]"
+/tool fetch url="https://api.telegram.org/botxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/sendMessage\?chat_id=xxxx&text= ->> Jalur WAN-1 RTO pada jam [ $datetime2 ] tanggal [ $datetime1 ] " keep-result=no
+}
+
+</pre>
+<br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
