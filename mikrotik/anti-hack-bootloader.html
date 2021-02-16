@@ -10,15 +10,13 @@
  <style id='page-skin-1' type='text/css'>
 body {background-color:#fff;color: #222;}
 h1, h2, h3, h4, h5, h6{margin:0; padding:0}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>    
 pre {
     white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
     white-space: -pre-wrap; /* Opera */
     white-space: -o-pre-wrap; /* Opera */
     white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
     word-wrap: break-word; /* IE 5.5+ */
-} 
+}   
 </style>   
 </head>  
 <body>
@@ -27,8 +25,7 @@ pre {
 
 The way this script works is simple but smart, this script will monitor anyone who intends to activate the Mirotik Protected Bootloader, it will be detected immediately and the router will automatically shutdown immediately, when the router is turned on again, all the Protected Bootloader settings will be returned to the default setting, so any prank actions of malicious intruders before will be in vain ..
 
-If after installing this script the router shuts down itself, don't panic yet, it could be that the script is working and it might mean that someone is trying to activate the bootloader on the router illegally, if it's true, this can be seen by changing the window caption or 
-identity in Winbox to BOOTLOADER> Min: 00:00:20 - Max: 00:10:00
+If after installing this script the router shuts down itself, don't panic yet, it could be that the script is working and it might mean that someone is trying to activate the bootloader on the router illegally, if it's true, this can be seen by changing the window caption or identity in Winbox to BOOTLOADER> Min: 00:00:20 - Max: 00:10:00
 
 Why does this script have to change the identity or caption in Winbox? I am trying to think if the reset button and NetInstall don't work at least we know how much time for the "reformat hold button" it takes and how long it takes to press the reset button for it to work. Please modify it, if you want it to be good, we can also add other information such as sending it to email or to telegram 🙂
 
