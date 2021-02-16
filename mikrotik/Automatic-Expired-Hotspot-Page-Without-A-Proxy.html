@@ -33,20 +33,21 @@ if you have entered "expired.html" into the hotspot folder section, then please 
 
 search for tag </body> and place the script below above it
 
-<script type="text/javascript">
-var error = "$(error)";
-if (error == "user $(username) has reached uptime limit") {
-window.location.href = "http://$(hostname)/expired.html";
-} else if (error == "user $(username) has reached traffic limit") {
-window.location.href = "http://$(hostname)/expired.html";
-} else if (error == "no more sessions are allowed for user $(username)") {
-window.location.href = "http://$(hostname)/expired.html";
-} else if (error == "session limit reached ($(error-orig))") {
-window.location.href = "http://$(hostname)/expired.html";
-} else if (error !== "") {
-window.location.href = "http://$(hostname)/error.html";
-} else { document.write("$(error)"); }
-</script>
+<pre  style="font-family:arial;font-size:12px;border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);padding:0px;color:#000000;text-align:left;line-height:20px;"><code style="color:#000000;word-wrap:normal;"> &lt;script type="text/javascript"&gt;  
+ var error = "$(error)";  
+ if (error == "user $(username) has reached uptime limit") {  
+ window.location.href = "http://$(hostname)/expired.html";  
+ } else if (error == "user $(username) has reached traffic limit") {  
+ window.location.href = "http://$(hostname)/expired.html";  
+ } else if (error == "no more sessions are allowed for user $(username)") {  
+ window.location.href = "http://$(hostname)/expired.html";  
+ } else if (error == "session limit reached ($(error-orig))") {  
+ window.location.href = "http://$(hostname)/expired.html";  
+ } else if (error !== "") {  
+ window.location.href = "http://$(hostname)/error.html";  
+ } else { document.write("$(error)"); }  
+ &lt;/script&gt;  
+</code></pre>
 
 good luck: D
 
