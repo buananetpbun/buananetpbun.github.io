@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,9 +79,9 @@ p {
 }
 
 .dragbar {
-  padding: 2px;
+  padding: 1px;
   cursor: col-resize;
-  background-color: #ccc;
+  background-color: #ddd;
 }
 
 p {
@@ -111,8 +112,8 @@ button {
  input[type=text], select, textarea {
   width: 100%;
   padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 1px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
   resize: vertical;
  }
 	
@@ -350,13 +351,13 @@ Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a>
 </div>				      
 </div>
 </div> 
-<script id="rendered-js" >
+<script >
 var left = document.getElementById('drag-left');
 var right = document.getElementById('drag-right');
 var bar = document.getElementById('dragbar');
 const drag = e => {
   document.selection ? document.selection.empty() : window.getSelection().removeAllRanges();
-  left.style.width = e.pageX - bar.offsetWidth / 2 + 'px';
+  left.style.width = e.pageX - bar.offsetWidth / 100 + 'px';
 };
 bar.addEventListener('mousedown', () => {
   document.addEventListener('mousemove', drag);
@@ -364,9 +365,7 @@ bar.addEventListener('mousedown', () => {
 bar.addEventListener('mouseup', () => {
   document.removeEventListener('mousemove', drag);
 });
-//# sourceURL=pen.js
-</script>
-<script>
+
 function myshowhide() {
   var x = document.getElementById("myDIV");
   if (x.style.display === "block") {
