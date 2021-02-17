@@ -6,8 +6,12 @@
 <title>Solution For Hotspot Login Page with LB PCC - Mikrotik Script</title>
 <meta content='Solution For Hotspot Login Page with LB PCC - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script' name='keywords'/>
-<meta content='index, follow, noodp' name='robots'/>
- <style id='page-skin-1' type='text/css'>
+<meta content='index, follow, noodp' name='robots'/>  
+<style id='page-skin-1' type='text/css'>
+a:link {color: #08c;  text-decoration:none}
+a:visited {color: #08c;  text-decoration:none}
+a:hover {color: black;}
+a:active {color: #08c;}   
 body {background-color:#fff;color: #222;}
 h1, h2, h3, h4, h5, h6{margin:0; padding:0}
 pre {
@@ -40,9 +44,10 @@ Still failed too? delete all the above methods and try to bypass all local traff
 add action=mark-connection chain=prerouting dst-address-list=!IP-LAN dst-address-type=!local hotspot=auth new-connection-mark=E1-WAN_connmark passthrough=yes per-connection-classifier=both-addresses-and-ports:2/0 src-address-list=IP-LAN
 add action=mark-connection chain=prerouting dst-address-list=!IP-LAN dst-address-type=!local hotspot=auth new-connection-mark=E2-WAN_connmark passthrough=yes per-connection-classifier=both-addresses-and-ports:2/1 src-address-list=IP-LAN
 
-
 </pre>
-<br>
+<br><br>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
+<br><br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
 </body>
 </html>
