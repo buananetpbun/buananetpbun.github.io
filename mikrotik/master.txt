@@ -28,13 +28,13 @@ pre {
 <body>
 <pre>
 <h1>Port Game Online for Mobile Games - Mikrotik Script</h1>
-
-
-<a target="_blank" href="https://buananetpbun.github.io/mikrotik">[Back to Home]</a>
-
-
-<img style="margin-left:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
 </pre>
-<br>
+</pre>
+ <br><br>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
+<br><br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
 </body>
 </html>
