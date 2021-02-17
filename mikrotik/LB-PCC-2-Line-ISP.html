@@ -7,7 +7,11 @@
 <meta content='Load Balancing LB PCC 2 Line ISP Failover - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
- <style id='page-skin-1' type='text/css'>
+<style id='page-skin-1' type='text/css'>
+a:link {color: #08c;  text-decoration:none}
+a:visited {color: #08c;  text-decoration:none}
+a:hover {color: black;}
+a:active {color: #08c;}     
 body {background-color:#fff;color: #222;}
 h1, h2, h3, h4, h5, h6{margin:0; padding:0}
 pre {
@@ -58,7 +62,9 @@ add action=mark-routing chain=prerouting connection-mark="cm-ether1" dst-address
 add action=mark-routing chain=prerouting connection-mark="cm-ether2" dst-address-list=!LOCAL-IP new-routing-mark="to-ether2" passthrough=yes src-address-list=LOCAL-IP
 
 </pre>
-<br>
+ <br><br>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/LB-PCC-2-Line-ISP.html" alt="Hits"/>
+<br><br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
 </body>
 </html>
