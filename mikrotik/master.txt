@@ -3,8 +3,8 @@
 <head>
 <meta charset='utf-8'/>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<title>XXXX - Mikrotik Script</title>
-<meta content='XXXX - Mikrotik Script' name='description'/>
+<title>XXXX - Mikrotik RouterOS Script</title>
+<meta content='XXXX - Mikrotik RouterOS Script' name='description'/>
 <meta content='mikrotik script, routeros script, script' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
 <style id='page-skin-1' type='text/css'>
@@ -27,7 +27,7 @@ pre {
 </head>  
 <body>
 <pre>
-<h1>Port Game Online for Mobile Games - Mikrotik Script</h1>
+<h1>XXXX - Mikrotik RouterOS Script</h1>
 </pre>
 <br><br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
