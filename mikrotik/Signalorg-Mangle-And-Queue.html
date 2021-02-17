@@ -7,7 +7,11 @@
 <meta content='Signal.org Mangle And Queue  - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
- <style id='page-skin-1' type='text/css'>
+<style id='page-skin-1' type='text/css'>
+a:link {color: #08c;  text-decoration:none}
+a:visited {color: #08c;  text-decoration:none}
+a:hover {color: black;}
+a:active {color: #08c;}      
 body {background-color:#fff;color: #222;}
 h1, h2, h3, h4, h5, h6{margin:0; padding:0}
 pre {
@@ -43,7 +47,9 @@ action=mark-packet chain=postrouting connection-mark=conn-Signal dst-address-lis
 add name="Signal" packet-marks=Signal-pkt queue=default/default target=10.0.0.0/8,192.168.0.0/16,172.16.0.0/12 total-queue=default
 
 </pre>
-<br>
+<br><br>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/Signalorg-Mangle-And-Queue.html" alt="Hits"/>
+<br><br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
 </body>
 </html>
