@@ -6,8 +6,12 @@
 <title>Route - Recursive Gateway Fail over - Mikrotik Script</title>
 <meta content='Route - Recursive Gateway Fail over - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script' name='keywords'/>
-<meta content='index, follow, noodp' name='robots'/>
- <style id='page-skin-1' type='text/css'>
+<meta content='index, follow, noodp' name='robots'/> 
+<style id='page-skin-1' type='text/css'>
+a:link {color: #08c;  text-decoration:none}
+a:visited {color: #08c;  text-decoration:none}
+a:hover {color: black;}
+a:active {color: #08c;}     
 body {background-color:#fff;color: #222;}
 h1, h2, h3, h4, h5, h6{margin:0; padding:0}
 pre {
@@ -38,7 +42,9 @@ add check-gateway=ping distance=1 gateway=8.8.4.4 target-scope=30
 add check-gateway=ping distance=1 dst-address=8.8.8.8/32 gateway=192.168.3.1 target-scope=10
 add check-gateway=ping distance=1 dst-address=8.8.4.4/32 gateway=192.168.2.1 target-scope=10
 </pre>
-<br>
+<br><br>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/fail-over-recursive-gateway.html" alt="Hits"/>
+<br><br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
 </body>
 </html>
