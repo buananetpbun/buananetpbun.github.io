@@ -401,9 +401,14 @@ function ContenUrlGet(){
 var url_string = window.location;
 var url = new URL(url_string);
 var name = url.searchParams.get("url");
+if (name > "") {
 var element2 =  document.getElementById("change");
 element2.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + name);
-}	  
+} else {
+var element3 =  document.getElementById("change");
+element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
+}
+}	    
 
 function ContenUrlSubmit(text3){
 document.location.hash = 'Submit';
