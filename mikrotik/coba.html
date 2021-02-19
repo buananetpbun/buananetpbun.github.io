@@ -193,7 +193,7 @@ if (document.location.search.match(/type=embed/gi)) {
 </script>
 	
 </head>
-<body>
+<body onload="content(text)">
 
 <div class="drag-container">
 <div class="panel-one" id="drag-left">
@@ -402,7 +402,7 @@ function myshowhide() {
   }
 }
 function content(text){
-    var url_string = window.location;
+var url_string = window.location;
 var url = new URL(url_string);
 var name = url.searchParams.get("#");
 
