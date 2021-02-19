@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Mikrotik RouterOS Script DataBase Unoffical - BuanaNET</title>
+<meta content='Mikrotik RouterOS Script DataBase Unoffical By BuanaNET Secure!' name='description'/>
+<meta content='RouterOS, Mikrotik Script, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<meta http-equiv="expires" content="0">
+<meta property="og:title" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNET">
+<meta property="og:description" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNET">
+<meta property="og:image" content="https://buananetpbun.github.io/mikrotik/img/mikrotik-routeros-script-database.png">
+<meta property="og:image:alt" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNET">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buananetpbun.github.io/mikrotik/">	
+<link rel="shortcut icon" href="https://www.o-om.com/favicon.ico" type="image/x-icon">	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+<style>
+/* ----------------------------------------------
+#################################################
+# MIKROTIK RouterOS [ SCRIPT ]  DATABASE
+# Date/Time : 01/02/2021, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNET
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+#################################################
+----------------------------------------------- */  
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding:0;
+  font-size:13px;
+}
+
+.active1, .linkPress:hover {
+  background-color: red;
+  color: white !important;
+  font-weight:bold
+}
+
+
+a:link {
+  color: #08c;
+  text-decoration:none
+}
+
+a:visited {
+  color: #08c;
+  text-decoration:none
+}
+
+a:hover {
+  color: black;
+}
+
+a:active {
+  color: #08c;
+}
+	
+* {
+  box-sizing: border-box;
+}
+
+p {
+  color: darkslategray;
+}
+
+.drag-container {
+  display: flex;
+ height: 100%;
+ overflow:hidden
+}
+
+[class^=panel] {
+  padding: 10px 24px;
+  background-color: whitesmoke;
+}
+
+.panel-one {
+ width: 450px;
+ background-color: #f0f0f0;
+ overflow-y:scroll
+}
+
+.panel-two {
+ flex: 1;
+ background-color: #fff;
+
+}
+
+.dragbar {
+  padding: 1px;
+  cursor: col-resize;
+  background-color: #ddd;
+}
+
+p {
+  display:list-item;
+  list-style: square;
+  padding:0 0 0 0;
+  margin:0 0 0 17px;
+  color:  #111;
+}
+
+button {
+ color: #fff;
+ background-color: #4CAF50;
+ border-color: #4CAF50;
+ border:none;
+ padding:8px;
+ width:135px;
+ font-size:13px;
+ font-weight:bold;
+}
+	
+ .row:after {
+ content: "";
+ display: table;
+ clear: both;
+ }  
+	
+ input[type=text], select, textarea {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  resize: vertical;
+ }
+	
+ label {
+  padding: 5px 5px 5px 0;
+  display: inline-block;
+ }
+	
+ input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  float: right;
+ }
+	
+ input[type=submit]:hover {
+  background-color: #45a049;
+ }
+
+.myDIV {display:none;
+ height:90%; 
+ width:100%;
+ white-space: normal;
+ overflow-x:none;
+}
+	
+.myDIV2 {
+ height:75%; 
+ width:100%;
+ white-space: normal;
+ overflow-x:none;
+}
+	
+pre {
+  white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+  white-space: -pre-wrap; /* Opera */
+  white-space: -o-pre-wrap; /* Opera */
+  white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+  word-wrap: break-word; /* IE 5.5+ */
+}  
+.h_iframe iframe {
+  width:100%;
+  height:100%;
+}
+.h_iframe {
+  height: 100%;
+  width:100%;
+}
+</style>
+
+<script>
+window.console = window.console || function(t) {};
+</script>
+<script>
+if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+}
+</script>
+	
+</head>
+<body>
+
+<div class="drag-container">
+<div class="panel-one" id="drag-left">
+<div style="font-size:25pt;">	  
+<b>BuanaNETPBun</b> <img style="margin-left:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
+<div style="font-size:11px; margin-bottom:20px">
+Copyright 2021 <a href="https://buananetpbun.github.io/">MikroTik RouterOS Script</a> is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNET</a>  
+</div>	
+</div>	
+<h4>MIKROTIK ROUTEROS <span style="color:red">[</span> script <span style="color:red">]</span> DATABASE</h4>
+Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a> 
+<input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Find Script.." style="width:100%; margin-bottom:10px;margin-top:10px"> 
+<table id="myTable">
+<!-- A -->
+<tr><td><p><a class="linkPress" href="?anti-hack-bootloader.html" onclick="content('https://buananetpbun.github.io/mikrotik/anti-hack-bootloader.html')">Anti Hack Protected BootLoader</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Automated-Usage-Script-without-usermanager.html')">Automated Usage Script Without User Manager</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Allow-use-ofntporg-pool-service-for-NTP.html')">Allow Use Of ntp.org Pool Service For NTP</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Auto-upgrade-script-V3x.html')">Auto upgrade script V3.x</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Audible-signal-test.html')">Audible Signal Test</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/A-Bit-of-Sounds.html')">A Bit of Sounds</a></p></td></tr>
+<!-- B -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup.html')">Backup Mikrotik File .Backup</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-Export-rsc.html')">Backup Export File .rsc</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-hide-sensitive.html')">Backup Export File .rsc Hide-Sensitive</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-compact.html')">Backup Export File .rsc Compact</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-terse.html')">Backup Export File .rsc Terse</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-verbose.html')">Backup Export File .rsc Verbose</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-combination.html')">Backup Export File .rsc With Combination</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-import-rsc.html')">Backup Import File .rsc</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Bypass-Local-Connection.html')">Bypass Local Connection / Local IP</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/bypass-user-hotspot-with-macaddress.html')">Bypass Hotspot User With Mac-Address</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-access-to-specific-websites.html')">Blocking Access To Specific Websites</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Bittorrent-layer-7.html')">Bittorrent, Torrentwws, Torrentwww Layer-7</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-Windows-Update.html')">Block Windows Update</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/block-tracert.html')">Blocking Tracert / Traceroute</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-Tiktok.html')">Blocking Tiktok</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-MAC-Address-Device.html')">Block MAC Address Device</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Blocking-Modem.html')">Blocking Modem Access</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Backup-graphing-data.html')">Backup Graphing Data</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Basic-universal-firewall-script.html')">Basic universal firewall script</a></p></td></tr>	
+<!-- C -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Check-if-RTO-and-send-to-Telegram.html')">Check if RTO and send to Telegram</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/address-list-dynamic-to-static.html')">Change All Address List Dynamic To Static</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/change-system-note.html')">Change System Note</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Speedtest-Mangle-layer7.html')">Complete Mangle Speedtest with Layer-7</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Get-Day.html')">Calculates Day Of The Week For a Givien Date</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/change-Interface-ether-Default-1.html')">Change Name Interface or Ether To Default Auto</a></p></td></tr>  
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/change-Interface-ether-Default-2.html')">Change Name Interface or Ether To Default Manual</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/check-ip-change.html')">Check if IP on interface have changed</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Check-bandwidth-and-add-limitations.html')">Check Bandwidth and Add Limitations</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Calculate-with-decimal-numbers.html')">Calculate With Decimal Numbers</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/clear-log-Mikrotik.html')">Clear LOG info from Terminal</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Create-a-file.html')">Create A File</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Calea-perl-trafr.html')">Calea Perl Trafr</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Converting_network_and_gateway_from_routing_table_to_hexadecimal_string.html')">Converting Gateway From Routing To hexadecimal</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Change-Mikrotik-identity-or-Winbox-Caption.html')">Change Mikrotik identity or Winbox Caption</a></p></td></tr>
+<!-- D -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/dns-chace-flush.html')">DNS Cache Flush</a></p></td></tr>  
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Detect-new-log-entry.html')">Detect New Log Entry</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Dial_PPPoE_until_a_Certain_IP_Range_is_Obtained.html')">Dial PPPoE until a Certain IP Range is Obtained</a></p></td></tr>
+<!-- E -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Automatic-Expired-Hotspot-Page-Without-A-Proxy.html')">Expired Hotspot Page Without A Proxy</a></p></td></tr>
+<!-- F -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/show-usermanager-password.html')">Forget or Show User Manager Password</a></p></td></tr>
+<!-- G -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-get-todays-date-info.html')">Get Today's Date Info</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Generate-backup-and-sendit-by-email.html')">Generate Backup And Send it By E-Mail</a></p></td></tr>	
+<!-- H -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Hotspot-Auto-User-logout-user-When-internet-down.html')">Hotspot Auto logout user When Inet down</a></p></td></tr>
+<!-- I -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Include-custom-function-in-another-script.html')">Include custom function in another script</a></p></td></tr>	  
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-list-Speedtest.html')">IP Address list SpeedTest</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-list-Telergram.html')">IP Address list Telegram</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-list-Facebook.html')">IP Address list Facebook</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-List-twitter.html')">IP Address list Twitter</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-List-WhatsApp.html')">IP Address list WhatsApp</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Private-or-IP-Local-Standard-RFC1918.html')">IP Private or IP Local Standard RFC 1918</a></p></td></tr>	
+<!-- J -->
+<!-- K -->
+<!-- L -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-2-Line-ISP.html')">LB PCC 2 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-3-Line-ISP.html')">LB PCC 3 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-4-Line-ISP.html')">LB PCC 4 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-5-Line-ISP.html')">LB PCC 5 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-6-Line-ISP.html')">LB PCC 6 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-2-Line-ISP.html')">LB ECMP 2 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-3-Line-ISP.html')">LB ECMP 3 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-4-Line-ISP.html')">LB ECMP 4 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-5-Line-ISP.html')">LB ECMP 5 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-6-Line-ISP.html')">LB ECMP 6 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-Failover-Script.html')">LB ECMP Failover Script</a></p></td></tr>	
+<!-- M -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Mikrotik-Terminal-Command-Line-and-Keyboard-Command.html')">Terminal Command Line and Keyboard Command</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Speedtest-domain-List.html')">Host or Domain list SpeedTest</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Make-an-Automated-Configuration-and-Uninstall.html')">Make an Automated Configuration and Uninstall</a></p></td></tr>
+<!-- N -->
+<!-- 0 -->
+<!-- P -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/port-game-online-pc-games.html')">Port Game Online for PC Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/port-game-online-mobile-games.html')">Port Game Online for Mobile Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/port-game-online-web-games.html')">Port Game Online for Web Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/protect-connection-with-anti-netcut.html')">Protect Connection With ANTI NETCUT</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Protect-web-open-porxy.html')">Protect Open Web proxy</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Protect-Open-Recursive-DNS.html')">Protect Open Recursive DNS</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/protect-default-service-port.html')">Protect Default Port Service From WAN</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/protect-mikrotik-from-ddos.html')">Protect Router From DDOS Attacks</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/protect-mikrotik-from-exploit.html')">Protect Router From Exploit (VULNERABILITY)</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/port-knocking-icmp.html')">Port Knocking Maker or Generator Icmp + Packet Size</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Parse-file-to-add-ppp-secrets.html')">Parse File To Add PPP Secrets</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Print-function.html')">Print Function</a></p></td></tr>
+<!-- Q -->
+<!-- R -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/remote-ip-public-static.html')">Remote IP Public Static For Secondary Gateway</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Read-and-write-large-files.html')">Read and Write Large Files</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Resolve-host-name.html')">Resolve host-name</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/reset-counter.html')">Reset All Counter</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/fail-over-recursive-gateway.html')">Recursive Gateway Fail over</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/rebuild-database-User-Manager.html')">Rebuild DataBase On User Manager</a></p></td></tr>
+<!-- S -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Solution-Hotspot-login-Page-LB-PCC.html')">Solution For Hotspot Login Page with LB PCC</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Signalorg-Mangle-And-Queue.html')">Signal.org Mangle And Queue</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Speedtest-Regexp-Layer7.html')">Speedtest Regexp Layer-7</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/strip-ip-address-netmask.html')">Strip IP Address without netmask</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/A-script-to-set-up-WAN-or-LAN-or-WLAN-to-get-you-started.html')">Set Up WAN/LAN/WLAN To Get You Started</a></p></td></tr>
+<!-- T -->
+<!-- U -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Use-string-as-function.html')">Use String as Function</a></p></td></tr>
+<!-- V -->
+<!-- W -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/wms-auto-login.html')">WMS or Wifi.id Auto Login</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Write-simple-queue-stats-in-multiple-files.html')">Write simple queue stats in multiple files</a></p></td></tr>
+<!-- X -->
+<!-- Y -->
+<!-- Z -->
+<!-- WELCOME -->
+<tr><td><p><a class="linkPress active1" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/welcome.html')">Welcome</a></p></td></tr>
+</table>
+</div>
+<div class="dragbar" id="dragbar"></div>
+<div class="panel-two" id="drag-right">
+<div class="myDIV" id="myDIV">
+<h3>SUBMIT YOUR SCRIPT</h3>
+<div class="h_iframe">
+<iframe frameborder="0" height="810" marginheight="0" width="700" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform"></iframe>
+</div>
+<br>
+<button onclick="myshowhide()">Close</button>
+</div>	
+<div class="myDIV2" id="myDIV2">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- mikrotik script database -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9740800920365268"
+     data-ad-slot="5877725012"
+     data-ad-format="link"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>	
+<div class="h_iframe">
+ <iframe id="change" src="welcome.html" frameborder="0" style="widht:100%, weight:100%"></iframe>
+</div>
+<br>	
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- mikrotik script database -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9740800920365268"
+     data-ad-slot="5877725012"
+     data-ad-format="link"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>	
+</div>				      
+</div>
+</div> 
+<script >
+var _0x1b86=['drag-right','3009qeRtle','none','getElementById','getElementsByTagName','removeAllRanges','1zXjIup','mousemove','54391AzbiJZ','1579455bffsKE','offsetWidth','mousedown','2JNLShZ','toUpperCase','block','style','dragbar','src','selection','display','removeEventListener','mouseup','pageX','setAttribute','myDIV','length','myTable','1194483ueTCMb','change','innerText','1346487NxInhC','69xdioen','addEventListener','354051BslSfu','1228725heUxvg','3yLjEQK'];var _0x1717=function(_0x23a270,_0x243b1f){_0x23a270=_0x23a270-0x156;var _0x1b86f2=_0x1b86[_0x23a270];return _0x1b86f2;};var _0x5e484a=_0x1717;(function(_0x14dc50,_0xe3a195){var _0x18c7a0=_0x1717;while(!![]){try{var _0x3e2932=parseInt(_0x18c7a0(0x163))*parseInt(_0x18c7a0(0x157))+-parseInt(_0x18c7a0(0x15b))+parseInt(_0x18c7a0(0x165))*-parseInt(_0x18c7a0(0x169))+parseInt(_0x18c7a0(0x15e))*parseInt(_0x18c7a0(0x158))+-parseInt(_0x18c7a0(0x166))+parseInt(_0x18c7a0(0x15c))*parseInt(_0x18c7a0(0x15a))+parseInt(_0x18c7a0(0x178));if(_0x3e2932===_0xe3a195)break;else _0x14dc50['push'](_0x14dc50['shift']());}catch(_0x326a0f){_0x14dc50['push'](_0x14dc50['shift']());}}}(_0x1b86,0xda356));var left=document[_0x5e484a(0x160)]('drag-left'),right=document[_0x5e484a(0x160)](_0x5e484a(0x15d)),bar=document[_0x5e484a(0x160)](_0x5e484a(0x16d));const drag=_0x138005=>{var _0x496e33=_0x5e484a;document[_0x496e33(0x16f)]?document[_0x496e33(0x16f)]['empty']():window['getSelection']()[_0x496e33(0x162)](),left[_0x496e33(0x16c)]['width']=_0x138005[_0x496e33(0x173)]-bar[_0x496e33(0x167)]/0x64+'px';};bar[_0x5e484a(0x159)](_0x5e484a(0x168),()=>{var _0x5916b8=_0x5e484a;document[_0x5916b8(0x159)](_0x5916b8(0x164),drag);}),bar[_0x5e484a(0x159)](_0x5e484a(0x172),()=>{var _0x231c66=_0x5e484a;document[_0x231c66(0x171)](_0x231c66(0x164),drag);});function myshowhide(){var _0x5cf872=_0x5e484a,_0x138a12=document['getElementById'](_0x5cf872(0x175));_0x138a12[_0x5cf872(0x16c)][_0x5cf872(0x170)]===_0x5cf872(0x16b)?_0x138a12[_0x5cf872(0x16c)][_0x5cf872(0x170)]=_0x5cf872(0x15f):_0x138a12[_0x5cf872(0x16c)]['display']=_0x5cf872(0x16b);var _0x3f7a3c=document[_0x5cf872(0x160)]('myDIV2');_0x3f7a3c[_0x5cf872(0x16c)]['display']==='none'?_0x3f7a3c[_0x5cf872(0x16c)][_0x5cf872(0x170)]=_0x5cf872(0x16b):_0x3f7a3c['style'][_0x5cf872(0x170)]=_0x5cf872(0x15f);}function content(_0x2d8ea7){var _0xb2c539=_0x5e484a,_0x28c37c=document['getElementById'](_0xb2c539(0x179));_0x28c37c[_0xb2c539(0x174)](_0xb2c539(0x16e),_0x2d8ea7);}function myFunctionGames(){var _0x5238a0=_0x5e484a,_0x1ef2c1,_0x18ebeb,_0x101a8f,_0x51d805,_0x24dd4c,_0x50b55c,_0x1efe96;_0x1ef2c1=document[_0x5238a0(0x160)]('myInput'),_0x18ebeb=_0x1ef2c1['value'][_0x5238a0(0x16a)](),_0x101a8f=document[_0x5238a0(0x160)](_0x5238a0(0x177)),_0x51d805=_0x101a8f[_0x5238a0(0x161)]('tr');for(_0x50b55c=0x0;_0x50b55c<_0x51d805[_0x5238a0(0x176)];_0x50b55c++){_0x24dd4c=_0x51d805[_0x50b55c][_0x5238a0(0x161)]('td')[0x0],_0x24dd4c&&(_0x1efe96=_0x24dd4c['textContent']||_0x24dd4c[_0x5238a0(0x156)],_0x1efe96[_0x5238a0(0x16a)]()['indexOf'](_0x18ebeb)>-0x1?_0x51d805[_0x50b55c][_0x5238a0(0x16c)]['display']='':_0x51d805[_0x50b55c][_0x5238a0(0x16c)][_0x5238a0(0x170)]='none');}}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myTable");
+var btns = header.getElementsByClassName("linkPress");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active1");
+  current[0].className = current[0].className.replace(" active1", "");
+  this.className += " active1";
+  });
+}
+  </script>
+</body>
+</html>
