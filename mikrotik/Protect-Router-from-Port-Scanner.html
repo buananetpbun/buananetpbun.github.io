@@ -28,6 +28,20 @@ pre {
 <body>
 <pre>
 <h1>Protect Router from Port Scanner - Mikrotik RouterOS Script</h1>
+
+When a device is connected to the (public) internet network, one of the things that needs to be tried is about security. There are many types of threats on public networks, such as Information / Identity Theft, Data Loss & Manipulation, Service Disruption. To reduce all kinds of risks and losses resulting from irresponsible parties, we as Network Administrators or Network Support / Engineers are also required to always actively maintain and prevent security threats, especially from the network side.
+
+Various kinds of actions that can be taken to prevent from the networking side. One way is to do drop traffic from the Port Scanner application.
+
+/ip firewall filter
+add chain=input protocol=tcp psd=21,3s,3,1 action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="Mark Source ip port scanner to Address list " disabled=no
+add chain=input protocol=tcp tcp-flags=fin,!syn,!rst,!psh,!ack,!urg action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="NMAP FIN Stealth scan"
+add chain=input protocol=tcp tcp-flags=fin,syn action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="SYN/FIN scan"
+add chain=input protocol=tcp tcp-flags=syn,rst action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="SYN/RST scan"
+add chain=input protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="FIN/PSH/URG scan"
+add chain=input protocol=tcp tcp-flags=fin,syn,rst,psh,ack,urg action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="ALL/ALL scan"
+add chain=input protocol=tcp tcp-flags=!fin,!syn,!rst,!psh,!ack,!urg action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="NMAP NULL scan"
+add chain=input src-address-list="port scanners" action=drop comment="Drop port scanners" disabled=no
 </pre>
 <br><br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/Protect-Router-from-Port-Scanner.html" alt="Hits"/>
