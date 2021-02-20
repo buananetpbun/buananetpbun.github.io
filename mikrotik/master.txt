@@ -4,7 +4,7 @@
 <meta charset='utf-8'/>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
 <title>XXXX - MikroTik RouterOS Script</title>
-<meta content='XXXX - Mikrotik RouterOS Script DataBase' name='description'/>
+<meta content='XXXX - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script datbase, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
 <link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
