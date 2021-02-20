@@ -36,7 +36,6 @@ h1 {font-size:17px; font-weight:bold}
   color: white !important;
 }
 
-
 a:link {
   color: #08c;
   text-decoration:none
@@ -68,7 +67,6 @@ a:active {
   padding-left: 20px;
   padding-right: 20px;
 }
-
 
 .sidenav a {
   text-decoration: none;
@@ -113,8 +111,6 @@ position:absolute;
 	
 }
 
-
-
 p {
   display:list-item;
   list-style: square;
@@ -122,7 +118,6 @@ p {
   margin:0 0 0 17px;
   color:  #818181;
 }
-
 
 .logo {
 padding-top:10px;
@@ -140,8 +135,7 @@ font-weight:bold;
   box-sizing: border-box;
 }
 
-
- .row:after {
+.row:after {
  content: "";
  display: table;
  clear: both;
@@ -316,8 +310,6 @@ Contribution your script -> <a href="#" onclick="ContenUrlSubmit('https://docs.g
 <tr><td><p><a class="linkPress active1" href="javascript:ContenUrlPost('welcome.html')">Welcome</a></p></td></tr>
 </table>
 </div>
-
-
 <div class="main">
 <div class="header">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -345,64 +337,9 @@ Contribution your script -> <a href="#" onclick="ContenUrlSubmit('https://docs.g
 </script> 
 </div>
 </div>
-  <script>
-function ContenUrlPost(text){
-
-var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?url=' + text;
-window.history.pushState({path:newurl},'',newurl);
-
-var element =  document.getElementById("change");
-element.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + text);
-}
-
-function ContenUrlGet(){
-var url_string = window.location;
-var url = new URL(url_string);
-var name = url.searchParams.get("url");
-if (name > "") {
-var element2 =  document.getElementById("change");
-element2.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + name);
-} else {
-var element3 =  document.getElementById("change");
-element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
-}
-}	  
-
-function ContenUrlSubmit(text3){
-document.location.hash = 'Submit-Your-Script';
-var element3 =  document.getElementById("change");
-element3.setAttribute("src", text3);
-}
-
-function myFunctionSearch() {
-var input, filter, table, tr, td, i, txtValue;
-input = document.getElementById("myInput");
-filter = input.value.toUpperCase();
-table = document.getElementById("myTable");
-tr = table.getElementsByTagName("tr");
-for (i = 0; i < tr.length; i++) {
-td = tr[i].getElementsByTagName("td")[0];
-if (td) {
-txtValue = td.textContent || td.innerText;
-if (txtValue.toUpperCase().indexOf(filter) > -1) {
-tr[i].style.display = "";
-} else {
-tr[i].style.display = "none";
-} 
-}       
-}
-}		
-
-var header = document.getElementById("myTable");
-var btns = header.getElementsByClassName("linkPress");
-for (var i = 0; i < btns.length; i++) {
-btns[i].addEventListener("click", function() {
-var current = document.getElementsByClassName("active1");
-current[0].className = current[0].className.replace(" active1", "");
-this.className += " active1";
-});
-}	
-  </script>
+<script>
+var _0x516d=['1540007OlXCLp','pathname','addEventListener','pushState','src','value','74991jkLrHo','myInput','getElementById','703506uUzlIY','get','?url=','setAttribute','1LdSFKt','\x20active1','searchParams','indexOf','linkPress','1036474MKpaFH','114759WZJQpZ','myTable','innerText','change','none','length','toUpperCase','display','688188cnFHYH','getElementsByTagName','https://buananetpbun.github.io/mikrotik/welcome.html','host','className','https://buananetpbun.github.io/mikrotik/','location','click','style','3TKMjgZ','history','getElementsByClassName','22hqjwgb','1773444eRzhvb'];var _0x2881=function(_0x30a780,_0x1d7e9f){_0x30a780=_0x30a780-0x1cd;var _0x516d2a=_0x516d[_0x30a780];return _0x516d2a;};var _0x114c5e=_0x2881;(function(_0xc1e12f,_0x4b015d){var _0x2e1471=_0x2881;while(!![]){try{var _0x164ded=-parseInt(_0x2e1471(0x1d0))+parseInt(_0x2e1471(0x1de))*parseInt(_0x2e1471(0x1e3))+parseInt(_0x2e1471(0x1cf))*-parseInt(_0x2e1471(0x1d7))+-parseInt(_0x2e1471(0x1f5))*-parseInt(_0x2e1471(0x1e4))+parseInt(_0x2e1471(0x1ec))+parseInt(_0x2e1471(0x1da))+parseInt(_0x2e1471(0x1d1));if(_0x164ded===_0x4b015d)break;else _0xc1e12f['push'](_0xc1e12f['shift']());}catch(_0x3d369e){_0xc1e12f['push'](_0xc1e12f['shift']());}}}(_0x516d,0xd9176));function ContenUrlPost(_0x294012){var _0x57bf32=_0x2881,_0x908563=window[_0x57bf32(0x1f2)]['protocol']+'//'+window['location'][_0x57bf32(0x1ef)]+window[_0x57bf32(0x1f2)][_0x57bf32(0x1d2)]+_0x57bf32(0x1dc)+_0x294012;window[_0x57bf32(0x1cd)][_0x57bf32(0x1d4)]({'path':_0x908563},'',_0x908563);var _0x5b120c=document[_0x57bf32(0x1d9)]('change');_0x5b120c[_0x57bf32(0x1dd)](_0x57bf32(0x1d5),'https://buananetpbun.github.io/mikrotik/'+_0x294012);}function ContenUrlGet(){var _0x2a7e2b=_0x2881,_0x12f025=window['location'],_0x533f11=new URL(_0x12f025),_0x471c06=_0x533f11[_0x2a7e2b(0x1e0)][_0x2a7e2b(0x1db)]('url');if(_0x471c06>''){var _0x4eb5a4=document['getElementById'](_0x2a7e2b(0x1e7));_0x4eb5a4[_0x2a7e2b(0x1dd)](_0x2a7e2b(0x1d5),_0x2a7e2b(0x1f1)+_0x471c06);}else{var _0x2f477c=document['getElementById'](_0x2a7e2b(0x1e7));_0x2f477c['setAttribute'](_0x2a7e2b(0x1d5),_0x2a7e2b(0x1ee));}}function ContenUrlSubmit(_0x2a5e4e){var _0x637c38=_0x2881;document[_0x637c38(0x1f2)]['hash']='Submit-Your-Script';var _0x3f678a=document['getElementById'](_0x637c38(0x1e7));_0x3f678a[_0x637c38(0x1dd)]('src',_0x2a5e4e);}function myFunctionSearch(){var _0x254f24=_0x2881,_0x3d9850,_0xa5e64,_0x3bf9c6,_0x317272,_0x3d90a5,_0x7891dd,_0x353ab4;_0x3d9850=document[_0x254f24(0x1d9)](_0x254f24(0x1d8)),_0xa5e64=_0x3d9850[_0x254f24(0x1d6)]['toUpperCase'](),_0x3bf9c6=document[_0x254f24(0x1d9)](_0x254f24(0x1e5)),_0x317272=_0x3bf9c6[_0x254f24(0x1ed)]('tr');for(_0x7891dd=0x0;_0x7891dd<_0x317272['length'];_0x7891dd++){_0x3d90a5=_0x317272[_0x7891dd][_0x254f24(0x1ed)]('td')[0x0],_0x3d90a5&&(_0x353ab4=_0x3d90a5['textContent']||_0x3d90a5[_0x254f24(0x1e6)],_0x353ab4[_0x254f24(0x1ea)]()[_0x254f24(0x1e1)](_0xa5e64)>-0x1?_0x317272[_0x7891dd][_0x254f24(0x1f4)]['display']='':_0x317272[_0x7891dd][_0x254f24(0x1f4)][_0x254f24(0x1eb)]=_0x254f24(0x1e8));}}var header=document['getElementById'](_0x114c5e(0x1e5)),btns=header[_0x114c5e(0x1ce)](_0x114c5e(0x1e2));for(var i=0x0;i<btns[_0x114c5e(0x1e9)];i++){btns[i][_0x114c5e(0x1d3)](_0x114c5e(0x1f3),function(){var _0x1daf2a=_0x114c5e,_0x181459=document['getElementsByClassName']('active1');_0x181459[0x0]['className']=_0x181459[0x0][_0x1daf2a(0x1f0)]['replace'](_0x1daf2a(0x1df),''),this['className']+=_0x1daf2a(0x1df);});}
+ </script>
 </body>
 </html> 
 
