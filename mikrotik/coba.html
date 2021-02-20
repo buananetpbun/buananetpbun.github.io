@@ -1,43 +1,23 @@
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='utf-8'/>
-<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<title>Mikrotik RouterOS Script DataBase Unoffical - BuanaNET</title>
-<meta content='Mikrotik RouterOS Script DataBase Unoffical By BuanaNET Secure!' name='description'/>
-<meta content='RouterOS, Mikrotik Script, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
-<meta content='noindex, nofollow, noodp' name='robots'/>
-<meta http-equiv="expires" content="0">
-<meta property="og:title" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNET">
-<meta property="og:description" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNET">
-<meta property="og:image" content="https://buananetpbun.github.io/mikrotik/img/mikrotik-routeros-script-database.png">
-<meta property="og:image:alt" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNET">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://buananetpbun.github.io/mikrotik/">	
-<link rel="shortcut icon" href="https://www.o-om.com/favicon.ico" type="image/x-icon">	
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
-/* ----------------------------------------------
-#################################################
-# MIKROTIK RouterOS [ SCRIPT ]  DATABASE
-# Date/Time : 01/02/2021, 12:10:14 AM
-# Designer  : Agus Ramadhani / BuanaNET
-# Site      : http://www.o-om.com
-# Sosmed    : https://fb.me/buananet.pbun	
-#################################################
------------------------------------------------ */  
 
 html, body {
   height: 100%;
+  widht:100%;
   margin: 0;
   padding:0;
   font-size:13px;
+  overflow:hidden;
+  color:#111
 }
+	
+h1 {font-size:20px; font-weight:bold}
 
 .active1, .linkPress:hover {
   background-color: red;
@@ -61,71 +41,98 @@ a:hover {
 }
 
 a:active {
+  color: black;
+}
+
+.sidenav {
+  height: 100%;
+  width: 350px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f0f0f0;;
+  overflow-x:hidden;
+  color:#111;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.sidenav a {
+  text-decoration: none;
+  color: #08c;
+ }
+
+.sidenav a:hover {
   color: #08c;
 }
-	
-* {
-  box-sizing: border-box;
+
+.main {
+  margin-left: 360px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
 }
 
-p {
-  color: darkslategray;
+.content {
+position:absolute; left: 370px; right: 0; bottom: 100px; top: 200px;
 }
 
-.drag-container {
-  display: flex;
- height: 100%;
- overflow:hidden
+.header {
+
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 10px;
+  height:200px;
+  background-color: blue;
+  width:100%;
 }
 
-[class^=panel] {
-  padding: 10px 24px;
-  background-color: whitesmoke;
+.footer {
+
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 10px;
+  height:100px;
+  bottom:0;
+  position:absolute;
+  background-color: red;
+  width:100%;
 }
 
-.panel-one {
- width: 450px;
- background-color: #f0f0f0;
- overflow-y:scroll
-}
 
-.panel-two {
- flex: 1;
- background-color: #fff;
-
-}
-
-.dragbar {
-  padding: 1px;
-  cursor: col-resize;
-  background-color: #ddd;
-}
 
 p {
   display:list-item;
   list-style: square;
   padding:0 0 0 0;
   margin:0 0 0 17px;
-  color:  #111;
+  color:  #818181;
 }
 
-button {
- color: #fff;
- background-color: #4CAF50;
- border-color: #4CAF50;
- border:none;
- padding:8px;
- width:135px;
- font-size:13px;
- font-weight:bold;
+
+.logo {
+padding-top:20px;
+color: #111;
+text-decoration:none;
+font-size:16pt;
+font-weight:bold; 
+}	
+.logo a{
+  color:#111;
+
 }
-	
+
+* {
+  box-sizing: border-box;
+}
+
+
+
  .row:after {
  content: "";
  display: table;
  clear: both;
  }  
-	
+ 
  input[type=text], select, textarea {
   width: 100%;
   padding: 5px;
@@ -152,303 +159,223 @@ button {
  input[type=submit]:hover {
   background-color: #45a049;
  }
+ 
 
-.myDIV {display:none;
- height:90%; 
- width:100%;
- white-space: normal;
- overflow-x:none;
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
-	
-.myDIV2 {
- height:75%; 
- width:100%;
- white-space: normal;
- overflow-x:none;
-}
-	
-pre {
-  white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
-  white-space: -pre-wrap; /* Opera */
-  white-space: -o-pre-wrap; /* Opera */
-  white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
-  word-wrap: break-word; /* IE 5.5+ */
-}  
-.h_iframe iframe {
-  width:100%;
-  height:100%;
-}
-.h_iframe {
-  height: 100%;
-  width:100%;
-}
+
+
 </style>
-
-<script>
-window.console = window.console || function(t) {};
-</script>
-<script>
-if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-}
-</script>
-	
 </head>
-<body onload="content2()">
+<body onload="ContenUrlGet()">
 
-<div class="drag-container">
-<div class="panel-one" id="drag-left">
-<div style="font-size:25pt;">	  
-<b>BuanaNETPBun</b> <img style="margin-left:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg#url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
+<div class="sidenav">
+<div class="logo">	  
+<a href="https://buananetpbun.github.io/mikrotik">BuanaNETPBun</a>  <img style="margin-left:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
+</div>	
 <div style="font-size:11px; margin-bottom:20px">
-Copyright 2021 <a href="https://buananetpbun.github.io/">MikroTik RouterOS Script</a> is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNET</a>  
+Copyright 2021 is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNETPBun</a>  
 </div>	
-</div>	
-<h4>MIKROTIK ROUTEROS <span style="color:red">[</span> script <span style="color:red">]</span> DATABASE</h4>
-Contribution your script -> <a href="#" onclick="myshowhide()">Upload</a> 
-<input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="Find Script.." style="width:100%; margin-bottom:10px;margin-top:10px"> 
+
+<h1>MIKROTIK <span style="color:red">[</span> script <span style="color:red">]</span> ROUTEROS</h1>
+Contribution your script -> <a href="#" onclick="ContenUrlSubmit('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">Upload</a> 
+<input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Find Script.." style="width:100%; margin-bottom:10px;margin-top:10px"> 
 <table id="myTable">
 <!-- A -->
-<tr><td><p><a class="linkPress" href="javascript:content('anti-hack-bootloader.html')">Anti Hack Protected BootLoader</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Automated-Usage-Script-without-usermanager.html')">Automated Usage Script Without User Manager</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Allow-use-ofntporg-pool-service-for-NTP.html')">Allow Use Of ntp.org Pool Service For NTP</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Auto-upgrade-script-V3x.html')">Auto upgrade script V3.x</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Audible-signal-test.html')">Audible Signal Test</a></p></td></tr>	
-<tr><td><p><a class="linkPress" href="javascript:content('A-Bit-of-Sounds.html')">A Bit of Sounds</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('anti-hack-bootloader.html')">Anti Hack Protected BootLoader</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Automated-Usage-Script-without-usermanager.html')">Automated Usage Script Without User Manager</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Allow-use-ofntporg-pool-service-for-NTP.html')">Allow Use Of ntp.org Pool Service For NTP</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Auto-upgrade-script-V3x.html')">Auto upgrade script V3.x</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Audible-signal-test.html')">Audible Signal Test</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('A-Bit-of-Sounds.html')">A Bit of Sounds</a></p></td></tr>
 <!-- B -->
-<tr><td><p><a class="linkPress" href="javascript:content('How-To-Backup.html')">Backup Mikrotik File .Backup</a></p></td></tr>	
-<tr><td><p><a class="linkPress" href="javascript:content('How-to-Backup-Use-Export-rsc.html')">Backup Export File .rsc</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('How-To-Backup-rsc-hide-sensitive.html')">Backup Export File .rsc Hide-Sensitive</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('How-To-Backup-rsc-compact.html')">Backup Export File .rsc Compact</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('How-To-Backup-rsc-terse.html')">Backup Export File .rsc Terse</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('How-To-Backup-rsc-verbose.html')">Backup Export File .rsc Verbose</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('How-To-Backup-rsc-combination.html')">Backup Export File .rsc With Combination</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('How-to-Backup-Use-import-rsc.html')">Backup Import File .rsc</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Bypass-Local-Connection.html')">Bypass Local Connection / Local IP</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('bypass-user-hotspot-with-macaddress.html')">Bypass Hotspot User With Mac-Address</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Block-access-to-specific-websites.html')">Blocking Access To Specific Websites</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Bittorrent-layer-7.html')">Bittorrent, Torrentwws, Torrentwww Layer-7</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Block-Windows-Update.html')">Block Windows Update</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('block-tracert.html')">Blocking Tracert / Traceroute</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Block-Tiktok.html')">Blocking Tiktok</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Block-MAC-Address-Device.html')">Block MAC Address Device</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Blocking-Modem.html')">Blocking Modem Access</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Backup-graphing-data.html')">Backup Graphing Data</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Basic-universal-firewall-script.html')">Basic universal firewall script</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup.html')">Backup Mikrotik File .Backup</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-to-Backup-Use-Export-rsc.html')">Backup Export File .rsc</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-hide-sensitive.html')">Backup Export File .rsc Hide-Sensitive</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-compact.html')">Backup Export File .rsc Compact</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-terse.html')">Backup Export File .rsc Terse</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-verbose.html')">Backup Export File .rsc Verbose</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-combination.html')">Backup Export File .rsc With Combination</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-to-Backup-Use-import-rsc.html')">Backup Import File .rsc</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Bypass-Local-Connection.html')">Bypass Local Connection / Local IP</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('bypass-user-hotspot-with-macaddress.html')">Bypass Hotspot User With Mac-Address</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Block-access-to-specific-websites.html')">Blocking Access To Specific Websites</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Bittorrent-layer-7.html')">Bittorrent, Torrentwws, Torrentwww Layer-7</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Block-Windows-Update.html')">Block Windows Update</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('block-tracert.html')">Blocking Tracert / Traceroute</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Block-Tiktok.html')">Blocking Tiktok</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Block-MAC-Address-Device.html')">Block MAC Address Device</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Blocking-Modem.html')">Blocking Modem Access</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Backup-graphing-data.html')">Backup Graphing Data</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Basic-universal-firewall-script.html')">Basic universal firewall script</a></p></td></tr>	
 <!-- C -->
-<tr><td><p><a class="linkPress" href="javascript:content('Check-if-RTO-and-send-to-Telegram.html')">Check if RTO and send to Telegram</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('address-list-dynamic-to-static.html')">Change All Address List Dynamic To Static</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('change-system-note.html')">Change System Note</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Speedtest-Mangle-layer7.html')">Complete Mangle Speedtest with Layer-7</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Get-Day.html')">Calculates Day Of The Week For a Givien Date</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:content('change-Interface-ether-Default-1.html')">Change Name Interface or Ether To Default Auto</a></p></td></tr>  
-<tr><td><p><a class="linkPress" href="javascript:content('change-Interface-ether-Default-2.html')">Change Name Interface or Ether To Default Manual</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:content('check-ip-change.html')">Check if IP on interface have changed</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Check-bandwidth-and-add-limitations.html')">Check Bandwidth and Add Limitations</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Calculate-with-decimal-numbers.html')">Calculate With Decimal Numbers</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('clear-log-Mikrotik.html')">Clear LOG info from Terminal</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:content('Create-a-file.html')">Create A File</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Calea-perl-trafr.html')">Calea Perl Trafr</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Converting_network_and_gateway_from_routing_table_to_hexadecimal_string.html')">Converting Gateway From Routing To hexadecimal</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Change-Mikrotik-identity-or-Winbox-Caption.html')">Change Mikrotik identity or Winbox Caption</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Check-if-RTO-and-send-to-Telegram.html')">Check if RTO and send to Telegram</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('address-list-dynamic-to-static.html')">Change All Address List Dynamic To Static</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('change-system-note.html')">Change System Note</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Speedtest-Mangle-layer7.html')">Complete Mangle Speedtest with Layer-7</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Get-Day.html')">Calculates Day Of The Week For a Givien Date</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('change-Interface-ether-Default-1.html')">Change Name Interface or Ether To Default Auto</a></p></td></tr>  
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('change-Interface-ether-Default-2.html')">Change Name Interface or Ether To Default Manual</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('check-ip-change.html')">Check if IP on interface have changed</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Check-bandwidth-and-add-limitations.html')">Check Bandwidth and Add Limitations</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Calculate-with-decimal-numbers.html')">Calculate With Decimal Numbers</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('clear-log-Mikrotik.html')">Clear LOG info from Terminal</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Create-a-file.html')">Create A File</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Calea-perl-trafr.html')">Calea Perl Trafr</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Converting_network_and_gateway_from_routing_table_to_hexadecimal_string.html')">Converting Gateway From Routing To hexadecimal</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Change-Mikrotik-identity-or-Winbox-Caption.html')">Change Mikrotik identity or Winbox Caption</a></p></td></tr>
 <!-- D -->
-<tr><td><p><a class="linkPress" href="javascript:content('dns-chace-flush.html')">DNS Cache Flush</a></p></td></tr>  
-<tr><td><p><a class="linkPress" href="javascript:content('Detect-new-log-entry.html')">Detect New Log Entry</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Dial_PPPoE_until_a_Certain_IP_Range_is_Obtained.html')">Dial PPPoE until a Certain IP Range is Obtained</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('dns-chace-flush.html')">DNS Cache Flush</a></p></td></tr>  
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Detect-new-log-entry.html')">Detect New Log Entry</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Dial_PPPoE_until_a_Certain_IP_Range_is_Obtained.html')">Dial PPPoE until a Certain IP Range is Obtained</a></p></td></tr>
 <!-- E -->
-<tr><td><p><a class="linkPress" href="javascript:content('Automatic-Expired-Hotspot-Page-Without-A-Proxy.html')">Expired Hotspot Page Without A Proxy</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Automatic-Expired-Hotspot-Page-Without-A-Proxy.html')">Expired Hotspot Page Without A Proxy</a></p></td></tr>
 <!-- F -->
-<tr><td><p><a class="linkPress" href="javascript:content('show-usermanager-password.html')">Forget or Show User Manager Password</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('show-usermanager-password.html')">Forget or Show User Manager Password</a></p></td></tr>
 <!-- G -->
-<tr><td><p><a class="linkPress" href="javascript:content('How-to-get-todays-date-info.html')">Get Today's Date Info</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Generate-backup-and-sendit-by-email.html')">Generate Backup And Send it By E-Mail</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-to-get-todays-date-info.html')">Get Today's Date Info</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Generate-backup-and-sendit-by-email.html')">Generate Backup And Send it By E-Mail</a></p></td></tr>	
 <!-- H -->
-<tr><td><p><a class="linkPress" href="javascript:content('Hotspot-Auto-User-logout-user-When-internet-down.html')">Hotspot Auto logout user When Inet down</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Hotspot-Auto-User-logout-user-When-internet-down.html')">Hotspot Auto logout user When Inet down</a></p></td></tr>
 <!-- I -->
-<tr><td><p><a class="linkPress" href="javascript:content('Include-custom-function-in-another-script.html')">Include custom function in another script</a></p></td></tr>	  
-<tr><td><p><a class="linkPress" href="javascript:content('IP-Address-list-Speedtest.html')">IP Address list SpeedTest</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('IP-Address-list-Telergram.html')">IP Address list Telegram</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('IP-Address-list-Facebook.html')">IP Address list Facebook</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('IP-Address-List-twitter.html')">IP Address list Twitter</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('IP-Address-List-WhatsApp.html')">IP Address list WhatsApp</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('IP-Private-or-IP-Local-Standard-RFC1918.html')">IP Private or IP Local Standard RFC 1918</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Include-custom-function-in-another-script.html')">Include custom function in another script</a></p></td></tr>	  
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-list-Speedtest.html')">IP Address list SpeedTest</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-list-Telergram.html')">IP Address list Telegram</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-list-Facebook.html')">IP Address list Facebook</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-List-twitter.html')">IP Address list Twitter</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-List-WhatsApp.html')">IP Address list WhatsApp</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Private-or-IP-Local-Standard-RFC1918.html')">IP Private or IP Local Standard RFC 1918</a></p></td></tr>	
 <!-- J -->
 <!-- K -->
 <!-- L -->
-<tr><td><p><a class="linkPress" href="javascript:content('LB-PCC-2-Line-ISP.html')">LB PCC 2 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-PCC-3-Line-ISP.html')">LB PCC 3 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-PCC-4-Line-ISP.html')">LB PCC 4 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-PCC-5-Line-ISP.html')">LB PCC 5 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-PCC-6-Line-ISP.html')">LB PCC 6 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-ECMP-2-Line-ISP.html')">LB ECMP 2 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-ECMP-3-Line-ISP.html')">LB ECMP 3 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-ECMP-4-Line-ISP.html')">LB ECMP 4 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-ECMP-5-Line-ISP.html')">LB ECMP 5 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-ECMP-6-Line-ISP.html')">LB ECMP 6 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('LB-ECMP-Failover-Script.html')">LB ECMP Failover Script</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-2-Line-ISP.html')">LB PCC 2 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-3-Line-ISP.html')">LB PCC 3 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-4-Line-ISP.html')">LB PCC 4 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-5-Line-ISP.html')">LB PCC 5 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-6-Line-ISP.html')">LB PCC 6 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-2-Line-ISP.html')">LB ECMP 2 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-3-Line-ISP.html')">LB ECMP 3 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-4-Line-ISP.html')">LB ECMP 4 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-5-Line-ISP.html')">LB ECMP 5 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-6-Line-ISP.html')">LB ECMP 6 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-Failover-Script.html')">LB ECMP Failover Script</a></p></td></tr>	
 <!-- M -->
-<tr><td><p><a class="linkPress" href="javascript:content('Mikrotik-Terminal-Command-Line-and-Keyboard-Command.html')">Terminal Command Line and Keyboard Command</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:content('Speedtest-domain-List.html')">Host or Domain list SpeedTest</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:content('Make-an-Automated-Configuration-and-Uninstall.html')">Make an Automated Configuration and Uninstall</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Mikrotik-Terminal-Command-Line-and-Keyboard-Command.html')">Terminal Command Line and Keyboard Command</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Speedtest-domain-List.html')">Host or Domain list SpeedTest</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Make-an-Automated-Configuration-and-Uninstall.html')">Make an Automated Configuration and Uninstall</a></p></td></tr>
 <!-- N -->
 <!-- 0 -->
 <!-- P -->
-<tr><td><p><a class="linkPress" href="javascript:content('port-game-online-pc-games.html')">Port Game Online for PC Games</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('port-game-online-mobile-games.html')">Port Game Online for Mobile Games</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('port-game-online-web-games.html')">Port Game Online for Web Games</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('protect-connection-with-anti-netcut.html')">Protect Connection With ANTI NETCUT</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Protect-web-open-porxy.html')">Protect Open Web proxy</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Protect-Open-Recursive-DNS.html')">Protect Open Recursive DNS</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('protect-default-service-port.html')">Protect Default Port Service From WAN</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('protect-mikrotik-from-ddos.html')">Protect Router From DDOS Attacks</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('protect-mikrotik-from-exploit.html')">Protect Router From Exploit (VULNERABILITY)</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('port-knocking-icmp.html')">Port Knocking Maker or Generator Icmp + Packet Size</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Parse-file-to-add-ppp-secrets.html')">Parse File To Add PPP Secrets</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Print-function.html')">Print Function</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('port-game-online-pc-games.html')">Port Game Online for PC Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('port-game-online-mobile-games.html')">Port Game Online for Mobile Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('port-game-online-web-games.html')">Port Game Online for Web Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Protect-Router-from-Port-Scanner.html')">Protect Router from Port Scanner</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('protect-connection-with-anti-netcut.html')">Protect Connection With ANTI NETCUT</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Protect-web-open-porxy.html')">Protect Open Web proxy</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Protect-Open-Recursive-DNS.html')">Protect Open Recursive DNS</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('protect-default-service-port.html')">Protect Default Port Service From WAN</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('protect-mikrotik-from-ddos.html')">Protect Router From DDOS Attacks</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('protect-mikrotik-from-exploit.html')">Protect Router From Exploit (VULNERABILITY)</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('port-knocking-icmp.html')">Port Knocking Maker or Generator Icmp + Packet Size</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Parse-file-to-add-ppp-secrets.html')">Parse File To Add PPP Secrets</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Print-function.html')">Print Function</a></p></td></tr>
 <!-- Q -->
 <!-- R -->
-<tr><td><p><a class="linkPress" href="javascript:content('remote-ip-public-static.html')">Remote IP Public Static For Secondary Gateway</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Read-and-write-large-files.html')">Read and Write Large Files</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Resolve-host-name.html')">Resolve host-name</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('reset-counter.html')">Reset All Counter</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('fail-over-recursive-gateway.html')">Recursive Gateway Fail over</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('rebuild-database-User-Manager.html')">Rebuild DataBase On User Manager</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('remote-ip-public-static.html')">Remote IP Public Static For Secondary Gateway</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Read-and-write-large-files.html')">Read and Write Large Files</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Resolve-host-name.html')">Resolve host-name</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('reset-counter.html')">Reset All Counter</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('fail-over-recursive-gateway.html')">Recursive Gateway Fail over</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('rebuild-database-User-Manager.html')">Rebuild DataBase On User Manager</a></p></td></tr>
 <!-- S -->
-<tr><td><p><a class="linkPress" href="javascript:content('Solution-Hotspot-login-Page-LB-PCC.html')">Solution For Hotspot Login Page with LB PCC</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:content('Signalorg-Mangle-And-Queue.html')">Signal.org Mangle And Queue</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:content('Speedtest-Regexp-Layer7.html')">Speedtest Regexp Layer-7</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:content('strip-ip-address-netmask.html')">Strip IP Address without netmask</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('A-script-to-set-up-WAN-or-LAN-or-WLAN-to-get-you-started.html')">Set Up WAN/LAN/WLAN To Get You Started</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Solution-Hotspot-login-Page-LB-PCC.html')">Solution For Hotspot Login Page with LB PCC</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Signalorg-Mangle-And-Queue.html')">Signal.org Mangle And Queue</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Speedtest-Regexp-Layer7.html')">Speedtest Regexp Layer-7</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('strip-ip-address-netmask.html')">Strip IP Address without netmask</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('A-script-to-set-up-WAN-or-LAN-or-WLAN-to-get-you-started.html')">Set Up WAN/LAN/WLAN To Get You Started</a></p></td></tr>
 <!-- T -->
 <!-- U -->
-<tr><td><p><a class="linkPress" href="javascript:content('Use-string-as-function.html')">Use String as Function</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Use-string-as-function.html')">Use String as Function</a></p></td></tr>
 <!-- V -->
 <!-- W -->
-<tr><td><p><a class="linkPress" href="javascript:content('wms-auto-login.html')">WMS or Wifi.id Auto Login</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:content('Write-simple-queue-stats-in-multiple-files.html')">Write simple queue stats in multiple files</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('wms-auto-login.html')">WMS or Wifi.id Auto Login</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Write-simple-queue-stats-in-multiple-files.html')">Write simple queue stats in multiple files</a></p></td></tr>
 <!-- X -->
 <!-- Y -->
 <!-- Z -->
 <!-- WELCOME -->
-<tr><td><p><a class="linkPress active1" href="javascript:content('welcome.html')">Welcome</a></p></td></tr>
+<tr><td><p><a class="linkPress active1" href="javascript:ContenUrlPost('welcome.html')">Welcome</a></p></td></tr>
 </table>
 </div>
-<div class="dragbar" id="dragbar"></div>
-<div class="panel-two" id="drag-right">
-<div class="myDIV" id="myDIV">
-<h3>SUBMIT YOUR SCRIPT</h3>
-<div class="h_iframe">
-<iframe frameborder="0" height="810" marginheight="0" width="700" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform"></iframe>
-</div>
-<br>
-<button onclick="myshowhide()">Close</button>
-</div>	
-<div class="myDIV2" id="myDIV2">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- mikrotik script database -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9740800920365268"
-     data-ad-slot="5877725012"
-     data-ad-format="link"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>	
-<div class="h_iframe">
- <iframe id="change" src="" frameborder="0" style="widht:100%, weight:100%"></iframe>
-</div>
-<br>	
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- mikrotik script database -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9740800920365268"
-     data-ad-slot="5877725012"
-     data-ad-format="link"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>	
-</div>				      
-</div>
-</div> 
-<script >
-var left = document.getElementById('drag-left');
-var right = document.getElementById('drag-right');
-var bar = document.getElementById('dragbar');
-const drag = e => {
-  document.selection ? document.selection.empty() : window.getSelection().removeAllRanges();
-  left.style.width = e.pageX - bar.offsetWidth / 100 + 'px';
-};
-bar.addEventListener('mousedown', () => {
-  document.addEventListener('mousemove', drag);
-});
-bar.addEventListener('mouseup', () => {
-  document.removeEventListener('mousemove', drag);
-});
 
-function myshowhide() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-  var y = document.getElementById("myDIV2");
-  if (y.style.display === "none") {
-    y.style.display = "block";
-  } else {
-    y.style.display = "none";
-  }
+
+
+<div class="main">
+<div class="header">aaaaaaa</div>
+<div class="content">
+<iframe id="change" width="100%" height="100%" frameborder="0" src=""></iframe>
+ </div>
+ <div class="footer">aaaaaaa</div>
+</div>
+  <script>
+function ContenUrlPost(text){
+
+var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?url=' + text;
+window.history.pushState({path:newurl},'',newurl);
+
+var element =  document.getElementById("change");
+element.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + text);
 }
-function content(text){
-        // native
-		var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?url=' + text;
-        window.history.pushState({path:newurl},'',newurl);
-		
-        var element =  document.getElementById("change");
-        element.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + text);
-      }
-      
-function content2(){
-        var url_string = window.location;
+
+function ContenUrlGet(){
+var url_string = window.location;
 var url = new URL(url_string);
 var name = url.searchParams.get("url");
+if (name > "") {
+var element2 =  document.getElementById("change");
+element2.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + name);
+} else {
+var element3 =  document.getElementById("change");
+element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
+}
+}	  
 
-        var element =  document.getElementById("change");
-        element.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + name);
-      }	  
-	  
-  		 function myFunctionGames() {
-		  var input, filter, table, tr, td, i, txtValue;
-		  input = document.getElementById("myInput");
-		  filter = input.value.toUpperCase();
-		  table = document.getElementById("myTable");
-		  tr = table.getElementsByTagName("tr");
-		  for (i = 0; i < tr.length; i++) {
-			td = tr[i].getElementsByTagName("td")[0];
-			if (td) {
-			  txtValue = td.textContent || td.innerText;
-			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
-				tr[i].style.display = "";
-			  } else {
-				tr[i].style.display = "none";
-			  } 
-			}       
-		  }
-		}		
-// Add active class to the current button (highlight it)
+function ContenUrlSubmit(text3){
+document.location.hash = 'Submit-Your-Script';
+var element3 =  document.getElementById("change");
+element3.setAttribute("src", text3);
+}
+
+function myFunctionSearch() {
+var input, filter, table, tr, td, i, txtValue;
+input = document.getElementById("myInput");
+filter = input.value.toUpperCase();
+table = document.getElementById("myTable");
+tr = table.getElementsByTagName("tr");
+for (i = 0; i < tr.length; i++) {
+td = tr[i].getElementsByTagName("td")[0];
+if (td) {
+txtValue = td.textContent || td.innerText;
+if (txtValue.toUpperCase().indexOf(filter) > -1) {
+tr[i].style.display = "";
+} else {
+tr[i].style.display = "none";
+} 
+}       
+}
+}		
+
 var header = document.getElementById("myTable");
 var btns = header.getElementsByClassName("linkPress");
 for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active1");
-  current[0].className = current[0].className.replace(" active1", "");
-  this.className += " active1";
-  });
-}
+btns[i].addEventListener("click", function() {
+var current = document.getElementsByClassName("active1");
+current[0].className = current[0].className.replace(" active1", "");
+this.className += " active1";
+});
+}	
   </script>
 </body>
-</html>
-
+</html> 
