@@ -1,374 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<title>Mikrotik RouterOS Script DataBase Unoffical - BuanaNETPBun</title>
-<meta content='Mikrotik RouterOS Script DataBase Unoffical By BuanaNETPBun Secure!' name='description'/>
-<meta content='RouterOS, Mikrotik Script, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
-<meta content='index, follow, noodp' name='robots'/>
-<meta http-equiv="expires" content="0">
-<meta property="og:title" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNETPBun">
-<meta property="og:description" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNETPBun">
-<meta property="og:image" content="https://buananetpbun.github.io/mikrotik/img/mikrotik-routeros-script-database.png">
-<meta property="og:image:alt" content="Mikrotik RouterOS Script DataBase Unoffical By BuanaNETPBun">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://buananetpbun.github.io/mikrotik/">	
-<link rel="shortcut icon" href="https://www.o-om.com/favicon.ico" type="image/x-icon">	
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
-<style>
-/* ----------------------------------------------
-#################################################
-# MIKROTIK RouterOS [ SCRIPT ]  DATABASE
-# Date/Time : 01/02/2021, 12:10:14 AM
-# Designer  : Agus Ramadhani / BuanaNETPBun
-# Site      : http://www.o-om.com
-# Sosmed    : https://fb.me/buananet.pbun	
-#################################################
------------------------------------------------ */  
+function ContenUrlPost(text){
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding:0;
-  font-size:13px;
-}
-	
-h1 {font-size:19px; font-weight:bold}
-	
-.active1, .linkPress:hover {
-  background-color: red;
-  color: white !important;
-  font-weight:bold
+var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?url=' + text;
+window.history.pushState({path:newurl},'',newurl);
+
+var element =  document.getElementById("change");
+element.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + text);
 }
 
+function ContenUrlGet(){
+var url_string = window.location;
+var url = new URL(url_string);
+var name = url.searchParams.get("url");
+if (name > "") {
+var element2 =  document.getElementById("change");
+element2.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + name);
+} else {
+var element3 =  document.getElementById("change");
+element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
+}
+}	  
 
-a:link {
-  color: #08c;
-  text-decoration:none
+function ContenUrlSubmit(text3){
+document.location.hash = 'Submit-Your-Script';
+var element3 =  document.getElementById("change");
+element3.setAttribute("src", text3);
 }
 
-a:visited {
-  color: #08c;
-  text-decoration:none
+function myFunctionSearch() {
+var input, filter, table, tr, td, i, txtValue;
+input = document.getElementById("myInput");
+filter = input.value.toUpperCase();
+table = document.getElementById("myTable");
+tr = table.getElementsByTagName("tr");
+for (i = 0; i < tr.length; i++) {
+td = tr[i].getElementsByTagName("td")[0];
+if (td) {
+txtValue = td.textContent || td.innerText;
+if (txtValue.toUpperCase().indexOf(filter) > -1) {
+tr[i].style.display = "";
+} else {
+tr[i].style.display = "none";
+} 
+}       
 }
+}		
 
-a:hover {
-  color: black;
-}
-
-a:active {
-  color: black;
-}
-	
-.logo {
-color: #111;
-text-decoration:none;
-font-size:25pt;
-font-weight:bold; 
+var header = document.getElementById("myTable");
+var btns = header.getElementsByClassName("linkPress");
+for (var i = 0; i < btns.length; i++) {
+btns[i].addEventListener("click", function() {
+var current = document.getElementsByClassName("active1");
+current[0].className = current[0].className.replace(" active1", "");
+this.className += " active1";
+});
 }	
-.logo a{
-  color: #111;
-
-}
-
-* {
-  box-sizing: border-box;
-}
-
-p {
-  color: darkslategray;
-}
-
-.drag-container {
-  display: flex;
- height: 100%;
- overflow:hidden
-}
-
-[class^=panel] {
-  padding: 10px 24px;
-  background-color: whitesmoke;
-}
-
-.panel-one {
- width: 450px;
- background-color: #f0f0f0;
- overflow-y:scroll
-}
-
-.panel-two {
- flex: 1;
- background-color: #fff;
-}
-
-.panel-tree {
- flex: 1;
- height:100%;
- float:right;
- width:100px;
-padding-top:20px;
-background-color: #fff;
-}
-
-.dragbar {
-  padding: 1px;
-  cursor: col-resize;
-  background-color: #ddd;
-}
-
-p {
-  display:list-item;
-  list-style: square;
-  padding:0 0 0 0;
-  margin:0 0 0 17px;
-  color:  #111;
-}
-
-button {
- color: #fff;
- background-color: #4CAF50;
- border-color: #4CAF50;
- border:none;
- padding:8px;
- width:135px;
- font-size:13px;
- font-weight:bold;
-}
-	
- .row:after {
- content: "";
- display: table;
- clear: both;
- }  
-	
- input[type=text], select, textarea {
-  width: 100%;
-  padding: 5px;
-  border: 2px solid #ccc;
-  border-radius: 2px;
-  resize: vertical;
- }
-	
- label {
-  padding: 5px 5px 5px 0;
-  display: inline-block;
- }
-	
- input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 1px;
-  cursor: pointer;
-  float: right;
- }
-	
- input[type=submit]:hover {
-  background-color: #45a049;
- }
-
-.myDIV2 {
- height:100%; 
- width:100%;
- white-space: normal;
- overflow-x:none;
-}
-	
-pre {
-  white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
-  white-space: -pre-wrap; /* Opera */
-  white-space: -o-pre-wrap; /* Opera */
-  white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
-  word-wrap: break-word; /* IE 5.5+ */
-}  
-.h_iframe iframe {
-  width:100%;
-  height:100%;
-}
-.h_iframe {
-  height: 100%;
-  width:100%;
-}
-</style>
-
-<script>
-window.console = window.console || function(t) {};
-</script>
-<script>
-if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-}
-</script>
-	
-</head>
-<body onload="ContenUrlGet()">
-<div class="panel-tree">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- MIKROTIK SCRIPT DB3 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9740800920365268"
-     data-ad-slot="4637807296"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<div class="drag-container">
-<div class="panel-one" id="drag-left">
-<div class="logo">	  
-<a href="https://buananetpbun.github.io/mikrotik">BuanaNETPBun</a>  <img style="margin-left:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
-</div>	
-<div style="font-size:10px; margin-bottom:20px">
-Copyright 2021 <a href="https://buananetpbun.github.io/mikrotik">MikroTik RouterOS Script</a> is proudly powered by <a href="https://www.facebook.com/buananetmikrotik">BuanaNETPBun</a>  
-</div>	
-
-<h1>MIKROTIK ROUTEROS <span style="color:red">[</span> script <span style="color:red">]</span> DATABASE</h1>
-Contribution your script -> <a href="#" onclick="ContenUrlSubmit('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">Upload</a> 
-<input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Find Script.." style="width:100%; margin-bottom:10px;margin-top:10px"> 
-<table id="myTable">
-<!-- A -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('anti-hack-bootloader.html')">Anti Hack Protected BootLoader</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Automated-Usage-Script-without-usermanager.html')">Automated Usage Script Without User Manager</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Allow-use-ofntporg-pool-service-for-NTP.html')">Allow Use Of ntp.org Pool Service For NTP</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Auto-upgrade-script-V3x.html')">Auto upgrade script V3.x</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Audible-signal-test.html')">Audible Signal Test</a></p></td></tr>	
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('A-Bit-of-Sounds.html')">A Bit of Sounds</a></p></td></tr>
-<!-- B -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup.html')">Backup Mikrotik File .Backup</a></p></td></tr>	
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-to-Backup-Use-Export-rsc.html')">Backup Export File .rsc</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-hide-sensitive.html')">Backup Export File .rsc Hide-Sensitive</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-compact.html')">Backup Export File .rsc Compact</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-terse.html')">Backup Export File .rsc Terse</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-verbose.html')">Backup Export File .rsc Verbose</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-To-Backup-rsc-combination.html')">Backup Export File .rsc With Combination</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-to-Backup-Use-import-rsc.html')">Backup Import File .rsc</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Bypass-Local-Connection.html')">Bypass Local Connection / Local IP</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('bypass-user-hotspot-with-macaddress.html')">Bypass Hotspot User With Mac-Address</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Block-access-to-specific-websites.html')">Blocking Access To Specific Websites</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Bittorrent-layer-7.html')">Bittorrent, Torrentwws, Torrentwww Layer-7</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Block-Windows-Update.html')">Block Windows Update</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('block-tracert.html')">Blocking Tracert / Traceroute</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Block-Tiktok.html')">Blocking Tiktok</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Block-MAC-Address-Device.html')">Block MAC Address Device</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Blocking-Modem.html')">Blocking Modem Access</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Backup-graphing-data.html')">Backup Graphing Data</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Basic-universal-firewall-script.html')">Basic universal firewall script</a></p></td></tr>	
-<!-- C -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Check-if-RTO-and-send-to-Telegram.html')">Check if RTO and send to Telegram</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('address-list-dynamic-to-static.html')">Change All Address List Dynamic To Static</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('change-system-note.html')">Change System Note</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Speedtest-Mangle-layer7.html')">Complete Mangle Speedtest with Layer-7</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Get-Day.html')">Calculates Day Of The Week For a Givien Date</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('change-Interface-ether-Default-1.html')">Change Name Interface or Ether To Default Auto</a></p></td></tr>  
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('change-Interface-ether-Default-2.html')">Change Name Interface or Ether To Default Manual</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('check-ip-change.html')">Check if IP on interface have changed</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Check-bandwidth-and-add-limitations.html')">Check Bandwidth and Add Limitations</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Calculate-with-decimal-numbers.html')">Calculate With Decimal Numbers</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('clear-log-Mikrotik.html')">Clear LOG info from Terminal</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Create-a-file.html')">Create A File</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Calea-perl-trafr.html')">Calea Perl Trafr</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Converting_network_and_gateway_from_routing_table_to_hexadecimal_string.html')">Converting Gateway From Routing To hexadecimal</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Change-Mikrotik-identity-or-Winbox-Caption.html')">Change Mikrotik identity or Winbox Caption</a></p></td></tr>
-<!-- D -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('dns-chace-flush.html')">DNS Cache Flush</a></p></td></tr>  
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Detect-new-log-entry.html')">Detect New Log Entry</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Dial_PPPoE_until_a_Certain_IP_Range_is_Obtained.html')">Dial PPPoE until a Certain IP Range is Obtained</a></p></td></tr>
-<!-- E -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Automatic-Expired-Hotspot-Page-Without-A-Proxy.html')">Expired Hotspot Page Without A Proxy</a></p></td></tr>
-<!-- F -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('show-usermanager-password.html')">Forget or Show User Manager Password</a></p></td></tr>
-<!-- G -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('How-to-get-todays-date-info.html')">Get Today's Date Info</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Generate-backup-and-sendit-by-email.html')">Generate Backup And Send it By E-Mail</a></p></td></tr>	
-<!-- H -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Hotspot-Auto-User-logout-user-When-internet-down.html')">Hotspot Auto logout user When Inet down</a></p></td></tr>
-<!-- I -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Include-custom-function-in-another-script.html')">Include custom function in another script</a></p></td></tr>	  
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-list-Speedtest.html')">IP Address list SpeedTest</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-list-Telergram.html')">IP Address list Telegram</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-list-Facebook.html')">IP Address list Facebook</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-List-twitter.html')">IP Address list Twitter</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Address-List-WhatsApp.html')">IP Address list WhatsApp</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('IP-Private-or-IP-Local-Standard-RFC1918.html')">IP Private or IP Local Standard RFC 1918</a></p></td></tr>	
-<!-- J -->
-<!-- K -->
-<!-- L -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-2-Line-ISP.html')">LB PCC 2 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-3-Line-ISP.html')">LB PCC 3 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-4-Line-ISP.html')">LB PCC 4 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-5-Line-ISP.html')">LB PCC 5 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-PCC-6-Line-ISP.html')">LB PCC 6 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-2-Line-ISP.html')">LB ECMP 2 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-3-Line-ISP.html')">LB ECMP 3 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-4-Line-ISP.html')">LB ECMP 4 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-5-Line-ISP.html')">LB ECMP 5 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-6-Line-ISP.html')">LB ECMP 6 Line ISP Failover</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('LB-ECMP-Failover-Script.html')">LB ECMP Failover Script</a></p></td></tr>	
-<!-- M -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Mikrotik-Terminal-Command-Line-and-Keyboard-Command.html')">Terminal Command Line and Keyboard Command</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Speedtest-domain-List.html')">Host or Domain list SpeedTest</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Make-an-Automated-Configuration-and-Uninstall.html')">Make an Automated Configuration and Uninstall</a></p></td></tr>
-<!-- N -->
-<!-- 0 -->
-<!-- P -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('port-game-online-pc-games.html')">Port Game Online for PC Games</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('port-game-online-mobile-games.html')">Port Game Online for Mobile Games</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('port-game-online-web-games.html')">Port Game Online for Web Games</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Protect-Router-from-Port-Scanner.html')">Protect Router from Port Scanner</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('protect-connection-with-anti-netcut.html')">Protect Connection With ANTI NETCUT</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Protect-web-open-porxy.html')">Protect Open Web proxy</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Protect-Open-Recursive-DNS.html')">Protect Open Recursive DNS</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('protect-default-service-port.html')">Protect Default Port Service From WAN</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('protect-mikrotik-from-ddos.html')">Protect Router From DDOS Attacks</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('protect-mikrotik-from-exploit.html')">Protect Router From Exploit (VULNERABILITY)</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('port-knocking-icmp.html')">Port Knocking Maker or Generator Icmp + Packet Size</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Parse-file-to-add-ppp-secrets.html')">Parse File To Add PPP Secrets</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Print-function.html')">Print Function</a></p></td></tr>
-<!-- Q -->
-<!-- R -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('remote-ip-public-static.html')">Remote IP Public Static For Secondary Gateway</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Read-and-write-large-files.html')">Read and Write Large Files</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Resolve-host-name.html')">Resolve host-name</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('reset-counter.html')">Reset All Counter</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('fail-over-recursive-gateway.html')">Recursive Gateway Fail over</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('rebuild-database-User-Manager.html')">Rebuild DataBase On User Manager</a></p></td></tr>
-<!-- S -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Solution-Hotspot-login-Page-LB-PCC.html')">Solution For Hotspot Login Page with LB PCC</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Signalorg-Mangle-And-Queue.html')">Signal.org Mangle And Queue</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Speedtest-Regexp-Layer7.html')">Speedtest Regexp Layer-7</a></p></td></tr> 
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('strip-ip-address-netmask.html')">Strip IP Address without netmask</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('A-script-to-set-up-WAN-or-LAN-or-WLAN-to-get-you-started.html')">Set Up WAN/LAN/WLAN To Get You Started</a></p></td></tr>
-<!-- T -->
-<!-- U -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Use-string-as-function.html')">Use String as Function</a></p></td></tr>
-<!-- V -->
-<!-- W -->
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('wms-auto-login.html')">WMS or Wifi.id Auto Login</a></p></td></tr>
-<tr><td><p><a class="linkPress" href="javascript:ContenUrlPost('Write-simple-queue-stats-in-multiple-files.html')">Write simple queue stats in multiple files</a></p></td></tr>
-<!-- X -->
-<!-- Y -->
-<!-- Z -->
-<!-- WELCOME -->
-<tr><td><p><a class="linkPress active1" href="javascript:ContenUrlPost('welcome.html')">Welcome</a></p></td></tr>
-</table>
-</div>
-<div class="dragbar" id="dragbar"></div>
-<div class="panel-two" id="drag-right">
-<div class="myDIV2">
-<div class="h_iframe">
- <iframe id="change" src="welcome.html" frameborder="0" style="widht:100%, weight:100%"></iframe>
-</div>
-</div>				      
-</div>
-</div> 
-<script>
-var _0x1e70=['linkPress','914726Owrazu','removeAllRanges','indexOf','getElementsByTagName','display','pathname','1613KtEiHa','width','selection','src','length','removeEventListener','get','active1','history','myInput','515608IRmUzI','https://buananetpbun.github.io/mikrotik/','\x20active1','388272wqcQyx','url','change','538wwGmkx','drag-left','setAttribute','?url=','getElementsByClassName','dragbar','mouseup','pushState','2BduxnB','addEventListener','pageX','myTable','replace','block','30281JhvRrj','toUpperCase','protocol','1HOtrvQ','mousemove','1923210CkxDag','myDIV2','location','textContent','hash','none','value','5107532TANuvD','className','getSelection','getElementById','46KKKEks','style'];var _0x506c=function(_0x16db8a,_0xf64ec2){_0x16db8a=_0x16db8a-0xdc;var _0x1e7062=_0x1e70[_0x16db8a];return _0x1e7062;};var _0xf9a9ac=_0x506c;(function(_0x13dfe4,_0x114ce0){var _0x4734c3=_0x506c;while(!![]){try{var _0x4ade1a=-parseInt(_0x4734c3(0xee))+parseInt(_0x4734c3(0x102))*-parseInt(_0x4734c3(0x112))+-parseInt(_0x4734c3(0x10f))+-parseInt(_0x4734c3(0x10c))+parseInt(_0x4734c3(0xe3))*-parseInt(_0x4734c3(0xfc))+-parseInt(_0x4734c3(0xe9))*-parseInt(_0x4734c3(0xf9))+-parseInt(_0x4734c3(0xec))*-parseInt(_0x4734c3(0xf5));if(_0x4ade1a===_0x114ce0)break;else _0x13dfe4['push'](_0x13dfe4['shift']());}catch(_0x37ec49){_0x13dfe4['push'](_0x13dfe4['shift']());}}}(_0x1e70,0xee4fa));var left=document['getElementById'](_0xf9a9ac(0xdc)),right=document['getElementById']('drag-right'),bar=document['getElementById'](_0xf9a9ac(0xe0));const drag=_0x597498=>{var _0x2a4159=_0xf9a9ac;document[_0x2a4159(0x104)]?document[_0x2a4159(0x104)]['empty']():window[_0x2a4159(0xf7)]()[_0x2a4159(0xfd)](),left[_0x2a4159(0xfa)][_0x2a4159(0x103)]=_0x597498[_0x2a4159(0xe5)]-bar['offsetWidth']/0x64+'px';};bar['addEventListener']('mousedown',()=>{var _0x3d358c=_0xf9a9ac;document[_0x3d358c(0xe4)](_0x3d358c(0xed),drag);}),bar['addEventListener'](_0xf9a9ac(0xe1),()=>{var _0x2953a3=_0xf9a9ac;document[_0x2953a3(0x107)](_0x2953a3(0xed),drag);});function myshowhide(){var _0x530511=_0xf9a9ac,_0x7d7cc3=document['getElementById']('myDIV');_0x7d7cc3[_0x530511(0xfa)][_0x530511(0x100)]===_0x530511(0xe8)?_0x7d7cc3['style']['display']=_0x530511(0xf3):_0x7d7cc3[_0x530511(0xfa)]['display']='block';var _0x56ff6e=document[_0x530511(0xf8)](_0x530511(0xef));_0x56ff6e[_0x530511(0xfa)][_0x530511(0x100)]==='none'?_0x56ff6e['style']['display']='block':_0x56ff6e[_0x530511(0xfa)][_0x530511(0x100)]='none';}function ContenUrlPost(_0x335664){var _0x595d55=_0xf9a9ac,_0x9e90c0=window['location'][_0x595d55(0xeb)]+'//'+window[_0x595d55(0xf0)]['host']+window['location'][_0x595d55(0x101)]+_0x595d55(0xde)+_0x335664;window[_0x595d55(0x10a)][_0x595d55(0xe2)]({'path':_0x9e90c0},'',_0x9e90c0);var _0x44a241=document[_0x595d55(0xf8)]('change');_0x44a241[_0x595d55(0xdd)](_0x595d55(0x105),_0x595d55(0x10d)+_0x335664);}function ContenUrlGet(){var _0x404d91=_0xf9a9ac,_0x53bd40=window[_0x404d91(0xf0)],_0x32da71=new URL(_0x53bd40),_0x25ea7d=_0x32da71['searchParams'][_0x404d91(0x108)](_0x404d91(0x110));if(_0x25ea7d>''){var _0x2a70a1=document['getElementById'](_0x404d91(0x111));_0x2a70a1[_0x404d91(0xdd)](_0x404d91(0x105),_0x404d91(0x10d)+_0x25ea7d);}else{var _0x387760=document[_0x404d91(0xf8)]('change');_0x387760['setAttribute']('src','https://buananetpbun.github.io/mikrotik/welcome.html');}}function ContenUrlSubmit(_0x1a960e){var _0x216907=_0xf9a9ac;document[_0x216907(0xf0)][_0x216907(0xf2)]='Submit';var _0x57d22e=document[_0x216907(0xf8)]('change');_0x57d22e[_0x216907(0xdd)]('src',_0x1a960e);}function myFunctionSearch(){var _0x559935=_0xf9a9ac,_0x2449b4,_0x30e53b,_0x252c2c,_0x59bcb4,_0x526ebd,_0x369534,_0x47d1db;_0x2449b4=document[_0x559935(0xf8)](_0x559935(0x10b)),_0x30e53b=_0x2449b4[_0x559935(0xf4)][_0x559935(0xea)](),_0x252c2c=document[_0x559935(0xf8)](_0x559935(0xe6)),_0x59bcb4=_0x252c2c[_0x559935(0xff)]('tr');for(_0x369534=0x0;_0x369534<_0x59bcb4[_0x559935(0x106)];_0x369534++){_0x526ebd=_0x59bcb4[_0x369534][_0x559935(0xff)]('td')[0x0],_0x526ebd&&(_0x47d1db=_0x526ebd[_0x559935(0xf1)]||_0x526ebd['innerText'],_0x47d1db['toUpperCase']()[_0x559935(0xfe)](_0x30e53b)>-0x1?_0x59bcb4[_0x369534]['style']['display']='':_0x59bcb4[_0x369534][_0x559935(0xfa)][_0x559935(0x100)]='none');}}var header=document[_0xf9a9ac(0xf8)](_0xf9a9ac(0xe6)),btns=header[_0xf9a9ac(0xdf)](_0xf9a9ac(0xfb));for(var i=0x0;i<btns['length'];i++){btns[i]['addEventListener']('click',function(){var _0x35fa56=_0xf9a9ac,_0x800b8=document['getElementsByClassName'](_0x35fa56(0x109));_0x800b8[0x0][_0x35fa56(0xf6)]=_0x800b8[0x0][_0x35fa56(0xf6)][_0x35fa56(0xe7)](_0x35fa56(0x10e),''),this['className']+=_0x35fa56(0x10e);});}
-</script>
-</body>
-</html>
