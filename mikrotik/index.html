@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +17,6 @@
 <link rel="shortcut icon" href="https://www.o-om.com/favicon.ico" type="image/x-icon">	
 <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
-
 html, body {
 height: 100%;
 widht:100%;
@@ -29,41 +27,33 @@ background-color:#111;
 color:#111;
 font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 }
-
 h1 {
 font-size:17px; 
 font-weight:bold}
-
 .active1, .linkPress:hover {
 background-color: orange;
 color: white !important;
 }
-
 a:link {
 color: #08c;
 text-decoration:none
 }
-
 a:visited {
 color: #08c;
 text-decoration:none
 }
-
 a:hover {
 color: black;
 }
-
 a:active {
 color: black;
 }
-
 .container{
 max-width:770px;
 margin: auto;
 padding: 10px;
 background-color: #fff;
 }
-
 .header {
 height: 400px;
 width: 100%;
@@ -72,23 +62,19 @@ color:#111;
 padding-left: 10px;
 padding-right: 10px;
 }
-
 .header a {
 text-decoration: none;
 color: #08c;
 }
-
 .header a:hover {
 color: #08c;
 }
-
 .main {
 background-color: #fff;
 height:100%;
 font-size: 28px;
 padding: 0px 10px;
 }
-
 .content {
 height:100%;
 right: 0; 
@@ -96,18 +82,15 @@ bottom: 0;
 top: 0;
 width:100%;
 }
-
 iframe{
 border:none ;
 margin-top:10px;
 }
-
 .banner {
 background-color: #fff;
 height:100px;
 width:100%;
 }
-
 .footer {
 padding-top: 10px;
 height:120px;
@@ -115,7 +98,6 @@ bottom:0;
 background-color: #fff;
 width:100%;
 }
-
 p {
 display:list-item;
 list-style: square;
@@ -123,7 +105,6 @@ padding:0 0 0 0;
 margin:0 0 0 17px;
 color:  #818181;
 }
-
 .logo {
 padding-top:10px;
 color: #111;
@@ -131,21 +112,17 @@ text-decoration:none;
 font-size:27px;
 font-weight:bold; 
 }	
-
 .logo a{
 color:#111;
 }
-
 * {
 box-sizing: border-box;
 }
-
 .row:after {
 content: "";
 display: table;
 clear: both;
 }  
-
 input[type=text], select, textarea {
 width: 100%;
 padding: 5px;
@@ -153,12 +130,10 @@ border: 2px solid #ccc;
 border-radius: 2px;
 resize: vertical;
 }
-
 label {
 padding: 5px 5px 5px 0;
 display: inline-block;
 }
-
 input[type=submit] {
 background-color: #4CAF50;
 color: white;
@@ -168,15 +143,12 @@ border-radius: 1px;
 cursor: pointer;
 float: right;
 }
-
 input[type=submit]:hover {
 background-color: #45a049;
 }
-
 .mytable { overflow-x:hidden;
 height:220px;
 }
-
 </style>
 </head>
 <body onload="ContenUrlGet()">
@@ -192,7 +164,6 @@ Copyright 2021 is proudly powered by <a href="https://www.facebook.com/buananetm
 <h1>MIKROTIK ROUTEROS <span style="color:red">[ </span>script<span style="color:red"> ]</span> DATABASE</h1>
 </center>
 Contribution your script -> <a href="#" onclick="ContenUrlSubmit('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">Upload</a> 
-
 <input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Find Script.." style="width:100%; margin-bottom:10px;margin-top:10px"> 
 <div class="mytable">
 <table id="myTable">
@@ -339,66 +310,10 @@ data-ad-slot="4637807296"></ins>
 <div class="content">
 <iframe id="change" width="100%" height="430px" frameborder="0" src=""></iframe>
 </div>
-
 </div>
 </div>
 <script>
-function ContenUrlPost(text){
-
-var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?url=' + text;
-window.history.pushState({path:newurl},'',newurl);
-
-var element =  document.getElementById("change");
-element.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + text);
-}
-
-function ContenUrlGet(){
-var url_string = window.location;
-var url = new URL(url_string);
-var name = url.searchParams.get("url");
-if (name > "") {
-var element2 =  document.getElementById("change");
-element2.setAttribute("src", "https://buananetpbun.github.io/mikrotik/" + name);
-} else {
-var element3 =  document.getElementById("change");
-element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
-}
-}	  
-
-function ContenUrlSubmit(text3){
-document.location.hash = 'Submit-Your-Script';
-var element3 =  document.getElementById("change");
-element3.setAttribute("src", text3);
-}
-
-function myFunctionSearch() {
-var input, filter, table, tr, td, i, txtValue;
-input = document.getElementById("myInput");
-filter = input.value.toUpperCase();
-table = document.getElementById("myTable");
-tr = table.getElementsByTagName("tr");
-for (i = 0; i < tr.length; i++) {
-td = tr[i].getElementsByTagName("td")[0];
-if (td) {
-txtValue = td.textContent || td.innerText;
-if (txtValue.toUpperCase().indexOf(filter) > -1) {
-tr[i].style.display = "";
-} else {
-tr[i].style.display = "none";
-} 
-}       
-}
-}		
-
-var header = document.getElementById("myTable");
-var btns = header.getElementsByClassName("linkPress");
-for (var i = 0; i < btns.length; i++) {
-btns[i].addEventListener("click", function() {
-var current = document.getElementsByClassName("active1");
-current[0].className = current[0].className.replace(" active1", "");
-this.className += " active1";
-});
-}	
+var _0x15d9=['get','323Abtnxy','myTable','innerText','display','location','addEventListener','5019EqSjcm','314294hKRlRx','active1','https://buananetpbun.github.io/mikrotik/welcome.html','720721mCJTZw','2vkSbwg','style','\x20active1','linkPress','1ZfESBA','textContent','2hIVdQd','src','getElementById','indexOf','length','1430432frVwlO','692051nEgHRn','?url=','setAttribute','host','toUpperCase','getElementsByClassName','replace','pushState','protocol','searchParams','none','pathname','660590WLSrbL','https://buananetpbun.github.io/mikrotik/','1092052sQjpzT','className','change','Submit-Your-Script','value'];var _0x5c7b=function(_0x5e93db,_0x236912){_0x5e93db=_0x5e93db-0xed;var _0x15d93e=_0x15d9[_0x5e93db];return _0x15d93e;};var _0x739b7d=_0x5c7b;(function(_0x552a46,_0x36849d){var _0xc3c7ad=_0x5c7b;while(!![]){try{var _0x11013e=parseInt(_0xc3c7ad(0xf3))*parseInt(_0xc3c7ad(0xf7))+-parseInt(_0xc3c7ad(0x111))+-parseInt(_0xc3c7ad(0x10f))+-parseInt(_0xc3c7ad(0x102))*-parseInt(_0xc3c7ad(0xfb))+-parseInt(_0xc3c7ad(0xfd))*-parseInt(_0xc3c7ad(0x103))+parseInt(_0xc3c7ad(0xf6))+-parseInt(_0xc3c7ad(0x117))*parseInt(_0xc3c7ad(0xf2));if(_0x11013e===_0x36849d)break;else _0x552a46['push'](_0x552a46['shift']());}catch(_0x508086){_0x552a46['push'](_0x552a46['shift']());}}}(_0x15d9,0xc0e30));function ContenUrlPost(_0x4fb562){var _0x4266ab=_0x5c7b,_0x14974c=window[_0x4266ab(0xf0)][_0x4266ab(0x10b)]+'//'+window['location'][_0x4266ab(0x106)]+window[_0x4266ab(0xf0)][_0x4266ab(0x10e)]+_0x4266ab(0x104)+_0x4fb562;window['history'][_0x4266ab(0x10a)]({'path':_0x14974c},'',_0x14974c);var _0x47c16f=document['getElementById'](_0x4266ab(0x113));_0x47c16f[_0x4266ab(0x105)](_0x4266ab(0xfe),'https://buananetpbun.github.io/mikrotik/'+_0x4fb562);}function ContenUrlGet(){var _0x413b0f=_0x5c7b,_0x10aa24=window[_0x413b0f(0xf0)],_0x5a6ac7=new URL(_0x10aa24),_0x2d5f85=_0x5a6ac7[_0x413b0f(0x10c)][_0x413b0f(0x116)]('url');if(_0x2d5f85>''){var _0x4634ce=document[_0x413b0f(0xff)](_0x413b0f(0x113));_0x4634ce['setAttribute'](_0x413b0f(0xfe),_0x413b0f(0x110)+_0x2d5f85);}else{var _0x213f64=document[_0x413b0f(0xff)](_0x413b0f(0x113));_0x213f64['setAttribute']('src',_0x413b0f(0xf5));}}function ContenUrlSubmit(_0x3849ab){var _0x5e26ab=_0x5c7b;document[_0x5e26ab(0xf0)]['hash']=_0x5e26ab(0x114);var _0x13b4ff=document[_0x5e26ab(0xff)](_0x5e26ab(0x113));_0x13b4ff['setAttribute'](_0x5e26ab(0xfe),_0x3849ab);}function myFunctionSearch(){var _0x47ea10=_0x5c7b,_0x22cee2,_0x26c08a,_0x4e087c,_0xf1f476,_0x37991b,_0x577407,_0x2c7876;_0x22cee2=document['getElementById']('myInput'),_0x26c08a=_0x22cee2[_0x47ea10(0x115)][_0x47ea10(0x107)](),_0x4e087c=document['getElementById']('myTable'),_0xf1f476=_0x4e087c['getElementsByTagName']('tr');for(_0x577407=0x0;_0x577407<_0xf1f476['length'];_0x577407++){_0x37991b=_0xf1f476[_0x577407]['getElementsByTagName']('td')[0x0],_0x37991b&&(_0x2c7876=_0x37991b[_0x47ea10(0xfc)]||_0x37991b[_0x47ea10(0xee)],_0x2c7876[_0x47ea10(0x107)]()[_0x47ea10(0x100)](_0x26c08a)>-0x1?_0xf1f476[_0x577407][_0x47ea10(0xf8)][_0x47ea10(0xef)]='':_0xf1f476[_0x577407][_0x47ea10(0xf8)][_0x47ea10(0xef)]=_0x47ea10(0x10d));}}var header=document[_0x739b7d(0xff)](_0x739b7d(0xed)),btns=header['getElementsByClassName'](_0x739b7d(0xfa));for(var i=0x0;i<btns[_0x739b7d(0x101)];i++){btns[i][_0x739b7d(0xf1)]('click',function(){var _0x3648c0=_0x739b7d,_0x3436aa=document[_0x3648c0(0x108)](_0x3648c0(0xf4));_0x3436aa[0x0]['className']=_0x3436aa[0x0]['className'][_0x3648c0(0x109)](_0x3648c0(0xf9),''),this[_0x3648c0(0x112)]+=_0x3648c0(0xf9);});}
 </script>
 </body>
 </html> 
