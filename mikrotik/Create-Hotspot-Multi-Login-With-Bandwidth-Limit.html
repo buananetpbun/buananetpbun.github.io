@@ -22,7 +22,6 @@ Interface hotspot [wlan-hotspot] = replace with the name of the hotspot interfac
 
 /ip address
 add address=10.5.10.1/24 comment="Login Multi User" interface=[wlan-hotspot] network=10.5.10.0
-
 /ip pool
 add name=hs_multi_user ranges=10.5.10.2-10.5.10.254
 /ip firewall nat
