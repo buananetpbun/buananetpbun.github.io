@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Allow: /mikrotik/
-Disallow: /mikrotik/*?
+Disallow: /*?
