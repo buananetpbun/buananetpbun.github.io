@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>DNSCRYPT with OpenDNS port 443 or 5353 - MikroTik Script RouterOS</title>
+<meta content="DNSCRYPT with OpenDNS port 443 or 5353 - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+</head>  
+<body>
+<pre>
+<h1>DNSCRYPT with OpenDNS port 443 or 5353 - MikroTik Script RouterOS</h1>
+Mengapa DNSCrypt sangat penting?
+Dengan cara yang sama SSL mengubah lalu lintas web HTTP menjadi lalu lintas Web terenkripsi HTTPS, DNSCrypt mengubah lalu lintas DNS biasa menjadi lalu lintas DNS terenkripsi yang aman dari penyadapan dan serangan man-in-the-middle. Itu tidak memerlukan perubahan apa pun pada nama domain atau cara kerjanya, ini hanya menyediakan metode untuk mengenkripsi komunikasi secara aman antara pelanggan kami dan server DNS kami di pusat data kami. Kami tahu bahwa klaim saja tidak berfungsi di dunia keamanan, jadi kami telah membuka sumber ke basis kode DNSCrypt kami dan tersedia di GitHub .
+
+/ip firewall nat
+add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=tcp to-addresses=208.67.222.222 to-ports=443
+add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=udp to-addresses=208.67.222.222 to-ports=443
+add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=tcp to-addresses=208.67.220.220 to-ports=443
+add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=443
+
+Or
+
+/ip firewall nat
+add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=tcp to-addresses=208.67.222.222 to-ports=5353
+add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=udp to-addresses=208.67.222.222 to-ports=5353
+add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=tcp to-addresses=208.67.220.220 to-ports=5353
+add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=5353
+</pre>
+<br>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/DNSCRYPT-with-OpenDNS.html" alt="Hits"/>
+<br><br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
