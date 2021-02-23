@@ -13,6 +13,11 @@
 <pre>
 <h1>No-Mark Without Mangle in Queue Tree - MikroTik Script RouterOS</h1>
 Only with no-mark without mangle in the Queue Tree, it quite lightens the burden on a good router to use for hotspots that don't want to be complicated to dimangle, this trick can also be used to filter out leaky dimangle packets.
+
+/queue tree
+add max-limit=10M name=2.Upload packet-mark=no-mark parent=E1-WAN queue= default
+add max-limit=10M name=3.Download packet-mark=no-mark parent=E4-LAN queue=default
+add max-limit=20M name="1.Total No-mark" packet-mark=no-mark parent=global queue=default
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/No-Mark-Without-Mangle-in-Queue-Tree.html" alt="Hits"/>
