@@ -5,26 +5,10 @@
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
 <title>Protect Connection With Anti Netcut - Mikrotik Script</title>
 <meta content='Protect Connection With Anti Netcut - Mikrotik Script' name='description'/>
-<meta content='mikrotik script, routeros script, script' name='keywords'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<style id='page-skin-1' type='text/css'>
-a:link {color: #08c;  text-decoration:none}
-a:visited {color: #08c;  text-decoration:none}
-a:hover {color: black;}
-a:active {color: #08c;}       
-body {background-color:#fff;color: #222;}
-h1, h2, h3, h4, h5, h6{margin:0; padding:0}
-pre {
-    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
-    white-space: -pre-wrap; /* Opera */
-    white-space: -o-pre-wrap; /* Opera */
-    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
-    word-wrap: break-word; /* IE 5.5+ */
-}  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>    
-</style>   
-</head>  
+<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+</head> 
 <body>
 <pre>
 <h1>Protect Connection With ANTI NETCUT - Mikrotik Script</h1>
@@ -35,9 +19,8 @@ Anti Netcut, Netcut broadcasts ARP and attacks on Layer2, but at least with the 
 /ip firewall mangle add action=add-src-to-address-list address-list=NetcutUser address-list-timeout=1h5m chain=prerouting dst-address-list=netcut dst-port=80 protocol=tcp
 /ip firewall filter add action=drop chain=forward comment=NetCut src-address-list=NetcutUser
 /system scheduler add interval=10m name="AutoBlockNetcut"
-
 </pre>
-<br><br>
+<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/protect-connection-with-anti-netcut.html" alt="Hits"/>
 <br><br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
