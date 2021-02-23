@@ -12,9 +12,8 @@
 <body>
 <pre>
 <h1>DNSCRYPT with OpenDNS port 443 or 5353 - MikroTik Script RouterOS</h1>
-Mengapa DNSCrypt sangat penting?
-Dengan cara yang sama SSL mengubah lalu lintas web HTTP menjadi lalu lintas Web terenkripsi HTTPS, DNSCrypt mengubah lalu lintas DNS biasa menjadi lalu lintas DNS terenkripsi yang aman dari penyadapan dan serangan man-in-the-middle. Itu tidak memerlukan perubahan apa pun pada nama domain atau cara kerjanya, ini hanya menyediakan metode untuk mengenkripsi komunikasi secara aman antara pelanggan kami dan server DNS kami di pusat data kami. Kami tahu bahwa klaim saja tidak berfungsi di dunia keamanan, jadi kami telah membuka sumber ke basis kode DNSCrypt kami dan tersedia di GitHub .
-
+Why DNSCrypt is so significant?
+In the same way the SSL turns HTTP web traffic into HTTPS encrypted Web traffic, DNSCrypt turns regular DNS traffic into encrypted DNS traffic that is secure from eavesdropping and man-in-the-middle attacks. It doesn’t require any changes to domain names or how they work, it simply provides a method for securely encrypting communication between our customers and our DNS servers in our data centers. We know that claims alone don’t work in the security world, however, so we’ve opened up the source to our DNSCrypt code base and it’s available on GitHub.
 /ip firewall nat
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=tcp to-addresses=208.67.222.222 to-ports=443
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=udp to-addresses=208.67.222.222 to-ports=443
