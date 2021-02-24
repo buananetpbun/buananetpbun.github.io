@@ -53,7 +53,6 @@ Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
 /system scheduler disable [/system scheduler find name="RESET-RXTX"]
 }
 ################################################################</code></precd>
-
 Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
 
 <precd><code class="routeros">################################################################
@@ -158,11 +157,9 @@ Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
 /system scheduler enable [/system scheduler find name="RESET-RXTX"];
 }
 ################################################################</code></precd>
-
 don't forget to change the ether name in the script according to the interface you want to monitor 
 
 <precd><code class="routeros">:local INTMon WAN-WARNET;</code></precd>
-
 Don't forget to change the total quota given by the ISP for example, is 500GB
 
 <precd><code class="routeros">:local TOTQuota 500;</code></precd>
