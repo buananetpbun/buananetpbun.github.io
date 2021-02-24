@@ -8,7 +8,11 @@
 <meta content='A script to set up WAN/LAN/WLAN to get you started - Mikrotik Script RouterOS DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css"> 
+<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -41,7 +45,7 @@ Add and schedule script to run on boot to notify of reboot
 Add and schedule script to monitor PPPoE connection and restart if we are allocated an address we're not expecting (useful for UK BT based ADSL circuits where BT decide to take over the connection every now and again) (optional)
 I would appreciate feedback on this - if you have found it useful or if you have any suggestions for improving it, please don't hesitate to contact me - on the Mikrotik Forum, my username is 'nab'.
 
-The Complete Script
+<precd><code class="routeros">The Complete Script
 #
 # Basic ROS config
 # Save this file as 'configscript.rsc' and drag it to the files window.
@@ -595,7 +599,7 @@ add action=accept chain=output comment="Allow everything out" disabled=no
 :log info "Auto configuration ended.";
 :put "";
 :put "Auto configuration ended. Please check the system log.";
-:put "";
+:put "";</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
