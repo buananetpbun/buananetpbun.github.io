@@ -18,8 +18,7 @@
 <h1>Change All Address List Dynamic To Static - Mikrotik Script RouterOS</h1>
 How To Change All Address List Dynamic To Static
 
-<precd><code class="routeros">
-:local list
+<precd><code class="routeros">:local list
 :local address
 /ip firewall address-list
 :foreach a in=[find where dynamic=yes] do={
