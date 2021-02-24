@@ -7,7 +7,10 @@
 <meta content='Auto upgrade script V3.x - Mikrotik RouterOS Script Database' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head>  
 <body>
 <pre>
@@ -20,11 +23,10 @@ One little script to upgrade RrouterBoards automatically.
 -) reboot.
 At first you should create file containing newest version number on main router.
 
-/file print file="latestVer";
-/file set latestVer.txt content="3.24";
+<precd><code class="routeros">/code>/file print file="latestVer";</code></precd>
+<precd><code class="routeros">/file set latestVer.txt content="3.24";</code></precd>
 Now we are ready to run scripts on other routers:
-
-#########################################################################
+<precd><code class="routeros">#########################################################################
 # download and upgrade
 #########################################################################
 
@@ -72,7 +74,7 @@ Now we are ready to run scripts on other routers:
 	} else={
                 :log info "Upgrade_script: already latest version";
         }
-}
+}</code></precd>
 </pre>
  <br><br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
