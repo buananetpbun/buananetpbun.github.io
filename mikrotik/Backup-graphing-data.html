@@ -7,7 +7,10 @@
 <meta content='Backup Graphing Data - Mikrotik Script RouterOS Database' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -16,7 +19,7 @@ RouterOS shows graphs of queues, interfaces, memory, cpu, and disk usage. This s
 
 Update: 3/10/2010: Now captures weekly.gif (missing from previous release)
 
-# Backup graphing data
+<precd><code class="routeros"># Backup graphing data
 :local graphaddress "127.0.0.1"
 :local graphport 80
 :local graphimages "daily.gif, weekly.gif, monthly.gif, yearly.gif"
@@ -71,7 +74,7 @@ Update: 3/10/2010: Now captures weekly.gif (missing from previous release)
 	src-path=($graphpath . [:tostr $i]) dst-path=($graphpath . [:tostr $i])
       }
    }
-}
+}</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
