@@ -7,7 +7,10 @@
 <meta content='Bypass Full Speed Local Transfer File - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -21,16 +24,15 @@ When copying files from LAN1 to LAN2, why is the maximum bandwidth only 150 mega
 
 The method is very easy: in a simple queue or queue tree, create a queue, for example FULL-SPEED, then use SFQ (Stochastic Fairness Queuing) in queue type.
 
-/queue type 
+<precd><code class="routeros">/code>/queue type 
 add name=Full-Speed kind=sfq
 /queue simple
-add name=FULL-SPEED" queue=Full-Speed/Full-Speed target=192.168.10.0/24 total-queue=default
-
+add name=FULL-SPEED" queue=Full-Speed/Full-Speed target=192.168.10.0/24 total-queue=default<precd></code>
 This method will be even more optimal if the Fasttrack function is activated.
 
-/ip firewall filter 
+<precd><code class="routeros">/ip firewall filter 
 add chain=forward action=fasttrack-connection connection-state=established,related
-add chain=forward action=accept connection-state=established,related
+add chain=forward action=accept connection-state=established,related<precd></code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
