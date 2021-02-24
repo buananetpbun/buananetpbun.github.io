@@ -8,6 +8,10 @@
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
 <link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -16,7 +20,7 @@ Script for audible signal test on boards with beeper:
 
 Code compatible with version 2.9:
 
-:local beep "10ms";
+<precd><code class="routeros">:local beep "10ms";
 :local no "2400ms";
 :local 90 "1290ms";
 :local 85 "790ms";
@@ -76,11 +80,9 @@ Code compatible with version 2.9:
   :for i from=1 to=120 do={ :beep length=$beep; :delay $50; }
   }  
  }
-}
-
+}</code></precd>
 Code compatible with version 3:
-
-:local beep "10ms";
+<precd><code class="routeros">:local beep "10ms";
 :local no "2400ms";
 :local s90 "1290ms";
 :local s85 "790ms";
@@ -140,11 +142,9 @@ Code compatible with version 3:
   :for i from=1 to=120 do={ :beep length=$beep; :delay $s50; }
   }  
  }
-}
-
+}</code></precd>
 Code for RouterBoard 411 with led and sound aligment:
-
-:local beep "10ms";
+<precd><code class="routeros">:local beep "10ms";
 :local no "2400ms";
 :local s90 "1290ms";
 :local s85 "790ms";
@@ -204,8 +204,7 @@ Code for RouterBoard 411 with led and sound aligment:
   :for i from=1 to=120 do={ :beep length=$beep; :delay $s50; :led led1=yes led2=yes led3=yes led4=yes led5=yes }
   }  
  }
-}
-
+}</code></precd>
 </pre>
  <br><br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
