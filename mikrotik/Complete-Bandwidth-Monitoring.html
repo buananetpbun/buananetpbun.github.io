@@ -21,17 +21,17 @@ Complete Bandwidth Monitoring
 This Bandwidth monitoring script is 100% accurate, maybe as accurate as Cacti Monitoring, actually I originally planned to use it for almost FUP Quota Indihome, but I didn't understand what kind of algorithm the telecom system uses, so the results are always different, maybe this is related to streaming that is not included in the FUP system they.
 
 Please paste this script in the proxy terminal
-<precd><code class="routeros">
-/system scheduler add interval="00:00:00" name="RXByte.log" on-event="1" start-time="00:00:00"
+
+<precd><code class="routeros">/system scheduler add interval="00:00:00" name="RXByte.log" on-event="1" start-time="00:00:00"
 /system scheduler add interval="00:00:00" name="RXByteCur.log" on-event="1" start-time="00:00:00"
 /system scheduler add interval="00:00:00" name="TXByte.log" on-event="1" start-time="00:00:00"
 /system scheduler add interval="00:00:00" name="TXByteCur.log" on-event="1" start-time="00:00:00"
 /system scheduler add interval="00:01:00" name="RESET-RXTX" start-time=startup
-/system scheduler add interval="00:0:030" name="BANDWIDTH-MONITORING" start-time=startup
-</code></precd>
+/system scheduler add interval="00:0:030" name="BANDWIDTH-MONITORING" start-time=startup</code></precd>
+
 Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
-<precd><code class="routeros">
-################################################################
+
+<precd><code class="routeros">################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -52,11 +52,11 @@ Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
 /system scheduler set TXByteCur.log comment="1" on-event="1"
 /system scheduler disable [/system scheduler find name="RESET-RXTX"]
 }
-################################################################
-</code></precd>
+################################################################</code></precd>
+
 Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
-<precd><code class="routeros">
-################################################################
+
+<precd><code class="routeros">################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -157,16 +157,15 @@ Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
 # jika hari ini tanggal 29 aktifkan RESET-RXTX
 /system scheduler enable [/system scheduler find name="RESET-RXTX"];
 }
-################################################################
-</code></precd>
+################################################################</code></precd>
+
 don't forget to change the ether name in the script according to the interface you want to monitor 
-<precd><code class="routeros">
-:local INTMon WAN-WARNET;
-</code></precd>
+
+<precd><code class="routeros">:local INTMon WAN-WARNET;</code></precd>
+
 Don't forget to change the total quota given by the ISP for example, is 500GB
-<precd><code class="routeros">
-:local TOTQuota 500;
-</code></precd>
+
+<precd><code class="routeros">:local TOTQuota 500;</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
