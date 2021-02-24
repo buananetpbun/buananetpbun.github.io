@@ -8,12 +8,17 @@
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
 <link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
 <h1>Change All Address List Dynamic To Static - Mikrotik Script RouterOS</h1>
 How To Change All Address List Dynamic To Static
 
+<precd><code class="routeros">
 :local list
 :local address
 /ip firewall address-list
@@ -22,8 +27,7 @@ How To Change All Address List Dynamic To Static
       :set address [get $a address]
       remove $a
       add list=$list address=$address disabled=no
-}
-
+}></code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
