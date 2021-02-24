@@ -17,6 +17,7 @@
 <h1>A Bit of Sounds - Mikrotik Script RouterOS</h1>
 Part One: SQUAWK
 The scripts below are based on SQUAWK program (C) 1987 Merlin R. Null.
+
 <precd><code class="routeros"># SQUAWK Chang
  :for j from=1 to=4 step=1 do={
    :for i from=2000 to=50 step=-400 do={
@@ -78,6 +79,7 @@ The scripts below are based on SQUAWK program (C) 1987 Merlin R. Null.
  }</code></precd>
 Part Two: Adams
 The scripts below are based on the code from Lee Adams' book "Grafik, Animation, Simulation fur Personalcomputer" (ISBN 3890905722, Markt&Technik, 1989).
+
 <precd><code class="routeros"># Adams Fanfare
  :for t from=1200 to=350 step=-50 do={
    :beep frequency=$t length=33ms;
@@ -120,6 +122,7 @@ The scripts below are based on the code from Lee Adams' book "Grafik, Animation,
  }</code></precd>
 Part Three: Miklavcic
 The scripts below are based on the code from http://snipplr.com/view/9220/simple-tic-tac-toe/
+
 <precd><code class="routeros"># Miklavcic Sad
  :beep frequency=784 length=500ms;
  :delay 500ms;
