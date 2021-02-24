@@ -30,9 +30,7 @@ Please paste this script in the proxy terminal
 /system scheduler add interval="00:0:030" name="BANDWIDTH-MONITORING" start-time=startup
 
 Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
-
-<precd>
-<code class="routeros">
+<precd><code class="routeros">
 ################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
@@ -55,11 +53,9 @@ Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
 /system scheduler disable [/system scheduler find name="RESET-RXTX"]
 }
 ################################################################
-</code>
-</precd>
-
+</code></precd>
 Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
-
+<precd><code class="routeros"></code>
 ################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
@@ -162,14 +158,15 @@ Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
 /system scheduler enable [/system scheduler find name="RESET-RXTX"];
 }
 ################################################################
-
+</code></precd>
 don't forget to change the ether name in the script according to the interface you want to monitor 
-
+<precd><code class="routeros"></code>
 :local INTMon WAN-WARNET;
-
+</code></precd>
 Don't forget to change the total quota given by the ISP for example, is 500GB
-
+<precd><code class="routeros"></code>
 :local TOTQuota 500;
+</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
