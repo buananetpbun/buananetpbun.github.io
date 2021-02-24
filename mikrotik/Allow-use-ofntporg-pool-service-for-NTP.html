@@ -7,14 +7,17 @@
 <meta content='Allow Use Of ntp.org Pool Service For NTP - Mikrotik Script RouterOS DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
 <h1>Allow Use Of ntp.org Pool Service For NTP - Mikrotik Script RouterOS</h1>
 This script resolves the hostnames of two NTP servers, compares the result with the current NTP settings and changes the addresses if they're different. This script is required as RouterOS does not allow hostnames to be used in the NTP configuration. Two scripts are used. The first defines some system variables which are used in other scripts and the second does the grunt work:
 
-# System configuration script - "GlobalVars"
+<precd><code class="routeros"># System configuration script - "GlobalVars"
 :put "Setting system globals";
 
 # System name
@@ -87,12 +90,10 @@ This script resolves the hostnames of two NTP servers, compares the result with 
         server=$SYSemailserver \
         body=("Your NTP servers have just been changed:\n\nPrimary:\nOld: " . $ntpcura . "\nNew: " \
           . $ntpipa . "\n\nSecondary\nOld: " . $ntpcurb . "\nNew: " . $ntpipb);
-    }
-    
-    
-Scheduler entry:
+    }</code></precd>
+ Scheduler entry:
 
-/system scheduler add \
+<precd><code class="routeros"></code>/system scheduler add \
   comment="Check and set NTP servers" \
   disabled=no \
   interval=12h \
@@ -100,7 +101,7 @@ Scheduler entry:
   on-event=setntppool \
   policy=read,write,test \
   start-date=jan/01/1970 \
-  start-time=16:00:00
+  start-time=16:00:00</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
