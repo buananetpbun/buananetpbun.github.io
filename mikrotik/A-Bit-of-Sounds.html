@@ -7,16 +7,17 @@
 <meta content='A Bit of Sounds - MikroTik RouterOS Script Database' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
 <h1>A Bit of Sounds - Mikrotik Script RouterOS</h1>
 Part One: SQUAWK
 The scripts below are based on SQUAWK program (C) 1987 Merlin R. Null.
-
-SQUAWK Chang
-------------
+<precd><code class="routeros"></code>SQUAWK Chang
  :for j from=1 to=4 step=1 do={
    :for i from=2000 to=50 step=-400 do={
      :beep frequency=$i length=11ms;
@@ -26,19 +27,15 @@ SQUAWK Chang
      :beep frequency=$i length=11ms;
      :delay 11ms;
    }
- }
- 
-SQUAWK Coo
-----------
+ }</code></precd>
+  <precd><code class="routeros"></code># SQUAWK Coo
  :for i from=0 to=150 step=10 do={
    :beep frequency=(1295 - i) length=22ms;
    :delay 22ms;
    :beep frequency=(1095 + i) length=22ms;
    :delay 22ms;
- }
- 
-SQUAWK Oh!
-----------
+ }</code></precd>
+  <precd><code class="routeros"></code># SQUAWK Oh!
  :for i from=800 to=2000 step=100 do={
    :beep frequency=$i length=11ms;
    :delay 11ms;
@@ -46,79 +43,60 @@ SQUAWK Oh!
  :for i from=2000 to=50 step=-100 do={
    :beep frequency=$i length=11ms;
    :delay 11ms;
- }
- 
-SQUAWK Phone 1
---------------
+ }</code></precd>
+  <precd><code class="routeros"></code># SQUAWK Phone 1
  :for i from=1 to=10 step=1 do={
    :beep frequency=1195 length=22ms;
    :delay 22ms;
    :beep frequency=2571 length=22ms;
    :delay 22ms;
- }
- 
-SQUAWK Siren
-------------
+ }</code></precd>
+ <precd><code class="routeros"></code># SQUAWK Siren
  :for i from=1 to=3 step=1 do={
    :beep frequency=550 length=494ms;
    :delay 494ms;
    :beep frequency=400 length=494ms;
    :delay 494ms;
- }
- 
-SQUAWK Space 1
---------------
+ }</code></precd>
+  <precd><code class="routeros"></code># SQUAWK Space 1
  :for i from=1000 to=40 step=-20 do={
    :beep frequency=$i length=11ms;
    :delay 11ms;
- }
- 
-SQUAWK Space 2
---------------
+ }</code></precd>
+ <precd><code class="routeros"></code># SQUAWK Space 2
  :for i from=10000 to=500 step=-500 do={
    :beep frequency=$i length=11ms;
    :delay 11ms;
- }
- 
-Phone Call
-----------
+ }</code></precd>
+  <precd><code class="routeros"></code># Phone Call
+
  :for i from=1 to=10 do={
    /system script run "SQUAWK Phone 1";
    :delay 400ms;
    /system script run "SQUAWK Phone 1";
    :delay 2000ms;
- }
- 
- 
+ }</code></precd>
 Part Two: Adams
 The scripts below are based on the code from Lee Adams' book "Grafik, Animation, Simulation fur Personalcomputer" (ISBN 3890905722, Markt&Technik, 1989).
-
-Adams Fanfare
--------------
+<precd><code class="routeros"></code#># Adams Fanfare
  :for t from=1200 to=350 step=-50 do={
    :beep frequency=$t length=33ms;
    :delay 33ms;
- }
- 
-Adams Larm
-----------
+ }</code></precd>
+  <precd><code class="routeros"></code># Adams Larm
  :for t1 from=1 to=10 step=1 do={
    :for t2 from=300 to=1800 step=40 do={
      :beep frequency=$t2 length=11ms;
      :delay 11ms;
    }
- }
- 
-Adams Maschinengewehr
----------------------
+ }</code></precd>
+  <precd><code class="routeros"></code># Adams Maschinengewehr
  :for t from=1 to=20 step=1 do={
    :beep frequency=40 length=33ms;
    :delay 33ms;
    :delay 55ms;
- }
- 
-Adams Telefone
---------------
+ }</code></precd>
+ <precd><code class="routeros"></code># Adams Telefone
  :for t1 from=1 to=4 step=1 do={
    :for t2 from=1 to=25 step=1 do={
      :beep frequency=540 length=33ms;
@@ -127,30 +105,22 @@ Adams Telefone
      :delay 27ms;
    }
    :delay 2000ms;
- }
- 
-Adams Tonarkade
----------------
+ }</code></precd>
+ <precd><code class="routeros"></code># Adams Tonarkade
  :for t1 from=1 to=8 step=1 do={
      :for t2 from=600 to=750 step=8 do={
      :beep frequency=$t2 length=11ms;
      :delay 11ms;
    }
- }
- 
-Adams Tonarkade 2
------------------
+ }</code></precd>
+ <precd><code class="routeros"></code># Adams Tonarkade 2
  :for t from=1250 to=600 step=-8 do={
    :beep frequency=$t length=11ms;
    :delay 11ms;
- }
- 
- 
+ }</code></precd>
 Part Three: Miklavcic
 The scripts below are based on the code from http://snipplr.com/view/9220/simple-tic-tac-toe/
-
-Miklavcic Sad
--------------
+<precd><code class="routeros"></code># Miklavcic Sad
  :beep frequency=784 length=500ms;
  :delay 500ms;
  
@@ -161,10 +131,8 @@ Miklavcic Sad
  :delay 500ms;
  
  :beep frequency=644 length=1000ms;
- :delay 1000ms;
- 
-Miklavcic Victory
------------------
+ :delay 1000ms;</code></precd>
+<precd><code class="routeros"># Miklavcic Victory
  :beep frequency=523 length=200ms;
  :delay 1000ms;
  
@@ -214,12 +182,10 @@ Miklavcic Victory
  :delay 200ms;
  
  :beep frequency=519 length=400ms;
- :delay 400ms;
- 
- 
-Part Z: Assorted Sounds
-Sound 1
------------------------
+ :delay 400ms;</code></precd>
+ <precd><code class="routeros"># Part Z: Assorted Sounds
+# Sound 1
+
  :beep frequency=600 length=165ms;
  :delay 165ms;
  
@@ -251,7 +217,7 @@ Sound 1
  :delay 275ms;
  
  :beep frequency=900 length=110ms;
- :delay 110ms;
+ :delay 110ms;</code></precd>
 </pre>
  <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
