@@ -24,7 +24,7 @@ if you have entered "expired.html" into the hotspot folder section, then please 
 
 search for tag </body> and place the script below above it
 
-<precd><code class="routeros"><pre  style="font-family:arial;font-size:12px;border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);padding:0px;color:#000000;text-align:left;line-height:20px;"><code style="color:#000000;word-wrap:normal;"> &lt;script type="text/javascript"&gt;  
+<precd><code class="routeros">&lt;script type="text/javascript"&gt;  
  var error = "$(error)";  
  if (error == "user $(username) has reached uptime limit") {  
  window.location.href = "http://$(hostname)/expired.html";  
@@ -37,8 +37,7 @@ search for tag </body> and place the script below above it
  } else if (error !== "") {  
  window.location.href = "http://$(hostname)/error.html";  
  } else { document.write("$(error)"); }  
- &lt;/script&gt;  
-</code></pre> </code></precd>
+ &lt;/script&gt;</code></precd>
 Notes: this script is not made by me, I just modified it, whoever owns it, because I have been using it for a long time.
 </pre>
 <br>
