@@ -23,9 +23,10 @@ One little script to upgrade RrouterBoards automatically.
 -) reboot.
 At first you should create file containing newest version number on main router.
 
-<precd><code class="routeros">/code>/file print file="latestVer";</code></precd>
+<precd><code class="routeros">/file print file="latestVer";</code></precd>
 <precd><code class="routeros">/file set latestVer.txt content="3.24";</code></precd>
 Now we are ready to run scripts on other routers:
+
 <precd><code class="routeros">#########################################################################
 # download and upgrade
 #########################################################################
