@@ -7,7 +7,10 @@
 <meta content='Auto Repair Passthrough In Mangle - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -16,7 +19,7 @@ Script to solve passthrough errors in mikrotik mangle with many rules.
 
 note: remember we understand the conditions of each mangle, because each setting will be different conditions, here I generally assume that all "mark-connection", "mark-routing" uses passthrough = yes and "mark-packet" uses passthrough = no
 
-foreach mrk in=("packet","connection", "routing") do={
+<precd><code class="routeros">foreach mrk in=("packet","connection", "routing") do={
     foreach i in=([/ip firewall mangle find where action=("mark-" . $mrk)]) do={
     :if ($mrk = "packet") do={ 
     local cmd ("ip firewall mangle set " . $i . " passthrough=no")
@@ -31,7 +34,7 @@ foreach mrk in=("packet","connection", "routing") do={
     :execute $cmd
     }
     }
-    }
+    }</precd></code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
