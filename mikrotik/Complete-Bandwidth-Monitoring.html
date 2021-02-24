@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Complete Bandwidth Monitoring - MikroTik Script RouterOS</title>
+<meta content='Complete Bandwidth Monitoring - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+</head>  
+<body>
+<pre>
+<h1>Complete Bandwidth Monitoring - MikroTik Script RouterOS</h1>
+Complete Bandwidth Monitoring
+
+This Bandwidth monitoring script is 100% accurate, maybe as accurate as Cacti Monitoring, actually I originally planned to use it for almost FUP Quota Indihome, but I didn't understand what kind of algorithm the telecom system uses, so the results are always different, maybe this is related to streaming that is not included in the FUP system they.
+
+Please paste this script in the proxy terminal
+
+<code>
+/system scheduler add interval="00:00:00" name="RXByte.log" on-event="1" start-time="00:00:00"
+/system scheduler add interval="00:00:00" name="RXByteCur.log" on-event="1" start-time="00:00:00"
+/system scheduler add interval="00:00:00" name="TXByte.log" on-event="1" start-time="00:00:00"
+/system scheduler add interval="00:00:00" name="TXByteCur.log" on-event="1" start-time="00:00:00"
+/system scheduler add interval="00:01:00" name="RESET-RXTX" start-time=startup
+/system scheduler add interval="00:0:030" name="BANDWIDTH-MONITORING" start-time=startup
+</code>
+</pre>
+<br>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
+<br><br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
