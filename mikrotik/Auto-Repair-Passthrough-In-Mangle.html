@@ -20,21 +20,21 @@ Script to solve passthrough errors in mikrotik mangle with many rules.
 note: remember we understand the conditions of each mangle, because each setting will be different conditions, here I generally assume that all "mark-connection", "mark-routing" uses passthrough = yes and "mark-packet" uses passthrough = no
 
 <precd><code class="routeros">foreach mrk in=("packet","connection", "routing") do={
-    foreach i in=([/ip firewall mangle find where action=("mark-" . $mrk)]) do={
-    :if ($mrk = "packet") do={ 
-    local cmd ("ip firewall mangle set " . $i . " passthrough=no")
-    :execute $cmd
-    }
-    :if ($mrk = "connection") do={ 
-    local cmd ("ip firewall mangle set " . $i . " passthrough=yes")
-    :execute $cmd
-    }
-    :if ($mrk = "routing") do={ 
-    local cmd ("ip firewall mangle set " . $i . " passthrough=yes")
-    :execute $cmd
-    }
-    }
-    }</precd></code>
+foreach i in=([/ip firewall mangle find where action=("mark-" . $mrk)]) do={
+:if ($mrk = "packet") do={ 
+local cmd ("ip firewall mangle set " . $i . " passthrough=no")
+:execute $cmd
+}
+:if ($mrk = "connection") do={ 
+local cmd ("ip firewall mangle set " . $i . " passthrough=yes")
+:execute $cmd
+}
+:if ($mrk = "routing") do={ 
+local cmd ("ip firewall mangle set " . $i . " passthrough=yes")
+:execute $cmd
+}
+}
+}</precd></code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
