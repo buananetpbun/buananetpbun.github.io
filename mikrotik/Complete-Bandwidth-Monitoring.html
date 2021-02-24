@@ -8,9 +8,13 @@
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
 <link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet"
+href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
 </head>  
 <body>
 <pre>
+
 <h1>Complete Bandwidth Monitoring - MikroTik Script RouterOS</h1>
 Complete Bandwidth Monitoring 
 
@@ -27,6 +31,7 @@ Please paste this script in the proxy terminal
 
 Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
 
+<code class=“java”>
 ################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
@@ -49,6 +54,7 @@ Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
 /system scheduler disable [/system scheduler find name="RESET-RXTX"]
 }
 ################################################################
+</code>
 
 Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
 
