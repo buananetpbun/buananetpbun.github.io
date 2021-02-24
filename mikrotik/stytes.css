@@ -11,3 +11,17 @@ pre {
     white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
     word-wrap: break-word; /* IE 5.5+ */
 }  
+code{white-space:pre-wrap; color:#fff; font-size:12px}
+code.prettyprint,code.prettyprint{background-color:#45494E;padding:10px;color:#fff;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;margin:10px 0 0 1px}
+code .nocode{color:#000}
+code .str{color:#FFC0CB}
+code .kwd{color:#f0e68c;font-weight:bold}
+code .com{color:#87ceeb}
+code .typ{color:#98fb98}
+code .lit{color:#FFA07A}
+code .pun{color:#fff}
+code .pln{color:#fff}
+code .tag{color:#f0e68c}
+code .atn{color:#bdb76b;font-weight:bold}
+code.atv{color:#90EE90}
+code .dec{color:#98fb98}
