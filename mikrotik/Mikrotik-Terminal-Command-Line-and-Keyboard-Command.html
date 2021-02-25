@@ -7,7 +7,10 @@
 <meta content='Mikrotik Terminal Command Line and Keyboard Command - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 </head> 
 <body>
 <pre>
@@ -21,37 +24,36 @@ login_name :: = user_name ['+' parameters]
 parameters :: = parameter [parameters]
 parameter :: = [number] 'a' .. 'z' number :: = '0' .. ' 9 '[number]
 
-"w" = Set terminal width
+<precd><code class="routeros">"w" = Set terminal width
 "h" = Set terminal height
 "c" = disable/enable console colours
 "t" = Do auto detection of terminal capabilities
-"e" = Enables "dumb" terminal mode
+"e" = Enables "dumb" terminal mode</code></precd>
 
-Contoh login: 
+Example login: 
 admin + c80w
 
 This means logged in with user "admin", "text is colorless" and 80w is the width of the window in the terminal.
 
-List of Keys
-------------------------
-Control-C	             = keyboard interrupt
-Control-D	             = log out (if an input line is empty)
-Control-K	             = clear from the cursor to the end of line
-Control-X	             = toggle safe mode
-Control-V	             = toggle hot lock mode mode
+<precd><code class="routeros">List of Keys
+Control-C	           = keyboard interrupt
+Control-D	           = log out (if an input line is empty)
+Control-K	           = clear from the cursor to the end of line
+Control-X	           = toggle safe mode
+Control-V	           = toggle hot lock mode mode
 F6                     = toggle cellar
 F1 or ?	               = show context-sensitive help. If the previous character is \, then inserts literal ?.
 Tab                    =	perform line completion. When pressed a second time, show possible completions.
 Delete                 = remove character at the cursor
-Control-H or Backspace	= remove character before cursor and move the cursor back one position.
-Control-\	             = split line at cursor. Insert newline at the cursor position. Display second of the two resulting lines.
-Control-B or Left	     = move cursor backward one character
-Control-F or Right	    = move cursor forward one character
+Control-H or Backspace = remove character before cursor and move the cursor back one position.
+Control-\	           = split line at cursor. Insert newline at the cursor position. Display second of the two resulting lines.
+Control-B or Left	   = move cursor backward one character
+Control-F or Right	   = move cursor forward one character
 Control-P or Up	       = go to the previous line. If this is the first line of input then recall previous input from history.
 Control-N or Down      = go to the next line. If this is the last line of input then recall the next input from the history
-Control-A or Home	     = move the cursor to the beginning of the line. If the cursor is already at the beginning of the line, then go to the beginning of the first line of the current input
-Control-E or End	      = move the cursor to the end of the line. If the cursor is already at the end of the line, then move it to the end of the last line of the current input
-Control-L or F5	       = reset terminal and repaint screen
+Control-A or Home	   = move the cursor to the beginning of the line. If the cursor is already at the beginning of the line, then go to the beginning of the first line of the current input
+Control-E or End	   = move the cursor to the end of the line. If the cursor is already at the end of the line, then move it to the end of the last line of the current input
+Control-L or F5	       = reset terminal and repaint screen</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
