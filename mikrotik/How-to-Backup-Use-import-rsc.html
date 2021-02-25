@@ -7,19 +7,22 @@
 <meta content='Backup Use Import rsc  - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 </head>
 <body>
 <pre>
 <h1>Backup Use Import rsc - Mikrotik Script</h1>
 To import the exported file is quite easy
 
-/import file=[filename]
+<precd><code class="routeros">/import file=[filename]</code></precd>
 
 However, the results of imports with different routers will usually experience problems or maybe because of duplication of existing files, 
 to solve this problem try using the verbose = yes command, at least by verbose we can find out where and what line the error is located.
 
-/import file=[filename] verbose=yes
+<precd><code class="routeros">/import file=[filename] verbose=yes</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
