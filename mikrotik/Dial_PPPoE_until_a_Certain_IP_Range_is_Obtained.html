@@ -7,7 +7,10 @@
 <meta content='Dial PPPoE until a Certain IP Range is Obtained - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -19,7 +22,7 @@ You may want a certain IP range for any number of reasons. Sometimes I use this 
 Forum thread for discussion
 3 variables to set, if, targetip and pppoedelay. if: name of your pppoe-client interface targetip: eg: 177.0.0.0/8 or 65.50.0.0/16 pppoedelay: Enough delay so that your ISP gives a new IP instead of the previous one. You can play around with this.
 
-:global if "pppoe-out1"
+<precd><code class="routeros">:global if "pppoe-out1"
 :global targetip 210.0.0.0/8
 :global currentip [/ip address get [/ip address find interface=$if ] address]
 :global ip $currentip
@@ -37,7 +40,8 @@ Forum thread for discussion
      :set currentip ([[:parse ":return $currentip"]])
      :set ip $currentip
      }
-:put "Target obtained: $currentip"
+:put "Target obtained: $currentip"</code></precd>
+
 Best to run from the CLI so you can see the output. Example:
 
 [admin@RB2011UAS] /system script> run pppoe-ip-cidr 
