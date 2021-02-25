@@ -7,13 +7,15 @@
 <meta content='Hotspot Auto User logout user When internet Down - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head>  
 <body>
 <pre>
 <h1>Hotspot Auto User logout user When internet Down - Mikrotik Script</h1>
 Hotspot Auto User logout user When internet Down
--------------------------------------------------------
 
 This script is useful for automatic user logout and cookies when the internet is down or totally dead
 
@@ -23,7 +25,7 @@ This script is useful for automatic user logout and cookies when the internet is
 4. Click the Down tab
 5. then enter in On Down: with the script below
 
-# SCRIPT REMOVE USER ACTIVE
+<precd><code class="routeros"># SCRIPT REMOVE USER ACTIVE
 :local activelist [/ip hotspot active find]
 :foreach i in=$activelist do={
     /ip hotspot active remove $i
@@ -33,7 +35,7 @@ This script is useful for automatic user logout and cookies when the internet is
 :local activelist [/ip hotspot cookie find]
 :foreach i in=$activelist do={
     /ip hotspot cookie remove $i
-}
+}</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
