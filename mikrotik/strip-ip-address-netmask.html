@@ -14,11 +14,11 @@
 <pre>
 <h1>Strip IP Address without netmask - Mikrotik Script</h1>
 Strip IP Address without netmask
---------------------------------
+
 This script is useful if you need ip address without netmask (for example to use it in firewall), but "/ip address get [id] address" returns ip address and netmask.
 
-# Code:
-------
+</code></precd>
+<precd><code class="routeros"># Code:
 :global ipaddress 10.1.101.1/24
 :for i from=( [:len $ipaddress] - 1) to=0 do={ 
 	:if ( [:pick $ipaddress $i] = "/") do={ 
@@ -27,9 +27,8 @@ This script is useful if you need ip address without netmask (for example to use
 }
 
 # Another much more simple way:
-------------------------------
 :global ipaddress 10.1.101.1/24
-:put [:pick $ipaddress 0 [:find $ipaddress "/"]]
+:put [:pick $ipaddress 0 [:find $ipaddress "/"]]</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
