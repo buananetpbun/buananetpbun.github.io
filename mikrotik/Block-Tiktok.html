@@ -8,19 +8,21 @@
 <meta content='How To Block Tiktok - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 </head>  
 <body>
 <pre>
 <h1>How To Block Tiktok - Mikrotik Script</h1>
-How To Block Tiktok Aplication
-------------------------------
+Simple How To Block Tiktok Aplication On RouterOS
 
-/ip firewall filter
+<precd><code class="routeros">/ip firewall filter
 add action=drop chain=forward protocol=tcp tls-host=*.musical.ly
 add action=drop chain=forward content=tiktokv.com 
 add action=drop chain=forward content=musical.ly
-add action=drop chain=forward content=tiktok
+add action=drop chain=forward content=tiktok</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/" alt="Hits"/>
