@@ -8,12 +8,17 @@
 <meta content='Calculates day of the week for a givien date - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 </head> 
 <body>
 <pre>
 <h1>Calculates day of the week for a givien date - Mikrotik Script</h1>
-# Calculates day of the week for a givien date
+How To Calculates day of the week for a givien date on RouterOS
+
+<precd><code class="routeros"># Calculates day of the week for a givien date
 # Month: jan,feb ... nov,dec   (must be lower-case)
 # Day: 1 - 31
 # Year: 1583 - ...
@@ -52,7 +57,7 @@
 :set sum (7000 + $day + $yyy + ($yyy / 4) - ($yyy / 100) + ($yyy / 400) + ((31 * $mmm) / 12))
 :set sum ($sum - (($sum / 7) * 7))
 :set result [:pick $daytbl $sum]
-:log info "Today is $result"
+:log info "Today is $result"</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
