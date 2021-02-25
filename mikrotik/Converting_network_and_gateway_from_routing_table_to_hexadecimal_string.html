@@ -7,14 +7,17 @@
 <meta content='Converting network and gateway from routing table to hexadecimal string - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head> 
 <body>
 <pre>
 <h1>Converting network and gateway from routing table to hexadecimal string - Mikrotik Script</h1>
 Version of the script giving result as DHCP option 121 (RFC 3442)
-#
-# Second script converting network and gateway from routing table to hexadecimal string
+
+<precd><code class="routeros"># Second script converting network and gateway from routing table to hexadecimal string
 # according to RFC 3442 - DHCP option 121
 # result=0x<prefix><network><gateway>
 # example: dst-address=192.168.2.0/24 gateway=192.168.1.1 => result=0x18c0a802c0a80101
@@ -64,11 +67,11 @@ Version of the script giving result as DHCP option 121 (RFC 3442)
    };
   :put ($result . " for " . $dst);
 } else={:put ("Gateway is not a single IP address for ".$dst);}
-}
+}</code></precd>
 
 Version of the script with full 4 bytes of destination network
-#
-# Script converting network and gateway from routing table to hexadecimal string
+
+<precd><code class="routeros"># Script converting network and gateway from routing table to hexadecimal string
 # dst-address=192.168.2.0/24 gateway=192.168.1.1 => result=0x18c0a80200c0a80101
 #
 # (c) Daniel Starnowski 2011
@@ -102,7 +105,7 @@ Version of the script with full 4 bytes of destination network
    };
   :put $result;
 } else={:put ("Gateway is not a single IP address for ".$dst);}
-}
+}</code></precd>
 </pre>
  <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
