@@ -7,7 +7,10 @@
 <meta content='Protect Open Recursive DNS - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head>
 <body>
 <pre>
@@ -15,9 +18,9 @@
 Have you ever felt that internet access suddenly feels slow? it could be that someone is naughty who uses our public router IP as a DNS server, 
 usually this is indicated by the high upload speed to the internet, to avoid this we simply use the script below.
 
-/ip firewall filter
+<precd><code class="routeros">/ip firewall filter
 add chain=input dst-port=53 in-interface=WAN protocol=tcp action=drop
-add chain=input dst-port=53 in-interface=WAN protocol=udp action=drop
+add chain=input dst-port=53 in-interface=WAN protocol=udp action=drop</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
