@@ -7,19 +7,21 @@
 <meta content='Protect Default Port Service From WAN - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head> 
 <body>
 <pre>
 <h1>Protect Default Port Service From WAN - Mikrotik Script</h1>
-Changing the Default Service Port used by Mikrotik such as telnet, ssh, ftp, winbox, www and api. 
-or if it is not used, it can be turned off / disabled
+Changing the Default Service Port used by Mikrotik such as telnet, ssh, ftp, winbox, www and api. or if it is not used, it can be turned off / disabled
 
 notes: if using a custom port, please add your own
 
-/ip firewall filter
+<precd><code class="routeros">/ip firewall filter
 add action=drop chain=input dst-port=21,22,23,8291,80,8728,8279  in-interface-list=WAN protocol=tcp
-add action=drop chain=input dst-rt=21,22,23,8291,80,8728,8279 in-interface-list=WAN protocol=udp
+add action=drop chain=input dst-rt=21,22,23,8291,80,8728,8279 in-interface-list=WAN protocol=udp</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
