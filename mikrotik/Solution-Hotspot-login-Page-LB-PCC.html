@@ -7,25 +7,26 @@
 <meta content='Solution For Hotspot Login Page with LB PCC - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head> 
 <body>
 <pre>
 <h1>Solution For Hotspot Login Page with LB PCC - Mikrotik Script</h1>
 Having trouble with the Hotspot Login Page in PCC Load Balancing which often fails to appear or doesn't automatically redirect?
 
-Just add this in NAT for hotspot=auth
-
+Just add this in NAT for <span style="color:red">hotspot=auth</span>
 
 Still failing too? we play a little with hotspot = auth in Load balancing PCC in mangle, adjust it to each condition, for example like this, just add hotspot=auth
 
-/ip firewall nat add action=accept chain=pre-hotspot disabled=no dst-address-type=!local hotspot=auth
-
+<precd><code class="routeros">/ip firewall nat add action=accept chain=pre-hotspot disabled=no dst-address-type=!local hotspot=auth</code></precd>
 
 Still failed too? delete all the above methods and try to bypass all local traffic, make sure it is located at the top of the mangle (LOCAL-IP respectively, enter in the add-list)
 
-add action=mark-connection chain=prerouting dst-address-list=!IP-LAN dst-address-type=!local hotspot=auth new-connection-mark=E1-WAN_connmark passthrough=yes per-connection-classifier=both-addresses-and-ports:2/0 src-address-list=IP-LAN
-add action=mark-connection chain=prerouting dst-address-list=!IP-LAN dst-address-type=!local hotspot=auth new-connection-mark=E2-WAN_connmark passthrough=yes per-connection-classifier=both-addresses-and-ports:2/1 src-address-list=IP-LAN
+<precd><code class="routeros">add action=mark-connection chain=prerouting dst-address-list=!IP-LAN dst-address-type=!local hotspot=auth new-connection-mark=E1-WAN_connmark passthrough=yes per-connection-classifier=both-addresses-and-ports:2/0 src-address-list=IP-LAN
+add action=mark-connection chain=prerouting dst-address-list=!IP-LAN dst-address-type=!local hotspot=auth new-connection-mark=E2-WAN_connmark passthrough=yes per-connection-classifier=both-addresses-and-ports:2/1 src-address-list=IP-LAN</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
