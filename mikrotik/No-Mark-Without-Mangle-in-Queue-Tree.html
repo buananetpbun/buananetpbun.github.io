@@ -7,17 +7,20 @@
 <meta content='No-Mark Without Mangle in Queue Tree - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
 <h1>No-Mark Without Mangle in Queue Tree - MikroTik Script RouterOS</h1>
-Only with no-mark without mangle in the Queue Tree, it quite lightens the burden on a good router to use for hotspots that don't want to be complicated to dimangle, this trick can also be used to filter out leaky dimangle packets.
+Only with No-Mark without mangle in the Queue Tree, it quite lightens the burden on a good router to use for hotspots that don't want to be complicated to dimangle, this trick can also be used to filter out leaky dimangle packets.
 
-/queue tree
+<precd><code class="routeros">/queue tree
 add max-limit=10M name=2.Upload packet-mark=no-mark parent=E1-WAN queue= default
 add max-limit=10M name=3.Download packet-mark=no-mark parent=E4-LAN queue=default
-add max-limit=20M name="1.Total No-mark" packet-mark=no-mark parent=global queue=default
+add max-limit=20M name="1.Total No-mark" packet-mark=no-mark parent=global queue=default</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
