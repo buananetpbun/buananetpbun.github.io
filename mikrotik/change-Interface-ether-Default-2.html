@@ -12,7 +12,9 @@
 <body>
 <pre>
 <h1>Change Name Interface or Ether To Default Manua - Mikrotik Script</h1>
-#####################################
+I made this simple script to make it easier for us to return the interface name (ether) to the factory default name without having to reset the proxy. There are times when we forget the order on the Mikrotik port even though we have given the ether name, for example with the name "LAN" but whether "LAN" is plugged into what port. so the meaning is clear :)
+
+<precd><code class="routeros">#####################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -41,7 +43,7 @@ set [ find default-name=sfp2 ] name=sfp2
 set [ find default-name=sfp3 ] name=sfp3
 set [ find default-name=sfp4 ] name=sfp4
 set [ find default-name=sfp-sfpplus1 ] name=sfp-sfpplus1
-set [ find default-name=sfp-sfpplus2 ] name=sfp-sfpplus2
+set [ find default-name=sfp-sfpplus2 ] name=sfp-sfpplus2</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
