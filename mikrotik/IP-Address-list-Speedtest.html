@@ -8,17 +8,19 @@
 <meta content='Complete All Speedtest IP Address List - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 </head> 
 <body>
 <pre>
 <h1>Complete All Speedtest IP Address List - Mikrotik Script</h1>
 Complete All Speed Test IP Address List
 
-So that it is not heavy when entering the address via the new terminal, first create a file with the extension rsc, then enter it in the file in mkrotik next import the script with the command
-export file = speedtest.rsc
+So that it is not heavy when entering the address via the new terminal, first create a file with the extension rsc, then enter it in the file in mkrotik next import the script with the command "export file = speedtest.rsc"
 
-/ip firewall address-list
+<precd><code class="routeros">/ip firewall address-list
 add  list=speedtest address=100.42.144.20
 add  list=speedtest address=100.42.32.231
 add  list=speedtest address=101.203.168.115
@@ -8394,7 +8396,7 @@ add address=ipleak.com  list=speedtest
 add address=www.perfect-privacy.com  list=speedtest
 add address=perfect-privacy.com  list=speedtest
 add address=www.whatsmyip.org  list=speedtest
-add address=whatsmyip.org  list=speedtest
+add address=whatsmyip.org  list=speedtest</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
