@@ -8,7 +8,10 @@
 <meta content='Generate backup and send it by e-mail - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -16,9 +19,9 @@
 This script generates backup file and sends it to specified e-mail address. Mail subject contains router's name, current date and time.
 Note that smtp server must be configured before this script can be used. See /tool e-mail for configuration options.
 
-/system backup save name=email_backup
+<precd><code class="routeros">/system backup save name=email_backup
 /tool e-mail send file=email_backup.backup to="me@test.com" body="See attached file" \
-   subject="$[/system identity get name] $[/system clock get time] $[/system clock get date] Backup")
+subject="$[/system identity get name] $[/system clock get time] $[/system clock get date] Backup")</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
