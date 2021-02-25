@@ -78,7 +78,9 @@ add action=accept chain=ICMP comment=PMTUD disabled=no icmp-options=3:4 protocol
 add action=drop chain=ICMP comment="Drop to the other ICMPs" disabled=no protocol=icmp
 add action=jump chain=output comment="Jump for icmp output" disabled=no jump-target=ICMP protocol=icmp
 </code></precd>
+
 I think this is basic. You can add or remove anything else according to your needs. I hope it helps!
+
 By Guilherme Ramires
 </pre>
 <br>
