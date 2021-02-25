@@ -7,23 +7,25 @@
 <meta content='Route - Recursive Gateway Fail over - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head> 
 <body>
 <pre>
 <h1>Route - Recursive Gateway Fail over - Mikrotik Script</h1>
-How To Recursive Gateway Fail over
+How To Recursive Gateway Fail over on RouterOS
 
 Fail Over 2 ISP with Recursive Gateway
 WAN-1 = IP: 192.168.2.2/24
 WAN-2 = IP: 192.168.3.2/24
---------------------------------------
 
-/ip route
+<precd><code class="routeros">/ip route
 add check-gateway=ping distance=2 gateway=8.8.8.8 target-scope=30
 add check-gateway=ping distance=1 gateway=8.8.4.4 target-scope=30
 add check-gateway=ping distance=1 dst-address=8.8.8.8/32 gateway=192.168.3.1 target-scope=10
-add check-gateway=ping distance=1 dst-address=8.8.4.4/32 gateway=192.168.2.1 target-scope=10
+add check-gateway=ping distance=1 dst-address=8.8.4.4/32 gateway=192.168.2.1 target-scope=10</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
