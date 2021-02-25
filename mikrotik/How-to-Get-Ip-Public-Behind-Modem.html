@@ -7,7 +7,10 @@
 <meta content='How to Get Ip Public Behind Modem - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -16,9 +19,9 @@ In this scenario How can I Find The Public Ip behind the modem By mikrotik scrip
 
 Users <--> Switch <--> Mikrotik <---------> Modem <----???---> Internet
 
-/tool fetch url="http://myip.dnsomatic.com/" mode=http dst-path=mypublicip.txt
+<precd><code class="routeros">/tool fetch url="http://myip.dnsomatic.com/" mode=http dst-path=mypublicip.txt
 local ip [file get mypublicip.txt contents ]
-put $ip
+put $ip</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
