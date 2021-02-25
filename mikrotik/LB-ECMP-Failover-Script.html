@@ -7,7 +7,10 @@
 <meta content='LB ECMP Failover Script Failover - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head>
 <body>
 <pre>
@@ -21,66 +24,71 @@ You have 2 lines going out to the internet - 10.0.0.12 and 10.0.0.13. You have s
 
 You setup the mangle:
 
-   /ip firewall mangle add chain=prerouting protocol=tcp dst-port=80 action=mark-routing \
-   new-routing-mark=ecmp-http-route passthrough=yes comment=" Route HTTP \
-   traffic to ECMP" disabled=no 
+<precd><code class="routeros">/ip firewall mangle add chain=prerouting protocol=tcp dst-port=80 action=mark-routing \
+new-routing-mark=ecmp-http-route passthrough=yes comment=" Route HTTP \
+traffic to ECMP" disabled=no</code></precd>
+
 You set up ECMP (Equal Cost Multipath Routing) by using something like
 
-   /ip route add dst-address=0.0.0.0/0 gateway=10.0.0.12,10.0.0.13 routing-mark=ecmp-http-route comment="ECMP route for HTTP"
+<precd><code class="routeros">/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.12,10.0.0.13 routing-mark=ecmp-http-route comment="ECMP route for HTTP"</code></precd>
+
 Now you have ECMP for HTTP only. This is nice because MSN messenger, banking websites and other programs and problem sites will not be broken in the same way it might be if you used ECMP for all protocols.
 
 What I then do is for example mark SMTP traffic and route this out through 10.0.0.12:
 
-   /ip firewall mangle add chain=prerouting protocol=tcp dst-port=25 action=mark-routing \
-   new-routing-mark=smtp-out passthrough=yes comment="SMTP Traffic" disabled=no 
-   /ip route add dst-address=0.0.0.0/0 gateway=10.0.0.12 routing-mark=smtp-out comment="SMTP Traffic out"
+<precd><code class="routeros">/ip firewall mangle add chain=prerouting protocol=tcp dst-port=25 action=mark-routing \
+new-routing-mark=smtp-out passthrough=yes comment="SMTP Traffic" disabled=no 
+/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.12 routing-mark=smtp-out comment="SMTP Traffic out"</code></precd>
+
 and route all other traffic through 10.0.0.13
 
-   /ip route add dst-address=0.0.0.0/0 gateway=10.0.0.13 comment="Default Route to Internet"
+<precd><code class="routeros">/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.13 comment="Default Route to Internet"</code></precd>
+
 Then I need to setup 2 routes to specific addresses to force the router through specific gateways to "test" the links. These should not be popular addresses with your users! Otherwise when a gateway goes down they will have no access to those sites. The addresses I am using as an example are 1.1.1.12 to test 10.0.0.12, and 1.1.1.13 to test 10.0.0.13.
 
 Next I use the Netwatch Function to switch all traffic to the working gateway should any of the gateways fail:
 
-   / tool netwatch 
-   add host=1.1.1.13 timeout=2s interval=30s up-script="/ip route set \
-   \[find comment=\"Default Route To Internet\"\] gateway=10.0.0.13" \
-   down-script="/ip route set \[find comment=\"Default Route To Internet\"\] \
-   gateway=10.0.0.12 comment="" disabled=no 
-   add host=1.1.1.12 timeout=2s interval=30s up-script="/ip route set \
-   \[find comment=\"SMTP Traffic out\"\] gateway=1.0.0.12" down-script="/ip \
-   \n" \route set \[find comment=\"SMTP Traffic out\"\] gateway=10.0.0.13
-   comment="" disabled=no 
+<precd><code class="routeros">/tool netwatch 
+add host=1.1.1.13 timeout=2s interval=30s up-script="/ip route set \
+\[find comment=\"Default Route To Internet\"\] gateway=10.0.0.13" \
+down-script="/ip route set \[find comment=\"Default Route To Internet\"\] \
+gateway=10.0.0.12 comment="" disabled=no 
+add host=1.1.1.12 timeout=2s interval=30s up-script="/ip route set \
+\[find comment=\"SMTP Traffic out\"\] gateway=1.0.0.12" down-script="/ip \
+\n" \route set \[find comment=\"SMTP Traffic out\"\] gateway=10.0.0.13
+comment="" disabled=no </code></precd>
+
 The problem is that the ECMP http route will still be active, therefore http traffic wont work, so I have 2 scripts to check if both gateways are up or down and take action accordingly:
 
-/ system script 
-   add name="ecmp-startup" source=":if ([/ping 1.1.1.12 count=1]=1 && \
-   [/ping 1.1.1.13 count=1]=1 && [/ip route get [find \
-   comment=\"ECMP Route For HTTP\"] disabled]=true) do={ :log info \"Both gateways up\" \
-   \n/ip route set [find routing-mark=ecmp-http-route] \
-   disabled=no}" policy=ftp,reboot,read,write,policy,test,winbox,password 
-   add name="ecmp-shutdown" source=":if ([/ping 1.1.1.12 count=1]=1 && \
-   [/ping 1.1.1.13 count=1]=0) do={ :log info \"Gateway down\"\
-   \n/ip route set [find routing-mark=ecmp-http-route] \
-   disabled=yes}" policy=ftp,reboot,read,write,policy,test,winbox,password
-   Hi I found this error while trying to use this script, what worked for me was
-   ecmp start/shut script. Looks like  in the start and shut script (") are missing
-   from the find, well other the script works wonders for me. Thanks a lot savagedavid
-   ecmp starthp script
-   :if ([/ping 1.1.1.13 count=1]=1 && [/ping 1.1.1.12 count=1]=1 && [/ip route get \
-   [find routing-mark="ecmp-http-route"] disabled]=true) do={:log info "Both Gateways are up" \
-   /n/ip route set [find routing-mark="ecmp-http-route"] disable=no}
-   ecmp shutdown script
-   :if ([/ping 1.1.1.13 count=1]=0 || [/ping 1.1.1.12 count=1]=0) do={:log info \
-   "Gateway down" /ip route set [find routing-mark="ecmp-http-route"] disabled=yes} 
+<precd><code class="routeros">/system script 
+add name="ecmp-startup" source=":if ([/ping 1.1.1.12 count=1]=1 && \
+[/ping 1.1.1.13 count=1]=1 && [/ip route get [find \
+comment=\"ECMP Route For HTTP\"] disabled]=true) do={ :log info \"Both gateways up\" \
+\n/ip route set [find routing-mark=ecmp-http-route] \
+disabled=no}" policy=ftp,reboot,read,write,policy,test,winbox,password 
+add name="ecmp-shutdown" source=":if ([/ping 1.1.1.12 count=1]=1 && \
+[/ping 1.1.1.13 count=1]=0) do={ :log info \"Gateway down\"\
+\n/ip route set [find routing-mark=ecmp-http-route] \
+disabled=yes}" policy=ftp,reboot,read,write,policy,test,winbox,password
+Hi I found this error while trying to use this script, what worked for me was
+ecmp start/shut script. Looks like  in the start and shut script (") are missing
+from the find, well other the script works wonders for me. Thanks a lot savagedavid
+ecmp starthp script
+:if ([/ping 1.1.1.13 count=1]=1 && [/ping 1.1.1.12 count=1]=1 && [/ip route get \
+[find routing-mark="ecmp-http-route"] disabled]=true) do={:log info "Both Gateways are up" \
+/n/ip route set [find routing-mark="ecmp-http-route"] disable=no}
+ecmp shutdown script
+:if ([/ping 1.1.1.13 count=1]=0 || [/ping 1.1.1.12 count=1]=0) do={:log info \
+"Gateway down" /ip route set [find routing-mark="ecmp-http-route"] disabled=yes} </code></precd>
 
 Notice that it first checks to see if the route is enable before trying to re-enable it. Otherwise it will reset the route and users will be dropped momentarily.
 
 Then finally schedule the scripts to check every 30 seconds:
 
-   / system scheduler 
-   add name="gateway-check" on-event="/system script run ecmp-shutdown
-   script run ecmp-startup" start-date=jan/01/1970 start-time=00:00:00 \
-   interval=30s comment="" disabled=no
+<precd><code class="routeros">/system scheduler 
+add name="gateway-check" on-event="/system script run ecmp-shutdown
+script run ecmp-startup" start-date=jan/01/1970 start-time=00:00:00 \
+interval=30s comment="" disabled=no</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
