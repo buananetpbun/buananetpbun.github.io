@@ -7,7 +7,10 @@
 <meta content='Calculate With Decimal Numbers - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head>  
 <body>
 <pre>
@@ -19,7 +22,7 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
 3.x version
 --Doug 06:26, 27 July 2009 (EEST) Update: internally remove leading zeros when calculating
 
-# Performs operations on decimal numbers
+<precd><code class="routeros"># Performs operations on decimal numbers
 # This script can be run from command line or other script.
 # To run, set global variables then run this script
 #
@@ -130,7 +133,7 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
       }
 
 
-#     Strip leading zeros
+#    Strip leading zeros
         :local zeroindex ([:len $tmpnum] - 1)
         :for cindex from=([:len $tmpnum] - 1) to=0 do={
           :if ($cindex >= 0 && [:pick $tmpnum $cindex ($cindex + 1)] != "0") do={
@@ -305,7 +308,7 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
 # If no errors occurred, set decimalresult to result of calculation
 :if ($err = 0) do={:set decimalresult $result}
 
-# ### End of Math Operations ###
+# ### End of Math Operations ### </code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
