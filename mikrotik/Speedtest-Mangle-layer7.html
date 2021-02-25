@@ -8,15 +8,17 @@
 <meta content='Complete Mangle Speedtest with Layer-7 - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head> 
 <body>
 <pre>
 <h1>Complete Mangle Speedtest with Layer-7 - Mikrotik Script</h1>
 Complete Mangle Speedtest with Layer-7
---------------------------------------
 
-/queue tree
+<precd><code class="routeros">/queue tree
 add limit-at=100M max-limit=100M name=SPEEDTEST parent=global priority=1 queue=default
 add limit-at=100M max-limit=100M name="1.SpeedTest UP" packet-mark=speedtest_pkt-up parent=SPEEDTEST priority=1 queue=default
 add limit-at=100M max-limit=100M name="2.SpeedTest DOWN" packet-mark=speedtest_pkt-down parent=SPEEDTEST priority=1 queue=default
@@ -31,7 +33,7 @@ add action=mark-connection chain=postrouting new-connection-mark=speedtest_conn 
 add action=mark-packet chain=prerouting connection-mark=speedtest_conn new-packet-mark=speedtest_pkt-up passthrough=no src-address=192.168.1.0/24
 add action=mark-packet chain=prerouting connection-mark=speedtest_conn dst-address=192.168.1.0/24 new-packet-mark=speedtest_pkt-down passthrough=no
 add action=mark-packet chain=postrouting connection-mark=speedtest_conn new-packet-mark=speedtest_pkt-up passthrough=no src-address=192.168.1.0/24
-add action=mark-packet chain=postrouting connection-mark=speedtest_conn dst-address=192.168.1.0/24 new-packet-mark=speedtest_pkt-down passthrough=no
+add action=mark-packet chain=postrouting connection-mark=speedtest_conn dst-address=192.168.1.0/24 new-packet-mark=speedtest_pkt-down passthrough=no</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
