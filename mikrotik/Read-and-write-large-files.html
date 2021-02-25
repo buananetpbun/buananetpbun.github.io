@@ -7,7 +7,10 @@
 <meta content='Read and Write Large Files - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 </head> 
 <body>
 <pre>
@@ -18,14 +21,14 @@ Many users requested ability to work with files. Now you can do it without limit
 
 Create and write to file:
 
-:global newContent "new file content\r\nanother line\r\n";
-[/lua "local f=assert(io.open('/test.txt', 'w+')); f:write(newContent); f:close()" ];
+<precd><code class="routeros">:global newContent "new file content\r\nanother line\r\n";
+[/lua "local f=assert(io.open('/test.txt', 'w+')); f:write(newContent); f:close()" ];</code></precd>
 
 Read file content to variable:
 
-:global cnt ""
+<precd><code class="routeros">:global cnt ""
 [/lua "local f=assert(io.open('/test.txt', 'r')); cnt=f:read('*all'); f:close()" ];
-:put $cnt
+:put $cnt</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
