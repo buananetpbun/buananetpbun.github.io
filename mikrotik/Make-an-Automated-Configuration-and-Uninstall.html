@@ -7,7 +7,10 @@
 <meta content='Make an Automated Configuration and Uninstall - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -31,7 +34,8 @@ When building your own configuration skeleton you need to decide on which settin
 
 Heads Up! This script has be programmed to self destruct... Just kidding, but in a way it is also true, as mentioned in the title and the first section this script can be configured to either install a base configuration or uninstall a base configuration. All that magic starts on Line 2 as a :local variable. I treat this as more of an argument than a reusable variable. Since this is a common variable in most of my scripts I take extra care to set it as a :local variable in order to not disrupt my other scripts. There are several instances where this could be used as a global variable, and I have used it that way in the past to several uninstall scripts together, and executing a single script that launches all the rest. (i.e., Firewall-Uninstall, HotSpot-Uninstall, Proxy-Uninstall)
 
-#~ "Uninstall Flag (Default = no )"
+
+<precd><code class="routeros">#~ "Uninstall Flag (Default = no )"
 :local deconf no
 #~#
 
@@ -162,6 +166,7 @@ In this section we perform some logic to detect all the wireless cards installed
                    
           }
 }
+
 #~#
 /Say Goodbye to /system reset
 I really, really dislike /system reset, not only does it force the router to reboot, it also makes me wonder if I really did make that backup/export file=blah. So I have started writing an uninstall method into all of my configuration scripts. This allows you to customize the level of destructiveness. For instance you could remove all settings except the settings of a radio card and it's corresponding IP address. Maybe you are agoraphobic and really want maintain your router without having to experience that panic of backup jitters. Whatever the case may be, the best option is to come design your own uninstall script that will become part of your consolidated configuration base. This script contains an example of an uninstall script that can be expanded upon or customized to do what ever you require.
@@ -727,7 +732,7 @@ set enabled=no mode=broadcast primary-ntp=0.0.0.0 secondary-ntp=0.0.0.0
 }] . " seconds.")
 #~# "End of Uninstall Script"
 }
-#~# "End of Main Sub"
+#~# "End of Main Sub"</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
