@@ -8,12 +8,17 @@
 <meta content='Auto Login WMS  or wifi.id - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head>
 <body>
 <pre>
 <h1>Auto Login WMS or wifi.id - Mikrotik Script</h1>
-:if ([/ping address=1.1.1.1 count=5] = 0) do={
+How to auto login wifi.id or WMS Indihome
+
+<precd><code class="routeros">:if ([/ping address=1.1.1.1 count=5] = 0) do={
 /ip dns cache flush
 /ip dhcp-client release [find interface=WLAN-INTERFACE]
 delay 5
@@ -24,7 +29,7 @@ log error ("WMS Down")
 /tool fetch http-method=post http-data="username=username@freeMS&password=password" url=("https://welcome2.wifi.id/wms/?gw_id=GWID&client_mac=xxxxxxxxxxxx&wlan=xxxxxxxxxxxxxxxxxx:SSID%20WMS") keep-result=no;
 } else {
 log warning ("WMS UP")
-}
+}</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
