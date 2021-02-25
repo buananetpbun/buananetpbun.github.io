@@ -7,19 +7,19 @@
 <meta content='Print Function - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head> 
 <body>
 <pre>
 <h1>Print Function - Mikrotik Script</h1>
-Print Function
---------------
+How to Print Function on RouterOS
 
-As stated in Lua documentation, 'print' command is not available in RouterOS compared to standard Lua release. This example will show you how to get back 'print' command
+As stated in Lua documentation, <span style="color:red">'print'</span> command is not available in RouterOS compared to standard Lua release. This example will show you how to get back <span style="color:red">'print'</span> command
 
--- ------------------------------------------------------------------------
--- Print function
--- ------------------------------------------------------------------------    
+<precd><code class="routeros"># Print function
 function print (...)
    local strPrintResult = ""
    if ... then
@@ -30,7 +30,7 @@ function print (...)
       strPrintResult = strPrintResult .. "\r\n"
       io.write(strPrintResult)
    end
-end
+end</code></precd>
 
 Now you can include this custom function to other scripts and use this cool custom print function :)
 You can also modify this function to write messages in RouterOS log.
