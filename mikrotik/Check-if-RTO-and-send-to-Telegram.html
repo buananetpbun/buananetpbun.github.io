@@ -7,7 +7,10 @@
 <meta content='Check if RTO and send to Telegram - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head>  
 <body>
 <pre>
@@ -18,12 +21,12 @@ just adjust "WAN-1" in the script with the name of each routing-table and for ip
 
 for telegram please learn how to make the boot yourself
 
-:if ([/ping 1.1.1.1 routing-table=WAN-1 count=5] = 0) do={
+<precd><code class="routeros">:if ([/ping 1.1.1.1 routing-table=WAN-1 count=5] = 0) do={
 :local datetime1 [/system clock get date]
 :local datetime2 [/system clock get time]
 :log error "RTO pada jam [ $datetime2 ] tanggal [ $datetime1 ]"
 /tool fetch url="https://api.telegram.org/botxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/sendMessage\?chat_id=xxxx&text= ->> Jalur WAN-1 RTO pada jam [ $datetime2 ] tanggal [ $datetime1 ] " keep-result=no
-}
+}</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
