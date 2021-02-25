@@ -44,7 +44,8 @@ add address=203.0.113.0/24 comment="Reserved - IANA - TestNet3" disabled=no list
 add address=224.0.0.0/4 comment="MC, Class D, IANA # Check if you need this subnet before enable it"\
 disabled=yes list=bogons</code></precd>
 Now we have protection against: SynFlood, ICMP Flood, Port Scan, Email Spam and much more. For more information read the comments.
-<precd><code class="routeros"></code></precd>/ip firewall filter
+
+<precd><code class="routeros">/ip firewall filter
 add action=add-src-to-address-list address-list=Syn_Flooder address-list-timeout=30m chain=input \
 comment="Add Syn Flood IP to the list" connection-limit=30,32 disabled=no protocol=tcp tcp-flags=syn
 add action=drop chain=input comment="Drop to syn flood list" disabled=no src-address-list=Syn_Flooder
