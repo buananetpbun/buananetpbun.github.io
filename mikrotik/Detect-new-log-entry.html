@@ -8,7 +8,10 @@
 <meta content='How To Detect New Log Entry - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 <pre>
@@ -16,10 +19,11 @@
 This script is checking if new log entry is added to particular buffer.
 In this example we will use pppoe logs:
 
-/system logging action
+<precd><code class="routeros">/system logging action
 add name="pppoe"
 /system logging
-add action=pppoe topics=pppoe,info,!ppp,!debug
+add action=pppoe topics=pppoe,info,!ppp,!debug</code></precd>
+
 Log buffer will look similar to this one:
 
 [admin@mainGW] > /log print where buffer=pppoe 
@@ -28,7 +32,7 @@ Now we can write a script to detect if new entry is added.
 
 Code:
 
-:global lastTime;
+<precd><code class="routeros">:global lastTime;
 :global currentBuf [ :toarray [ /log find buffer=pppoe  ] ] ;
 :global currentLineCount [ :len $currentBuf ] ;
 :global currentTime [ :totime [/log get [ :pick $currentBuf ($currentLineCount -1) ] time   ] ];
@@ -42,7 +46,7 @@ Code:
 		:set lastTime $currentTime ; 
 		:set message [/log get [ :pick $currentBuf ($currentLineCount-1) ] message];
 	}
-}
+}</code></precd>
 
 After new entry is detected, it is saved in "message" variable, which you can use later to parse log message, for example, to get pppoe clients mac address.
 </pre>
