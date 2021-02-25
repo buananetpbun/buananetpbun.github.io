@@ -7,7 +7,10 @@
 <meta content='Ping ICMP To Routing ISP Games - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -16,10 +19,10 @@ There are 3 ISPs, 2 ISPs in LB for browsing purposes and 1 more ISP specifically
 
 Let's just say that currently we have 3 ISPs that separate the path between gaming and browsing, the first 2 ISPs are specifically loaded with load balancing for browsing and the other is specifically for game lines, without special routing, when we or our clients ping from a PC or handphone, the router of course will immediately direct the ping to the main route, in this case the browsing path (main) is selected as distance 1, logically why do we check the main line ping while there are other priorities that prefer ping in this case to monitor the game connection path, Of course I would prefer to divert the ping routing to a game path that deserves to be monitored.
 
-/ip route
+<precd><code class="routeros">/ip route
 add check-gateway=ping gateway=192.168.1.1 routing-mark=icmp distance=1
 /ip firewall mangle
-add action=mark-routing chain=prerouting in-interface=LAN new-routing-mark=icmp passthrough=no protocol=icmp distance=1
+add action=mark-routing chain=prerouting in-interface=LAN new-routing-mark=icmp passthrough=no protocol=icmp distance=1</code></precd>
 
 notes: please change the gateway = 192.168.1.1 according to the game line modem gateway ip and in-interface = LAN according to the ether local network respectively.
 </pre>
