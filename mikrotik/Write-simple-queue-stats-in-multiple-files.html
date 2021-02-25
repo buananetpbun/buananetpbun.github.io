@@ -7,17 +7,19 @@
 <meta content='Write simple queue stats in multiple files - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head> 
 <body>
 <pre>
 <h1>Write simple queue stats in multiple files - Mikrotik Script</h1>
 Write simple queue stats in multiple files
-------------------------------------------
 
 Lets consider queue namings are "some text.1" so we can search queues by last number right after the dot.
 
-:local entriesPerFile 10;
+<precd><code class="routeros">:local entriesPerFile 10;
 :local currentQueue 0;
 :local queuesInFile 0;
 :local fileContent "";
@@ -57,7 +59,7 @@ Lets consider queue namings are "some text.1" so we can search queues by last nu
    /file set "stats$i.txt" contents=$fileContent;
    :set fileContent "";
    :set queuesInFile 0;
-}
+}</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
