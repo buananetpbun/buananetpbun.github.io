@@ -15,7 +15,7 @@
 <body>
 <pre>
 <h1>XXXX - MikroTik Script RouterOS</h1>
-<precd><code class="routeros"></code></precd>
+<precd><code class="routeros"> </code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
