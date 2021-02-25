@@ -8,7 +8,10 @@
 <meta content='Remote IP Public Static For Secondary Gateway - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -17,9 +20,9 @@ So that the Public Static IP can be used for remote even though not as the main 
 
 An easy example like this ... suppose we use Indihome as the main gateway and Astinet as a backup gateway, in the standard routing concept, of course, Public IP Astinet cannot be used for remote because its position is only as a backup gateway, so that Astinet Public IP can still be used for example. Winbox remote needs are very easy, and this method can also be applied to all ISP that have Public Static IP
 
-Or you can use <a target="_blank" href="https://buananetpbun.github.io/" >Script Maker or Generator</a>
+Or you can use <a target="_blank" href="https://buananetpbun.github.io/remote-ip-public-static.html" >Script Maker or Generator</a>
 
-####################################################################
+<precd><code class="routeros">####################################################################
 # Remote IP Public Static For Secondary Gateway Mikrotik
 # Date/Time: 2/14/2021, 1:40:07 PM
 # By BuanaNET Secure! https://fb.me/buananet.pbun
@@ -30,7 +33,7 @@ add action=mark-connection chain=input in-interface="ether2" new-connection-mark
 add action=mark-routing chain=output connection-mark=ip-public new-routing-mark=ip-public passthrough=no
 
 /ip route
-add check-gateway=ping gateway="192.168.10.1" routing-mark=ip-public
+add check-gateway=ping gateway="192.168.10.1" routing-mark=ip-public</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/remote-ip-public-static.html" alt="Hits"/>
