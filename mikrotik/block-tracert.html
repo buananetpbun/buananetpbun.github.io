@@ -8,16 +8,19 @@
 <meta content='Block Traceroute / Tracert - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 </head>  
 <body>
 <pre>
 <h1>Block Traceroute / Tracert - Mikrotik Script</h1>
-How To Block Traceroute / Tracert
+Simple How To Block Traceroute / Tracert on RouterOS
 
-/ip firewall filter
+<precd><code class="routeros">/ip firewall filter
 add action=drop chain=forward icmp-options=11:0 protocol=icmp
-add action=drop chain=forward icmp-options=3:3 protocol=icmp
+add action=drop chain=forward icmp-options=3:3 protocol=icmp</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
