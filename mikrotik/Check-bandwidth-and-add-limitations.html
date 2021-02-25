@@ -8,14 +8,17 @@
 <meta content='Check Bandwidth and Add Limitations - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 </head>  
 <body>
 <pre>
 <h1>Check Bandwidth and Add Limitations - Mikrotik Script</h1>
 This script checks if download on interface is more than 512kbps, if true then queue is added to limit speed to 256kbps.
 
-:foreach i in=[/interface find] do={
+<precd><code class="routeros">:foreach i in=[/interface find] do={
     /interface monitor-traffic $i once do={
         :if ($"received-bits-per-second" > 0 ) do={
             :local tmpIP [/ip address get [/ip address find interface=$i] address] ;
@@ -27,7 +30,7 @@ This script checks if download on interface is more than 512kbps, if true then q
             }
         }
     }
-}
+} </code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
