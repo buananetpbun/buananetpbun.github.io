@@ -7,17 +7,19 @@
 <meta content='Protect Open Web proxy Mikrotik - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
 </head>
 <body>
 <pre>
 <h1>Protect Open Web proxy Mikrotik - Mikrotik Script</h1>
-
 Prevent the Open proxy from being misused by outsiders.
 
-/ip firewall filter
+<precd><code class="routeros">/ip firewall filter
 add action=drop chain=input dst-port=3128,8080  in-interface-list=WAN protocol=tcp
-add action=drop chain=input dst-rt=3128,8080 in-interface-list=WAN protocol=udp
+add action=drop chain=input dst-rt=3128,8080 in-interface-list=WAN protocol=udp</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
