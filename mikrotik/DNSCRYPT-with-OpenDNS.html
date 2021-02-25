@@ -7,7 +7,10 @@
 <meta content='DNSCRYPT with OpenDNS port 443 or 5353 - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
@@ -15,19 +18,19 @@
 Why DNSCrypt is so significant?
 In the same way the SSL turns HTTP web traffic into HTTPS encrypted Web traffic, DNSCrypt turns regular DNS traffic into encrypted DNS traffic that is secure from eavesdropping and man-in-the-middle attacks. It doesn’t require any changes to domain names or how they work, it simply provides a method for securely encrypting communication between our customers and our DNS servers in our data centers. We know that claims alone don’t work in the security world, however, so we’ve opened up the source to our DNSCrypt code base and it’s available on GitHub.
 
-/ip firewall nat
+<precd><code class="routeros">/ip firewall nat
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=tcp to-addresses=208.67.222.222 to-ports=443
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=udp to-addresses=208.67.222.222 to-ports=443
 add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=tcp to-addresses=208.67.220.220 to-ports=443
-add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=443
+add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=443</code></precd>
 
 Or
 
-/ip firewall nat
+<precd><code class="routeros">/ip firewall nat
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=tcp to-addresses=208.67.222.222 to-ports=5353
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=udp to-addresses=208.67.222.222 to-ports=5353
 add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=tcp to-addresses=208.67.220.220 to-ports=5353
-add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=5353
+add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=5353</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
