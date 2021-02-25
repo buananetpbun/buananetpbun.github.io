@@ -7,15 +7,18 @@
 <meta content='Limit sharing Hotspot with 'Change TTL' - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
 <pre>
 <h1>Limit sharing Hotspot connection with 'Change TTL' - MikroTik RouterOS Script</h1>
 To overcome the use of Hotspot Vouchers redistributed (repeater) by using the Wifi Tethering / Wifi Hotspot android application, we can solve it by using Change TTL in Mikrotik.
 
-/ip firewall mangle
-add action=change-ttl chain=postrouting new-ttl=set:1 out-interface=LAN passthrough=no
+<precd><code class="routeros">/ip firewall mangle
+add action=change-ttl chain=postrouting new-ttl=set:1 out-interface=LAN passthrough=no</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
