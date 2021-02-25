@@ -7,19 +7,21 @@
 <meta content='IP Private or IP Local Standard RFC 1918 - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head> 
 <body>
 <pre>
 <h1>IP Private or IP Local Standard RFC 1918 - Mikrotik Script</h1>
 <b>Address Allocation for Private Internets</b>
+This document specifies an Internet Best Current Practices for the
+Internet Community, and requests discussion and suggestions for
+improvements.  Distribution of this memo is unlimited.
+read more >> <a target="_blank" href="https://tools.ietf.org/html/rfc1918" >Address Allocation for Private Internet</a>
 
-   This document specifies an Internet Best Current Practices for the
-   Internet Community, and requests discussion and suggestions for
-   improvements.  Distribution of this memo is unlimited.
-   read more >> <a target="_blank" href="https://tools.ietf.org/html/rfc1918" >Address Allocation for Private Internet</a>
-
-/ip firewall address-list
+<precd><code class="routeros">/ip firewall address-list
 add address=0.0.0.0/8 list=LOCAL-IP
 add address=10.0.0.0/8 list=LOCAL-IP
 add address=100.64.0.0/10 list=LOCAL-IP
@@ -33,7 +35,7 @@ add address=198.18.0.0/15 list=LOCAL-IP
 add address=198.51.100.0/24 list=LOCAL-IP
 add address=203.0.113.0/24 list=LOCAL-IP
 add address=224.0.0.0/4 list=LOCAL-IP
-add address=240.0.0.0/4 list=LOCAL-IP
+add address=240.0.0.0/4 list=LOCAL-IP</code></precd>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
