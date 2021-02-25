@@ -7,12 +7,19 @@
 <meta content='How Port Knocking Maker - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="stylesheet" href="https://buananetpbun.github.io/mikrotik/stytes.css">   
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head> 
 <body>
 <pre>
 <h1>How Port Knocking Maker - Mikrotik Script</h1>
-###########################################################
+In computer networking, port knocking is a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports. Once a correct sequence of connection attempts is received, the firewall rules are dynamically modified to allow the host which sent the connection attempts to connect over specific port(s). A variant called single packet authorization (SPA) exists, where only a single "knock" is needed, consisting of an encrypted packet.
+
+The primary purpose of port knocking is to prevent an attacker from scanning a system for potentially exploitable services by doing a port scan, because unless the attacker sends the correct knock sequence, the protected ports will appear closed
+
+<precd><code class="routeros">###########################################################
 # Mikrotik Port Knocking Generator with Icmp + Packet Size
 # Date/Time: 2/14/2021, 12:14:10 PM
 # https://fb.me/buananet.pbun
@@ -22,9 +29,9 @@
 add action=add-src-to-address-list address-list="port-knocking-first" address-list-timeout="00:00:00" chain=input packet-size="100" protocol=icmp comment="Port Knocking By BNT
 add action=add-src-to-address-list address-list="port-knocking-second" address-list-timeout="00:00:00" chain=input packet-size="200" protocol=icmp src-address-list="port-knocking-first"
 add action=accept chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="port-knocking-second"
-add action=drop chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="!port-knocking-second"
+add action=drop chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="!port-knocking-second"</code></precd>
 
-Copy-Paste Firewall Script into the Terminal!
+<b>Copy-Paste Firewall Script into the Terminal!</b>
 
 Unique Packet Size For Key Knocking: 72 and 172
 
@@ -36,7 +43,7 @@ Example Manually Open Key Ping in Terminal Linux or MacOS:
 First Key Knock -> ping -s 72 (IP Adrress)
 Second Key Knock -> ping -s 172 (IP Adrress)
 
-or you can use <a target="_blank" href="https://buananetpbun.github.io/port-knocking-icmp.html" >Port Knocking Maker or Generator</a>
+Or you can use <a target="_blank" href="https://buananetpbun.github.io/port-knocking-icmp.html" >Port Knocking Maker or Port Knock Generator</a>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io/mikrotik/" alt="Hits"/>
