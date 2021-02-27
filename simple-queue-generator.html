@@ -20,439 +20,423 @@
 # Sosmed    : https://fb.me/buananet.pbun	
 ############################################################
 --------------------------------------------------------- */  
-		*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-		body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-         body { font-family: Arial, "Courier New", Courier, monospace, Helvetica; margin:20px; background-color:#fff;color:#222}
-         * {
-         box-sizing: border-box;
-         }
+*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+body { font-size:13px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+html, body {
+height: 100%;
+widht:100%;
+margin-top: 0px;
+padding:0;
+}
+* {
+box-sizing: border-box;
+}
+.logo {
+padding-bottom:0px;  
+color: #111;
+text-decoration:none;
+font-size:27px;
+font-weight:bold; 
+}	
+.logo a{
+color:#111 !important;
+text-decoration:none !important;
+}
 .Menu{
-				width:100%;
-				border-bottom:1px solid #ccc;
-				height:100%;
-				padding-bottom: 15px;
-				margin-bottom: 20px;
-				font-size:14px;
-				font-weight:bold;
-				 }
-		#wrap{
-		width:1210px;
-		margin:0 auto;
-		}
-		.header{
-		height:40px; 
-		width:auto;
-		margin-top:20px;
-			margin-bottom:10px;
-		border-top:1px solid #ccc;
-		}
-		.main-wrap{
-		background-color:green;
-		}   
-		.content{
-		float:right;
-		width:900px;
-		font-size:12px;
-		padding: 10px;
-		border-top:1px solid #bbb;
-		border-bottom:1px solid #bbb;
-		border-right:1px solid #bbb;
-		background:#ddd;
-		height:690px;
-		}
-		.sidebar{
-		overflow:hidden;
-		float:left;
-		width:310px;
-		font-size:12px;
-		padding: 10px;
-		background-color:#ddd;
-		border:1px solid #bbb; 
-		height:690px;
-		}
-		.footer{
-		font-size:12px;
-		clear:both;
-		width:auto;
-		}
-		@media screen and (max-width: 1024px){
-		#wrap{
-		width:90%;
-		}
-		}
-		@media screen and (max-width:768px){
-		.sidebar, .content{
-		float:none;
-		display:block;
-		width:auto;
-		}
-		}
-		h1 {
-		color:#555;
-		font-size:20px;
-		margin-bottom:10px;
-		margin-top:10px;
-		}
-				a:link {
-				  color: #08c;
-				}
-				a:visited {
-				  color: #08c;
-				}
-				a:hover {
-				  color: #08c;
-				}
-				a:active {
-				  color: #08c;
-				}
-		.menu {
-		clear:both;
-		width:auto;
-		padding-bottom:13px;
-		}
-		.menu1 {
-		width:360px;
-		margin-bottom:1px;
-	    font-weight:bold;
-		background-color:#4CAF50;
-		padding:6px;
-		color:white;
-		display: inline-block;
-		margin:0;
-		}
-		.menu1 a:link {
-		text-decoration:none;
-		color:white;
-		}
-		.menu1 a:visited{
-		text-decoration:none;
-		color:white;
-		}
-		.menu2 {
-		width:300px;
-		margin-bottom:1px;
-	    font-weight:bold;
-		background-color:#bbb;
-		padding:6px;
-		color:white;
-		display: inline-block;
-		margin:0;
-		}
-		.menu2 a:link{
-		text-decoration:none;
-		color:white;
-		}
-		.menu2 a:visited{
-		text-decoration:none;
-		color:white;
-		}
-		 button {
-         color: #fff;
-         background-color: #08c;
-         border-color: #08c;
-         border:none;
-         padding:8px;
-		 width:137px;
-		 font-size:13px;
-		 font-weight:bold;
-         }
-         .row:after {
-         content: "";
-         display: table;
-         clear: both;
-         }  
-         input[type=text], select, textarea {
-         width: 100%;
-         padding: 5px;
-         border: 1px solid #bbb;
-         border-radius: 1px;
-         resize: vertical;
-		 margin-bottom:5px
-         }
-         label {
-         padding: 5px 5px 5px 0;
-         display: inline-block;
-         }
-         input[type=submit] {
-         background-color: #08c;
-         color: white;
-         padding: 12px 20px;
-         border: none;
-         border-radius: 1px;
-         cursor: pointer;
-         float: right;
-         }
-         input[type=submit]:hover {
-         background-color: #45a049;
-         }
-         .col-25 {
-         float: left;
-         width: 25%;
-         margin-top: 6px;
-         }
-         .col-75 {
-         float: left;
-         width: 75%;
-         margin-top: 6px;
-         }
-         /* Clear floats after the columns */
-         .row:after {
-         content: "";
-         display: table;
-         clear: both;
-         }
-         .list-game {
-         height: 200px;
-         background:white;
-         overflow: scroll;
-		 overflow-x: hidden;
-         width: 100%;
-		 margin-top:2px;
-         padding: 3px;
-         border: 1px solid rgba(0,0,0,0.25);
-         }
-		 .list-game label {
-		 padding: 0;
-		 display: inline-block;
-         } 
-         .list-mangle {
-         height: 596px;
-         background:#fff;
-         overflow: auto;
-		 overflow-x: auto;
-         width: 100%;
-         padding: 4px;
-		 margin-top:8px;
-		 border: 1px solid #ccc;
-         }
-		 table, tr, td {
-		border: none;
-		}
-				.resp-sharing-button__link,
-		.resp-sharing-button__icon {
-		  display: inline-block
-		}
-		
-		.resp-sharing-button__link {
-		  text-decoration: none;
-		  color: #fff;
-		  margin: 0.5em
-		}
-		
-		.resp-sharing-button {
-		  border-radius: 5px;
-		  transition: 25ms ease-out;
-		  padding: 0.5em 0.75em;
-		  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
-		}
-		
-		.resp-sharing-button__icon svg {
-		  width: 1em;
-		  height: 1em;
-		  margin-right: 0.4em;
-		  vertical-align: top
-		}
-		
-		.resp-sharing-button--small svg {
-		  margin: 0;
-		  vertical-align: middle
-		}
-		
-		/* Non solid icons get a stroke */
-		.resp-sharing-button__icon {
-		  stroke: #fff;
-		  fill: none
-		}
-		
-		/* Solid icons get a fill */
-		.resp-sharing-button__icon--solid,
-		.resp-sharing-button__icon--solidcircle {
-		  fill: #fff;
-		  stroke: none
-		}
-		
-		.resp-sharing-button--twitter {
-		  background-color: #55acee
-		}
-		
-		.resp-sharing-button--twitter:hover {
-		  background-color: #2795e9
-		}
-		
-		.resp-sharing-button--pinterest {
-		  background-color: #bd081c
-		}
-		
-		.resp-sharing-button--pinterest:hover {
-		  background-color: #8c0615
-		}
-		
-		.resp-sharing-button--facebook {
-		  background-color: #3b5998
-		}
-		
-		.resp-sharing-button--facebook:hover {
-		  background-color: #2d4373
-		}
-		
-		.resp-sharing-button--tumblr {
-		  background-color: #35465C
-		}
-		
-		.resp-sharing-button--tumblr:hover {
-		  background-color: #222d3c
-		}
-		
-		.resp-sharing-button--reddit {
-		  background-color: #5f99cf
-		}
-		
-		.resp-sharing-button--reddit:hover {
-		  background-color: #3a80c1
-		}
-		
-		.resp-sharing-button--google {
-		  background-color: #dd4b39
-		}
-		
-		.resp-sharing-button--google:hover {
-		  background-color: #c23321
-		}
-		
-		.resp-sharing-button--linkedin {
-		  background-color: #0077b5
-		}
-		
-		.resp-sharing-button--linkedin:hover {
-		  background-color: #046293
-		}
-		
-		.resp-sharing-button--email {
-		  background-color: #777
-		}
-		
-		.resp-sharing-button--email:hover {
-		  background-color: #5e5e5e
-		}
-		
-		.resp-sharing-button--xing {
-		  background-color: #1a7576
-		}
-		
-		.resp-sharing-button--xing:hover {
-		  background-color: #114c4c
-		}
-		
-		.resp-sharing-button--whatsapp {
-		  background-color: #25D366
-		}
-		
-		.resp-sharing-button--whatsapp:hover {
-		  background-color: #1da851
-		}
-		
-		.resp-sharing-button--hackernews {
-		background-color: #FF6600
-		}
-		.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
-		
-		.resp-sharing-button--vk {
-		  background-color: #507299
-		}
-		
-		.resp-sharing-button--vk:hover {
-		  background-color: #43648c
-		}
-		
-		.resp-sharing-button--facebook {
-		  background-color: #3b5998;
-		  border-color: #3b5998;
-		}
-		
-		.resp-sharing-button--facebook:hover,
-		.resp-sharing-button--facebook:active {
-		  background-color: #2d4373;
-		  border-color: #2d4373;
-		}
-		
-		.resp-sharing-button--twitter {
-		  background-color: #55acee;
-		  border-color: #55acee;
-		}
-		
-		.resp-sharing-button--twitter:hover,
-		.resp-sharing-button--twitter:active {
-		  background-color: #2795e9;
-		  border-color: #2795e9;
-		}
-		
-		.resp-sharing-button--tumblr {
-		  background-color: #35465C;
-		  border-color: #35465C;
-		}
-		
-		.resp-sharing-button--tumblr:hover,
-		.resp-sharing-button--tumblr:active {
-		  background-color: #222d3c;
-		  border-color: #222d3c;
-		}
-		
-		.resp-sharing-button--email {
-		  background-color: #777777;
-		  border-color: #777777;
-		}
-		
-		.resp-sharing-button--email:hover,
-		.resp-sharing-button--email:active {
-		  background-color: #5e5e5e;
-		  border-color: #5e5e5e;
-		}
-		
-		.resp-sharing-button--pinterest {
-		  background-color: #bd081c;
-		  border-color: #bd081c;
-		}
-		
-		.resp-sharing-button--pinterest:hover,
-		.resp-sharing-button--pinterest:active {
-		  background-color: #8c0615;
-		  border-color: #8c0615;
-		}
+width:100%;
+border-bottom:1px solid #ccc;
+height:100%;
+padding-bottom: 15px;
+margin-bottom: 20px;
+font-size:14px;
+font-weight:bold;
+}
+#wrap{
+width:1130px;
+margin:0 auto;
+padding:10px;
+background:#fff
+}
+.header{
+height:auto; 
+width:100%;
+margin-top:0px;
+margin-bottom:10px;
+border-top:1px solid #ccc;
+}
+.main-wrap{
+background-color:green;
+}   
+.content{
+float:right;
+width:800px;
+font-size:13px;
+padding: 10px;
+border-top:1px solid #bbb;
+border-bottom:1px solid #bbb;
+border-right:1px solid #bbb;
+background:#ddd;
+height:740px;
+}
+.sidebar{
+overflow:hidden;
+float:left;
+width:310px;
+font-size:13px;
+padding: 10px;
+background-color:#ddd;
+border:1px solid #bbb; 
+height:740px;
+}
+.footer{
+font-size:13px;
+clear:both;
+width:auto;
+}
+
+h1 {
+color:#111;
+font-size:20px;
+margin-bottom:10px;
+margin-top:10px;
+}
+a:link {
+color: #08c;
+}
+a:visited {
+color: #08c;
+}
+a:hover {
+color: #08c;
+}
+a:active {
+color: #08c;
+}
+.menu {
+clear:both;
+width:auto;
+padding-bottom:13px;
+}
+.menu1 {
+width:360px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#4CAF50;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu1 a:link {
+text-decoration:none;
+color:white;
+}
+.menu1 a:visited{
+text-decoration:none;
+color:white;
+}
+.menu2 {
+width:300px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#bbb;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu2 a:link{
+text-decoration:none;
+color:white;
+}
+.menu2 a:visited{
+text-decoration:none;
+color:white;
+}
+button {
+color: #fff;
+background-color: #08c;
+border-color: #08c;
+border:none;
+padding:8px;
+width:135px;
+font-size:13px;
+font-weight:bold;
+}
+.row:after {
+content: "";
+display: table;
+clear: both;
+}  
+input[type=text], select, textarea {
+width: 100%;
+padding: 5px;
+border: 1px solid #bbb;
+border-radius: 1px;
+resize: vertical;
+margin-bottom:12px
+}
+label {
+padding: 5px 5px 5px 0;
+display: inline-block;
+}
+input[type=submit] {
+background-color: #08c;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 1px;
+cursor: pointer;
+float: right;
+}
+input[type=submit]:hover {
+background-color: #45a049;
+}
+.col-25 {
+float: left;
+width: 25%;
+margin-top: 6px;
+}
+.col-75 {
+float: left;
+width: 75%;
+margin-top: 6px;
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+.list-game {
+height: 200px;
+background:white;
+overflow: scroll;
+overflow-x: hidden;
+width: 100%;
+margin-top:2px;
+padding: 3px;
+border: 1px solid rgba(0,0,0,0.25);
+}
+.list-game label {
+padding: 0;
+display: inline-block;
+} 
+.list-mangle {
+height: 641px;
+background:#fff;
+overflow: scroll;
+width: 100%;
+padding: 4px;
+margin-top:8px;
+border: 1px solid #ccc;
+}
+table, tr, td {
+border: none;
+}
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+display: inline-block
+}
+
+.resp-sharing-button__link {
+text-decoration: none;
+color: #fff;
+margin: 0.5em
+}
+
+.resp-sharing-button {
+border-radius: 5px;
+transition: 25ms ease-out;
+padding: 0.5em 0.75em;
+font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+.resp-sharing-button__icon svg {
+width: 1em;
+height: 1em;
+margin-right: 0.4em;
+vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+margin: 0;
+vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+stroke: #fff;
+fill: none
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+fill: #fff;
+stroke: none
+}
+
+.resp-sharing-button--twitter {
+background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+background-color: #5f99cf
+}
+
+.resp-sharing-button--reddit:hover {
+background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+background-color: #046293
+}
+
+.resp-sharing-button--email {
+background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--vk {
+background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+background-color: #3b5998;
+border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+background-color: #2d4373;
+border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+background-color: #55acee;
+border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+background-color: #2795e9;
+border-color: #2795e9;
+}
+
+.resp-sharing-button--tumblr {
+background-color: #35465C;
+border-color: #35465C;
+}
+
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+background-color: #222d3c;
+border-color: #222d3c;
+}
+
+.resp-sharing-button--email {
+background-color: #777777;
+border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+background-color: #5e5e5e;
+border-color: #5e5e5e;
+}
+
+.resp-sharing-button--pinterest {
+background-color: #bd081c;
+border-color: #bd081c;
+}
+
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+background-color: #8c0615;
+border-color: #8c0615;
+}
 </style>
 </head>
 <body>
 <div id="wrap">
-<div class="Menu">
-<span style="font-size:20px"><b>BUANANET MIKROTIK SCRIPT GENERATOR</b></span><br>
-<a href="https://buananetpbun.github.io">HOME</a> | 
-<a href="https://buananetpbun.github.io/vpn-game-generator.html">VPN ROUTING PORT GAME</a> | 
-<a href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN ROUTING IP ADDRESS GAME</a> | 
-<a href="https://buananetpbun.github.io/ecmp.html">LOAD BALANCING ECMP</a> | 
-<a href="https://buananetpbun.github.io/pcc.html">LOAD BALANCING PCC</a> | 
-<a href="https://buananetpbun.github.io/pcc-calculation.html">LB PCC CALCULATION</a> | 
-<a href="https://buananetpbun.github.io/simple-queue-generator.html">SIMPLE QUEUE + TOCKEN BUCKET</a> | 
-<a href="https://buananetpbun.github.io/simple-queue-generator-shared.html">SIMPLE QUEUE + BANDWIDTH SHARED</a> | 
-<a href="https://buananetpbun.github.io/queue-tree-generator-shared.html">QUEUE TREE + BANDWIDTH SHARED</a> | 
-<a href="https://buananetpbun.github.io/remote-ip-public-static.html">REMOTE IP PUBLIC</a> | 
-<a href="https://buananetpbun.github.io/port-knocking-icmp.html">PORT KNOCKING GENERATOR</a>
-</div>			
-		
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- buananetpbun -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9740800920365268"
-     data-ad-slot="2107412109"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script> 
+<div class="logo">	  
+<a href="https://buananetpbun.github.io">BuanaNETPBun.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+</div>	
 <div class="header">	
 <h1>Simple Queue Script Generator For Mikrotik Plus Token Bucket - For IP Subnet /24 Only</h1>
 </div>
     <div class="sidebar">
-		<div style="border-bottom:1px solid #aaa;margin-bottom:10px; height:190px">
+		<div style="margin-bottom:10px; height:190px">
 		 <label>Parent Name Queue</label><br>
          <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
          <label>Target Local IP / Interface</label><br>
@@ -544,6 +528,17 @@
     <div class="content"> 
         <span style="margin-left:2px">Script Generator Result</span>
          <div class="list-mangle">
+		 	<div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;"	
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- MIKROTIK SCRIPT DB3 -->
+			<ins class="adsbygoogle"
+			style="display:inline-block;width:728px;height:90px"
+			data-ad-client="ca-pub-9740800920365268"
+			data-ad-slot="4637807296"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+			</div>
             <table id="showScript" style="padding:5px; white-space: nowrap;">
                <tr>
                   <td>
@@ -565,7 +560,7 @@
    <div class="footer">
 <br>
 
-		<b><span style="font-size:15px; padding-left:10px">Share this tool with your friends</span></b><br>
+		<b><span style="font-size:13px; padding-left:10px">Share this tool with your friends</span></b><br>
 		<!-- Sharingbutton Facebook -->
 		<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbuananetpbun.github.io%2Fsimple-queue-generator.html" target="_blank" rel="noopener" aria-label="">
 		  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
