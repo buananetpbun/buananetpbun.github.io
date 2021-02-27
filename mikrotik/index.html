@@ -33,8 +33,10 @@ body {font-size:13px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI",
 box-sizing: border-box;
 }
 p {
+  display:list-item;
+  list-style: square;
 padding:2px 0 2px 0;
-margin:0 0 0 10px;
+margin:0 0 0 27px;
 }
 .logo {
 padding-bottom:10px;  
@@ -68,7 +70,7 @@ background-color:green;
 float:right;
 width:70%;
 font-size:13px;
-padding: 10px;
+padding: 0px;
 border:1px solid #ddd;
 background:#fff;
 height: 803px;
@@ -91,7 +93,7 @@ width:auto;
 }
 h1 {
 color:#111;
-font-size:22px;
+font-size:20px;
 }
 .active1, .linkPress:hover {
 color: rgb(205, 3, 3) !important;
@@ -212,11 +214,13 @@ border-left:1px solid #ddd;
 <body onload="ContenUrlGet()">
 <div id="wrap">	
 <div class="logo">	 
-<span style="font-size:15px; float:right;padding-top:17px; display:block">Contribution your script <a href="#" onclick="ContenUrlSubmit('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">[Upload]</a> </span>
-<a href="https://buananetpbun.github.io/">BuanaNETPBun.Github.io</a> <img style="margin-left:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<center>
+<a href="https://buananetpbun.github.io">BuanaNETPBun.Github.io</a> <img style="padding-let:25px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 </div>
+</center>
 <div class="header">
-<h1>MikroTik <span style="color:rgb(205, 3, 3)">[ </span>SCRIPT<span style="color:rgb(205, 3, 3)"> ]</span> RouterOS</h1>
+<span style="font-size:15px; float:right;padding-top:5px; display:block">Contribution your script <a href="#" onclick="ContenUrlSubmit('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">[Upload]</a> </span>
+<h1>MIKROTIK <span style="color:rgb(205, 3, 3)">[ </span>SCRIPT<span style="color:rgb(205, 3, 3)"> ]</span> ROUTEROS</h1>
 </div>	
 <div class="sidebar">
 <input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Find Script.." style="width:100%;"> 
