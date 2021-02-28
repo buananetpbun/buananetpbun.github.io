@@ -426,16 +426,9 @@ Copyright 2021 <a href="https://buananetpbun.github.io/mikrotik">Mikrotik Script
 </div>
 </div>
 <script>
-
-    function reloadads1()
-    { 
-        document.getElementById("reloadads1").innerHTML = document.getElementById("reloadads1").innerHTML ;
-    } 
-    function reloadads2()
-    { 
-        document.getElementById("reloadads2").innerHTML = document.getElementById("reloadads2").innerHTML ;
-    } 
-
+function content(text){var element =  document.getElementById("change");element.setAttribute("src", text);}
+function reloadads1(){document.getElementById("reloadads1").innerHTML = document.getElementById("reloadads1").innerHTML;} 
+function reloadads2(){document.getElementById("reloadads2").innerHTML = document.getElementById("reloadads2").innerHTML;} 
 function myFunctionSearch() {
 var input, filter, table, tr, td, i, txtValue;
 input = document.getElementById("myInput");
@@ -450,11 +443,7 @@ if (txtValue.toUpperCase().indexOf(filter) > -1) {
 tr[i].style.display = "";
 } else {
 tr[i].style.display = "none";
-} 
-}       
-}
-}		
-
+}}}}		
 var header = document.getElementById("myTable");
 var btns = header.getElementsByClassName("linkPress");
 for (var i = 0; i < btns.length; i++) {
@@ -462,14 +451,7 @@ btns[i].addEventListener("click", function() {
 var current = document.getElementsByClassName("active1");
 current[0].className = current[0].className.replace(" active1", "");
 this.className += " active1";
-});
-}	
-
-function content(text){
-var element =  document.getElementById("change");
-element.setAttribute("src", text);
-}
-
+})}	
 </script>
 </body>
 </html>
