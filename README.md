@@ -14,5 +14,8 @@ We compile all the scripts we find on the internet and summarize them into one c
 
 Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!
 
-<a target="_blank" href="https://buananetpbun.github.io/mikrotik/" >buananetpbun.github.io/mikrotik</a>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik/" >buananetpbun.github.io/mikrotik</a> by <a target="_blank" href="https://buananetpbun.github.io" >buananetpbun.github.io</a>
+
 </pre>
+
+<img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
