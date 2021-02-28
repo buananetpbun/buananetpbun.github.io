@@ -26,7 +26,9 @@ There are 2 blocking options:
 
 <precd><code class="routeros">/ip firewall filter
 add chain=forward dst-address-list=BLOCK_SITE action=drop</code></precd>
+
 2. Block by redirecting IP and Port
+
 <precd><code class="routeros">/ip firewall nat
 add action=dst-nat chain=dstnat comment="BLOCK WEBSITE" dst-address-list=
 BLOCK_SITE dst-port=80,81,8181,443 protocol=tcp to-addresses=36.86.63.185 to-ports=80</code></precd>
