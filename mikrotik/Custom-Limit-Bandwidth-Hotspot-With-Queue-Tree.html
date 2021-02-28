@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Custom Limit Bandwidth Hotspot With Queue Tree - MikroTik Script RouterOS</title>
+<meta content='Custom Limit Bandwidth Hotspot With Queue Tree - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Custom Limit Bandwidth Hotspot With Queue Tree - MikroTik Script RouterOS</h1>
+
+How To Custom Limit Bandwidth Hotspot With Queue Tree
+
+1. The Rate Limit (rx / tx) is left blank
+2. If using the user manager, just enter the hotspot profile name into the Group name on usermanager, don't forget to leave the Rate limit blank
+3. Adjust the parent name, in my example I use "7.ALL HTSPOT"
+
+When the user logs in. This script will automatically add new input to the queue tree and mangle, and will delete it again when the user logs out. shortcomings of this script I made uploads and downloads in one package, if you want to separate, please modify it as needed :)
+
+# SCRIPT ON LOGIN
+
+<precd><code class="routeros">:local datetime [/system clock get date];
+:local timedate [/system clock get time];
+[/ip firewall mangle add action=mark-packet chain=prerouting dst-address="$address" new-packet-mark=("paket-"."$address") passthrough=no comment=("paket-"."$address")];
+[/ip firewall mangle add action=mark-packet chain=forward dst-address="$address" new-packet-mark=("paket-"."$address") passthrough=no comment=("paket-"."$address")];
+[/queue tree add max-limit=2M name=("$user"." -> "."$address") comment=("Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]") packet-mark=("paket-"."$address") queue="HS-Down" parent="7.ALL HOTSPOT"];
+:log warning ("--> [ $user ] Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")</code></precd>
+
+# SCRIPT ON LOGOUT
+
+<precd><code class="routeros">/queue tree remove [find packet-mark=("paket-"."$address")] ;
+/ip firewall mangle remove [find where comment=("paket-"."$address")]
+:log warning ("--> [ $user ] Logout at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")</code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
