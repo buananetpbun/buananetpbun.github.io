@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Custom Limit Bandwidth Hotspot With Queue Simple - MikroTik Script RouterOS</title>
+<meta content='Custom Limit Bandwidth Hotspot With Queue Simple - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Custom Limit Bandwidth Hotspot With Queue Simple - MikroTik Script RouterOS</h1>
+How To Custom Limit Bandwidth Hotspot With Queue Simple
+
+1. The Rate Limit (rx / tx) is left blank
+2. If there is a parent, just add the script for the parent example parent = "3.PREMIUM"
+3. If you use the user manager, just enter the hotspot profile name into the Group name on usermanager, don't forget to leave the Rate limit empty
+
+# SCRIPT ON LOGIN
+
+<precd><code class="routeros">:local datetime [/system clock get date];
+:local timedate [/system clock get time];
+/queue simple add name="$user -> $address" comment=("Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]") target="$address" max-limit=1M/1M
+:log warning ("--> [ $user ] Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]") </code></precd>
+
+# SCRIPT ON LOGOUT
+
+<precd><code class="routeros">/queue simple remove [find name="$user -> $address"] ;
+:log warning ("--> [ $user ] Logout at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")Script </code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
