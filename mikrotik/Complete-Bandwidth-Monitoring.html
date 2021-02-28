@@ -38,14 +38,14 @@ Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
 # SCRIPT MIKROTIK BANDWIDTH MONITORING
 # Version 1.0
 ################################################################
-# Fungsi untuk reset Bulanan Setiap tanggal 1
+# Function for Monthly reset Every 1st
 ################################################################
 :local varDate;
 :local varDay;
 :set varDate [/system clock get date];
 :set varDay [:pick $varDate 4 6];
 :if ($varDay = "01") do={ 
-# jika har ini tanggal 1 reset RXTX ke nilai awal
+# if today is the 1st reset the RXTX to its initial value
 /system scheduler set RXByte.log comment="1" on-event="1"
 /system scheduler set RXByteCur.log comment="1" on-event="1"
 /system scheduler set TXByte.log comment="1" on-event=$RXByteCount
@@ -163,8 +163,231 @@ don't forget to change the ether name in the script according to the interface y
 Don't forget to change the total quota given by the ISP for example, is 500GB
 
 <precd><code class="routeros">:local TOTQuota 500;</code></precd>
+
+<h2>What if we want to monitor bandwidth monitoring and display Monitoring View in the log so that each can be set the time?</h2>
+
+<precd><code class="routeros">/system scheduler add interval = "00: 0: 030" name = "VIEW-LOG" start-time = startup</code></precd>
+
+Then copy and paste the script below into the VIEW-LOG scheduler file
+
+<precd><code class="routeros">################################################################
+# Script by Agus Ramadhani
+# fb.com/buananet.pangkalanbun
+# http://www.o-om.com
+# SCRIPT MIKROTIK BANDWIDTH MONITORING
+# Version 1.0
+################################################################
+:local INTMon WAN-WARNET;
+# silahkan ganti dengan interface (ether) yang ingin dipantau
+:local TOTQuota 500;
+# Set total quota dalam GB misalkan ISP hanya memberi hanya 500GB
+################################################################
+:local RXByteCur [/interface get $INTMon rx-byte];
+# Mengambil nilai RX-Byte saat ini pada interface terpilih
+:local RXByte [/system scheduler get RXByte.log on-event];
+# Mengambil nilai RX-Byte sebelumnya dalam file log RXByte
+################################################################
+:local TXByteCur [/interface get $INTMon tx-byte];
+# Mengambil nilai TX-Byte saat ini pada interface terpilih
+:local TXByte [/system scheduler get TXByte.log on-event];
+# Mengambil nilai TX-Byte saat ini dalam file Log TXByte
+################################################################
+:local RXTot ($RXByte+$RXByteCur);
+:local RXMB ($RXTot / 1024 / 1024);
+:local RXGB ($RXTot  / 1024 / 1024 / 1024);
+# kalkulasi nilai RX-BYTE dalam MB dan GB
+################################################################
+:local TXTot ($TXByte+$TXByteCur);
+:local TXMB ($TXTot / 1024 / 1024);
+:local TXGB ($TXTot / 1024 / 1024 / 1024);
+# kalkulasi nilai TX-BYTE dalam MB dan GB
+################################################################
+:local RXTX ($RXTot+$TXTot);
+:local RXTXMB ($RXMB+$TXMB);
+:local RXTXGB ($RXGB+$TXGB);
+# Total kalkulasi nilai Total RXTX
+################################################################
+:log warning "###############################################";
+:log warning "BANDWIDTH MONITORING [ Router: $[/system identity get name] ]";
+:log warning "###############################################";
+:log warning "Interface Monitoring For Ether: $INTMon";
+/interface monitor-traffic [/interface find name=$INTMon] once do={
+:local tx (tx-bits-per-second / 1024);
+:local rx (rx-bits-per-second / 1024);
+:log warning "Live Monitor RX = $rx kbps TX = $tx kbps";
+}
+# hanya untuk menampilkan rxtx saat ini
+###############################################################
+:log warning "Total RX = $RXGB GB / $RXMB MB / $RXTot Bytes";
+:log warning "Total TX = $TXGB GB / $TXMB MB / $TXTot Bytes";
+:log warning "Total (RX+TX) = $RXTXGB GB / $RXTXMB MB / $RXTX Bytes";
+:local percent ($RXTXGB*100 / $TOTQuota);
+:log error "Used Quota on This Month = $RXTXGB GB = $percent% from $TOTQuota GB";
+:log warning "###############################################";
+# Tampilkan Info pada LOG Mikrotik 
+################################################################
+:local varDate;
+:local varDay;
+:set varDate [/system clock get date];
+:set varDay [:pick $varDate 4 6];
+:if ($varDay = "29") do={ 
+# jika har ini tanggal 29 aktfikan RESET-RXTX
+/system scheduler enable [/system scheduler find name="RESET-RXTX"];
+}
+################################################################</code></precd>
+
+and finally replace the contents of the BANDWIDTH-MONITORING Scheduler file with the script below
+
+<precd><code class="routeros">################################################################
+# Script by Agus Ramadhani
+# fb.com/buananet.pangkalanbun
+# http://www.o-om.com
+# SCRIPT MIKROTIK BANDWIDTH MONITORING
+# Version 1.0
+################################################################
+:local INTMon WAN-WARNET;
+# silahkan ganti dengan interface (ether) yang ingin dipantau
+:local RXByteCur [/interface get $INTMon rx-byte];
+# Mengambil nilai RX-Byte saat ini pada interface terpilih
+################################################################
+:local RXByteCount [/system scheduler get RXByteCur.log on-event];
+# Mengambil nilai RX-byte dalam file log RXByteCur
+################################################################
+:local RXByte [/system scheduler get RXByte.log on-event];
+# Mengambil nilai RX-Byte sebelumnya dalam file log RXByte
+################################################################
+:local TXByteCur [/interface get $INTMon tx-byte];
+# Mengambil nilai TX-Byte saat ini pada interface terpilih
+################################################################
+:local TXByteCount [/system scheduler get TXByteCur.log on-event];
+# Mengambil nilai TX-Byte saat ini dalam file log TXByteCur
+################################################################
+:local TXByte [/system scheduler get TXByte.log on-event];
+# Mengambil nilai TX-Byte saat ini dalam file Log TXByte
+################################################################
+:local ifReboot 0;
+# kita perlu mengetahui apakah router reboot dengan memberi flag 0 
+################################################################
+:if ($RXByteCur>=$RXByteCount) do={} else={:set $ifReboot ($ifReboot+1);}
+:if ($TXByteCur>=$TXByteCount) do={} else={:set $ifReboot ($ifReboot+1);}
+# Tandai jika nilai RXTX-Byte saat ini lebih besar dari RXTX-Byte pada log
+################################################################
+:if ($ifReboot>=1) do={
+# Cek Jika Router Rebbot
+################################################################
+:set $RXByte ($RXByte+$RXByteCount);
+/system scheduler set RXByte.log comment=$RXByte on-event=$RXByte
+# jika komputer reboot jumlahkan total RX-Byte
+################################################################
+:set $TXByte ($TXByte+$TXByteCount);
+/system scheduler set TXByte.log comment=$TXByte on-event=$TXByte
+} else={
+# jika komputer reboot jumlahkan total TX-Byte
+################################################################
+}
+:set RXByteCount ($RXByteCur);
+/system scheduler set RXByteCur.log comment=$RXByteCount on-event=$RXByteCount
+# Perbaharui nilai RX-Byte saat ini pada file log RXByteCur
+################################################################
+:set TXByteCount ($TXByteCur);
+/system scheduler set TXByteCur.log comment=$TXByteCount on-event=$TXByteCount
+# Perbaharui nilai TX-Byte saat ini pada file log TXByteCur
+################################################################</code></precd>
+
+Now we can change each time between the monitoring and the View log so they don't run together
+
+<h2>If you want to display monitoring info in the system note terminal</h2>
+
+First add a scheduler named VIEW-LOG-NOTE
+
+precd><code class="routeros">/system scheduler add interval="01:00:000" name="VIEW-LOG-NOTE" start-time=startup</code></precd>
+
+Then copy and paste the script below into the VIEW-LOG-NOTE scheduler file
+
+precd><code class="routeros">################################################################
+# Script by Agus Ramadhani
+# fb.com/buananet.pangkalanbun
+# http://www.o-om.com
+# SCRIPT MIKROTIK BANDWIDTH MONITORING
+# Version 1.0
+################################################################
+:local INTMon WAN_WARNET;
+# silahkan ganti dengan interface (ether) yang ingin dipantau
+:local TOTQuota 500;
+# Set total quota dalam GB misalkan ISP hanya memberi hanya 500GB
+################################################################
+:local RXByteCur [/interface get $INTMon rx-byte];
+# Mengambil nilai RX-Byte saat ini pada interface terpilih
+:local RXByte [/system scheduler get RXByte.log on-event];
+# Mengambil nilai RX-Byte sebelumnya dalam file log RXByte
+################################################################
+:local TXByteCur [/interface get $INTMon tx-byte];
+# Mengambil nilai TX-Byte saat ini pada interface terpilih
+:local TXByte [/system scheduler get TXByte.log on-event];
+# Mengambil nilai TX-Byte saat ini dalam file Log TXByte
+################################################################
+:local RXTot ($RXByte+$RXByteCur);
+:local RXMB ($RXTot / 1024 / 1024);
+:local RXGB ($RXTot  / 1024 / 1024 / 1024);
+# kalkulasi nilai RX-BYTE dalam MB dan GB
+################################################################
+:local TXTot ($TXByte+$TXByteCur);
+:local TXMB ($TXTot / 1024 / 1024);
+:local TXGB ($TXTot / 1024 / 1024 / 1024);
+# kalkulasi nilai TX-BYTE dalam MB dan GB
+################################################################
+:local RXTX ($RXTot+$TXTot);
+:local RXTXMB ($RXMB+$TXMB);
+:local RXTXGB ($RXGB+$TXGB);
+# Total kalkulasi nilai Total RXTX
+################################################################
+:local percent ($RXTXGB*100 / $TOTQuota);
+:local logcontenttemp "" 
+:local logcontent "" 
+:set logcontenttemp ""
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "#######################################################"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "BANDWIDTH MONITORING [ Router Identity: $[/system identity get name] ]"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "#######################################################"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "Interface Monitoring For: $INTMon"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "Total RX = $RXGB GB / $RXMB MB / $RXTot Bytes"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "Total TX = $TXGB GB / $TXMB MB / $TXTot Bytes"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "Total (RX+TX) = $RXTXGB GB / $RXTXMB MB / $RXTX Bytes"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "Used Quota on This Month $RXTXGB GB = $percent% from $TOTQuota GB"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontenttemp "#######################################################"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:if ($RXTXGB >= $TOTQuota) do={
+:set logcontenttemp "Your Quota is OVERLOAD :("
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+} else={
+:set logcontenttemp "Your Quota is SAVE :)"
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+}
+:set logcontenttemp ""
+:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+/system note set note=$logcontent
+# Show Info on the Mikrotik LOG
+################################################################
+:local varDate;
+:local varDay;
+:set varDate [/system clock get date];
+:set varDay [:pick $varDate 4 6];
+:if ($varDay = "29") do={ 
+# if today is the 29th activate RESET-RXTX
+/system scheduler enable [/system scheduler find name="RESET-RXTX"];
+}</code></precd>
+
+good luck, good luck :)
+
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
