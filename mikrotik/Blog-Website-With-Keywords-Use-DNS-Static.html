@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Blog Website With Keywords Use DNS Static - MikroTik Script RouterOS</title>
+<meta content='Blog Website With Keywords Use DNS Static - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Blog Website With Keywords Use DNS Static - MikroTik Script RouterOS</h1>
+How to block sites with static DNS using an automatic script based on selected keywords.
+
+Note:
+1. Don't change the rules first, the script, especially for keywords (keywords), preferably the keyword because for example I input seconds and a compass
+2. By default, the website that I blog I get used to local ip 127.0.0.1 you can send it to another site, for example for positive internet ip on ip 36.86.63.185
+3. For TTL by default for 24 hours (1s), just change it, for example, only 6 hours
+4.Please enter the Mikrotik shcedule or via a free script and it is better if the time is running, not too fast, I personally set it for only 10 minutes
+5. This script eats up a little of resources so sorry for 750 and below it should take a little longer.
+6. I have made a complete description, sorry, my English is a bit messy: p good luck ...
+
+Make sure to only use Mikrotik DNS: 
+
+<precd><code class="routeros">/ip firewall nat
+add action=redirect chain=dstnat comment=DNS dst-port=53 protocol=tcp to-ports=53
+add action=redirect chain=dstnat dst-port=53 protocol=udp to-ports=53 </code></precd>
+Paste this script on shcedule
+
+<precd><code class="routeros">##########################################################################
+# Scrypt by BuanaNET
+# fb.com/buananet.pangkalanbun
+# Url Blocked From DNS Static
+##########################################################################
+# Find all entry on dns cache
+:foreach i in=[/ip dns cache all find where (name~"poker" || name~"porn" || name~"cheat" || name~"detik" || 
+name~"kompas") && (type="A") ] do={
+# find and filtering keyword and only find record for type A
+# for keyword just add keyword || name~"KEYWORD") before && (type="A")
+##########################################################################
+:local tmpDNSsite [/ip dns cache get $i name];
+:local tmpDNSip [/ip dns cache get $i address];
+# save to local cache by string
+##########################################################################
+delay delay-time=10ms
+# wait for 10ms
+##########################################################################
+:if ( [/ip dns static find where name=$tmpDNSsite ] = "") do={ 
+# chek for no more duplicate site on cache
+##########################################################################
+:log warning ("Added site to block on dns: $tmpDNSsite : $tmpDNSip");
+# show info on warning log
+##########################################################################
+/ip dns static add name=$tmpDNSsite address=127.0.0.1 ttl="1d 00:00:00" comment="Site Block for $tmpDNSsite : $tmpDNSip";
+# add site to dns static entry if null
+# you can change address=127.0.0.1 to another ip address or your bloked site info like Internet positif 36.86.63.185
+# you can change for how long TTL time can bock for site
+##########################################################################
+}
+}
+# end script
+########################################################################## </code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
+Blog Website With Keywords Use DNS Static
