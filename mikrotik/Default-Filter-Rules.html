@@ -17,8 +17,7 @@
 <h1>Default Filter Rules - MikroTik Script RouterOS</h1>
 Default Filter rules mikrotik after installation or after reset
 
-<precd><code class="routeros"> 
-/ip firewall filter
+<precd><code class="routeros">/ip firewall filter
 add action=accept chain=input comment=\
     "defconf: accept established,related,untracked" connection-state=\
     established,related,untracked
