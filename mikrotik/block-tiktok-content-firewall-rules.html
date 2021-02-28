@@ -3,8 +3,8 @@
 <head>
 <meta charset='utf-8'/>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<title>How To Block Tiktok use TLS - Mikrotik Script</title>
-<meta content='How To Block Tiktok TLS - Mikrotik Script' name='description'/>
+<title>How To Block Tiktok use Content Firewall - Mikrotik Script</title>
+<meta content='How To Block Tiktok use Content Firewall  - Mikrotik Script' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
 <link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
@@ -14,16 +14,14 @@
 </head>  
 <body>
 <pre>
-<h1>How To Block Tiktok TLS - Mikrotik Script</h1>
-Simple How To Block Tiktok Aplication On RouterOS
+<h1>How To Block Tiktok use Content Firewall  - Mikrotik Script</h1>
+Simple How To Block Tiktok Aplication Use "Content" Firewall Rules RouterOS
 
 <precd><code class="routeros">/ip firewall filter
-add action=drop chain=forward protocol=tcp tls-host=*.musical.ly
-add action=drop chain=forward content=tiktokv.com 
-add action=drop chain=forward content=musical.ly
-add action=drop chain=forward content=tiktok</code></precd>
+add action=drop chain=forward content="tiktokv.com" 
+add action=drop chain=forward content="musical.ly"
+add action=drop chain=forward content=".tiktok."</code></precd>
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
 <a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a> 
