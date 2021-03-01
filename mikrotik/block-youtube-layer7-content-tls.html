@@ -20,9 +20,9 @@ How to Block Youtube with "Layer 7" or "Content" Or "TLS"
 Block Youtube With "Layer-7"
 
 <precd><code class="routeros">/ip firewall layer7-protocol
-add name=Tiktok regexp="^.+(youtube.com|googlevideo.com).*\$"
+add name=Youtube regexp="^.+(youtube.com|googlevideo.com).*\$"
 /ip firewall filter
-add action=drop chain=forward comment="BLOCK TIKTOK" layer7-protocol=Tiktok"</code></precd>
+add action=drop chain=forward layer7-protocol=Youtube</code></precd>
 
 Block Youtube With "Content"
 
