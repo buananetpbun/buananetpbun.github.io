@@ -20,7 +20,7 @@ How to Block Facebook with "Layer 7" or "Content" Or "TLS"
 Block Facebook With "Layer-7"
 
 <precd><code class="routeros">/ip firewall layer7-protocol
-add name=Facebook regexp="^.+(facebook.com|fbcdn.com).*\$"
+add name=Facebook regexp="^.+(facebook.com|fbcdn.net).*\$"
 /ip firewall filter
 add action=drop chain=forward layer7-protocol=Facebook</code></precd>
 
@@ -28,7 +28,7 @@ Block Facebook With "Content"
 
 <precd><code class="routeros">/ip firewall filter
 add action=drop chain=forward content="facebook.com" 
-add action=drop chain=forward content="fbcdn.com"
+add action=drop chain=forward content="fbcdn.net"
 add action=drop chain=forward content=".facebook."
 add action=drop chain=forward content=".fbcdn."</code></precd>
 
@@ -36,7 +36,7 @@ Block Facebook With "TLS"
 
 <precd><code class="routeros">/ip firewall filter
 add action=drop chain=forward protocol=tcp tls-host="facebook.com"
-vadd action=drop chain=forward protocol=tcp tls-host="fbcdn.com"
+vadd action=drop chain=forward protocol=tcp tls-host="fbcdn.net"
 add action=drop chain=forward protocol=tcp tls-host="*.facebook.*"
 add action=drop chain=forward protocol=tcp tls-host="*.fbcdn.*"</code></precd>
 </pre>
