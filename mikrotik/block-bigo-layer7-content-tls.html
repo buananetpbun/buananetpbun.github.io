@@ -3,8 +3,8 @@
 <head>
 <meta charset='utf-8'/>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<title>Block Twitter with "Layer 7" or "Content" Or "TLS" - MikroTik Script RouterOS</title>
-<meta content='Block Twitter with "Layer 7" or "Content" Or "TLS" - MikroTik RouterOS Script DataBase' name='description'/>
+<title>Block Bigo with "Layer 7" or "Content" Or "TLS" - MikroTik Script RouterOS</title>
+<meta content='Block Bigo with "Layer 7" or "Content" Or "TLS" - MikroTik RouterOS Script DataBase' name='description'/>
 <meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
 <meta content='index, follow, noodp' name='robots'/>
 <link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
@@ -14,31 +14,27 @@
 </head>  
 <body>
 <pre>
-<h1>Block Twitter with "Layer 7" or "Content" Or "TLS" - MikroTik Script RouterOS</h1>
-How to Block Twitter with "Layer 7" or "Content" Or "TLS"
+<h1>Block Bigo with "Layer 7" or "Content" Or "TLS" - MikroTik Script RouterOS</h1>
+How to Block Bigo with "Layer 7" or "Content" Or "TLS"
 
-Block Twitter With "Layer-7"
+Block Bigo With "Layer-7"
 
 <precd><code class="routeros">/ip firewall layer7-protocol
-add name=Twitter regexp="^.+(twitter.com|twimg.com).*\$"
+add name=Telegram regexp="^.+(bigo.tv).*\$"
 /ip firewall filter
-add action=drop chain=forward layer7-protocol=Twitter</code></precd>
+add action=drop chain=forward layer7-protocol=Telegram</code></precd>
 
-Block Twitter With "Content"
-
-<precd><code class="routeros">/ip firewall filter
-add action=drop chain=forward content="twitter.com" 
-add action=drop chain=forward content=".twitter."
-add action=drop chain=forward content="twimg.com" 
-add action=drop chain=forward content=".twimg."</code></precd>
-
-Block Twitter With "TLS"
+Block Telegram With "Content"
 
 <precd><code class="routeros">/ip firewall filter
-add action=drop chain=forward protocol=tcp tls-host="twitter.com"
-add action=drop chain=forward protocol=tcp tls-host="*.twitter.*"
-add action=drop chain=forward protocol=tcp tls-host="twimg.com"
-add action=drop chain=forward protocol=tcp tls-host="*.twimg.*"</code></precd>
+add action=drop chain=forward content="bigo.tv" 
+add action=drop chain=forward content=".bigo."</code></precd>
+
+Block Telegram With "TLS"
+
+<precd><code class="routeros">/ip firewall filter
+add action=drop chain=forward protocol=tcp tls-host="bigo.tv"
+add action=drop chain=forward protocol=tcp tls-host="*.bigo.*"</code></precd>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
