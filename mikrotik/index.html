@@ -1,191 +1,157 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset='utf-8'/>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<title>Mikrotik LB PCC / Load Balancing PCC Calculation - BuanaNET Secure!</title>
-<meta content='Mikrotik LB PCC / Load Balancing PCC Calculation - BuanaNET Secure!' name='description'/>
-<meta content=', load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<title>MikroTik Script RouterOS - BuanaNETPBun.Github.io</title>
+<meta content='Complete MikroTik RouterOS Script DataBase Unoffical - BuanaNETPBun.Github.io' name='description'/>
+<meta content='RouterOS, Mikrotik Script, load balancing, pcc, LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta http-equiv="expires" content="0">
 <meta content='index, follow, noodp' name='robots'/>
-<link rel="shortcut icon" href="https://www.o-om.com/favicon.ico" type="image/x-icon"> 
+<meta property="og:title" content="MikroTik RouterOS Script - BuanaNETPBun">
+<meta property="og:description" content="MikroTik RouterOS Script DataBase Unoffical - BuanaNETPBun">
+<meta property="og:image" content="https://buananetpbun.github.io/mikrotik/img/mikrotik-routeros-script-database.png">
+<meta property="og:image:alt" content="Mikrotik RouterOS Script">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buananetpbun.github.io/mikrotik/">	
+<link rel="shortcut icon" href="https://www.o-om.com/favicon.ico" type="image/x-icon">	
 <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
-/* --------------------------------------------
+/* ----------------------------------------------
 #################################################
-# Mikrotik LB PCC / Load Balancing PCC Calculation
-# Date/Time : 11/8/2020, 12:10:14 AM
-# Designer  : Agus Ramadhani / BuanaNET
-# Version   : v1.0 Beta
+# MIKROTIK RouterOS [ SCRIPT ]  DATABASE
+# Date/Time : 01/02/2021, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNETPbun
 # Site      : http://www.o-om.com
 # Sosmed    : https://fb.me/buananet.pbun	
 #################################################
 ----------------------------------------------- */  
 *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
 body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-body { font-size:13px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
-html, body {
-height: 100%;
-widht:100%;
-margin-top: 0px;
-padding:0;
-}
+body {font-size:13px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
 * {
 box-sizing: border-box;
 }
+p {
+display:list-item;
+list-style: square;
+padding:3px 0 3px 0;
+margin:0 0 0 22px;
+color:#999
+}
 .logo {
+padding-bottom:10px;  
 color: #111;
 text-decoration:none;
-font-size:27px;
+font-size:30px;
 font-weight:bold; 
 }	
 .logo a{
 color:#111 !important;
 text-decoration:none !important;
+font-size:30px;
 }
-
-.Menu{
-width:100%;
-border-bottom:1px solid #ccc;
-height:100%;
-padding-bottom: 15px;
-margin-bottom: 20px;
-font-size:14px;
-font-weight:bold;
-}
-
 #wrap{
-width:750px;
+width:1080px;
 margin:0 auto;
-padding:10px;
 }
 .header{
 height:auto; 
 width:100%;
-margin-top:0px;
-margin-bottom:10px;
-border-top:1px solid #ccc;
+padding:10px;
+background:#111;
+color:#fff;
+border-top:1px solid #ddd;
+border-left:1px solid #ddd;
+border-right:1px solid #ddd;
+}
+.header a{
+color:#a8328b !important;
+text-decoration:none !important;
 }
 .main-wrap{
-background-color:#08c;
+background-color:green;
 }     
 .content{
 float:right;
-width:500px;
-height:370px;
-font-size:12px;
-padding: 10px;
-border-top:1px solid #bbb; 
-border-bottom:1px solid #bbb; 
-border-right:1px solid #bbb; 
-background:#ddd;
+width:70%;
+font-size:13px;
+padding: 0px;
+border:1px solid #ddd;
+background:#fff;
+height: 750px;
 }
 .sidebar{
 overflow:hidden;
 float:left;
-width:230px;
-height:370px;
-font-size:12px;
+width:30%;
+font-size:13px;
 padding: 10px;
-background-color:#ddd;
-border:1px solid #bbb; 
+background-color:#eee;
+border:1px solid #ddd; 
+height: 750px;
 }
 .footer{
-font-size:12px;
+border-top:4px solid #a8328b;
+padding:10px;
+font-size:13px;
+background:#fff;
+color:#111;
 clear:both;
 width:auto;
 }
-
+.footer a{
+color:#a8328b !important;
+}
 h1 {
-color:#111;
+color:#fff;
 font-size:20px;
-margin-bottom:10px;
-margin-top:10px;
+margin-top:-2px;
+}
+.active1, .linkPress:hover {
+color:#a8328b !important;
+font-weight:bold
 }
 a:link {
-color: #08c;
+color: #333;
+text-decoration:none
 }
 a:visited {
-color: #08c;
+color: #333;
+text-decoration:none
 }
 a:hover {
-color: #08c;
+color: #333;
 }
 a:active {
-color: #08c;
-}
-.menu {
-clear:both;
-width:auto;
-padding-bottom:13px;
-}
-.menu1 {
-width:360px;
-margin-bottom:1px;
-font-weight:bold;
-background-color:#4CAF50;
-padding:6px;
-color:white;
-display: inline-block;
-margin:0;
-}
-.menu1 a:link {
-text-decoration:none;
-color:white;
-}
-.menu1 a:visited{
-text-decoration:none;
-color:white;
-}
-.menu2 {
-width:300px;
-margin-bottom:1px;
-font-weight:bold;
-background-color:#bbb;
-padding:6px;
-color:white;
-display: inline-block;
-margin:0;
-}
-.menu2 a:link{
-text-decoration:none;
-color:white;
-}
-.menu2 a:visited{
-text-decoration:none;
-color:white;
+color: #333;
 }
 button {
 color: #fff;
-background-color: #08c;
-border-color: #08c;
+background-color: #a8328b;
+border-color: #a8328b;
+border-radius: 2px;
 border:none;
-padding:8px;
-width:100%;
+padding:5px;
+width:70px;
 font-size:13px;
 font-weight:bold;
 }
-.row:after {
-content: "";
-display: table;
-clear: both;
-}  
 input[type=text], select, textarea {
 width: 100%;
 padding: 5px;
-border: 1px solid #bbb;
-border-radius: 1px;
+border: 1px solid #ddd;
+border-radius: 2px;
 resize: vertical;
-margin-bottom:5px
 }
 label {
 padding: 5px 5px 5px 0;
 display: inline-block;
 }
 input[type=submit] {
-background-color: #08c;
+background-color: #4CAF50;
 color: white;
-padding: 12px 20px;
+padding: 13px 20px;
 border: none;
 border-radius: 1px;
 cursor: pointer;
@@ -194,16 +160,6 @@ float: right;
 input[type=submit]:hover {
 background-color: #45a049;
 }
-.col-25 {
-float: left;
-width: 25%;
-margin-top: 6px;
-}
-.col-75 {
-float: left;
-width: 75%;
-margin-top: 6px;
-}
 /* Clear floats after the columns */
 .row:after {
 content: "";
@@ -211,390 +167,277 @@ display: table;
 clear: both;
 }
 .list-game {
-height: 200px;
+border-radius: 2px;
+height:685px;
 background:white;
 overflow: scroll;
 overflow-x: hidden;
 width: 100%;
-margin-top:2px;
-padding: 3px;
-border: 1px solid rgba(0,0,0,0.25);
+margin-top:10px;
+padding: 0px;
+border: 1px solid #ddd;
 }
 .list-game label {
 padding: 0;
 display: inline-block;
 } 
 .list-mangle {
-height: 320px;
+height: 737px;
 background:#fff;
-overflow: auto;
-overflow-x: auto;
 width: 100%;
-padding: 4px;
-margin-top:8px;
-border: 1px solid #ccc;
-
+padding-left: 8px;
+padding-right: 10px;
+margin:0;
+border: 0px solid #ccc;
 }
-table, tr, td {
-border: none;
+.mytable { overflow-x:hidden;
+height:218px;
+margin:0;
+border: 0px solid #ddd;
 }
 table {
-font-family: arial, sans-serif;
-border-collapse: collapse;
+border-collapse:collapse;
 width: 100%;
 }
-
-td, th {
-border: 1px solid #dddddd;
-text-align: left;
-padding: 8px;
+tr{
+width:100%;
+border: 1px solid #f0f0f0;
+background: #f5f5f5;
 }
-.resp-sharing-button__link,
-.resp-sharing-button__icon {
-display: inline-block
+tr:nth-child(even) {
+background: #fff;
+width:100%;
 }
-
-.resp-sharing-button__link {
-text-decoration: none;
-color: #fff;
-margin: 0.5em
+@media screen and (max-width: 1024px){
+#wrap{
+width:100%;
 }
-
-.resp-sharing-button {
-border-radius: 5px;
-transition: 25ms ease-out;
-padding: 0.5em 0.75em;
-font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+.sidebar {
+border-left:1px solid #ddd;
 }
-
-.resp-sharing-button__icon svg {
-width: 1em;
-height: 1em;
-margin-right: 0.4em;
-vertical-align: top
 }
-
-.resp-sharing-button--small svg {
-margin: 0;
-vertical-align: middle
+@media screen and (max-width:768px){
+.sidebar, .content{
+float:none;
+display:block;
+width:auto;
 }
-
-/* Non solid icons get a stroke */
-.resp-sharing-button__icon {
-stroke: #fff;
-fill: none
+.sidebar {
+border-left:1px solid #ddd;
 }
-
-/* Solid icons get a fill */
-.resp-sharing-button__icon--solid,
-.resp-sharing-button__icon--solidcircle {
-fill: #fff;
-stroke: none
-}
-
-.resp-sharing-button--twitter {
-background-color: #55acee
-}
-
-.resp-sharing-button--twitter:hover {
-background-color: #2795e9
-}
-
-.resp-sharing-button--pinterest {
-background-color: #bd081c
-}
-
-.resp-sharing-button--pinterest:hover {
-background-color: #8c0615
-}
-
-.resp-sharing-button--facebook {
-background-color: #3b5998
-}
-
-.resp-sharing-button--facebook:hover {
-background-color: #2d4373
-}
-
-.resp-sharing-button--tumblr {
-background-color: #35465C
-}
-
-.resp-sharing-button--tumblr:hover {
-background-color: #222d3c
-}
-
-.resp-sharing-button--reddit {
-background-color: #5f99cf
-}
-
-.resp-sharing-button--reddit:hover {
-background-color: #3a80c1
-}
-
-.resp-sharing-button--google {
-background-color: #dd4b39
-}
-
-.resp-sharing-button--google:hover {
-background-color: #c23321
-}
-
-.resp-sharing-button--linkedin {
-background-color: #0077b5
-}
-
-.resp-sharing-button--linkedin:hover {
-background-color: #046293
-}
-
-.resp-sharing-button--email {
-background-color: #777
-}
-
-.resp-sharing-button--email:hover {
-background-color: #5e5e5e
-}
-
-.resp-sharing-button--xing {
-background-color: #1a7576
-}
-
-.resp-sharing-button--xing:hover {
-background-color: #114c4c
-}
-
-.resp-sharing-button--whatsapp {
-background-color: #25D366
-}
-
-.resp-sharing-button--whatsapp:hover {
-background-color: #1da851
-}
-
-.resp-sharing-button--hackernews {
-background-color: #FF6600
-}
-.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
-
-.resp-sharing-button--vk {
-background-color: #507299
-}
-
-.resp-sharing-button--vk:hover {
-background-color: #43648c
-}
-
-.resp-sharing-button--facebook {
-background-color: #3b5998;
-border-color: #3b5998;
-}
-
-.resp-sharing-button--facebook:hover,
-.resp-sharing-button--facebook:active {
-background-color: #2d4373;
-border-color: #2d4373;
-}
-
-.resp-sharing-button--twitter {
-background-color: #55acee;
-border-color: #55acee;
-}
-
-.resp-sharing-button--twitter:hover,
-.resp-sharing-button--twitter:active {
-background-color: #2795e9;
-border-color: #2795e9;
-}
-
-.resp-sharing-button--tumblr {
-background-color: #35465C;
-border-color: #35465C;
-}
-
-.resp-sharing-button--tumblr:hover,
-.resp-sharing-button--tumblr:active {
-background-color: #222d3c;
-border-color: #222d3c;
-}
-
-.resp-sharing-button--email {
-background-color: #777777;
-border-color: #777777;
-}
-
-.resp-sharing-button--email:hover,
-.resp-sharing-button--email:active {
-background-color: #5e5e5e;
-border-color: #5e5e5e;
-}
-
-.resp-sharing-button--pinterest {
-background-color: #bd081c;
-border-color: #bd081c;
-}
-
-.resp-sharing-button--pinterest:hover,
-.resp-sharing-button--pinterest:active {
-background-color: #8c0615;
-border-color: #8c0615;
 }
 </style>
 </head>
 <body>
-<div id="wrap">
-<div class="logo">	  
-<a href="https://buananetpbun.github.io"><span style="color:#08c !important">BuanaNETPBun</span>.Github.io</a>  <img style="float:right; padding-top:0px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-</div>	
-<div class="header">
-<h1>LB PCC CALCULATION (LOAD BALANCING PER CONNECTION CLASSIFIER) </h1>
+<div id="wrap">	
+<div class="logo">	 
+
+<img style="float:right;padding-top:12px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<a href="https://buananetpbun.github.io"><span style="color:#a8328b !important">BuanaNETPBun</span>.Github.io</a> 
 </div>
-    <div class="sidebar">
-		<div style="float:left; width:100%;">
-		  <label><b>WAN-1 Down Speed</b></label><br>
-         	<select id="wan-list1">
-				<option value="10">10 Mbps</option>
-				<option value="20">20 Mbps</option>
-				<option value="30">30 Mbps</option>
-				<option value="40">40 Mbps</option>
-				<option value="50">50 Mbps</option>
-				<option value="100">100 Mbps</option>
-			</select>
-		  </div>
-		  <br>
-		  <div style="float:left; width:100%;margin-bottom:15px">
-		 <label><b>WAN-2 Down Speed</b></label><br>
-                <select id="wan-list2">
-				<option value="10">10 Mbps</option>
-				<option value="20">20 Mbps</option>
-				<option value="30">30 Mbps</option>
-				<option value="40">40 Mbps</option>
-				<option value="50">50 Mbps</option>
-				<option value="100">100 Mbps</option>
-			</select>
-		 </div>
 
-		<br>
-		<button style="margin-bottom:25px" id="copyscript" type="button" onclick="myFunction()">CALCULATE</button>
-		<center>
-		<span style="margin-top:20px;">
-		<b>PCC Load Balancing Is Not Like The Mathematical Formula <br><span style="color:red">20+10 = 30</span> <br>But Like <br> <span style="color:green">20+10 = 20+10</span> <br>Or Like<br> <span style="color:green">20+10 = 10+10+10</span></b>
-		</span>
-		</center>
-  </div>
-   <div class="content"> 
-        <span style="margin-left:2px"><b>LB PCC CALCULATION RESULT</b></span>
-        <div class="list-mangle" style="margin-bottom:10px">
-		<table style="font-weight:bold">
-			<thead>
-			<tr style="background-color: #eee;font-weight:bold">
-				<th>WAN Identity</th>
-				<th>WAN Speed (Mbps)</th>
-				<th>Best Ratio (Mbps)</th>
-				<th>Numerator</th>
-			</tr>
-			</thead>
-			<tbody>
-			<tr>
-				<td><span id="result-wan1-identity" style="color: green">WAN-1</span></td>
-				<td><span id="result-wan1">10 Mbps</span></td>
-				<td><span id="result-wan1-ratio">10</span></td>
-				<td><span id="result-wan1-tot-ratio">1</span></td>
-			</tr>
-			<tr>
-				<td><span id="result-wan2-identity" style="color: orange">WAN-2</span></td>
-				<td><span id="result-wan2">10 Mbps</span></td>
-				<td><span id="result-wan2-ratio">10</span></td>
-				<td><span id="result-wan2-tot-ratio">1</span></td>
-			</tr>
-			<tr>
-			  <th colspan="2" style="background-color: #eee; font-weight:bold">Total Calculate</th>
-			  <td id="result-tot1-join-ratio">10+10 = 10+10</td>
-			  <td id="result-tot2-join-ratio">2</td>
-			 </tr> 
-			</tbody>
-		</table>
-		<br>
-		<table id="mytable" style="font-weight:bold">
-			<thead>
-			<tr style="background-color: #eee; font-weight:bold" >
-				<td>Marking Connection</td>
-				<td>Denominator / Remainder</td>
-				<td>Ratio In (Mbps)</td>
-			</tr>
-			</thead>
-				<tbody id="mytbody">
-				</tbody>
-				<tr>
-				<th colspan="2" style="background-color: #eee; font-weight:bold">Possible Speed Balance</th>
-				<td id="result-tot-mbps"><b></b></td>
-				</tr>
-			</table>  
-			
-
-    </div>   
-    </div>
-   <div class="footer">
-  </div>
-  
-     <br>
-   		<div style="width:100%; height:90px;"	
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- MIKROTIK SCRIPT DB3 -->
-			<ins class="adsbygoogle"
-			style="display:inline-block;width:728px;height:90px"
-			data-ad-client="ca-pub-9740800920365268"
-			data-ad-slot="4637807296"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script> 
-  
-   
-	   <br> <br>
-	<b><span style="font-size:15px; padding-left:10px">Share this tool with your friends</span></b><br>
-	<!-- Sharingbutton Facebook -->
-	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbuananetpbun.github.io%2Fpcc-calculation.html" target="_blank" rel="noopener" aria-label="">
-	  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.5H14.5V5.6c0-.9.6-1.1 1-1.1h3V.54L14.17.53C10.24.54 9.5 3.48 9.5 5.37V7.5h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
-		</div>
-	  </div>
-	</a>
-
-	<!-- Sharingbutton Twitter -->
-	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;url=https%3A%2F%2Fbuananetpbun.github.io%2Fpcc-calculation.html" target="_blank" rel="noopener" aria-label="">
-	  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.4 4.83c-.8.37-1.5.38-2.22.02.94-.56.98-.96 1.32-2.02-.88.52-1.85.9-2.9 1.1-.8-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.04.7.12 1.04-3.78-.2-7.12-2-9.37-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.73-.03-1.43-.23-2.05-.57v.06c0 2.2 1.57 4.03 3.65 4.44-.67.18-1.37.2-2.05.08.57 1.8 2.25 3.12 4.24 3.16-1.95 1.52-4.36 2.16-6.74 1.88 2 1.3 4.4 2.04 6.97 2.04 8.36 0 12.93-6.92 12.93-12.93l-.02-.6c.9-.63 1.96-1.22 2.57-2.14z"/></svg>
-		</div>
-	  </div>
-	</a>
-
-	<!-- Sharingbutton Tumblr -->
-	<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;caption=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;content=https%3A%2F%2Fbuananetpbun.github.io%2Fpcc-calculation.html&amp;canonicalUrl=https%3A%2F%2Fbuananetpbun.github.io%2Fpcc-calculation.html&amp;shareSource=tumblr_share_button" target="_blank" rel="noopener" aria-label="">
-	  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5.5v5h5v4h-5V15c0 5 3.5 4.4 6 2.8v4.4c-6.7 3.2-12 0-12-4.2V9.5h-3V6.7c1-.3 2.2-.7 3-1.3.5-.5 1-1.2 1.4-2 .3-.7.6-1.7.7-3h3.8z"/></svg>
-		</div>
-	  </div>
-	</a>
-
-	<!-- Sharingbutton E-Mail -->
-	<a class="resp-sharing-button__link" href="mailto:?subject=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;body=https%3A%2F%2Fbuananetpbun.github.io%2Fpcc-calculation.html" target="_self" rel="noopener" aria-label="">
-	  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.5 18c0 .8-.7 1.5-1.5 1.5H2c-.8 0-1.5-.7-1.5-1.5V6c0-.8.7-1.5 1.5-1.5h20c.8 0 1.5.7 1.5 1.5v12zm-3-9.5L12 14 3.5 8.5m0 7.5L7 14m13.5 2L17 14"/></svg>
-		</div>
-	  </div>
-	</a>
-
-	<!-- Sharingbutton Pinterest -->
-	<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fbuananetpbun.github.io%2Fpcc-calculation.html&amp;media=https%3A%2F%2Fbuananetpbun.github.io%2Fpcc-calculation.html&amp;description=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking." target="_blank" rel="noopener" aria-label="">
-	  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.14.5C5.86.5 2.7 5 2.7 8.75c0 2.27.86 4.3 2.7 5.05.3.12.57 0 .66-.33l.27-1.06c.1-.32.06-.44-.2-.73-.52-.62-.86-1.44-.86-2.6 0-3.33 2.5-6.32 6.5-6.32 3.55 0 5.5 2.17 5.5 5.07 0 3.8-1.7 7.02-4.2 7.02-1.37 0-2.4-1.14-2.07-2.54.4-1.68 1.16-3.48 1.16-4.7 0-1.07-.58-1.98-1.78-1.98-1.4 0-2.55 1.47-2.55 3.42 0 1.25.43 2.1.43 2.1l-1.7 7.2c-.5 2.13-.08 4.75-.04 5 .02.17.22.2.3.1.14-.18 1.82-2.26 2.4-4.33.16-.58.93-3.63.93-3.63.45.88 1.8 1.65 3.22 1.65 4.25 0 7.13-3.87 7.13-9.05C20.5 4.15 17.18.5 12.14.5z"/></svg>
-		</div>
-	  </div>
-	</a>
-
- </div>
- <script>  
-	var _0x4e1b=['25\x20Mbps','30\x20Mbps','result-wan1-ratio','50+50','50+30\x20=\x2025+25+30','60\x20Mbps','value','50+10\x20=\x2025+25+10','result-wan2-ratio','result-wan1-tot-ratio','1uUhwTM','100+10\x20=\x2050+50+10','100+30\x20=\x2050+50+30','100','3\x20/\x202','\x20Mbps','70\x20Mbps','insertCell','132688hPcaDP','20+20','150\x20Mbps','3\x20/\x200','50+40\x20=\x2025+25+20+20','40+30\x20=\x2020+20+30','100+50\x20=\x2050+50+50','2\x20/\x200','result-tot-mbps','<span\x20style=\x27color:\x20green\x27>WAN-1</span>','572361TrPsvK','140\x20Mbps','result-wan2','result-wan1-identity','434614OMfoMz','insertRow','innerHTML','30+10\x20=\x2015+15+10','120\x20Mbps','<span\x20style=\x27color:\x20orange\x27>WAN-2</span>','22031QLIWum','wan-list1','40+10\x20=\x2020+20+10','20\x20Mbps','110\x20Mbps','4\x20/\x201','40\x20Mbps','10\x20Mbps','result-wan1','2\x20/\x201','10+10','100+20\x20=\x2050+50+20','80\x20Mbps','4\x20/\x200','464315OGqVwl','50\x20Mbps','result-wan2-identity','50+20\x20=\x2025+25+20','wan-list2','25+25','3130500ExFQUg','30+20\x20=\x2015+15+10+10','result-wan2-tot-ratio','4\x20/\x203','130\x20Mbps','20+10\x20=\x2010+10+10','15+15','getElementById','3\x20/\x201','mytbody','<span\x20style=\x27color:\x20orange\x27>WAN-1</span>','40+20\x2020+20+20','15\x20Mbps','result-tot1-join-ratio','693492ZWwPuf','result-tot2-join-ratio','4\x20/\x202'];var _0x2ea5=function(_0x69ffdf,_0x37d664){_0x69ffdf=_0x69ffdf-0xbe;var _0x4e1bfc=_0x4e1b[_0x69ffdf];return _0x4e1bfc;};var _0x3ef310=_0x2ea5;(function(_0x5a2623,_0x4faa68){var _0x469cc2=_0x2ea5;while(!![]){try{var _0x520d89=-parseInt(_0x469cc2(0xc8))+-parseInt(_0x469cc2(0xeb))+-parseInt(_0x469cc2(0xf1))+-parseInt(_0x469cc2(0xdd))+-parseInt(_0x469cc2(0xff))+parseInt(_0x469cc2(0xe7))*-parseInt(_0x469cc2(0xd5))+parseInt(_0x469cc2(0x105));if(_0x520d89===_0x4faa68)break;else _0x5a2623['push'](_0x5a2623['shift']());}catch(_0x5634bd){_0x5a2623['push'](_0x5a2623['shift']());}}}(_0x4e1b,0xc5ff7));var mytbody=document[_0x3ef310(0xc1)]('mytbody'),row=mytbody['insertRow'](0x0),cellWan=row[_0x3ef310(0xdc)](0x0),cellDenominator=row[_0x3ef310(0xdc)](0x1),cellMbps=row['insertCell'](0x2);cellWan[_0x3ef310(0xed)]=_0x3ef310(0xe6),cellDenominator[_0x3ef310(0xed)]=_0x3ef310(0xe4),cellMbps[_0x3ef310(0xed)]=_0x3ef310(0xf8);var row=mytbody[_0x3ef310(0xec)](0x1),cellWan=row[_0x3ef310(0xdc)](0x0),cellDenominator=row['insertCell'](0x1),cellMbps=row['insertCell'](0x2);cellWan[_0x3ef310(0xed)]=_0x3ef310(0xf0);;cellDenominator[_0x3ef310(0xed)]=_0x3ef310(0xfa),cellMbps[_0x3ef310(0xed)]=_0x3ef310(0xf8),document[_0x3ef310(0xc1)](_0x3ef310(0xe5))['innerHTML']='20\x20Mbps';function myFunction(){var _0xd05a56=_0x3ef310,_0x2fe7b1=document[_0xd05a56(0xc1)](_0xd05a56(0xc3));_0x2fe7b1['innerHTML']='';var _0x3444f4=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value'],_0x4ba6fb=document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)];if(_0x3444f4==_0x4ba6fb){var _0x230cab=document['getElementById'](_0xd05a56(0xf2))['value'],_0x3e0c23=document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)],_0xb95e47=Number(_0x230cab),_0x2150dc=Number(_0x3e0c23);document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document['getElementById'](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)]('result-wan2')[_0xd05a56(0xed)]=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)]('result-wan1-ratio')[_0xd05a56(0xed)]=_0x230cab,document[_0xd05a56(0xc1)](_0xd05a56(0xd3))['innerHTML']=_0x3e0c23,document['getElementById'](_0xd05a56(0xd4))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)]('result-wan2-tot-ratio')['innerHTML']='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))['innerHTML']='2',document['getElementById']('result-tot1-join-ratio')['innerHTML']=_0x230cab+'+'+_0x3e0c23,document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xb95e47+_0x2150dc+_0xd05a56(0xda);var _0x549bcc=_0x2fe7b1['insertRow'](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853['innerHTML']=_0xd05a56(0xe4),_0x59c905['innerHTML']=_0x230cab+_0xd05a56(0xda);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xc4),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xfa),_0x59c905['innerHTML']=_0x3e0c23+_0xd05a56(0xda);}if(document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='20'){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value']=='10'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value'],_0x3e0c23=document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document[_0xd05a56(0xc1)](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))['innerHTML']=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]='10+10',document[_0xd05a56(0xc1)](_0xd05a56(0xd3))['innerHTML']='10',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))['innerHTML']='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document['getElementById'](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xbf),document[_0xd05a56(0xc1)](_0xd05a56(0xe5))['innerHTML']='30\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]='3\x20/\x200',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf8);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]='3\x20/\x201',_0x59c905['innerHTML']=_0xd05a56(0xf8);var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>';;_0x276853['innerHTML']=_0xd05a56(0xd9),_0x59c905['innerHTML']=_0xd05a56(0xf8);}}if(document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)]=='30'){if(document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='10'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)]('wan-list2')['value'];document[_0xd05a56(0xc1)]('result-wan1-identity')[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document[_0xd05a56(0xc1)]('result-wan2-identity')[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))['innerHTML']=_0xd05a56(0xc0),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]='10',document['getElementById'](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)]('result-wan2-tot-ratio')['innerHTML']='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xee),document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xf7);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]='15\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]='3\x20/\x201',_0x59c905['innerHTML']=_0xd05a56(0xc6);var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf8);}}if(document[_0xd05a56(0xc1)]('wan-list1')['value']=='40'){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value']=='10'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)];document['getElementById'](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0x101))['innerHTML']=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+'\x20Mbps',document[_0xd05a56(0xc1)]('result-wan2')['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)]('result-wan1-ratio')[_0xd05a56(0xed)]='20+20',document['getElementById']('result-wan2-ratio')['innerHTML']='10',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')['innerHTML']='2',document['getElementById'](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document['getElementById'](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xf3),document['getElementById'](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))['innerHTML']='50\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]='3\x20/\x200',_0x59c905['innerHTML']=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905['innerHTML']=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>';;_0x276853[_0xd05a56(0xed)]='3\x20/\x202',_0x59c905[_0xd05a56(0xed)]='10\x20Mbps';}}if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value']=='50'){if(document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='10'){var _0x230cab=document[_0xd05a56(0xc1)]('wan-list1')['value'],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)];document['getElementById'](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0x101))['innerHTML']='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0x104),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]='10',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')['innerHTML']='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xd2),document['getElementById'](_0xd05a56(0xc9))['innerHTML']='3',document['getElementById'](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xd0);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853['innerHTML']=_0xd05a56(0xe0),_0x59c905['innerHTML']='25\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853[_0xd05a56(0xed)]='3\x20/\x201',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>';;_0x276853[_0xd05a56(0xed)]='3\x20/\x202',_0x59c905[_0xd05a56(0xed)]='10\x20Mbps';}}if(document['getElementById']('wan-list1')[_0xd05a56(0xd1)]=='100'){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value']=='10'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0xce),document['getElementById'](_0xd05a56(0xd3))['innerHTML']='10',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))['innerHTML']='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xd6),document['getElementById']('result-tot2-join-ratio')[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))['innerHTML']='110\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853['innerHTML']=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]='50\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905['innerHTML']=_0xd05a56(0xf8);}}if(document[_0xd05a56(0xc1)]('wan-list1')['value']=='30'){if(document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='20'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document['getElementById'](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+'\x20Mbps',document[_0xd05a56(0xc1)]('result-wan2')[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0xc0),document['getElementById']('result-wan2-ratio')[_0xd05a56(0xed)]=_0xd05a56(0xfb),document['getElementById']('result-wan1-tot-ratio')['innerHTML']='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))['innerHTML']='4',document[_0xd05a56(0xc1)]('result-tot1-join-ratio')[_0xd05a56(0xed)]=_0xd05a56(0x106),document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]='50\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x0),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xfe),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xc6);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6),_0x276853['innerHTML']=_0xd05a56(0xf6),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xc6);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0xca),_0x59c905['innerHTML']=_0xd05a56(0xf8);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x3),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853['innerHTML']='4\x20/\x203',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf8);}}if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='40'){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='20'){var _0x230cab=document['getElementById']('wan-list1')['value'],_0x3e0c23=document[_0xd05a56(0xc1)]('wan-list2')['value'];document['getElementById'](_0xd05a56(0xea))['innerHTML']=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xcd))['innerHTML']='20+20',document[_0xd05a56(0xc1)](_0xd05a56(0xd3))['innerHTML']='20',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')['innerHTML']='2',document['getElementById'](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]='40+20\x20=\x2020+20+20',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))['innerHTML']='3',document[_0xd05a56(0xc1)]('result-tot-mbps')['innerHTML']=_0xd05a56(0xd0);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]='3\x20/\x200',_0x59c905[_0xd05a56(0xed)]='20\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]='3\x20/\x201',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]='3\x20/\x202',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);}}if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value']=='50'){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value']=='20'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)]('wan-list2')[_0xd05a56(0xd1)];document['getElementById']('result-wan1-identity')['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document[_0xd05a56(0xc1)]('result-wan2-identity')['innerHTML']=_0xd05a56(0xf0),document[_0xd05a56(0xc1)]('result-wan1')['innerHTML']=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)]('result-wan1-ratio')[_0xd05a56(0xed)]=_0xd05a56(0x104),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]='20',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)]('result-tot1-join-ratio')[_0xd05a56(0xed)]=_0xd05a56(0x102),document['getElementById']('result-tot2-join-ratio')[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xdb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);}}if(document['getElementById']('wan-list1')['value']==_0xd05a56(0xd8)){if(document[_0xd05a56(0xc1)]('wan-list2')['value']=='20'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)],_0x3e0c23=document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)]('result-wan2-identity')['innerHTML']=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)]('result-wan1-ratio')['innerHTML']=_0xd05a56(0xce),document['getElementById'](_0xd05a56(0xd3))[_0xd05a56(0xed)]='20',document['getElementById'](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document['getElementById']('result-wan2-tot-ratio')[_0xd05a56(0xed)]='1',document['getElementById'](_0xd05a56(0xc7))['innerHTML']=_0xd05a56(0xfc),document['getElementById'](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))['innerHTML']=_0xd05a56(0xdb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905['innerHTML']='50\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]='3\x20/\x202',_0x59c905[_0xd05a56(0xed)]='20\x20Mbps';}}if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value']=='40'){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value']=='30'){var _0x230cab=document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)],_0x3e0c23=document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)];document['getElementById']('result-wan1-identity')[_0xd05a56(0xed)]=_0xd05a56(0xe6),document['getElementById']('result-wan2-identity')[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document['getElementById'](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0xde),document['getElementById'](_0xd05a56(0xd3))[_0xd05a56(0xed)]='30',document['getElementById']('result-wan1-tot-ratio')['innerHTML']='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)]('result-tot2-join-ratio')[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))['innerHTML']='40+30\x20=\x2020+20+30',document[_0xd05a56(0xc1)]('result-tot-mbps')[_0xd05a56(0xed)]=_0xd05a56(0xdb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853[_0xd05a56(0xed)]='3\x20/\x201',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905['innerHTML']='30\x20Mbps';}}if(document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='50'){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='30'){var _0x230cab=document['getElementById']('wan-list1')[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value'];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document[_0xd05a56(0xc1)](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0x104),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]='30',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)]('result-wan2-tot-ratio')[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xcf),document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)]('result-tot-mbps')[_0xd05a56(0xed)]='80\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x0),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905['innerHTML']=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905['innerHTML']=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcc);}}if(document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)]==_0xd05a56(0xd8)){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value']=='30'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value'],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value'];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document['getElementById'](_0xd05a56(0x101))['innerHTML']=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0xce),document[_0xd05a56(0xc1)]('result-wan2-ratio')[_0xd05a56(0xed)]='30',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]='100+30\x20=\x2050+50+30',document['getElementById'](_0xd05a56(0xc9))['innerHTML']='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xbe);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853['innerHTML']=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]='50\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0xd9),_0x59c905['innerHTML']=_0xd05a56(0xcc);}}if(document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)]=='50'){if(document[_0xd05a56(0xc1)]('wan-list2')[_0xd05a56(0xd1)]=='40'){var _0x230cab=document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)];document['getElementById']('result-wan1-identity')[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0x104),document['getElementById'](_0xd05a56(0xd3))[_0xd05a56(0xed)]=_0xd05a56(0xde),document['getElementById'](_0xd05a56(0xd4))['innerHTML']='2',document[_0xd05a56(0xc1)]('result-wan2-tot-ratio')[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)]('result-tot2-join-ratio')[_0xd05a56(0xed)]='4',document['getElementById'](_0xd05a56(0xc7))['innerHTML']=_0xd05a56(0xe1),document[_0xd05a56(0xc1)]('result-tot-mbps')[_0xd05a56(0xed)]='90\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]='4\x20/\x200',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853['innerHTML']='4\x20/\x201',_0x59c905[_0xd05a56(0xed)]='25\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xca),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x3),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0x108),_0x59c905[_0xd05a56(0xed)]='20\x20Mbps';}}if(document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)]==_0xd05a56(0xd8)){if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='40'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)],_0x3e0c23=document['getElementById']('wan-list2')[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document['getElementById'](_0xd05a56(0x101))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document['getElementById'](_0xd05a56(0xf9))['innerHTML']=_0x230cab+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0xce),document[_0xd05a56(0xc1)]('result-wan2-ratio')[_0xd05a56(0xed)]='40',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))['innerHTML']='3',document['getElementById'](_0xd05a56(0xc7))[_0xd05a56(0xed)]='100+40\x20=\x2050+50+40',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xe8);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xfe),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853['innerHTML']=_0xd05a56(0xf6),_0x59c905[_0xd05a56(0xed)]='50\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0xca),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf7);}}if(document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)]=='100'){if(document['getElementById']('wan-list2')['value']=='50'){var _0x230cab=document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value'];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document['getElementById']('result-wan2-identity')[_0xd05a56(0xed)]=_0xd05a56(0xf0),document['getElementById'](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]='50+50',document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]='50',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')['innerHTML']='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)]('result-tot1-join-ratio')[_0xd05a56(0xed)]=_0xd05a56(0xe3),document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document['getElementById'](_0xd05a56(0xe5))['innerHTML']='150\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',_0x276853[_0xd05a56(0xed)]='3\x20/\x200',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]='3\x20/\x202',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);}}if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='20'){if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='10'){var _0x230cab=document[_0xd05a56(0xc1)]('wan-list2')[_0xd05a56(0xd1)],_0x3e0c23=document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document['getElementById'](_0xd05a56(0x101))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))['innerHTML']=_0xd05a56(0xfb),document[_0xd05a56(0xc1)]('result-wan2-ratio')[_0xd05a56(0xed)]='10',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document['getElementById']('result-wan2-tot-ratio')['innerHTML']='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))['innerHTML']=_0xd05a56(0xbf),document['getElementById'](_0xd05a56(0xe5))[_0xd05a56(0xed)]='30\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x0),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0xe0),_0x59c905['innerHTML']=_0xd05a56(0xf8);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf8);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf8);}}if(document['getElementById'](_0xd05a56(0x103))['value']=='30'){if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='10'){var _0x230cab=document['getElementById']('wan-list2')[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)]('result-wan1-identity')[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document['getElementById'](_0xd05a56(0x101))['innerHTML']=_0xd05a56(0xe6),document['getElementById'](_0xd05a56(0xf9))['innerHTML']=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0xc0),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]='10',document['getElementById']('result-wan1-tot-ratio')['innerHTML']='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))['innerHTML']='30+10\x20=\x2015+15+10',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)]('result-tot-mbps')[_0xd05a56(0xed)]=_0xd05a56(0xf7);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]='3\x20/\x200',_0x59c905['innerHTML']=_0xd05a56(0xc6);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>';;_0x276853[_0xd05a56(0xed)]='3\x20/\x201',_0x59c905['innerHTML']='15\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>';;_0x276853[_0xd05a56(0xed)]='3\x20/\x202',_0x59c905['innerHTML']=_0xd05a56(0xf8);}}if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value']=='40'){if(document[_0xd05a56(0xc1)]('wan-list1')['value']=='10'){var _0x230cab=document['getElementById']('wan-list2')[_0xd05a56(0xd1)],_0x3e0c23=document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document['getElementById'](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))['innerHTML']=_0xd05a56(0xde),document['getElementById'](_0xd05a56(0xd3))[_0xd05a56(0xed)]='10',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document['getElementById'](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xf3),document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document['getElementById'](_0xd05a56(0xe5))['innerHTML']=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]='3\x20/\x200',_0x59c905['innerHTML']=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>';;_0x276853['innerHTML']=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6);;_0x276853['innerHTML']=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf8);}}if(document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='50'){if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='10'){var _0x230cab=document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)],_0x3e0c23=document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)];document['getElementById']('result-wan1-identity')[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)]('result-wan1')[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xcd))['innerHTML']=_0xd05a56(0x104),document['getElementById']('result-wan2-ratio')[_0xd05a56(0xed)]='10',document['getElementById'](_0xd05a56(0xd4))['innerHTML']='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))['innerHTML']='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))['innerHTML']=_0xd05a56(0xd2),document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document['getElementById'](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xd0);var _0x549bcc=_0x2fe7b1['insertRow'](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0xc2),_0x59c905['innerHTML']='25\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>';;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]='10\x20Mbps';}}if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]==_0xd05a56(0xd8)){if(document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)]=='10'){var _0x230cab=document[_0xd05a56(0xc1)]('wan-list2')[_0xd05a56(0xd1)],_0x3e0c23=document['getElementById']('wan-list1')[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)]('result-wan2-identity')[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)]('result-wan1')[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document['getElementById']('result-wan2')['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)]('result-wan1-ratio')[_0xd05a56(0xed)]=_0xd05a56(0xce),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))['innerHTML']='10',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)]('result-tot1-join-ratio')['innerHTML']=_0xd05a56(0xd6),document[_0xd05a56(0xc1)]('result-tot2-join-ratio')['innerHTML']='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xf5);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905['innerHTML']=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6);;_0x276853['innerHTML']='3\x20/\x202',_0x59c905['innerHTML']=_0xd05a56(0xf8);}}if(document['getElementById']('wan-list2')[_0xd05a56(0xd1)]=='30'){if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='20'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)];document['getElementById'](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document['getElementById'](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document['getElementById']('result-wan1')[_0xd05a56(0xed)]=_0x230cab+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xcd))['innerHTML']='15+15',document[_0xd05a56(0xc1)]('result-wan2-ratio')['innerHTML']='10+10',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)]('result-wan2-tot-ratio')[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='4',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0x106),document['getElementById']('result-tot-mbps')['innerHTML']='50\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xfe),_0x59c905['innerHTML']='15\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]='4\x20/\x201',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xc6);var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6);;_0x276853['innerHTML']='4\x20/\x202',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf8);var _0x549bcc=_0x2fe7b1['insertRow'](0x3),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0x108),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf8);}}if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='40'){if(document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)]=='20'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document['getElementById'](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))['innerHTML']=_0x230cab+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0xde),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]='20',document['getElementById'](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document['getElementById']('result-wan2-tot-ratio')[_0xd05a56(0xed)]='1',document['getElementById'](_0xd05a56(0xc7))['innerHTML']=_0xd05a56(0xc5),document['getElementById'](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document['getElementById']('result-tot-mbps')[_0xd05a56(0xed)]=_0xd05a56(0xd0);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>';;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]='3\x20/\x201',_0x59c905['innerHTML']='20\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6);;_0x276853['innerHTML']=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);}}if(document['getElementById'](_0xd05a56(0x103))['value']=='50'){if(document['getElementById'](_0xd05a56(0xf2))['value']=='20'){var _0x230cab=document[_0xd05a56(0xc1)]('wan-list2')[_0xd05a56(0xd1)],_0x3e0c23=document['getElementById']('wan-list1')[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)]('result-wan1-identity')[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0x101))['innerHTML']=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+'\x20Mbps',document['getElementById'](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0x104),document[_0xd05a56(0xc1)]('result-wan2-ratio')[_0xd05a56(0xed)]='20',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document['getElementById'](_0xd05a56(0x107))['innerHTML']='1',document['getElementById']('result-tot1-join-ratio')['innerHTML']=_0xd05a56(0x102),document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)]('result-tot-mbps')[_0xd05a56(0xed)]=_0xd05a56(0xdb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905['innerHTML']='25\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6);;_0x276853['innerHTML']=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf4);}}if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]==_0xd05a56(0xd8)){if(document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)]=='20'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value'],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value'];document[_0xd05a56(0xc1)]('result-wan1-identity')[_0xd05a56(0xed)]=_0xd05a56(0xf0),document['getElementById'](_0xd05a56(0x101))[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]='50+50',document['getElementById'](_0xd05a56(0xd3))[_0xd05a56(0xed)]='20',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')['innerHTML']='2',document['getElementById'](_0xd05a56(0x107))['innerHTML']='1',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xfc),document[_0xd05a56(0xc1)]('result-tot2-join-ratio')[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xef);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]='50\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0),_0x276853['innerHTML']=_0xd05a56(0xc2),_0x59c905['innerHTML']=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905['innerHTML']=_0xd05a56(0xf4);}}if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='40'){if(document[_0xd05a56(0xc1)]('wan-list1')[_0xd05a56(0xd1)]=='30'){var _0x230cab=document['getElementById']('wan-list2')['value'],_0x3e0c23=document['getElementById']('wan-list1')[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)](_0xd05a56(0x101))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)]('result-wan1-ratio')[_0xd05a56(0xed)]=_0xd05a56(0xde),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]='30',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document['getElementById'](_0xd05a56(0x107))[_0xd05a56(0xed)]='1',document[_0xd05a56(0xc1)]('result-tot2-join-ratio')[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xe2),document[_0xd05a56(0xc1)]('result-tot-mbps')[_0xd05a56(0xed)]='70\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853['innerHTML']=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]='20\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905['innerHTML']=_0xd05a56(0xf4);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xe6);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcc);}}if(document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)]=='50'){if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='30'){var _0x230cab=document['getElementById'](_0xd05a56(0x103))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value'];document['getElementById']('result-wan1-identity')[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document[_0xd05a56(0xc1)]('result-wan2-identity')[_0xd05a56(0xed)]=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+'\x20Mbps',document['getElementById'](_0xd05a56(0xcd))[_0xd05a56(0xed)]='25+25',document['getElementById'](_0xd05a56(0xd3))[_0xd05a56(0xed)]='30',document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document['getElementById']('result-wan2-tot-ratio')[_0xd05a56(0xed)]='1',document['getElementById'](_0xd05a56(0xc7))[_0xd05a56(0xed)]='50+30\x20=\x2025+25+30',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))['innerHTML']='3',document['getElementById']('result-tot-mbps')['innerHTML']=_0xd05a56(0xfd);var _0x549bcc=_0x2fe7b1['insertRow'](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]='3\x20/\x200',_0x59c905[_0xd05a56(0xed)]='25\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x1),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcc);}}if(document[_0xd05a56(0xc1)]('wan-list2')[_0xd05a56(0xd1)]=='100'){if(document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='30'){var _0x230cab=document['getElementById']('wan-list2')['value'],_0x3e0c23=document['getElementById'](_0xd05a56(0xf2))['value'];document['getElementById'](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document['getElementById'](_0xd05a56(0x101))['innerHTML']=_0xd05a56(0xe6),document[_0xd05a56(0xc1)](_0xd05a56(0xf9))[_0xd05a56(0xed)]=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))[_0xd05a56(0xed)]=_0x3e0c23+'\x20Mbps',document[_0xd05a56(0xc1)](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0xce),document['getElementById'](_0xd05a56(0xd3))['innerHTML']='30',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')['innerHTML']='2',document[_0xd05a56(0xc1)]('result-wan2-tot-ratio')['innerHTML']='1',document['getElementById'](_0xd05a56(0xc7))[_0xd05a56(0xed)]=_0xd05a56(0xd7),document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document[_0xd05a56(0xc1)]('result-tot-mbps')['innerHTML']=_0xd05a56(0xbe);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',_0x276853['innerHTML']=_0xd05a56(0xe0),_0x59c905['innerHTML']=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0),_0x276853['innerHTML']=_0xd05a56(0xc2),_0x59c905['innerHTML']='50\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20green\x27>WAN-1</span>';;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xd9),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcc);}}if(document['getElementById'](_0xd05a56(0x103))['value']=='50'){if(document['getElementById'](_0xd05a56(0xf2))['value']=='40'){var _0x230cab=document[_0xd05a56(0xc1)]('wan-list2')[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value'];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document[_0xd05a56(0xc1)]('result-wan2-identity')['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document[_0xd05a56(0xc1)](_0xd05a56(0xf9))['innerHTML']=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xcd))[_0xd05a56(0xed)]=_0xd05a56(0x104),document[_0xd05a56(0xc1)](_0xd05a56(0xd3))[_0xd05a56(0xed)]=_0xd05a56(0xde),document[_0xd05a56(0xc1)](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)]('result-wan2-tot-ratio')[_0xd05a56(0xed)]='2',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='4',document[_0xd05a56(0xc1)]('result-tot1-join-ratio')[_0xd05a56(0xed)]='50+40\x20=\x2025+25+20+20',document[_0xd05a56(0xc1)]('result-tot-mbps')[_0xd05a56(0xed)]='90\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853['innerHTML']='4\x20/\x200',_0x59c905['innerHTML']=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']=_0xd05a56(0xf0);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xf6),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xcb);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6);;_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xca),_0x59c905['innerHTML']='20\x20Mbps';var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x3),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xe6);;_0x276853[_0xd05a56(0xed)]='4\x20/\x203',_0x59c905['innerHTML']=_0xd05a56(0xf4);}}if(document['getElementById']('wan-list2')[_0xd05a56(0xd1)]==_0xd05a56(0xd8)){if(document[_0xd05a56(0xc1)](_0xd05a56(0xf2))['value']=='40'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))[_0xd05a56(0xed)]=_0xd05a56(0xf0),document[_0xd05a56(0xc1)]('result-wan2-identity')[_0xd05a56(0xed)]=_0xd05a56(0xe6),document['getElementById'](_0xd05a56(0xf9))['innerHTML']=_0x230cab+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document['getElementById'](_0xd05a56(0xcd))['innerHTML']='50+50',document[_0xd05a56(0xc1)](_0xd05a56(0xd3))['innerHTML']='40',document['getElementById'](_0xd05a56(0xd4))[_0xd05a56(0xed)]='2',document['getElementById'](_0xd05a56(0x107))['innerHTML']='1',document['getElementById'](_0xd05a56(0xc7))[_0xd05a56(0xed)]='100+40\x20=\x2050+50+40',document[_0xd05a56(0xc1)](_0xd05a56(0xc9))[_0xd05a56(0xed)]='3',document['getElementById']('result-tot-mbps')[_0xd05a56(0xed)]='150\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x0),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xe0),_0x59c905['innerHTML']=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc['insertCell'](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2[_0xd05a56(0xed)]='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',_0x276853['innerHTML']=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]='50\x20Mbps';var _0x549bcc=_0x2fe7b1['insertRow'](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>';;_0x276853[_0xd05a56(0xed)]='3\x20/\x202',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0xf7);}}if(document[_0xd05a56(0xc1)](_0xd05a56(0x103))[_0xd05a56(0xd1)]==_0xd05a56(0xd8)){if(document['getElementById'](_0xd05a56(0xf2))[_0xd05a56(0xd1)]=='50'){var _0x230cab=document[_0xd05a56(0xc1)](_0xd05a56(0x103))['value'],_0x3e0c23=document[_0xd05a56(0xc1)](_0xd05a56(0xf2))[_0xd05a56(0xd1)];document[_0xd05a56(0xc1)](_0xd05a56(0xea))['innerHTML']='<span\x20style=\x27color:\x20orange\x27>WAN-2</span>',document[_0xd05a56(0xc1)](_0xd05a56(0x101))['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>',document['getElementById'](_0xd05a56(0xf9))['innerHTML']=_0x230cab+'\x20Mbps',document['getElementById'](_0xd05a56(0xe9))['innerHTML']=_0x3e0c23+_0xd05a56(0xda),document[_0xd05a56(0xc1)](_0xd05a56(0xcd))['innerHTML']=_0xd05a56(0xce),document['getElementById']('result-wan2-ratio')[_0xd05a56(0xed)]='50',document[_0xd05a56(0xc1)]('result-wan1-tot-ratio')['innerHTML']='2',document[_0xd05a56(0xc1)]('result-wan2-tot-ratio')[_0xd05a56(0xed)]='1',document['getElementById'](_0xd05a56(0xc7))['innerHTML']='100+50\x20=\x2050+50+50',document['getElementById'](_0xd05a56(0xc9))['innerHTML']='3',document[_0xd05a56(0xc1)](_0xd05a56(0xe5))[_0xd05a56(0xed)]=_0xd05a56(0xdf);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x0),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0),_0x276853['innerHTML']=_0xd05a56(0xe0),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x1),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc['insertCell'](0x1),_0x59c905=_0x549bcc['insertCell'](0x2);_0x4198a2[_0xd05a56(0xed)]=_0xd05a56(0xf0),_0x276853[_0xd05a56(0xed)]=_0xd05a56(0xc2),_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);var _0x549bcc=_0x2fe7b1[_0xd05a56(0xec)](0x2),_0x4198a2=_0x549bcc[_0xd05a56(0xdc)](0x0),_0x276853=_0x549bcc[_0xd05a56(0xdc)](0x1),_0x59c905=_0x549bcc[_0xd05a56(0xdc)](0x2);_0x4198a2['innerHTML']='<span\x20style=\x27color:\x20green\x27>WAN-1</span>';;_0x276853['innerHTML']='3\x20/\x202',_0x59c905[_0xd05a56(0xed)]=_0xd05a56(0x100);}}}	
- </script>
+<div class="header">
+<span style="font-size:13px; float:right;font-weight:bold">Contribution your script <button style="margin-left:5px;" onclick="content('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">upload</button></span>
+<span style="float:left; display:inline;margin-right:15px; margin-top:-2px">
+<a href="https://buananetpbun.github.io/mikrotik/"><img src="https://buananetpbun.github.io/mikrotik/img/menu.jpg" alt="HOME"></a>
+</span>
+ <h1>COMPLETE MIKROTIK SCRIPT ROUTEROS DATABASE</h1>
+</div>	
+<div class="sidebar">
+<input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Find Script.." style="width:100%;"> 
+<div class="list-game">
+<table id="myTable">
+<!-- A -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/anti-hack-bootloader.html')">Anti Hack Protected BootLoader</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Auto-Repair-Passthrough-In-Mangle.html')">Auto Repair Passthrough In Mangle</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Automated-Usage-Script-without-usermanager.html')">Automated Usage Script Without User Manager</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Allow-use-ofntporg-pool-service-for-NTP.html')">Allow Use Of ntp.org Pool Service For NTP</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Auto-upgrade-script-V3x.html')">Auto upgrade script V3.x</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Audible-signal-test.html')">Audible Signal Test</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/A-Bit-of-Sounds.html')">A Bit of Sounds</a></p></td></tr>
+<!-- B -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-Sites-User-Keywords-Use-The-Dns-Cache.html')">Block Sites With Keywords Use Dns Cache</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Blog-Website-With-Keywords-Use-DNS-Static.html')">Blog Website With Keywords Use DNS Static</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Bypass-Full-Speed-Local-Transfer-File.html')">Bypass Full Speed Locat Transfer File</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup.html')">Backup Mikrotik File .Backup</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-Export-rsc.html')">Backup Export File .rsc</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-hide-sensitive.html')">Backup Export File .rsc Hide-Sensitive</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-compact.html')">Backup Export File .rsc Compact</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-terse.html')">Backup Export File .rsc Terse</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-verbose.html')">Backup Export File .rsc Verbose</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-combination.html')">Backup Export File .rsc With Combination</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-import-rsc.html')">Backup Import File .rsc</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Bypass-Local-Connection.html')">Bypass Local Connection / Local IP</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/bypass-user-hotspot-with-macaddress.html')">Bypass Hotspot User With Mac-Address</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-access-to-specific-websites.html')">Blocking Access To Specific Websites</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Bittorrent-layer-7.html')">Bittorrent, Torrentwws, Torrentwww Layer-7</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-Windows-Update.html')">Block Windows Update</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/block-tracert.html')">Block Tracert / Traceroute</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-Tiktok.html')">Block TikTok Firewall Rules "TLS"</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/block-tiktok-content-firewall-rules.html')">Block TikTok Firewall Rules "Content"</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/block-tiktok-layer7-firewall-rules.html')">Block TikTok Firewall Rules "Layer-7"</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Block-MAC-Address-Device.html')">Block MAC Address Device</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Blocking-Modem.html')">Blocking Modem Access</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Backup-graphing-data.html')">Backup Graphing Data</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Basic-universal-firewall-script.html')">Basic universal firewall script</a></p></td></tr>	
+<!-- C -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Custom-Limit-Bandwidth-Hotspot-With-Queue-Tree.html')">Custom Limit Bandwidth Hotspot With Queue Tree</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Custom-Limit-Bandwidth-Hotspot-With-Queue-Simple.html')">Custom Limit Bandwidth Hotspot With Queue Simple</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Complete-Bandwidth-Monitoring.html')">Complete Bandwidth Monitoring</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Create-Multiple-Queue-Tree-At-Once.html')">Create Multiple Queue Tree At Once</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Create-Multiple-Simple-Queue-At-Once.html')">Create Multiple Simple Queue At Once</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Create-Hotspot-Multi-Login-With-Bandwidth-Limit.html')">Create Hotspot Multi Login With Bandwidth Limit</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Check-if-RTO-and-send-to-Telegram.html')">Check if RTO and send to Telegram</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/address-list-dynamic-to-static.html')">Change All Address List Dynamic To Static</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/change-system-note.html')">Change System Note</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Speedtest-Mangle-layer7.html')">Complete Mangle Speedtest with Layer-7</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Get-Day.html')">Calculates Day Of The Week For a Givien Date</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/change-Interface-ether-Default-1.html')">Change Name Interface or Ether To Default Auto</a></p></td></tr>  
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/change-Interface-ether-Default-2.html')">Change Name Interface or Ether To Default Manual</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/check-ip-change.html')">Check if IP on interface have changed</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Check-bandwidth-and-add-limitations.html')">Check Bandwidth and Add Limitations</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Calculate-with-decimal-numbers.html')">Calculate With Decimal Numbers</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/clear-log-Mikrotik.html')">Clear LOG info from Terminal</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Create-a-file.html')">Create A File</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Calea-perl-trafr.html')">Calea Perl Trafr</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Converting_network_and_gateway_from_routing_table_to_hexadecimal_string.html')">Converting Gateway From Routing To hexadecimal</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Change-Mikrotik-identity-or-Winbox-Caption.html')">Change Mikrotik identity or Winbox Caption</a></p></td></tr>
+<!-- D -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Default-Filter-Rules.html')">Default Filter Rules</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/DNSCRYPT-with-OpenDNS.html')">DNSCRYPT with OpenDNS port 443 or 5353</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/dns-chace-flush.html')">DNS Cache Flush</a></p></td></tr>  
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Detect-new-log-entry.html')">Detect New Log Entry</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Dial_PPPoE_until_a_Certain_IP_Range_is_Obtained.html')">Dial PPPoE until a Certain IP Range is Obtained</a></p></td></tr>
+<!-- E -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Extract-the-day-of-the-month.html')">Extract The Day Of The Month</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Automatic-Expired-Hotspot-Page-Without-A-Proxy.html')">Expired Hotspot Page Without A Proxy</a></p></td></tr>
+<!-- F -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/show-usermanager-password.html')">Forget or Show User Manager Password</a></p></td></tr>
+<!-- G -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/How-to-get-todays-date-info.html')">Get Today's Date Info</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Generate-backup-and-sendit-by-email.html')">Generate Backup And Send it By E-Mail</a></p></td></tr>	
+<!-- H -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Hotspot-Auto-User-logout-user-When-internet-down.html')">Hotspot Auto logout user When Inet down</a></p></td></tr>
+<!-- I -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-list-ix-nice-rsc.html')">IP Address List Nice.rsc IIX or IXP</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-List-AWS-EC2-Amazon.html')">IP Address List AWS EC2 Amazon</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-list-Speedtest.html')">IP Address list SpeedTest</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-list-Telergram.html')">IP Address list Telegram</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-list-Facebook.html')">IP Address list Facebook</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-List-twitter.html')">IP Address list Twitter</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Address-List-WhatsApp.html')">IP Address list WhatsApp</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/IP-Private-or-IP-Local-Standard-RFC1918.html')">IP Private or IP Local Standard RFC 1918</a></p></td></tr>	
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Include-custom-function-in-another-script.html')">Include custom function in another script</a></p></td></tr>
+<!-- J -->
+<!-- K -->
+<!-- L -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Limit-sharing-Hotspot-with-Change-TTL.html')">Limit sharing Hotspot with 'Change TTL'</a></p></td></tr>  
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-2-Line-ISP.html')">LB PCC 2 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-3-Line-ISP.html')">LB PCC 3 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-4-Line-ISP.html')">LB PCC 4 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-5-Line-ISP.html')">LB PCC 5 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-PCC-6-Line-ISP.html')">LB PCC 6 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-2-Line-ISP.html')">LB ECMP 2 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-3-Line-ISP.html')">LB ECMP 3 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-4-Line-ISP.html')">LB ECMP 4 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-5-Line-ISP.html')">LB ECMP 5 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-6-Line-ISP.html')">LB ECMP 6 Line ISP Failover</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/LB-ECMP-Failover-Script.html')">LB ECMP Failover Script</a></p></td></tr>	
+<!-- M -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/make-sure-all-clients-use-router-dns.html')">Make Sure All Clients Use Router Dns</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Mikrotik-Terminal-Command-Line-and-Keyboard-Command.html')">Terminal Command Line and Keyboard Command</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Speedtest-domain-List.html')">Host or Domain list SpeedTest</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Make-an-Automated-Configuration-and-Uninstall.html')">Make an Automated Configuration and Uninstall</a></p></td></tr>
+<!-- N -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/No-Mark-Without-Mangle-in-Queue-Tree.html')">No-Mark Without Mangle in Queue Tree</a></p></td></tr> 
+<!-- 0 -->
+<!-- P -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Protect-Modem-And-Webfig-Pages-Using-Internal-Proxy.html')">Protect Modem And Webfig Pages Using Internal Proxy</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Pseudo-Random-Number-Generator.html')">Pseudo Random Number Generator</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Ping-ICMP-To-Routing-ISP-Games.html')">Ping ICMP To Routing ISP Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/port-game-online-pc-games.html')">Port Game Online for PC Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/port-game-online-mobile-games.html')">Port Game Online for Mobile Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/port-game-online-web-games.html')">Port Game Online for Web Games</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Protect-Router-from-Port-Scanner.html')">Protect Router from Port Scanner</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/protect-connection-with-anti-netcut.html')">Protect Connection With ANTI NETCUT</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Protect-web-open-porxy.html')">Protect Open Web proxy</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Protect-Open-Recursive-DNS.html')">Protect Open Recursive DNS</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/protect-default-service-port.html')">Protect Default Port Service From WAN</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/protect-mikrotik-from-ddos.html')">Protect Router From DDOS Attacks</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/protect-mikrotik-from-exploit.html')">Protect Router From Exploit (VULNERABILITY)</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/port-knocking-icmp.html')">Port Knocking Maker or Generator Icmp + Packet Size</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Parse-file-to-add-ppp-secrets.html')">Parse File To Add PPP Secrets</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Print-function.html')">Print Function</a></p></td></tr>
+<!-- Q -->
+<!-- R -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Routing-FailOver-with-2-ISP-gateway.html')">Routing FailOver with 2 ISP (gateway)</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Routing-FailOver-with-3-ISP-gateway.html')">Routing FailOver with 3 ISP (gateway)</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Reset-Mikrotik-via-Script-from-Terminal.html')">Reset Mikrotik via Script from Terminal</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Remove-Files-On-Mikrotik.html')">Remove or Delete Files On Mikrotik</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/remote-ip-public-static.html')">Remote IP Public Static For Secondary Gateway</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Read-and-write-large-files.html')">Read and Write Large Files</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Resolve-host-name.html')">Resolve host-name</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/reset-counter.html')">Reset All Counter</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/fail-over-recursive-gateway.html')">Recursive Gateway Fail over</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/rebuild-database-User-Manager.html')">Rebuild DataBase On User Manager</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Reset-DataBase-User-Manager-to-default.html')">Reset DataBase User Manager</a></p></td></tr>
+<!-- S -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Setting-NTP-Network-Time-Protocol.html')">SNTP Client or NTP Network Time Protocol</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Solution-Hotspot-login-Page-LB-PCC.html')">Solution For Hotspot Login Page with LB PCC</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Signalorg-Mangle-And-Queue.html')">Signal.org Mangle And Queue</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Speedtest-Regexp-Layer7.html')">Speedtest Regexp Layer-7</a></p></td></tr> 
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/strip-ip-address-netmask.html')">Strip IP Address without netmask</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/A-script-to-set-up-WAN-or-LAN-or-WLAN-to-get-you-started.html')">Set Up WAN/LAN/WLAN To Get You Started</a></p></td></tr>
+<!-- T -->
+<!-- U -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Use-string-as-function.html')">Use String as Function</a></p></td></tr>
+<!-- V -->
+<!-- W -->
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/wms-auto-login.html')">WMS or Wifi.id Auto Login</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/Write-simple-queue-stats-in-multiple-files.html')">Write simple queue stats in multiple files</a></p></td></tr>
+<!-- X -->
+<!-- Y -->
+<!-- Z -->
+<!-- WELCOME -->
+<tr><td><p><a class="linkPress active1" href="#" onclick="content('https://buananetpbun.github.io/mikrotik/welcome.html')">Welcome</a></p></td></tr>
+</table>
+</div>
+</div>
+<div class="content">
+<div class="list-mangle">
+<div id="reloadads1" style="width:100%; height:90px; margin-top:10px; margin-left:5px; margin-bottom:10px">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- MIKROTIK SCRIPT DB3 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-9740800920365268"
+data-ad-slot="4637807296"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+</div>
+<iframe id="change" width="100%" height="520px" frameborder="0" src="welcome.html"></iframe>  
+<div id="reloadads2" style="width:100%; height:90px; margin-top:10px; margin-left:5px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- MIKROTIK SCRIPT DB3 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-9740800920365268"
+data-ad-slot="4637807296"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+</div> 
+</div>
+</div>
+<div class="footer">
+<center>
+Copyright 2021 <a href="https://buananetpbun.github.io/mikrotik">Mikrotik Script RouterOS</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>  
+</center>  
+</div>
+</div>
+<script>
+var _0x5f0c=['1KpnepK','click','innerText','style','206319zwqHHO','myTable','112057WFcvhR','indexOf','1mqogDG','none','206495CkkGvW','getElementsByClassName','1bAnvrZ','getElementsByTagName','value','change','textContent','\x20active1','31774Eoxefr','className','toUpperCase','1yKGYmA','setAttribute','linkPress','getElementById','2MEfoaw','1mjyLAK','116434SQilSp','171291niAAMn','125963xYZqDd','display','src'];var _0x4a88=function(_0x31fdcf,_0x57eb49){_0x31fdcf=_0x31fdcf-0x100;var _0x5f0cb3=_0x5f0c[_0x31fdcf];return _0x5f0cb3;};var _0x2c7cea=_0x4a88;(function(_0x2a5dd0,_0x58004f){var _0x2b1b6a=_0x4a88;while(!![]){try{var _0x54c984=parseInt(_0x2b1b6a(0x101))*-parseInt(_0x2b1b6a(0x110))+parseInt(_0x2b1b6a(0x119))*parseInt(_0x2b1b6a(0x10a))+-parseInt(_0x2b1b6a(0x116))*parseInt(_0x2b1b6a(0x10c))+parseInt(_0x2b1b6a(0x11f))*parseInt(_0x2b1b6a(0x11e))+-parseInt(_0x2b1b6a(0x100))+-parseInt(_0x2b1b6a(0x108))*parseInt(_0x2b1b6a(0x104))+parseInt(_0x2b1b6a(0x10e))*parseInt(_0x2b1b6a(0x11d));if(_0x54c984===_0x58004f)break;else _0x2a5dd0['push'](_0x2a5dd0['shift']());}catch(_0x5da93b){_0x2a5dd0['push'](_0x2a5dd0['shift']());}}}(_0x5f0c,0x19e96));function content(_0x1bfbc5){var _0x673363=_0x4a88,_0x6c3fc4=document['getElementById'](_0x673363(0x113));_0x6c3fc4[_0x673363(0x11a)](_0x673363(0x103),_0x1bfbc5);}function myFunctionSearch(){var _0x27c2d5=_0x4a88,_0x5b02ca,_0x124c43,_0xbe74c6,_0x2b0937,_0x1aaa48,_0x4b0a95,_0x249f08;_0x5b02ca=document['getElementById']('myInput'),_0x124c43=_0x5b02ca[_0x27c2d5(0x112)][_0x27c2d5(0x118)](),_0xbe74c6=document['getElementById'](_0x27c2d5(0x109)),_0x2b0937=_0xbe74c6[_0x27c2d5(0x111)]('tr');for(_0x4b0a95=0x0;_0x4b0a95<_0x2b0937['length'];_0x4b0a95++){_0x1aaa48=_0x2b0937[_0x4b0a95][_0x27c2d5(0x111)]('td')[0x0],_0x1aaa48&&(_0x249f08=_0x1aaa48[_0x27c2d5(0x114)]||_0x1aaa48[_0x27c2d5(0x106)],_0x249f08[_0x27c2d5(0x118)]()[_0x27c2d5(0x10b)](_0x124c43)>-0x1?_0x2b0937[_0x4b0a95]['style'][_0x27c2d5(0x102)]='':_0x2b0937[_0x4b0a95][_0x27c2d5(0x107)][_0x27c2d5(0x102)]=_0x27c2d5(0x10d));}}var header=document[_0x2c7cea(0x11c)](_0x2c7cea(0x109)),btns=header[_0x2c7cea(0x10f)](_0x2c7cea(0x11b));for(var i=0x0;i<btns['length'];i++){btns[i]['addEventListener'](_0x2c7cea(0x105),function(){var _0x213806=_0x2c7cea,_0xace983=document['getElementsByClassName']('active1');_0xace983[0x0][_0x213806(0x117)]=_0xace983[0x0][_0x213806(0x117)]['replace'](_0x213806(0x115),''),this[_0x213806(0x117)]+=_0x213806(0x115);});}
+</script>
 </body>
 </html>
