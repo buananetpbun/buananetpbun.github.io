@@ -237,7 +237,7 @@ border-left:1px solid #ddd;
 </div>
 
 <div class="header">
-<span style="font-size:13px; float:right;font-weight:bold">Contribution your script <button style="margin-left:5px;" onclick="content('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform" onclick="getcontent(this);return false;">upload</button></span>
+<span style="font-size:13px; float:right;font-weight:bold">Contribution your script <button style="margin-left:5px;" onclick="content('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">upload</button></span>
 <span style="float:left; display:inline;margin-right:15px; margin-top:-2px">
 <a href="https://buananetpbun.github.io/mikrotik/"><img src="https://buananetpbun.github.io/mikrotik/img/menu.jpg" alt="HOME"></a>
 </span>
@@ -449,6 +449,10 @@ Copyright 2021 <a href="https://buananetpbun.github.io/mikrotik">Mikrotik Script
 </div>
 </div>
 <script>
+function content(text){
+var element =  document.getElementById("change-iframe-url");
+element.setAttribute("src", text);
+}
 function getcontent(e){
 var element =  document.getElementById("change-iframe-url");
 var ahref = e.getAttribute("href");
