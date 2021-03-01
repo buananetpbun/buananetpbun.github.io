@@ -20,21 +20,19 @@ There are various media used to hold meetings or video conferences, one of the m
 <precd><code class="routeros">/ip firewall filter 
 add action=add-dst-to-address-list address-list=Signal address-list-timeout=1d chain=forward dst-address-list=!LOCAL-IP protocol=tcp dst-port=3478,3479,5090,5091,8801-8810 comment="ZOOM"
 add action=add-dst-to-address-list address-list=Signal address-list-timeout=1d chain=forward dst-address-list=!LOCAL-IP protocol=udp dst-port=3478,3479,5090,5091,8801-8810
-</code></precd>
 
-<precd><code class="routeros">/ip firewall mangle
-add action=mark-connection chain=prerouting comment="ZOOM" dst-address-list=zoom-ip new-connection-mark="conn-zoom" passthrough=yes comment="ZOOM"
+/ip firewall mangle
+add action=mark-connection chain=prerouting dst-address-list=zoom-ip new-connection-mark="conn-zoom" passthrough=yes comment="ZOOM"
 add action=mark-packet chain=forward connection-mark="conn-zoom" new-packet-mark=zoom-pkt passthrough=no src-address-list=LOCAL-IP
-add action=mark-packet chain=forward connection-mark="conn-zoom" new-packet-mark=zoom-pkt passthrough=no dst-address-list=LOCAL-IP</code></precd>
+add action=mark-packet chain=forward connection-mark="conn-zoom" new-packet-mark=zoom-pkt passthrough=no dst-address-list=LOCAL-IP
 
-<precd><code class="routeros">/queue simple 
-add name="Zoom" packet-marks=zoom-pkt target=10.0.0.0/8,192.168.0.0/16,172.16.0.0/12 comment="ZOOM"</code></precd>
+/queue simple 
+add name="Zoom" packet-marks=zoom-pkt target=10.0.0.0/8,192.168.0.0/16,172.16.0.0/12 comment="ZOOM"
 
-<precd><code class="routeros">/ip firewall address-list
+/ip firewall address-list
 add address=10.0.0.0/8 list=LOCAL-IP
 add address=172.16.0.0/12 list=LOCAL-IP
-add address=192.168.0.0/16 list=LOCAL-IP
-</code></precd>
+add address=192.168.0.0/16 list=LOCAL-IP</code></precd>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
