@@ -18,8 +18,8 @@
 There are various media used to hold meetings or video conferences, one of the most widely used is Zoom Meeting. In this article, we will try to optimize the network by prioritizing the connection used by video conferencing so that it can be used properly without any interference. The bandwidth used will be prioritized so as not to be disturbed when other clients browse the internet.
 
 <precd><code class="routeros">/ip firewall filter 
-add action=add-dst-to-address-list address-list=Signal address-list-timeout=1d chain=forward dst-address-list=!LOCAL-IP protocol=tcp dst-port=3478,3479,5090,5091,8801-8810 comment="ZOOM"
-add action=add-dst-to-address-list address-list=Signal address-list-timeout=1d chain=forward dst-address-list=!LOCAL-IP protocol=udp dst-port=3478,3479,5090,5091,8801-8810
+add action=add-dst-to-address-list address-list=zoom-ip address-list-timeout=1d chain=forward dst-address-list=!LOCAL-IP protocol=tcp dst-port=3478,3479,5090,5091,8801-8810 comment="ZOOM"
+add action=add-dst-to-address-list address-list=zoom-ip address-list-timeout=1d chain=forward dst-address-list=!LOCAL-IP protocol=udp dst-port=3478,3479,5090,5091,8801-8810
 
 /ip firewall mangle
 add action=mark-connection chain=prerouting dst-address-list=zoom-ip new-connection-mark="conn-zoom" passthrough=yes comment="ZOOM"
