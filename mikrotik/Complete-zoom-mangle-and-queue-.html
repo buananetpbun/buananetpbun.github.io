@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Zoom Meeting Mangle and Queue - MikroTik Script RouterOS</title>
+<meta content='Zoom Meeting Mangle and Queue - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Zoom Meeting Mangle and Queue - MikroTik Script RouterOS</h1>
+There are various media used to hold meetings or video conferences, one of the most widely used is Zoom Meeting. In this article, we will try to optimize the network by prioritizing the connection used by video conferencing so that it can be used properly without any interference. The bandwidth used will be prioritized so as not to be disturbed when other clients browse the internet.
+
+<precd><code class="routeros">/ip firewall filter 
+add action=add-dst-to-address-list address-list=zoom-ip address-list-timeout=1d chain=forward dst-address-list=!LOCAL-IP protocol=tcp dst-port=3478,3479,5090,5091,8801-8810 protocol=tcp 
+add action=add-dst-to-address-list address-list=zoom-ip address-list-timeout=1d chain=forward dst-address-list=!LOCAL-IP protocol=tcp dst-port=3478,3479,5090,5091,8801-8810 protocol=udp</code></precd>
+
+<precd><code class="routeros">/ip firewall mangle
+add action=mark-connection chain=prerouting comment="ZOOM" dst-address-list=zoom-ip new-connection-mark="conn-zoom" passthrough=yes
+add action=mark-packet chain=forward connection-mark="conn-zoom" new-packet-mark=zoom-up passthrough=no src-address-list=LOCAL-IP
+add action=mark-packet chain=forward connection-mark="conn-zoom" new-packet-mark=zoom-down passthrough=no dst-address-list=LOCAL-IP</code></precd>
+
+<precd><code class="routeros">/queue tree
+add name="ZOOM UP" packet-mark="zoom-up" priority=8
+add name="ZOOM DOWN" packet-mark="zoom-down" priority=8</code></precd>
+
+<precd><code class="routeros">/ip firewall address-list
+add address=0.0.0.0/8 list=LOCAL-IP
+add address=10.0.0.0/8 list=LOCAL-IP
+add address=100.64.0.0/10 list=LOCAL-IP
+add address=127.0.0.0/8 list=LOCAL-IP
+add address=169.254.0.0/16 list=LOCAL-IP
+add address=172.16.0.0/12 list=LOCAL-IP
+add address=192.0.0.0/24 list=LOCAL-IP
+add address=192.0.2.0/24 list=LOCAL-IP
+add address=192.168.0.0/16 list=LOCAL-IP
+add address=198.18.0.0/15 list=LOCAL-IP
+add address=198.51.100.0/24 list=LOCAL-IP
+add address=203.0.113.0/24 list=LOCAL-IP
+add address=224.0.0.0/4 list=LOCAL-IP
+add address=240.0.0.0/4 list=LOCAL-IP</code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<a target="_blank" href="https://buananetpbun.github.io/mikrotik" >[ Back To Home ]</a>
+</body>
+</html>
+
+
+    
+
