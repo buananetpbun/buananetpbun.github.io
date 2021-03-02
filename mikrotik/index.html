@@ -229,7 +229,7 @@ border-left:1px solid #ddd;
 }
 </style>
 </head>
-<body>
+<body onload="ContenUrlGet()">
 <div id="wrap">	
 <div class="logo">	 
 
@@ -511,6 +511,20 @@ Copyright 2021 <a href="https://buananetpbun.github.io/mikrotik">Mikrotik Script
 </div>
 </div>
 <script>
+function ContenUrlGet(){
+var url_string = window.location;
+var title
+var url = new URL(url_string);
+var name = url.searchParams.get("url");
+if (name > "") {
+var element2 =  document.getElementById("change-iframe-url");
+element2.setAttribute("src", name);
+} else {
+var element3 =  document.getElementById("change-iframe-url");
+element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
+}
+}	
+
 function content(text){
 var element =  document.getElementById("change-iframe-url");
 element.setAttribute("src", text);
