@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset='utf-8'/>
-<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mikrotik RouterOS Script DataBase Unoffical - BuanaNETPBun</title>
 <meta content='Mikrotik RouterOS Script DataBase Unoffical By BuanaNETPBun Secure!' name='description'/>
 <meta content='RouterOS, Mikrotik Script, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
