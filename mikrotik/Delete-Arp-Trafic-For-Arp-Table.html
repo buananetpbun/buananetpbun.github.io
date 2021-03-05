@@ -17,12 +17,10 @@
 <h1>Delete Arp Trafic For Arp Table - MikroTik Script RouterOS</h1>
 Here are two scripts that blank ARP trafic and log the arp trafic. You have to scheduled the scripts.
 
-
 <precd><code class="routeros"># Script1
 /ip arp print file=mauro; 
 :local i [/ip arp print count-only]; 
 :for a from=0 to=($i - 2) do={:log [/ip arp print $a ] </code></precd>
-
 
 <precd><code class="routeros"># Script2
 /ip arp print file=mauro; 
