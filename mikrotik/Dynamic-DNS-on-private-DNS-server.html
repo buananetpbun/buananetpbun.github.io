@@ -27,14 +27,14 @@ Setup
 
 2.Create a php update page
 
-<precd><code class="routeros"> <?php
+<precd><code class="routeros">&lt;?php
   $ip=$_SERVER[REMOTE_ADDR];
-  if ($_GET['hash']="ae2b1fca515949e5d54fb22b8ed95575") {
-    file_put_contents("deviceupdate.log","DATE: ".date("Y-m-d H:i:s")." IP: ".$ip."\n",FILE_APPEND | LOCK_EX);
-    file_put_contents("homeip.log",$ip,LOCK_EX);
-    print "DATE: ".date("Y-m-d H:i:s")." IP: ".$ip;
+  if ($_GET[&#039;hash&#039;]=&quot;ae2b1fca515949e5d54fb22b8ed95575&quot;) {
+    file_put_contents(&quot;deviceupdate.log&quot;,&quot;DATE: &quot;.date(&quot;Y-m-d H:i:s&quot;).&quot; IP: &quot;.$ip.&quot;n&quot;,FILE_APPEND | LOCK_EX);
+    file_put_contents(&quot;homeip.log&quot;,$ip,LOCK_EX);
+    print &quot;DATE: &quot;.date(&quot;Y-m-d H:i:s&quot;).&quot; IP: &quot;.$ip;
   }
-?></code></precd>
+?&gt;</code></precd>
 
 3.Setup Mikrotik schetuler that runs every few minutes
 
