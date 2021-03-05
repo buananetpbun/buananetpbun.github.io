@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title>Delete Arp Trafic For Arp Table - MikroTik Script RouterOS</title>
+<meta content='Delete Arp Trafic For Arp Table - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Delete Arp Trafic For Arp Table - MikroTik Script RouterOS</h1>
+Here are two scripts that blank ARP trafic and log the arp trafic. You have to scheduled the scripts.
+
+script1
+<precd><code class="routeros">/ip arp print file=mauro; 
+:local i [/ip arp print count-only]; 
+:for a from=0 to=($i - 2) do={:log [/ip arp print $a ] </code></precd>
+
+script2
+<precd><code class="routeros">/ip arp print file=mauro; 
+:local i [/ip arp print count-only];
+:for a from= 0 to=($i - 2) do={[/ip arp remove $i]} </code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<a href="https://buananetpbun.github.io/mikrotik/"><- Back To Home</a>
+</body>
+</html>
+
