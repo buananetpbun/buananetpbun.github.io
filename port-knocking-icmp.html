@@ -528,55 +528,7 @@
 		</div>
 	</div>
 	<script>
-		var packetsizekeyfirstbat = document.getElementById("packet-size-key-first").value;
-		var packetsizekeysecondbat = document.getElementById("packet-size-key-second").value;
-	    var bat_source = "@ECHO OFF\n:PING\nECHO ======================================\nECHO = Port Knocking Client For Mikrotik\nECHO = BY: BuanaNET Secure!, Desember 2020\nECHO = fb.com/buananet.pbun\nECHO ======================================\nset /p ipaddress=Your Router IP Address: \nping -l " + (packetsizekeyfirstbat - 28) + " -n 2 %ipaddress%\nping -l " + (packetsizekeysecondbat - 28) + " -n 2 %ipaddress%\nECHO.\nECHO ======================================\nECHO ** Knocking Done! **\nECHO ======================================\nECHO.\nPAUSE >NUL\n";
-        document.querySelector(".download").href = 'data:text;base64,' + btoa(bat_source) 
-		var dt = new Date();
-        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
-		function myFunction(){
-		var packetsizekeyfirstbat = document.getElementById("packet-size-key-first").value;
-		var packetsizekeysecondbat = document.getElementById("packet-size-key-second").value;
-	    var bat_source = "@ECHO OFF\n:PING\nECHO ======================================\nECHO = Port Knocking Client For Mikrotik\nECHO = BY: BuanaNET Secure!, Desember 2020\nECHO = fb.com/buananet.pbun\nECHO ======================================\nset /p ipaddress=Your Router IP Address: \nping -l " + (packetsizekeyfirstbat - 28) + " -n 2 %ipaddress%\nping -l " + (packetsizekeysecondbat - 28) + " -n 2 %ipaddress%\nECHO.\nECHO ======================================\nECHO ** Knocking Done! **\nECHO ======================================\nECHO.\nPAUSE >NUL\n";
-        document.querySelector(".download").href = 'data:text;base64,' + btoa(bat_source) 
-			var packetsizekeyfirst = document.getElementById("packet-size-key-first").value;
-			var packetsizekeysecond = document.getElementById("packet-size-key-second").value;
-			var timeoutaccessfirst = document.getElementById("timeout-access").value; 
-			var timeoutaccesssecond = document.getElementById("timeout-access").value; 
-			var portservices = document.getElementById("port-services").value;
-			document.getElementById("first-key-list").innerHTML = "<span style='color:#08c; font-weight:bold'>" + packetsizekeyfirst + "</span>";
-			document.getElementById("second-key-list").innerHTML = "<span style='color:#08c; font-weight:bold'>" + packetsizekeysecond + "</span>";
-			document.getElementById("timeout-access-first-list").innerHTML = "<span style='color:#08c; font-weight:bold'>" + timeoutaccessfirst + "</span>";
-			document.getElementById("timeout-access-second-list").innerHTML = "<span style='color:#08c; font-weight:bold'>" + timeoutaccesssecond + "</span>";
-			document.getElementById("port-services-list").innerHTML = "<span style='color:#08c; font-weight:bold'>" + portservices + "</span>";
-			document.getElementById("port-services-list2").innerHTML = "<span style='color:#08c; font-weight:bold'>" + portservices + "</span>";
-			document.getElementById("packet-size-result1").innerHTML = (packetsizekeyfirst - 28);
-			document.getElementById("packet-size-result2").innerHTML = (packetsizekeysecond - 28);
-			document.getElementById("packet-size-win1").innerHTML = (packetsizekeyfirst - 28);
-			document.getElementById("packet-size-win2").innerHTML = (packetsizekeysecond - 28);
-			document.getElementById("packet-size-linux1").innerHTML = (packetsizekeyfirst - 28);
-			document.getElementById("packet-size-linux2").innerHTML = (packetsizekeysecond - 28);
-		}
-    	 function selectElementContents(el) {
-            var body = document.body, range, sel;
-            if (document.createRange && window.getSelection) {
-                range = document.createRange();
-                sel = window.getSelection();
-                sel.removeAllRanges();
-                try {
-                     range.selectNodeContents(el);
-                     sel.addRange(range);
-                         } catch (e) {
-                                 range.selectNode(el);
-                                 sel.addRange(range);
-                         }
-                         } else if (body.createTextRange) {
-                             range = body.createTextRange();
-                             range.moveToElementText(el);
-                             range.select();
-                         }
-             document.execCommand("copy"); 
-        }
+var _0x5aa9=['1MkUJTU','createRange','packet-size-result1','getElementById','150831PRSfVT','href','3encKRD','execCommand','305322gVQuAZ','createTextRange','port-services-list2','packet-size-linux2','addRange','packet-size-key-first','timeout-access-first-list','<span\x20style=\x27color:#08c;\x20font-weight:bold\x27>','second-key-list','packet-size-result2','.download','timeout-access-second-list','\x20-n\x202\x20%ipaddress%\x0aping\x20-l\x20','</span>','getSelection','tanggalwaktu','695765NhCEJS','\x20-n\x202\x20%ipaddress%\x0aECHO.\x0aECHO\x20======================================\x0aECHO\x20**\x20Knocking\x20Done!\x20**\x0aECHO\x20======================================\x0aECHO.\x0aPAUSE\x20>NUL\x0a','data:text;base64,','packet-size-key-second','1218036vwBERm','innerHTML','1168735bDboRT','1UYzsRu','383338zeJknZ','packet-size-win1','value','selectNodeContents','timeout-access','port-services','packet-size-win2','removeAllRanges','1235473KtjHvM','body','querySelector'];var _0x6a77=function(_0x5c4d81,_0x506301){_0x5c4d81=_0x5c4d81-0x11c;var _0x5aa93e=_0x5aa9[_0x5c4d81];return _0x5aa93e;};var _0x466b69=_0x6a77;(function(_0x4efede,_0x5e1594){var _0xf2e85f=_0x6a77;while(!![]){try{var _0x17c280=parseInt(_0xf2e85f(0x131))+parseInt(_0xf2e85f(0x122))*parseInt(_0xf2e85f(0x121))+-parseInt(_0xf2e85f(0x12a))*parseInt(_0xf2e85f(0x12d))+-parseInt(_0xf2e85f(0x145))+-parseInt(_0xf2e85f(0x135))+-parseInt(_0xf2e85f(0x120))+-parseInt(_0xf2e85f(0x11e))*-parseInt(_0xf2e85f(0x133));if(_0x17c280===_0x5e1594)break;else _0x4efede['push'](_0x4efede['shift']());}catch(_0x5a1e41){_0x4efede['push'](_0x4efede['shift']());}}}(_0x5aa9,0xbf286));var packetsizekeyfirstbat=document['getElementById'](_0x466b69(0x13a))[_0x466b69(0x124)],packetsizekeysecondbat=document[_0x466b69(0x130)](_0x466b69(0x11d))[_0x466b69(0x124)],bat_source='@ECHO\x20OFF\x0a:PING\x0aECHO\x20======================================\x0aECHO\x20=\x20Port\x20Knocking\x20Client\x20For\x20Mikrotik\x0aECHO\x20=\x20BY:\x20BuanaNET\x20Secure!,\x20Desember\x202020\x0aECHO\x20=\x20fb.com/buananet.pbun\x0aECHO\x20======================================\x0aset\x20/p\x20ipaddress=Your\x20Router\x20IP\x20Address:\x20\x0aping\x20-l\x20'+(packetsizekeyfirstbat-0x1c)+_0x466b69(0x141)+(packetsizekeysecondbat-0x1c)+'\x20-n\x202\x20%ipaddress%\x0aECHO.\x0aECHO\x20======================================\x0aECHO\x20**\x20Knocking\x20Done!\x20**\x0aECHO\x20======================================\x0aECHO.\x0aPAUSE\x20>NUL\x0a';document[_0x466b69(0x12c)](_0x466b69(0x13f))[_0x466b69(0x132)]=_0x466b69(0x11c)+btoa(bat_source);var dt=new Date();document['getElementById'](_0x466b69(0x144))[_0x466b69(0x11f)]=dt['toLocaleString']();function myFunction(){var _0x5f05de=_0x466b69,_0x193349=document[_0x5f05de(0x130)]('packet-size-key-first')['value'],_0x3537ef=document[_0x5f05de(0x130)](_0x5f05de(0x11d))['value'],_0x2bef34='@ECHO\x20OFF\x0a:PING\x0aECHO\x20======================================\x0aECHO\x20=\x20Port\x20Knocking\x20Client\x20For\x20Mikrotik\x0aECHO\x20=\x20BY:\x20BuanaNET\x20Secure!,\x20Desember\x202020\x0aECHO\x20=\x20fb.com/buananet.pbun\x0aECHO\x20======================================\x0aset\x20/p\x20ipaddress=Your\x20Router\x20IP\x20Address:\x20\x0aping\x20-l\x20'+(_0x193349-0x1c)+_0x5f05de(0x141)+(_0x3537ef-0x1c)+_0x5f05de(0x146);document[_0x5f05de(0x12c)](_0x5f05de(0x13f))['href']=_0x5f05de(0x11c)+btoa(_0x2bef34);var _0x51671a=document[_0x5f05de(0x130)]('packet-size-key-first')['value'],_0x2a1ec9=document[_0x5f05de(0x130)](_0x5f05de(0x11d))[_0x5f05de(0x124)],_0x42981b=document[_0x5f05de(0x130)](_0x5f05de(0x126))['value'],_0x3d3958=document[_0x5f05de(0x130)]('timeout-access')[_0x5f05de(0x124)],_0x2a27bc=document[_0x5f05de(0x130)](_0x5f05de(0x127))[_0x5f05de(0x124)];document[_0x5f05de(0x130)]('first-key-list')['innerHTML']=_0x5f05de(0x13c)+_0x51671a+_0x5f05de(0x142),document[_0x5f05de(0x130)](_0x5f05de(0x13d))[_0x5f05de(0x11f)]=_0x5f05de(0x13c)+_0x2a1ec9+_0x5f05de(0x142),document['getElementById'](_0x5f05de(0x13b))[_0x5f05de(0x11f)]=_0x5f05de(0x13c)+_0x42981b+'</span>',document['getElementById'](_0x5f05de(0x140))['innerHTML']=_0x5f05de(0x13c)+_0x3d3958+_0x5f05de(0x142),document[_0x5f05de(0x130)]('port-services-list')[_0x5f05de(0x11f)]='<span\x20style=\x27color:#08c;\x20font-weight:bold\x27>'+_0x2a27bc+_0x5f05de(0x142),document[_0x5f05de(0x130)](_0x5f05de(0x137))[_0x5f05de(0x11f)]=_0x5f05de(0x13c)+_0x2a27bc+'</span>',document['getElementById'](_0x5f05de(0x12f))[_0x5f05de(0x11f)]=_0x51671a-0x1c,document['getElementById'](_0x5f05de(0x13e))['innerHTML']=_0x2a1ec9-0x1c,document[_0x5f05de(0x130)](_0x5f05de(0x123))[_0x5f05de(0x11f)]=_0x51671a-0x1c,document[_0x5f05de(0x130)](_0x5f05de(0x128))[_0x5f05de(0x11f)]=_0x2a1ec9-0x1c,document[_0x5f05de(0x130)]('packet-size-linux1')['innerHTML']=_0x51671a-0x1c,document[_0x5f05de(0x130)](_0x5f05de(0x138))['innerHTML']=_0x2a1ec9-0x1c;}function selectElementContents(_0x19d6ec){var _0x233bd6=_0x466b69,_0x2d9b5c=document[_0x233bd6(0x12b)],_0x3678a8,_0x4e5784;if(document[_0x233bd6(0x12e)]&&window[_0x233bd6(0x143)]){_0x3678a8=document['createRange'](),_0x4e5784=window[_0x233bd6(0x143)](),_0x4e5784[_0x233bd6(0x129)]();try{_0x3678a8[_0x233bd6(0x125)](_0x19d6ec),_0x4e5784[_0x233bd6(0x139)](_0x3678a8);}catch(_0x4f773c){_0x3678a8['selectNode'](_0x19d6ec),_0x4e5784[_0x233bd6(0x139)](_0x3678a8);}}else _0x2d9b5c[_0x233bd6(0x136)]&&(_0x3678a8=_0x2d9b5c[_0x233bd6(0x136)](),_0x3678a8['moveToElementText'](_0x19d6ec),_0x3678a8['select']());document[_0x233bd6(0x134)]('copy');}
 	</script>
 </body>
 </html>
