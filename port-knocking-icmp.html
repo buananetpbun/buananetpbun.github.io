@@ -30,6 +30,17 @@
 		width:900px;
 		margin:0 auto;
 		}
+		.logo {
+		margin-top:30px;
+		color: #111;
+		text-decoration:none;
+		font-size:27px;
+		font-weight:bold; 
+		}	
+		.logo a{
+		color:#111 !important;
+		text-decoration:none !important;
+		}
 		.header{
 		height:145px; 
 		width:auto;
@@ -433,11 +444,11 @@
 <h1>MIKROTIK PORT KNOCKING GENERATOR WITH ICMP + PACKET SIZE</h1>
 </div>
 		<div class="sidebar">
-			<label>First Icmp Packet Size <br>range: 50-6000<br><span style='color:#08c'>example: 100</span></label>
+			<label>First Icmp Packet Size <br>range: 50-65535<br><span style='color:#08c'>example: 100</span></label>
 			<br>
 			<input type="text" id="packet-size-key-first" placeholder="100" value="" onkeyup="myFunction()">
 			<br>
-			<label>Second Icmp Packet Size <br>range: 50-59
+			<label>Second Icmp Packet Size <br>range: 50-65535
 			<br><span style='color:#08c'>example: 200</span></label>
 			<br>
 			<input type="text" id="packet-size-key-second" placeholder="200" value="" onkeyup="myFunction()">
