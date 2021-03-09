@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic DNS Update Script for ChangeIP behind NAT - MikroTik Script RouterOS</title>
+<meta content='Dynamic DNS Update Script for ChangeIP behind NAT - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Dynamic DNS Update Script for ChangeIP behind NAT - MikroTik Script RouterOS</h1>
+This script is intended to update a ChangeIP.com Dynamic DNS account when your device is behind nat.
+
+You need to set your username, password and hostname.
+
+This was tested successfully on RouterOS 5.7
+
+<precd><code class="routeros"> # Dynamic DNS for ChangeIP.com behind NAT
+# Modified by Jorge Amaral, officelan.pt
+# For support send mail to support at offficelan dot pt
+#
+# The original script was written by "webasdf" on the Mikrotik foruns, i just modified it to work with ChangeIP.com
+#
+# Here is where you need to set your definitions
+:local user "user"
+:local pass "pass"
+:local host "host"
+##############
+##############
+:global lastwanip;
+:if ([ :typeof $lastwanip ] = "nothing" ) do={ :global lastwanip 0.0.0.0 };
+:local wanip [:resolve $host];
+:if ( $wanip != $lastwanip ) do={
+	/tool fetch mode=http address="checkip.dyndns.org" src-path="/" dst-path="/dyndns.checkip.html"
+	:local result [/file get dyndns.checkip.html contents]
+	:local resultLen [:len $result]
+	:local startLoc [:find $result ": " -1]
+	:set startLoc ($startLoc + 2)
+	:local endLoc [:find $result "</body>" -1]
+	:local currentIP [:pick $result $startLoc $endLoc]
+	:set lastwanip $currentIP;
+	:put [/tool dns-update name=$host address=$currentIP key-name=$user key=$pass ]
+}</code></precd>
+
+You may copy and paste the script below into the terminal window.
+
+<precd><code class="routeros"># oct/13/2011 00:51:52 by RouterOS 5.7
+#
+/system script
+add name=DDNS policy=\
+    ftp,reboot,read,write,policy,test,winbox,password,sniff,sensitive,api \
+    source="# Dynamic DNS for ChangeIP.com behind NA\
+    T\r\
+    \n# Modified by Jorge Amaral, officelan.pt\r\
+    \n# For support send mail to support at offficelan dot pt\r\
+    \n#\r\
+    \n# The original script was written by \"webasdf\" on the Mikrotik foruns, i just modified it to work with ChangeIP.com\r\
+    \n#\r\
+    \n# Here is where you need to set your definitions\r\
+    \n:local user \"user\"\r\
+    \n:local pass \"pass\"\r\
+    \n:local host \"host\"\r\
+    \n##############\r\
+    \n##############\r\
+    \n:global lastwanip;\r\
+    \n:if ([ :typeof \$lastwanip ] = \"nothing\" ) do={ :global lastwanip 0.0.0.0 };\r\
+    \n:local wanip [:resolve \$host];\r\
+    \n:if ( \$wanip != \$lastwanip ) do={\r\
+    \n\t/tool fetch mode=http address=\"checkip.dyndns.org\" src-path=\"/\" dst-path=\"/dyndns.checkip.html\"\r\
+    \n\t:local result [/file get dyndns.checkip.html contents]\r\
+    \n\t:local resultLen [:len \$result]\r\
+    \n\t:local startLoc [:find \$result \": \" -1]\r\
+    \n\t:set startLoc (\$startLoc + 2)\r\
+    \n\t:local endLoc [:find \$result \"</body>\" -1]\r\
+    \n\t:local currentIP [:pick \$result \$startLoc \$endLoc]\r\
+    \n\t:set lastwanip \$currentIP;\r\
+    \n\t:put [/tool dns-update name=\$host address=\$currentIP key-name=\$user key=\$pass ]\r\
+    \n}"</code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<a href="https://buananetpbun.github.io/mikrotik/"><- Back To Home</a>
+</body>
+</html>
