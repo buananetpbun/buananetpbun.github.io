@@ -16,6 +16,7 @@
 <pre>
 <h1>Auto Simple Queue From DHCP Server - MikroTik Script RouterOS</h1>
 How To Creating Automatically Simple Queue using DHCP Server Lease Script
+
 <precd><code class="routeros">:local queueName "Client- $leaseActMAC";
 :if ($leaseBound = "1") do={
  /queue simple add name=$queueName target=($leaseActIP . "/32") limit-at=512k/769k max-limit=512k/1024k comment=[/ip dhcp-server lease get [find where active-mac-address=$leaseActMAC && active-address=$leaseActIP] host-name];
