@@ -31,6 +31,18 @@
 *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
 body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
 body {font-size:13px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;background:#ccc}
+.bg {
+  /* The image used */
+  background-image: url("img/mikrotik.jpg");
+
+  /* Full height */
+  height: 50%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 * {
 box-sizing: border-box;
 }
@@ -231,10 +243,10 @@ border-left:1px solid #ddd;
 }
 </style>
 </head>
-<body onload="ContenUrlGet()">
+
+<body class="bg" onload="ContenUrlGet()">
 <div id="wrap">	
 <div class="logo">	 
-
 <img style="float:right;padding-top:12px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <a href="https://buananetpbun.github.io"><span style="color:#a8328b !important">BuanaNETPBun</span>.Github.io</a> 
 </div>
