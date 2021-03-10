@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Simple Queue From DHCP Server - MikroTik Script RouterOS</title>
+<meta content='Auto Simple Queue From DHCP Server - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Auto Simple Queue From DHCP Server - MikroTik Script RouterOS</h1>
+How To Creating Automatically Simple Queue using DHCP Server Lease Script
+<precd><code class="routeros">:local queueName "Client- $leaseActMAC";
+:if ($leaseBound = "1") do={
+ /queue simple add name=$queueName target=($leaseActIP . "/32") limit-at=512k/769k max-limit=512k/1024k comment=[/ip dhcp-server lease get [find where active-mac-address=$leaseActMAC && active-address=$leaseActIP] host-name];
+} else={
+    /queue simple remove $queueName
+} </code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<a href="https://buananetpbun.github.io/mikrotik/"><- Back To Home</a>
+</body>
+</html>
+
