@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic DNS Update Script for Namecheap - MikroTik Script RouterOS</title>
+<meta content='Dynamic DNS Update Script for Namecheap - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Dynamic DNS Update Script for Namecheap - MikroTik Script RouterOS</h1>
+This is a script which checks if the IP for an interface has changed, updates namecheap.com's dynamic DNS and also sends you an email about it. :o
+
+As it turns out, it's also good for letting me know when electricity has been restored after a blackout or when the ISP comes back from an outage. :)
+
+ROS now has /ip cloud with Mikrotik's own ddns. With this script and Namecheap, you can have a much cooler and shorter ddns domain. And also a backup in case /ip cloud is down.
+
+My first script here so please let me know if things can be improved. I'm quite the newbie to Mikrotik. The script was originally taken from the Mikrotik wiki for another ddns provider and then modified for Namecheap.
+
+Email tool needs to be setup beforehand. Just change the globals to yours. A few things are hardcoded: interface name to check, email address & smtp server. There's no error checking if the ddns update fails or sending email encounters an error. Schedule this script to run every few minutes as you please.
+
+<precd><code class="routeros">:global ddnsserv "dynamicdns.park-your-domain.com"
+:global ddnshostname "cctv1"
+:global ddnsdomain "soonwai.com"
+:global ddnspass "44274h3e71dbe7cd18e1d8ab5877267d5ac3"
+:global ddnsip
+:global ddnslastip
+:global strdate [/system clock get date]
+:global strtime [/system clock get time]
+:global strsystemname [/system identity get name]
+:global strsystemuptime [/system resource get uptime]
+:global strsystemfreemem [/system resource get free-memory]
+:global strsystemcpuload [/system resource get cpu-load]
+:global ddnssystem ("Version-" . [/system package get system version] )
+:global ddnsip [ /ip address get [/ip address find interface=pppoe-out1 ] address ]
+# Strip the net mask off the IP address
+:for i from=( [:len $ddnsip] - 1) to=0 do={
+    :if ( [:pick $ddnsip $i] = "/") do={ 
+        :set ddnsip [:pick $ddnsip 0 $i]
+       } 
+   }
+:if ([ :typeof $ddnslastip ] = nil ) do={ :global ddnslastip "0" }
+:if ([ :typeof $ddnsip ] = nil ) do={
+   :log info ("DDNS: No ip address present on pppoe interface, dammit TM.")
+} else={
+  :if ($ddnsip != $ddnslastip) do={
+    :log info ("DDNS: Updating $ddnsip $ddnslastip")
+    :local str "/update?host=$ddnshostname&domain=$ddnsdomain&password=$ddnspass&ip=$ddnsip"
+    /tool fetch address=$ddnsserv src-path=$str mode=http dst-path=("/disk1/DynDNS.".$ddnshostname)
+    :log info "DDNS: Sending Email"
+    /tool e-mail send to=soonwai@example.com subject="IP Address $strdate $strtime $strsystemname" body="$strsystemname $strdate $strtime \r$ddnshostname.$ddnsdomain \r$ddnssystem\rNew IP: $ddnsip \rPrevious IP: $ddnslastip \rUptime: $strsystemuptime \rFree memory: $strsystemfreemem kb \rCPU Load: $strsystemcpuload % " start-tls=yes server=[:resolve smtp.gmail.com]
+    :global ddnslastip "$ddnsip"
+  } else={ 
+#    :log info "DDNS: No update required."
+    }
+}</code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script><br><br>
+</body>
+</html>
