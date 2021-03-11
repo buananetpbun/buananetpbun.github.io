@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic DNS Update Script for Hurricane Electric DNS - MikroTik Script RouterOS</title>
+<meta content='Dynamic DNS Update Script for Hurricane Electric DNS - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Dynamic DNS Update Script for Hurricane Electric DNS - MikroTik Script RouterOS</h1>
+This script will update the IP address on Hurricane Electric DNS service (http://dns.he.net/)
+
+It updates the A/AAAA record so both IPv4 and IPv6 can be supplied.
+
+It uses the fetch command with the url= parameter. Check that your version of RouterOS -> /tool fetch supports this option.
+
+The following URL to supply update information is used:
+
+For auto IP detection:
+
+<precd><code class="routeros"> http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com</code></precd>
+
+For manually setting the IP address:
+
+<precd><code class="routeros"> http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com&myip=192.168.0.1</code></precd>
+
+For more information, see this link: http://dns.he.net/
+
+The script:
+
+<precd><code class="routeros"> # Update Hurricane Electric DDNS IPv4 address
+:local ddnshost "<dyndnshost>"
+:local key "key"
+:local updatehost "dyn.dns.he.net"
+:local WANinterface "<if>"
+:local outputfile ("HE_DDNS" . ".txt")
+# Internal processing below...
+# ----------------------------------
+:local ipv4addr
+# Get WAN interface IP address
+:set ipv4addr [/ip address get [/ip address find interface=$WANinterface] address]
+:set ipv4addr [:pick [:tostr $ipv4addr] 0 [:find [:tostr $ipv4addr] "/"]]
+:if ([:len $ipv4addr] = 0) do={
+   :log error ("Could not get IP for interface " . $WANinterface)
+   :error ("Could not get IP for interface " . $WANinterface)
+}
+:log info ("Updating DDNS IPv4 address" . " Client IPv4 address to new IP " . $ipv4addr . "...")
+/tool fetch url="http://$ddnshost:$key@$updatehost/nic/update?hostname=$ddnshost&myip=$ipv4addr"  \
+dst-path=$outputfile                           
+:log info ([/file get ($outputfile) contents])
+/file remove ($outputfile)</code></precd>
+
+Note: The above script works with ROS 3.x. For the 5.x a minor modification for the fetch command is needed:
+
+<precd><code class="routeros">/tool fetch mode=http url="http://$ddnshost:$key@$updatehost/nic/update?hostname=$ddnshost&myip=$ipv4addr" \
+dst-path=$outputfile</code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script><br><br>
+</body>
+</html>
