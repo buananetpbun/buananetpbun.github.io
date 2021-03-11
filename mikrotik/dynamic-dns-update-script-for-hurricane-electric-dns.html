@@ -25,17 +25,17 @@ The following URL to supply update information is used:
 
 For auto IP detection:
 
-<precd><code class="routeros"> http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com</code></precd>
+<precd><code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com</code></precd>
 
 For manually setting the IP address:
 
-<precd><code class="routeros"> http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com&myip=192.168.0.1</code></precd>
+<precd><code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com&myip=192.168.0.1</code></precd>
 
 For more information, see this link: http://dns.he.net/
 
 The script:
 
-<precd><code class="routeros"> # Update Hurricane Electric DDNS IPv4 address
+<precd><code class="routeros"># Update Hurricane Electric DDNS IPv4 address
 :local ddnshost "<dyndnshost>"
 :local key "key"
 :local updatehost "dyn.dns.he.net"
