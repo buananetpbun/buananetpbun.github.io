@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic DNS Update Script for dynDNS behind NAT - MikroTik Script RouterOS</title>
+<meta content='Dynamic DNS Update Script for dynDNS behind NAT - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Dynamic DNS Update Script for dynDNS behind NAT - MikroTik Script RouterOS</h1>
+Grateful thanks goes to "webasdf" on the forums (http://forum.mikrotik.com/viewtopic.php?p=171805#p171805) for this. I just edited it so that we can use the same identical script at every single one of our hotspots that are behind a Dynamic IP. The great ability of the original script by webasdf is that it uses DynDNS's html access method which means it will work behind a NAT'ed connection.
+
+Script minimum Policy permissions required: read | write | test
+
+<precd><code class="routeros">:local username "<dyn.com user name>"
+:local password "<dyn.com password or, better, Updater Client Key>"
+:local hostname "<dyn.com host name>"
+:local emailAddress "<where to send notifications>"
+
+:local url "dummy"
+:local previousIP
+
+:global dyndnsForce
+
+:set dyndnsForce false
+
+:log info ("UpdateDynDNS starts.")
+
+# print some debug info
+#:log info ("UpdateDynDNS: username = $username")
+#:log info ("UpdateDynDNS: password = $password")
+#:log info ("UpdateDynDNS: hostname = $hostname")
+#:log info ("UpdateDynDNS: previousIP = $previousIP")
+
+# I have some doubt over the persistence of the global previousIP.
+# This value should be stored in /dyndns.txt after the last update attempt,
+# preceded by the status and a space.
+# For status values see: https://help.dyn.com/remote-access-api/return-codes/
+
+:if ([:len [/file find name=dyndns.txt]] > 0) do={
+   :local ipfile [/file get dyndns.txt contents]
+   :local ipstart ([find $ipfile " " -1] + 1)
+   :local ipend [:len $ipfile]
+   :set previousIP [:pick $ipfile $ipstart $ipend]
+} else={
+   :set previousIP "0.0.0.0"
+}
+
+# get the current IP address from the internet (in case of double-nat)
+/tool fetch mode=http address="checkip.dyn.com" src-path="/" dst-path="/dyndns.checkip.html"
+:delay 1
+:local result [/file get dyndns.checkip.html contents]
+
+# parse the current IP result
+:local resultLen [:len $result]
+:local startLoc [:find $result ": " -1]
+:set startLoc ($startLoc + 2)
+:local endLoc [:find $result "</body>" -1]
+:local currentIP [:pick $result $startLoc $endLoc]
+
+# Remove the # on next line to force an update every single time - useful for debugging,
+# but you could end up getting blacklisted by DynDNS!
+
+#:set dyndnsForce true
+
+# Determine if dyndns update is needed
+# more dyndns updater request details http://www.dyndns.com/developers/specs/syntax.html
+
+:if (($currentIP != $previousIP) || ($dyndnsForce = true)) do={
+   :log info ("Changing IP from $previousIP to $currentIP.")
+   :set dyndnsForce false
+   :set url "http://$username:$password@members.dyndns.org/nic/update?hostname=$hostname&myip=$currentIP&wildcard=no"
+   /tool fetch url=$url mode=http dst-path="/dyndns.txt"
+  
+# Original code:
+#   /tool fetch user=$username password=$password mode=http address="members.dyndns.org" \
+#      src-path="nic/update?system=dyndns&hostname=$hostname&myip=$currentIP&wildcard=no" \
+#      dst-path="/dyndns.txt"
+
+   :delay 1
+
+#  :set previousIP $currentIP
+
+   :local result [/file get dyndns.txt contents]
+   :log info ("UpdateDynDNS: Dyndns update needed")
+   :log info ("UpdateDynDNS: Dyndns Update Result: ".$result)
+
+# email result:
+   :local output "DynDNS Update Result: $result"
+   /tool e-mail send to="$emailAddress" subject="DynDNS update $currentTime" body="$output"
+} else={
+   :log info ("UpdateDynDNS: No dyndns update needed")
+} </code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<a href="https://buananetpbun.github.io/mikrotik/"><- Back To Home</a>
+</body>
+</html>
