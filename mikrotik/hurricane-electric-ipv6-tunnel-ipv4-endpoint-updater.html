@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hurricane Electric IPv6 Tunnel - IPv4 Endpoint updater - MikroTik Script RouterOS</title>
+<meta content='Hurricane Electric IPv6 Tunnel - IPv4 Endpoint updater - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Hurricane Electric IPv6 Tunnel - IPv4 Endpoint updater - MikroTik Script RouterOS</h1>
+This script will update a Hurricane Electric IPv6 Tunnel Client IPv4 address.
+
+This script uses the fetch command with the url= parameter. Check that your version of RouterOS -> /tool fetch supports this option.
+
+This script also works great when integrated with a dynamic DNS updater script.
+
+For complete instructions on how to update your Hurricane Electric IPv6 Tunnel Client IPv4 address, see this link: [1] (http://ipv4.tunnelbroker.net/ipv4_end.php)
+
+2017-03-05: Updated. Fresh version by mos6581 (https://forum.mikrotik.by/viewtopic.php?t=249) uses HTTPS and actual update URL
+
+The script:
+
+<precd><code class="routeros"># Update Hurricane Electric IPv6 Tunnel Client IPv4 address
+
+:local HEtunnelinterface "<<<6to4 Interface name>>>"
+:local HEtunnelid "<<<Tunnel ID>>>"
+:local HEuserid "<<<Username>>>"
+:local HEmd5pass "<<<Update Key>>>"
+:local HEupdatehost "ipv4.tunnelbroker.net"
+:local HEupdatepath "/nic/update"
+:local WANinterface "<<<WAN Interface name>>>"
+:local outputfile ("HE-" . $HEtunnelid . ".txt")
+
+# Internal processing below...
+# ----------------------------------
+:local HEipv4addr
+
+# Get WAN interface IP address
+:set HEipv4addr [/ip address get [/ip address find interface=$WANinterface] address]
+:set HEipv4addr [:pick [:tostr $HEipv4addr] 0 [:find [:tostr $HEipv4addr] "/"]]
+
+:if ([:len $HEipv4addr] = 0) do={
+   :log error ("Could not get IP for interface " . $WANinterface)
+   :error ("Could not get IP for interface " . $WANinterface)
+}
+
+# Update the HEtunnelinterface with WAN IP
+/interface 6to4 {
+   :if ([get ($HEtunnelinterface) local-address] != $HEipv4addr) do={
+      :log info ("Updating " . $HEtunnelinterface . " local-address with new IP " . $HEipv4addr . "...")
+      set ($HEtunnelinterface) local-address=$HEipv4addr
+   }
+}
+
+:log info ("Updating IPv6 Tunnel " . $HEtunnelid . " Client IPv4 address to new IP " . $HEipv4addr . "...")
+/tool fetch mode=https \
+                  host=($HEupdatehost) \
+                  url=("https://" . $HEupdatehost . $HEupdatepath . \
+                          "?hostname=" . $HEtunnelid . \
+                          "&myip=" . $HEipv4addr) \
+                  user=($HEuserid) \
+                  password=($HEmd5pass) \
+                  dst-path=($outputfile)
+                  
+:log info ([/file get ($outputfile) contents])
+/file remove ($outputfile)</code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script><br><br>
+</body>
+</html>
