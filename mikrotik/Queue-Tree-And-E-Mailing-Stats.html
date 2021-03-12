@@ -34,8 +34,8 @@ I have left my own IP addresses but be sure to change them with your own. The ne
 The script - queue
 Make two main queues (download and upload) for the interface you wish to limit.
 
-<precd><code class="routeros">/queue tree add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 max-limit=768000 name=UL packet-mark="" parent=DSL priority=8</code></precd> queue=default;
-/queue tree add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 max-limit=16000000 name=DL packet-mark="" parent=LAN priority=8 queue=default;
+<precd><code class="routeros">/queue tree add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 max-limit=768000 name=UL packet-mark="" parent=DSL priority=8 queue=default;
+/queue tree add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 max-limit=16000000 name=DL packet-mark="" parent=LAN priority=8 queue=default;</code></precd> 
 
 Be sure to change the speeds to match your interface speed or lower if you wish. Setting them higher will not help anything.
 
