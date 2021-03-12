@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Routing Via A Dhcp Allocated Gateway - MikroTik Script RouterOS</title>
+<meta content='Routing Via A Dhcp Allocated Gateway - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<pre>
+<h1>Routing Via A Dhcp Allocated Gateway - MikroTik Script RouterOS</h1>
+The Explanation
+Sometimes a box can have a DHCP allocated address, but the gateway for that address is not automatically configured as the default gatway - perhaps you only want to route certain traffic out via that interface or maybe you have two routes out and need to route some traffic one way and others the other.
+
+In my case, we have a standard ROS configuration with up to three interfaces running DHCP clients. We want to run traffic over tunnels (so the default route is over the tunnel interface), but the tunnel bearer connection needs to be routed out via one of the gateways on one of the interfaces. Since the gateway addresses are allocated by DHCP, we can't hard code them in (and we wouldn't want to anyway as this means we can't run a one-configuration-fits-all approach).
+
+So...
+
+This script utilises routing rules and routing tables to force traffic to certain destinations out over the DHCP allocated gateway for a specified interface.
+
+The script creates a default gateway (0.0.0.0/0) pointing to the IP address of the gateway allocated to the DHCP client. However, it requires traffic using this default route to have a routing mark ('ether1_force' or somesuch). So this gateway doesn't apply to 'normal' traffic.
+
+It then adds a routing rule which says 'any traffic to IP address W.X.Y.Z *must* use routing table 'ether1_force'. Essentially this adds a routing mark to traffic bound for that IP address. The flexibility of this means that if you want, you can manually add more routing rules pointing to the same table and the scheduled script doesn't need to know about them - all it cares about is the routing entry itself and that there is only one routing entry it needs to worry about.
+
+The Complete Script
+
+<precd><code class="routeros"># Route to unknown/changeable gateway
+# Save this file as 'routeme.rsc' and drag it to the files window.
+# At the command line, type '/import routeme.rsc' and read the
+# logs!
+#
+# 20100915 - Nick Barnes - www.vitell.co.uk
+# No rights reserved. Tinker to your heart's desire.
+# It would be nice to know if you found this useful though - please
+# e-mail info at vitell dot co dot uk. Cheers.
+#
+#################################################################
+#
+# The purpose of this script is to ensure that we are able to force
+# some traffic out over an interface with DHCP enabled. The problem
+# is that the gateway could be pretty much anything...
+#
+#################################################################
+# DO NOT run this on a live production system unless you have thoroughly
+# tested this and know exactly what it does!
+#
+# We accept absolutely no liability whatsoever. If you choose to run
+# this script, anything bad that happens is entirely your problem.
+# Of course, if you're happy, please let us know!!
+#
+#################################################################
+#
+# Make your changes here:
+##########################
+# Changes should be made to the text inside the speechmarks, for example....
+# :local variablename "contents"
+# should NOT be changed to
+# :local myvariablename "contents"
+# as this will crash everything!!
+# Instead, you should put
+# :local variablename "mycontents"
+# or somesuch.
+#
+#
+# The name of the interface to use
+:local interfacename "ether1";
+#
+# How often to check to see if the gateway address has changed
+:local gatewaycheck "00:10:00";
+#
+# The network you want to use the route. Leave empty ("") if
+# you want to do it manually.
+:local routenet "5.5.5.5/32";
+#
+################################################################
+# Don't change anything below this line. Please!
+################################################################
+#
+#
+# Set up some variables
+:local interfaceid "$interfacename_force";
+#
+# Check that the interface does exist
+:if ([/interface find name="$interfacename"] = "") do={
+    :log warning "Specified interface '$interfacename' does not exist.";
+    } else={
+# Check that there is a DHCP server running on the interface
+        :if ([/ip dhcp-client find interface="$interfacename"] = "") do={
+            :log warning "Specified interface is not running a DHCP client.";
+        }
+    }
+#
+#
+# First things first... Delete all the routing rules and start again!
+/system script remove [find name="$interfaceid"];
+/system scheduler remove [find name="$interfaceid"];
+/ip route remove [find comment="$interfaceid"];
+/ip route rule remove [find comment="$interfaceid"];
+:if ("$routenet" != "") do={
+    /ip route rule add \
+        action="lookup-only-in-table" \
+        comment="$interfaceid" \
+        disabled="no" \
+        dst-address="$routenet" \
+        table="$interfaceid";
+    }
+
+# Now create the script which will run every $XXX to update the route.
+/system script add name="$interfaceid" \ 
+	policy="read,write" source="\
+    :if ([/interface find name=\"$interfacename\"] = \"\") do={\r\
+    \n\t:error \"Target interface does not exist\";\r\
+    \n\t}\r\
+    \n\t\r\
+    \n:if ([/interface get [find name=\"$interfacename\"] disabled ]) do={\r\
+    \n\t:error \"Target interface $interfacename is disabled.\";\r\
+    \n\t}\r\
+    \n\r\
+    \n:if ([/ip dhcp-client find interface=\"$interfacename\"] = \"\") do={\r\
+    \n\t:error \"Target interface is not running a DHCP client.\";\r\
+    \n\t}\r\
+    \n\r\
+    \n:if ([/ip dhcp-client get [find interface=\"$interfacename\"] status] != \"bound\
+    \") do={\r\
+    \n\t:error \"DHCP client is not bound to an address.\";\r\
+    \n\t}\r\
+    \n\t\r\
+    \n:local dhcpgateway [/ip dhcp-client get [find interface=\"$interfacename\"] gate\
+    way];\r\
+    \n:if (\$dhcpgateway = \"\") do={\r\
+    \n\t:error \"Interface has not been assigned a gateway address.\";\r\
+    \n\t}\r\
+    \n\t\r\
+    \n:local oldgatewayid [/ip route find comment=\"$interfaceid\"];\r\
+    \n\r\
+    \n:if (\"\$oldgatewayid\" = \"\") do={\r\
+    \n\t:log warning \"Adding route\";\r\
+    \n\t:execute \"/ip route add \\\r\
+    \n\t\tdst-address=0.0.0.0/0 \\\r\
+    \n\t\tcomment=$interfaceid \\\r\
+    \n\t\trouting-mark=$interfaceid \\\r\
+    \n\t\tgateway=\$dhcpgateway\";\r\
+    \n\t:error \"All done.\";\r\
+    \n\t}\r\
+    \n\r\
+    \n:local oldgateway [/ip route get number=\"\$oldgatewayid\" gateway];\r\
+    \n:if (\"\$oldgateway\" != \"\$dhcpgateway\") do={\r\
+    \n\t/ip route set numbers=\"\$oldgatewayid\" gateway=\"\$dhcpgateway\";\r\
+    \n\t}\r\
+    \n"
+#
+#
+#
+# And schedule it
+/system scheduler add comment="$interfaceid" disabled=no \
+interval="$gatewaycheck" name="$interfaceid" on-event="$interfaceid" \
+policy="read,write" \
+start-date=jan/01/1970 start-time=12:34:56;
+
+# And then run it once to get everything in motion.
+:execute "/system script run $interfaceid";</code></precd>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script><br><br>
+</body>
+</html>
