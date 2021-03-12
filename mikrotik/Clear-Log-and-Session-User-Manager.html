@@ -20,7 +20,8 @@ How to automatically clear Log and Session On User Manager or you can make a new
 Clear Log
 
 <precd><code class="routeros">:foreach i in=[/tool user-manager log find] do { /tool user-manager log remove $i;}</code></precd>
-  
+Or
+ 
 <precd><code class="routeros">/tool user-manager database clear-log </code></precd>
 
 Clear Session
