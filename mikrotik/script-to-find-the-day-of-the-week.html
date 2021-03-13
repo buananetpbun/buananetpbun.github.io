@@ -15,36 +15,51 @@
 <body>
 <h1>Find The Day Of The Week - MikroTik Script RouterOS</h1>
 <pre>
-This script will allow you to create directories in RouterOS using the fetch tool.
+This script will find the weekday (sun,mon,tue, etc.) for a given date.
 
-<code class="routeros">:local input "mydir/test/dir"
-:local passwd ([/system resource get cpu-load] . \
-		[/system identity get name] . \
-		[/system resource get free-memory])
-# Create group
-:if ([:len [/user group find name=("dircreate")]] > 0) do={
-   /user group remove "dircreate" }
-/user group add name=dircreate policy=ftp comment="dircreate group"
+Tested on 3.25, 3.26, and 3.27
 
-# Create user
-# Note: this user is restricted to 127.0.0.1 (no outside logins allowed)
-:if ([:len [/user find name=("dircreate")]] > 0) do={
-   /user remove "dircreate" }
-/user add name=dircreate group=dircreate address=127.0.0.1 netmask=255.255.255.255 \
-	comment="dircreate user" password=[:tostr $passwd] disabled=no
+--Doug 23:35, 27 July 2009 (EEST) Update: remove leading zeros from day and year (thanks to vash in forums)
 
-# Create tmp file
-/system identity export file=dircreate
+<code class="routeros"># Calculates day of the week for a givien date
+# Month: jan,feb ... nov,dec   (must be lower-case)
+# Day: 1 - 31
+# Year: 1900 - 2999
+# mmm/dd/yyyy   same format as [/system clock get date]
+# (ex. jul/22/2009)
 
-# Copy tmp file to new location (creating directories as needed)
-/tool fetch address=127.0.0.1 mode=ftp user=dircreate password=[:tostr $passwd] \
-	src-path=dircreate.rsc dst-path=($input . "/dircreate.rsc")
+:local date [/system clock get date]
 
-# Clean up
-/file remove "dircreate.rsc"
-/file remove ($input . "/dircreate.rsc")
-/user remove "dircreate"
-/user group remove "dircreate"</code>
+# Math Calculation here
+:local result ""
+:local months [:toarray "jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec"]
+:local monthtbl [:toarray "0,3,3,6,1,4,6,2,5,0,3,5"]
+:local daytbl [:toarray "sun,mon,tue,wed,thu,fri,sat"]
+
+:local month [:pick $date 0 3]
+:local day [:pick $date 4 6]
+:local dayc [:pick $date 5 6]
+:local century [:pick $date 7 9]
+:local year [:pick $date 9 11]
+:local yearc [:pick $date 10 11]
+
+# if the first char is a 0 (zero) only read last char, else script fails
+:if ([:pick $date 4 5] = 0) do={ :set day ($dayc)}
+:if ([:pick $date 9 10] = 0) do=[:set year ($yearc)]
+
+:local sum 0
+:set sum ($sum + (2 * (3 - ($century - (($century / 4) * 4)))))
+:set sum ($sum + ($year / 4))
+:set sum ($sum + $year + $day)
+:for mindex from=0 to=[:len $months] do={
+  :if ([:pick $months $mindex] = $month) do={:set sum ($sum + [:pick $monthtbl $mindex]) }
+}
+:set sum ($sum - (($sum / 7) * 7))
+:set result [:pick $daytbl $sum]
+
+# END Math Calculation
+
+:put ([:pick $date 0 3] . "/" . [:pick $date 4 6] . "/" . [:pick $date 7 9] . [:pick $date 9 11] . " is on a " . $result)</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

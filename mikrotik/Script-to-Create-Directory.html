@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Script to Create Directory - MikroTik Script RouterOS</title>
+<meta content='Script to Create Directory - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Script to Create Directory - MikroTik Script RouterOS</h1>
+<pre>
+This script will allow you to create directories in RouterOS using the fetch tool.
+
+<code class="routeros">:local input "mydir/test/dir"
+:local passwd ([/system resource get cpu-load] . \
+		[/system identity get name] . \
+		[/system resource get free-memory])
+# Create group
+:if ([:len [/user group find name=("dircreate")]] > 0) do={
+   /user group remove "dircreate" }
+/user group add name=dircreate policy=ftp comment="dircreate group"
+
+# Create user
+# Note: this user is restricted to 127.0.0.1 (no outside logins allowed)
+:if ([:len [/user find name=("dircreate")]] > 0) do={
+   /user remove "dircreate" }
+/user add name=dircreate group=dircreate address=127.0.0.1 netmask=255.255.255.255 \
+	comment="dircreate user" password=[:tostr $passwd] disabled=no
+
+# Create tmp file
+/system identity export file=dircreate
+
+# Copy tmp file to new location (creating directories as needed)
+/tool fetch address=127.0.0.1 mode=ftp user=dircreate password=[:tostr $passwd] \
+	src-path=dircreate.rsc dst-path=($input . "/dircreate.rsc")
+
+# Clean up
+/file remove "dircreate.rsc"
+/file remove ($input . "/dircreate.rsc")
+/user remove "dircreate"
+/user group remove "dircreate"</code>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div>
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br><br>
+</body>
+</html>
