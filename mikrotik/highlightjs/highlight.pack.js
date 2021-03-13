@@ -146,7 +146,7 @@ var hljs=function(){"use strict";function e(t){
   this.detectedLanguage=t.language):(t=e.highlight(this.language,this.code,this.ignoreIllegals),
   this.detectedLanguage=this.language),t.value},autoDetect(){
   return!(this.language&&(e=this.autodetect,!e&&""!==e));var e},
-  ignoreIllegals:()=>!0},render(e){return e("precd",{},[e("code",{
+  ignoreIllegals:()=>!0},render(e){return e("",{},[e("code",{
   class:this.className,domProps:{innerHTML:this.highlighted}})])}};return{
   Component:t,VuePlugin:{install(e){e.component("highlightjs",t)}}}}const S={
   "after:highlightBlock":({block:e,result:t,text:n})=>{const s=D(e)
@@ -258,7 +258,7 @@ var hljs=function(){"use strict";function e(t){
   language:a.language,re:a.relevance,relavance:a.relevance
   },a.second_best&&(e.second_best={language:a.second_best.language,
   re:a.second_best.relevance,relavance:a.second_best.relevance})}const v=()=>{
-  v.called||(v.called=!0,document.querySelectorAll("precd code").forEach(E))}
+  v.called||(v.called=!0,document.querySelectorAll("code").forEach(E))}
   ;function N(e){return e=(e||"").toLowerCase(),n[e]||n[r[e]]}
   function w(e,{languageName:t}){"string"==typeof e&&(e=[e]),e.forEach((e=>{r[e]=t
   }))}function R(e){const t=N(e);return t&&!t.disableAutodetect}function _(e,t){
