@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Update Static DNS Entries Every 10 Minutes - MikroTik Script RouterOS</title>
+<meta content='Update Static DNS Entries Every 10 Minutes - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Update Static DNS Entries Every 10 Minutes - MikroTik Script RouterOS</h1>
+<pre>
+Add a script named SMTP-Updater containting the following code:
+
+<code class="routeros">:log info "Updating SMTP Address"
+
+:local latestsmtp
+:set latestsmtp [:resolve smtp.YOURUPSTREAMISP.com]
+:log error "Latest SMTP Address is :$latestsmtp"
+:local testingsmtp
+
+/ip dns static
+#:log info "Latest SMTP Server Address is: $latestsmtp"
+
+# Starting Loop Below:
+
+:foreach i 
+
+# Add your local static DNS entries below:
+in=smtp.itblanket.net,smtp.saix.net,smtp.afrihost.co.za,smtp.afrihost.com do={
+
+:set testingsmtp $i
+
+#:log info "Testing this SMTP: $testingsmtp"
+:if ([:len [/ip dns static find name=$testingsmtp]] >0 ) do={
+
+#:log info "Entry exists, updating DNS"
+/ip dns static set [find name=$testingsmtp] address=$latestsmtp ttl=600 ;
+
+} else={
+#:log info "Entry does not exist, creating the entry"
+/ip dns static add name=$testingsmtp address=$latestsmtp ttl=600 ;
+
+};
+
+}
+#Loop ends above
+
+
+#:log info "Latest SMTP: $latestsmtp"
+:log info "Static SMTP DNS has been updated"</code>
+
+Now schedule it to run eg every 10 minutes.
+
+Regards, G
+
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div>
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br><br>
+</body>
+</html>
