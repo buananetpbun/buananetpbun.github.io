@@ -21,7 +21,7 @@ You need to set your username, password and hostname.
 
 This was tested successfully on RouterOS 5.7
 
-<precd><code class="routeros"># Dynamic DNS for ChangeIP.com behind NAT
+<code class="routeros"># Dynamic DNS for ChangeIP.com behind NAT
 # Modified by Jorge Amaral, officelan.pt
 # For support send mail to support at offficelan dot pt
 #
@@ -46,11 +46,11 @@ This was tested successfully on RouterOS 5.7
 	:local currentIP [:pick $result $startLoc $endLoc]
 	:set lastwanip $currentIP;
 	:put [/tool dns-update name=$host address=$currentIP key-name=$user key=$pass ]
-}</code></precd>
+}</code>
 
 You may copy and paste the script below into the terminal window.
 
-<precd><code class="routeros"># oct/13/2011 00:51:52 by RouterOS 5.7
+<code class="routeros"># oct/13/2011 00:51:52 by RouterOS 5.7
 #
 /system script
 add name=DDNS policy=\
@@ -81,7 +81,7 @@ add name=DDNS policy=\
     \n\t:local currentIP [:pick \$result \$startLoc \$endLoc]\r\
     \n\t:set lastwanip \$currentIP;\r\
     \n\t:put [/tool dns-update name=\$host address=\$currentIP key-name=\$user key=\$pass ]\r\
-    \n}"</code></precd>
+    \n}"</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

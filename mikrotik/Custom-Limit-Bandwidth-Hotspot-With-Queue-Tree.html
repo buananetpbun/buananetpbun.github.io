@@ -26,18 +26,18 @@ When the user logs in. This script will automatically add new input to the queue
 
 # SCRIPT ON LOGIN
 
-<precd><code class="routeros">:local datetime [/system clock get date];
+<code class="routeros">:local datetime [/system clock get date];
 :local timedate [/system clock get time];
 [/ip firewall mangle add action=mark-packet chain=prerouting dst-address="$address" new-packet-mark=("paket-"."$address") passthrough=no comment=("paket-"."$address")];
 [/ip firewall mangle add action=mark-packet chain=forward dst-address="$address" new-packet-mark=("paket-"."$address") passthrough=no comment=("paket-"."$address")];
 [/queue tree add max-limit=2M name=("$user"." -> "."$address") comment=("Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]") packet-mark=("paket-"."$address") queue="HS-Down" parent="7.ALL HOTSPOT"];
-:log warning ("--> [ $user ] Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")</code></precd>
+:log warning ("--> [ $user ] Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")</code>
 
 # SCRIPT ON LOGOUT
 
-<precd><code class="routeros">/queue tree remove [find packet-mark=("paket-"."$address")] ;
+<code class="routeros">/queue tree remove [find packet-mark=("paket-"."$address")] ;
 /ip firewall mangle remove [find where comment=("paket-"."$address")]
-:log warning ("--> [ $user ] Logout at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")</code></precd>
+:log warning ("--> [ $user ] Logout at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

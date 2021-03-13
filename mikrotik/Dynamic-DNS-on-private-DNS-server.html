@@ -27,22 +27,22 @@ Setup
 
 2.Create a php update page
 
-<precd><code class="routeros">&lt;?php
+<code class="routeros">&lt;?php
   $ip=$_SERVER[REMOTE_ADDR];
   if ($_GET[&#039;hash&#039;]=&quot;ae2b1fca515949e5d54fb22b8ed95575&quot;) {
     file_put_contents(&quot;deviceupdate.log&quot;,&quot;DATE: &quot;.date(&quot;Y-m-d H:i:s&quot;).&quot; IP: &quot;.$ip.&quot;n&quot;,FILE_APPEND | LOCK_EX);
     file_put_contents(&quot;homeip.log&quot;,$ip,LOCK_EX);
     print &quot;DATE: &quot;.date(&quot;Y-m-d H:i:s&quot;).&quot; IP: &quot;.$ip;
   }
-?&gt;</code></precd>
+?&gt;</code>
 
 3.Setup Mikrotik schetuler that runs every few minutes
 
-<precd><code class="routeros"> /tool fetch keep-result=no mode=http url="http://www.my-dns-servers-web-server.com/mikrotik/deviceupdate.php?hash=ae2b1fca515949e5d54fb22b8ed95575"</code></precd>
+<code class="routeros"> /tool fetch keep-result=no mode=http url="http://www.my-dns-servers-web-server.com/mikrotik/deviceupdate.php?hash=ae2b1fca515949e5d54fb22b8ed95575"</code>
 
 4.Create a shell script called dyndns.sh to update the DNS zone
 
-<precd><code class="routeros"> #!/bin/bash
+<code class="routeros"> #!/bin/bash
 newip=$(cat /var/www/homeip.log)
 md5old=$(cat /var/www/homeip.md5)
 md5new=$(md5sum /var/www/homeip.log)
@@ -56,11 +56,11 @@ else
         rndc reload somedomain.com
         md5sum /var/www/homeip.log > /var/www/homeip.md5
         echo "$(date) - Updated ip $newip" >> /var/log/dyndns.log
-fi</code></precd>
+fi</code>
 
 5.Create a cron job to run every few minutes. Run crontab -e and type
 
-<precd><code class="routeros"> */5 * * * * /scripts/dyndns.sh</code></precd>
+<code class="routeros"> */5 * * * * /scripts/dyndns.sh</code>
 
 <b>How it works</b>
 

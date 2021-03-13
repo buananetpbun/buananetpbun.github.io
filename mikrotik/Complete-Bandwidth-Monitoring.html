@@ -22,16 +22,16 @@ This Bandwidth monitoring script is 100% accurate, maybe as accurate as Cacti Mo
 
 Please paste this script in the proxy terminal
 
-<precd><code class="routeros">/system scheduler add interval="00:00:00" name="RXByte.log" on-event="1" start-time="00:00:00"
+<code class="routeros">/system scheduler add interval="00:00:00" name="RXByte.log" on-event="1" start-time="00:00:00"
 /system scheduler add interval="00:00:00" name="RXByteCur.log" on-event="1" start-time="00:00:00"
 /system scheduler add interval="00:00:00" name="TXByte.log" on-event="1" start-time="00:00:00"
 /system scheduler add interval="00:00:00" name="TXByteCur.log" on-event="1" start-time="00:00:00"
 /system scheduler add interval="00:01:00" name="RESET-RXTX" start-time=startup
-/system scheduler add interval="00:0:030" name="BANDWIDTH-MONITORING" start-time=startup</code></precd>
+/system scheduler add interval="00:0:030" name="BANDWIDTH-MONITORING" start-time=startup</code>
 
 Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
 
-<precd><code class="routeros">################################################################
+<code class="routeros">################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -52,10 +52,10 @@ Copy Paste this monthly reset script in the RESET-RXTX Scheduler file
 /system scheduler set TXByteCur.log comment="1" on-event="1"
 /system scheduler disable [/system scheduler find name="RESET-RXTX"]
 }
-################################################################</code></precd>
+################################################################</code>
 Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
 
-<precd><code class="routeros">################################################################
+<code class="routeros">################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -156,21 +156,21 @@ Copy Paste this Monitoring Script in the BANDWIDTH-MONITORING Scheduler file
 # jika hari ini tanggal 29 aktifkan RESET-RXTX
 /system scheduler enable [/system scheduler find name="RESET-RXTX"];
 }
-################################################################</code></precd>
+################################################################</code>
 don't forget to change the ether name in the script according to the interface you want to monitor 
 
-<precd><code class="routeros">:local INTMon WAN-WARNET;</code></precd>
+<code class="routeros">:local INTMon WAN-WARNET;</code>
 Don't forget to change the total quota given by the ISP for example, is 500GB
 
-<precd><code class="routeros">:local TOTQuota 500;</code></precd>
+<code class="routeros">:local TOTQuota 500;</code>
 
 <h2>What if we want to monitor bandwidth monitoring and display Monitoring View in the log so that each can be set the time?</h2>
 
-<precd><code class="routeros">/system scheduler add interval = "00: 0: 030" name = "VIEW-LOG" start-time = startup</code></precd>
+<code class="routeros">/system scheduler add interval = "00: 0: 030" name = "VIEW-LOG" start-time = startup</code>
 
 Then copy and paste the script below into the VIEW-LOG scheduler file 
 
-<precd><code class="routeros">################################################################
+<code class="routeros">################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -234,11 +234,11 @@ Then copy and paste the script below into the VIEW-LOG scheduler file
 # jika har ini tanggal 29 aktfikan RESET-RXTX
 /system scheduler enable [/system scheduler find name="RESET-RXTX"];
 }
-################################################################</code></precd>
+################################################################</code>
 
 and finally replace the contents of the BANDWIDTH-MONITORING Scheduler file with the script below
 
-<precd><code class="routeros">################################################################
+<code class="routeros">################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -292,7 +292,7 @@ and finally replace the contents of the BANDWIDTH-MONITORING Scheduler file with
 :set TXByteCount ($TXByteCur);
 /system scheduler set TXByteCur.log comment=$TXByteCount on-event=$TXByteCount
 # Perbaharui nilai TX-Byte saat ini pada file log TXByteCur
-################################################################</code></precd>
+################################################################</code>
 
 Now we can change each time between the monitoring and the View log so they don't run together
 
@@ -300,11 +300,11 @@ Now we can change each time between the monitoring and the View log so they don'
 
 First add a scheduler named VIEW-LOG-NOTE
 
-<precd><code class="routeros">/system scheduler add interval="01:00:000" name="VIEW-LOG-NOTE" start-time=startup</code></precd>
+<code class="routeros">/system scheduler add interval="01:00:000" name="VIEW-LOG-NOTE" start-time=startup</code>
 
 Then copy and paste the script below into the VIEW-LOG-NOTE scheduler file
 
-<precd><code class="routeros">################################################################
+<code class="routeros">################################################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -383,7 +383,7 @@ Then copy and paste the script below into the VIEW-LOG-NOTE scheduler file
 :if ($varDay = "29") do={ 
 # if today is the 29th activate RESET-RXTX
 /system scheduler enable [/system scheduler find name="RESET-RXTX"];
-}</code></precd>
+}</code>
 
 good luck, good luck :)
 

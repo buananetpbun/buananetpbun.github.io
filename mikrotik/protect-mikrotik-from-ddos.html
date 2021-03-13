@@ -19,12 +19,12 @@ Anticipate DDoS attacks, namely by limiting the number of connections in firewal
 
 When there is a DDoS attack, the system detects the number of connection requests exceeding the specified limit.
 
-<precd><code class="routeros">/ip firewall filter
+<code class="routeros">/ip firewall filter
 add chain=forward connection-state=new action=jump jump-target=block-ddos
 add chain=forward connection-state=new src-address-list=ddoser dst-address-list=ddosed action=drop
 add chain=block-ddos dst-limit=50,50,src-and-dst-addresses/10s action=return
 add chain=block-ddos action=add-dst-to-address-list address-list=ddosed address-list-timeout=10m
-add chain=block-ddos action=add-src-to-address-list address-list=ddoser address-list-timeout=10m</code></precd>
+add chain=block-ddos action=add-src-to-address-list address-list=ddoser address-list-timeout=10m</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

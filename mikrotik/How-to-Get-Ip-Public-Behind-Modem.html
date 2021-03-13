@@ -19,9 +19,9 @@ In this scenario How can I Find The Public Ip behind the modem By mikrotik scrip
 
 Users <--> Switch <--> Mikrotik <---------> Modem <----???---> Internet
 
-<precd><code class="routeros">/tool fetch url="http://myip.dnsomatic.com/" mode=http dst-path=mypublicip.txt
+<code class="routeros">/tool fetch url="http://myip.dnsomatic.com/" mode=http dst-path=mypublicip.txt
 local ip [file get mypublicip.txt contents ]
-put $ip</code></precd>
+put $ip</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

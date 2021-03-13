@@ -53,7 +53,7 @@ The Scheduler
 Hourly
 If you wish to poll hourly ensure that firstly you are using the new short version of the monthend script and also ensure that your start time isn't 00:00:00 (setting it to 30m is ok like below) This ensures that the monthend time (being before >1:00am on the 1st of each month) is correctly matched and generates reports at the end of the month.
 
-<precd><code class="routeros">/system scheduler
+<code class="routeros">/system scheduler
 add comment="" disabled=no interval=1h name=Overseer on-event="/system script run overseer" start-date=jan/01/1970 start-time=00:30:00
 The Scripts
 Script: overseer
@@ -354,7 +354,7 @@ Quick trick to generate queues
 :for x from 2 to 254 do={/queue simple add target-address="10.2.100.$x" queue="default/default"}
 would generate queues for 10.0.0.2-10.0.0.254 for you.
 
-note: the queue=default is important, as of v3.12 default-small queues with no child queues will be treated as if there was no queue at all (aka: unmonitored)</code></precd>
+note: the queue=default is important, as of v3.12 default-small queues with no child queues will be treated as if there was no queue at all (aka: unmonitored)</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

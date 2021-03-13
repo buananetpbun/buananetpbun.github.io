@@ -18,10 +18,10 @@
 
 Anti Netcut, Netcut broadcasts ARP and attacks on Layer2, but at least with the script below we are able to answer who is naughty who wants to cut our network.
 
-<precd><code class="routeros">/ip firewall address-list add list=netcut address=www.arcai.com
+<code class="routeros">/ip firewall address-list add list=netcut address=www.arcai.com
 /ip firewall mangle add action=add-src-to-address-list address-list=NetcutUser address-list-timeout=1h5m chain=prerouting dst-address-list=netcut dst-port=80 protocol=tcp
 /ip firewall filter add action=drop chain=forward comment=NetCut src-address-list=NetcutUser
-/system scheduler add interval=10m name="AutoBlockNetcut"</code></precd>
+/system scheduler add interval=10m name="AutoBlockNetcut"</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

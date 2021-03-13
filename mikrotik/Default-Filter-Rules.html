@@ -17,7 +17,7 @@
 <h1>Default Filter Rules - MikroTik Script RouterOS</h1>
 Default Filter rules mikrotik after installation or after reset
 
-<precd><code class="routeros">/ip firewall filter
+<code class="routeros">/ip firewall filter
 add action=accept chain=input comment=\
     "defconf: accept established,related,untracked" connection-state=\
     established,related,untracked
@@ -39,7 +39,7 @@ add action=drop chain=forward comment="defconf: drop invalid" \
     connection-state=invalid
 add action=drop chain=forward comment=\
     "defconf: drop all from WAN not DSTNATed" connection-nat-state=!dstnat \
-    connection-state=new in-interface-list=WAN</code></precd>
+    connection-state=new in-interface-list=WAN</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

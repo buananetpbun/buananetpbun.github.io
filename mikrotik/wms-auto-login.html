@@ -18,7 +18,7 @@
 <h1>Auto Login WMS or wifi.id - Mikrotik Script RouterOS</h1>
 How to auto login wifi.id or WMS Indihome
 
-<precd><code class="routeros">:if ([/ping address=1.1.1.1 count=5] = 0) do={
+<code class="routeros">:if ([/ping address=1.1.1.1 count=5] = 0) do={
 /ip dns cache flush
 /ip dhcp-client release [find interface=WLAN-INTERFACE]
 delay 5
@@ -29,7 +29,7 @@ log error ("WMS Down")
 /tool fetch http-method=post http-data="username=username@freeMS&password=password" url=("https://welcome2.wifi.id/wms/?gw_id=GWID&client_mac=xxxxxxxxxxxx&wlan=xxxxxxxxxxxxxxxxxx:SSID%20WMS") keep-result=no;
 } else {
 log warning ("WMS UP")
-}</code></precd>
+}</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

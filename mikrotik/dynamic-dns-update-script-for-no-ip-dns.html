@@ -31,7 +31,7 @@ The following permissions are required for this script to run:
 
 2. Paste the source code that appears below. Edit the user, password, hostname and interface info to match your setup.
 
-<precd><code class="routeros"># No-IP automatic Dynamic DNS update
+<code class="routeros"># No-IP automatic Dynamic DNS update
 #--------------- Change Values in this section to match your setup ------------------
 # No-IP User account info
 :local noipuser "your_no-ip_user"
@@ -74,12 +74,12 @@ The following permissions are required for this script to run:
    }
 } else={
    :log info "No-IP: $inetinterface is not currently running, so therefore will not update."
-}</code></precd>
+}</code>
 
 3. Create a new scheduler entry to run this script every 5 mins.
 
-<precd><code class="routeros">/system scheduler add comment="Update No-IP DDNS" disabled=no interval=5m \
-name=no-ip_ddns_update on-event=no-ip_ddns_update policy=read,write,test</code></precd>
+<code class="routeros">/system scheduler add comment="Update No-IP DDNS" disabled=no interval=5m \
+name=no-ip_ddns_update on-event=no-ip_ddns_update policy=read,write,test</code>
 
 --riverron 03:18, 18 March 2012 (UTC)
 
@@ -89,7 +89,7 @@ Alternative script uses DNS Resolve and is based on an documentation http://wiki
 
 Can be modified for use with other Dynamic DNS services supported ReST API.
 
-<precd><code class="routeros">##############Script Settings##################
+<code class="routeros">##############Script Settings##################
 :local NOIPUser "no-ip.com LOGIN"
 :local NOIPPass "no-ip.com PASSWORD"
 :local WANInter "MikroTik Router WAN Interface Name"
@@ -104,7 +104,7 @@ Can be modified for use with other Dynamic DNS services supported ReST API.
       :log info "NO-IP Update: $NOIPDomain - $NewIP"
      }
    } 
-}</code></precd>
+}</code>
 
 Note:
 
@@ -116,11 +116,11 @@ Tested to work on RouterOS 5.21.
 
 Sample configuration:
 
-<precd><code class="routeros">##############Script Settings##################
+<code class="routeros">##############Script Settings##################
 :local NOIPUser "testuser1"
 :local NOIPPass "testpassword"
 :local WANInter "ether1"
-###############################################</code></precd>
+###############################################</code>
 
 If you use another WAN-interface, use it(example: pppoe-out1, pptp-out1, l2tp-out1).
 

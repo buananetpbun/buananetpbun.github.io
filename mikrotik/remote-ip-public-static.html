@@ -22,7 +22,7 @@ An easy example like this ... suppose we use Indihome as the main gateway and As
 
 Or you can use <a target="_blank" href="https://buananetpbun.github.io/remote-ip-public-static.html" >Script Maker or Generator</a>
 
-<precd><code class="routeros">####################################################################
+<code class="routeros">####################################################################
 # Remote IP Public Static For Secondary Gateway Mikrotik
 # Date/Time: 2/14/2021, 1:40:07 PM
 # By BuanaNET Secure! https://fb.me/buananet.pbun
@@ -33,7 +33,7 @@ add action=mark-connection chain=input in-interface="ether2" new-connection-mark
 add action=mark-routing chain=output connection-mark=ip-public new-routing-mark=ip-public passthrough=no
 
 /ip route
-add check-gateway=ping gateway="192.168.10.1" routing-mark=ip-public</code></precd>
+add check-gateway=ping gateway="192.168.10.1" routing-mark=ip-public</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

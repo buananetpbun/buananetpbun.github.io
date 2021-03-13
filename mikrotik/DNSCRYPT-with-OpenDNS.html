@@ -18,19 +18,19 @@
 Why DNSCrypt is so significant?
 In the same way the SSL turns HTTP web traffic into HTTPS encrypted Web traffic, DNSCrypt turns regular DNS traffic into encrypted DNS traffic that is secure from eavesdropping and man-in-the-middle attacks. It doesn’t require any changes to domain names or how they work, it simply provides a method for securely encrypting communication between our customers and our DNS servers in our data centers. We know that claims alone don’t work in the security world, however, so we’ve opened up the source to our DNSCrypt code base and it’s available on GitHub.
 
-<precd><code class="routeros">/ip firewall nat
+<code class="routeros">/ip firewall nat
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=tcp to-addresses=208.67.222.222 to-ports=443
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=udp to-addresses=208.67.222.222 to-ports=443
 add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=tcp to-addresses=208.67.220.220 to-ports=443
-add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=443</code></precd>
+add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=443</code>
 
 Or
 
-<precd><code class="routeros">/ip firewall nat
+<code class="routeros">/ip firewall nat
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=tcp to-addresses=208.67.222.222 to-ports=5353
 add action=dst-nat chain=dstnat comment="opendns 222" dst-port=53 protocol=udp to-addresses=208.67.222.222 to-ports=5353
 add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=tcp to-addresses=208.67.220.220 to-ports=5353
-add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=5353</code></precd>
+add action=dst-nat chain=dstnat comment="opendns 220" dst-port=53 protocol=udp to-addresses=208.67.220.220 to-ports=5353</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

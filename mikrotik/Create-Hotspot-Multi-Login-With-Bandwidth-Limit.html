@@ -23,7 +23,7 @@ Create a new IP Address = 10.5.10.1/24 (free only)
 IP Pool = 10.5.10.2-10.5.10.254
 Interface hotspot [wlan-hotspot] = replace with the name of the hotspot interface if it's been a long time, it doesn't matter because that's our real goal, khan for one interface can be set to multi IP :)
 
-<precd><code class="routeros">/ip address
+<code class="routeros">/ip address
 add address=10.5.10.1/24 comment="Login Multi User" interface=[wlan-hotspot] network=10.5.10.0
 /ip pool
 add name=hs_multi_user ranges=10.5.10.2-10.5.10.254
@@ -34,7 +34,7 @@ add address-pool=hs_multi_user name=multi-user shared-users=10
 /ip hotspot user
 add name=muser password=12345 profile=multi-user
 /queue simple
-add max-limit=256k/512k name="Multi User" target=10.5.10.0/24</code></precd>
+add max-limit=256k/512k name="Multi User" target=10.5.10.0/24</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

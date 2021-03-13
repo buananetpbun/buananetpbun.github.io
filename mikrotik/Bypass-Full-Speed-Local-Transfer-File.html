@@ -24,15 +24,15 @@ When copying files from LAN1 to LAN2, why is the maximum bandwidth only 150 mega
 
 The method is very easy: in a simple queue or queue tree, create a queue, for example FULL-SPEED, then use SFQ (Stochastic Fairness Queuing) in queue type.
 
-<precd><code class="routeros">/queue type 
+<code class="routeros">/queue type 
 add name=Full-Speed kind=sfq
 /queue simple
-add name="FULL-SPEED" queue=Full-Speed/Full-Speed target=192.168.10.0/24 total-queue=default</code></precd>
+add name="FULL-SPEED" queue=Full-Speed/Full-Speed target=192.168.10.0/24 total-queue=default</code>
 This method will be even more optimal if the Fasttrack function is activated.
 
-<precd><code class="routeros">/ip firewall filter 
+<code class="routeros">/ip firewall filter 
 add chain=forward action=fasttrack-connection connection-state=established,related
-add chain=forward action=accept connection-state=established,related</code></precd>
+add chain=forward action=accept connection-state=established,related</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

@@ -17,7 +17,7 @@
 <h1>Change Name Interface or Ether To Default Auto - Mikrotik Script RouterOS</h1>
 I made this simple script to make it easier for us to return the interface name (ether) to the factory default name without having to reset the proxy. There are times when we forget the order on the Mikrotik port even though we have given the ether name, for example with the name "LAN" but whether "LAN" is plugged into what port. so the meaning is clear :)
 
-<precd><code class="routeros">#####################################
+<code class="routeros">#####################################
 # Script by Agus Ramadhani
 # fb.com/buananet.pangkalanbun
 # http://www.o-om.com
@@ -28,7 +28,7 @@ I made this simple script to make it easier for us to return the interface name 
 :local x [/interface ethernet get $i default-name];
 :log warning "Change interface Name $y => $x"
 /interface set $y name=$x;
-}</code></precd>
+}</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

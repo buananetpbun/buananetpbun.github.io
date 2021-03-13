@@ -28,7 +28,7 @@ The following permissions are required for this script to run:
 - read
 - policy (for ROS 6.0+)
 
-<precd><code class="routeros"># DNSoMatic automatic DNS updates
+<code class="routeros"># DNSoMatic automatic DNS updates
 #--------------- Change Values in this section to match your setup ------------------
 # User account info of DNSoMatic
 
@@ -81,16 +81,16 @@ The following permissions are required for this script to run:
     }
 } else={
     :log info "DNSoMatic: $inetinterface is not currently running, so therefore will not update."
-}</code></precd>
+}</code>
 
 This will also need you to configure scheduler entry for periodical runs (maybe every minute or so). You will probably want a second scheduler event run this script upon RouterOS startup.
 
 If for whatever reason the update fails, the script will not update DNSoMatic until the IP address changes again. This is rare, but could happen. It would be recommended to set up a third scheduler with longer intervals (maybe 1 hour) to run a script with the following code:
 
-<precd><code class="routeros">:global previousIP;
+<code class="routeros">:global previousIP;
 :set previousIP ""
 
-:log info "Cleared previousIP to force DNS-O-Matic update on next run."</code></precd>
+:log info "Cleared previousIP to force DNS-O-Matic update on next run."</code>
 
 The following permissions are required for this script to run:
 

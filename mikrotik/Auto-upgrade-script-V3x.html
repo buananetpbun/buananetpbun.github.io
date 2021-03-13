@@ -23,11 +23,11 @@ One little script to upgrade RrouterBoards automatically.
 -) reboot.
 At first you should create file containing newest version number on main router.
 
-<precd><code class="routeros">/file print file="latestVer";</code></precd>
-<precd><code class="routeros">/file set latestVer.txt content="3.24";</code></precd>
+<code class="routeros">/file print file="latestVer";</code>
+<code class="routeros">/file set latestVer.txt content="3.24";</code>
 Now we are ready to run scripts on other routers:
 
-<precd><code class="routeros">#########################################################################
+<code class="routeros">#########################################################################
 # download and upgrade
 #########################################################################
 
@@ -75,7 +75,7 @@ Now we are ready to run scripts on other routers:
 	} else={
                 :log info "Upgrade_script: already latest version";
         }
-}</code></precd>
+}</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

@@ -17,12 +17,12 @@
 <h1>How To Block Access To Modem - Mikrotik Script RouterOS</h1>
 Modem or ISP router generally has a default configuration. Whether it's the IP address to the username and password. If there are people who understand this, of course it will be dangerous for your internet network especially for those of you who have managed public networks such as hotspots, because it could be that later you will be bullied by that person such as changing the configuration, changing the wifi name, wifi password. 
 
-<precd><code class="routeros">/ip firewall address-list
+<code class="routeros">/ip firewall address-list
 add address=192.168.1.1 list=IP-MODEM
 add address=192.168.2.1 list=IP-MODEM
 
 /ip firewall filter 
-add action=drop chain=forward comment="MODEM PROTECTED" disabled=yes dst-address-list=MODEM dst-port=21-23,80,443 protocol=tcp</code></precd>
+add action=drop chain=forward comment="MODEM PROTECTED" disabled=yes dst-address-list=MODEM dst-port=21-23,80,443 protocol=tcp</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

@@ -18,7 +18,7 @@
 <h1>Calculates day of the week for a givien date - Mikrotik Script RouterOS</h1>
 How To Calculates day of the week for a givien date on RouterOS
 
-<precd><code class="routeros"># Calculates day of the week for a givien date
+<code class="routeros"># Calculates day of the week for a givien date
 # Month: jan,feb ... nov,dec   (must be lower-case)
 # Day: 1 - 31
 # Year: 1583 - ...
@@ -57,7 +57,7 @@ How To Calculates day of the week for a givien date on RouterOS
 :set sum (7000 + $day + $yyy + ($yyy / 4) - ($yyy / 100) + ($yyy / 400) + ((31 * $mmm) / 12))
 :set sum ($sum - (($sum / 7) * 7))
 :set result [:pick $daytbl $sum]
-:log info "Today is $result"</code></precd>
+:log info "Today is $result"</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

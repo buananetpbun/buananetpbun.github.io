@@ -17,7 +17,7 @@
 <h1>Block Windows Update - Mikrotik Script RouterOS</h1>
 <b>How To Block Windows Update in Mikrotik / Block Windows 7,8,10 Update</b>
 
-<precd><code class="routeros">/ip firewall raw
+<code class="routeros">/ip firewall raw
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=windowsupdate.microsoft.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=download.microsoft.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=test.stats.update.microsoft.com
@@ -25,11 +25,11 @@ add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=*.download.windowsupdate.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=*.update.microsoft.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=download.windowsupdate.com
-add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=*.windowsupdate.microsoft.com</code></precd>
+add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=*.windowsupdate.microsoft.com</code>
 
 or
 
-<precd><code class="routeros">/ip firewall filter
+<code class="routeros">/ip firewall filter
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=windowsupdate.microsoft.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=download.microsoft.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=test.stats.update.microsoft.com
@@ -37,7 +37,7 @@ add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=*.download.windowsupdate.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=*.update.microsoft.com
 add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=download.windowsupdate.com
-add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=*.windowsupdate.microsoft.com</code></precd>
+add action=drop chain=prerouting comment="Blok Windows Update" protocol=tcp tls-host=*.windowsupdate.microsoft.com</code>
 
 source: <a target="_blank" href="https://labkom.co.id/mikrotik/cara-blokir-windows-update-di-mikrotik" >https://labkom.co.id</a>
 </pre>

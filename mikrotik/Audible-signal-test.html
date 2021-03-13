@@ -13,13 +13,13 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-<pre>
 <h1>Audible signal test - Mikrotik Script RouterOS</h1>
+<pre>
 Script for audible signal test on boards with beeper:
 
 Code compatible with version 2.9:
 
-<precd><code class="routeros">:local beep "10ms";
+<code class="routeros">:local beep "10ms";
 :local no "2400ms";
 :local 90 "1290ms";
 :local 85 "790ms";
@@ -79,10 +79,10 @@ Code compatible with version 2.9:
   :for i from=1 to=120 do={ :beep length=$beep; :delay $50; }
   }  
  }
-}</code></precd>
+}</code>
 Code compatible with version 3:
 
-<precd><code class="routeros">:local beep "10ms";
+<code class="routeros">:local beep "10ms";
 :local no "2400ms";
 :local s90 "1290ms";
 :local s85 "790ms";
@@ -142,10 +142,10 @@ Code compatible with version 3:
   :for i from=1 to=120 do={ :beep length=$beep; :delay $s50; }
   }  
  }
-}</code></precd>
+}</code>
 Code for RouterBoard 411 with led and sound aligment:
 
-<precd><code class="routeros">:local beep "10ms";
+<code class="routeros">:local beep "10ms";
 :local no "2400ms";
 :local s90 "1290ms";
 :local s85 "790ms";
@@ -205,7 +205,7 @@ Code for RouterBoard 411 with led and sound aligment:
   :for i from=1 to=120 do={ :beep length=$beep; :delay $s50; :led led1=yes led2=yes led3=yes led4=yes led5=yes }
   }  
  }
-}</code></precd>
+}</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

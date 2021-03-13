@@ -25,7 +25,7 @@ My first script here so please let me know if things can be improved. I'm quite 
 
 Email tool needs to be setup beforehand. Just change the globals to yours. A few things are hardcoded: interface name to check, email address & smtp server. There's no error checking if the ddns update fails or sending email encounters an error. Schedule this script to run every few minutes as you please.
 
-<precd><code class="routeros">:global ddnsserv "dynamicdns.park-your-domain.com"
+<code class="routeros">:global ddnsserv "dynamicdns.park-your-domain.com"
 :global ddnshostname "cctv1"
 :global ddnsdomain "soonwai.com"
 :global ddnspass "44274h3e71dbe7cd18e1d8ab5877267d5ac3"
@@ -59,7 +59,7 @@ Email tool needs to be setup beforehand. Just change the globals to yours. A few
   } else={ 
 #    :log info "DDNS: No update required."
     }
-}</code></precd>
+}</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

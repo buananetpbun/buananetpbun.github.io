@@ -19,22 +19,22 @@ How to Block WhatsApp with "Layer 7" or "Content" or "TLS"
 
 Block WhatsApp With "Layer-7"
 
-<precd><code class="routeros">/ip firewall layer7-protocol
+<code class="routeros">/ip firewall layer7-protocol
 add name=WhatsApp regexp="^.+(whatsapp.com).*\$"
 /ip firewall filter
-add action=drop chain=forward layer7-protocol=WhatsApp</code></precd>
+add action=drop chain=forward layer7-protocol=WhatsApp</code>
 
 Block WhatsApp With "Content"
 
-<precd><code class="routeros">/ip firewall filter
+<code class="routeros">/ip firewall filter
 add action=drop chain=forward content="whatsapp.com" 
-add action=drop chain=forward content=".whatsapp."</code></precd>
+add action=drop chain=forward content=".whatsapp."</code>
 
 Block WhatsApp With "TLS"
 
-<precd><code class="routeros">/ip firewall filter
+<code class="routeros">/ip firewall filter
 add action=drop chain=forward protocol=tcp tls-host="whatsapp.com"
-add action=drop chain=forward protocol=tcp tls-host="*.whatsapp.*"</code></precd>
+add action=drop chain=forward protocol=tcp tls-host="*.whatsapp.*"</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

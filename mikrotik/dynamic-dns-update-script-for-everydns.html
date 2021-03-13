@@ -20,7 +20,7 @@ First you have to setup an account at http://www.everydns.com/, and with few ste
 
 Next script is build with target to update DNS with two or more PPPoE connection with dynamics IP addresses.
 
-<precd><code class="routeros"># Define user variables
+<code class="routeros"># Define user variables
 # Please NOTE that your username and password will be sent cleartext across the internet!
 :local eduser "USERNAME"
 :local edpass "PASS"
@@ -66,7 +66,7 @@ Next script is build with target to update DNS with two or more PPPoE connection
   } 
 
 }
-# Coded by Paxy</code></precd>
+# Coded by Paxy</code>
 
 You should setup this script, so using username and password as you registered at http://www.everydns.com/. Dynamic domain should be name of sub-domain that you want to be updated automaticly ex. r.paxy.in.rs . Interface name field should be exact name of interface that you want to monitor for IP change, in my case it is PPPoE type interfaces.
 
@@ -75,8 +75,8 @@ Script is using server with DNS name dyn.everydns.net.
 
 All what is left now is to make scheduler to run this or those scripts every minute.
 
-<precd><code class="routeros">/system scheduler add name=EveryDNS1 interval=00:01 \
-  on-event="/system script run everyDns1\r\n/system script run everyDns2"</code></precd>
+<code class="routeros">/system scheduler add name=EveryDNS1 interval=00:01 \
+  on-event="/system script run everyDns1\r\n/system script run everyDns2"</code>
 
 Happy hacking ...
 
@@ -93,13 +93,13 @@ Additional info: 1240831067 - 1240831062 = 5 Exit code: 5
 Getting it to work with 3.22
 If the /tool fetch url gives you problems, try to rewrite this line :
 
-<precd><code class="routeros"> /tool fetch url="http://dyn.everydns.net/$str" mode=http user=$eduser password=$edpass \
-   dst-path=("/EveryDNS.".$eddomain)</code></precd>
+<code class="routeros"> /tool fetch url="http://dyn.everydns.net/$str" mode=http user=$eduser password=$edpass \
+   dst-path=("/EveryDNS.".$eddomain)</code>
    
 to
 
-<precd><code class="routeros">/tool fetch address="dyn.everydns.net" host="dyn.everydns.net" mode=http src-path="$str" \
-   user=$eduser password=$edpass dst-path=("/EveryDNS.".$eddomain)</code></precd>
+<code class="routeros">/tool fetch address="dyn.everydns.net" host="dyn.everydns.net" mode=http src-path="$str" \
+   user=$eduser password=$edpass dst-path=("/EveryDNS.".$eddomain)</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

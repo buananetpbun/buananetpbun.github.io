@@ -17,7 +17,7 @@
 <h1>GPS Text File Converter To Google Earth Or Maps - MikroTik Script RouterOS</h1>
 Before you try this, insure your setup is complete in "/tool e-mail". The "server" entry must be the "to" email address email server. The "from" entry must be a valid email address. Try a test email, then check your email. It may take several minutes to get to your mailbox.
 
-<precd><code class="routeros">/tool email send to=me@mydomain.com subject="Email Test" body="Email Test"</code></precd>
+<code class="routeros">/tool email send to=me@mydomain.com subject="Email Test" body="Email Test"</code>
 
 Set the gps to output data to the file gps.txt.
 Create an empty text file with a text editor, save as gps.kml, and upload to the router.
@@ -27,7 +27,7 @@ CHANGE THE EMAIL ADDRESS at the top of the code . This is the address to which t
 Ctrl-o to save and exit.
 Go to "/system schedule" and schedule the script "gps" to run at whatever interval is appropriate for your application. It sends email always if the position is not valid, and also when the position is valid and it changed from the last time the script was run.
 
-<precd><code class="routeros">:local email "myuser@mydomain.com";
+<code class="routeros">:local email "myuser@mydomain.com";
 :global gpstext [/file get gps.txt contents];
 :local longstart [:find $gpstext "longitude" -1];
 :local longend [:find $gpstext "\n" $longstart];
@@ -148,7 +148,7 @@ Go to "/system schedule" and schedule the script "gps" to run at whatever interv
 } else={
          /tool e-mail
          send to=$email subject="Router gps position invalid" body="Router gps position invalid"
-};</code></precd>
+};</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

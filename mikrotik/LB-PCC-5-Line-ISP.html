@@ -17,7 +17,7 @@
 <h1>Load Balancing LB PCC 5 Line ISP Failover - Mikrotik Script RouterOS</h1>
 Load balance PCC 5 ISP on mikrotik is a technique for distributing traffic load on two or more connection lines in a balanced way, so that traffic can run optimally, maximize throughput, reduce response time and avoid overloading one of the connection lines.
 
-<precd><code class="routeros">################################################
+<code class="routeros">################################################
 # LOAD BALANCING (LB) PCC SCRIPT GENERATOR
 # Date/Time: 2/13/2021, 9:19:38 PM
 # https://fb.me/buananet.pbun
@@ -68,7 +68,7 @@ add action=mark-routing chain=prerouting connection-mark="cm-ether1" dst-address
 add action=mark-routing chain=prerouting connection-mark="cm-ether2" dst-address-list=!LOCAL-IP new-routing-mark="to-ether2" passthrough=yes src-address-list=LOCAL-IP
 add action=mark-routing chain=prerouting connection-mark="cm-ether3" dst-address-list=!LOCAL-IP new-routing-mark="to-ether3" passthrough=yes src-address-list=LOCAL-IP
 add action=mark-routing chain=prerouting connection-mark="cm-ether4" dst-address-list=!LOCAL-IP new-routing-mark="to-ether4" passthrough=yes src-address-list=LOCAL-IP
-add action=mark-routing chain=prerouting connection-mark="cm-ether5" dst-address-list=!LOCAL-IP new-routing-mark="to-ether5" passthrough=yes src-address-list=LOCAL-IP</code></precd>
+add action=mark-routing chain=prerouting connection-mark="cm-ether5" dst-address-list=!LOCAL-IP new-routing-mark="to-ether5" passthrough=yes src-address-list=LOCAL-IP</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

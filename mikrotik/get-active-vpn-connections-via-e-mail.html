@@ -21,15 +21,15 @@ It is pretty simple and there is no problem in adding OVPN and others.
 
 Declare global and local variables (we only need to reuse the variable oldvlist). I like to create seperate variables for each VPN type.
 
-<precd><code class="routeros">:global oldvlist ;
+<code class="routeros">:global oldvlist ;
 :local pptplist "PPTP interfaces \n \n" ;
 :local l2tplist "L2TP interfaces \n \n" ;
 :local vlist ;
-:local int ;</code></precd>
+:local int ;</code>
 
 Fill the variables with all VPN connections and their statuses.
 
-<precd><code class="routeros">:set pptplist "$pptplist SERVERS: \n" ;
+<code class="routeros">:set pptplist "$pptplist SERVERS: \n" ;
 :foreach int in=[/interface pptp-server find] do={
   :set pptplist "$pptplist PPTP: $[/interface pptp-server get $int name] :  $[/interface pptp-server get $int running] \n" ;
   :if ( [/interface pptp-server get $int running] = true ) do={
@@ -59,13 +59,13 @@ Fill the variables with all VPN connections and their statuses.
   :if ( [/interface l2tp-client get $int running] = true ) do={
      :log error "L2TP: $[/interface l2tp-client get $int name] : true" ;
   }
-}</code></precd>
+}</code>
 
 If you don't like the list of all interfaces, you can move the ':set list...' line inside the IF statement. That way the e-mail will contain only active connections. And beware that variable length is not unlimited so this will not work if you have a great number of VPN connections.
 
 Fill the 'vlist' variable and send it vie a-mail if it is different than the 'oldvlist' variable
 
-<precd><code class="routeros">:set vlist "** Active VPN list ** \n \n $pptplist \n \n $l2tplist" ;
+<code class="routeros">:set vlist "** Active VPN list ** \n \n $pptplist \n \n $l2tplist" ;
 
 :if ( $oldvlist != $vlist) do={
    /tool e-mail send body="$vlist" subject="VPN" to="RECIPIENT_EMAIL_ADDRESS" server="IP_OF_SMTP" from="$[/system identity get name]@EMAIL_DOMAIN"
@@ -73,7 +73,7 @@ Fill the 'vlist' variable and send it vie a-mail if it is different than the 'ol
    :log error "VPN status list sent"
 } else={
    :log error "VPN no change"
-}</code></precd>
+}</code>
 
 Replace IP_OD_SMTP with the IP address of hostname of the SMTP server that you can use (usually your ISP has one or two), RECIPIENT_EMAIL_LIST with your e-mail address, EMAIL_DOMAIN with the domain name that is allowed as a sender on that specific SMTP server.
 

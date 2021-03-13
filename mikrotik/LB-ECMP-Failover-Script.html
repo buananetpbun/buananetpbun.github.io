@@ -24,31 +24,31 @@ You have 2 lines going out to the internet - 10.0.0.12 and 10.0.0.13. You have s
 
 You setup the mangle:
 
-<precd><code class="routeros">/ip firewall mangle add chain=prerouting protocol=tcp dst-port=80 action=mark-routing \
+<code class="routeros">/ip firewall mangle add chain=prerouting protocol=tcp dst-port=80 action=mark-routing \
 new-routing-mark=ecmp-http-route passthrough=yes comment=" Route HTTP \
-traffic to ECMP" disabled=no</code></precd>
+traffic to ECMP" disabled=no</code>
 
 You set up ECMP (Equal Cost Multipath Routing) by using something like
 
-<precd><code class="routeros">/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.12,10.0.0.13 routing-mark=ecmp-http-route comment="ECMP route for HTTP"</code></precd>
+<code class="routeros">/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.12,10.0.0.13 routing-mark=ecmp-http-route comment="ECMP route for HTTP"</code>
 
 Now you have ECMP for HTTP only. This is nice because MSN messenger, banking websites and other programs and problem sites will not be broken in the same way it might be if you used ECMP for all protocols.
 
 What I then do is for example mark SMTP traffic and route this out through 10.0.0.12:
 
-<precd><code class="routeros">/ip firewall mangle add chain=prerouting protocol=tcp dst-port=25 action=mark-routing \
+<code class="routeros">/ip firewall mangle add chain=prerouting protocol=tcp dst-port=25 action=mark-routing \
 new-routing-mark=smtp-out passthrough=yes comment="SMTP Traffic" disabled=no 
-/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.12 routing-mark=smtp-out comment="SMTP Traffic out"</code></precd>
+/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.12 routing-mark=smtp-out comment="SMTP Traffic out"</code>
 
 and route all other traffic through 10.0.0.13
 
-<precd><code class="routeros">/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.13 comment="Default Route to Internet"</code></precd>
+<code class="routeros">/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.13 comment="Default Route to Internet"</code>
 
 Then I need to setup 2 routes to specific addresses to force the router through specific gateways to "test" the links. These should not be popular addresses with your users! Otherwise when a gateway goes down they will have no access to those sites. The addresses I am using as an example are 1.1.1.12 to test 10.0.0.12, and 1.1.1.13 to test 10.0.0.13.
 
 Next I use the Netwatch Function to switch all traffic to the working gateway should any of the gateways fail:
 
-<precd><code class="routeros">/tool netwatch 
+<code class="routeros">/tool netwatch 
 add host=1.1.1.13 timeout=2s interval=30s up-script="/ip route set \
 \[find comment=\"Default Route To Internet\"\] gateway=10.0.0.13" \
 down-script="/ip route set \[find comment=\"Default Route To Internet\"\] \
@@ -56,11 +56,11 @@ gateway=10.0.0.12 comment="" disabled=no
 add host=1.1.1.12 timeout=2s interval=30s up-script="/ip route set \
 \[find comment=\"SMTP Traffic out\"\] gateway=1.0.0.12" down-script="/ip \
 \n" \route set \[find comment=\"SMTP Traffic out\"\] gateway=10.0.0.13
-comment="" disabled=no </code></precd>
+comment="" disabled=no </code>
 
 The problem is that the ECMP http route will still be active, therefore http traffic wont work, so I have 2 scripts to check if both gateways are up or down and take action accordingly:
 
-<precd><code class="routeros">/system script 
+<code class="routeros">/system script 
 add name="ecmp-startup" source=":if ([/ping 1.1.1.12 count=1]=1 && \
 [/ping 1.1.1.13 count=1]=1 && [/ip route get [find \
 comment=\"ECMP Route For HTTP\"] disabled]=true) do={ :log info \"Both gateways up\" \
@@ -79,16 +79,16 @@ ecmp starthp script
 /n/ip route set [find routing-mark="ecmp-http-route"] disable=no}
 ecmp shutdown script
 :if ([/ping 1.1.1.13 count=1]=0 || [/ping 1.1.1.12 count=1]=0) do={:log info \
-"Gateway down" /ip route set [find routing-mark="ecmp-http-route"] disabled=yes} </code></precd>
+"Gateway down" /ip route set [find routing-mark="ecmp-http-route"] disabled=yes} </code>
 
 Notice that it first checks to see if the route is enable before trying to re-enable it. Otherwise it will reset the route and users will be dropped momentarily.
 
 Then finally schedule the scripts to check every 30 seconds:
 
-<precd><code class="routeros">/system scheduler 
+<code class="routeros">/system scheduler 
 add name="gateway-check" on-event="/system script run ecmp-shutdown
 script run ecmp-startup" start-date=jan/01/1970 start-time=00:00:00 \
-interval=30s comment="" disabled=no</code></precd>
+interval=30s comment="" disabled=no</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

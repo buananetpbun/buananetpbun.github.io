@@ -19,14 +19,14 @@ How to automatically clear Log and Session On User Manager or you can make a new
 
 Clear Log
 
-<precd><code class="routeros">:foreach i in=[/tool user-manager log find] do { /tool user-manager log remove $i;}</code></precd>
+<code class="routeros">:foreach i in=[/tool user-manager log find] do { /tool user-manager log remove $i;}</code>
 Or
  
-<precd><code class="routeros">/tool user-manager database clear-log </code></precd>
+<code class="routeros">/tool user-manager database clear-log </code>
 
 Clear Session
 
-<precd><code class="routeros">:foreach i in=[/tool user-manager session find] do { /tool user-manager session remove $i; }</code></precd>
+<code class="routeros">:foreach i in=[/tool user-manager session find] do { /tool user-manager session remove $i; }</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

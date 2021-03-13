@@ -20,7 +20,7 @@ Strip IP Address without netmask
 
 This script is useful if you need ip address without netmask (for example to use it in firewall), but "/ip address get [id] address" returns ip address and netmask.
 
-<precd><code class="routeros"># Code:
+<code class="routeros"># Code:
 :global ipaddress 10.1.101.1/24
 :for i from=( [:len $ipaddress] - 1) to=0 do={ 
 	:if ( [:pick $ipaddress $i] = "/") do={ 
@@ -30,7 +30,7 @@ This script is useful if you need ip address without netmask (for example to use
 
 # Another much more simple way:
 :global ipaddress 10.1.101.1/24
-:put [:pick $ipaddress 0 [:find $ipaddress "/"]]</code></precd>
+:put [:pick $ipaddress 0 [:find $ipaddress "/"]]</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

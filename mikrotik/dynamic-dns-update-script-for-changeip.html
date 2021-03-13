@@ -23,7 +23,7 @@ Below the plain text script is an export that can be used to paste directly into
 
 Note: A copy of the latest Dynamic DNS update script should be at ChangeIP.com.
 
-<precd><code class="routeros"># Dynamic DNS Update / Simple Edition
+<code class="routeros"># Dynamic DNS Update / Simple Edition
 # Written by Sam Norris, ChangeIP.com
 # Copyright ChangeIP.com 2009-2010
 # For support send mail to Support@ChangeIP.com
@@ -93,11 +93,11 @@ Note: A copy of the latest Dynamic DNS update script should be at ChangeIP.com.
 
 }
 
-# END OF SCRIPT</code></precd>
+# END OF SCRIPT</code>
 
 You may copy and paste the script below into the terminal window to import a script. This will also configure the scheduler entry for you. THIS OPTION IS RECOMMENDED.
 
-<precd><code class="routeros"># oct/05/2009 21:28:27 by RouterOS 4.0rc1
+<code class="routeros"># oct/05/2009 21:28:27 by RouterOS 4.0rc1
 /system script
 
 add name=HomingBeacon-Simple policy=\
@@ -182,7 +182,7 @@ add name=HomingBeacon-Simple policy=\
 /system scheduler
 add comment="" disabled=no interval=5m name=DDNS on-event=\
     HomingBeacon-Simple policy=read,write,policy,test,password start-time=\
-    startup</code></precd>
+    startup</code>
 
 
 ARCHIVED
@@ -190,7 +190,7 @@ The script below is RouterOS 3.0 Compatible!
 
 An updated script here (01/20/08) should allow auto-detection of the default gateways interface name. This script below can be used if you have more than 1 WAN connection, but only 1 is active at a time.
 
-<precd><code class="routeros"># Define User Variables
+<code class="routeros"># Define User Variables
 :global ddnsuser "CHANGEIPUSERID"
 :global ddnspass "CHANGEIPPASSWORD"
 :global ddnshost "FREEHOSTNAME.TOUPDATE.TLD"
@@ -234,13 +234,13 @@ An updated script here (01/20/08) should allow auto-detection of the default gat
 
 }
 
-# End of script</code></precd>
+# End of script</code>
 
 If errors or problems occur with the above scripts please check to see if we are even receiving any updates. https://www.changeip.com/Reports/DDNSUpdates.asp will show you current updates on your account. Feel free to contact Support at ChangeIP.com if you are having problems.
 
 2.9 Series: (Please use the above for the newer 3.0 version - this version is left here for archival reasons.)
 
-<precd><code class="routeros">:log info "DDNS: Begin"
+<code class="routeros">:log info "DDNS: Begin"
 
 :global ddns-user "YOURUSERID"
 :global ddns-pass "YOURPASSWORD"
@@ -330,7 +330,7 @@ add name=HomingBeaconDynamicDNSUpdater policy=\
     \n\r\
     \n}\r\
     \n\r\
-    \n# End of script"</code></precd>
+    \n# End of script"</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

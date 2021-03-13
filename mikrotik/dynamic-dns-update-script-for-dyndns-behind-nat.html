@@ -19,7 +19,7 @@ Grateful thanks goes to "webasdf" on the forums (http://forum.mikrotik.com/viewt
 
 Script minimum Policy permissions required: read | write | test
 
-<precd><code class="routeros">:local username "<dyn.com user name>"
+<code class="routeros">:local username "<dyn.com user name>"
 :local password "<dyn.com password or, better, Updater Client Key>"
 :local hostname "<dyn.com host name>"
 :local emailAddress "<where to send notifications>"
@@ -97,7 +97,7 @@ Script minimum Policy permissions required: read | write | test
    /tool e-mail send to="$emailAddress" subject="DynDNS update $currentTime" body="$output"
 } else={
    :log info ("UpdateDynDNS: No dyndns update needed")
-} </code></precd>
+} </code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

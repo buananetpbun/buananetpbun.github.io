@@ -20,12 +20,12 @@ Many users are asking feature to use dns names instead of IP address for radius 
 So here is an example how to resolve RADIUS server's IP.
 Lets say we have radius server configured:
 
-<precd><code class="routeros">/radius 
-add address=3.4.5.6 comment=myRad</code></precd>
+<code class="routeros">/radius 
+add address=3.4.5.6 comment=myRad</code>
 
 And here is a script that will resolve ip address, compare resolved ip with configured one and replace if not equal:
 
-<precd><code class="routeros">/system script add name="resolver" source= {
+<code class="routeros">/system script add name="resolver" source= {
 :local resolvedIP [:resolve "server.example.com"];
 :local radiusID [/radius find comment="myRad"];
 :local currentIP [/radius get $radiusID address];
@@ -36,7 +36,7 @@ And here is a script that will resolve ip address, compare resolved ip with conf
 }
 
 # Add this script to scheduler to run for example every 5 minutes
-/system scheduler add name=resolveRadiusIP on-event="resolver" interval=5m</code></precd>
+/system scheduler add name=resolveRadiusIP on-event="resolver" interval=5m</code>
 
 </pre>
 <br>

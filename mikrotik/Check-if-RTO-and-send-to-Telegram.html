@@ -21,12 +21,12 @@ just adjust "WAN-1" in the script with the name of each routing-table and for ip
 
 for telegram please learn how to make the boot yourself
 
-<precd><code class="routeros">:if ([/ping 1.1.1.1 routing-table=WAN-1 count=5] = 0) do={
+<code class="routeros">:if ([/ping 1.1.1.1 routing-table=WAN-1 count=5] = 0) do={
 :local datetime1 [/system clock get date]
 :local datetime2 [/system clock get time]
 :log error "RTO pada jam [ $datetime2 ] tanggal [ $datetime1 ]"
 /tool fetch url="https://api.telegram.org/botxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/sendMessage\?chat_id=xxxx&text= ->> Jalur WAN-1 RTO pada jam [ $datetime2 ] tanggal [ $datetime1 ] " keep-result=no
-}</code></precd>
+}</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

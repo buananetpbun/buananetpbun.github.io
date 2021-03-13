@@ -18,7 +18,7 @@
 <h1>Check Bandwidth and Add Limitations - Mikrotik Script RouterOS</h1>
 This script checks if download on interface is more than 512kbps, if true then queue is added to limit speed to 256kbps.
 
-<precd><code class="routeros">:foreach i in=[/interface find] do={
+<code class="routeros">:foreach i in=[/interface find] do={
     /interface monitor-traffic $i once do={
         :if ($"received-bits-per-second" > 0 ) do={
             :local tmpIP [/ip address get [/ip address find interface=$i] address] ;
@@ -30,7 +30,7 @@ This script checks if download on interface is more than 512kbps, if true then q
             }
         }
     }
-} </code></precd>
+} </code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

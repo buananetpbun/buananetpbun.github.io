@@ -35,7 +35,7 @@ When building your own configuration skeleton you need to decide on which settin
 Heads Up! This script has be programmed to self destruct... Just kidding, but in a way it is also true, as mentioned in the title and the first section this script can be configured to either install a base configuration or uninstall a base configuration. All that magic starts on Line 2 as a :local variable. I treat this as more of an argument than a reusable variable. Since this is a common variable in most of my scripts I take extra care to set it as a :local variable in order to not disrupt my other scripts. There are several instances where this could be used as a global variable, and I have used it that way in the past to several uninstall scripts together, and executing a single script that launches all the rest. (i.e., Firewall-Uninstall, HotSpot-Uninstall, Proxy-Uninstall)
 
 
-<precd><code class="routeros">#~ "Uninstall Flag (Default = no )"
+<code class="routeros">#~ "Uninstall Flag (Default = no )"
 :local deconf no
 #~#
 
@@ -732,7 +732,7 @@ set enabled=no mode=broadcast primary-ntp=0.0.0.0 secondary-ntp=0.0.0.0
 }] . " seconds.")
 #~# "End of Uninstall Script"
 }
-#~# "End of Main Sub"</code></precd>
+#~# "End of Main Sub"</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

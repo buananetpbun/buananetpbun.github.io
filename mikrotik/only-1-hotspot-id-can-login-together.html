@@ -22,7 +22,7 @@ Please install it directly on the IP -> hotspot -> User Profile -> select the pr
 
 Hotspot Profile On Login
 
-<precd><code class="routeros"># Local Variables Section
+<code class="routeros"># Local Variables Section
 :local uname $user;
 :local usercount 0;
 :local usertime "00:00:00";
@@ -48,7 +48,7 @@ Hotspot Profile On Login
 /ip hotspot active remove numbers=$kickable;
 # If not, do nothing, just log in, you can modify this function too
 } else {
-:log info "Login user: $uname ($usercount/$maxuser)";</code></precd>
+:log info "Login user: $uname ($usercount/$maxuser)";</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

@@ -19,26 +19,26 @@ How to Block Signal with "Layer 7" or "Content" or "TLS"
 
 Block Signal With "Layer-7"
 
-<precd><code class="routeros">/ip firewall layer7-protocol
+<code class="routeros">/ip firewall layer7-protocol
 add name=Signal regexp="^.+(signal.com|whispersystems.com).*\$"
 /ip firewall filter
-add action=drop chain=forward layer7-protocol=Signal</code></precd>
+add action=drop chain=forward layer7-protocol=Signal</code>
 
 Block Signal With "Content"
 
-<precd><code class="routeros">/ip firewall filter
+<code class="routeros">/ip firewall filter
 add action=drop chain=forward content="signal.com" 
 add action=drop chain=forward content=".signal."
 add action=drop chain=forward content="whispersystems.com" 
-add action=drop chain=forward content=".whispersystems."</code></precd>
+add action=drop chain=forward content=".whispersystems."</code>
 
 Block Signal With "TLS"
 
-<precd><code class="routeros">/ip firewall filter
+<code class="routeros">/ip firewall filter
 add action=drop chain=forward protocol=tcp tls-host="signal.com"
 add action=drop chain=forward protocol=tcp tls-host="*.signal.*"
 add action=drop chain=forward protocol=tcp tls-host="whispersystems.com"
-add action=drop chain=forward protocol=tcp tls-host="*.whispersystems.*"</code></precd>
+add action=drop chain=forward protocol=tcp tls-host="*.whispersystems.*"</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

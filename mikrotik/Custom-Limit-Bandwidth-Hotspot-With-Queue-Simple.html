@@ -23,15 +23,15 @@ How To Custom Limit Bandwidth Hotspot With Queue Simple
 
 # SCRIPT ON LOGIN
 
-<precd><code class="routeros">:local datetime [/system clock get date];
+<code class="routeros">:local datetime [/system clock get date];
 :local timedate [/system clock get time];
 /queue simple add name="$user -> $address" comment=("Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]") target="$address" max-limit=1M/1M
-:log warning ("--> [ $user ] Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]") </code></precd>
+:log warning ("--> [ $user ] Login at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]") </code>
 
 # SCRIPT ON LOGOUT
 
-<precd><code class="routeros">/queue simple remove [find name="$user -> $address"] ;
-:log warning ("--> [ $user ] Logout at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")Script </code></precd>
+<code class="routeros">/queue simple remove [find name="$user -> $address"] ;
+:log warning ("--> [ $user ] Logout at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")Script </code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

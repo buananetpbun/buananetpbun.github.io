@@ -24,7 +24,7 @@ if you have entered <span style="color:red">"expired.html"</span> into the hotsp
 
 search for tag <span style="color:red">&lt;body&gt; </span> and place the script below above it
 
-<precd><code class="routeros">&lt;script type="text/javascript"&gt;
+<code class="routeros">&lt;script type="text/javascript"&gt;
  var error = "$(error)";  
  if (error == "user $(username) has reached uptime limit") {  
  window.location.href = "http://$(hostname)/expired.html";  
@@ -37,7 +37,7 @@ search for tag <span style="color:red">&lt;body&gt; </span> and place the script
  } else if (error !== "") {  
  window.location.href = "http://$(hostname)/error.html";  
  } else { document.write("$(error)"); }  
- &lt;/script&gt;</code></precd>
+ &lt;/script&gt;</code>
 Notes: this script is not made by me, I just modified it, whoever owns it, because I have been using it for a long time.
 </pre>
 <br>

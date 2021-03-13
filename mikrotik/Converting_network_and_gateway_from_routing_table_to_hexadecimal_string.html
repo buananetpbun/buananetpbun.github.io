@@ -17,7 +17,7 @@
 <h1>Converting network and gateway from routing table to hexadecimal string - Mikrotik Script RouterOS</h1>
 Version of the script giving result as DHCP option 121 (RFC 3442)
 
-<precd><code class="routeros"># Second script converting network and gateway from routing table to hexadecimal string
+<code class="routeros"># Second script converting network and gateway from routing table to hexadecimal string
 # according to RFC 3442 - DHCP option 121
 # result=0x<prefix><network><gateway>
 # example: dst-address=192.168.2.0/24 gateway=192.168.1.1 => result=0x18c0a802c0a80101
@@ -67,11 +67,11 @@ Version of the script giving result as DHCP option 121 (RFC 3442)
    };
   :put ($result . " for " . $dst);
 } else={:put ("Gateway is not a single IP address for ".$dst);}
-}</code></precd>
+}</code>
 
 Version of the script with full 4 bytes of destination network
 
-<precd><code class="routeros"># Script converting network and gateway from routing table to hexadecimal string
+<code class="routeros"># Script converting network and gateway from routing table to hexadecimal string
 # dst-address=192.168.2.0/24 gateway=192.168.1.1 => result=0x18c0a80200c0a80101
 #
 # (c) Daniel Starnowski 2011
@@ -105,7 +105,7 @@ Version of the script with full 4 bytes of destination network
    };
   :put $result;
 } else={:put ("Gateway is not a single IP address for ".$dst);}
-}</code></precd>
+}</code>
 </pre>
  <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

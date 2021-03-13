@@ -19,9 +19,9 @@
 This script generates backup file and sends it to specified e-mail address. Mail subject contains router's name, current date and time.
 Note that smtp server must be configured before this script can be used. See /tool e-mail for configuration options.
 
-<precd><code class="routeros">/system backup save name=email_backup
+<code class="routeros">/system backup save name=email_backup
 /tool e-mail send file=email_backup.backup to="me@test.com" body="See attached file" \
-subject="$[/system identity get name] $[/system clock get time] $[/system clock get date] Backup")</code></precd>
+subject="$[/system identity get name] $[/system clock get time] $[/system clock get date] Backup")</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

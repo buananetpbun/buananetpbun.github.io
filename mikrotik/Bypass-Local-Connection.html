@@ -18,7 +18,7 @@
 <h1>Bypass Local Connection / Bypass Local IP  - Mikrotik Script RouterOS</h1>
 Simple How Bypass Local Connection / Bypass Local IP on RouterOS
 
-<precd><code class="routeros"># paste script addlist to terminal
+<code class="routeros"># paste script addlist to terminal
 /ip firewall address-list
 add address=0.0.0.0/8 list=LOCAL-IP
 add address=10.0.0.0/8 list=LOCAL-IP
@@ -40,7 +40,7 @@ add action=accept chain=prerouting dst-address-list=LOCAL-IP  src-address-list=L
 add action=accept chain=postrouting dst-address-list=LOCAL-IP  src-address-list=LOCAL-IP
 add action=accept chain=forward dst-address-list=LOCAL-IP  src-address-list=LOCAL-IP
 add action=accept chain=input dst-address-list=LOCAL-IP  src-address-list=LOCAL-IP
-add action=accept chain=output dst-address-list=LOCAL-IP  src-address-list=LOCAL-IP</code></precd>
+add action=accept chain=output dst-address-list=LOCAL-IP  src-address-list=LOCAL-IP</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

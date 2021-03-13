@@ -19,10 +19,10 @@
 This script is checking if new log entry is added to particular buffer.
 In this example we will use pppoe logs:
 
-<precd><code class="routeros">/system logging action
+<code class="routeros">/system logging action
 add name="pppoe"
 /system logging
-add action=pppoe topics=pppoe,info,!ppp,!debug</code></precd>
+add action=pppoe topics=pppoe,info,!ppp,!debug</code>
 
 Log buffer will look similar to this one:
 
@@ -32,7 +32,7 @@ Now we can write a script to detect if new entry is added.
 
 Code:
 
-<precd><code class="routeros">:global lastTime;
+<code class="routeros">:global lastTime;
 :global currentBuf [ :toarray [ /log find buffer=pppoe  ] ] ;
 :global currentLineCount [ :len $currentBuf ] ;
 :global currentTime [ :totime [/log get [ :pick $currentBuf ($currentLineCount -1) ] time   ] ];
@@ -46,7 +46,7 @@ Code:
 		:set lastTime $currentTime ; 
 		:set message [/log get [ :pick $currentBuf ($currentLineCount-1) ] message];
 	}
-}</code></precd>
+}</code>
 
 After new entry is detected, it is saved in "message" variable, which you can use later to parse log message, for example, to get pppoe clients mac address.
 </pre>

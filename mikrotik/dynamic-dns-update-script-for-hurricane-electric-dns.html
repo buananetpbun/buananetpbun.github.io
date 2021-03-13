@@ -25,17 +25,17 @@ The following URL to supply update information is used:
 
 For auto IP detection:
 
-<precd><code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com</code></precd>
+<code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com</code>
 
 For manually setting the IP address:
 
-<precd><code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com&myip=192.168.0.1</code></precd>
+<code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com&myip=192.168.0.1</code>
 
 For more information, see this link: http://dns.he.net/
 
 The script:
 
-<precd><code class="routeros"># Update Hurricane Electric DDNS IPv4 address
+<code class="routeros"># Update Hurricane Electric DDNS IPv4 address
 :local ddnshost "<dyndnshost>"
 :local key "key"
 :local updatehost "dyn.dns.he.net"
@@ -55,12 +55,12 @@ The script:
 /tool fetch url="http://$ddnshost:$key@$updatehost/nic/update?hostname=$ddnshost&myip=$ipv4addr"  \
 dst-path=$outputfile                           
 :log info ([/file get ($outputfile) contents])
-/file remove ($outputfile)</code></precd>
+/file remove ($outputfile)</code>
 
 Note: The above script works with ROS 3.x. For the 5.x a minor modification for the fetch command is needed:
 
-<precd><code class="routeros">/tool fetch mode=http url="http://$ddnshost:$key@$updatehost/nic/update?hostname=$ddnshost&myip=$ipv4addr" \
-dst-path=$outputfile</code></precd>
+<code class="routeros">/tool fetch mode=http url="http://$ddnshost:$key@$updatehost/nic/update?hostname=$ddnshost&myip=$ipv4addr" \
+dst-path=$outputfile</code>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

@@ -19,7 +19,7 @@ How to Print Function on RouterOS
 
 As stated in Lua documentation, <span style="color:red">'print'</span> command is not available in RouterOS compared to standard Lua release. This example will show you how to get back <span style="color:red">'print'</span> command
 
-<precd><code class="routeros"># Print function
+<code class="routeros"># Print function
 function print (...)
    local strPrintResult = ""
    if ... then
@@ -30,7 +30,7 @@ function print (...)
       strPrintResult = strPrintResult .. "\r\n"
       io.write(strPrintResult)
    end
-end</code></precd>
+end</code>
 
 Now you can include this custom function to other scripts and use this cool custom print function :)
 You can also modify this function to write messages in RouterOS log.

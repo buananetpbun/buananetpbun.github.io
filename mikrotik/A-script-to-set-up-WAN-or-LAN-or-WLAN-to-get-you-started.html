@@ -44,7 +44,7 @@ Add and schedule script to run on boot to notify of reboot
 Add and schedule script to monitor PPPoE connection and restart if we are allocated an address we're not expecting (useful for UK BT based ADSL circuits where BT decide to take over the connection every now and again) (optional)
 I would appreciate feedback on this - if you have found it useful or if you have any suggestions for improving it, please don't hesitate to contact me - on the Mikrotik Forum, my username is 'nab'.
 
-<precd><code class="routeros">The Complete Script
+<code class="routeros">The Complete Script
 #
 # Basic ROS config
 # Save this file as 'configscript.rsc' and drag it to the files window.
@@ -598,7 +598,7 @@ add action=accept chain=output comment="Allow everything out" disabled=no
 :log info "Auto configuration ended.";
 :put "";
 :put "Auto configuration ended. Please check the system log.";
-:put "";</code></precd>
+:put "";</code>
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

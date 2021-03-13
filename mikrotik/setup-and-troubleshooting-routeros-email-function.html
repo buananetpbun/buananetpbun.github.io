@@ -19,7 +19,7 @@ Insure you have the basic router setup complete. Ip address, default route, and 
 
 Enable logging for the email service.
 
-<precd><code class="routeros">/system logging add topics=e-mail action=memory</code></precd>
+<code class="routeros">/system logging add topics=e-mail action=memory</code>
 
 This will put e-mail messages in the system log, and makes troubleshooting easier.
 Go to "/tool e-mail".
@@ -34,17 +34,17 @@ For gmail users, use the "tls=yes" setting below, and use port 587. You should r
 
 Try a test email.
 
-<precd><code class="routeros">/tool e-mail send to=you@yourdomain.com subject="test" body="test"</code></precd>
+<code class="routeros">/tool e-mail send to=you@yourdomain.com subject="test" body="test"</code>
 
 or if your email server requires a secure connection
 
-<precd><code class="routeros">/tool e-mail send to=you@yourdomain.com subject="test" body="test" tls=yes</code></precd>
+<code class="routeros">/tool e-mail send to=you@yourdomain.com subject="test" body="test" tls=yes</code>
 
 Check "/log", then your email account, for the result.
 
 If you need to check a non-secure connection to the email server from the router:
 
-<precd><code class="routeros">/system telnet xx.xx.xx.xx 25</code></precd>
+<code class="routeros">/system telnet xx.xx.xx.xx 25</code>
 
 Replace x's with the email server ip in "tool e-mail", and the server should respond with
 220 server.domain.com ESMTP xxxxxxxxxx

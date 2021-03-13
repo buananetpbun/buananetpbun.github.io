@@ -34,7 +34,7 @@ The following permissions are required for this script to run:
 - read
 - policy (for ROS 6.0+)
 
-<precd><code class="routeros"># DNSoMatic automatic DNS updates
+<code class="routeros"># DNSoMatic automatic DNS updates
 
 #--------------- Change Values in this section to match your setup ------------------
 
@@ -81,7 +81,7 @@ The following permissions are required for this script to run:
     }
 }  else={
     :log info "DNSoMatic: Previous IP $previousIP and current IP equal, no update need"
-} </code></precd>
+} </code>
 
 This will also need you to configure scheduler entry for periodical runs (maybe every 5 minutes or so). You will probably want a second scheduler event run this script upon RouterOS startup.
 
@@ -108,7 +108,7 @@ Thanks all for your solutions... with this solution DNS filtering option from Op
 
 Note: The script below is RouterOS 4.2 Tested! It should also work on 3.x series RouterOS.
 
-<precd><code class="routeros"># DNSoMatic automatic DNS updates
+<code class="routeros"># DNSoMatic automatic DNS updates
 # User account info of DNSoMatic
 :global maticuser "user"
 :global maticpass "password"
@@ -145,7 +145,7 @@ Note: The script below is RouterOS 4.2 Tested! It should also work on 3.x series
 :log info "DNSoMatic: Host $matichost updated on DNSoMatic with IP $currentIP"
 }  else={
 :log info "DNSoMatic: Previous IP $previousIP and current $currentIP equal, no update need"
-} </code></precd>
+} </code>
 
 This will also need you to configure scheduler entry for periodical runs.
 gwicon 28/nov/2009

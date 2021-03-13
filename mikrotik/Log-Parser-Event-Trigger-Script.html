@@ -23,17 +23,17 @@ This script will solve that problem by first reading the log buffer to internal 
 
 First, you must create a memory log buffer to hold the information you want to parse.
 
-<precd><code class="routeros">/system logging action add memory-lines=100 memory-stop-on-full=no name=logParse target=memory</code></precd>
+<code class="routeros">/system logging action add memory-lines=100 memory-stop-on-full=no name=logParse target=memory</code>
 
 Next, create the topics to store in the newly created log buffer.
 
-<precd><code class="routeros">/system logging add action=logParse disabled=no prefix="" topics=system,info
+<code class="routeros">/system logging add action=logParse disabled=no prefix="" topics=system,info
 /system logging add action=logParse disabled=no prefix="" topics=system,error,critical
-/system logging add action=logParse disabled=no prefix="" topics=dhcp</code></precd>
+/system logging add action=logParse disabled=no prefix="" topics=dhcp</code>
 
 Log Parser Script
 
-<precd><code class="routeros"># Script Name: Log-Parser
+<code class="routeros"># Script Name: Log-Parser
 # This script reads a specified log buffer.  At each log entry read,
 # the global variable 'logParseVar' is set to "<log entry time>,<log entry topics>,<log entry message>"
 # then a parser action script is run.  The parser action script reads the global variable, and performs specified actions.
@@ -132,12 +132,12 @@ Log Parser Script
    }
 
 # end foreach rule
-} </code></precd>
+} </code>
 
 Parser Action Script
 Next, create the parser action script that will run after each log entry is read.
 
-<precd><code class="routeros"># Script Name: Log-Parser-Script
+<code class="routeros"># Script Name: Log-Parser-Script
 #
 # This is an EXAMPLE script.  Modify it to your requirements.
 #
@@ -215,7 +215,7 @@ Next, create the parser action script that will run after each log entry is read
       }
    }
 }
-# End check for new DHCP lease assigned </code></precd>
+# End check for new DHCP lease assigned </code>
 Now, you have a way to trigger events based on log entries (and any event in RouterOS that is logged).
 
 </pre>
