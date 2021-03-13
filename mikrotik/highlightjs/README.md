@@ -52,18 +52,18 @@ library along with one of the styles and calling [`initHighlightingOnLoad`][1]:
 <script>hljs.initHighlightingOnLoad();</script>
 ```
 
-This will find and highlight code inside of `<pre><code>` tags; it tries
+This will find and highlight code inside of `<code>` tags; it tries
 to detect the language automatically. If automatic detection doesn’t
 work for you, you can specify the language in the `class` attribute:
 
 ```html
-<pre><code class="html">...</code></pre>
+<code class="html">...</code></pre>
 ```
 
 Classes may also be prefixed with either `language-` or `lang-`.
 
 ```html
-<pre><code class="language-html">...</code></pre>
+<code class="language-html">...</code></pre>
 ```
 
 ### Plaintext and Disabling Highlighting
@@ -72,13 +72,13 @@ To style arbitrary text like code, but without any highlighting, use the
 `plaintext` class:
 
 ```html
-<pre><code class="plaintext">...</code></pre>
+<code class="plaintext">...</code></pre>
 ```
 
 To disable highlighting of a tag completely, use the `nohighlight` class:
 
 ```html
-<pre><code class="nohighlight">...</code></pre>
+<code class="nohighlight">...</code></pre>
 ```
 
 ### Supported Languages
@@ -109,7 +109,7 @@ Please refer to the documentation for [`configure`][4] options.
 
 ### Using custom HTML elements for code blocks
 
-We strongly recommend `<pre><code>` wrapping for code blocks. It's quite
+We strongly recommend `<code>` wrapping for code blocks. It's quite
 semantic and "just works" out of the box with zero fiddling. It is possible to
 use other HTML elements (or combos), but you may need to pay special attention to
 preserving linebreaks.

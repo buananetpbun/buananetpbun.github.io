@@ -51,7 +51,7 @@ Language grammar improvements:
 Recent Deprecations:
 
 - HTML "merging" is deprecated. (#2873) [Josh Goebel][]
-  - HTML inside `<pre>` blocks will no longer be magically merged back into the
+  - HTML inside `` blocks will no longer be magically merged back into the
   highlighted code's HTML result - it will instead be silently removed.
   - Consider [using a plugin][htmlPlugin] if you truly need this functionality
   - Deprecated as of 10.5.0 - will be removed in v11.
@@ -61,7 +61,7 @@ Recent Deprecations:
   - otherwise, [use a plugin][tabPlugin]
   - Deprecated as of 10.5.0 - will be removed in v11.
 - `useBR` option deprecated. (#2559) [Josh Goebel][]
-  - **Recommended:** You really should just use the HTML `<pre>` tag
+  - **Recommended:** You really should just use the HTML `` tag
   - or perhaps try CSS `white-space: pre;`
   - otherwise, [use a plugin][brPlugin]
   - Deprecated as of 10.3.0 - will be removed in v11.
@@ -2188,8 +2188,8 @@ This makes total number of languages supported by highlight.js to reach 35.
 
 Bug fixes:
 
-- Custom classes on `<pre>` tags are not being overridden anymore
-- More correct highlighting of code blocks inside non-`<pre>` containers:
+- Custom classes on `` tags are not being overridden anymore
+- More correct highlighting of code blocks inside non-`` containers:
   highlighter now doesn't insist on replacing them with its own container and
   just replaces the contents.
 - Small fixes in browser compatibility and heuristics.
@@ -2276,7 +2276,7 @@ welcome to [pick up its maintenance][p] if needed.
 ## Version 5.8
 
 - Jan Berkel has contributed a definition for Scala. +1 to hotness!
-- All CSS-styles are rewritten to work only inside `<pre>` tags to avoid
+- All CSS-styles are rewritten to work only inside `` tags to avoid
   conflicts with host site styles.
 
 
@@ -2389,7 +2389,7 @@ Other changes:
   test.html
 - comments now allowed inside Ruby function definition
 - [MEL][] language from [Shuen-Huei Guan][drake]
-- whitespace now allowed between `<pre>` and `<code>`
+- whitespace now allowed between `` and `<code>`
 - better auto-detection of C++ and PHP
 - HTML allows embedded VBScript (`<% .. %>`)
 

@@ -13,8 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-<pre>
-<h1>Pseudo Random Number Generator - MikroTik Script RouterOS</h1>
+
+<h1>Pseudo Random Number Generator - MikroTik Script RouterOS</h1><pre>
 The following script was created to produce better (pseudo) random generated numbers on a MikroTik router. The script is based on the Mersenne Twister (MT) algorithm. The script will work as written, cut-and-paste, for demonstration purposes. The script is intended to be modified for use with other scripts by either changing the "arrAdjRandNumValues" local variable to a global scope or by storing the variable's contents to a file. The output generated from this script can be used as input to another script requiring random numbers.
 
 The script can use either a static seed (integer) defined in the script or by default can generate a dynamic seed. The dynamic seed uses a combination of date, time and other values to seed a formula loosely based on the rand() function of the C programming language. The results are then used as the seed for the MT algorithm. The script is meant to generate positive integers. The script outputs the numbers generated to the console.
