@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Use Host Names In Firewall Rules - MikroTik Script RouterOS</title>
+<meta content='Use Host Names In Firewall Rules - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Use Host Names In Firewall Rules - MikroTik Script RouterOS</h1>
+<pre>
+The problem
+You would like to create firewall filter rules which refer to host names rather than IP addresses. This may be, for example, because the host name is dynamic such as would be created by a dyndns service. For several very good reasons, it is not possible to put host names directly into firewall rules. For example, the following doesn't work:
+
+<code class="routeros">/ip firewall filter add chain=ouput dst-address=www.mikrotik.com action=accept</code>
+ 
+Whilst at first glance, it would seem like a good idea to allow this configuration, the additional traffic and load which would be created if the router had to resolve (in this case) 'www.mikrotik.com' for every single packet passing through shows that in reality it is simply not practical.
+
+The solution
+
+<code class="routeros">Note: Applies only for RouterOS versions up to version v6.36.</code>
+
+It is possible to implement host name based firewall rules with a little lateral thinking. If one considers that DNS resolutions are cached (in theory for as short a time as the record's TTL, but in reality for the amount of time the resolver's sysadmin has permitted), there is very little point in resolving the host name for every single packet.
+
+For this reason, we can quite easily write a script which does the resolving and stores the values somewhere they can be used by the filter rules. This script can be run as regularly as required.
+
+The best place to store the host names and associated IP addresses is the address list as this allows these addresses to be used from within the filter rules directly. The use of address lists also allows a greater degree of flexibility than would be available if the filter rules were updated individually. The address list feature allows the storage of three values - a comment, the list name and the IP address. The following example assumes the fields are used as follows:
+
+comment - The host name to use
+list name - Starting with 'host_' and ending with any description
+address - The IP address (either 0.0.0.0 when the entry is created or the result of the resolution if not)
+The reason the comment is used for the host name rather than the list name is that using a description in the list name easily allows multiple host names to be grouped together. So, for example, entries may be added as follows:
+
+<code class="routeros">/ip firewall address-list add address=0.0.0.0 comment=www.mikrotik.com list=host_mikrotik
+/ip firewall address-list add address=0.0.0.0 comment=forum.mikrotik.com list=host_mikrotik
+/ip firewall address-list add address=0.0.0.0 comment=wiki.mikrotik.com list=host_mikrotik</code>
+
+and a firewall rule as follows:
+
+<code class="routeros">/ip firewall filter add chain=ouput dst-address-list=host_mikrotik action=accept</code>
+
+This allows all outbound traffic to any of the IP addresses defined in the address list 'host_mikrotik'.
+
+As things stand, nothing will be achieved by this rule since the IP addresses allowed are all '0.0.0.0'. We need to write a script which parses all the address list entries and resolves the ones which need resolving.
+
+<code class="routeros"> /system script add \
+   name=resolvehostnames policy=write,read \
+   source="# define variables\r\
+   \n:local list\r\
+   \n:local comment\r\
+   \n:local newip\r\
+   \n:local oldip\r\
+   \n\r\
+   \n# Loop through each entry in the address list.\r\
+   \n:foreach i in=[/ip firewall address-list find] do={\r\
+   \n\r\
+   \n# Get the first five characters of the list name\r\
+   \n  :set list [:pick [/ip firewall address-list get \$i list] 0 5]\r\
+   \n\r\
+   \n# If they're 'host_', then we've got a match - process it\r\
+   \n  :if (\$list = \"host_\") do={\r\
+   \n\r\
+   \n# Get the comment for this address list item (this is the host name to u\
+   se)\r\
+   \n    :set comment [/ip firewall address-list get \$i comment]\r\
+   \n    :set oldip [/ip firewall address-list get \$i address]\r\
+   \n\r\
+   \n# Resolve it and set the address list entry accordingly.\r\
+   \n    : if (\$newip != \$oldip) do={:set newip [:resolve \$comment]\r\
+   \n    /ip firewall address-list set \$i address=\$newip}\r\
+   \n    }\r\
+   \n  }"</code>
+
+Once the script is in place, it can be scheduled. Try every hour to see if that gives you what you need:
+
+<code class="routeros">/system scheduler add \
+   comment="" disabled=no interval=1h name=updatehostnames on-event=resolvehostnames \
+   start-date=jan/01/1970 start-time=00:00:00</code>
+
+Caveat
+The script uses a RouterOS function 'resolve'. Unfortunately (as at 3.25), if the hostname being resolved doesn't exist or if the resolvers fail for whatever reason, the script returns error message and stops immediately. It is not possible to trap this error message to code around it. Extreme care must therefore be taken that host names are correctly entered (and do not include any leading or trailing spaces).
+
+Also, note that for obvious reasons, this may not work for host names which resolve to multiple IP addresses.
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div>
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br><br>
+</body>
+</html>
