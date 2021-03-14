@@ -586,6 +586,20 @@ var ahref = e.getAttribute("href");
 element.setAttribute("src", ahref);
 }
 
+function ContenUrlGet(){
+var url_string = window.location;
+var title
+var url = new URL(url_string);
+var name = url.searchParams.get("url");
+if (name > "") {
+var element2 =  document.getElementById("change");
+element2.setAttribute("src", name);
+} else {
+var element3 =  document.getElementById("change");
+element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
+}
+}	  
+
 function myFunctionSearch() {
 var input, filter, table, tr, td, i, txtValue;
 input = document.getElementById("myInput");
