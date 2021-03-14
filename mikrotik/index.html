@@ -242,6 +242,11 @@ width:100%;
 height:520px;
 border:0 
 }
+.welcome {
+width:100%;
+height:520px;
+border:0 
+}
 </style>
 </head>
 
@@ -548,7 +553,7 @@ data-ad-slot="4637807296"></ins>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script> 
 </div>
-<div id="coba">
+<div class="welcome" id="welcome">
 <h2>COMPLETE MIKROTIK SCRIPT ROUTEROS DATABASE</h2>
 <pre>
 <b>
@@ -596,7 +601,7 @@ function content(text){
 var element =  document.getElementById("change-iframe-url");
 element.setAttribute("src", text);
 document.getElementById("change-iframe-url").hidden=false;
-document.getElementById("coba").hidden=true;
+document.getElementById("welcome").hidden=true;
 }
 
 function getcontent(e){
@@ -604,7 +609,7 @@ var element =  document.getElementById("change-iframe-url");
 var ahref = e.getAttribute("href");
 element.setAttribute("src", ahref);
 document.getElementById("change-iframe-url").hidden=false;
-document.getElementById("coba").hidden=true;
+document.getElementById("welcome").hidden=true;
 }
 
 function ContenUrlGet(){
@@ -616,11 +621,11 @@ if (name > "") {
 var element2 =  document.getElementById("change-iframe-url");
 element2.setAttribute("src", name);
 document.getElementById("change-iframe-url").hidden=false;
-document.getElementById("coba").hidden=true;
+document.getElementById("welcome").hidden=true;
 } else {
 var element3 =  document.getElementById("change-iframe-url");
 //element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
-document.getElementById("coba").hidden=false;
+document.getElementById("welcome").hidden=false;
 document.getElementById("change-iframe-url").hidden=true;
 }
 }	  
