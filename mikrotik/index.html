@@ -595,12 +595,16 @@ document.getElementById("reloadads2").innerHTML = document.getElementById("reloa
 function content(text){
 var element =  document.getElementById("change-iframe-url");
 element.setAttribute("src", text);
+document.getElementById("change-iframe-url").hidden=false;
+document.getElementById("coba").hidden=true;
 }
 
 function getcontent(e){
 var element =  document.getElementById("change-iframe-url");
 var ahref = e.getAttribute("href");
 element.setAttribute("src", ahref);
+document.getElementById("change-iframe-url").hidden=false;
+document.getElementById("coba").hidden=true;
 }
 
 function ContenUrlGet(){
