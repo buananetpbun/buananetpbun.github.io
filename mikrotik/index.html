@@ -611,13 +611,13 @@ var name = url.searchParams.get("url");
 if (name > "") {
 var element2 =  document.getElementById("change-iframe-url");
 element2.setAttribute("src", name);
-document.getElementById("change-iframe-url").show
-document.getElementById("coba").hide
+document.getElementById("change-iframe-url").hidden=false;
+document.getElementById("coba").hidden=true;
 } else {
 var element3 =  document.getElementById("change-iframe-url");
 //element3.setAttribute("src", "https://buananetpbun.github.io/mikrotik/welcome.html");
-document.getElementById("coba").show
-document.getElementById("change-iframe-url").hide
+document.getElementById("coba").hidden=false;
+document.getElementById("change-iframe-url").hidden=true;
 }
 }	  
 
