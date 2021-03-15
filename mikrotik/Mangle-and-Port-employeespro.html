@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mangle and Port Net Monitoring for employees pro - MikroTik Script RouterOS</title>
+<meta content='Mangle and Port Net Monitoring for employees pro - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Mangle and Port Net Monitoring for employees pro - MikroTik Script RouterOS</h1>
+<pre>
+The application allows you to see what is currently displayed on an employee computer monitor. This way you can quickly discover if your employees are doing the tasks they are paid for. All employee computer screens can be displayed at once since they can be displayed as thumbnails with configurable size.
+
+Port forward Net Monitoring for employees pro:
+TCP/UDP: 4495/4495
+
+<code class="routeros">
+/ip firewall mangle
+add action=mark-connection chain=prerouting dst-port="4495" new-connection-mark=conn-employeespro protocol=tcp
+add action=mark-connection chain=prerouting dst-port="4495" new-connection-mark=conn-employeespro protocol=udp
+add action=mark-packet chain=prerouting connection-mark=conn-employeespro new-packet-mark=employeespro_pkt-up passthrough=no src-address=192.168.1.0/24
+add action=mark-packet chain=prerouting connection-mark=conn-employeespro dst-address=192.168.1.0/24 new-packet-mark=employeespro_pkt-down passthrough=no</code>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br><br>
+</body>
+</html>

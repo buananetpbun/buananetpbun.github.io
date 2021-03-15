@@ -27,7 +27,7 @@ add limit-at=100M max-limit=100M name="2.SpeedTest DOWN" packet-mark=speedtest_p
 /ip firewall layer7-protocol
 add name=speedtest regexp="^.+(speedtest).*\$"
 
-/ip firewall Mangle
+/ip firewall mangle
 add action=mark-connection chain=prerouting layer7-protocol=speedtest new-connection-mark=speedtest_conn
 add action=mark-connection chain=prerouting dst-port=8080 new-connection-mark=speedtest_conn protocol=tcp
 add action=mark-connection chain=postrouting new-connection-mark=speedtest_conn protocol=tcp src-port=8080

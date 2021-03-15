@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mangle and Port UltraViewer (Remote Dekstop) - MikroTik Script RouterOS</title>
+<meta content='Mangle and Port UltrViewer (Remote Dekstop) - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Mangle and Port UltraViewer (Remote Dekstop) - MikroTik Script RouterOS</h1>
+<pre>
+UltraViewer is a software that help you to remote control/remote access a computer. You can use UltraViewer for many difference purpose : to support your customers, your partners, your friends, or access your computer to work remotely...  For example, your parent need your help to repair software on their PC, you can remote control to help them. Or your friends need your help to teach them how to use a software, you can help them remotely without walk a thousand mile. Or you have a trip and want to login to your computer running at your home to work.
+
+Port forward UltraViewer:
+TCP/UDP: 2112/2112
+
+<code class="routeros">
+/ip firewall mangle
+add action=mark-connection chain=prerouting dst-port=2112 new-connection-mark=conn-ultraviewer protocol=tcp
+add action=mark-connection chain=prerouting dst-port=2112 new-connection-mark=conn-ultraviewer protocol=udp
+add action=mark-packet chain=prerouting connection-mark=conn-ultraviewer new-packet-mark=ultraviewer_pkt-up passthrough=no src-address=192.168.1.0/24
+add action=mark-packet chain=prerouting connection-mark=conn-ultraviewer dst-address=192.168.1.0/24 new-packet-mark=ultraviewer_pkt-down passthrough=no</code>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br><br>
+</body>
+</html>
