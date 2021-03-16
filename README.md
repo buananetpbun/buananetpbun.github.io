@@ -10,12 +10,10 @@ MMM      MMM  III  KKK  KKK  RRR  RRR   OOOOOO      TTT     III  KKK  KKK
 = Mikrotik RouterOS Tools and Script Unofficial =
 
 /* ----------------------------------------------
-#################################################
-# By      : BuanaNETPbun Secure!
-# Site    : http://www.o-om.com
-# github  : https://buananetpbun.github.io
-# FB      : https://fb.me/buananet.pbun	
-#################################################
+By      : BuanaNETPbun Secure!
+Site    : http://www.o-om.com
+github  : https://buananetpbun.github.io
+FB      : https://fb.me/buananet.pbun	
 ----------------------------------------------- */ 
 </pre>
 <h2>MIKROTIK SCRIPT ROUTEROS DATABASE</h2>
