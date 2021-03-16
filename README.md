@@ -41,14 +41,14 @@ FB              : https://fb.me/buananet.pbun
 <img src="https://user-images.githubusercontent.com/42666125/111255211-3a132580-8649-11eb-9408-a9cd9649a1aa.png">
 
 <h2>SIMPLE QUEUE SCRIPT GENERATOR FOR MIKROTIK + BANDWIDTH SHARED (UPTO)</h2>
-<p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue Script Generator Or script Maker For Mikrotik + Bandwidth Shared (UpTo)</a> - Simple Queue Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
+<p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue Script Generator For Mikrotik + Bandwidth Shared (UpTo)</a> - Simple Queue Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
 <img src="https://user-images.githubusercontent.com/42666125/111256022-bf4b0a00-864a-11eb-995c-afe81b2c6c34.png">
 
 <h2>QUEUE TREE SCRIPT GENERATOR OR SCRIPT MAKER FOR MIKROTIK + BANDWIDTH SHARED (UPTO)</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree Script Generator For Mikrotik + Bandwidth Shared (UpTo)</a> - Queue Tree Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
 <img src="https://user-images.githubusercontent.com/42666125/111256069-d4279d80-864a-11eb-95fe-47a6cbfd05ec.png">
 
-<h2>VPN ROUTING PORT GAME SCRIPT GENERATOR</h2>
+<h2>REMOTE IP PUBLIC STATIC FOR SECONDARY GATEWAY MIKROTIK</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway Mikrotik</a> - Simple Script how Remote IP Public Static For Secondary Gateway Mikrotik</p>
 <img src="https://user-images.githubusercontent.com/42666125/111255763-464bb280-864a-11eb-9571-ff7cbdd317df.png">
 
@@ -58,7 +58,7 @@ FB              : https://fb.me/buananet.pbun
 
 <h2>LB PCC CALCULATION / LOAD BALANCING PCC CALCULATION</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">LB PCC Calculation / Load Balancing PCC Calculation</a> - LB PCC (Load Balancing Per Connection Classifier) Calculator</p>
-<img src="https://user-images.githubusercontent.com/42666125/111253884-8315aa80-8646-11eb-81f6-8d193048c44e.png">
+<img src="https://user-images.githubusercontent.com/42666125/111256279-52843f80-864b-11eb-9a46-11dc571872bb.png">
 
 <br>
 Copyright 2021 <a href="https://buananetpbun.github.io/">Mikrotik Script RouterOS</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>  
