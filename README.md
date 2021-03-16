@@ -8,7 +8,6 @@ MMM      MMM  III  KKK KKK   RRRRRR    OOO  OOO     TTT     III  KKK KKK
 MMM      MMM  III  KKK  KKK  RRR  RRR   OOOOOO      TTT     III  KKK  KKK<br>
 
 = Mikrotik RouterOS Tools and Script Unofficial =
-
 -------------------------------------------------------
 Created By      : Agus Ramadhani (buananet Secure!)
 Site            : http://www.o-om.com 
