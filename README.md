@@ -24,16 +24,13 @@ FB              : https://fb.me/buananet.pbun
 <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Game Script Generator</a> - Static Routing Vpn Game Script Generator or Script Maker (Port Game Routing Method) </p>
 <img src="https://user-images.githubusercontent.com/42666125/111255425-9ece8000-8649-11eb-839c-21f25e838195.png">
 
-
 <h2>VPN ROUTING IP ADDRESS GAMES SCRIPT GENERATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games Script Generator</a> - Static Routing Vpn Game Script Generator or Script Maker (Ip Address Game Routing Method)</p>
 <img src="https://user-images.githubusercontent.com/42666125/111255058-eef91280-8648-11eb-8b6c-824e45053e90.png">
 
-
 <h2>LOAD BALANCING ECMP SCRIPT GENERATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP Script Generator</a> - Load Balancing Ecmp (Equal Cost Multi Path) Script Generator or Script Maker For Mikrotik Routeros</p>
 <img src="https://user-images.githubusercontent.com/42666125/111255108-046e3c80-8649-11eb-8038-8bc1279e8b89.png">
-
 
 <h2>LOAD BALANCING PCC SCRIPT GENERATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC Script Generator</a> - Lb Pcc / Load Balancing Pcc Script Generator or Script Maker For Mikrotik Routeros</p>
@@ -43,20 +40,17 @@ FB              : https://fb.me/buananet.pbun
 <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue Script Generator For Mikrotik + Tocken Bucket</a> - Simple Queue Script Generator or Script Maker For Mikrotik Plus Token Bucket - For IP Subnet /24 Only</p>
 <img src="https://user-images.githubusercontent.com/42666125/111255211-3a132580-8649-11eb-9408-a9cd9649a1aa.png">
 
-
-<h2>SIMPLE QUEUE SCRIPT GENERATOR OR SCRIPT MAKER FOR MIKROTIK + BANDWIDTH SHARED (UPTO)</h2>
+<h2>SIMPLE QUEUE SCRIPT GENERATOR FOR MIKROTIK + BANDWIDTH SHARED (UPTO)</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue Script Generator Or script Maker For Mikrotik + Bandwidth Shared (UpTo)</a> - Simple Queue Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
-<img src="https://user-images.githubusercontent.com/42666125/111254339-67f76a80-8647-11eb-93e6-6d92d024c9da.png">
+<img src="https://user-images.githubusercontent.com/42666125/111256022-bf4b0a00-864a-11eb-995c-afe81b2c6c34.png">
 
 <h2>QUEUE TREE SCRIPT GENERATOR OR SCRIPT MAKER FOR MIKROTIK + BANDWIDTH SHARED (UPTO)</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree Script Generator For Mikrotik + Bandwidth Shared (UpTo)</a> - Queue Tree Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
-<img src="https://user-images.githubusercontent.com/42666125/111255702-2c11d480-864a-11eb-8bce-264a97d677dd.png">
-
+<img src="https://user-images.githubusercontent.com/42666125/111256069-d4279d80-864a-11eb-95fe-47a6cbfd05ec.png">
 
 <h2>VPN ROUTING PORT GAME SCRIPT GENERATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway Mikrotik</a> - Simple Script how Remote IP Public Static For Secondary Gateway Mikrotik</p>
 <img src="https://user-images.githubusercontent.com/42666125/111255763-464bb280-864a-11eb-9571-ff7cbdd317df.png">
-
 
 <h2>PORT KNOCKING GENERATOR WITH (PING) ICMP + PACKET SIZE</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking Generator with (ping) ICMP + Packet Size</a> - Mikrotik Port Knocking Generator or Knocking Script Maker With Icmp + Packet Size</p>
