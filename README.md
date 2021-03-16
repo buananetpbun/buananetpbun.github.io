@@ -31,7 +31,7 @@ FB              : https://fb.me/buananet.pbun
 <p><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway Mikrotik</a> - Simple Script how Remote IP Public Static For Secondary Gateway Mikrotik</p>
 <p><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking Generator with (ping) ICMP + Packet Size</a> - Mikrotik Port Knocking Generator or Knocking Script Maker With Icmp + Packet Size</p>
 
-<img width="200" height="100" src="https://user-images.githubusercontent.com/42666125/111254047-cbcd6380-8646-11eb-9be9-c8edfd7bfe81.png">
+<img src="https://user-images.githubusercontent.com/42666125/111254047-cbcd6380-8646-11eb-9be9-c8edfd7bfe81.png">
 
 <p><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">LB PCC Calculation / Load Balancing PCC Calculation</a> - LB PCC (Load Balancing Per Connection Classifier) Calculator</p>
 
