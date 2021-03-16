@@ -49,12 +49,14 @@ FB              : https://fb.me/buananet.pbun
 <img src="https://user-images.githubusercontent.com/42666125/111254339-67f76a80-8647-11eb-93e6-6d92d024c9da.png">
 
 <h2>QUEUE TREE SCRIPT GENERATOR OR SCRIPT MAKER FOR MIKROTIK + BANDWIDTH SHARED (UPTO)</h2>
-<p><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree Script Generator Or Script Maker For Mikrotik + Bandwidth Shared (UpTo)</a> - Queue Tree Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
-<img src="https://user-images.githubusercontent.com/42666125/111254339-67f76a80-8647-11eb-93e6-6d92d024c9da.png">
+<p><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree Script Generator For Mikrotik + Bandwidth Shared (UpTo)</a> - Queue Tree Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
+<img src="https://user-images.githubusercontent.com/42666125/111255702-2c11d480-864a-11eb-8bce-264a97d677dd.png">
+
 
 <h2>VPN ROUTING PORT GAME SCRIPT GENERATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway Mikrotik</a> - Simple Script how Remote IP Public Static For Secondary Gateway Mikrotik</p>
-<img src="https://user-images.githubusercontent.com/42666125/111254339-67f76a80-8647-11eb-93e6-6d92d024c9da.png">
+<img src="https://user-images.githubusercontent.com/42666125/111255763-464bb280-864a-11eb-9571-ff7cbdd317df.png">
+
 
 <h2>PORT KNOCKING GENERATOR WITH (PING) ICMP + PACKET SIZE</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking Generator with (ping) ICMP + Packet Size</a> - Mikrotik Port Knocking Generator or Knocking Script Maker With Icmp + Packet Size</p>
