@@ -1,5 +1,13 @@
+pre {
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+}
 <pre>
-We try to collect all the scripts found on the internet and combine them in one DataBase, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!
+We try to collect all the scripts found on the internet and combine them in one DataBase, 
+Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!
 
 Scripting host provides a way to automate some router maintenance tasks by means of executing user-defined scripts bounded to some event occurrence. Scripts can be stored in the Script repository or can be written directly to the console. The events used to trigger script execution include, but are not limited to the System Scheduler, the Traffic Monitoring Tool, and the Netwatch Tool generated events. 
 
