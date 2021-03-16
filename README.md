@@ -31,7 +31,7 @@ FB              : https://fb.me/buananet.pbun
 <p><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking Generator with (ping) ICMP + Packet Size</a> - Mikrotik Port Knocking Generator or Knocking Script Maker With Icmp + Packet Size</p>
 <p><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">LB PCC Calculation / Load Balancing PCC Calculation</a> - LB PCC (Load Balancing Per Connection Classifier) Calculator</p>
 
-https://user-images.githubusercontent.com/42666125/111253438-c1f73080-8645-11eb-8563-9f9f70ecfad6.png
+<img src=https://user-images.githubusercontent.com/42666125/111253438-c1f73080-8645-11eb-8563-9f9f70ecfad6.png>
 
 <br>
 Copyright 2021 <a href="https://buananetpbun.github.io/">Mikrotik Script RouterOS</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>  
