@@ -23,9 +23,9 @@ MMM      MMM  III  KKK  KKK  RRR  RRR   OOOOOO      TTT     III  KKK  KKK
 <p><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway Mikrotik</a> - Simple Script how Remote IP Public Static For Secondary Gateway Mikrotik</p>
 <p><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking Generator with (ping) ICMP + Packet Size</a> - Mikrotik Port Knocking Generator or Knocking Script Maker With Icmp + Packet Size</p>
 <p><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">LB PCC Calculation / Load Balancing PCC Calculation</a> - LB PCC (Load Balancing Per Connection Classifier) Calculator</p>
-
+<br>
 Copyright 2021 <a href="https://www.facebook.com/buananet">Mikrotik Script RouterOS</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>  
-
+<br>
 <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 
 
