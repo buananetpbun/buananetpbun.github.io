@@ -44,7 +44,7 @@ FB              : https://fb.me/buananet.pbun
 <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue Script Generator For Mikrotik + Bandwidth Shared (UpTo)</a> - Simple Queue Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
 <img src="https://user-images.githubusercontent.com/42666125/111256022-bf4b0a00-864a-11eb-995c-afe81b2c6c34.png">
 
-<h2>QUEUE TREE SCRIPT GENERATOR OR SCRIPT MAKER FOR MIKROTIK + BANDWIDTH SHARED (UPTO)</h2>
+<h2>QUEUE TREE SCRIPT GENERATOR FOR MIKROTIK + BANDWIDTH SHARED (UPTO)</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree Script Generator For Mikrotik + Bandwidth Shared (UpTo)</a> - Queue Tree Script Generator Mikrotik + Bandwidth Shared (Upto) - For IP Subnet /24 Only</p>
 <img src="https://user-images.githubusercontent.com/42666125/111256069-d4279d80-864a-11eb-95fe-47a6cbfd05ec.png">
 
