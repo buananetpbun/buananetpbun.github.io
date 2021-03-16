@@ -8,9 +8,8 @@ MMM      MMM  III  KKK  KKK  RRR  RRR   OOOOOO      TTT     III  KKK  KKK
 
 = Mikrotik RouterOS Tools and Script Unofficial =
 </pre>
-
 <h1>FREE MIKROTIK ROUTEROS TOOLS</h1>
-<h2>MIKROTIK <span style="color:red">[</span> SCRIPT <span style="color:red">]</span> ROUTEROS</h2>
+<h2>MIKROTIK SCRIPT ROUTEROS</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - We try to collect all the scripts found on the internet and combine them in one DataBase, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!</p>
 
 <h2>MIKROTIK SCRIPT GENERATOR</h2>
