@@ -9,15 +9,11 @@ MMM      MMM  III  KKK  KKK  RRR  RRR   OOOOOO      TTT     III  KKK  KKK
 Mikrotik RouterOS Script Unofficial        https://buananetpbun.github.io
 </pre>
 
-We try to collect all the scripts found on the internet and combine them in one DataBase, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!<br>
-
-Scripting host provides a way to automate some router maintenance tasks by means of executing user-defined scripts bounded to some event occurrence. Scripts can be stored in the Script repository or can be written directly to the console. The events used to trigger script execution include, but are not limited to the System Scheduler, the Traffic Monitoring Tool, and the Netwatch Tool generated events. <br>
-
 <h2>Free MikroTik RouterOS Tools</h2>
 <b>MIKROTIK <span style="color:red">[</span> SCRIPT <span style="color:red">]</span> ROUTEROS</b><br>
-<p><a target="_blank"  href=" https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!</p><br>
+<p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - We try to collect all the scripts found on the internet and combine them in one DataBase, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!<br></p><br>
 
-<b>MIKROTIK SCRIPT GENERATOR</b><br>
+<h2>MIKROTIK SCRIPT GENERATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Game Script Generator</a> - Static Routing Vpn Game Script Generator or Script Maker (Port Game Routing Method) </p>
 <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games Script Generator</a> - Static Routing Vpn Game Script Generator or Script Maker (Ip Address Game Routing Method)</p>
 <p><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP Script Generator</a> - Load Balancing Ecmp (Equal Cost Multi Path) Script Generator or Script Maker For Mikrotik Routeros</p>
