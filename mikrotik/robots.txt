@@ -1,3 +1,4 @@
-Sitemap: https://buananetpbun.github.io/mikrotik/sitemap.xml
 User-agent: *
 allow: /
+
+Sitemap: https://buananetpbun.github.io/mikrotik/sitemap.xml
