@@ -9,7 +9,6 @@
 Protected by BuanaNET SECURE!
 
 <h2>= Mikrotik RouterOS Tools and Script Unofficial =</h2>
-
 /* --------------------------------------------------
 Created By      : Agus Ramadhani (buananet Secure!)
 Site            : http://www.o-om.com 
