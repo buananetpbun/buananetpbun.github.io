@@ -7,8 +7,9 @@
 | |__)  ) |___| | |__| | |   | | |__| | |   | | |_____| |_____ 
 |______/ \______|______|_|   |_|______|_|   |_|_______)\______)
 Protected by BuanaNET SECURE!
+
 /* --------------------------------------------------
-Created By      : Agus Ramadhani (buananet Secure!)
+Created By      : Agus Ramadhani (BuanaNet Secure!)
 Site            : http://www.o-om.com 
 Github Pages    : https://buananetpbun.github.io
 FB              : https://fb.me/buananet.pbun	
