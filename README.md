@@ -1,6 +1,15 @@
 # MIKROTIK ROUTEROS TOOLS AND SCRIPT DATABASE
 <pre>
+ ______  _     _        ______         ______  _______ _______ 
+(____  \| |   | |  /\  |  ___ \   /\  |  ___ \(_______|_______)
+ ____)  ) |   | | /  \ | |   | | /  \ | |   | |_____   _       
+|  __  (| |   | |/ /\ \| |   | |/ /\ \| |   | |  ___) | |      
+| |__)  ) |___| | |__| | |   | | |__| | |   | | |_____| |_____ 
+|______/ \______|______|_|   |_|______|_|   |_|_______)\______)
+Protected by BuanaNET SECURE!
+
 = Mikrotik RouterOS Tools and Script Unofficial =
+
 /* --------------------------------------------------
 Created By      : Agus Ramadhani (buananet Secure!)
 Site            : http://www.o-om.com 
