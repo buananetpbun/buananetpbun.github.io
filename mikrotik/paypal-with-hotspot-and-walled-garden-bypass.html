@@ -15,10 +15,13 @@
 <body>
 <h1>Paypal With Hotspot And Walled Garden Bypass - MikroTik Script RouterOS</h1>
 <pre>These scripts maintain a current list of PayPal ips in the walled garden.
+
 These scripts are necessary to compensate for a deficiency in Mikrotik's hotspot walled-garden routine. The walled garden uses "/ip dns cache" to allow ips through the walled garden for SSL connections. Unfortunately, www.paypal.com ips (the actual webpage) stay in the cache for less than 5 minutes, and www.paypalobjects.com (the cascaded style sheet) ips stay there less than 20 seconds. Once Mikrotik corrects the challenge, these scripts will no longer be necessary, but until then...
 These two domains should be entered in "/ip hotspot walled-garden":
+
 www.paypal.com
 www.paypalobjects.com
+
 This script is paypal. It should be scheduled to run every 15 seconds. Use a start-time that will schedule this script to run 5 seconds before or after the ppupdate script below, so they don't run at the same time. I use 00:00:05 as the start-time.
 
 <code class="routeros">:local ppobjip [:resolve www.paypalobjects.com];
