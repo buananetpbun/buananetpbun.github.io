@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filter A Command Output - MikroTik Script RouterOS</title>
+<meta content='Filter A Command Output - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Filter A Command Output - MikroTik Script RouterOS</h1>
+<pre>The following command if pasted into the terminal will print all ppp active users having names starting from "ex":
+
+<code class="routeros":global>list ""; :foreach i in [/ppp active find] do={:if ([:find [/ppp active get $i name] "ex"]=0) 
+  do={:set list ($list . "," . $i);}}; /ppp active print detail without-paging from $list;</code>
+
+Output:
+
+<code class="routeros"[admin@10.0.11.11] > 
+Flags: R - radius 
+ 0   name="ex" service=l2tp caller-id="1.2.2.50" address=3.3.0.254 
+     uptime=3w3h34m48s encoding="" session-id=0x81E00000 limit-bytes-in=0 
+     limit-bytes-out=0 
+
+ 1   name="ex2" service=l2tp caller-id="1.2.2.50" address=3.3.0.253 
+     uptime=17m14s encoding="" session-id=0x81E00001 limit-bytes-in=0 
+     limit-bytes-out=0 
+
+[admin@10.0.11.11] ></code>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br><br>
+</body>
+</html>
