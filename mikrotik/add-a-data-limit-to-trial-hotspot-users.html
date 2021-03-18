@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add A Data Limit To Trial Hotspot Users - MikroTik Script RouterOS</title>
+<meta content='Add A Data Limit To Trial Hotspot Users - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Add A Data Limit To Trial Hotspot Users - MikroTik Script RouterOS</h1>
+<pre>The following script allows you to assign a data limit to trial hotspot users and
+
+a) have them kicked offline upon reaching this limit
+
+b) create a temporary local user to stop them from logging back in again
+
+This is a feature which is not available via the current hotspot settings, so I decided to script it into existence. Enjoy!
+
+Script to check users for those over the limit:
+
+Make a scheduler entry to run this every X minutes, I'd recommend every 5-10 minutes.
+
+<code class="routeros">#Download limit in MB
+:local downquotamb "50"
+# Do not modify anything below this line #
+:local downquota [$downquotamb * 1000]
+:local counter
+:local datadown
+:local username
+:local macaddress
+:foreach counter in=[/ip hotspot active find ] do={
+:set datadown [/ip hotspot active get $counter bytes-out]
+:if ($datadown>$downquota) do={
+:set username [/ip hotspot active get $counter user]
+:set macaddress [/ip hotspot active get $counter mac-address]
+/ip hotspot user remove [/ip hotspot user find where name=$username]
+/ip hotspot user add name=$username limit-bytes-out=$downquota mac-address=$macaddress
+/ip hotspot active remove $counter
+:log info "Logged out $username - Reached download quota"
+}}</code>
+Script to clear all manually created user accounts; this can be done hourly, daily or weekly depending on your requirements.
+
+<code class="routeros">:foreach counter in=[/ip hotspot user find ] do={/ip hotspot user remove \$counter}</code>
+Notes:
+
+You can modify how often you want each of the scri
+
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br><br>
+</body>
+</html>
