@@ -43,7 +43,6 @@ In 99% of the cases, the RDP client connected on the first try, within 5 seconds
 
 Note that the script is rather small and simple and will not impact the CPU unless you have a large number of addresses on the list. So be careful when doing this. The alternative is to connect to the router and send WoL packet manualy.
 
-
 Note that I don't have a static IP on my WAN interface. Instead, i update the IP via my already active ChangeIP scheduler with this extra line of code:
 
 <code class="routeros">/ip firewall nat set [/ip firewall nat find comment=HTPC] dst-address=[:pick $ddnsip 0 [:find $ddnsip "/"] ]</code>
