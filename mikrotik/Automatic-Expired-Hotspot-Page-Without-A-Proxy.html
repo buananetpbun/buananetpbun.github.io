@@ -16,13 +16,9 @@
 <body>
 <h1>Automatic Expired Hotspot Page Without A Proxy - Mikrotik Script RouterOS</h1>
 <pre>Create an automatic expired hotspot page without a proxy
-
 First download <span style="color:red">"expired.html"</span> <a target="_blank" href="https://drive.google.com/file/d/1tAukNei3AXqfo0pXmjI226UpTHJAZLtc/view?usp=sharing" >here</a>
-
 if you have entered <span style="color:red">"expired.html"</span> into the hotspot folder section, then please edit the "login.html" page
-
 search for tag <span style="color:red">&lt;body&gt; </span> and place the script below above it
-
 <code class="routeros">&lt;script type="text/javascript"&gt;
  var error = "$(error)";  
  if (error == "user $(username) has reached uptime limit") {  
@@ -37,8 +33,7 @@ search for tag <span style="color:red">&lt;body&gt; </span> and place the script
  window.location.href = "http://$(hostname)/error.html";  
  } else { document.write("$(error)"); }  
  &lt;/script&gt;</code>
- 
- Notes: this script is not made by me, I just modified it, whoever owns it, because I have been using it for a long time.
+  Notes: this script is not made by me, I just modified it, whoever owns it, because I have been using it for a long time.
 </pre>
 
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
