@@ -14,10 +14,7 @@
 </head>  
 <body>
 <h1>Check if IP on interface have changed - Mikrotik Script RouterOS</h1>
-<pre>
-Check if IP on interface have changed
-
-Sometimes provider gives dynamic IP addresses. This script will compare if dynamic IP address is changed.
+<pre>How To Check if IP on interface have changed. Sometimes provider gives dynamic IP addresses. This script will compare if dynamic IP address is changed.
 
 <code class="routeros">:global currentIP;
 :local newIP [/ip address get [find interface="ether1"] address];
@@ -25,6 +22,7 @@ Sometimes provider gives dynamic IP addresses. This script will compare if dynam
     :put "ip address $currentIP changed to $newIP";
     :set currentIP $newIP;
 }</code>
+Credit: www.o-om.com
 </pre>
 <br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>

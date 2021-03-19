@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Clear Log and Session User Manager - MikroTik Script RouterOS</h1>
-<pre>
-How to automatically clear Log and Session On User Manager or you can make a new schedule 
+<pre>How to automatically clear Log and Session On User Manager or you can make a new schedule 
 
 Clear Log
 
@@ -23,10 +22,10 @@ Clear Log
 Or
  
 <code class="routeros">/tool user-manager database clear-log </code>
-
 Clear Session
 
 <code class="routeros">:foreach i in=[/tool user-manager session find] do { /tool user-manager session remove $i; }</code>
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
