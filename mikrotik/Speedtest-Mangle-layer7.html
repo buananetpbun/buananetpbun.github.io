@@ -15,9 +15,7 @@
 </head> 
 <body>
 <h1>Complete Mangle Speedtest with Layer-7 - Mikrotik Script RouterOS</h1>
-
-<pre>
-Complete Mangle Speedtest with Layer-7
+<pre>Complete Mangle Speedtest with Layer-7
 
 <code class="routeros">/queue tree
 add limit-at=100M max-limit=100M name=SPEEDTEST parent=global priority=1 queue=default
@@ -35,8 +33,8 @@ add action=mark-packet chain=prerouting connection-mark=speedtest_conn new-packe
 add action=mark-packet chain=prerouting connection-mark=speedtest_conn dst-address=192.168.1.0/24 new-packet-mark=speedtest_pkt-down passthrough=no
 add action=mark-packet chain=postrouting connection-mark=speedtest_conn new-packet-mark=speedtest_pkt-up passthrough=no src-address=192.168.1.0/24
 add action=mark-packet chain=postrouting connection-mark=speedtest_conn dst-address=192.168.1.0/24 new-packet-mark=speedtest_pkt-down passthrough=no</code>
+Credit: www.o-om.com
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
 <div id="hidelink"></div>
