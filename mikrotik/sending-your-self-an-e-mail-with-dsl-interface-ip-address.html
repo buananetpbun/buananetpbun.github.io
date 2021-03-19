@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Sending Your Self An E-Mail With Dsl Interface Ip Address - MikroTik Script RouterOS</h1>
-<pre>
-The goal
+<pre>The goal
 The goal is to know yout DSL interface IP address at all time if you need to connect to your MT box for any reason. It is a simple script. (Based on Dynamic DNS Update Script for ChangeIP.com)
 
 The script
@@ -46,12 +45,10 @@ Create a new script with the following source
   } else={
   }
 }</code>
-
 The schedule
 Create a schedule that runs the script every ten or so minutes and save.
 
 <code class="routeros">add comment="" disabled=no interval=10m name=schedule1 on-event="your_script_name_here" start-date=may/15/2008 start-time=09:00:00</code>
-
 Since it is a simple script, you can schedule it to run every minute.
 
 Shorter version
@@ -76,9 +73,9 @@ With no interface lookup.
 #    :log info "DDNS: No update required."
     }
 }</code>
-
 For this to work, simple rename your interface to ADSL and create a schedule as for the first script.
 
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

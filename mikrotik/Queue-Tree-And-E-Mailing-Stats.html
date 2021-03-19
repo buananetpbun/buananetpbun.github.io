@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Queue Tree And E-Mailing Stats - MikroTik Script RouterOS</h1><pre>
-The goal
+<h1>Queue Tree And E-Mailing Stats - MikroTik Script RouterOS</h1>
+<pre>The goal
 The goal is to limit every user to specific download/upload speeds, to guarantee specific download/upload speeds to each user and e-mail yourself the stats of users that exceed 1MB. Feel free to change the value to any desired value.
 
 I found a lot of mangle and queue scripts that simply stopped all traffic but port 80 so I wrote my own. It's not the greatest but it works (for me).
@@ -24,11 +23,9 @@ The script - mangle
 First mark packets for all users (all IP addresses) For upload:
 
 <code class="routeros">:for x from=1 to=254 do={ /ip firewall mangle add chain=prerouting src-address="10.0.0.$x" action=mark-packet new-packet-mark="U0_$x" passthrough=no }</code>
-
 For download:
 
 <code class="routeros">:for x from=1 to=254 do={ /ip firewall mangle add chain=postrouting dst-address="10.0.0.$x" action=mark-packet new-packet-mark="D0_$x" passthrough=no }</code>
-
 I have left my own IP addresses but be sure to change them with your own. The new-packet-mark has very short and simple name to avoid any typos.
 
 The script - queue
@@ -36,17 +33,14 @@ Make two main queues (download and upload) for the interface you wish to limit.
 
 <code class="routeros">/queue tree add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 max-limit=768000 name=UL packet-mark="" parent=DSL priority=8 queue=default;
 /queue tree add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 max-limit=16000000 name=DL packet-mark="" parent=LAN priority=8 queue=default;</code> 
-
 Be sure to change the speeds to match your interface speed or lower if you wish. Setting them higher will not help anything.
 
 Now make a queue for each user (IP address) For upload:
 
 <code class="routeros">:for x from=1 to=254 do={/queue tree add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=128000 max-limit=768000 name="U0_$x" packet-mark="U0_$x" parent=UL priority=8 queue=default }</code>
-
 For download:
 
 <code class="routeros">:for x from=1 to=254 do={/queue tree add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=256000 max-limit=16000000 name="D0_$x" packet-mark="D0_$x" parent=DL priority=8 queue=default }</code>
-
 I let every user to download or upload using maximum speeds if there is no one else but guarantee 256k if there are more than one user downloading. Be sure to change this to your own needs and take in account the number of users and their surfing habits.
 
 The e-mail script
@@ -80,7 +74,6 @@ Now to loop through queues and find out who is using more bandwidth. (This part 
         }
 /tool e-mail send from=from@email_here_com to=to@email_here_com subject="Queue $datum $vrijeme" body="$resulter" server=mail_server_ip_address
 /queue tree reset-counters-all</code>
-
 Notice that i check for download as well as upload. There is no particular reason for this. And be sure to reset all the counters after you send yourself that e-mail. You want accurate stats for each day which brings us to the schedule.
 
 Since I am sure that all queues exist, so I don't have any error checking. If you create queues on the fly, be sure to check all of them. So do it this way:
@@ -113,11 +106,12 @@ Since I am sure that all queues exist, so I don't have any error checking. If yo
         }
 /tool e-mail send from=from@email_here_com to=to@email_here_com subject="Queue $datum $vrijeme" body="$resulter" server=mail_server_ip_address
 /queue tree reset-counters-all</code>
-
 The schedule
 Make a schedule that runs every midnight.
 
 <code class="routeros">add comment="" disabled=no interval=24:00:00 name=schedule1 on-event="your_script_name_here" start-date=may/15/2008 start-time=00:00:00</code>
+
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

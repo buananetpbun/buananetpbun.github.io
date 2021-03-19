@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Find The Day Of The Week - MikroTik Script RouterOS</h1>
-<pre>
-This script will find the weekday (sun,mon,tue, etc.) for a given date.
+<pre>This script will find the weekday (sun,mon,tue, etc.) for a given date.
 
 Tested on 3.25, 3.26, and 3.27
 
@@ -60,6 +59,7 @@ Tested on 3.25, 3.26, and 3.27
 # END Math Calculation
 
 :put ([:pick $date 0 3] . "/" . [:pick $date 4 6] . "/" . [:pick $date 7 9] . [:pick $date 9 11] . " is on a " . $result)</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

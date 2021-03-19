@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Sending Text Out Over A Serial Port - MikroTik Script RouterOS</h1>
-<pre>
-Sometimes there's a need to send out some (short) text over a serial port to control other devices.
+<pre>Sometimes there's a need to send out some (short) text over a serial port to control other devices.
 
 As RouterOS doesn't (yet?) provide a native command to do that, you can work around with the following little script:
 
@@ -24,7 +23,6 @@ modem-init="I am the string" null-modem=yes disabled=no
 :delay 1
 /interface ppp-client remove [/interface ppp-client find name="scripttemp"]
 </code>
-
 The following assumptions were made:
 
 We want to use serial port "serial0"
@@ -33,8 +31,8 @@ serial0 (or whatever port you use) is not used by RouterOS serial-console
 The script sends the text configured as modem-init string out over the serial port when run.
 So in the example above, it would send "I am the string" (without the quotes).
 
+Credit: wiki.mikrotik.com
 </pre>
-
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

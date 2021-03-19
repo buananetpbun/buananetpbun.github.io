@@ -14,8 +14,8 @@
 </head> 
 <body>
 
-<h1>Protect Router from Port Scanner - Mikrotik RouterOS Script</h1><pre>
-When a device is connected to the (public) internet network, one of the things that needs to be tried is about security. There are many types of threats on public networks, such as Information / Identity Theft, Data Loss & Manipulation, Service Disruption. To reduce all kinds of risks and losses resulting from irresponsible parties, we as Network Administrators or Network Support / Engineers are also required to always actively maintain and prevent security threats, especially from the network side.
+<h1>Protect Router from Port Scanner - Mikrotik RouterOS Script</h1>
+<pre>When a device is connected to the (public) internet network, one of the things that needs to be tried is about security. There are many types of threats on public networks, such as Information / Identity Theft, Data Loss & Manipulation, Service Disruption. To reduce all kinds of risks and losses resulting from irresponsible parties, we as Network Administrators or Network Support / Engineers are also required to always actively maintain and prevent security threats, especially from the network side.
 
 Various kinds of actions that can be taken to prevent from the networking side. One way is to do drop traffic from the Port Scanner application.
 
@@ -28,8 +28,8 @@ add chain=input protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack action=add-src
 add chain=input protocol=tcp tcp-flags=fin,syn,rst,psh,ack,urg action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="ALL/ALL scan"
 add chain=input protocol=tcp tcp-flags=!fin,!syn,!rst,!psh,!ack,!urg action=add-src-to-address-list address-list="port scanners" address-list-timeout=2w comment="NMAP NULL scan"
 add chain=input src-address-list="port scanners" action=drop comment="Drop port scanners" disabled=no</code>
+Credit: Unknown
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

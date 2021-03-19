@@ -13,13 +13,13 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Remove Default Simple Queue From Hotspot - MikroTik Script RouterOS</h1><pre>
-When we configure a hotspot, routerOS always creates a standard queue which usually appears with the name "hs- <hotspot1>" or by some other name which allows unlimited bidirectional speeds. we could just delete it, but it will usually appear again after restarting. Another problem is that this queue will overwrite other queues underneath and the hotspot user speed limitation will not function properly.
+<h1>Remove Default Simple Queue From Hotspot - MikroTik Script RouterOS</h1>
+<pre>When we configure a hotspot, routerOS always creates a standard queue which usually appears with the name "hs- <hotspot1>" or by some other name which allows unlimited bidirectional speeds. we could just delete it, but it will usually appear again after restarting. Another problem is that this queue will overwrite other queues underneath and the hotspot user speed limitation will not function properly.
 
 It is very easy to solve this problem, just add this script in the scheduler
 
 <code class="routeros">/queue simple remove [ find name ~"hs-<" ]</code>
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

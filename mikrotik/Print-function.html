@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>  
 </head> 
 <body>
-
-<h1>Print Function - Mikrotik Script RouterOS</h1><pre>
-How to Print Function on RouterOS
+<h1>Print Function - Mikrotik Script RouterOS</h1>
+<pre>How to Print Function on RouterOS
 
 As stated in Lua documentation, <span style="color:red">'print'</span> command is not available in RouterOS compared to standard Lua release. This example will show you how to get back <span style="color:red">'print'</span> command
 
@@ -31,11 +30,11 @@ function print (...)
       io.write(strPrintResult)
    end
 end</code>
-
 Now you can include this custom function to other scripts and use this cool custom print function :)
 You can also modify this function to write messages in RouterOS log.
+
+Credit: wiki.mikrotik.com
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

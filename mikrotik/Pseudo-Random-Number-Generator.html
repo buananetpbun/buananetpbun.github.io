@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Pseudo Random Number Generator - MikroTik Script RouterOS</h1><pre>
-The following script was created to produce better (pseudo) random generated numbers on a MikroTik router. The script is based on the Mersenne Twister (MT) algorithm. The script will work as written, cut-and-paste, for demonstration purposes. The script is intended to be modified for use with other scripts by either changing the "arrAdjRandNumValues" local variable to a global scope or by storing the variable's contents to a file. The output generated from this script can be used as input to another script requiring random numbers.
+<h1>Pseudo Random Number Generator - MikroTik Script RouterOS</h1>
+<pre>The following script was created to produce better (pseudo) random generated numbers on a MikroTik router. The script is based on the Mersenne Twister (MT) algorithm. The script will work as written, cut-and-paste, for demonstration purposes. The script is intended to be modified for use with other scripts by either changing the "arrAdjRandNumValues" local variable to a global scope or by storing the variable's contents to a file. The output generated from this script can be used as input to another script requiring random numbers.
 
 The script can use either a static seed (integer) defined in the script or by default can generate a dynamic seed. The dynamic seed uses a combination of date, time and other values to seed a formula loosely based on the rand() function of the C programming language. The results are then used as the seed for the MT algorithm. The script is meant to generate positive integers. The script outputs the numbers generated to the console.
 
@@ -379,10 +378,8 @@ The script started out as an experiment and out of my own (obsessive) curiosity.
     :put $arrAdjRandNumValues
 }
 :put "Done."</code>
-
-Credit : <a target="_blank" href="https://forum.mikrotik.com/viewtopic.php?f=9&t=56933" >https://forum.mikrotik.com/viewtopic.php?f=9&t=56933</a>
+Credit: <a target="_blank" href="https://forum.mikrotik.com/viewtopic.php?f=9&t=56933" >https://forum.mikrotik.com/viewtopic.php?f=9&t=56933</a>
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

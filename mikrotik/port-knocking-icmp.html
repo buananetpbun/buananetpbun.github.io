@@ -14,8 +14,8 @@
 </head> 
 <body>
 
-<h1>How Port Knocking Maker - Mikrotik Script RouterOS</h1><pre>
-In computer networking, port knocking is a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports. Once a correct sequence of connection attempts is received, the firewall rules are dynamically modified to allow the host which sent the connection attempts to connect over specific port(s). A variant called single packet authorization (SPA) exists, where only a single "knock" is needed, consisting of an encrypted packet.
+<h1>How Port Knocking Maker - Mikrotik Script RouterOS</h1>
+<pre>In computer networking, port knocking is a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports. Once a correct sequence of connection attempts is received, the firewall rules are dynamically modified to allow the host which sent the connection attempts to connect over specific port(s). A variant called single packet authorization (SPA) exists, where only a single "knock" is needed, consisting of an encrypted packet.
 
 The primary purpose of port knocking is to prevent an attacker from scanning a system for potentially exploitable services by doing a port scan, because unless the attacker sends the correct knock sequence, the protected ports will appear closed
 
@@ -30,7 +30,6 @@ add action=add-src-to-address-list address-list="port-knocking-first" address-li
 add action=add-src-to-address-list address-list="port-knocking-second" address-list-timeout="00:00:00" chain=input packet-size="200" protocol=icmp src-address-list="port-knocking-first"
 add action=accept chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="port-knocking-second"
 add action=drop chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="!port-knocking-second"</code>
-
 <b>Copy-Paste Firewall Script into the Terminal!</b>
 
 Unique Packet Size For Key Knocking: 72 and 172
@@ -45,7 +44,6 @@ Second Key Knock -> ping -s 172 (IP Adrress)
 
 Or you can use <a target="_blank" href="https://buananetpbun.github.io/port-knocking-icmp.html" >Port Knocking Maker or Port Knock Generator</a>
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

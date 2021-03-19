@@ -14,9 +14,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Remote IP Public Static For Secondary Gateway - Mikrotik Script RouterOS</h1><pre>
-So that the Public Static IP can be used for remote even though not as the main gateway
+<h1>Remote IP Public Static For Secondary Gateway - Mikrotik Script RouterOS</h1>
+<pre>So that the Public Static IP can be used for remote even though not as the main gateway
 
 An easy example like this ... suppose we use Indihome as the main gateway and Astinet as a backup gateway, in the standard routing concept, of course, Public IP Astinet cannot be used for remote because its position is only as a backup gateway, so that Astinet Public IP can still be used for example. Winbox remote needs are very easy, and this method can also be applied to all ISP that have Public Static IP
 
@@ -34,6 +33,7 @@ add action=mark-routing chain=output connection-mark=ip-public new-routing-mark=
 
 /ip route
 add check-gateway=ping gateway="192.168.10.1" routing-mark=ip-public</code>
+Credit: https://www.o-om.com/2020/12/remote-ip-public-static-for-secondary.html
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

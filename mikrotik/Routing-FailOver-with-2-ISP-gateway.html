@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Routing FailOver with 2 ISP (gateway) - MikroTik Script RouterOS</h1><pre>
-Using more than one internet gateway (ISP) allows us to fail over where one link can be used as the main gateway and the other becomes the backup link. For these needs, the usual configuration is to define a check-gateway and differentiate the distance value for each routing rule.
+<h1>Routing FailOver with 2 ISP (gateway) - MikroTik Script RouterOS</h1>
+<pre>Using more than one internet gateway (ISP) allows us to fail over where one link can be used as the main gateway and the other becomes the backup link. For these needs, the usual configuration is to define a check-gateway and differentiate the distance value for each routing rule.
 
 WAN-1 = IP 192.168.2.2/24
 WAN-2 = IP 192.168.3.2/24
@@ -23,8 +22,8 @@ WAN-2 = IP 192.168.3.2/24
 <code class="routeros">/ip route
 add check-gateway=ping distance=1 gateway=192.168.2.1 target-scope=10
 add check-gateway=ping distance=2 gateway=192.168.3.1 target-scope=10</code>
+Credit: www.o-om.com
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

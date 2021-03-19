@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script> 
 </head> 
 <body>
-
-<h1>Read and Write Large Files - Mikrotik Script RouterOS</h1><pre>
-How To Read and Write Large Files
+<h1>Read and Write Large Files - Mikrotik Script RouterOS</h1>
+<pre>How To Read and Write Large Files
 
 Many users requested ability to work with files. Now you can do it without limitations.
 
@@ -23,14 +22,13 @@ Create and write to file:
 
 <code class="routeros">:global newContent "new file content\r\nanother line\r\n";
 [/lua "local f=assert(io.open('/test.txt', 'w+')); f:write(newContent); f:close()" ];</code>
-
 Read file content to variable:
 
 <code class="routeros">:global cnt ""
 [/lua "local f=assert(io.open('/test.txt', 'r')); cnt=f:read('*all'); f:close()" ];
 :put $cnt</code>
+Credit: wiki.mikrotik.com
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

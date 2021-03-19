@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Routing Via A Dhcp Allocated Gateway - MikroTik Script RouterOS</h1><pre>
-The Explanation
+<h1>Routing Via A Dhcp Allocated Gateway - MikroTik Script RouterOS</h1>
+<pre>The Explanation
 Sometimes a box can have a DHCP allocated address, but the gateway for that address is not automatically configured as the default gatway - perhaps you only want to route certain traffic out via that interface or maybe you have two routes out and need to route some traffic one way and others the other.
 
 In my case, we have a standard ROS configuration with up to three interfaces running DHCP clients. We want to run traffic over tunnels (so the default route is over the tunnel interface), but the tunnel bearer connection needs to be routed out via one of the gateways on one of the interfaces. Since the gateway addresses are allocated by DHCP, we can't hard code them in (and we wouldn't want to anyway as this means we can't run a one-configuration-fits-all approach).
@@ -165,6 +164,7 @@ start-date=jan/01/1970 start-time=12:34:56;
 
 # And then run it once to get everything in motion.
 :execute "/system script run $interfaceid";</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

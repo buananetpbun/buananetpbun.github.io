@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Protect Modem And Webfig Pages Using Internal Proxy - MikroTik Script RouterOS</h1><pre>
-This trick is to display the spice of the message page for those who want to try nosy to enter the modem or webfig Mikrotik page so that it is exciting and different, here we only use the error page on the proxy internal proxy.
+<h1>Protect Modem And Webfig Pages Using Internal Proxy - MikroTik Script RouterOS</h1>
+<pre>This trick is to display the spice of the message page for those who want to try nosy to enter the modem or webfig Mikrotik page so that it is exciting and different, here we only use the error page on the proxy internal proxy.
 
 The condition is to make sure the web proxy is not used and the WWW 80 IP service should change to another port
 
@@ -33,7 +32,6 @@ add action=redirect chain=dstnat dst-address="192.168.1.1" disabled=no dst-port=
 add action=redirect chain=dstnat dst-address="192.168.88.1" disabled=no dst-port=80 protocol=tcp to-ports=3128
 /ip proxy 
 set enabled=yes port=3128</code>
-
 2. Then paste the new terminal function to get a public IP
 
 <code class="routeros">/system scheduler
@@ -44,7 +42,6 @@ licip.txt\" mode=http\r\
 blicip" policy=\
 ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon \
 start-time=startup</code>
-	
 3. To activate the html error page we just need to press the Reset HTML button
 
 4. Don't forget to block all access to the proxy, we can make an IP exception that has been specified. in this example I use global
@@ -120,7 +117,8 @@ contact: 08132829XXX&lt;br /&gt;e-mail: XXXX@gmail.com
 &lt;/table&gt;
 &lt;/body&gt;
 &lt;/html&gt; </code>
-I am not responsible if there are mistakes, so please be creative yourself.
+
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

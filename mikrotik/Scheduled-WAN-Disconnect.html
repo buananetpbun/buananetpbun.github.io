@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Scheduled WAN Disconnect - MikroTik Script RouterOS</h1>
-<pre>
-"t-dsl" is the name of the WAN-interface, PPPoE in this case
+<pre>"t-dsl" is the name of the WAN-interface, PPPoE in this case
 
 <code class="routeros">/ system scheduler 
 add name="sched_disconnect" on-event=pppoe_dis start-date=jan/01/2006 start-time=03:00:00 interval=1d \ 
@@ -27,7 +26,6 @@ add name=pppoe_dis source={/interface pppoe-client disable [find name="t-dsl"]
 /interface pppoe-client enable [find name="t-dsl"]
 :log info "Script pppoe_dis - scheduled T-DSL-disconnect executed."
 }</code>
-
 should be tested in your environment and use it by own risk!
 
 ....or simply name your pppoe interface "ADSL" and do it within scheduler without scripting ...
@@ -37,6 +35,7 @@ add  name="ADSL reconect" interval=1d on-event="interface pppoe-client disable A
 \ninterface pppoe-client enable ADSL ;\r\
 \n" policy=ftp,reboot,read,write,policy,test,winbox,password,sniff,sensitive,a
 start-date=sep/12/2012 start-time=06:00:00</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

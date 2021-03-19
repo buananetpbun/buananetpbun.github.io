@@ -13,16 +13,13 @@
 <script>hljs.initHighlightingOnLoad();</script>   
 </head> 
 <body>
-
-<h2>Ho To Resolve host-name - Mikrotik Script RouterOS</h2>
-
-Many users are asking feature to use dns names instead of IP address for radius servers, firewall rules, etc.
+<h1>Ho To Resolve host-name - Mikrotik Script RouterOS</h1>
+<pre>Many users are asking feature to use dns names instead of IP address for radius servers, firewall rules, etc.
 So here is an example how to resolve RADIUS server's IP.
 Lets say we have radius server configured:
 
 <code class="routeros">/radius 
 add address=3.4.5.6 comment=myRad</code>
-
 And here is a script that will resolve ip address, compare resolved ip with configured one and replace if not equal:
 
 <code class="routeros">/system script add name="resolver" source= {
@@ -34,12 +31,10 @@ And here is a script that will resolve ip address, compare resolved ip with conf
    /log info "radius ip updated";
 }
 }
-
 # Add this script to scheduler to run for example every 5 minutes
 /system scheduler add name=resolveRadiusIP on-event="resolver" interval=5m</code>
-
+Credit: wiki.mikrotik.com
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

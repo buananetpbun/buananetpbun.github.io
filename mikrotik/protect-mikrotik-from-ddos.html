@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>   
 </head> 
 <body>
-
-<h1>Protect Router From DDOS Attacks - Mikrotik Script RouterOS</h1><pre>
-Anticipate DDoS attacks, namely by limiting the number of connections in firewall rules. 
+<h1>Protect Router From DDOS Attacks - Mikrotik Script RouterOS</h1>
+<pre>Anticipate DDoS attacks, namely by limiting the number of connections in firewall rules. 
 
 When there is a DDoS attack, the system detects the number of connection requests exceeding the specified limit.
 
@@ -25,8 +24,8 @@ add chain=forward connection-state=new src-address-list=ddoser dst-address-list=
 add chain=block-ddos dst-limit=50,50,src-and-dst-addresses/10s action=return
 add chain=block-ddos action=add-dst-to-address-list address-list=ddosed address-list-timeout=10m
 add chain=block-ddos action=add-src-to-address-list address-list=ddoser address-list-timeout=10m</code>
+Credit: Unknown
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
