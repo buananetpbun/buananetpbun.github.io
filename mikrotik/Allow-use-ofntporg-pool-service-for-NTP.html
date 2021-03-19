@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Allow Use Of ntp.org Pool Service For NTP - Mikrotik Script RouterOS</h1>
-<pre>
-This script resolves the hostnames of two NTP servers, compares the result with the current NTP settings and changes the addresses if they're different. This script is required as RouterOS does not allow hostnames to be used in the NTP configuration. Two scripts are used. The first defines some system variables which are used in other scripts and the second does the grunt work:
+<pre>This script resolves the hostnames of two NTP servers, compares the result with the current NTP settings and changes the addresses if they're different. This script is required as RouterOS does not allow hostnames to be used in the NTP configuration. Two scripts are used. The first defines some system variables which are used in other scripts and the second does the grunt work:
 
 <code class="routeros"># System configuration script - "GlobalVars"
 :put "Setting system globals";
