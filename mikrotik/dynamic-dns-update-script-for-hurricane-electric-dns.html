@@ -14,8 +14,8 @@
 </head>  
 <body>
 
-<h1>Dynamic DNS Update Script for Hurricane Electric DNS - MikroTik Script RouterOS</h1><pre>
-This script will update the IP address on Hurricane Electric DNS service (http://dns.he.net/)
+<h1>Dynamic DNS Update Script for Hurricane Electric DNS - MikroTik Script RouterOS</h1>
+<pre>This script will update the IP address on Hurricane Electric DNS service (http://dns.he.net/)
 
 It updates the A/AAAA record so both IPv4 and IPv6 can be supplied.
 
@@ -26,11 +26,9 @@ The following URL to supply update information is used:
 For auto IP detection:
 
 <code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com</code>
-
 For manually setting the IP address:
 
 <code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com&myip=192.168.0.1</code>
-
 For more information, see this link: http://dns.he.net/
 
 The script:
@@ -56,11 +54,11 @@ The script:
 dst-path=$outputfile                           
 :log info ([/file get ($outputfile) contents])
 /file remove ($outputfile)</code>
-
 Note: The above script works with ROS 3.x. For the 5.x a minor modification for the fetch command is needed:
 
 <code class="routeros">/tool fetch mode=http url="http://$ddnshost:$key@$updatehost/nic/update?hostname=$ddnshost&myip=$ipv4addr" \
 dst-path=$outputfile</code>
+Credit: https://wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

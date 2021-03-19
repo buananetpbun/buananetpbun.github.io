@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Dynamic DNS Update Script for dynDNS - MikroTik Script RouterOS</h1><pre>
-in order to support dyndns i took some parts from the changeip script and made it work for.
+<h1>Dynamic DNS Update Script for dynDNS - MikroTik Script RouterOS</h1>
+<pre>in order to support dyndns i took some parts from the changeip script and made it work for.
 
 1) add a script called dynDNS:
 
@@ -61,11 +60,9 @@ in order to support dyndns i took some parts from the changeip script and made i
     :global ddnslastip $ddnsip
   }
 }</code>
-
 2) Add a scheduler entry to run every minute
 
 <code class="routeros">/system scheduler add name=dynDNS interval=00:01 on-event="/system script run dynDns\r\n"</code>
-
 There is a thread for further questions.
 
 Getting it to work with 4.XX
@@ -126,9 +123,7 @@ Getting it to work with 4.XX
 } else={
     :log info ("UpdateDynDNS: No dyndns update needed")
 } </code>
-
 If have problems to run these scripts, try it:
-
 
 <code class="routeros">:local ddnsuser "your user name"
 :local ddnspass "your password"
@@ -161,7 +156,6 @@ If have problems to run these scripts, try it:
      :log info "DynDNS: dont need changes";
     }
 }  </code>
-
 another version of this script working in 5.x
 
 <code class="routeros"># Set needed variables
@@ -214,7 +208,6 @@ another version of this script working in 5.x
 } else={
    :log info ("UpdateDynDNS: No dyndns update needed")
 } </code>
-
 Debugged version for RoS 6.x:
 
 <code class="routeros">:global ddnsuser "theddnsusername"
@@ -248,11 +241,11 @@ Debugged version for RoS 6.x:
      :log info "DynDNS: dont need changes";
     }
 }  </code>
-
 Scheduler:
 
 <code class="routeros">/system scheduler
 add interval=1m name=DynDns on-event=DynDns policy=ftp,reboot,read,write,policy,test,winbox,password,sniff,sensitive,api start-time=startup </code>
+Credit: https://wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

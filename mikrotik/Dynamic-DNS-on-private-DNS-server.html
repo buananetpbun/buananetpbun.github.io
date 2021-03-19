@@ -14,8 +14,8 @@
 </head>  
 <body>
 
-<h1>Dynamic DNS on private DNS server (Router OS, Bind, Apache, and Shell script) - MikroTik Script RouterOS</h1><pre>
-Original and updates here: [eurekamoment.eu] If you constantly connect to your home network (as I do), you have, on occasion, experienced that frustrating moment when the dynamic dns service is down for whatever reason. Let's assume that you are a person who likes to have more controll over the services you use, and have setup your private DNS server on a cheap VPS like [DigitalOcean]. If so, you're at the right place.
+<h1>Dynamic DNS on private DNS server (Router OS, Bind, Apache, and Shell script) - MikroTik Script RouterOS</h1>
+<pre>Original and updates here: [eurekamoment.eu] If you constantly connect to your home network (as I do), you have, on occasion, experienced that frustrating moment when the dynamic dns service is down for whatever reason. Let's assume that you are a person who likes to have more controll over the services you use, and have setup your private DNS server on a cheap VPS like [DigitalOcean]. If so, you're at the right place.
 
 For this to work, we will need a smarter router that can fetch http data - Mikrotik in my case, and a private DNS server on the public network hosting your domain and under your control. If you can't access the shell, then you can't complete this tutorial.
 
@@ -35,11 +35,9 @@ Setup
     print &quot;DATE: &quot;.date(&quot;Y-m-d H:i:s&quot;).&quot; IP: &quot;.$ip;
   }
 ?&gt;</code>
-
 3.Setup Mikrotik schetuler that runs every few minutes
 
 <code class="routeros"> /tool fetch keep-result=no mode=http url="http://www.my-dns-servers-web-server.com/mikrotik/deviceupdate.php?hash=ae2b1fca515949e5d54fb22b8ed95575"</code>
-
 4.Create a shell script called dyndns.sh to update the DNS zone
 
 <code class="routeros"> #!/bin/bash
@@ -57,11 +55,9 @@ else
         md5sum /var/www/homeip.log > /var/www/homeip.md5
         echo "$(date) - Updated ip $newip" >> /var/log/dyndns.log
 fi</code>
-
 5.Create a cron job to run every few minutes. Run crontab -e and type
 
 <code class="routeros"> */5 * * * * /scripts/dyndns.sh</code>
-
 <b>How it works</b>
 
 1. The router tries to access the specific web page on the web server that is located on the DNS server.
@@ -70,6 +66,8 @@ fi</code>
    2. One file with IP address only
 3. Cron runs a script that calculates the MD5 hash from the file containing only the IP address and compares it to the MD5 hash from before the change. If the two are different - it updates the zone file by replacing the one record and saves the new hash to a file for future comparison (so we don't update and reload the zone all the time
 4. Zone is reloaded and propagated.
+
+Credit: https://wiki.mikrotik.com/wiki/Dynamic_DNS_on_private_DNS_server_(Router_OS,_Bind,_Apache,_and_Shell_script)
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

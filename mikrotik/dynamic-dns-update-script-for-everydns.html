@@ -14,8 +14,8 @@
 </head>  
 <body>
 
-<h1>Dynamic DNS Update Script for EveryDNS - MikroTik Script RouterOS</h1><pre>
-This script allow you to easily maintain dynamic updates at EveryDNS free DNS server.
+<h1>Dynamic DNS Update Script for EveryDNS - MikroTik Script RouterOS</h1>
+<pre>This script allow you to easily maintain dynamic updates at EveryDNS free DNS server.
 First you have to setup an account at http://www.everydns.com/, and with few steps create dynamic domain. After that you have to setup EasyDNS servers NS DNS parameters at domain seller site.
 
 Next script is build with target to update DNS with two or more PPPoE connection with dynamics IP addresses.
@@ -67,7 +67,6 @@ Next script is build with target to update DNS with two or more PPPoE connection
 
 }
 # Coded by Paxy</code>
-
 You should setup this script, so using username and password as you registered at http://www.everydns.com/. Dynamic domain should be name of sub-domain that you want to be updated automaticly ex. r.paxy.in.rs . Interface name field should be exact name of interface that you want to monitor for IP change, in my case it is PPPoE type interfaces.
 
 If you want to monitor more than one interface, create another script, fill username and pass, change sub-domain to another sub-domain name, and change interface that monitor IP address. Because of spoofing protection, you have to change variable "edlastip1" to any other name, like "edlastip2" in whole script.
@@ -95,11 +94,11 @@ If the /tool fetch url gives you problems, try to rewrite this line :
 
 <code class="routeros"> /tool fetch url="http://dyn.everydns.net/$str" mode=http user=$eduser password=$edpass \
    dst-path=("/EveryDNS.".$eddomain)</code>
-   
 to
 
 <code class="routeros">/tool fetch address="dyn.everydns.net" host="dyn.everydns.net" mode=http src-path="$str" \
    user=$eduser password=$edpass dst-path=("/EveryDNS.".$eddomain)</code>
+Credit: https://wiki.mikrotik.com  
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

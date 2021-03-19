@@ -14,8 +14,8 @@
 </head>  
 <body>
 
-<h1>Dynamic DNS Update Script for No-IP DNS - MikroTik Script RouterOS</h1><pre>
-This script was designed to utilize the No-IP Update API which offers direct access to No-IP's DNS update system.
+<h1>Dynamic DNS Update Script for No-IP DNS - MikroTik Script RouterOS</h1>
+<pre>This script was designed to utilize the No-IP Update API which offers direct access to No-IP's DNS update system.
 
 This script is based on the Dynamic DNS Update Script for DNSoMatic.com.
 
@@ -75,14 +75,11 @@ The following permissions are required for this script to run:
 } else={
    :log info "No-IP: $inetinterface is not currently running, so therefore will not update."
 }</code>
-
 3. Create a new scheduler entry to run this script every 5 mins.
 
 <code class="routeros">/system scheduler add comment="Update No-IP DDNS" disabled=no interval=5m \
 name=no-ip_ddns_update on-event=no-ip_ddns_update policy=read,write,test</code>
-
 --riverron 03:18, 18 March 2012 (UTC)
-
 
 Alternative script.
 Alternative script uses DNS Resolve and is based on an documentation http://wiki.mikrotik.com/wiki/Manual:Scripting-examples and documentation No-IP DNS Update API http://www.no-ip.com/integrate/request
@@ -105,7 +102,6 @@ Can be modified for use with other Dynamic DNS services supported ReST API.
      }
    } 
 }</code>
-
 Note:
 
 :local NOIPDomain "$NOIPUser.no-ip.org" - True if the username is the third level domain and is registered in the domain *. no-ip.org(example: username=testuser1 and domain=testuser1.no-ip.org). In another case, the string to be changed.
@@ -121,10 +117,11 @@ Sample configuration:
 :local NOIPPass "testpassword"
 :local WANInter "ether1"
 ###############################################</code>
-
 If you use another WAN-interface, use it(example: pppoe-out1, pptp-out1, l2tp-out1).
 
 --k.keker 15:18, 14 November 2012 (UTC)
+
+Credit: https://wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

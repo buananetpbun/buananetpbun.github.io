@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Default Filter Rules - MikroTik Script RouterOS</h1><pre>
-Default Filter rules mikrotik after installation or after reset
+<h1>Default Filter Rules - MikroTik Script RouterOS</h1>
+<pre>Default Filter rules mikrotik after installation or after reset
 
 <code class="routeros">/ip firewall filter
 add action=accept chain=input comment=\
@@ -40,6 +39,7 @@ add action=drop chain=forward comment="defconf: drop invalid" \
 add action=drop chain=forward comment=\
     "defconf: drop all from WAN not DSTNATed" connection-nat-state=!dstnat \
     connection-state=new in-interface-list=WAN</code>
+Credit:	www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

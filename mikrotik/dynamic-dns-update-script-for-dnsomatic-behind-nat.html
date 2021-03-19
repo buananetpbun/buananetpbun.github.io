@@ -14,8 +14,8 @@
 </head>  
 <body>
 
-<h1>Dynamic DNS Update Script for DNSoMatic.com behind NAT - MikroTik Script RouterOS</h1><pre>
-This script is a solution made of others solutions (nothing new). The goal is to update your account on DNSoMatic.com. The main advantage on this solution is that DNSoMatic offers the possibility of propagating DNS updates to thirth party DNSlike systems like OpenDNS, DynDNS, Change IP and other 27 more.
+<h1>Dynamic DNS Update Script for DNSoMatic.com behind NAT - MikroTik Script RouterOS</h1>
+<pre>This script is a solution made of others solutions (nothing new). The goal is to update your account on DNSoMatic.com. The main advantage on this solution is that DNSoMatic offers the possibility of propagating DNS updates to thirth party DNSlike systems like OpenDNS, DynDNS, Change IP and other 27 more.
 
 If you're looking for a script that will run on a MikroTik that is not behind a NAT, use this one: Dynamic DNS Update Script for DNSoMatic.com
 
@@ -82,7 +82,6 @@ The following permissions are required for this script to run:
 }  else={
     :log info "DNSoMatic: Previous IP $previousIP and current IP equal, no update need"
 } </code>
-
 This will also need you to configure scheduler entry for periodical runs (maybe every 5 minutes or so). You will probably want a second scheduler event run this script upon RouterOS startup.
 
 If for whatever reason the update fails, the script will not update DNSoMatic until the IP address changes again. This is rare, but could happen. It would be recommended to set up a third scheduler with longer intervals (maybe 1 hour) to run a script with the following code:
@@ -146,10 +145,10 @@ Note: The script below is RouterOS 4.2 Tested! It should also work on 3.x series
 }  else={
 :log info "DNSoMatic: Previous IP $previousIP and current $currentIP equal, no update need"
 } </code>
-
 This will also need you to configure scheduler entry for periodical runs.
 gwicon 28/nov/2009
 
+Credit: https://wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

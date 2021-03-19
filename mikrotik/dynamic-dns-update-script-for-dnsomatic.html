@@ -14,8 +14,8 @@
 </head>  
 <body>
 
-<h1>Dynamic DNS Update Script for DNSoMatic.com - MikroTik Script RouterOS</h1><pre>
-This script is a solution made of others solutions (nothing new). Much of this was adapted from the deprecated version of Dynamic DNS Update Script for DNSoMatic.com behind NAT.
+<h1>Dynamic DNS Update Script for DNSoMatic.com - MikroTik Script RouterOS</h1>
+<pre>This script is a solution made of others solutions (nothing new). Much of this was adapted from the deprecated version of Dynamic DNS Update Script for DNSoMatic.com behind NAT.
 
 The goal is to update your account on DNSoMatic.com. The main advantage of this solution is that DNSoMatic offers the possibility of propagating DNS updates to thirth party DNSlike systems like OpenDNS, DynDNS, Change IP and other 27 more.
 
@@ -82,7 +82,6 @@ The following permissions are required for this script to run:
 } else={
     :log info "DNSoMatic: $inetinterface is not currently running, so therefore will not update."
 }</code>
-
 This will also need you to configure scheduler entry for periodical runs (maybe every minute or so). You will probably want a second scheduler event run this script upon RouterOS startup.
 
 If for whatever reason the update fails, the script will not update DNSoMatic until the IP address changes again. This is rare, but could happen. It would be recommended to set up a third scheduler with longer intervals (maybe 1 hour) to run a script with the following code:
@@ -91,7 +90,6 @@ If for whatever reason the update fails, the script will not update DNSoMatic un
 :set previousIP ""
 
 :log info "Cleared previousIP to force DNS-O-Matic update on next run."</code>
-
 The following permissions are required for this script to run:
 
 - write
@@ -102,6 +100,7 @@ The following permissions are required for this script to run:
 It will silently fail if it doesn't have this permission.
 hjoelr 10/nov/2013
 
+Credit: https://wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
