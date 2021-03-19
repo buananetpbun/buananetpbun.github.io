@@ -15,9 +15,7 @@
 </head>
 <body>
 <h1>Auto Login WMS or wifi.id - Mikrotik Script RouterOS</h1>
-
-<pre>
-How to auto login wifi.id or WMS Indihome
+<pre>How to auto login wifi.id or WMS Indihome
 
 <code class="routeros">:if ([/ping address=1.1.1.1 count=5] = 0) do={
 /ip dns cache flush
@@ -31,8 +29,8 @@ log error ("WMS Down")
 } else {
 log warning ("WMS UP")
 }</code>
+Credit: Unknown (thanks before for script creator)
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
 <div id="hidelink"></div>

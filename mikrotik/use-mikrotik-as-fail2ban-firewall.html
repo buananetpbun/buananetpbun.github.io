@@ -28,7 +28,6 @@ Our first point must be generation SSH key for secure remote login
 Note that RouterOS 2.9.13 and upper versions supporting SSH logins.
 
 <code class="routeros">Note: New RouterOS versions v6 and up requires RSA keys</code>
-
 Use this command to generate keys.
 
 <code class="routeros">admin@linux:/$ ssh-keygen -t dsa
@@ -53,37 +52,30 @@ The key's randomart image is:
 | .   +...         |
 |   .+...       |
 +---------+</code>
-
 DO NOT WRITE ANY PASSPHRASE. Now we need to upload and import id_dsa.pub key to mikrotik. File is located at /home/user/.ssh/id_dsa.pub if you are using root account then /root/.ssh/id_dsa.pub
 
 Configuration on Mikrotik side
 
 <code class="routeros">[admin@mikrotik] > user add name=linux address=LINUX-SERVER-IP-ADDRESS group=full</code>
-
 This command will add a user without password with full permissions login allowed from only your linux machine.
 
 <code class="routeros">[admin@mikrotik]> user ssh-keys import public-key-file=id_dsa.pub user=linux</code>
-
 This command will import your uploaded id_dsa public key to key mikrotik store.
 
 Configuration on Linux side
 On Linux side we must create a file named mikrotik to /usr/bin/ dir.
 
 <code class="routeros">touch /usr/bin/mikrotik</code>
-
 and put this bash script into this file.
 
 <code class="routeros">#!/bin/bash
 ssh -l linux -p22 -i /root/.ssh/id_dsa MIKROTIK-IP-ADDRESS "$1"</code>
-
 OK.
 
 <code class="routeros">now create a new file in /etc/fail2ban/action.d/ directory </code>
-
 with name mikrotik.conf
 
 <code class="routeros">nano /etc/fail2ban/action.d/mikrotik.conf</code> 
-
 and put this text to that file.
 
 <code class="routeros"># Fail2Ban configuration file
@@ -146,7 +138,6 @@ OK now we configured ban and unban actions
 Then we must edit jail.conf file to tell Fail2ban to use mikrotik as ban action.
 
 <code class="routeros">nano /etc/fail2ban/jail.conf</code>
-
 I will show you example for ASTERISK jail you can use any other as you want.
 
 <code class="routeros">[ASTERISK]
@@ -157,10 +148,11 @@ action = mikrotik
 logpath  = /var/log/asterisk/full
 maxretry = 10
 bantime = 3600</code>
-
 OK It's all. I'm opened to listen any questions and remarks about this script. you can write me at "ludwig@markosyan.info'
 
 Thanks for your interest.
+
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
