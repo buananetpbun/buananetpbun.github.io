@@ -13,18 +13,15 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>IP Pool Statistics - MikroTik Script RouterOS</h1><pre>
-This script will list the used, available, and percent usage of IPs in IP -> Pools in RouterOS.
+<h1>IP Pool Statistics - MikroTik Script RouterOS</h1>
+<pre>This script will list the used, available, and percent usage of IPs in IP -> Pools in RouterOS.
 
 <code class="routeros"># List stats for IP -> Pool
 #
 # criticalthreshold = output pool display in red if pool used is above this %
 # warnthreshold = output pool display in gold if pool used is above this %
-
 :local criticalthreshold 85
 :local warnthreshold 70
-
 # Internal processing below...
 # ----------------------------------
 /ip pool {
@@ -38,23 +35,17 @@ This script will list the used, available, and percent usage of IPs in IP -> Poo
    :local tmpint
    :local maxindex
    :local line
-
    :put ("IP Pool Statistics")
    :put ("------------------")
-
 # Iterate through IP Pools
    :foreach p in=[find] do={
-
       :set poolname [get $p name]
       :set pooladdresses 0
       :set poolused 0
       :set line ""
-
       :set line ("     " . $poolname)
-
 #   Iterate through current pool's IP ranges
       :foreach r in=[:toarray [get $p range]] do={
-
 #      Get min and max addresses
          :set findindex [:find [:tostr $r] "-"]
          :if ([:len $findindex] > 0) do={
@@ -64,7 +55,6 @@ This script will list the used, available, and percent usage of IPs in IP -> Poo
             :set minaddress [:tostr $r]
             :set maxaddress [:tostr $r]
          }
-
 #       Convert to array of octets (replace '.' with ',')
          :for x from=0 to=([:len [:tostr $minaddress]] - 1) do={
             :if ([:pick [:tostr $minaddress] $x ($x + 1)] = ".") do={
@@ -76,7 +66,6 @@ This script will list the used, available, and percent usage of IPs in IP -> Poo
                :set maxaddress ([:pick [:tostr $maxaddress] 0 $x] . "," . \
                                        [:pick [:tostr $maxaddress] ($x + 1) [:len [:tostr $maxaddress]]]) }
          }
-
 #      Calculate available addresses for current range
          :if ([:len [:toarray $minaddress]] = [:len [:toarray $maxaddress]]) do={
             :set maxindex ([:len [:toarray $minaddress]] - 1)
@@ -91,16 +80,12 @@ This script will list the used, available, and percent usage of IPs in IP -> Poo
                :set pooladdresses ($pooladdresses + $tmpint)
 #         for x
             }
-
 #      if len array $minaddress = $maxaddress
          }
-
 #      Add current range to total pool's available addresses
          :set pooladdresses ($pooladdresses + 1)
-
 #   foreach r
       }
-
 #   Now, we have the available address for all ranges in this pool
 #   Get the number of used addresses for this pool
       :set poolused [:len [used find pool=[:tostr $poolname]]]
@@ -122,11 +107,11 @@ This script will list the used, available, and percent usage of IPs in IP -> Poo
             :put ([:terminal style none] . $line)
          }
       }
-
 # foreach p
    }
 # /ip pool
 }</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

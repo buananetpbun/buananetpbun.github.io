@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Hurricane Electric IPv6 Tunnel - IPv4 Endpoint updater - MikroTik Script RouterOS</h1><pre>
-This script will update a Hurricane Electric IPv6 Tunnel Client IPv4 address.
+<h1>Hurricane Electric IPv6 Tunnel - IPv4 Endpoint updater - MikroTik Script RouterOS</h1>
+<pre>This script will update a Hurricane Electric IPv6 Tunnel Client IPv4 address.
 
 This script uses the fetch command with the url= parameter. Check that your version of RouterOS -> /tool fetch supports this option.
 
@@ -28,7 +27,6 @@ For complete instructions on how to update your Hurricane Electric IPv6 Tunnel C
 The script:
 
 <code class="routeros"># Update Hurricane Electric IPv6 Tunnel Client IPv4 address
-
 :local HEtunnelinterface "<<<6to4 Interface name>>>"
 :local HEtunnelid "<<<Tunnel ID>>>"
 :local HEuserid "<<<Username>>>"
@@ -37,11 +35,9 @@ The script:
 :local HEupdatepath "/nic/update"
 :local WANinterface "<<<WAN Interface name>>>"
 :local outputfile ("HE-" . $HEtunnelid . ".txt")
-
 # Internal processing below...
 # ----------------------------------
 :local HEipv4addr
-
 # Get WAN interface IP address
 :set HEipv4addr [/ip address get [/ip address find interface=$WANinterface] address]
 :set HEipv4addr [:pick [:tostr $HEipv4addr] 0 [:find [:tostr $HEipv4addr] "/"]]
@@ -50,7 +46,6 @@ The script:
    :log error ("Could not get IP for interface " . $WANinterface)
    :error ("Could not get IP for interface " . $WANinterface)
 }
-
 # Update the HEtunnelinterface with WAN IP
 /interface 6to4 {
    :if ([get ($HEtunnelinterface) local-address] != $HEipv4addr) do={
@@ -58,7 +53,6 @@ The script:
       set ($HEtunnelinterface) local-address=$HEipv4addr
    }
 }
-
 :log info ("Updating IPv6 Tunnel " . $HEtunnelid . " Client IPv4 address to new IP " . $HEipv4addr . "...")
 /tool fetch mode=https \
                   host=($HEupdatehost) \
@@ -71,6 +65,7 @@ The script:
                   
 :log info ([/file get ($outputfile) contents])
 /file remove ($outputfile)</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

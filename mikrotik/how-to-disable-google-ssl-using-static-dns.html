@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>How To Disable Google Ssl Using Static Dns - MikroTik Script RouterOS</h1><pre>
-Here I share how to disable google safe search, namely by disabling Google SSL directly from Mikrotik. This method is useful for converting HTTPS to HTTP in the hope that content can be cached for Internal Proxy or External Proxy purposes (generally Squid / Lusca).
+<h1>How To Disable Google Ssl Using Static Dns - MikroTik Script RouterOS</h1>
+<pre>Here I share how to disable google safe search, namely by disabling Google SSL directly from Mikrotik. This method is useful for converting HTTPS to HTTP in the hope that content can be cached for Internal Proxy or External Proxy purposes (generally Squid / Lusca).
 
 The method is very easy, namely by forcing DNS Static directly from the proxy.
 
@@ -24,6 +23,8 @@ add address = 216.239.32.20 name = www.google.com
 add address = 216.239.32.20 name = www.google.co.id</code>
 
 Google has a lot of dynamic IPs with top level domains in almost every country, because we are in Indonesia so most will be redirected to google.co.id and google.com
+
+Credit: www.o-om.com
  </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

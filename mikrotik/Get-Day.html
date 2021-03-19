@@ -15,8 +15,8 @@
 </head> 
 <body>
 
-<h1>Calculates day of the week for a givien date - Mikrotik Script RouterOS</h1><pre>
-How To Calculates day of the week for a givien date on RouterOS
+<h1>Calculates day of the week for a givien date - Mikrotik Script RouterOS</h1>
+<pre>How To Calculates day of the week for a givien date on RouterOS
 
 <code class="routeros"># Calculates day of the week for a givien date
 # Month: jan,feb ... nov,dec   (must be lower-case)
@@ -25,32 +25,25 @@ How To Calculates day of the week for a givien date on RouterOS
 # mmm/dd/yyyy   same format as [/system clock get date]
 # (ex. feb/19/2012)
 # by melboyscout (melboyscout [at] gmail.com)
-
 :local date [/system clock get date]
-
 # Math Calculation here
 :local result ""
 :local months [:toarray "jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec"]
 :local daytbl [:toarray "sun,mon,tue,wed,thu,fri,sat"]
-
 :local month [:pick $date 0 3]
 :local day [:pick $date 4 6]
 :local dayc [:pick $date 5 6]
 :local year [:pick $date 7 11]
-
 # if the first char is a 0 (zero) only read last char, else script fails
 :if ([:pick $date 4 5] = 0) do={ :set day ($dayc)}
-
 :local sum 0
 :local aaa 0
 :local yyy 0
 :local mmm 0
 :local nmonth 1
-
 :for mindex from=0 to=[:len $months] do={
   :if ([:pick $months $mindex] = $month) do={:set nmonth ($mindex + 1) }
 }
-
 :set aaa ((14 - $nmonth) / 12)
 :set yyy ($year - $aaa)
 :set mmm ($nmonth + 12 * $aaa - 2)
@@ -58,8 +51,8 @@ How To Calculates day of the week for a givien date on RouterOS
 :set sum ($sum - (($sum / 7) * 7))
 :set result [:pick $daytbl $sum]
 :log info "Today is $result"</code>
+Credit: wiki.mikrotik.com
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

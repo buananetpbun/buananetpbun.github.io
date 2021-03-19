@@ -13,12 +13,11 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>GPS Text File Converter To Google Earth Or Maps - MikroTik Script RouterOS</h1><pre>
+<h1>GPS Text File Converter To Google Earth Or Maps - MikroTik Script RouterOS</h1>
+<pre>
 Before you try this, insure your setup is complete in "/tool e-mail". The "server" entry must be the "to" email address email server. The "from" entry must be a valid email address. Try a test email, then check your email. It may take several minutes to get to your mailbox.
 
 <code class="routeros">/tool email send to=me@mydomain.com subject="Email Test" body="Email Test"</code>
-
 Set the gps to output data to the file gps.txt.
 Create an empty text file with a text editor, save as gps.kml, and upload to the router.
 Go to "/system script" and add the script "gps", then enter the edit source mode.
@@ -149,6 +148,7 @@ Go to "/system schedule" and schedule the script "gps" to run at whatever interv
          /tool e-mail
          send to=$email subject="Router gps position invalid" body="Router gps position invalid"
 };</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

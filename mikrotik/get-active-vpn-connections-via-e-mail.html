@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Get Active Vpn Connections Via E-Mail - MikroTik Script RouterOS</h1><pre>
-The script sends an e-mail with all PPTP and L2TP servers and clients and their statuses.
+<h1>Get Active Vpn Connections Via E-Mail - MikroTik Script RouterOS</h1>
+<pre>The script sends an e-mail with all PPTP and L2TP servers and clients and their statuses.
 
 It is pretty simple and there is no problem in adding OVPN and others.
 
@@ -26,7 +25,6 @@ Declare global and local variables (we only need to reuse the variable oldvlist)
 :local l2tplist "L2TP interfaces \n \n" ;
 :local vlist ;
 :local int ;</code>
-
 Fill the variables with all VPN connections and their statuses.
 
 <code class="routeros">:set pptplist "$pptplist SERVERS: \n" ;
@@ -36,7 +34,6 @@ Fill the variables with all VPN connections and their statuses.
      :log error "PPTP: $[/interface pptp-server get $int name] : true" ;
   }
 }
-
 :set pptplist "$pptplist \n \n CLIENTS: \n" ;
 :foreach int in=[/interface pptp-client find] do={
   :set pptplist "$pptplist PPTP: $[/interface pptp-client get $int name] :  $[/interface pptp-client get $int running] \n" ;
@@ -44,7 +41,6 @@ Fill the variables with all VPN connections and their statuses.
      :log error "PPTP: $[/interface pptp-client get $int name] : true" ;
   }
 }
-
 :set l2tplist "$l2tplist SERVERS: \n" ;
 :foreach int in=[/interface l2tp-server find] do={
   :set l2tplist "$l2tplist L2TP: $[/interface l2tp-server get $int name] :  $[/interface l2tp-server get $int running] \n" ;
@@ -52,7 +48,6 @@ Fill the variables with all VPN connections and their statuses.
      :log error "L2TP: $[/interface l2tp-server get $int name] : true" ;
   }
 }
-
 :set l2tplist "$l2tplist \n \n CLIENTS: \n" ;
 :foreach int in=[/interface l2tp-client find] do={
   :set l2tplist "$l2tplist L2TP: $[/interface l2tp-client get $int name] :  $[/interface l2tp-client get $int running] \n" ;
@@ -60,13 +55,11 @@ Fill the variables with all VPN connections and their statuses.
      :log error "L2TP: $[/interface l2tp-client get $int name] : true" ;
   }
 }</code>
-
 If you don't like the list of all interfaces, you can move the ':set list...' line inside the IF statement. That way the e-mail will contain only active connections. And beware that variable length is not unlimited so this will not work if you have a great number of VPN connections.
 
 Fill the 'vlist' variable and send it vie a-mail if it is different than the 'oldvlist' variable
 
 <code class="routeros">:set vlist "** Active VPN list ** \n \n $pptplist \n \n $l2tplist" ;
-
 :if ( $oldvlist != $vlist) do={
    /tool e-mail send body="$vlist" subject="VPN" to="RECIPIENT_EMAIL_ADDRESS" server="IP_OF_SMTP" from="$[/system identity get name]@EMAIL_DOMAIN"
    :set voldlist $vlist
@@ -74,10 +67,11 @@ Fill the 'vlist' variable and send it vie a-mail if it is different than the 'ol
 } else={
    :log error "VPN no change"
 }</code>
-
 Replace IP_OD_SMTP with the IP address of hostname of the SMTP server that you can use (usually your ISP has one or two), RECIPIENT_EMAIL_LIST with your e-mail address, EMAIL_DOMAIN with the domain name that is allowed as a sender on that specific SMTP server.
 
 It is my assumption that anyone connected needs at least two minutes to do something so I have set my scheduler to repeat every 2 minutes. You can set the scheduler to run in greater intervals but note that if someone connects after the script was run, and disconnects in under the schedule interval time, you will not see the connection.
+
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
