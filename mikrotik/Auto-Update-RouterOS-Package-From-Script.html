@@ -19,6 +19,7 @@
 In case that you have larger number of devices under your control, you will probably want more automation. The good news is that you can use the magic of the command line to perform such task. This means that you can also write the update script.
 
 Contrary to the scenario with your local update source point, if your routers are independent to each other and on the separate Internet links, you will want to use the different process to update them all at once.
+
 <code class="routeros"># Simple RouterOS upgrade script
 # version 1 (09.03.2020)
 # written by Srdjan Stanisic 
@@ -47,9 +48,11 @@ check-for-updates
 } else={
     :put "System is already up to date"
 }</code>
+
 This script is ready to be used. Copy it into the text file and save it with .rsc extension
 
-Credit: https://mivilisnet.wordpress.com/2020/03/31/updating-mikrotik-router-from-the-command-line/
+CREDIT: <a href='https://mivilisnet.wordpress.com/2020/03/31/updating-mikrotik-router-from-the-command-line/'>https://mivilisnet.wordpress.com/2020/03/31/updating-mikrotik-router-from-the-command-line/</a>
+
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
