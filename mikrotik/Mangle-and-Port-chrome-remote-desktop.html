@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Mangle and Port Google Chrome Remote Desktop - MikroTik Script RouterOS</h1>
-<pre>
-Chrome Remote Desktop. The easy way to remotely connect with your home or work computer, or share your screen with others. ... Built on Google's secure infrastructure using the latest open web technologies like WebRTC, you can connect to your devices or share your screen with confidence.
+<pre>Chrome Remote Desktop. The easy way to remotely connect with your home or work computer, or share your screen with others. ... Built on Google's secure infrastructure using the latest open web technologies like WebRTC, you can connect to your devices or share your screen with confidence.
 
 Port forward Chrome Remote Desktop:
 TCP/UDP: 5222/5222
@@ -26,6 +25,7 @@ add action=mark-connection chain=prerouting dst-port="5222" new-connection-mark=
 add action=mark-connection chain=prerouting dst-port="5222" new-connection-mark=conn-GCDC protocol=udp
 add action=mark-packet chain=prerouting connection-mark=conn-GCDC new-packet-mark=GCDC_pkt-up passthrough=no src-address=192.168.1.0/24
 add action=mark-packet chain=prerouting connection-mark=conn-GCDC dst-address=192.168.1.0/24 new-packet-mark=GCDC_pkt-down passthrough=no</code>
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

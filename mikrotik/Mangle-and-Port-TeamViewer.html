@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Mangle and Port TeamViewer (Remote Dekstop) - MikroTik Script RouterOS</h1>
-<pre>
-TeamViewer is a proprietary software for remote access to as well as remote control and maintenance of computers and other devices, which was first released in 2005. The functionality has been expanded step by step, most recently for example through the integration of TeamViewer Meeting.
+<pre>TeamViewer is a proprietary software for remote access to as well as remote control and maintenance of computers and other devices, which was first released in 2005. The functionality has been expanded step by step, most recently for example through the integration of TeamViewer Meeting.
 
 Port forward TeamViewer:
 TCP/UDP: 5938/5938
@@ -26,6 +25,7 @@ add action=mark-connection chain=prerouting dst-port=5938 new-connection-mark=co
 add action=mark-connection chain=prerouting dst-port=5938 new-connection-mark=conn-TeamViewer protocol=udp
 add action=mark-packet chain=prerouting connection-mark=conn-TeamViewer new-packet-mark=TeamViewer_pkt-up passthrough=no src-address=192.168.1.0/24
 add action=mark-packet chain=prerouting connection-mark=conn-TeamViewer dst-address=192.168.1.0/24 new-packet-mark=TeamViewer_pkt-down passthrough=no</code>
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

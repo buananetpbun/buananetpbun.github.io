@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Mangle and Port VNC (Virtual Network Computing) - MikroTik Script RouterOS</h1>
-<pre>
-In computing, Virtual Network Computing (VNC) is a graphical desktop-sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer. ... Popular uses for this technology include remote technical support and accessing files on one's work computer from one's home computer, or vice versa.
+<pre>In computing, Virtual Network Computing (VNC) is a graphical desktop-sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer. ... Popular uses for this technology include remote technical support and accessing files on one's work computer from one's home computer, or vice versa.
 
 Port forward VNC (Virtual Network Computing):
 TCP/UDP: 5900/5800
@@ -26,6 +25,7 @@ add action=mark-connection chain=prerouting dst-port="5800" new-connection-mark=
 add action=mark-connection chain=prerouting dst-port="5800" new-connection-mark=conn-VNC protocol=udp
 add action=mark-packet chain=prerouting connection-mark=conn-VNC new-packet-mark=VNC_pkt-up passthrough=no src-address=192.168.1.0/24
 add action=mark-packet chain=prerouting connection-mark=conn-VNC dst-address=192.168.1.0/24 new-packet-mark=VNC_pkt-down passthrough=no</code>
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

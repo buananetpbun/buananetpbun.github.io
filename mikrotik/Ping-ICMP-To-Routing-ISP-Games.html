@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Ping ICMP To Routing ISP Games - MikroTik Script RouterOS</h1><pre>
-There are 3 ISPs, 2 ISPs in LB for browsing purposes and 1 more ISP specifically for game lines, then where do the replay ping (icmp) results actually have to be monitored or displayed real to clients from these 3 ISPs?
+<h1>Ping ICMP To Routing ISP Games - MikroTik Script RouterOS</h1>
+<pre>There are 3 ISPs, 2 ISPs in LB for browsing purposes and 1 more ISP specifically for game lines, then where do the replay ping (icmp) results actually have to be monitored or displayed real to clients from these 3 ISPs?
 
 Let's just say that currently we have 3 ISPs that separate the path between gaming and browsing, the first 2 ISPs are specifically loaded with load balancing for browsing and the other is specifically for game lines, without special routing, when we or our clients ping from a PC or handphone, the router of course will immediately direct the ping to the main route, in this case the browsing path (main) is selected as distance 1, logically why do we check the main line ping while there are other priorities that prefer ping in this case to monitor the game connection path, Of course I would prefer to divert the ping routing to a game path that deserves to be monitored.
 
@@ -25,8 +24,9 @@ add check-gateway=ping gateway=192.168.1.1 routing-mark=icmp distance=1
 add action=mark-routing chain=prerouting in-interface=LAN new-routing-mark=icmp passthrough=no protocol=icmp distance=1</code>
 
 notes: please change the gateway = 192.168.1.1 according to the game line modem gateway ip and in-interface = LAN according to the ether local network respectively.
+
+Credit: www.o-om.com
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

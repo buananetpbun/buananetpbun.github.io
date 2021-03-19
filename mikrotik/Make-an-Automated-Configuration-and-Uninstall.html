@@ -13,9 +13,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Make an Automated Configuration and Uninstall - Mikrotik Script RouterOS</h1><pre>
-The Explanation
+<h1>Make an Automated Configuration and Uninstall - Mikrotik Script RouterOS</h1>
+<pre>The Explanation
 This exercise will attempt to explain how one can create an automated script to administrate a large deployment base. By consolidating on a homogeneous configuration it becomes easier to enact changes to your routers without having to manually configure every router. This also makes it easy to restore a router to it's default configuration by flipping the 'deconf' bit and running the uninstall script. Once that is finished you can flip the 'deconf' bit again to reinstall the router's base configuration.
 
 I have found this to be especially helpful when developing new installations, allowing me to tinker with the settings and if I mess up reset the router without having to reboot.
@@ -33,7 +32,6 @@ Variables: To :global or not to :global
 When building your own configuration skeleton you need to decide on which settings you want to store as variable or dynamic information. Some common variables might include Host-Name, IP Address, SNMP Community Info. Study the snippet below and look at what types of variables have been declared, and how they have been initialized. Take note that most of the variables in this script have been set as :local declarations, try to understand why.
 
 Heads Up! This script has be programmed to self destruct... Just kidding, but in a way it is also true, as mentioned in the title and the first section this script can be configured to either install a base configuration or uninstall a base configuration. All that magic starts on Line 2 as a :local variable. I treat this as more of an argument than a reusable variable. Since this is a common variable in most of my scripts I take extra care to set it as a :local variable in order to not disrupt my other scripts. There are several instances where this could be used as a global variable, and I have used it that way in the past to several uninstall scripts together, and executing a single script that launches all the rest. (i.e., Firewall-Uninstall, HotSpot-Uninstall, Proxy-Uninstall)
-
 
 <code class="routeros">#~ "Uninstall Flag (Default = no )"
 :local deconf no
@@ -733,8 +731,8 @@ set enabled=no mode=broadcast primary-ntp=0.0.0.0 secondary-ntp=0.0.0.0
 #~# "End of Uninstall Script"
 }
 #~# "End of Main Sub"</code>
+Credit: wiki.mikrotik.com
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
 <script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>

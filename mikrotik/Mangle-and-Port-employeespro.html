@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Mangle and Port Net Monitoring for employees pro - MikroTik Script RouterOS</h1>
-<pre>
-The application allows you to see what is currently displayed on an employee computer monitor. This way you can quickly discover if your employees are doing the tasks they are paid for. All employee computer screens can be displayed at once since they can be displayed as thumbnails with configurable size.
+<pre>The application allows you to see what is currently displayed on an employee computer monitor. This way you can quickly discover if your employees are doing the tasks they are paid for. All employee computer screens can be displayed at once since they can be displayed as thumbnails with configurable size.
 
 Port forward Net Monitoring for employees pro:
 TCP/UDP: 4495/4495
@@ -26,6 +25,7 @@ add action=mark-connection chain=prerouting dst-port="4495" new-connection-mark=
 add action=mark-connection chain=prerouting dst-port="4495" new-connection-mark=conn-employeespro protocol=udp
 add action=mark-packet chain=prerouting connection-mark=conn-employeespro new-packet-mark=employeespro_pkt-up passthrough=no src-address=192.168.1.0/24
 add action=mark-packet chain=prerouting connection-mark=conn-employeespro dst-address=192.168.1.0/24 new-packet-mark=employeespro_pkt-down passthrough=no</code>
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>

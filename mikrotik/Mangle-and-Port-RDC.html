@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Mangle and Port Remote Desktop Connection (RDC) - MikroTik Script RouterOS</h1>
-<pre>
-If you're in front of your computer and need to access a different machine, Microsoft's Remote Desktop Connection tool will let you access everything from afar. As long as the computer is turned on and set up for remote connection, you can grab a file, open an application, troubleshoot a problem, or just work remotely. 
+<pre>If you're in front of your computer and need to access a different machine, Microsoft's Remote Desktop Connection tool will let you access everything from afar. As long as the computer is turned on and set up for remote connection, you can grab a file, open an application, troubleshoot a problem, or just work remotely. 
 
 Port forward Remote Desktop Connection:
 TCP/UDP: 3389/3389
@@ -26,6 +25,7 @@ add action=mark-connection chain=prerouting dst-port="3389" new-connection-mark=
 add action=mark-connection chain=prerouting dst-port="3389" new-connection-mark=conn-RDC protocol=udp
 add action=mark-packet chain=prerouting connection-mark=conn-RDC new-packet-mark=RDC_pkt-up passthrough=no src-address=192.168.1.0/24
 add action=mark-packet chain=prerouting connection-mark=conn-RDC dst-address=192.168.1.0/24 new-packet-mark=RDC_pkt-down passthrough=no</code>
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>iv id="hidelink"></div>
