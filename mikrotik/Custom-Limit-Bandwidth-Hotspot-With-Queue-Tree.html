@@ -14,9 +14,8 @@
 </head>  
 <body>
 
-<h1>Custom Limit Bandwidth Hotspot With Queue Tree - MikroTik Script RouterOS</h1><pre>
-
-How To Custom Limit Bandwidth Hotspot With Queue Tree
+<h1>Custom Limit Bandwidth Hotspot With Queue Tree - MikroTik Script RouterOS</h1>
+<pre>How To Custom Limit Bandwidth Hotspot With Queue Tree
 
 1. The Rate Limit (rx / tx) is left blank
 2. If using the user manager, just enter the hotspot profile name into the Group name on usermanager, don't forget to leave the Rate limit blank
@@ -38,6 +37,7 @@ When the user logs in. This script will automatically add new input to the queue
 <code class="routeros">/queue tree remove [find packet-mark=("paket-"."$address")] ;
 /ip firewall mangle remove [find where comment=("paket-"."$address")]
 :log warning ("--> [ $user ] Logout at: [ $timedate - $datetime ] From: [ $interface ] Mac: [ ".$"mac-address"." ]")</code>
+Credit: www.o-om.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

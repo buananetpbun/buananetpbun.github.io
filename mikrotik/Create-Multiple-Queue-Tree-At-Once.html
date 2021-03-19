@@ -13,16 +13,14 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
-
-<h1>Create Multiple Queue Tree At Once - MikroTik Script RouterOS</h1><pre>
-How to Make Automatic Mikrotik Queue Tree Using Script (Queue Tree generator)
+<h1>Create Multiple Queue Tree At Once - MikroTik Script RouterOS</h1>
+<pre>How to Make Automatic Mikrotik Queue Tree Using Script (Queue Tree generator)
 
 <code class="routeros">:for x from 1 to 254 do={/queue tree add name="CLIENT-$x" packet-mark="mark-pc$x" parent="GLOBAL" max-limit=2M}</code>
-
 You can try Queue Tree generator <a target="_blank" href="https://buananetpbun.github.io">here</a>
 
+Credit: https://www.o-om.com/2020/12/queue-tree-generator-for-bandwidth.html
 </pre>
-<br>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
 <div id="hidelink"></div>

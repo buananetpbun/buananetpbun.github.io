@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Change All Queue Type in Interface Queue - MikroTik Script RouterOS</h1>
-<pre>
-How To Change All Queue Type in Interface Queue
+<pre>How To Change All Queue Type in Interface Queue
 
 <code class="routeros">:foreach i in=[/queue interface find ] do={ 
 /queue interface set $i queue=only-hardware-queue;
