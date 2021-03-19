@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Setting Static DNS Record For Each DHCP Lease - MikroTik Script RouterOS</h1>
-<pre>
-Run this in scheduler and it will add static dns entry for each DHCP lease.
+<pre>Run this in scheduler and it will add static dns entry for each DHCP lease.
 
 NB: As this script may delete already added static DNS entries, bases on received hostname over DHCP, the script involves a security risk. Use a uniq domain, for example dhcp.yourdomain.com, dynamic.yourdomain.com or similar. If you have to mix static and dynamic DNS entries on exact same domain, see below.
 
@@ -47,7 +46,6 @@ NB: As this script may delete already added static DNS entries, bases on receive
     /ip dns static add name=$hostname address=$hostip;
   }
 }</code>
-
 This second script takes another approach. Using TTL as a way to distinguish dynamical added DNS entries and delete those before adding new. Adding hostnames that already exist is denied.
 
 Also old DNS-entries will be removed, when not longer in DHCP-lease. This will prevent messed up DNS-static with a lot of entries.
@@ -95,11 +93,9 @@ Also old DNS-entries will be removed, when not longer in DHCP-lease. This will p
     }
   }
 }</code>
-
 Here's another example. This one will only change the DNS information when changes are necessary, and deletes old DNS entries when leases expire. You can also supply "static" hostnames for ethernet addresses. For example
 
 <code class="routeros">:global shost001122334455 "hostname"</code>
-
 will assign the hostname "hostname" to the IP address of whatever the lease for mac 00:11:22:33:44:55 winds up being.
 
 <code class="routeros">:local zone "dhcp";
@@ -174,6 +170,7 @@ will assign the hostname "hostname" to the IP address of whatever the lease for 
    }
  }
 }</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><div id="hidelink"></div>

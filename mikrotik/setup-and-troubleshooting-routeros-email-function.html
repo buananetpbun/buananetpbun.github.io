@@ -14,14 +14,11 @@
 </head>  
 <body>
 <h1>Setup And Troubleshooting Routeros Email Function - MikroTik Script RouterOS</h1>
-
-<pre>
-Insure you have the basic router setup complete. Ip address, default route, and DNS. NTP client is recommended.
+<pre>Insure you have the basic router setup complete. Ip address, default route, and DNS. NTP client is recommended.
 
 Enable logging for the email service.
 
 <code class="routeros">/system logging add topics=e-mail action=memory</code>
-
 This will put e-mail messages in the system log, and makes troubleshooting easier.
 Go to "/tool e-mail".
 
@@ -36,17 +33,14 @@ For gmail users, use the "tls=yes" setting below, and use port 587. You should r
 Try a test email.
 
 <code class="routeros">/tool e-mail send to=you@yourdomain.com subject="test" body="test"</code>
-
 or if your email server requires a secure connection
 
 <code class="routeros">/tool e-mail send to=you@yourdomain.com subject="test" body="test" tls=yes</code>
-
 Check "/log", then your email account, for the result.
 
 If you need to check a non-secure connection to the email server from the router:
 
 <code class="routeros">/system telnet xx.xx.xx.xx 25</code>
-
 Replace x's with the email server ip in "tool e-mail", and the server should respond with
 220 server.domain.com ESMTP xxxxxxxxxx
 Type 'quit' to terminate the telnet connection from the email server.
@@ -54,6 +48,7 @@ If the connection fails, it may be due to your ISP blocking port 25, or the serv
 If the connection is refused, it may be the email server not accepting email from your ip, either temporarily or permanently.
 If the server responds with a domain name that is not what you would expect from that server, your ISP may be redirecting your outbound email, or the dns setting is incorrect.
 
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><div id="hidelink"></div>
