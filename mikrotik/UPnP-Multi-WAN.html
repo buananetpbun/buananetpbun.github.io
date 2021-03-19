@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>UPnP Multi-WAN - MikroTik Script RouterOS</h1>
-<pre>
-1. Make the simplest UPnP config for just WAN1
+<pre>1. Make the simplest UPnP config for just WAN1
 2. Add the following script as a schedule: will clone UPnP Dynamic NAT entries as normal NAT entries for WAN2.
 Schedule time can be every minute.
 
@@ -42,7 +41,6 @@ action=dst-nat \
 #same dst-port
 dst-port=[/ip fi nat get $i dst-port] \
 comment="UPnP_Cloned"}}</code>
-
 Same script easier to read with syntax colorization (https://forum.mikrotik.com/viewtopic.php?p=426711#p426711)
 
 3. For large networks you may find it useful to clean any Dynamic NAT entries and cloned NAT entry every other night, as old ones may pile up:
@@ -51,10 +49,11 @@ Same script easier to read with syntax colorization (https://forum.mikrotik.com/
 /ip upnp set enabled=no;
 /delay 3000ms;
 /ip upnp set enabled=yes;</code>
-
 FUTURE VERSION of this script may use nested loops to compare the NAT entries as unsorted Arrays: www.google.com/search?q=nested+loop+array+comparison
 
 Contributions are welcome!
+
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

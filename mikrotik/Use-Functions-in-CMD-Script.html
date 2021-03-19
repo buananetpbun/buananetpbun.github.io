@@ -14,8 +14,7 @@
 </head>  
 <body>
 <h1>Use Functions in CMD Script - MikroTik Script RouterOS</h1>
-<pre>
-Functions in CMD Scripts
+<pre>Functions in CMD Scripts
 The below code will allow you to use functions in your RouterOS CMD scripts. I was finding myself using the same code snippet multiple times, in multiple scripts. This was not only inconsistent, but also time consuming, as I had to adapt the code each time it was inserted into a new script. If I wrote a routine that needed to be changed, I would have to change it (and remember where) in every script that used it.
 
 By using functions, you're able write one piece of code and "call" that code from any other script. If you need to make a change to a it, you only need to do it once, at the function's source. Functions also provide consistency, as you're not copying and pasting each time you need to use the same piece of code.
@@ -109,7 +108,6 @@ Here is the main function library. You could also separate function libraries, s
 
 # -----------------
 # End Functions</code>
-
 Here is a demo to show how functions can be used in your CMD scripts:
 
 <code class="routeros"># Script name: DemoFunctions
@@ -149,7 +147,6 @@ $runFunc
       ]
 $runFunc
 :put ("Time to number: " . [:pick $DemoTime 0])</code>
-
 Feel free to contribute your functions here as well.
 
 More Functions
@@ -177,6 +174,7 @@ Recursive function in CMD script: This function will list all possible three cha
 :foreach char in=[:toarray $output] do={
    :put [:tostr $char]
 }</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>

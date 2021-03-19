@@ -14,18 +14,15 @@
 </head>  
 <body>
 <h1>Use Host Names In Firewall Rules - MikroTik Script RouterOS</h1>
-<pre>
-The problem
+<pre>The problem
 You would like to create firewall filter rules which refer to host names rather than IP addresses. This may be, for example, because the host name is dynamic such as would be created by a dyndns service. For several very good reasons, it is not possible to put host names directly into firewall rules. For example, the following doesn't work:
 
 <code class="routeros">/ip firewall filter add chain=ouput dst-address=www.mikrotik.com action=accept</code>
- 
 Whilst at first glance, it would seem like a good idea to allow this configuration, the additional traffic and load which would be created if the router had to resolve (in this case) 'www.mikrotik.com' for every single packet passing through shows that in reality it is simply not practical.
 
 The solution
 
 <code class="routeros">Note: Applies only for RouterOS versions up to version v6.36.</code>
-
 It is possible to implement host name based firewall rules with a little lateral thinking. If one considers that DNS resolutions are cached (in theory for as short a time as the record's TTL, but in reality for the amount of time the resolver's sysadmin has permitted), there is very little point in resolving the host name for every single packet.
 
 For this reason, we can quite easily write a script which does the resolving and stores the values somewhere they can be used by the filter rules. This script can be run as regularly as required.
@@ -40,11 +37,9 @@ The reason the comment is used for the host name rather than the list name is th
 <code class="routeros">/ip firewall address-list add address=0.0.0.0 comment=www.mikrotik.com list=host_mikrotik
 /ip firewall address-list add address=0.0.0.0 comment=forum.mikrotik.com list=host_mikrotik
 /ip firewall address-list add address=0.0.0.0 comment=wiki.mikrotik.com list=host_mikrotik</code>
-
 and a firewall rule as follows:
 
 <code class="routeros">/ip firewall filter add chain=ouput dst-address-list=host_mikrotik action=accept</code>
-
 This allows all outbound traffic to any of the IP addresses defined in the address list 'host_mikrotik'.
 
 As things stand, nothing will be achieved by this rule since the IP addresses allowed are all '0.0.0.0'. We need to write a script which parses all the address list entries and resolves the ones which need resolving.
@@ -76,17 +71,17 @@ As things stand, nothing will be achieved by this rule since the IP addresses al
    \n    /ip firewall address-list set \$i address=\$newip}\r\
    \n    }\r\
    \n  }"</code>
-
 Once the script is in place, it can be scheduled. Try every hour to see if that gives you what you need:
 
 <code class="routeros">/system scheduler add \
    comment="" disabled=no interval=1h name=updatehostnames on-event=resolvehostnames \
    start-date=jan/01/1970 start-time=00:00:00</code>
-
 Caveat
 The script uses a RouterOS function 'resolve'. Unfortunately (as at 3.25), if the hostname being resolved doesn't exist or if the resolvers fail for whatever reason, the script returns error message and stops immediately. It is not possible to trap this error message to code around it. Extreme care must therefore be taken that host names are correctly entered (and do not include any leading or trailing spaces).
 
 Also, note that for obvious reasons, this may not work for host names which resolve to multiple IP addresses.
+
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
