@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Update RouterOS Package From Script - MikroTik Script RouterOS</title>
+<meta content='Auto Update RouterOS Package From Script - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Auto Update RouterOS Package From Script - MikroTik Script RouterOS</h1>
+<pre>If you administer only a few MikroTik devices, you can manually update them one by one using the WinBox tool. This is a very easy task if you install only the long-term versions. That version is rarely updated and contains only the major bug fixes.
+
+In case that you have larger number of devices under your control, you will probably want more automation. The good news is that you can use the magic of the command line to perform such task. This means that you can also write the update script.
+
+Contrary to the scenario with your local update source point, if your routers are independent to each other and on the separate Internet links, you will want to use the different process to update them all at once.
+<code class="routeros"># Simple RouterOS upgrade script
+# version 1 (09.03.2020)
+# written by Srdjan Stanisic 
+#
+
+# go to the update context
+/system package update 
+
+# set the channel
+set channel=long-term
+
+# check for updates
+check-for-updates
+
+# we can log the status
+:log info "$[get status]"
+
+#
+# check for the new version
+# if there is a newer version, then download it and reboot the router
+# you can omit automatic reboot and send email instead
+# additionally, we can omit the ELSE part
+# 
+:if (installed-version != latest-version) do={
+    download;
+} else={
+    :put "System is already up to date"
+}</code>
+This script is ready to be used. Copy it into the text file and save it with .rsc extension
+
+Credit: https://mivilisnet.wordpress.com/2020/03/31/updating-mikrotik-router-from-the-command-line/
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br><br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br><br>
+</body>
+</html>
+
