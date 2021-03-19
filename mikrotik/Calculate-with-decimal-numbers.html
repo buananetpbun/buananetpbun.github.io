@@ -39,20 +39,16 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
 #        :global decimals "4.32 28 0.21"
 #        /system script run <this script>
 #        :put $decimalresut
-
 # ### Math Operations ###
 # Do not change this part
-
 :global decimals
 :global decimalop
 :global decimalplaces
 :global decimalresult "err"
-
 :local err 0
 :local result ""
 :local divprecision "10"
 :local decimalsarray ""
-
 # Sanity checks
 :if ([:len $decimalplaces] = 0) do={:set decimalplaces 4} else={
   :for cindex from=0 to=([:len $decimalplaces] - 1) do={
@@ -66,7 +62,6 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
 :if ($decimalop != "+" && $decimalop != "-" && $decimalop != "*" && $decimalop != "/") do={
   :set err ($err + 1)
 }
-
 # Check decimals input and convert decimals to array for easier use
 :for d from=0 to=([:len $decimals] - 1) do={
   :local char [:pick $decimals $d ($d + 1)]
@@ -87,16 +82,13 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
   }
   :if ($dps > 1) do={:set err ($err + 1)}
 }
-
 # Only preform calculation if no error
 :if ($err = 0) do={
-
 # Preform calculation from first to last number
     :local cloopindex 0
     :local decimallen 0
     :local curdeclen 0
     :local tmpnum ""
-
 #   get decimal length for use after calculation
     :foreach d in=$decimalsarray do={
       :local decfound 0
@@ -115,7 +107,6 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
         :if ($decimalop = "*") do={:set decimallen ($decimallen + 1)}
       }
     }
-
 #  Loop through decimals from start to finish
     :foreach d in=$decimalsarray do={
       :local decfound 0
@@ -130,8 +121,6 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
         :set curdeclen 1
         :set tmpnum ($d . "0")
       }
-
-
 #    Strip leading zeros
         :local zeroindex ([:len $tmpnum] - 1)
         :for cindex from=([:len $tmpnum] - 1) to=0 do={
@@ -162,21 +151,16 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
               else={:set result ($result - $tmpnum) }
           }
         }
-
 #   end add and subtract
       }
-
-
 #   Multiply calculation
       :if ($decimalop = "*") do={
         :if ($decimallen > 0) do={
           :if ($cloopindex = 0) do={:set result $tmpnum} \
             else={:set result ($result * $tmpnum)}
         }
-
 #   end multiply
       }
-
 # Divide calculation
       :if ($decimalop = "/") do={
         :if ($cloopindex = 0) do={:set result $d} else={
@@ -184,7 +168,6 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
           :local resultdecpos 0
           :local resultlen 0
           :local tmpresult ""
-
 #       Strip out decimal point
           :for cindex from=0 to=([:len $result] - 1) do={
             :if ([:pick $result $cindex ($cindex + 1)] = ".") do={
@@ -193,7 +176,6 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
           }
           :set result $tmpresult
           :set resultlen [:len $result]
-
           :if ($curdeclen > ([:len $result] - $resultdecpos)) do={
             :set resultdecpos 0
 #         add zeros to result
@@ -203,7 +185,6 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
           } else={
             :set resultdecpos ($resultdecpos + $curdeclen)
           }
-
 #       Strip leading zeros
           :local zeroindex ([:len $result] - 1)
           :for cindex from=([:len $result] - 1) to=0 do={
@@ -212,7 +193,6 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
             }
           }
           :set result [:pick $result $zeroindex [:len $result]]
-
           :local decimal ""
           :local dividend $result
           :local divisor $tmpnum
@@ -227,8 +207,7 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
               :set tmpremainder (($tmpremainder - ($tmpdecimal * $divisor)) . "0")
             }
           } else={:set decimal "0"}
-
-          :set result ""
+         :set result ""
 #       shift decimal point left
           :if (($resultlen - $resultdecpos) > 0) do={
             :if ([:len $quotient] < ($resultlen - $resultdecpos)) do={
@@ -255,7 +234,6 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
 #            :set resultdecpos [:len $result]
           } else={:set result ($quotient . "." . $decimal); :set resultdecpos [:len $quotient]}
           :set decimallen ([:len $result] - $resultdecpos - 1)
-
 #        if end of array, strip decimal point
           :if ($cloopindex = ([:len $decimalsarray] - 1)) do={
             :local tmpresult ""
@@ -271,12 +249,9 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
         }
 #   end divide        
       }
-
     :set cloopindex ($cloopindex + 1)
-
 # end d for
     }
-
 #  Format result, insert decimal point
     :local newresult ""
     :if (([:len $result] - $decimallen) < 0) do={
@@ -303,10 +278,8 @@ To use it, it's simply a matter of setting the decimals and decimalop global var
 
 #end err check
 }
-
 # If no errors occurred, set decimalresult to result of calculation
 :if ($err = 0) do={:set decimalresult $result}
-
 # ### End of Math Operations ### </code>
 Credit: https://wiki.mikrotik.com/wiki/Calculate_with_decimal_numbers
 </pre>

@@ -23,20 +23,14 @@ Contrary to the scenario with your local update source point, if your routers ar
 <code class="routeros"># Simple RouterOS upgrade script
 # version 1 (09.03.2020)
 # written by Srdjan Stanisic 
-#
-
 # go to the update context
 /system package update 
-
 # set the channel
 set channel=long-term
-
 # check for updates
 check-for-updates
-
 # we can log the status
 :log info "$[get status]"
-
 #
 # check for the new version
 # if there is a newer version, then download it and reboot the router
@@ -48,11 +42,9 @@ check-for-updates
 } else={
     :put "System is already up to date"
 }</code>
-
 This script is ready to be used. Copy it into the text file and save it with .rsc extension
 
 CREDIT: <a href='https://mivilisnet.wordpress.com/2020/03/31/updating-mikrotik-router-from-the-command-line/'>https://mivilisnet.wordpress.com/2020/03/31/updating-mikrotik-router-from-the-command-line/</a>
-
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><br>
