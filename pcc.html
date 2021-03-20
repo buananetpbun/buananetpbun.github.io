@@ -10,6 +10,7 @@
 <link rel="shortcut icon" href="https://www.o-om.com/favicon.ico" type="image/x-icon"> 
 <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
+
 /* --------------------------------------------
 ################################################
 # LOAD BALANCING PCC / LB PCC SCRIPT GENERATOR
@@ -158,9 +159,10 @@ background-color: #08c;
 border-color: #08c;
 border:none;
 padding:8px;
-width:135px;
+width:130px;
 font-size:16px;
 font-weight:bold;
+display:inline-block;
 }
 .row:after {
 content: "";
@@ -172,13 +174,9 @@ width: 100%;
 padding: 5px;
 border: 1px solid #bbb;
 border-radius: 1px;
-resize: vertical;
-margin-bottom:12px;
+margin-bottom:10px;
+ margin-top:10px;
 font-size:16px !important;
-}
-label {
-padding: 5px 5px 5px 0;
-display: inline-block;
 }
 input[type=submit] {
 background-color: #08c;
@@ -223,7 +221,7 @@ padding: 0;
 display: inline-block;
 } 
 .list-mangle {
-height: 600px;
+height: 585px;
 background:#fff;
 overflow: scroll;
 width: 100%;
@@ -234,6 +232,7 @@ border: 1px solid #ccc;
 table, tr, td {
 border: none;
 }
+
 </style>
 </head>
 <body>
@@ -249,85 +248,74 @@ border: none;
 </div>
     <div class="sidebar">
 			<label>Select Number Your ISP Line</label>
-			<br>
-			<select id="wan-list" onclick="myFunctionOuput()">
+			<select style="margin-top:10px" id="wan-list" onclick="myFunctionOuput()">
 				<option value="line2">2 Line ISP</option>
 				<option value="line3">3 Line ISP</option>
 				<option value="line4">4 Line ISP</option>
 				<option value="line5">5 Line ISP</option>
 				<option value="line6">6 Line ISP</option>
 			</select>
-			<label style="color:#08c; border:1px solid #08c; padding:7px;">Atention! Please Change Your WAN Interface Name With Your Router Condition, Example: ether1 or E1-WAN or e1-indihome or pppoe-out1
-			</label>
-			<br>
-			<div style="float:left; width:134px;">
+			<div style="color:#08c; border:1px solid #08c; padding:7px;margin-top:0px;margin-bottom:10px">Atention! Please Change Your WAN Interface Name With Your Router Condition, Example: ether1 or E1-WAN or e1-indihome or pppoe-out1
+			</div>
+
+			<div style="float:left; width:130px;">
 				<label>WAN ISP-1</label>
-				<br>
 				<input type="text" id="wan1-isp" placeholder="Ex: ether1">
+			</div>	
+			<div style="float:left; width:130px;margin-left:10px">
+			     <label>Gateway ISP-1</label>
+				<input type="text" id="wan1-isp-ip" placeholder="Ex: 192.168.1.1">
 			</div>
-			<div style="float:left; width:134px;margin-left:10px">
-				<label>Gateway ISP-1</label>
-				<br>
-				<input type="text" id="wan1-isp-ip" placeholder="Ex: 192.168.1.1" onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
-			</div>
-			<br>
-			<div style="float:left; width:134px;">
+
+			<div style="float:left; width:130px;">
 				<label>WAN ISP-2</label>
-				<br>
 				<input type="text" id="wan2-isp" placeholder="Ex: ether2">
 			</div>
-			<div style="float:left; width:134px;margin-left:10px">
+			<div style="float:left; width:130px;margin-left:10px">
 				<label>Gateway ISP-2</label>
-				<br>
-				<input type="text" id="wan2-isp-ip" placeholder="Ex: 192.168.2.1" onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+				<input type="text" id="wan2-isp-ip" placeholder="Ex: 192.168.2.1">
 			</div>
-			<br>
-			<div style="float:left; width:134px;">
+			<div style="float:left; width:130px;">
 				<label>WAN ISP-3</label>
-				<br>
 				<input type="text" id="wan3-isp" placeholder="Ex: ether3" disabled>
 			</div>
-			<div style="float:left; width:134px;margin-left:10px">
+			<div style="float:left; width:130px;margin-left:10px">
 				<label>Gateway ISP-3</label>
-				<br>
-				<input type="text" id="wan3-isp-ip" placeholder="Ex: 192.168.3.1" disabled onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+
+				<input type="text" id="wan3-isp-ip" placeholder="Ex: 192.168.3.1" disabled >
 			</div>
-			<br>
-			<div style="float:left; width:134px;">
+			<div style="float:left; width:130px;">
 				<label>WAN ISP-4</label>
-				<br>
 				<input type="text" id="wan4-isp" placeholder="Ex: ether4" disabled>
 			</div>
-			<div style="float:left; width:134px;margin-left:10px">
+			<div style="float:left; width:130px;margin-left:10px">
 				<label>Gateway ISP-4</label>
-				<br>
-				<input type="text" id="wan4-isp-ip" placeholder="Ex: 192.168.4.1" disabled onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+				<input type="text" id="wan4-isp-ip" placeholder="Ex: 192.168.4.1" disabled >
 			</div>
-			<br>
-			<div style="float:left; width:134px;">
+
+			<div style="float:left; width:130px;">
 				<label>WAN ISP-5</label>
-				<br>
 				<input type="text" id="wan5-isp" placeholder="Ex: ether5" disabled>
 			</div>
-			<div style="float:left; width:134px;margin-left:10px">
+			<div style="float:left; width:130px;margin-left:10px">
 				<label>Gateway ISP-5</label>
-				<br>
-				<input type="text" id="wan5-isp-ip" placeholder="Ex: 192.168.5.1" disabled onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+	
+				<input type="text" id="wan5-isp-ip" placeholder="Ex: 192.168.5.1" disabled >
 			</div>
-			<br>
-			<div style="float:left; width:134px;">
+	
+			<div style="float:left; width:130px;">
 				<label>WAN ISP-6</label>
-				<br>
+
 				<input type="text" id="wan6-isp" placeholder="Ex: ether6" disabled>
 			</div>
-			<div style="float:left; width:134px;margin-left:10px;margin-bottom:10px">
+			<div style="float:left; width:130px;margin-left:10px;">
 				<label>Gateway ISP-6</label>
-				<br>
-				<input type="text" id="wan6-isp-ip" placeholder="Ex: 192.168.6.1" disabled onchange="ValidateIPaddressOnChange(this, 'ipaddress')">
+
+				<input type="text" id="wan6-isp-ip" placeholder="Ex: 192.168.6.1" disabled >
 			</div>
 			<button style="margin-right:2px" type="button" onclick="myFunctionInput()">Generate</button>
 			<button type="button" onclick="location.reload()">Clear All</button>
-			<br>		
+	
     </div>
     <div class="content"> 
         <span style="margin-left:2px">Script Generator Result</span>
