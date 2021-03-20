@@ -10,6 +10,7 @@
 	<link rel="shortcut icon" href="https://www.o-om.com/favicon.ico" type="image/x-icon">
 	<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<style>
+		
 		/* --------------------------------------------------------
 		###########################################################
 		# Mikrotik Port Knocking Generator with Icmp + Packet Size
@@ -29,7 +30,7 @@
 		width:100%;
 		margin-top: 0px;
 		padding:0;
-		font-size:13px;
+		font-size:16px;
 		}
 		* {
 		box-sizing: border-box;
@@ -40,7 +41,6 @@
 		height:100%;
 		padding-bottom: 15px;
 		margin-bottom: 20px;
-		font-size:14px;
 		font-weight:bold;
 		 }
 		#wrap{
@@ -73,33 +73,30 @@
 		.content{
 		float:right;
 		width:800px;
-		font-size:12px;
 		padding: 10px;
 		border-top:1px solid #bbb;
 		border-bottom:1px solid #bbb;
 		border-right:1px solid #bbb;
 		background:#ddd;
-		height:600px;
+		height:700px;
 		}
 		.sidebar{
 		overflow:hidden;
 		float:left;
 		width:300px;
-		font-size:12px;
 		padding: 10px;
 		background-color:#ddd;
 		border:1px solid #bbb; 
-		height:600px;
+		height:700px;
 		}
 		.footer{
-		font-size:12px;
 		clear:both;
 		width:auto;
 		}
 
 		h1 {
 		color:#111;
-		font-size:20px;
+		font-size:25px;
 		margin-bottom:5px;
 		margin-top:10px;
 		}
@@ -239,7 +236,7 @@
 		 display: inline-block;
 		 } 
 		 .list-mangle {
-		 height: 350px;
+		 height: 380px;
 		 background:#fff;
 		 overflow: auto;
 		 overflow-x: auto;
@@ -441,6 +438,7 @@
 		  background-color: #8c0615;
 		  border-color: #8c0615;
 		}
+	
 	</style>
 </head>
 <body>
@@ -500,9 +498,8 @@
 							###############################################################<br>
 							# Mikrotik Port Knocking Generator with Icmp + Packet Size<br>
 							# Date/Time: <span id="tanggalwaktu"></span><br>
-							# https://fb.me/buananet.pbun<br>
-							# https://buananetpbun.github.io<br>
-							###############################################################<br><br>
+							# https://fb.me/buananet.pbun - https://buananetpbun.github.io<br>
+							###############################################################<br>
 							</span>	
 							<b>/ip firewall filter</b><br>
 							<span>add action=add-src-to-address-list address-list="port-knocking-first" address-list-timeout="<span style="color:#08c; font-weight:bold" id="timeout-access-first-list">00:00:00</span>" chain=input packet-size="<span style="color:#08c; font-weight:bold" id="first-key-list">0</span>" protocol=icmp comment="Port Knocking By BNT</span><br>
