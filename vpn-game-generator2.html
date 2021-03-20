@@ -173,6 +173,7 @@ color:white;
  border: 1px solid #ccc;
  border-radius: 1px;
  resize: vertical;
+ font-size:16px !important;
  }
  label {
  padding: 5px 5px 5px 0;
@@ -535,7 +536,6 @@ border: none;
 <div style="float:right">
 Copyright 2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a>
 </div>    
-<div style="font-size:14px">
 <span style="color:#ff6600"><b># This Script for remove all Script from this Generator:</b></span><br>
 /interface pptp-client remove [find comment="VPN-GAME"]<br>
 /interface l2tp-client remove [find comment="VPN-GAME"]<br>
@@ -544,7 +544,7 @@ Copyright 2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io<
 /ip firewall mangle remove [find new-routing-mark="vpn-routing-game"]<br>
 /ip firewall raw remove [find address-list="List-IP-Games"]<br>
 /ip firewall address-list remove [find list="List-IP-Games"]
-</div>
+
 </div>
  </div>
      <script>  
