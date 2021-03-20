@@ -24,7 +24,7 @@
 -------------------------------------------------- */  
 *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
 body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-body { font-size:13px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+body { font-size:16px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:20px;}
 html, body {
 height: 100%;
 width:100%;
@@ -39,7 +39,7 @@ margin-top:30px;
 color: #111;
 text-decoration:none;
 font-size:27px;
-font-weight:bold; 
+; 
 }	
 .logo a{
 color:#111 !important;
@@ -52,10 +52,8 @@ border-bottom:1px solid #ccc;
 height:100%;
 padding-bottom: 15px;
 margin-bottom: 20px;
-font-size:14px;
-font-weight:bold;
+;
 }
-
 #wrap{
 width:750px;
 margin:0 auto;
@@ -74,8 +72,7 @@ background-color:#08c;
 .content{
 float:right;
 width:500px;
-height:370px;
-font-size:12px;
+height:400px;
 padding: 10px;
 border-top:1px solid #bbb; 
 border-bottom:1px solid #bbb; 
@@ -86,14 +83,12 @@ background:#ddd;
 overflow:hidden;
 float:left;
 width:230px;
-height:370px;
-font-size:12px;
+height:400px;
 padding: 10px;
 background-color:#ddd;
 border:1px solid #bbb; 
 }
 .footer{
-font-size:12px;
 clear:both;
 width:auto;
 }
@@ -124,7 +119,7 @@ padding-bottom:13px;
 .menu1 {
 width:360px;
 margin-bottom:1px;
-font-weight:bold;
+;
 background-color:#4CAF50;
 padding:6px;
 color:white;
@@ -142,7 +137,7 @@ color:white;
 .menu2 {
 width:300px;
 margin-bottom:1px;
-font-weight:bold;
+;
 background-color:#bbb;
 padding:6px;
 color:white;
@@ -165,7 +160,7 @@ border:none;
 padding:8px;
 width:100%;
 font-size:13px;
-font-weight:bold;
+;
 }
 .row:after {
 content: "";
@@ -178,6 +173,7 @@ padding: 5px;
 border: 1px solid #bbb;
 border-radius: 1px;
 resize: vertical;
+;
 margin-bottom:5px
 }
 label {
@@ -227,7 +223,7 @@ padding: 0;
 display: inline-block;
 } 
 .list-mangle {
-height: 320px;
+height: 350px;
 background:#fff;
 overflow: auto;
 overflow-x: auto;
@@ -441,6 +437,7 @@ border-color: #bd081c;
 background-color: #8c0615;
 border-color: #8c0615;
 }
+
 </style>
 </head>
 <body>
@@ -490,9 +487,9 @@ border-color: #8c0615;
    <div class="content"> 
         <span style="margin-left:2px"><b>LB PCC CALCULATION RESULT</b></span>
         <div class="list-mangle" style="margin-bottom:10px">
-		<table style="font-weight:bold">
+		<table style="">
 			<thead>
-			<tr style="background-color: #eee;font-weight:bold">
+			<tr style="background-color: #eee;">
 				<th>WAN Identity</th>
 				<th>WAN Speed (Mbps)</th>
 				<th>Best Ratio (Mbps)</th>
@@ -513,16 +510,16 @@ border-color: #8c0615;
 				<td><span id="result-wan2-tot-ratio">1</span></td>
 			</tr>
 			<tr>
-			  <th colspan="2" style="background-color: #eee; font-weight:bold">Total Calculate</th>
+			  <th colspan="2" style="background-color: #eee; ">Total Calculate</th>
 			  <td id="result-tot1-join-ratio">10+10 = 10+10</td>
 			  <td id="result-tot2-join-ratio">2</td>
 			 </tr> 
 			</tbody>
 		</table>
 		<br>
-		<table id="mytable" style="font-weight:bold">
+		<table id="mytable" style="">
 			<thead>
-			<tr style="background-color: #eee; font-weight:bold" >
+			<tr style="background-color: #eee; " >
 				<td>Marking Connection</td>
 				<td>Denominator / Remainder</td>
 				<td>Ratio In (Mbps)</td>
@@ -531,7 +528,7 @@ border-color: #8c0615;
 				<tbody id="mytbody">
 				</tbody>
 				<tr>
-				<th colspan="2" style="background-color: #eee; font-weight:bold">Possible Speed Balance</th>
+				<th colspan="2" style="background-color: #eee; ">Possible Speed Balance</th>
 				<td id="result-tot-mbps"><b></b></td>
 				</tr>
 			</table>  
