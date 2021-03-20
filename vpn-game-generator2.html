@@ -165,6 +165,9 @@ color:white;
  display: table;
  clear: both;
  }  
+input[type=checkbox]{
+ margin-right:7px; 
+}
  input[type=text], select, textarea {
  width: 100%;
  padding: 5px;
@@ -262,7 +265,7 @@ border: none;
          <label>VPN Password</label><br>
          <input type="text" id="vpn-password" placeholder="password">
          <div style="margin-top:10px;margin-bottom:10px">
-		 <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Line Game (optional)</label>
+		 <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Game (optional)</label>
          <input disabled type="text" id="ip-gateway-input" placeholder="example:192.168.2.1" onchange="ValidateIPaddressOnChange(this, 'ipaddress')"><br>
 		 </div>
          <label>Select Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
