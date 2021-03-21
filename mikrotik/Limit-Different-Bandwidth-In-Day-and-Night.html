@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Limit Different Bandwidth In Day and Night- MikroTik Script RouterOS</title>
+<meta content='Limit Different Bandwidth In Day and Night- MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Limit Different Bandwidth In Day and Night- MikroTik Script RouterOS</h1>
+<pre>Limit Different Bandwidth In Day and Night.
+
+There are lot many ways to limit bandwidth for day and Night, but personally I found this is the easiest way, Here it is.
+
+I have used Simple Queue, Script and Scheduler.
+
+Suppose we have one network 192.168.1.0/24 and want to limit Bandwidth for day and Night Time.
+
+<code class="routeros">Network 192.168.1.0/24
+Bandwidth = 06:00am – 18:00pm – 1Mbps. <Max-Limit>
+Bandwidth = 18:00pm – 06:00am – 2Mbps. <Max-Limit></code>
+Create two simple queues for the same network with different Bandwidth Limit.
+
+<code class="routeros">/queue simple
+#name="Day" target-addresses=192.168.1.0/24 dst-address=0.0.0.0/0
+interface=<ether-x> parent=none direction=both priority=8 
+queue=default-small/default-small limit-at=512k/512k 
+max-limit=1M/1M total-queue=default-small
+
+#name="Night" target-addresses=192.168.1.0/24 dst-address=0.0.0.0/0
+interface=<ether-x> parent=none direction=both priority=8
+queue=default-small/default-small limit-at=1M/1M 
+max-limit=2M/2M total-queue=default-small
+Now, write scripts
+
+<code class="routeros">/system script
+#name="Day" source=/queue simple enable Day; /queue simple disable Night
+
+#name="Night" source=/queue simple enable Night; /queue simple disable Day</code>
+Finally, Schedule it
+
+<code class="routeros">/system scheduler
+#name="Day" on-event=Day policy=read,write start-date=oct/13/2007 start-time=06:00:00 interval=1d
+
+#name="Night" on-event=Night policy=read,write start-date=oct/13/2007 start-time=18:00:00 interval=1d</code>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
