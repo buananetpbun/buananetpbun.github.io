@@ -74,10 +74,8 @@ color:#111 !important;
 * {
 box-sizing: border-box;
 }
-.content {
-box-sizing: border-box;
-min-width: 200px;
-max-width: 980px;
+ .content {
+max-width:900px;
 margin:0 auto;
 padding: 20px;
 border-radius: 3px;
@@ -389,10 +387,11 @@ Copyright 2021 <a href="https://buananetpbun.github.io">Mikrotik Script RouterOS
 </div>
 </div>
 
-<script type="text/javascript">
-if(document.getElementsByTagName("iframe").item(0) == null) {
-    document.write("<div style="width: 160px; height: 600px; padding-top: 280px; margin-left: 5px; border: 1px solid #666666; color: #FFF; background-color: #666; text-align:center; font-family: Maven Pro, century gothic, arial, helvetica, sans-serif; padding-left: 5px; padding-right: 5px; border-radius: 7px; font-size: 18px;">Advertising seems to be blocked by your browser.<br><br><span style="font-size: 12px;">Please notice that advertising helps us to host the project.<br><br>If you find these ads intrusive or inappropriate, please contact me.</span><br><img src="http://www.playonlinux.com/images/abp.png" alt="Adblock Plus"></div>");
-};
-</script>
+<script src="//buananetpbun.github.io/adsbygoogle.js"></script>
+                   <script>
+                           if( window.adblockDetecter === undefined ){
+                           // Do anithing, adblocker detected!
+                           alert('Adblocker Detected!');}
+                   </script>
 </body>
 </html>
