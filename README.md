@@ -17,7 +17,7 @@ FB              : https://fb.me/buananet.pbun
 </pre>
 <h2>MIKROTIK SCRIPT ROUTEROS DATABASE</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - We try to collect all the scripts found on the internet and combine them in one DataBase, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!</p>
-<img src=https://user-images.githubusercontent.com/42666125/111253785-55c8fc80-8646-11eb-934d-a213a0715e30.png>
+<img src=https://user-images.githubusercontent.com/42666125/111909594-8074e400-8a90-11eb-8d98-5dfe4b21c657.png>
 
 <h2>VPN ROUTING PORT GAME SCRIPT GENERATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Game Script Generator</a> - Static Routing Vpn Game Script Generator or Script Maker (Port Game Routing Method) </p>
