@@ -256,12 +256,6 @@ background-color: #8E2DE2
 }
 </style>
 </head>
-<script src="//buananetpbun.github.io/adsbygoogle.js"></script>
-                   <script>
-                           if( window.adblockDetecter === undefined ){
-                           // Do anithing, adblocker detected!
-                           alert('Adblocker Detected!');}
-                   </script>
 <body> 
 <div class="content">
 <div class="logo">	  
@@ -393,7 +387,33 @@ background-color: #8E2DE2
 Copyright 2021 <a href="https://buananetpbun.github.io">Mikrotik Script RouterOS</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - <a href="https://github.com/buananetpbun">Follow My Github</a>
 </div>
 </div>
+<div id="ab-message" style="display: none">Your message here!</div>
+<script type="text/javascript">
+window.onload = function() {
+var iframe = document.createElement('iframe'),
+    randomDomain = Math.floor(Math.random() * (10000 - 100 + 1)) + 100,
+    iframeLoaded = true;
 
+iframe.src = "http://"+ randomDomain +".com/ads.html";
+iframe.height = ".1px";
+iframe.width = ".1px";
+iframe.id = 'some-ad';
+iframe.onload = function() {iframeLoaded = false;};
 
+document.body.appendChild(iframe);
+
+setTimeout(function() { 
+    var someAd = document.getElementById('some-ad');
+    if(!iframeLoaded ||
+       someAd == null || 
+       someAd.style.display == "none" || 
+       someAd.style.display == "hidden" || 
+       someAd.style.visibility == "hidden" || 
+       someAd.offsetHeight == 0)
+        document.getElementById('ab-message').style.display = 'block';
+    someAd.remove();
+}, 500);
+};
+</script>
 </body>
 </html>
