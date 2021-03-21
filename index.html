@@ -385,29 +385,21 @@ background-color: #8E2DE2
 <div style="margin-top:20px; text-align:center">
 Copyright 2021 <a href="https://buananetpbun.github.io">Mikrotik Script RouterOS</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - <a href="https://github.com/buananetpbun">Follow My Github</a>
 </div>
-
 </div>
 
-<p id="ads">
-<script type="text/javascript"><!--
-google_ad_client = "their-ad-code-here";
-/* 160x600, droite */
-google_ad_slot = "their-ad-code-here";
-google_ad_width = 160;
-google_ad_height = 600;
-//-->
+<script type="text/javascript">
+var adBlockEnabled = false;
+var testAd = document.createElement('div');
+testAd.innerHTML = '&nbsp;';
+testAd.className = 'adsbox';
+document.body.appendChild(testAd);
+window.setTimeout(function() {
+  if (testAd.offsetHeight === 0) {
+    adBlockEnabled = true;
+  }
+  testAd.remove();
+  console.log('AdBlock Enabled? ', adBlockEnabled)
+}, 100);
 </script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-
-</p>
-
-<script type="text/javascript"><!--
-if(document.getElementsByTagName("iframe").item(0) == null)
-{
-    document.write("<div style='width:160px; height:600px; padding-top: 280px; margin-left:5px;border:1px solid #000000; text-align:center; font-family:century gothic, arial, helvetica, sans serif;padding-left:5px;padding-right:5px;'>Advertising seems to be blocked by your browser.<br /><br /><span style='font-size:10px'>Please notice that advertising helps us to host the project.<br /><br />If you find these ads intrusive or inappropriate, please contact me.</span><img src='http://www.playonlinux.com/images/abp.jpg' alt='Adblock Plus' /></div>");
-}
---></script>
 </body>
 </html>
