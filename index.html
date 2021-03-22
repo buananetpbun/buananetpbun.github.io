@@ -273,6 +273,17 @@ padding:150px;
 </style>
 </head>
 <body> 
+    <script> 
+      window.onload = function() { 
+        setTimeout(function() {
+          var ad = document.querySelector("ins.adsbygoogle");
+          if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
+            ad.style.cssText = 'display:block !important'; 
+            ad.innerHTML = '<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fdigital.inspiration&amp;width&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=609713525766533" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowTransparency="true"></iframe>';
+          }
+        }, 1000); 
+      }; 
+    </script>
 <div id="CbiJvKRogXqD">
 PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 </div>
@@ -406,19 +417,5 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 Copyright 2021 <a href="https://buananetpbun.github.io">Mikrotik Script RouterOS</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - <a href="https://github.com/buananetpbun">Follow My Github</a> - <a href="https://buananetpbun.github.io/sitemap.html">Sitemap</a>
 </div>
 </div>
-
-
-
-    <script> 
-      window.onload = function() { 
-        setTimeout(function() {
-          var ad = document.querySelector("ins.adsbygoogle");
-          if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
-            ad.style.cssText = 'display:block !important'; 
-            ad.innerHTML = '<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fdigital.inspiration&amp;width&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=609713525766533" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowTransparency="true"></iframe>';
-          }
-        }, 1000); 
-      }; 
-    </script>
 </body>
 </html>
