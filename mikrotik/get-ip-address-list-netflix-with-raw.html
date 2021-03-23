@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get IP Address List Netflix With RAW - MikroTik Script RouterOS</title>
+<meta content='Get IP Address List Netflix With RAW - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Get IP Address List Netflix With RAW - MikroTik Script RouterOS</h1>
+<pre>Get IP Address List for Netflix With RAW, get content via console developer Netflix.com, this used method take from Content and create dynamic ip address list with expired interval time. You can change it.
+<code class="routeros">/ip firewall mangle
+add action=mark-connection chain=prerouting dst-address-list=Netflix \
+    new-connection-mark=NetflixConnection comment="Netflix by Heirro Networking" passthrough=yes src-address-list=\
+    IP-Local
+add action=mark-packet chain=forward connection-mark=NetflixConnection \
+    in-interface=wlan1 new-packet-mark=NetflixDownload passthrough=yes
+add action=mark-packet chain=forward connection-mark=NetflixConnection \
+    new-packet-mark=NetflixUpload out-interface=wlan1 passthrough=yes
+/ip firewall raw
+add action=add-dst-to-address-list address-list=Netflix address-list-timeout=\
+    1d chain=prerouting comment="Netflix by Heirro Networking" content=netflix.com
+add action=add-dst-to-address-list address-list=Netflix address-list-timeout=\
+    1d chain=prerouting content=nflxso.net
+add action=add-dst-to-address-list address-list=Netflix address-list-timeout=\
+    1d chain=prerouting content=nflxext.com
+add action=add-dst-to-address-list address-list=Netflix address-list-timeout=\
+    1d chain=prerouting content=nflxvideo.net</code>
+Credit: Heirro Networking
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
