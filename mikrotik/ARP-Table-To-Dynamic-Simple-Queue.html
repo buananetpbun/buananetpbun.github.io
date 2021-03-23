@@ -72,8 +72,8 @@ add name="limitDynamic" source={
 remove [find name="limitDynamic"];
 add name=limitDynamic interval=10m on-event={ :if ([:len [/system script job find script=limitDynamic]] = 0 ) do={/system script run limitDynamic;}}
 /file remove [find name="limit-dynamic-mum.rsc"];</code>
-Credit: <a href="https://github.com/ericksetiawan/dynamic-simple-queue">https://github.com/ericksetiawan/dynamic-simple-queue</a>
-Complete PDF: <a href="https://mum.mikrotik.com//presentations/ID16/presentation_3482_1476686228.pdf">https://mum.mikrotik.com//presentations/ID16/presentation_3482_1476686228.pdf</a>
+Credit: <a target="_blank" href="https://github.com/ericksetiawan/dynamic-simple-queue">https://github.com/ericksetiawan/dynamic-simple-queue</a>
+Complete PDF: <a target="_blank" href="https://mum.mikrotik.com//presentations/ID16/presentation_3482_1476686228.pdf">https://mum.mikrotik.com//presentations/ID16/presentation_3482_1476686228.pdf</a>
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>
