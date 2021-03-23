@@ -16,7 +16,7 @@
 <h1>Get IP Address List Netflix With RAW - MikroTik Script RouterOS</h1>
 <pre>Get IP Address List for Netflix With RAW, get content via console developer Netflix.com, this used method take from Content and create dynamic ip address list with expired interval time. You can change it.
 
-Please change ether2 with your self network
+Please change ether2 with your self network.
 
 <code class="routeros">/ip firewall mangle
 add action=mark-connection chain=prerouting dst-address-list=Netflix new-connection-mark=NetflixConnection comment="Netflix by Heirro Networking" passthrough=yes src-address-list=IP-Local
