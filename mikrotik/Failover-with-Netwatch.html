@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failover with Netwatch - MikroTik Script RouterOS</title>
+<meta content='Failover with Netwatch - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Failover with Netwatch - MikroTik Script RouterOS</h1>
+<pre>The purpose of this script is to provide an immediate solution to service outages provided by ISPs. It is designed for a topology where there are 2 connections with different ISPs, one of them provides us with fixed IP while the other with Dynamic IP. It is important to clarify that not just any DNS can be used for any ISP. Each ISP has its own DNS service, that is why if we drop a connection, it is likely that ISP2 will not be recognized by ISP1's DNS and will not allow us to resolve DNS requests. The solution to this would be to use public DNS servers. OpenDNS
+
+Well, for those who love Copy & Paste, I leave the code below; later the operation will be explained.
+
+<code class="routeros">/tool netwatch
+add comment=Test1 disabled=no down-script="/tool netwatch set [find comment=\"Test2\"] disabl\
+ed=no\r\
+\n/tool netwatch set [find comment=\"Test1\"] disabled=yes" host=74.125.47.104 interval=\
+30s timeout=2s up-script=""
+add comment=Test2 disabled=yes down-script=":global GA\r\
+\n:global GA [/ip dhcp-client get \"ether2 Fibertel\" gateway ]\r\
+\n/ip route set [find comment=\"Fibertel\"] gateway=\$GA\r\
+\n/ip route set [find comment=\"Telefonica\"] disabled=yes\r\
+\n/ip route set [find comment=\"Fibertel\"] disabled=no\r\
+\n/tool e-mail send to=\"DIRECCIONDEMAIL\" body=\"Conexion con Telefonica Caid\
+a, Pasado a Fibertel, Ver Falla\" subject=\"Caida de Servicio Telefonica\"\r\
+\n/tool netwatch set [find comment=\"Test3\"] disabled=no\r\
+\n/tool netwatch set [find comment=\"Test2\"] disabled=yes" host=209.191.93.52 interval=\
+30s timeout=2s up-script=":delay 10ms\r\
+\n:log warning \"Iniciado Test2\"\r\
+\n/tool netwatch set [find comment=\"Test1\"] disabled=no\r\
+\n/tool netwatch set [find comment=\"Test2\"] disabled=yes"
+add comment=Test3 disabled=yes down-script="/tool netwatch set [find comment=\"Test4\"] disab\
+led=no\r\
+\n/tool netwatch set [find comment=\"Test3\"] disabled=yes" host=64.233.169.104 \
+interval=30s timeout=2s up-script=""
+add comment=Test4 disabled=yes down-script="/ip route set [find comment=\"Fibertel\"] disable\
+d=yes\r\
+\n/ip route set [find comment=\"Telefonica\"] disabled=no\r\
+\n/tool e-mail send to=\"DIRECCIONDEMAIL\" body=\"Cayo Telefonica y despues Fi\
+bertel, Intentando Volver a Telefonica\" subject=\"Caida de Servicio tipo 2\"\r\
+\n/tool netwatch set [find comment=\"Test1\"] disabled=no\r\
+\n/tool netwatch set [find comment=\"Test4\"] disabled=yes" host=209.191.93.55 interval=\
+30s timeout=2s up-script=":delay 10ms\r\
+\n:log warning \"Iniciado Test4\"\r\
+\n/tool netwatch set [find comment=\"Test3\"] disabled=no\r\
+\n/tool netwatch set [find comment=\"Test4\"] disabled=yes"</code>
+Description of operation:
+
+The solution is armed with 4 tests or 4 rules in netwatch.
+
+The first test checks www.google.com. If for some reason this address stops responding to pings, then it jumps to Test2 and Test1 disables itself.
+
+Test2 pings www.yahoo.com, if the result is "UP" then it enables Test1 and it is disabled. If the result is "Down", then it looks for the ISP gateway address that gives us Dynamic IP, writes it as a static route and then disables the static route that belongs to the ISP that gives us fixed IP and enables the above mentioned one; send an alert email, enable test3 (corresponding to the new ISP) and auto-disable itself.
+
+Test3 and Test4 serve the same function as Test1 and Test2 respectively. Only in this case, Test4 would raise again the ISP that gives us a fixed IP.
+
+Credit: Unknown (?)
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
