@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Securing L2TP Server for IPSec - MikroTik Script RouterOS</title>
+<meta content='Securing L2TP Server for IPSec - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Securing L2TP Server for IPSec - MikroTik Script RouterOS</h1>
+<pre>Basic Info
+The one problem with L2TP/IPSec on Mikrotik is that there is no way to secure the L2TP server to IPSec clients ONLY, if you have people that connect from different public IPs constantly.
+
+In firewall, you have to allow access to the L2TP server, but there is no IPSec policy matcher. Here is my script for securing the L2TP server to IPSec clients only.
+
+What to configure
+Make sure you secure the L2TP server firewall rule with src-address-list=L2TP_Allowed.
+
+<code class="routeros">add chain=input dst-port=1701 protocol=udp src-address-list=L2TP_Allowed</code>
+Schedule the script to run every 2 or 3 seconds, and the L2TP server is secured.
+
+If allowing established and related connections in firewall, the L2TP server will be availible for as long as the connection is in the conn track table, watch out for that. (Default UDP stream timeout is 3 minutes.)
+
+The script
+
+<code class="routeros"># ------------------- header -------------------
+# Script by Tomas Kirnak, version 1.0.2
+# If you use this script, or edit and
+# re-use it, please keep the header intact.
+#
+# For more information and details about
+# this script please visit the wiki page at
+# http://wiki.mikrotik.com/wiki/Securing_L2TP_Server_for_IPSec
+# ------------------- header -------------------
+{
+:local InAL 0
+:local InRP 0
+:local rawIp 0
+:local CurrentPeerIP 0
+
+:foreach i1 in [/ip ipsec remote-peers find] do={
+  :set rawIp [/ip ipsec remote-peers get $i1 remote-address]
+  
+  :if ([:len [:find $rawIp ":"]] = 0) do={
+    :set CurrentPeerIP $rawIp
+  } else={
+    :set CurrentPeerIP [:pick $rawIp 0 [:find $rawIp ":"]]
+  }
+
+  :foreach i2 in [/ip firewall address-list find list=L2TP_Allowed address=$CurrentPeerIP] do={
+    :set InAL 1
+  }
+  if ($InAL = 0) do={/ip firewall address-list add list=L2TP_Allowed address=$CurrentPeerIP}
+  :set InAL 0
+}
+
+:foreach i1 in [/ip firewall address-list find list=L2TP_Allowed] do={
+  :set CurrentPeerIP [/ip firewall address-list get $i1 address]
+
+  :foreach i2 in [/ip ipsec remote-peers find] do={
+    :set rawIp [/ip ipsec remote-peers get $i2 remote-address]
+	
+    :if ([:len [:find $rawIp ":"]] = 0) do={
+      :set CurrentPeerIP $rawIp
+    } else={
+      :set CurrentPeerIP [:pick $rawIp 0 [:find $rawIp ":"]]
+    }
+  
+    :if ($CurrentPeerIP = [/ip firewall address-list get $i1 address]) do={
+      :set InRP 1
+	}
+  }
+  :if ($InRP = 0) do={/ip firewall address-list remove $i1}
+  :set InRP 0
+}
+}</code>
+Credit: wiki.mikrotik.com
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+

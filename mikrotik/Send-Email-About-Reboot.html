@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Send Email About Reboot - MikroTik Script RouterOS</title>
+<meta content='Send Email About Reboot - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Send Email About Reboot - MikroTik Script RouterOS</h1>
+<pre>This script is meant for being run on router startup (using scheduler). Script sends an email with time of router reboot and entire log once 90 seconds have been passed since initial time synchronization from NTP. Besides event about reboot is logged once time has been synchronized from NTP.
+
+<code class="routeros">:while ( [/system ntp client get status]!="synchronized" ) do={ :delay 10s }
+:delay 10s
+/log info "time updated; uptime: $[/system resource get uptime]"
+:local es "$[/system identity get name] rebooted on $[/system clock get date] $[/system clock get time] uptime $[/system resource get uptime]"
+:delay 90s
+:local eb "Log contents (with 90 seconds delay):\r\n"
+:foreach le in=[/log print as-value] do={
+  :set eb ($eb.[:tostr [($le->"time")]]." ".[:tostr [($le->"topics")]].": ".[:tostr [($le->"message")]]."\r\n")
+}
+/tool e-mail send to="enter_your_email_here@example.com" subject=$es body=$eb</code>
+This script helps to keep track of router reboots (e.g. of reboots caused by power interruptions).
+
+This script requires NTP package (from All packages download).
+
+NB Script has not been tested with logging to disk enabled. In case time synchronization is not available after reboot, the script will send e-mail once the time is synchronized (date and time in subject will be from the moment of time synchronization and not from the moment of reboot).
+
+Credit: wiki.mikrotik.com
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
