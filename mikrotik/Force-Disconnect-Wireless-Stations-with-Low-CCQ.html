@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Force Disconnect Wireless Stations with Low CCQ - MikroTik Script RouterOS</title>
+<meta content='Force Disconnect Wireless Stations with Low CCQ - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Force Disconnect Wireless Stations with Low CCQ - MikroTik Script RouterOS</h1>
+<pre>This script checks all registered stations and forces a disconnect for any station(s) which has a CCQ level less than that specified below (in this example it's set to 70% for TX and for RX).
+
+The idea is that once they are forced to disconnect, the stations will attempt to reassociate with the best available AP, eliminating the 'sticky node' problem.
+
+The only modifications you need to make is to change your minimum allowed CCQ level.
+
+On your APs:
+
+<code class="routeros">/system script 
+add name="station-check" source="/interface \
+wireless registration-table\r\n:foreach i in=[ /interface wireless registration-table find ap=no] \
+do={\r\n   :if ([get \$i tx-ccq] < \"70\" && [get \$i rx-ccq] < \"70\") do={\r\n :log warning \
+([get \$i radio-name] . \" was disconnected due to low CCQ - Tx: \" . [get \$i tx-ccq] . \"% / Rx: \" . \
+[get \$i rx-ccq] . \"%\")\r\n /interface wireless registration-table remove \$i\r\n \
+:delay 5s\r\n }\r\n}"</code>
+Important: Remember that non-MikroTik stations will not report back their received CCQ, so the TX-CCQ will always be 0%.
+
+Once you have configured the script, set up a scheduler to run the script everytime you want it to check for low signals. In the example below, the script will run every day at 1 second after midnight!
+
+On your APs:
+
+<code class="routeros">/system scheduler 
+add disabled=no interval=1d name="station-check-schedule" on-event="/system script run \
+   station-check ;" start-time=00:00:01</code>
+Credit: wiki.mikrotik.com
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
