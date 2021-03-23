@@ -18,8 +18,7 @@
 
 When the DHCP server spots a previously existing IP address from its DHCP leases pool, it will block that address from further assignment. This mechanism will prevent duplicated IP addresses in the same network segment.
 
-
-The problem – a lack of the free IP addresses
+The problem - a lack of the free IP addresses
 
 These IP address will be marked as busy in the leases list. In most cases, the busy address is the static IP address of some host. If we have too many DHCP clients in the network, every unavailable lease may cause a problem for everyday operations.
 
@@ -36,7 +35,7 @@ The best way to avoid such a situation is to periodically remove these busy leas
 :foreach i in $busyaddr do={
 /ip dhcp-server lease remove $i;
 }</code>
- Credit: https://mivilisnet.wordpress.com/2017/07/13/removing-busy-leases-from-mikrotik-dhcp-pool
+Credit: https://mivilisnet.wordpress.com/2017/07/13/removing-busy-leases-from-mikrotik-dhcp-pool
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>
