@@ -21,11 +21,11 @@
 • Only make simple queues rule for any active IP on the network (taken from ARP table)
 • Utilize MikroTik’sadvantage to runs script and task scheduling to do the job.
 
-<b>How to use></b>
+<b>How to use</b>
 • Create your mangle
 • Customize based on your specific need/network configuration•Drag-drop-import
 
-<b>How It Works></b>
+<b>How It Works</b>
 1. The script will make a parent queue(i)and a catch-all rule(ii)for our workaround with all parameter which we’ve already set.
 2. Takes all IP addresses and MAC address with specified filter (interface) from /iparptable.
 3. Removes all dynamic rules previously created, if available. Then creates simple queue rules using parameters we’ve already set.
