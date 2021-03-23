@@ -28,7 +28,7 @@ In this case it searches for a route labelled "Default Route" and disables it if
 ping return number of recieved packets (at last on latest 3.x and щт 4.x). Next do same
 
 <code class="routeros">:if ([/ping 72.14.207.104 interval=3 count=5]=5 && [/ip route get [find comment="Default Route"] disabled]=false) do={
-:log info "Main Gateway down"; /ip route set [find comment="Default Route"] disabled=yes}
+:log info "Main Gateway down"; /ip route set [find comment="Default Route"] disabled=yes}</code>
 Credit: Unknown (?)
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
