@@ -16,20 +16,20 @@
 <h1>ARP Table To Dynamic Simple Queue - MikroTik Script RouterOS</h1>
 <pre>Dynamic Simple QueueScript (ARP Table)
 
-Ideas
+<b>Ideas</b>
 • Using simple queues to limit any traffic (or could be a packet mark) from specific target IP
 • Only make simple queues rule for any active IP on the network (taken from ARP table)
 • Utilize MikroTik’sadvantage to runs script and task scheduling to do the job.
 
-How to use
-•Create your mangle
-•Customize based on your specific need/network configuration•Drag-drop-import
+<b>How to use></b>
+• Create your mangle
+• Customize based on your specific need/network configuration•Drag-drop-import
 
-How It Works
-1.The script will make a parent queue(i)and a catch-all rule(ii)for our workaround with all parameter which we’ve already set.
-2.Takes all IP addresses and MAC address with specified filter (interface) from /iparptable.
-3.Removes all dynamic rules previously created, if available. Then creates simple queue rules using parameters we’ve already set.
-4.Delay for specified time (default is 60 secs) and re-run the steps from number 2.5.The scheduler at /system scheduler checks and ensures that the script is running in the background.
+<b>How It Works></b>
+1. The script will make a parent queue(i)and a catch-all rule(ii)for our workaround with all parameter which we’ve already set.
+2. Takes all IP addresses and MAC address with specified filter (interface) from /iparptable.
+3. Removes all dynamic rules previously created, if available. Then creates simple queue rules using parameters we’ve already set.
+4. Delay for specified time (default is 60 secs) and re-run the steps from number 2.5.The scheduler at /system scheduler checks and ensures that the script is running in the background.
 
 <code class="routeros">/system script
 job remove [find script="limitDynamic"];
