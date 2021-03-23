@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARP Table To Dynamic Simple Queue - MikroTik Script RouterOS</title>
+<meta content='ARP Table To Dynamic Simple Queue - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>ARP Table To Dynamic Simple Queue - MikroTik Script RouterOS</h1>
+<pre>Dynamic Simple QueueScript (ARP Table)
+
+Ideas
+• Using simple queues to limit any traffic (or could be a packet mark) from specific target IP
+• Only make simple queues rule for any active IP on the network (taken from ARP table)
+• Utilize MikroTik’sadvantage to runs script and task scheduling to do the job.
+
+How to use
+•Create your mangle
+•Customize based on your specific need/network configuration•Drag-drop-import
+
+How It Works
+1.The script will make a parent queue(i)and a catch-all rule(ii)for our workaround with all parameter which we’ve already set.
+2.Takes all IP addresses and MAC address with specified filter (interface) from /iparptable.
+3.Removes all dynamic rules previously created, if available. Then creates simple queue rules using parameters we’ve already set.
+4.Delay for specified time (default is 60 secs) and re-run the steps from number 2.5.The scheduler at /system scheduler checks and ensures that the script is running in the background.
+
+<code class="routeros">/system script
+job remove [find script="limitDynamic"];
+remove [find name="limitDynamic"];
+add name="limitDynamic" source={
+	:local filterARP "br-local";
+	:local targetAddress "192.168.10.0/24";
+	:local limitClient "3M";
+	:local limitParent "30M";
+	:local parentLimit "0-Parent";
+	:local packetMark "client.p";
+	:local delay "60s";
+	:local enabled true;
+	:local enableLog true;
+	/queue simple
+	:if ($enabled) do={
+		:if ([find name=($parentLimit)] = "") do={	add name=($parentLimit) packet-mark=$packetMark target=$targetAddress max-limit=($limitParent."/".$limitParent);	}
+		:if ([find name=($parentLimit."-all")] = "") do={ add name=($parentLimit."-all") parent=$parentLimit packet-mark=$packetMark target=$targetAddress max-limit=($limitParent."/".$limitParent); }
+	}
+	:while (true) do={
+		:local arp [:toarray [/ip arp print as-value where dynamic && interface=$filterARP ]];
+		:local queue [:toarray [/queue simple print as-value]];
+		:if ($enableLog) do={ :log warning message= "Removing any dynamic queue entry ..."; }
+		
+		:if ($enabled) do={ /queue simple remove [find (parent=$parentLimit) && (name!=($parentLimit."-all"))]; }
+		:if ($enableLog) do={ :log warning message= "All dynamic queue removed."; :log warning message= "Adding new dynamic queue entry ..."; }
+		:foreach a in=$arp do={
+			:local ip ($a->"address");
+			:local zz ($a->"mac-address");
+			:if ($enabled) do={/queue simple add name=($zz) target=$ip max-limit=($limitClient."/".$limitClient) parent=$parentLimit packet-mark=$packetMark place-before=($parentLimit."-all"); }
+			
+		}
+		:if ($enableLog) do={ :log warning message= "Finished adding"; :log warning message= "Running delay"; }
+		:delay $delay;
+	}
+}
+:execute "/system script run limitDynamic;";
+/system scheduler
+remove [find name="limitDynamic"];
+add name=limitDynamic interval=10m on-event={ :if ([:len [/system script job find script=limitDynamic]] = 0 ) do={/system script run limitDynamic; } }
+/file remove [find name="limit-dynamic-mum.rsc"];</code>
+Credit: https://github.com/ericksetiawan/dynamic-simple-queue
+Complete PDF: https://mum.mikrotik.com//presentations/ID16/presentation_3482_1476686228.pdf
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
