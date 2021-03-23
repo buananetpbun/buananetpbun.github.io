@@ -249,12 +249,12 @@ border-left:1px solid #ccc;
 }
 iframe {
 width:100%;
-height:auto;
+height:520px;
 border:0 
 }
 .welcome {
 width:100%;
-height:auto;
+height:520px;
 padding:10px;
 }
 .welcome a{
@@ -663,7 +663,7 @@ Enjoy the most complete script to make it easier for you to learn Mikrotik Route
 Send Your Mikrotik RouterOS Script For Contribution -> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform"><b>Upload</b></a></span>
 </pre>
 </div>
-<iframe id="change-iframe-url" src=""></iframe>
+<iframe id="change-iframe-url" onload="resizeIframe(this)" src=""></iframe>
 <div id="reloadads2" style="width:100%; height:auto; margin-top:10px; margin-left:5px;">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- MIKROTIK SCRIPT DB3 -->
@@ -685,6 +685,46 @@ Copyright 2021 <a href="https://buananetpbun.github.io/mikrotik">Mikrotik Script
 <script type="text/javascript">
 if(!document.getElementById('mlpBOSegoXEu')){
   document.getElementById('CbiJvKRogXqD').style.display='block';
+}
+
+function getIFrameHeight(){
+    function getComputedBodyStyle(prop) {
+        function getPixelValue(value) {
+            var PIXEL = /^\d+(px)?$/i;
+
+            if (PIXEL.test(value)) {
+                return parseInt(value,base);
+            }
+
+            var 
+                style = el.style.left,
+                runtimeStyle = el.runtimeStyle.left;
+
+            el.runtimeStyle.left = el.currentStyle.left;
+            el.style.left = value || 0;
+            value = el.style.pixelLeft;
+            el.style.left = style;
+            el.runtimeStyle.left = runtimeStyle;
+
+            return value;
+        }
+
+        var 
+            el = document.body,
+            retVal = 0;
+
+        if (document.defaultView && document.defaultView.getComputedStyle) {
+            retVal =  document.defaultView.getComputedStyle(el, null)[prop];
+        } else {//IE8 & below
+            retVal =  getPixelValue(el.currentStyle[prop]);
+        } 
+
+        return parseInt(retVal,10);
+    }
+
+    return document.body.offsetHeight +
+        getComputedBodyStyle('marginTop') +
+        getComputedBodyStyle('marginBottom');
 }
 </script>
 <script>
