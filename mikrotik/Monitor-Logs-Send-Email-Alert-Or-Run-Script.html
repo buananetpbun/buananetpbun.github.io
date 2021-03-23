@@ -121,7 +121,6 @@ if ([:len $output] > 0) do={
   /tool e-mail send to="$emailAddress" subject="MikroTik alert $currentTime" body="$output"
   /log info "[LOGMON] New logs found, send email"
 }</code>
-
 Other Notes
 If you would rather run a script or whatever (instead of sending email), simply remove the email config line at the top, and change the "/tool email" line near the bottom to do whatever you want.
 
