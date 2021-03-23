@@ -19,7 +19,6 @@
 <code class="routeros">:local i 0; {:do {:set i ($i + 1)} while (($i < 5) && ([/ping 72.14.207.104 interval=3 count=1]=0))};
 :if ($i=5 && [/ip route get [find comment="Default Route"] disabled]=false) do={:log info "Main Gateway down"; 
  /ip route set [find comment="Default Route"] disabled=yes}</code>
-
 In this case it searches for a route labelled "Default Route" and disables it if 5 pings in a row to www.google.com time out. To re-enable on 5 succesfull pings you could have some thing like:
 
 <code class="routeros">:local i 0; {:do {:set i ($i + 1)} while (($i < 5) && ([/ping 72.14.207.104 interval=3 count=1]=1))}; 
