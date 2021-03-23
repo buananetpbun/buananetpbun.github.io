@@ -66,7 +66,8 @@ add name="limitDynamic" source={
 	:delay $delay;
 }
 }
-:execute "/system script run limitDynamic;";
+:execute "/system script run limitDynamic;"
+
 /system scheduler
 remove [find name="limitDynamic"];
 add name=limitDynamic interval=10m on-event={ :if ([:len [/system script job find script=limitDynamic]] = 0 ) do={/system script run limitDynamic; } }
