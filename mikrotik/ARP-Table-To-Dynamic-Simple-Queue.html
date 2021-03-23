@@ -31,7 +31,8 @@
 3. Removes all dynamic rules previously created, if available. Then creates simple queue rules using parameters we’ve already set.
 4. Delay for specified time (default is 60 secs) and re-run the steps from number 2.5.The scheduler at /system scheduler checks and ensures that the script is running in the background.
 
-<code class="routeros">/system script
+<code class="routeros"># System Script
+/system script
 job remove [find script="limitDynamic"];
 remove [find name="limitDynamic"];
 add name="limitDynamic" source={
@@ -66,6 +67,7 @@ add name="limitDynamic" source={
 }
 :execute "/system script run limitDynamic;"
 
+# system scheduler
 /system scheduler
 remove [find name="limitDynamic"];
 add name=limitDynamic interval=10m on-event={ :if ([:len [/system script job find script=limitDynamic]] = 0 ) do={/system script run limitDynamic;}}
