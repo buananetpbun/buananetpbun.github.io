@@ -23,7 +23,7 @@ The problem – a lack of the free IP addresses
 
 These IP address will be marked as busy in the leases list. In most cases, the busy address is the static IP address of some host. If we have too many DHCP clients in the network, every unavailable lease may cause a problem for everyday operations.
 
-The best way to avoid such a situation is to periodically remove these busy leases. The easiest way to do this, is to use the scheduled script. Here is my script that I wrote for one customer:
+The best way to avoid such a situation is to periodically remove these busy leases. The easiest way to do this, is to use the scheduled script.
 
 <code class="routeros"># Delete BUSY leases from DHCP server
 # version 1.0 (15.06.2017.)
@@ -36,24 +36,7 @@ The best way to avoid such a situation is to periodically remove these busy leas
 :foreach i in $busyaddr do={
 /ip dhcp-server lease remove $i;
 }</code>
- 
-Analysis of the script
-This script is very simple. It reads the list of the id numbers of the IP addresses with a status of “busy” and assigns them to the array busyaddr. I’m using the variable i as a counter. Ye olde habit left over from the days of the Turbo Pascal programming.
-
-Then we will execute the foreach loop. This loop will take every element of the array busyaddr and then execute the command for deletion of that element.
-
-I like to keep these service scripts short and clean. Omitting anything that can slowdown the router and CPU. This approach allows me to run the script more frequently without any negative impact on the overall performances of the device, even during peak hours.
-
-Run the script on schedule
-The last step is to make a schedule and to run the script periodically. The frequency of the script’s execution will depend on the number of busy leases and their impact on the network operation.
-
-I found that the best schedule for this customer will be an once per day, just after the working hours. As you can see, I just called the name of the script as an action.
-
-My friends, this is it, a big network problem with a simple solution and the short post on my blog. You can use this script for your own applications. If you find it useful, share your experience with us.
-
-Stay tuned.
-
-Credit: https://mivilisnet.wordpress.com/2017/07/13/removing-busy-leases-from-mikrotik-dhcp-pool
+ Credit: https://mivilisnet.wordpress.com/2017/07/13/removing-busy-leases-from-mikrotik-dhcp-pool
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br>
