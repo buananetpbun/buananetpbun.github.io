@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LED Antenna Alignment - MikroTik Script RouterOS</title>
+<meta content='LED Antenna Alignment - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>LED Antenna Alignment - MikroTik Script RouterOS</h1>
+<pre>Here is a short script I wrote to use the onboard LED on the RB532 for antenna alignment.
+
+The LED blinks a number of times in a second. The more blinks, the higher the SNR.
+
+Currently it will only show the SNR of the first entry in the Registrations tab in the Wireless window. This should not be a problem, since you will most likely use this tool for CPE alignment or when setting up a point to point link, where you only have 1 entry in the Registrations tab.
+
+It can be modified to look for a specific MAC address or SSID.
+
+Put the following as a System / Script entry.
+
+<code class="routeros">:global if-snr [ /interface wireless registration-table get [/interface wireless registration-table find] signal-to-noise ]
+:if (($if-snr > 0) && ($if-snr <= 15 )) do={/blink duration=250ms}
+:if (($if-snr > 15) && ($if-snr <= 25 )) do={/blink duration=500ms}
+:if (($if-snr > 25) && ($if-snr <= 35 )) do={/blink duration=750ms}
+:if ($if-snr > 35 ) do={/blink duration=1s}</code>
+Use scheduler to run the script every 1 or 2 seconds (your preference). In the 'On Event' box type:
+
+<code class="routeros">/system script run [/system script find name=blinkled]
+# [WHERE blinkled IS THE NAME OF THE SCRIPT SHOWN ABOVE]</code>
+RouterOS 5.13 doesn't like the "-" in the variable name if-snr, so use ifsnr instead
+
+Credit: wiki.mikrotik.com
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
