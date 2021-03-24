@@ -18,10 +18,17 @@
 <pre>This script generates backup file and sends it to specified e-mail address. Mail subject contains router's name, current date and time.
 Note that smtp server must be configured before this script can be used. See /tool e-mail for configuration options.
 
-<code class="routeros">/system backup save name=email_backup
-/tool e-mail send file=email_backup.backup to="me@test.com" body="See attached file" \
-subject="$[/system identity get name] $[/system clock get time] $[/system clock get date] Backup")</code>
-Credit: o-om.com
+<code class="routeros">:log info "Starting Backup Script..."
+:global backupfile ([/system identity get name] . ".backup")
+:if ([/file find name=$backupfile] != "") do={/file rem $backupfile}
+:delay 2s
+/system backup save name=$backupfile
+:log info "Waiting 5s for backup to complete..."
+:delay 5s
+:log info "Backup being emailed..."
+/tool e-mail send to="backups@yourdomain.com" subject=([/system identity get name] . " Backup") from=RB600@yourdomain.com file=$backupfile server=xxx.xxx.xx.x
+:log info "Finished Backup Script!"</code>
+Credit: wiki.mikrotik.com
 </pre>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 <br><div id="hidelink"></div>
