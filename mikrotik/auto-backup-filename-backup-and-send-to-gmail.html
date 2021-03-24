@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Backup Filename.backup And Send To Gmail - MikroTik Script RouterOS</title>
+<meta content='Auto Backup Filename.backup And Send To Gmail - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Auto Backup Filename.backup And Send To Gmail - MikroTik Script RouterOS</h1>
+<pre>How To Auto Backup Filename.backup And Send To Gmail
+
+Setup Your mail first on <b>Tool > Email</b>
+
+<code class="routeros">/tool e-mail set address=74.125.200.109 from=xxx@gmail.com password=xxxx port=587 start-tls=yes user=xxxx@gmail.com</code>
+Input this script to Scheduler and you can set backup to gmail every week use interval like "7d 00:00:00"
+
+<code class="routeros">#************************************************************
+# BACKUP FILENAME.BACKUP AND SEND TO GMAIL BY BUANANET
+#************************************************************
+:global backupfile ([/system identity get name] . "-" . [/system clock get time])
+/system backup save name=$backupfile
+:delay 30s
+:log info "backup being emailed"
+/tool e-mail send to="xxxx@gmail.com" subject=([/system identity get name] . " - ". [/system clock get time] . " - " . [/system clock get date] . "") from=xxxx@gmail.com file=("$backupfile" . ".backup")
+:delay 30s
+/file remove ("$backupfile" . ".backup")</code>
+Credit: www.o-om.com
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
+
+
+
