@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add Static DHCP Leases to ARP List - MikroTik Script RouterOS</title>
+<meta content='Add Static DHCP Leases to ARP List - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Add Static DHCP Leases to ARP List - MikroTik Script RouterOS</h1>
+<pre>This script will update the ARP List with all static, enabled leases. It makes the changes in place (i.e. it doesn't delete all the ARP entries first) to minimize disruptions. Limitation of the script is that the interface for the ARP entry needs to be hardcoded for now.
+
+<code class="routeros">:local wanInterfaceName "ether1_wan";
+# Remove ARP entries that do not have static DHCP leases or are disabled
+:foreach arpId in=[/ip arp find] do={
+#Don't remove the dynamic entry on the WAN side
+  :if ([/ip arp get $arpId interface] != $wanInterfaceName) do={
+#If there is no matching entry in the lease table remove it
+:local mac [/ip arp get $arpId mac-address];
+:local leaseId [/ip dhcp-server lease find where mac-address=$mac];
+:if ($leaseId="") do={
+/ip arp remove $arpId;
+:log info ("Removing old ARP entry");
+} else={
+:if ([/ip dhcp-server lease get $leaseId disabled]) do={
+/ip arp remove $arpId;
+:log info ("Removing disabled ARP entry");
+}}}}
+:foreach leaseId in=[/ip dhcp-server lease find where !dynamic] do={
+:local mac  [/ip dhcp-server lease get $leaseId mac-address];
+:local arpId [/ip arp find where mac-address=$mac];
+:if ($arpId="" && ![/ip dhcp-server lease get $leaseId disabled]) do={
+:local ip [/ip dhcp-server lease get $leaseId address];
+:local comment  [/ip dhcp-server lease get $leaseId comment];
+#interface should not be hard coded but couldn't figure out what to do
+:local interface lan_wlan_bridge;
+/ip arp add address= $ip mac-address= $mac comment= $comment interface= $interface;
+:log info ("Adding new ARP entry");
+}
+}</code>
+Credit: wiki.mikrotik.com
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
