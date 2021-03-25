@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reboot Boards due to low Memory with notification - MikroTik Script RouterOS</title>
+<meta content='Reboot Boards due to low Memory with notification - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Reboot Boards due to low Memory with notification - MikroTik Script RouterOS</h1>
+<pre>set this in scheduler to get lost memory back and to get a reboot when it needs to do this
+
+<code class="routeros">:global datum [/system clock get date];
+:global time [/system clock get time];
+/system resource
+:if ([get free-memory]< 25000) do=[
+/tool e-mail send server=*.*.*.* to="alert@yours.net" subject=[/system identity get name] 
+from="alert@yours.net" body=(" on $datum at $time the memory on this repeater got to ", [/system resource 
+get free-memory])
+/system reboot;
+]};</code>
+
+on the if statement you will need to set the 25000 depending on board type IE 532a = 25000 153 = 12000 and so on I put this in scheduler to run at 3am once a day
+
+Using percentages
+
+<code class="routeros">:global datum [/system clock get date];
+:global time [/system clock get time];
+:local percentfree ((100 * [/system resource get free-memory]) / [/system resource get total-memory])
+
+/system resource
+:if ($percentfree < 5) do={
+  /tool e-mail send server=*.*.*.* to="alert@yours.net" subject=[/system identity get name] from="alert@yours.net" body=(" on $datum at $time the memory on this repeater got to ", [/system resource get free-memory])
+  /system reboot;
+};</code>
+Will notify and reboot if free memory < 5%
+
+Credit: www.mikrotik.com
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
