@@ -20,29 +20,26 @@
 # Version: 1.0.0
 # This script currently only works with type A and non-static DNS records.
 # If no matching DNS records are found:
-#    the address list is removed.
+# the address list is removed.
 # If matching DNS records are found:
-#    if an address list entry is NOT found in search result, it is removed.
-#    if an address list entry IS found in search result, is not modified.
-#    if a search result is NOT found in address list, it is added.
+# if an address list entry is NOT found in search result, it is removed.
+# if an address list entry IS found in search result, is not modified.
+# if a search result is NOT found in address list, it is added.
 #
 # Search string format:
-#   "(:|=|~)<search string>"
-#   :   match string anywhere
-#   =  match string exactly (case sensitive)
-#   ~  match string using regular expression (requires ROS >= v3.23)
+# "(:|=|~)<search string>"
+# :   match string anywhere
+# =  match string exactly (case sensitive)
+# ~  match string using regular expression (requires ROS >= v3.23)
 #
 # Example:  To search all records containing 'google.com':
-#                  :local search ":google.com"
+# :local search ":google.com"
 #
-#                  To search all records ending with 'microsoft.com':
-#                  :local search "~microsoft\\.com\$"
+# To search all records ending with 'microsoft.com':
+# :local search "~microsoft\\.com\$"
 :local search ":google.com"
-
 # The prefix of address list ("" = none)
 :local listprefix "DNSCache_"
-
-
 # Internal processing...
 :local IPs ""
 :local Names ""
@@ -51,7 +48,6 @@
 /ip dns cache all {
    :local findex; :local property; :local value; :local name; :local type; :local data
    :local sfound 0
-
    :foreach rule in=[print detail as-value where static=no] do={
       :set name ""; :set type ""; :set data ""
 
