@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logging SNR and Thruput Values - MikroTik Script RouterOS</title>
+<meta content='Logging SNR and Thruput Values - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Logging SNR and Thruput Values - MikroTik Script RouterOS</h1>
+<pre>Upgraded Version of the script below.
+
+Works through to Version 5 and probably Version 6
+
+This script logs the radio name, system identity, system uptime, board name, firmware version, clients connected, ccq, nstreme, frequency, ethernet information, network latencies, arp entries, neighbours etc. The clients script logs the details of radios connected to an AP.
+
+It is extremely useful for debugging wireless problems, like intermittent noise, signal and ccq. Use the following script on a schedule. Configure the Mikrotik AP to log data to a syslog server (remote) and you have a powerful way of monitoring your equipment. This newer version does not care what your radio's are named.
+
+New Version that works with v5/v6, first line should be the next device closest to your main router. It reports ping stats, you can use the results to create latency charts between network devices, useful for detecting network problems.
+
+<code class="routeros">/system script add name=CombStats policy=ftp,reboot,read,write,policy,test,winbox,password,sniff,sensitive,api source="
+   \n:local Dependent XXX.XXX.XXX.XXX;\r\
+   \n:local i;\r\
+   \n:local MM [:tonum [:pick [/sys clo get time] 3 5]];\r\
+   \n#:log info (\"Starting Script\");\r\
+   \n:local MF \"2\";\r\
+   \n:local myvar1;\r\
+   \n:local myvar2;\r\
+   \n:local myvar3;\r\
+   \n:local myvar4;\r\
+   \n:local myvar5;\r\
+   \n:local myvar6;\r\
+   \n############## Wireless Clients every Two Minutes ###############################################\r\
+   \n\r\
+   \n:if ((\$MM/\$MF)*\$MF = \$MM) do={\r\
+   \n/int wire reg\r\
+   \n:foreach i in=[find] do={\r\
+   \n\t:local mc [get \$i mac-address];\r\
+   \n\t:local ip [get \$i last-ip];\r\
+   \n\t:local rx [get \$i rx-rate];\r\
+   \n\t:local tx [get \$i tx-rate];\r\
+   \n\t:local up [get \$i uptime];\r\
+   \n\t:local la [get \$i last-activity];\r\
+   \n\t:local ss [get \$i signal-strength];\r\
+   \n\t:local sn [get \$i signal-to-noise];\r\
+   \n\t:local tq [get \$i tx-ccq];\r\
+   \n                :local by [get \$i bytes];\r\
+   \n                :local pk [get \$i packets];\r\
+   \n\t:local rq [get \$i rx-ccq];\r\
+   \n                :local rv [get \$i routeros-version];\r\
+   \n                :local pt [get \$i p-throughput];\r\
+   \n\t:local ts [get \$i tx-signal-strength];\r\
+   \n\r\
+   \n\t:log info ([/system identity get name]. \",CLIENT,\".\$mc.\",\".\$ip.\",\".\$rx.\",\".\$tx.\",\".\$up.\",\".\$la.\",\
+   \".\$ss.\",\".\$sn.\",\".\$tq.\",\".\$by.\",\".\$pk.\",\".\$rq.\",\".\$rv.\",\".\$pt . \",\" . \$ts);}\r\
+   \n}\r\
+   \n############# Neighbours ##################\r\
+   \n:set MF \"30\"; \t:if ((\$MM/\$MF)*\$MF = \$MM) do={\r\
+   \n#### GET LIST OF NEIGHBOURS\r\
+   \n/ip neigh\r\
+   \n:foreach i in=[find] do={\r\
+   \n\t:local nint  [get \$i interface];\r\
+   \n                :local naddress [get \$i address];\r\
+   \n                :local nmac [get \$i mac-address];\r\
+   \n\t:local nidentity  [get \$i identity];\r\
+   \n                :local nplatform [get \$i platform];\r\
+   \n                :local nversion [get \$i version];\r\
+   \n                :local nboard [get \$i board];\r\
+   \n                :local nuptime [get \$i uptime];\r\
+   \n\r\
+   \n\r\
+   \n                :log info ([/system identity get name].\",NEIGH,\".\$nint.\",\".\$naddress.\",\".\$nmac.\",\".\$nidenti\
+   ty.\",\".\$nplatform.\",\".\$nversion.\",\".\$nboard.\",\".\$nuptime);\r\
+   \n    \t}\r\
+   \n}\r\
+   \n############# BRIDGE ENTRIES ###########\r\
+   \n:set MF \"20\"; \t:if ((\$MM/\$MF)*\$MF = \$MM) do={\r\
+   \n\r\
+   \n##### Get Bridge Entries\r\
+   \n/int bridge\r\
+   \n:foreach i in=[find] do={\r\
+   \n\t:local name  [get \$i name];\r\
+   \n                :local nmac [get \$i mac-address];\r\
+   \n                :log info ([/system identity get name].\",BRIDGE,\".\$name.\",\".\$nmac);\r\
+   \n    \t}\r\
+   \n}\r\
+   \n############# WIRELESS CARDS ###########\r\
+   \n:set MF \"20\"; \t:if ((\$MM/\$MF)*\$MF = \$MM) do={\r\
+   \n#Get info on wireless adapters\r\
+   \n/int wire\r\
+   \n:foreach i in=[find] do={\r\
+   \n\t:local mac  [get \$i mac-address];\r\
+   \n                :local intname [get \$i name];\r\
+   \n                :local inttype [get \$i interface-type];\r\
+   \n                :log info ([/system identity get name].\",APMAC,\".\$mac.\",\".\$intname.\",\".\$inttype);\r\
+   \n    \t}\r\
+   \n}\r\
+   \n\r\
+   \n##############  Half-Hourly Voltage and ARP/IP Match #################################################\r\
+   \n# keep this it is handy\r\
+   \n\r\
+   \n:set MF \"30\"; \t:if ((\$MM/\$MF)*\$MF = \$MM) do={\r\
+   \n:local Volts [/sys he get voltage];\r\
+   \n:if (\$Volts > 20 ) do={:log info ([/system identity get name].\",VOLT,\".\$Volts);}\r\
+   \n/ip arp\r\
+   \n:foreach i in=[find] do={\r\
+   \n\t:log info ([/system identity get name].\",ARPW,\".[get \$i mac-address].\",\".[get \$i address])}\r\
+   \n}\r\
+   \n############# Ping Statistics every 5 minutes  ##################################################\r\
+   \n# Latency Test\r\
+   \n\r\
+   \n:set MF \"5\"; \t:if ((\$MM/\$MF)*\$MF = \$MM) do={\r\
+   \n#:local Dependent;\r\
+   \n#:foreach i in [/tool traffic-monitor find] do={:set Dependent [/tool traffic-monitor get \$i name];}\r\
+   \n:local avgRtt;\r\
+   \n:local DCavgRtt;\r\
+   \n:local FJavgRtt;\r\
+   \n:local avgTRtt;\r\
+   \n:local maxTRtt;\r\
+   \n:local maxRtt;\r\
+   \n:local DCmaxRtt;\r\
+   \n:local FJmaxRtt;\r\
+   \n:local rxpkt;\r\
+   \n:local txpkt;\r\
+   \n:set maxTRtt \"0\";\r\
+   \n:for i from=1 to=4 step=1 do={\r\
+   \n    /tool flood-ping \$Dependent count=10 size=1500 do={\r\
+   \n\t:if (\$sent = 10) do={\r\
+   \n\t\t :set rxpkt (rxpkt + \$\"received\");\r\
+   \n\t\t :set txpkt (txpkt + \$\"sent\");\r\
+   \n\t\t :set avgRtt (\$\"avg-rtt\");\r\
+   \n\t\t :set maxRtt (\$\"max-rtt\");                    \r\
+   \n \t\t}\r\
+   \n\t}\r\
+   \n    :if (\$maxRtt>\$maxTRtt) do={:set  maxTRtt (\$maxRtt);}\r\
+   \n    :set  avgTRtt (\$avgRtt+\$avgTRtt);\r\
+   \n    :delay 4;\r\
+   \n   }\r\
+   \n\r\
+   \n:log info ( [/system identity get name].\",PING,\". \$Dependent . \",\" . ((\$rxpkt*100)/\$txpkt) . \",\" . \$avgTRtt/4\
+   \_. \",\" . \$maxTRtt);\r\
+   \n}\r\
+   \n#############  Ethernet Status Minutely ##################################################\r\
+   \n\r\
+   \n/int ether\r\
+   \n:foreach i in=[find] do={\r\
+   \n\t:local name [get \$i name];\r\
+   \n                :local mtu [get \$i mtu];\r\
+   \n\t:local mac  [get \$i mac-address];\r\
+   \n                :local auto  [get \$i auto-negotiation];\r\
+   \n\t:local fdx  [get \$i full-duplex];\r\
+   \n\t:local sped [get \$i speed];\r\
+   \n\r\
+   \n\t/int eth monitor [/int wire get \$i name] once do={\r\
+   \n\t\t :local myvar1 \$\"auto-negotiation\";\r\
+   \n\t\t :local myvar2 \$\"full-duplex\";\r\
+   \n\t\t :local myvar3  \"\";\r\
+   \n\t\t :local myvar4 \$\"rate\";\r\
+   \n\t\t :local myvar5 \$\"status\";\r\
+   \n\t\t :local myvar6  \"\";\r\
+   \n\t\t :log info ([/system identity get name].\",ETHER,\".\$name.\",\".\$mac.\",\".\$auto.\",\".\$fdx.\",\".\$sped.\",\".\
+   \$myvar1.\",\".\$myvar2.\",\".\$myvar4.\",\".\$myvar5);\r\
+   \n\t\t}\r\
+   \n\t}\r\
+   \n\r\
+   \n##############  Wireless Status by the Minute ##############################################################\r\
+   \n\r\
+   \n# Loop through interfaces\r\
+   \n:foreach i in=[/interface wireless find ] do={/interface wireless monitor \$i once do={\r\
+   \n\r\
+   \n# Clear Variables\r\
+   \n:set myvar1 \"\";\r\
+   \n:set myvar2 \"\";\r\
+   \n:set myvar3 \"\";\r\
+   \n:set myvar4 \"\";\r\
+   \n:set myvar5 \"\";\r\
+   \n:set myvar6 \"\";\r\
+   \n\r\
+   \n/int monitor-traffic interface=[/int wire get \$i name] once do={\r\
+   \n   :set myvar3 \$\"rx-bits-per-second\"\r\
+   \n   :set myvar4 \$\"tx-bits-per-second\"\r\
+   \n   :set myvar5 \$\"rx-packets-per-second\"\r\
+   \n   :set myvar6 \$\"tx-packets-per-second\"\r\
+   \n}\r\
+   \n\r\
+   \n# If radio is in bridge mode then get uptime of link from registration\r\
+   \n# Could change this so that if connected number of hosts is 2 or 1 then report\r\
+   \n:if ([/int wire get \$i mode] = \"bridge\" ) do={\r\
+   \n\r\
+   \n# get some more data through this variable\r\
+   \n\r\
+   \n:foreach a in=[ /int wir reg find interface=[/int wire get \$i name]] do={\r\
+   \n\r\
+   \n/int wire reg\r\
+   \n      :set myvar1 [get \$a uptime];\r\
+   \n      :set myvar2 [get \$a last-activity];\r\
+   \n      }  \r\
+   \n}\r\
+   \n\r\
+   \n:log info ( [/system identity get name] . \",WLAN,\" . [/int wire get \$i name] . \",\" . [/system resour get uptime] .\
+   \_\",\" . [/system reso get board-name] .\",\" . [/system reso get version] . \",\" .\$\"registered-clients\" .  \",\".  \
+   \$\"overall-tx-ccq\" . \".\" . \$\"nstreme\" . \",\" . \$\"rx-ccq\" . \",\" . \$\"noise-floor\" . \",\"  . \$\"frequency\
+   \" . \",\" . \$\"band\" . \",\" . [/int wire get \$i ssid] .  \",,\"  .  \",\" . [/int wire get \$i hw-retries] .  \",\" \
+   . [/int wire get \$i wds-mode]  . \",\" . \$\"tx-rate\" . \",\" . \$\"rx-rate\" . \",\" . \$\"signal-strength\" . \",\" .\
+   \_\$\"tx-signal-strength\" . \",\" . [/system reso get cpu-load]   . \",\" . [/system reso get free-memory] . \"/\" . [/s\
+   ys reso get total-memory]  . \",\" . [/system reso get free-hdd-space] . \"/\" . [/sys reso get total-hdd-space]   . \",\
+   \" . [/sys reso get bad-blocks]   . \",\" . [/int wire get \$i adaptive-noise-immunity] . \",\" . \$myvar1 . \",\" . \$my\
+   var2 . \",\" . \$myvar3  . \",\" . \$myvar4 . \",\" . \$myvar5 . \",\" . \$myvar6)\r\
+   \n\r\
+   \n} } \r\
+   \n\r\
+   \n\r\
+   \n}\r\
+   \n\r\
+   \n:log info (\"Ending Script\");\r\
+   \n\r\
+   \n\r\
+   \n  "</code>
+Tested and works with version 3.12 and up.
+
+<code class="routeros">/system script
+add name=stats policy=ftp,reboot,read,write,policy,test,winbox,sniff source="#AP STATS\r\
+   \n\r\
+   \n:foreach i in=[/interface wireless find ] do={/interface wireless monitor \$i once do { :log info ( \"int=\" . [/int wire get \$i name] . \",\" . [/system identity g\
+   et name] . \",\" . [/system resour get uptime] . \",\" . [/system reso get board-name] .\",\" . [/system reso get version] . \",\" .\$\"registered-clients\" .  \",\". \
+   \_\$\"overall-tx-ccq\" . \".\" . \$\"nstreme\" . \",\" . \$\"rx-ccq\" . \",\" . \$\"noise-floor\" . \",\"  . \$\"frequency\" . \",\" . \$\"band\" . \",\" . [/int wire \
+   get \$i ssid] .  \",\" . [/int wire get \$i ack-timeout] .  \",\" . [/int wire get \$i hw-retries] .  \",\" . [/int wire get \$i wds-mode]  . \",\" . \$\"tx-rate\" . \
+   \",\" . \$\"rx-rate\" . \",\" . \$\"signal-strength\" . \",\" . \$\"tx-signal-strength\")}}\r\
+   \n\r\
+   \n#CLIENTS CONNECTED\r\
+   \n/int wire reg\r\
+   \n:foreach i in=[ /int wir reg find] do={:log info ([/system identity get name] . \",\" . [get \$i  mac-address ]. \",\" . [get \$i last-ip] . \",\" . [get \$i rx-rate\
+   ] . \",\" . [get \$i tx-rate] . \",\" . [get \$i uptime] . \",\" . [get \$i last-activity] . \",\" . [get \$i signal-strength] . \",\" . [get \$i signal-to-noise] . \"\
+   ,\" . [get \$i tx-ccq] . \",\" . [get \$i bytes] . \",\" . [get \$i packets])}\r\
+   \n\r\
+   \n"</code>
+2.x firmware version
+
+<code class="routeros">:local interface "wlan1";
+/interface wireless monitor $interface once do={
+:local signal $"signal-strength";
+:local snr $"signal-to-noise";
+:local noise $"noise-floor";
+:local thruput $"p-throughput";
+:local freq $"frequency";
+:log info "SNR: $snr Signal $signal Noise: $noise , thruput: $thruput , freq: $freq MHz";
+};</code>
+Credit: wiki.mikrotik.com
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
