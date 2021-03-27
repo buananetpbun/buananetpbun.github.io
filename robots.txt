@@ -2,3 +2,4 @@ User-agent: *
 allow: /
 
 Sitemap: https://buananetpbun.github.io/sitemap.xml
+Sitemap: https://buananetpbun.github.io/4792390_261.xml
