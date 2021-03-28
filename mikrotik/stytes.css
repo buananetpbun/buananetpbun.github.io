@@ -13,6 +13,8 @@ a:visited {color: #08c;  text-decoration:none}
 a:hover {color: black;}
 a:active {color: #08c;}      
 body {
+width:1180px;
+margin:0 auto;	
 -ms-text-size-adjust: 100%;
 -webkit-text-size-adjust: 100%;
 color: #24292e;
