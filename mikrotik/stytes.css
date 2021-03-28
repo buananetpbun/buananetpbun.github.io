@@ -14,6 +14,7 @@ a:hover {color: black;}
 a:active {color: #08c;}      
 body {
 max-width:1180px;
+min-width:200px;
 margin:0 auto;	
 -ms-text-size-adjust: 100%;
 -webkit-text-size-adjust: 100%;
