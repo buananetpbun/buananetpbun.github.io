@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notification When Public IP Address Router Changes - MikroTik Script RouterOS</title>
+<meta content='Notification When Public IP Address Router Changes to Email or Telegram - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<h1>Notification When Public IP Address Router Changes - MikroTik Script RouterOS</h1>
+<pre>Notification when the external IP address of the MikroTik router changes. Send a message to email or Telegram.
+The script creates a global variable CurrentIP to store the current external IP address of the MikroTik router.
+The script uses the ipify.org service API to get an external IP address.
+
+<code class="routeros">:global CurrentIP;
+:local NewIP ([/tool fetch url=http://api.ipify.org/ as-value output=user] -> "data")
+
+:if ($NewIP != $CurrentIP) do={
+    # Variables
+    :local Time [/system clock get time];
+    :local Date [/system clock get date];
+    :local DeviceName [/system identity get name];
+    :local Text "New IP: $NewIP, Previous IP: $CurrentIP";
+    :set CurrentIP $NewIP;
+
+    # START Send Telegram Module
+    :local MessageText "\F0\9F\9F\A2 <b>$DeviceName: External IP address has changed.</b> $Text";
+    :local SendTelegramMessage [:parse [/system script  get MyTGBotSendMessage source]]; 
+    $SendTelegramMessage MessageText=$MessageText;
+    #END Send Telegram Module
+
+    # START Send Email Module
+    :local SendTo "test@mhelp.pro";
+    :local Subject "\F0\9F\9F\A2 INFO: $DeviceName [$Date $Time] External IP address has changed.";
+    :local MessageText $Text;
+    :local FileName "";
+    :local SendEmail [:parse [/system script get SendEmailFunction source]];
+    $SendEmail SendTo=$SendTo TextMail=$MessageText Subject=$Subject FileName=$FileName;
+    # END Send Email Module
+};</code>
+Credit: <a hreft="https://mhelp.pro/nl/mikrotik-scripts-melding-wanneer-het-externe-ip-adres-van-de-router-verandert/">https://mhelp.pro/nl/mikrotik-scripts-melding-wanneer-het-externe-ip-adres-van-de-router-verandert</a>
+</pre>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+<br>
+<div id="hidelink"></div>
+<script>var url_string = window.location;if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {window.location.href = "https://buananetpbun.github.io/mikrotik/?url=" + url_string; document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<br>
+</body>
+</html>
+
