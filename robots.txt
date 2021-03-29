@@ -1,7 +1,6 @@
 User-agent: *
 allow: /
 allow: /mikrotik/
-disallow: /mikrotik/*?
 disallow: /mikrotik/welcome.html
 
 Sitemap: https://buananetpbun.github.io/4792390_261.xml
