@@ -18,8 +18,8 @@ a:active {color: #08c;}
 box-sizing: border-box;
 }
 body {
-max-width:1180px;
-min-width:200px;
+min-width: 200px;
+max-width: 1000px;
 margin:0 auto;	
 padding: 20px;
 -ms-text-size-adjust: 100%;
