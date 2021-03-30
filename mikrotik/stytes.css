@@ -13,7 +13,10 @@ body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fiel
 a:link {color: #08c;  text-decoration:none}
 a:visited {color: #08c;  text-decoration:none}
 a:hover {color: black;}
-a:active {color: #08c;}      
+a:active {color: #08c;}  
+* {
+box-sizing: border-box;
+}
 body {
 max-width:1180px;
 min-width:200px;
