@@ -38,8 +38,8 @@ var hljs=function(){"use strict";function e(t){
   return e?"string"==typeof e?e:e.source:null}
   const g="[a-zA-Z]\\w*",d="[a-zA-Z_]\\w*",h="\\b\\d+(\\.\\d+)?",f="(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",p="\\b(0b[01]+)",m={
   begin:"\\\\[\\s\\S]",relevance:0},b={className:"string",begin:"'",end:"'",
-  illegal:"\",contains:[m]},x={className:"string",begin:'"',end:'"',
-  illegal:"\",contains:[m]},E={
+  illegal:"\\n",contains:[m]},x={className:"string",begin:'"',end:'"',
+  illegal:"\\n",contains:[m]},E={
   begin:/\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/
   },v=(e,t,n={})=>{const s=a({className:"comment",begin:e,end:t,contains:[]},n)
   ;return s.contains.push(E),s.contains.push({className:"doctag",
@@ -58,8 +58,8 @@ var hljs=function(){"use strict";function e(t){
   BINARY_NUMBER_MODE:{className:"number",begin:p,relevance:0},CSS_NUMBER_MODE:{
   className:"number",
   begin:h+"(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",
-  relevance:0},REGEXP_MODE:{begin:/(?=\/[^/]*\/)/,contains:[{className:"regexp",
-  begin:/\//,end:/\/[gimuy]*/,illegal://,contains:[m,{begin:/\[/,end:/\]/,
+  relevance:0},REGEXP_MODE:{begin:/(?=\/[^/\n]*\/)/,contains:[{className:"regexp",
+  begin:/\//,end:/\/[gimuy]*/,illegal:/\n/,contains:[m,{begin:/\[/,end:/\]/,
   relevance:0,contains:[m]}]}]},TITLE_MODE:{className:"title",begin:g,relevance:0
   },UNDERSCORE_TITLE_MODE:{className:"title",begin:d,relevance:0},METHOD_GUARD:{
   begin:"\\.\\s*[a-zA-Z_]\\w*",relevance:0},END_SAME_AS_BEGIN:e=>Object.assign(e,{
@@ -146,7 +146,7 @@ var hljs=function(){"use strict";function e(t){
   this.detectedLanguage=t.language):(t=e.highlight(this.language,this.code,this.ignoreIllegals),
   this.detectedLanguage=this.language),t.value},autoDetect(){
   return!(this.language&&(e=this.autodetect,!e&&""!==e));var e},
-  ignoreIllegals:()=>!0},render(e){return e("",{},[e("code",{
+  ignoreIllegals:()=>!0},render(e){return e("precd",{},[e("code",{
   class:this.className,domProps:{innerHTML:this.highlighted}})])}};return{
   Component:t,VuePlugin:{install(e){e.component("highlightjs",t)}}}}const S={
   "after:highlightBlock":({block:e,result:t,text:n})=>{const s=D(e)
@@ -169,7 +169,7 @@ var hljs=function(){"use strict";function e(t){
   },H=(e,...t)=>{console.log("WARN: "+e,...t)},$=(e,t)=>{
   console.log(`Deprecated as of ${e}. ${t}`)},U=r,z=a,K=Symbol("nomatch")
   ;return(e=>{const n=Object.create(null),r=Object.create(null),a=[];let i=!0
-  ;const o=/(^(<[^>]+>|\t|)+|)/gm,l="Could not find the language '{}', did you forget to load/include a language module?",u={
+  ;const o=/(^(<[^>]+>|\t|)+|\n)/gm,l="Could not find the language '{}', did you forget to load/include a language module?",u={
   disableAutodetect:!0,name:"Plain text",contains:[]};let g={
   noHighlightRe:/^(no-?highlight)$/i,
   languageDetectRe:/\blang(?:uage)?-([\w-]+)\b/i,classPrefix:"hljs-",
@@ -241,9 +241,9 @@ var hljs=function(){"use strict";function e(t){
   ;if(e.language&&t.language){if(N(e.language).supersetOf===t.language)return 1
   ;if(N(t.language).supersetOf===e.language)return-1}return 0})),[i,o]=a,l=i
   ;return l.second_best=o,l}const m={"before:highlightBlock":({block:e})=>{
-  g.useBR&&(e.innerHTML=e.innerHTML.replace(//g,"").replace(/<br[ /]*>/g,""))
+  g.useBR&&(e.innerHTML=e.innerHTML.replace(/\n/g,"").replace(/<br[ /]*>/g,"\n"))
   },"after:highlightBlock":({result:e})=>{
-  g.useBR&&(e.value=e.value.replace(//g,"<br>"))}},b=/^(<[^>]+>|\t)+/gm,x={
+  g.useBR&&(e.value=e.value.replace(/\n/g,"<br>"))}},b=/^(<[^>]+>|\t)+/gm,x={
   "after:highlightBlock":({result:e})=>{
   g.tabReplace&&(e.value=e.value.replace(b,(e=>e.replace(/\t/g,g.tabReplace))))}}
   ;function E(e){let t=null;const n=(e=>{let t=e.className+" "
@@ -258,7 +258,7 @@ var hljs=function(){"use strict";function e(t){
   language:a.language,re:a.relevance,relavance:a.relevance
   },a.second_best&&(e.second_best={language:a.second_best.language,
   re:a.second_best.relevance,relavance:a.second_best.relevance})}const v=()=>{
-  v.called||(v.called=!0,document.querySelectorAll("code").forEach(E))}
+  v.called||(v.called=!0,document.querySelectorAll("precd code").forEach(E))}
   ;function N(e){return e=(e||"").toLowerCase(),n[e]||n[r[e]]}
   function w(e,{languageName:t}){"string"==typeof e&&(e=[e]),e.forEach((e=>{r[e]=t
   }))}function R(e){const t=N(e);return t&&!t.disableAutodetect}function _(e,t){
@@ -267,7 +267,7 @@ var hljs=function(){"use strict";function e(t){
   return $("10.2.0","fixMarkup will be removed entirely in v11.0"),
   $("10.2.0","Please see https://github.com/highlightjs/highlight.js/issues/2534"),
   t=e,
-  g.tabReplace||g.useBR?t.replace(o,(e=>""===e?g.useBR?"<br>":e:g.tabReplace?e.replace(/\t/g,g.tabReplace):e)):t
+  g.tabReplace||g.useBR?t.replace(o,(e=>"\n"===e?g.useBR?"<br>":e:g.tabReplace?e.replace(/\t/g,g.tabReplace):e)):t
   ;var t},highlightBlock:E,configure:e=>{
   e.useBR&&($("10.3.0","'useBR' will be removed entirely in v11.0"),
   $("10.3.0","Please see https://github.com/highlightjs/highlight.js/issues/2559")),
