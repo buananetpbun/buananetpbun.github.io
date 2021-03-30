@@ -69,3 +69,14 @@ font-weight: bold;
 color:#8E2DE2 !important;
 text-decoration:none !important;
 }
+button {
+color: #fff;
+background-color: #8E2DE2;
+border-color: #8E2DE2;
+border-radius: 2px;
+border:none;
+padding:5px;
+width:70px;
+font-size:16px;
+font-weight:bold;
+}
