@@ -47,3 +47,19 @@ color:#111 !important;
 text-decoration:none !important;
 font-size:30px;
 }
+.header{
+height:auto; 
+width:100%;
+padding:10px;
+background: #8E2DE2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color:#fff;
+border-top:1px solid #ccc;
+border-left:1px solid #ccc;
+border-right:1px solid #ccc;
+}
+.header a{
+color:#8E2DE2 !important;
+text-decoration:none !important;
+}
