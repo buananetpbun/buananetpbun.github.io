@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Auto Connect to Internet With DHCP Client - MikroTik Script RouterOS</h1>
 <pre>The MikroTik RouterOS DHCP client may be enabled on any Ethernet-like interface at a time. The client will accept an address, netmask, default gateway, and two dns server addresses. The received IP address will be added to the interface with the respective netmask. The default gateway will be added to the routing table as a dynamic entry. Should the DHCP client be disabled or not renew an address, the dynamic default route will be removed. If there is already a default route installed prior the DHCP client obtains one, the route obtained by the DHCP client would be shown as invalid.
 
@@ -21,9 +22,9 @@ Add a DHCP client on ether1 (example: ether1 is a WAN/ISP) interface
 <code class="routeros">/ip dhcp-client add interface=ether1 disabled=no</code>
 Credit: www.o-om.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

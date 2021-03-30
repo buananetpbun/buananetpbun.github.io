@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Force Disconnect Wireless Stations with Low CCQ - MikroTik Script RouterOS</h1>
 <pre>This script checks all registered stations and forces a disconnect for any station(s) which has a CCQ level less than that specified below (in this example it's set to 70% for TX and for RX).
 
@@ -24,11 +25,11 @@ On your APs:
 
 <code class="routeros">/system script 
 add name="station-check" source="/interface \
-wireless registration-table\r\n:foreach i in=[ /interface wireless registration-table find ap=no] \
-do={\r\n   :if ([get \$i tx-ccq] < \"70\" && [get \$i rx-ccq] < \"70\") do={\r\n :log warning \
+wireless registration-table\r:foreach i in=[ /interface wireless registration-table find ap=no] \
+do={\r   :if ([get \$i tx-ccq] < \"70\" && [get \$i rx-ccq] < \"70\") do={\r :log warning \
 ([get \$i radio-name] . \" was disconnected due to low CCQ - Tx: \" . [get \$i tx-ccq] . \"% / Rx: \" . \
-[get \$i rx-ccq] . \"%\")\r\n /interface wireless registration-table remove \$i\r\n \
-:delay 5s\r\n }\r\n}"</code>
+[get \$i rx-ccq] . \"%\")\r /interface wireless registration-table remove \$i\r \
+:delay 5s\r }\r}"</code>
 Important: Remember that non-MikroTik stations will not report back their received CCQ, so the TX-CCQ will always be 0%.
 
 Once you have configured the script, set up a scheduler to run the script everytime you want it to check for low signals. In the example below, the script will run every day at 1 second after midnight!
@@ -40,10 +41,10 @@ add disabled=no interval=1d name="station-check-schedule" on-event="/system scri
    station-check ;" start-time=00:00:01</code>
 Credit: wiki.mikrotik.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+
 <br>
 <div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

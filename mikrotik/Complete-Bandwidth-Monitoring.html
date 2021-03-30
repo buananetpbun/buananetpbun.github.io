@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Complete Bandwidth Monitoring - MikroTik Script RouterOS</h1>
 <pre>
 Complete Bandwidth Monitoring 
@@ -344,34 +345,34 @@ Then copy and paste the script below into the VIEW-LOG-NOTE scheduler file
 :local logcontenttemp "" 
 :local logcontent "" 
 :set logcontenttemp ""
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "#######################################################"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "BANDWIDTH MONITORING [ Router Identity: $[/system identity get name] ]"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "#######################################################"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "Interface Monitoring For: $INTMon"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "Total RX = $RXGB GB / $RXMB MB / $RXTot Bytes"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "Total TX = $TXGB GB / $TXMB MB / $TXTot Bytes"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "Total (RX+TX) = $RXTXGB GB / $RXTXMB MB / $RXTX Bytes"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "Used Quota on This Month $RXTXGB GB = $percent% from $TOTQuota GB"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :set logcontenttemp "#######################################################"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 :if ($RXTXGB >= $TOTQuota) do={
 :set logcontenttemp "Your Quota is OVERLOAD :("
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 } else={
 :set logcontenttemp "Your Quota is SAVE :)"
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 }
 :set logcontenttemp ""
-:set logcontent ("$logcontent" ."$logcontenttemp" ."\n")
+:set logcontent ("$logcontent" ."$logcontenttemp" ."")
 /system note set note=$logcontent
 # Show Info on the Mikrotik LOG
 ################################################################
@@ -388,9 +389,9 @@ good luck, good luck :)
 
 Credit: <a href="https://www.o-om.com/2017/06/mikrotik-bandwidth-monitoring-script.html">https://www.o-om.com/2017/06/mikrotik-bandwidth-monitoring-script.html</a>
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

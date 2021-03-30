@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Use Host Names In Firewall Rules - MikroTik Script RouterOS</h1>
 <pre>The problem
 You would like to create firewall filter rules which refer to host names rather than IP addresses. This may be, for example, because the host name is dynamic such as would be created by a dyndns service. For several very good reasons, it is not possible to put host names directly into firewall rules. For example, the following doesn't work:
@@ -47,30 +48,30 @@ As things stand, nothing will be achieved by this rule since the IP addresses al
 <code class="routeros"> /system script add \
    name=resolvehostnames policy=write,read \
    source="# define variables\r\
-   \n:local list\r\
-   \n:local comment\r\
-   \n:local newip\r\
-   \n:local oldip\r\
-   \n\r\
-   \n# Loop through each entry in the address list.\r\
-   \n:foreach i in=[/ip firewall address-list find] do={\r\
-   \n\r\
-   \n# Get the first five characters of the list name\r\
-   \n  :set list [:pick [/ip firewall address-list get \$i list] 0 5]\r\
-   \n\r\
-   \n# If they're 'host_', then we've got a match - process it\r\
-   \n  :if (\$list = \"host_\") do={\r\
-   \n\r\
-   \n# Get the comment for this address list item (this is the host name to u\
+   :local list\r\
+   :local comment\r\
+   :local newip\r\
+   :local oldip\r\
+   \r\
+   # Loop through each entry in the address list.\r\
+   :foreach i in=[/ip firewall address-list find] do={\r\
+   \r\
+   # Get the first five characters of the list name\r\
+     :set list [:pick [/ip firewall address-list get \$i list] 0 5]\r\
+   \r\
+   # If they're 'host_', then we've got a match - process it\r\
+     :if (\$list = \"host_\") do={\r\
+   \r\
+   # Get the comment for this address list item (this is the host name to u\
    se)\r\
-   \n    :set comment [/ip firewall address-list get \$i comment]\r\
-   \n    :set oldip [/ip firewall address-list get \$i address]\r\
-   \n\r\
-   \n# Resolve it and set the address list entry accordingly.\r\
-   \n    : if (\$newip != \$oldip) do={:set newip [:resolve \$comment]\r\
-   \n    /ip firewall address-list set \$i address=\$newip}\r\
-   \n    }\r\
-   \n  }"</code>
+       :set comment [/ip firewall address-list get \$i comment]\r\
+       :set oldip [/ip firewall address-list get \$i address]\r\
+   \r\
+   # Resolve it and set the address list entry accordingly.\r\
+       : if (\$newip != \$oldip) do={:set newip [:resolve \$comment]\r\
+       /ip firewall address-list set \$i address=\$newip}\r\
+       }\r\
+     }"</code>
 Once the script is in place, it can be scheduled. Try every hour to see if that gives you what you need:
 
 <code class="routeros">/system scheduler add \
@@ -83,9 +84,9 @@ Also, note that for obvious reasons, this may not work for host names which reso
 
 Credit: wiki.mikrotik.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

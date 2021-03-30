@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>  
 </head>
 <body>
+<div id="hidelink"></div>
 
 <h1>LB ECMP Failover Script Failover - Mikrotik Script RouterOS</h1><pre>
 How to do automatic ECMP failover
@@ -55,7 +56,7 @@ down-script="/ip route set \[find comment=\"Default Route To Internet\"\] \
 gateway=10.0.0.12 comment="" disabled=no 
 add host=1.1.1.12 timeout=2s interval=30s up-script="/ip route set \
 \[find comment=\"SMTP Traffic out\"\] gateway=1.0.0.12" down-script="/ip \
-\n" \route set \[find comment=\"SMTP Traffic out\"\] gateway=10.0.0.13
+" \route set \[find comment=\"SMTP Traffic out\"\] gateway=10.0.0.13
 comment="" disabled=no </code>
 
 The problem is that the ECMP http route will still be active, therefore http traffic wont work, so I have 2 scripts to check if both gateways are up or down and take action accordingly:
@@ -64,11 +65,11 @@ The problem is that the ECMP http route will still be active, therefore http tra
 add name="ecmp-startup" source=":if ([/ping 1.1.1.12 count=1]=1 && \
 [/ping 1.1.1.13 count=1]=1 && [/ip route get [find \
 comment=\"ECMP Route For HTTP\"] disabled]=true) do={ :log info \"Both gateways up\" \
-\n/ip route set [find routing-mark=ecmp-http-route] \
+/ip route set [find routing-mark=ecmp-http-route] \
 disabled=no}" policy=ftp,reboot,read,write,policy,test,winbox,password 
 add name="ecmp-shutdown" source=":if ([/ping 1.1.1.12 count=1]=1 && \
 [/ping 1.1.1.13 count=1]=0) do={ :log info \"Gateway down\"\
-\n/ip route set [find routing-mark=ecmp-http-route] \
+/ip route set [find routing-mark=ecmp-http-route] \
 disabled=yes}" policy=ftp,reboot,read,write,policy,test,winbox,password
 Hi I found this error while trying to use this script, what worked for me was
 ecmp start/shut script. Looks like  in the start and shut script (") are missing
@@ -91,9 +92,9 @@ script run ecmp-startup" start-date=jan/01/1970 start-time=00:00:00 \
 interval=30s comment="" disabled=no</code>
 </pre>
 <br>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

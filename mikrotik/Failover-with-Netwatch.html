@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Failover with Netwatch - MikroTik Script RouterOS</h1>
 <pre>The purpose of this script is to provide an immediate solution to service outages provided by ISPs. It is designed for a topology where there are 2 connections with different ISPs, one of them provides us with fixed IP while the other with Dynamic IP. It is important to clarify that not just any DNS can be used for any ISP. Each ISP has its own DNS service, that is why if we drop a connection, it is likely that ISP2 will not be recognized by ISP1's DNS and will not allow us to resolve DNS requests. The solution to this would be to use public DNS servers. OpenDNS
 
@@ -21,36 +22,36 @@ Well, for those who love Copy & Paste, I leave the code below; later the operati
 <code class="routeros">/tool netwatch
 add comment=Test1 disabled=no down-script="/tool netwatch set [find comment=\"Test2\"] disabl\
 ed=no\r\
-\n/tool netwatch set [find comment=\"Test1\"] disabled=yes" host=74.125.47.104 interval=\
+/tool netwatch set [find comment=\"Test1\"] disabled=yes" host=74.125.47.104 interval=\
 30s timeout=2s up-script=""
 add comment=Test2 disabled=yes down-script=":global GA\r\
-\n:global GA [/ip dhcp-client get \"ether2 Fibertel\" gateway ]\r\
-\n/ip route set [find comment=\"Fibertel\"] gateway=\$GA\r\
-\n/ip route set [find comment=\"Telefonica\"] disabled=yes\r\
-\n/ip route set [find comment=\"Fibertel\"] disabled=no\r\
-\n/tool e-mail send to=\"DIRECCIONDEMAIL\" body=\"Conexion con Telefonica Caid\
+:global GA [/ip dhcp-client get \"ether2 Fibertel\" gateway ]\r\
+/ip route set [find comment=\"Fibertel\"] gateway=\$GA\r\
+/ip route set [find comment=\"Telefonica\"] disabled=yes\r\
+/ip route set [find comment=\"Fibertel\"] disabled=no\r\
+/tool e-mail send to=\"DIRECCIONDEMAIL\" body=\"Conexion con Telefonica Caid\
 a, Pasado a Fibertel, Ver Falla\" subject=\"Caida de Servicio Telefonica\"\r\
-\n/tool netwatch set [find comment=\"Test3\"] disabled=no\r\
-\n/tool netwatch set [find comment=\"Test2\"] disabled=yes" host=209.191.93.52 interval=\
+/tool netwatch set [find comment=\"Test3\"] disabled=no\r\
+/tool netwatch set [find comment=\"Test2\"] disabled=yes" host=209.191.93.52 interval=\
 30s timeout=2s up-script=":delay 10ms\r\
-\n:log warning \"Iniciado Test2\"\r\
-\n/tool netwatch set [find comment=\"Test1\"] disabled=no\r\
-\n/tool netwatch set [find comment=\"Test2\"] disabled=yes"
+:log warning \"Iniciado Test2\"\r\
+/tool netwatch set [find comment=\"Test1\"] disabled=no\r\
+/tool netwatch set [find comment=\"Test2\"] disabled=yes"
 add comment=Test3 disabled=yes down-script="/tool netwatch set [find comment=\"Test4\"] disab\
 led=no\r\
-\n/tool netwatch set [find comment=\"Test3\"] disabled=yes" host=64.233.169.104 \
+/tool netwatch set [find comment=\"Test3\"] disabled=yes" host=64.233.169.104 \
 interval=30s timeout=2s up-script=""
 add comment=Test4 disabled=yes down-script="/ip route set [find comment=\"Fibertel\"] disable\
 d=yes\r\
-\n/ip route set [find comment=\"Telefonica\"] disabled=no\r\
-\n/tool e-mail send to=\"DIRECCIONDEMAIL\" body=\"Cayo Telefonica y despues Fi\
+/ip route set [find comment=\"Telefonica\"] disabled=no\r\
+/tool e-mail send to=\"DIRECCIONDEMAIL\" body=\"Cayo Telefonica y despues Fi\
 bertel, Intentando Volver a Telefonica\" subject=\"Caida de Servicio tipo 2\"\r\
-\n/tool netwatch set [find comment=\"Test1\"] disabled=no\r\
-\n/tool netwatch set [find comment=\"Test4\"] disabled=yes" host=209.191.93.55 interval=\
+/tool netwatch set [find comment=\"Test1\"] disabled=no\r\
+/tool netwatch set [find comment=\"Test4\"] disabled=yes" host=209.191.93.55 interval=\
 30s timeout=2s up-script=":delay 10ms\r\
-\n:log warning \"Iniciado Test4\"\r\
-\n/tool netwatch set [find comment=\"Test3\"] disabled=no\r\
-\n/tool netwatch set [find comment=\"Test4\"] disabled=yes"</code>
+:log warning \"Iniciado Test4\"\r\
+/tool netwatch set [find comment=\"Test3\"] disabled=no\r\
+/tool netwatch set [find comment=\"Test4\"] disabled=yes"</code>
 Description of operation:
 
 The solution is armed with 4 tests or 4 rules in netwatch.
@@ -63,10 +64,10 @@ Test3 and Test4 serve the same function as Test1 and Test2 respectively. Only in
 
 Credit: wiki.mikrotik.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+
 <br>
 <div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

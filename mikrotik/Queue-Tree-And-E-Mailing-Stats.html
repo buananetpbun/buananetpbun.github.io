@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Queue Tree And E-Mailing Stats - MikroTik Script RouterOS</h1>
 <pre>The goal
 The goal is to limit every user to specific download/upload speeds, to guarantee specific download/upload speeds to each user and e-mail yourself the stats of users that exceed 1MB. Feel free to change the value to any desired value.
@@ -63,12 +64,12 @@ Now to loop through queues and find out who is using more bandwidth. (This part 
             :if ($megsd > 0) do={
                 :if ($megsd > 1000) do={ :set megsd ($megsd / 1000); :set megsd "$megsd Gb" } else={ :set megsd "$megsd Mb"}
                 :set logmsg ("D0_$i: $megsd");
-                :set resulter ("$resulter \n User: 10.0.3.$i Download: $megsd")
+                :set resulter ("$resulter  User: 10.0.3.$i Download: $megsd")
             }
             :if ($megsu > 0) do={
                 :if ($megsu > 1000) do={ :set megsu ($megsu / 1000); :set megsu "$megsu Gb" } else={ :set megsu "$megsu Mb"}
                 :set logmsg ("$logmsg U0_$i: $megsu");
-                :if ($logmsg!="") do={:set resulter ("$resulter Upload: $megsu")} else={:set resulter ("$resulter \n User: 10.0.3.$i Upload: $megsu")}
+                :if ($logmsg!="") do={:set resulter ("$resulter Upload: $megsu")} else={:set resulter ("$resulter  User: 10.0.3.$i Upload: $megsu")}
             }
             :if ($logmsg!="") do={ :log info ($logmsg) }
         }
@@ -95,12 +96,12 @@ Since I am sure that all queues exist, so I don't have any error checking. If yo
             :if ($megsd > 0) do={
                 :if ($megsd > 1000) do={ :set megsd ($megsd / 1000); :set megsd "$megsd Gb" } else={ :set megsd "$megsd Mb"}
                 :set logmsg ("D0_$i: $megsd");
-                :set resulter ("$resulter \n User: 10.0.3.$i Download: $megsd")
+                :set resulter ("$resulter  User: 10.0.3.$i Download: $megsd")
             }
             :if ($megsu > 0) do={
                 :if ($megsu > 1000) do={ :set megsu ($megsu / 1000); :set megsu "$megsu Gb" } else={ :set megsu "$megsu Mb"}
                 :set logmsg ("$logmsg U0_$i: $megsu");
-                :if ($logmsg!="") do={:set resulter ("$resulter Upload: $megsu")} else={:set resulter ("$resulter \n User: 10.0.3.$i Upload: $megsu")}
+                :if ($logmsg!="") do={:set resulter ("$resulter Upload: $megsu")} else={:set resulter ("$resulter  User: 10.0.3.$i Upload: $megsu")}
             }
             :if ($logmsg!="") do={ :log info ($logmsg) }
         }
@@ -113,9 +114,9 @@ Make a schedule that runs every midnight.
 
 Credit: wiki.mikrotik.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

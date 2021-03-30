@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 
 <h1>Dynamic DNS Update Script for ChangeIP.com - MikroTik Script RouterOS</h1><pre>
 The following script should be created when you wish to update your ChangeIP.com Dynamic DNS account. Once created you should schedule this to run once in a while. The :global variables should be edited to include your unique username and password, interface name, etc.
@@ -103,81 +104,81 @@ You may copy and paste the script below into the terminal window to import a scr
 add name=HomingBeacon-Simple policy=\
     ftp,reboot,read,write,policy,test,winbox,password source="# Dynamic DNS Up\
     date / Simple Edition\r\
-    \n# Written by Sam Norris, ChangeIP.com\r\
-    \n# Copyright ChangeIP.com 2009\r\
-    \n# For support send mail to Support@ChangeIP.com\r\
-    \n#\r\
-    \n# 2009-06-22 RouterOS 3.25 Tested\r\
-    \n# 2009-10-05 RouterOS 4.01rc1 Tested\r\
-    \n#\r\
-    \n# OVERVIEW:         %\r\
-    \n#  This script will update a ChangeIP.com dynamic dns hostname\r\
-    \n#  with an ip address located directly on an interface.\r\
-    \n#                   %\r\
-    \n# NOTES:            %\r\
-    \n#  IF THIS SCRIPT DOES NOT PRODUCE ANY OUTPUT PLEASE COPY AND PASTE IT\r\
-    \n#  AGAIN.  THERE PROBABLY IS A LINE BREAK IN THE WRONG PLACE! Once you\r\
-    \n#  have created this script and tested that it works by running it\r\
-    \n#  manually you can schedule it to run every few minutes.\r\
-    \n#                   %\r\
-    \n# CONFIGURATION FIELD DEFINITIONS:\r\
-    \n#  ddnsuser:  Enter your ChangeIP.com user id.\r\
-    \n#  ddnspass:  Enter your ChangeIP.com password.\r\
-    \n#  ddnshost:  Enter the hostname (www.example.com) to update.\r\
-    \n#  ddnsinterface:  Enter a list of interface names - case sensative.\r\
-    \n#                   %\r\
-    \n#                   %\r\
-    \n#                   %\r\
-    \n#                   %\r\
-    \n#               %   %   %\r\
-    \n#                %  %  %\r\
-    \n#                 % % %\r\
-    \n#                   %\r\
-    \n# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\
-    \n# EDIT YOUR DETAILS / CONFIGURATION HERE\r\
-    \n# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\
-    \n:global ddnsuser \"YourChangeIPUserID\"\r\
-    \n:global ddnspass \"PASSWORD\"\r\
-    \n:global ddnshost \"MyRouterHostname.example.org\"\r\
-    \n:global ddnsinterface \"ether1\"\r\
-    \n# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\
-    \n# END OF USER DEFINED CONFIGURATION\r\
-    \n# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\
-    \n\r\
-    \n:global ddnssystem (\"mt-\" . [/system package get [/system package find\
+    # Written by Sam Norris, ChangeIP.com\r\
+    # Copyright ChangeIP.com 2009\r\
+    # For support send mail to Support@ChangeIP.com\r\
+    #\r\
+    # 2009-06-22 RouterOS 3.25 Tested\r\
+    # 2009-10-05 RouterOS 4.01rc1 Tested\r\
+    #\r\
+    # OVERVIEW:         %\r\
+    #  This script will update a ChangeIP.com dynamic dns hostname\r\
+    #  with an ip address located directly on an interface.\r\
+    #                   %\r\
+    # NOTES:            %\r\
+    #  IF THIS SCRIPT DOES NOT PRODUCE ANY OUTPUT PLEASE COPY AND PASTE IT\r\
+    #  AGAIN.  THERE PROBABLY IS A LINE BREAK IN THE WRONG PLACE! Once you\r\
+    #  have created this script and tested that it works by running it\r\
+    #  manually you can schedule it to run every few minutes.\r\
+    #                   %\r\
+    # CONFIGURATION FIELD DEFINITIONS:\r\
+    #  ddnsuser:  Enter your ChangeIP.com user id.\r\
+    #  ddnspass:  Enter your ChangeIP.com password.\r\
+    #  ddnshost:  Enter the hostname (www.example.com) to update.\r\
+    #  ddnsinterface:  Enter a list of interface names - case sensative.\r\
+    #                   %\r\
+    #                   %\r\
+    #                   %\r\
+    #                   %\r\
+    #               %   %   %\r\
+    #                %  %  %\r\
+    #                 % % %\r\
+    #                   %\r\
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\
+    # EDIT YOUR DETAILS / CONFIGURATION HERE\r\
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\
+    :global ddnsuser \"YourChangeIPUserID\"\r\
+    :global ddnspass \"PASSWORD\"\r\
+    :global ddnshost \"MyRouterHostname.example.org\"\r\
+    :global ddnsinterface \"ether1\"\r\
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\
+    # END OF USER DEFINED CONFIGURATION\r\
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\
+    \r\
+    :global ddnssystem (\"mt-\" . [/system package get [/system package find\
     \_name=system] version] )\r\
-    \n:global ddnsip [ /ip address get [/ip address find interface=\$ddnsinter\
+    :global ddnsip [ /ip address get [/ip address find interface=\$ddnsinter\
     face] address ]\r\
-    \n:global ddnslastip\r\
-    \n\r\
-    \n:if ([:len [/interface find name=\$ddnsinterface]] = 0 ) do={ :log info \
+    :global ddnslastip\r\
+    \r\
+    :if ([:len [/interface find name=\$ddnsinterface]] = 0 ) do={ :log info \
     \"DDNS: No interface named \$ddnsinterface, please check configuration.\" \
     }\r\
-    \n\r\
-    \n:if ([ :typeof \$ddnslastip ] = \"nothing\" ) do={ :global ddnslastip 0.\
+    \r\
+    :if ([ :typeof \$ddnslastip ] = \"nothing\" ) do={ :global ddnslastip 0.\
     0.0.0/0 }\r\
-    \n\r\
-    \n:if ([ :typeof \$ddnsip ] = \"nothing\" ) do={\r\
-    \n\r\
-    \n:log info (\"DDNS: No ip address present on \" . \$ddnsinterface . \", p\
+    \r\
+    :if ([ :typeof \$ddnsip ] = \"nothing\" ) do={\r\
+    \r\
+    :log info (\"DDNS: No ip address present on \" . \$ddnsinterface . \", p\
     lease check.\")\r\
-    \n\r\
-    \n} else={\r\
-    \n\r\
-    \n  :if (\$ddnsip != \$ddnslastip) do={\r\
-    \n\r\
-    \n    :log info \"DDNS: Sending UPDATE!\"\r\
-    \n    :log info [ :put [/tool dns-update name=\$ddnshost address=[:pick \$\
+    \r\
+    } else={\r\
+    \r\
+      :if (\$ddnsip != \$ddnslastip) do={\r\
+    \r\
+        :log info \"DDNS: Sending UPDATE!\"\r\
+        :log info [ :put [/tool dns-update name=\$ddnshost address=[:pick \$\
     ddnsip 0 [:find \$ddnsip \"/\"] ] key-name=\$ddnsuser key=\$ddnspass ] ]\r\
-    \n    :global ddnslastip \$ddnsip\r\
-    \n\r\
-    \n  } else={ \r\
-    \n\r\
-    \n    :log info \"DDNS: No changes necessary.\"\r\
-    \n\r\
-    \n  }\r\
-    \n\r\
-    \n}"
+        :global ddnslastip \$ddnsip\r\
+    \r\
+      } else={ \r\
+    \r\
+        :log info \"DDNS: No changes necessary.\"\r\
+    \r\
+      }\r\
+    \r\
+    }"
 
 /system scheduler
 add comment="" disabled=no interval=5m name=DDNS on-event=\
@@ -278,64 +279,64 @@ For those of you that like to use the CLI, and want to make sure you get a very 
 add name=HomingBeaconDynamicDNSUpdater policy=\
     ftp,reboot,read,write,policy,test,winbox,password,sniff \
     source="# Define User Variables\r\
-    \n:global ddnsuser \"CHANGEIPUSERID\"\r\
-    \n:global ddnspass \"CHANGEIPPASSWORD\"\r\
-    \n:global ddnshost \"FREEHOSTNAME.TOUPDATE.TLD\"\r\
-    \n\r\
-    \n# Define Global Variables\r\
-    \n:global ddnsip\r\
-    \n:global ddnslastip\r\
-    \n:if ([ :typeof \$ddnslastip ] = nil ) do={ :global ddnslas\
-    tip \"0\" }\r\
-    \n\r\
-    \n:global ddnsinterface\r\
-    \n:global ddnssystem (\"mt-\" . [/system package get system \
-    version] )\r\
-    \n\r\
-    \n# Define Local Variables\r\
-    \n:local int\r\
-    \n\r\
-    \n# Loop thru interfaces and look for ones containing\r\
-    \n# default gateways without routing-marks\r\
-    \n:foreach int in=[/ip route find dst-address=0.0.0.0/0 acti\
-    ve=yes ] do={ \r\
-    \n  :if ([:typeof [/ip route get \$int routing-mark ]] != st\
-    r ) do={\r\
-    \n     :global ddnsinterface [/ip route get \$int interface]\
+    :global ddnsuser \"CHANGEIPUSERID\"\r\
+    :global ddnspass \"CHANGEIPPASSWORD\"\r\
+    :global ddnshost \"FREEHOSTNAME.TOUPDATE.TLD\"\r\
     \r\
-    \n  } \r\
-    \n}\r\
-    \n\r\
-    \n# Grab the current IP address on that interface.\r\
-    \n:global ddnsip [ /ip address get [/ip address find interfa\
+    # Define Global Variables\r\
+    :global ddnsip\r\
+    :global ddnslastip\r\
+    :if ([ :typeof \$ddnslastip ] = nil ) do={ :global ddnslas\
+    tip \"0\" }\r\
+    \r\
+    :global ddnsinterface\r\
+    :global ddnssystem (\"mt-\" . [/system package get system \
+    version] )\r\
+    \r\
+    # Define Local Variables\r\
+    :local int\r\
+    \r\
+    # Loop thru interfaces and look for ones containing\r\
+    # default gateways without routing-marks\r\
+    :foreach int in=[/ip route find dst-address=0.0.0.0/0 acti\
+    ve=yes ] do={ \r\
+      :if ([:typeof [/ip route get \$int routing-mark ]] != st\
+    r ) do={\r\
+         :global ddnsinterface [/ip route get \$int interface]\
+    \r\
+      } \r\
+    }\r\
+    \r\
+    # Grab the current IP address on that interface.\r\
+    :global ddnsip [ /ip address get [/ip address find interfa\
     ce=\$ddnsinterface ] address ]\r\
-    \n\r\
-    \n# Did we get an IP address to compare\?\r\
-    \n:if ([ :typeof \$ddnsip ] = nil ) do={\r\
-    \n   :log info (\"DDNS: No ip address present on \" . \$ddns\
+    \r\
+    # Did we get an IP address to compare\?\r\
+    :if ([ :typeof \$ddnsip ] = nil ) do={\r\
+       :log info (\"DDNS: No ip address present on \" . \$ddns\
     interface . \", please check.\")\r\
-    \n} else={\r\
-    \n\r\
-    \n  :if (\$ddnsip != \$ddnslastip) do={\r\
-    \n\r\
-    \n    :log info \"DDNS: Sending UPDATE!\"\r\
-    \n    :log info [ :put [/tool dns-update name=\$ddnshost add\
+    } else={\r\
+    \r\
+      :if (\$ddnsip != \$ddnslastip) do={\r\
+    \r\
+        :log info \"DDNS: Sending UPDATE!\"\r\
+        :log info [ :put [/tool dns-update name=\$ddnshost add\
     ress=[:pick \$ddnsip 0 [:find \$ddnsip \"/\"] ] key-name=\$d\
     dnsuser key=\$ddnspass ] ]\r\
-    \n    :global ddnslastip \$ddnsip\r\
-    \n\r\
-    \n  } else={ \r\
-    \n    :log info \"DDNS: No update required.\"\r\
-    \n  }\r\
-    \n\r\
-    \n}\r\
-    \n\r\
-    \n# End of script"</code>
+        :global ddnslastip \$ddnsip\r\
+    \r\
+      } else={ \r\
+        :log info \"DDNS: No update required.\"\r\
+      }\r\
+    \r\
+    }\r\
+    \r\
+    # End of script"</code>
 Credit: https://wiki.mikrotik.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

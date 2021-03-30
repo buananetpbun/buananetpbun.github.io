@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Protect Modem And Webfig Pages Using Internal Proxy - MikroTik Script RouterOS</h1>
 <pre>This trick is to display the spice of the message page for those who want to try nosy to enter the modem or webfig Mikrotik page so that it is exciting and different, here we only use the error page on the proxy internal proxy.
 
@@ -37,8 +38,8 @@ set enabled=yes port=3128</code>
 <code class="routeros">/system scheduler
 add name=GET-IP-PUBLIC on-event="/tool fetch url=\"http://myip.dnsomatic.com/mypub\
 licip.txt\" mode=http\r\
-\n:local mypublicip [file get mypublicip.txt contents ]\r\
-\n/ip firewall nat set [find comment=\"Modem Protect\"] dst-address=\$mypu\
+:local mypublicip [file get mypublicip.txt contents ]\r\
+/ip firewall nat set [find comment=\"Modem Protect\"] dst-address=\$mypu\
 blicip" policy=\
 ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon \
 start-time=startup</code>
@@ -120,9 +121,9 @@ contact: 08132829XXX&lt;br /&gt;e-mail: XXXX@gmail.com
 
 Credit: www.o-om.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

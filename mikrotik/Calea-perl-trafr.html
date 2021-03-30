@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>   
 </head>
 <body>
+<div id="hidelink"></div>
 <h1>Calea perl trafr - Mikrotik Script RouterOS</h1>
 <pre>Calea perl trafr
 System independent trafr script
@@ -44,9 +45,9 @@ my ($err,$dumpOUT,$errdumpOUT,$count,$pcap,$dumper,$errdumper);
 getopt('rcs');
 getopts('d');
 
-my $dumpIN = $opt_r or die "No input file!\nUse -r\n";	# input pcap file
+my $dumpIN = $opt_r or die "No input file!Use -r";	# input pcap file
 my $debug = $opt_d; # do you need debug?
-print "test: ".$debug."\n" if ($debug);
+print "test: ".$debug."" if ($debug);
 if (!$opt_c) { $count = -1}
 else { $count = $opt_c}	# how many packets to process? (for debug)
 my $counter = 1;
@@ -93,7 +94,7 @@ or die "rm -f ".$errdumpOUT." failed: $?";
 # --- TZSP head remove function
 sub headoff_tzsp {
 
-print STDOUT "\n=============================================================================\n" if ($debug);
+print STDOUT "=============================================================================" if ($debug);
 my($user_data, $header, $packet) = @_;
 
 # --- Decapsulate packet
@@ -121,7 +122,7 @@ return;
 #        $ip->{'src_ip'}, ":", $udp->{'src_port'}, " -> ",
 #        $ip->{'dest_ip'}, ":", $udp->{'dest_port'}, 
 #	" length: ", $udp->{'len'}, " chksum: ",$udp->{'cksum'},
-#	" fragment: ",$ip->{'foffset'},"\n" if ($debug);
+#	" fragment: ",$ip->{'foffset'},"" if ($debug);
 #    print STDOUT HexDump $udp->{data} if($debug);
 
 # --- Cut TZSP bytes
@@ -145,7 +146,7 @@ my $dummy=Net::Pcap::open_dead($linktype,2500);
 $dumper = Net::Pcap::pcap_dump_open($dummy, $dumpOUT);
 }
 } else {
-print STDERR $counter," Maybe wrong tzsp header? -> ",unpack ('H*',$tzspheader),"\n" if ($debug);
+print STDERR $counter," Maybe wrong tzsp header? -> ",unpack ('H*',$tzspheader),"" if ($debug);
 Net::Pcap::pcap_dump($errdumper, $header, $packet) if ($debug);
 $counter++;
 return;
@@ -163,15 +164,15 @@ if (!$observedIP || ( $iptzsp->{'src_ip'} eq $observedIP or $iptzsp->{'dest_ip'}
 Net::Pcap::pcap_dump($dumper, $header, $tzspdata);
 }
 else {
-print STDERR $counter," Maybe wrong include packet? ",$iptzsp->{'src_ip'}," -> ",$iptzsp->{'dest_ip'},"\n";
+print STDERR $counter," Maybe wrong include packet? ",$iptzsp->{'src_ip'}," -> ",$iptzsp->{'dest_ip'},"";
 }
 $counter++;
 } </code>
 Credit: https://wiki.mikrotik.com/wiki/Calea_perl_trafr
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Send Email About Reboot - MikroTik Script RouterOS</h1>
 <pre>This script is meant for being run on router startup (using scheduler). Script sends an email with time of router reboot and entire log once 90 seconds have been passed since initial time synchronization from NTP. Besides event about reboot is logged once time has been synchronized from NTP.
 
@@ -21,9 +22,9 @@
 /log info "time updated; uptime: $[/system resource get uptime]"
 :local es "$[/system identity get name] rebooted on $[/system clock get date] $[/system clock get time] uptime $[/system resource get uptime]"
 :delay 90s
-:local eb "Log contents (with 90 seconds delay):\r\n"
+:local eb "Log contents (with 90 seconds delay):\r"
 :foreach le in=[/log print as-value] do={
-  :set eb ($eb.[:tostr [($le->"time")]]." ".[:tostr [($le->"topics")]].": ".[:tostr [($le->"message")]]."\r\n")
+  :set eb ($eb.[:tostr [($le->"time")]]." ".[:tostr [($le->"topics")]].": ".[:tostr [($le->"message")]]."\r")
 }
 /tool e-mail send to="enter_your_email_here@example.com" subject=$es body=$eb</code>
 This script helps to keep track of router reboots (e.g. of reboots caused by power interruptions).
@@ -34,10 +35,10 @@ NB Script has not been tested with logging to disk enabled. In case time synchro
 
 Credit: wiki.mikrotik.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+
 <br>
 <div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

@@ -2206,7 +2206,7 @@ under `contains` instead of defining explicit named submodes in the main array:
     contains: [
       'string',
       'number',
-      {begin: '\\n', end: hljs.IMMEDIATE_RE}
+      {begin: '\', end: hljs.IMMEDIATE_RE}
     ]
 
 This is useful for auxiliary modes needed only in one place to define parsing.

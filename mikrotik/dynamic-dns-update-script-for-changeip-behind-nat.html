@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 
 <h1>Dynamic DNS Update Script for ChangeIP behind NAT - MikroTik Script RouterOS</h1>
 <pre>This script is intended to update a ChangeIP.com Dynamic DNS account when your device is behind nat.
@@ -56,36 +57,36 @@ add name=DDNS policy=\
     ftp,reboot,read,write,policy,test,winbox,password,sniff,sensitive,api \
     source="# Dynamic DNS for ChangeIP.com behind NA\
     T\r\
-    \n# Modified by Jorge Amaral, officelan.pt\r\
-    \n# For support send mail to support at offficelan dot pt\r\
-    \n#\r\
-    \n# The original script was written by \"webasdf\" on the Mikrotik foruns, i just modified it to work with ChangeIP.com\r\
-    \n#\r\
-    \n# Here is where you need to set your definitions\r\
-    \n:local user \"user\"\r\
-    \n:local pass \"pass\"\r\
-    \n:local host \"host\"\r\
-    \n##############\r\
-    \n##############\r\
-    \n:global lastwanip;\r\
-    \n:if ([ :typeof \$lastwanip ] = \"nothing\" ) do={ :global lastwanip 0.0.0.0 };\r\
-    \n:local wanip [:resolve \$host];\r\
-    \n:if ( \$wanip != \$lastwanip ) do={\r\
-    \n\t/tool fetch mode=http address=\"checkip.dyndns.org\" src-path=\"/\" dst-path=\"/dyndns.checkip.html\"\r\
-    \n\t:local result [/file get dyndns.checkip.html contents]\r\
-    \n\t:local resultLen [:len \$result]\r\
-    \n\t:local startLoc [:find \$result \": \" -1]\r\
-    \n\t:set startLoc (\$startLoc + 2)\r\
-    \n\t:local endLoc [:find \$result \"</body>\" -1]\r\
-    \n\t:local currentIP [:pick \$result \$startLoc \$endLoc]\r\
-    \n\t:set lastwanip \$currentIP;\r\
-    \n\t:put [/tool dns-update name=\$host address=\$currentIP key-name=\$user key=\$pass ]\r\
-    \n}"</code>
+    # Modified by Jorge Amaral, officelan.pt\r\
+    # For support send mail to support at offficelan dot pt\r\
+    #\r\
+    # The original script was written by \"webasdf\" on the Mikrotik foruns, i just modified it to work with ChangeIP.com\r\
+    #\r\
+    # Here is where you need to set your definitions\r\
+    :local user \"user\"\r\
+    :local pass \"pass\"\r\
+    :local host \"host\"\r\
+    ##############\r\
+    ##############\r\
+    :global lastwanip;\r\
+    :if ([ :typeof \$lastwanip ] = \"nothing\" ) do={ :global lastwanip 0.0.0.0 };\r\
+    :local wanip [:resolve \$host];\r\
+    :if ( \$wanip != \$lastwanip ) do={\r\
+    \t/tool fetch mode=http address=\"checkip.dyndns.org\" src-path=\"/\" dst-path=\"/dyndns.checkip.html\"\r\
+    \t:local result [/file get dyndns.checkip.html contents]\r\
+    \t:local resultLen [:len \$result]\r\
+    \t:local startLoc [:find \$result \": \" -1]\r\
+    \t:set startLoc (\$startLoc + 2)\r\
+    \t:local endLoc [:find \$result \"</body>\" -1]\r\
+    \t:local currentIP [:pick \$result \$startLoc \$endLoc]\r\
+    \t:set lastwanip \$currentIP;\r\
+    \t:put [/tool dns-update name=\$host address=\$currentIP key-name=\$user key=\$pass ]\r\
+    }"</code>
 Credit: https://wiki.mikrotik.com	
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

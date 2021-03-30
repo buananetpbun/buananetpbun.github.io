@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Logging Average CCQ and Wireless Clients Stats - MikroTik Script RouterOS</h1>
 <pre>This simple little script logs the specified wireless interface's overall ccq, noise floor, and frequencies. Very useful if you set this up on a scheduler, say each minute and syslog it to a remote server for parsing/graphing etc. Also handy for remembering what your frequency was set at previously
 
@@ -50,17 +51,17 @@ SignalStrength: " . [int wir reg get $i signal-strength] . " SNR: " . [int wir r
  add disabled=no interval=6h name=log_reg_table on-event=log_client start-time=startup
  /system script
  add name=log_client policy=ftp,reboot,read,write,policy,test,winbox,password,sniff source=":foreach i in=[ /int wir reg find ap=no] do={\r\
-    \n:log info (\"Mikrotik \" . [/system identity get name] . \" AP: \" . [int wir reg get \$i interface] . \"  MAC: \" . [int wir reg get \$i mac-address ] . \" Last IP:\
+    :log info (\"Mikrotik \" . [/system identity get name] . \" AP: \" . [int wir reg get \$i interface] . \"  MAC: \" . [int wir reg get \$i mac-address ] . \" Last IP:\
      \" . [int wir reg get \$i last-ip] . \" RX: \" . [int wir reg get \$i rx-rate] . \" TX: \" . [int wir reg get \$i tx-rate] . \" Uptime: \" . [int wir reg get \$i upti\
     me] . \" LastACT: \" . [int wir reg get \$i last-activity] . \" SignalStrength: \" . [int wir reg get \$i signal-strength] . \" SNR: \" . [int wir reg get \$i signal-t\
     o-noise] . \" TX/RX-CCQ: \" . [int wir reg get \$i tx-ccq] . \" / \" . [int wir reg get \$i rx-ccq] . \" PThroughput: \" . [int wir reg get \$i  p-throughput] )\r\
-    \n}"</code>
+    }"</code>
 Credit: wiki.mikrotik.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+
 <br>
 <div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

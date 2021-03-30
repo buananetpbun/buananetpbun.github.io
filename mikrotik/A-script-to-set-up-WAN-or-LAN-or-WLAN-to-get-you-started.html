@@ -14,6 +14,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>A script to set up WAN/LAN/WLAN to get you started - Mikrotik Script RouterOS</h1>
 <pre>NOTE - This script only works on ROS 4.6-5.x it does not work on ROS 6.x
 In version 4.6, MikroTik deprecated some commands. The script has been edited to support the new command set and consequently won't work on any version prior to 4.6. The method of checking the version number appears to be broken in 5.0beta2 and so there is no longer any check before the script is run. If you run it on a version <4.6 or >=6, it'll just crash nastily instead.
@@ -434,12 +435,12 @@ I would appreciate feedback on this - if you have found it useful or if you have
 /system ntp client set enabled=yes mode=unicast primary-ntp="$ntptempa" secondary-ntp="$ntptempb";
 :log info "Creating script to update with NTP servers $ntpa and $ntpb";
 /system script add name=setntpip policy=ftp,write,winbox source="# Get the current client status\r\
-\n:local ntpclientstatus [/system ntp client get status];\r\
-\n:if (\$ntpclientstatus=\"synchronized\") do={:error \"Already synchronised\"};\r\
-\n# Resolve the two ntp hostnames\r\
-    \n:local ntpipa [:resolve \"$ntpa\"];\r\
-    \n:local ntpipb [:resolve \"$ntpb\"];\r\
-    \n/system ntp client set primary-ntp=\"\$ntpipa\" secondary-ntp=\"\$ntpipb\";";
+:local ntpclientstatus [/system ntp client get status];\r\
+:if (\$ntpclientstatus=\"synchronized\") do={:error \"Already synchronised\"};\r\
+# Resolve the two ntp hostnames\r\
+    :local ntpipa [:resolve \"$ntpa\"];\r\
+    :local ntpipb [:resolve \"$ntpb\"];\r\
+    /system ntp client set primary-ntp=\"\$ntpipa\" secondary-ntp=\"\$ntpipb\";";
 :log info "Scheduling script.";
 /system scheduler add comment="Set the correct NTP addresses" disabled=no interval=1h name=setntpservers on-event=setntpip \
     policy=write,test start-date=jan/01/1970 start-time=12:34:56;
@@ -522,8 +523,8 @@ add action=accept chain=output comment="Allow everything out" disabled=no
 # Configure scripts
 :log info "Creating automatic mail server setting script";
 /system script add name=setmail policy=ftp,write,winbox source="# Resolve the mail server hostname\r\
-  \n:local emailserverip [:resolve \"$emailserver\"];\r\
-  \n/tool e-mail set server=\"\$emailserverip\";"
+  :local emailserverip [:resolve \"$emailserver\"];\r\
+  /tool e-mail set server=\"\$emailserverip\";"
 :log info "Scheduling automatic mail server setting script to run hourly.";
 /system scheduler add comment="Set the correct mail server addresses" disabled=no interval=1h name=setmailserver on-event=setmail \
     policy=reboot,read,write,policy,test,password,sniff,sensitive start-date=jan/01/1970 start-time=12:34:56;
@@ -533,15 +534,15 @@ add action=accept chain=output comment="Allow everything out" disabled=no
 # Automatic backup
 :log info "Creating automatic backup script";
 /system script add name=makebackup policy=ftp,reboot,read,write,policy,test,winbox,password,sniff,sensitive source="\r\
-    \n:log info \"Starting Backup Script\";\r\
-    \n:local SYSname [/system identity get name];\r\
-    \n:put \"\$SYSname\";\r\
-    \n/export file=\"\$SYSname\";\r\
-    \n:log info \"Finished exporting configuration\";\r\
-    \n/tool e-mail send to=\"$emailto\" subject=(\$SYSname . \" backup\") file=(\$SYSname . \".rsc\");\r\
-	\n:delay 10s;\r\
-    \n/file remove (\$SYSname . \".rsc\");\r\
-    \n:log info \"Finished Backup Script\"";
+    :log info \"Starting Backup Script\";\r\
+    :local SYSname [/system identity get name];\r\
+    :put \"\$SYSname\";\r\
+    /export file=\"\$SYSname\";\r\
+    :log info \"Finished exporting configuration\";\r\
+    /tool e-mail send to=\"$emailto\" subject=(\$SYSname . \" backup\") file=(\$SYSname . \".rsc\");\r\
+	:delay 10s;\r\
+    /file remove (\$SYSname . \".rsc\");\r\
+    :log info \"Finished Backup Script\"";
 :log info "Scheduling automatic backup script to run weekly.";
 /system scheduler add comment="Set the correct mail server addresses" disabled=no interval=7d name=runbackup on-event=makebackup \
     policy=reboot,read,write,policy,test,password,sniff,sensitive start-date=jan/01/1970 start-time=12:34:56;
@@ -549,24 +550,24 @@ add action=accept chain=output comment="Allow everything out" disabled=no
 # System startup notification
 :log info "Creating system startup notification script";
 /system script add name=Systemstartupnotification policy=ftp,reboot,read,write,policy,test,winbox,sniff source="\r\
-    \n:local date ([:pick [/system clock get date] 7 11] . [:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6]);\r\
-    \n\r\
-    \n:log info \"Running system startup script\";\r\
-    \n\r\
-    \n:local filename ([/system identity get name] . \"Log-\" . \$date);\r\
-    \n:local fullfilename (\$filename . \".txt\");\r\
-    \n\r\
-    \n/log print file=\$fullfilename;\r\
-    \n\r\
-    \n/tool e-mail send to=\"$emailto\" subject=(\"Routerboard reboot - \" . \$filename) file=\$filename \\\r\
-	\n  body=\"RouterOS was restarted (RB rebooted?). Recent logs attached.\";\r\
-    \n\r\
-    \n:delay 10s;\r\
-    \n\r\
-    \n/file remove \$fullfilename;\r\
-    \n\r\
-    \n:log info (\"System Log emailed at \" . [/system clock get time] . \" \" . \$date);\r\
-    \n";
+    :local date ([:pick [/system clock get date] 7 11] . [:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6]);\r\
+    \r\
+    :log info \"Running system startup script\";\r\
+    \r\
+    :local filename ([/system identity get name] . \"Log-\" . \$date);\r\
+    :local fullfilename (\$filename . \".txt\");\r\
+    \r\
+    /log print file=\$fullfilename;\r\
+    \r\
+    /tool e-mail send to=\"$emailto\" subject=(\"Routerboard reboot - \" . \$filename) file=\$filename \\\r\
+	  body=\"RouterOS was restarted (RB rebooted?). Recent logs attached.\";\r\
+    \r\
+    :delay 10s;\r\
+    \r\
+    /file remove \$fullfilename;\r\
+    \r\
+    :log info (\"System Log emailed at \" . [/system clock get time] . \" \" . \$date);\r\
+    ";
 :log info "Scheduling system startup notification script to run on startup.";
 /system scheduler add comment="We've been rebooted" disabled=no interval=0s name=reboot on-event=Systemstartupnotification \
     policy=reboot,read,write,policy,test,password,sniff,sensitive start-time=startup;
@@ -575,21 +576,21 @@ add action=accept chain=output comment="Allow everything out" disabled=no
 # Restart PPPoE if the IP address isn't what we expect
 :if ($pppoeuse = "yes" and $pppoeipaddress != "") do={
 /system script add name=checkpppoe policy=ftp,reboot,read,write,policy,test,winbox,password,sniff,sensitive source="\r\
-    \n# Define the following two\r\
-    \n#\r\
-    \n# Name of the PPPoE interface\r\
-    \n:local pppoeint \"$pppoeinterface\";\r\
-    \n:local expectedip \"$pppoeipaddress/32\";\r\
-    \n\r\
-    \n:local curip [/ip address get [find interface=\$pppoeint] address];\r\
-    \n\r\
-    \n:if (\$curip != \$expectedip) do={\r\
-    \n  /interface disable \"\$pppoeint\";\r\
-    \n  :delay 1s;\r\
-    \n  /interface enable \"\$pppoeint\";\r\
-    \n}\r\
-    \n\r\
-    \n"
+    # Define the following two\r\
+    #\r\
+    # Name of the PPPoE interface\r\
+    :local pppoeint \"$pppoeinterface\";\r\
+    :local expectedip \"$pppoeipaddress/32\";\r\
+    \r\
+    :local curip [/ip address get [find interface=\$pppoeint] address];\r\
+    \r\
+    :if (\$curip != \$expectedip) do={\r\
+      /interface disable \"\$pppoeint\";\r\
+      :delay 1s;\r\
+      /interface enable \"\$pppoeint\";\r\
+    }\r\
+    \r\
+    "
 /system scheduler add comment="Check PPPoE" disabled=no interval=2m name=checkpppoe on-event=checkpppoe \
     policy=reboot,read,write,policy,test,password,sniff,sensitive start-date=jan/01/1970 start-time=12:34:56;
 }
@@ -600,9 +601,9 @@ add action=accept chain=output comment="Allow everything out" disabled=no
 :put "";</code>
 Credit: https://wiki.mikrotik.com/wiki/A_script_to_set_up_WAN/LAN/WLAN_to_get_you_started
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Auto Fix SNTP and Clock for Indonesia Timezone - MikroTik Script RouterOS</h1>
 <pre>Time is very important for computers to do the right thing. If your clock is wrong by a minute authenticator apps won't work. Wrong by an hour and Windows Networking has problems. Wrong by days and you risk SSL certificates expiring earlier (or later) than they should. VPNs may stop working. Datestamps on logs will be misleading. Generally, wrong time is a Bad Thing, and what is worse is the time the hotspot is out of sync with the Hotpspot Billing. Because Correct time is very important.
 
@@ -42,31 +43,31 @@ Complete Script With Scheduler
 <code class="routeros">/system scheduler
 add interval=1d name=SETTING-TIMEZONE on-event="#=============================\
 =================\r\
-\n# Auto Repair TimeZone and clock By BuanaNET\r\
-\n#==============================================\r\
-\n# Waktu Indonesia Barat (WIB)  = +07:00\r\
-\n# Waktu Indonesia Tengah (WITA) = +08:00\r\
-\n# Waktu Indonesia Timur (WIT)  = +09:00 \r\
-\n#==============================================\r\
-\n# Ganti \"+07:00\" sesuaikan dengan daerah masing-masing\r\
-\n#==============================================\r\
-\n/system clock manual set time-zone=\"+07:00\";\r\
-\n/system clock set time-zone-autodetec=no;\r\
-\n/system clock set time-zone-name=\"manual\";\r\
-\n/ip cloud set update-time=no;\r\
-\n:local ntpServer \"asia.pool.ntp.org\";\r\
-\n:local primary [resolve \$ntpServer];\r\
-\n:local secondary [resolve \$ntpServer];\r\
-\n/system ntp client set primary-ntp \$primary;\r\
-\n/system ntp client set secondary-ntp \$secondary;\r\
-\n/system ntp client set enabled=yes;" policy=\
+# Auto Repair TimeZone and clock By BuanaNET\r\
+#==============================================\r\
+# Waktu Indonesia Barat (WIB)  = +07:00\r\
+# Waktu Indonesia Tengah (WITA) = +08:00\r\
+# Waktu Indonesia Timur (WIT)  = +09:00 \r\
+#==============================================\r\
+# Ganti \"+07:00\" sesuaikan dengan daerah masing-masing\r\
+#==============================================\r\
+/system clock manual set time-zone=\"+07:00\";\r\
+/system clock set time-zone-autodetec=no;\r\
+/system clock set time-zone-name=\"manual\";\r\
+/ip cloud set update-time=no;\r\
+:local ntpServer \"asia.pool.ntp.org\";\r\
+:local primary [resolve \$ntpServer];\r\
+:local secondary [resolve \$ntpServer];\r\
+/system ntp client set primary-ntp \$primary;\r\
+/system ntp client set secondary-ntp \$secondary;\r\
+/system ntp client set enabled=yes;" policy=\
 ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup</code>
 Credit: www.o-om.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+
 <br>
 <div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

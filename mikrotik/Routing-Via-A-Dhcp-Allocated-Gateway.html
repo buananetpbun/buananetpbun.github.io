@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>  
 <body>
+<div id="hidelink"></div>
 <h1>Routing Via A Dhcp Allocated Gateway - MikroTik Script RouterOS</h1>
 <pre>The Explanation
 Sometimes a box can have a DHCP allocated address, but the gateway for that address is not automatically configured as the default gatway - perhaps you only want to route certain traffic out via that interface or maybe you have two routes out and need to route some traffic one way and others the other.
@@ -114,45 +115,45 @@ The Complete Script
 /system script add name="$interfaceid" \ 
 	policy="read,write" source="\
     :if ([/interface find name=\"$interfacename\"] = \"\") do={\r\
-    \n\t:error \"Target interface does not exist\";\r\
-    \n\t}\r\
-    \n\t\r\
-    \n:if ([/interface get [find name=\"$interfacename\"] disabled ]) do={\r\
-    \n\t:error \"Target interface $interfacename is disabled.\";\r\
-    \n\t}\r\
-    \n\r\
-    \n:if ([/ip dhcp-client find interface=\"$interfacename\"] = \"\") do={\r\
-    \n\t:error \"Target interface is not running a DHCP client.\";\r\
-    \n\t}\r\
-    \n\r\
-    \n:if ([/ip dhcp-client get [find interface=\"$interfacename\"] status] != \"bound\
+    \t:error \"Target interface does not exist\";\r\
+    \t}\r\
+    \t\r\
+    :if ([/interface get [find name=\"$interfacename\"] disabled ]) do={\r\
+    \t:error \"Target interface $interfacename is disabled.\";\r\
+    \t}\r\
+    \r\
+    :if ([/ip dhcp-client find interface=\"$interfacename\"] = \"\") do={\r\
+    \t:error \"Target interface is not running a DHCP client.\";\r\
+    \t}\r\
+    \r\
+    :if ([/ip dhcp-client get [find interface=\"$interfacename\"] status] != \"bound\
     \") do={\r\
-    \n\t:error \"DHCP client is not bound to an address.\";\r\
-    \n\t}\r\
-    \n\t\r\
-    \n:local dhcpgateway [/ip dhcp-client get [find interface=\"$interfacename\"] gate\
+    \t:error \"DHCP client is not bound to an address.\";\r\
+    \t}\r\
+    \t\r\
+    :local dhcpgateway [/ip dhcp-client get [find interface=\"$interfacename\"] gate\
     way];\r\
-    \n:if (\$dhcpgateway = \"\") do={\r\
-    \n\t:error \"Interface has not been assigned a gateway address.\";\r\
-    \n\t}\r\
-    \n\t\r\
-    \n:local oldgatewayid [/ip route find comment=\"$interfaceid\"];\r\
-    \n\r\
-    \n:if (\"\$oldgatewayid\" = \"\") do={\r\
-    \n\t:log warning \"Adding route\";\r\
-    \n\t:execute \"/ip route add \\\r\
-    \n\t\tdst-address=0.0.0.0/0 \\\r\
-    \n\t\tcomment=$interfaceid \\\r\
-    \n\t\trouting-mark=$interfaceid \\\r\
-    \n\t\tgateway=\$dhcpgateway\";\r\
-    \n\t:error \"All done.\";\r\
-    \n\t}\r\
-    \n\r\
-    \n:local oldgateway [/ip route get number=\"\$oldgatewayid\" gateway];\r\
-    \n:if (\"\$oldgateway\" != \"\$dhcpgateway\") do={\r\
-    \n\t/ip route set numbers=\"\$oldgatewayid\" gateway=\"\$dhcpgateway\";\r\
-    \n\t}\r\
-    \n"
+    :if (\$dhcpgateway = \"\") do={\r\
+    \t:error \"Interface has not been assigned a gateway address.\";\r\
+    \t}\r\
+    \t\r\
+    :local oldgatewayid [/ip route find comment=\"$interfaceid\"];\r\
+    \r\
+    :if (\"\$oldgatewayid\" = \"\") do={\r\
+    \t:log warning \"Adding route\";\r\
+    \t:execute \"/ip route add \\\r\
+    \t\tdst-address=0.0.0.0/0 \\\r\
+    \t\tcomment=$interfaceid \\\r\
+    \t\trouting-mark=$interfaceid \\\r\
+    \t\tgateway=\$dhcpgateway\";\r\
+    \t:error \"All done.\";\r\
+    \t}\r\
+    \r\
+    :local oldgateway [/ip route get number=\"\$oldgatewayid\" gateway];\r\
+    :if (\"\$oldgateway\" != \"\$dhcpgateway\") do={\r\
+    \t/ip route set numbers=\"\$oldgatewayid\" gateway=\"\$dhcpgateway\";\r\
+    \t}\r\
+    "
 #
 #
 #
@@ -166,9 +167,9 @@ start-date=jan/01/1970 start-time=12:34:56;
 :execute "/system script run $interfaceid";</code>
 Credit: wiki.mikrotik.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>

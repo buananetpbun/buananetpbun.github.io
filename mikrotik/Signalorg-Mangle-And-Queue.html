@@ -13,6 +13,7 @@
 <script>hljs.initHighlightingOnLoad();</script>    
 </head> 
 <body>
+<div id="hidelink"></div>
 <h1>Signal.org Mangle And Queue - Mikrotik Script RouterOS</h1>
 <pre>The Signal application does not have a special port because what I know is that the port still uses secure TCP 443 and a random port for UDP, so we can simply mark it to the domain hosts * .signal.org and * .whispersystems.org For packet marking the Signal application can use tls-host or content or addlist or layer7
 
@@ -34,9 +35,9 @@ action=mark-packet chain=postrouting connection-mark=conn-Signal dst-address-lis
 add name="Signal" packet-marks=Signal-pkt queue=default/default target=10.0.0.0/8,192.168.0.0/16,172.16.0.0/12 total-queue=default</code>
 Credit: www.o-om.com
 </pre>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-<br><div id="hidelink"></div>
-<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<a href='https://buananetpbun.github.io/mikrotik/'><- Back To Home</a>";}</script>
+
+
+<script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><img style='float:right;padding-top:12px' src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=pageview&edge_flat=false' alt='Hits'/><a href='https://buananetpbun.github.io/mikrotik'><span style='color:#8E2DE2 !important'>BuanaNETPBun</span>.Github.io/mikrotik</a></div><div class='header'><span style='float:left; display:inline;margin-right:6px; margin-top:-2px'><a href='https://buananetpbun.github.io/mikrotik/'><img src='https://buananetpbun.github.io/mikrotik/img/logo.png' alt='Mikrotik Script RouterOS'></a></span><span style='font-size:20px;margin-top:-2px;color:#fff !important'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></div>"}</script>
 <br>
 </body>
 </html>
