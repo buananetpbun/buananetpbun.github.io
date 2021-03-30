@@ -33,3 +33,17 @@ pre {
     white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
     word-wrap: break-word; /* IE 5.5+ */
 }
+.logo {
+border-bottom:1px solid #ccc;
+margin-bottom:7px;  
+padding-top:10px;  
+color: #111;
+text-decoration:none;
+font-size:30px;
+font-weight:bold; 
+}	
+.logo a{
+color:#111 !important;
+text-decoration:none !important;
+font-size:30px;
+}
