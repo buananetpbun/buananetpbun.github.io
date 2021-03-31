@@ -340,14 +340,14 @@ color:#8E2DE2;
   bottom: 20px;
   right: 30px;
   z-index: 99;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: #8E2DE2;
   color: white;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 3px;
 }
 
 #myBtn:hover {
@@ -370,12 +370,10 @@ opacity: 0.7;
 z-index:99;
 padding:150px;
 }
-
-
 </style>
 </head>
-
 <body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div id="CbiJvKRogXqD">
 PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 </div>
@@ -796,34 +794,25 @@ Copyright 2021 <a href="https://buananetpbun.github.io/mikrotik">Mikrotik Script
 </div>
 
 <script>
-
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+ mybutton.style.display = "block";
+} else {
+ mybutton.style.display = "none";
+}
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-   //Get the button
 var mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function truefalseFunction(x) {
-  if (x.matches) { // If media query matches
+  if (x.matches) {
    return true;
-   
-
-
-
 
   } else {
 return false;
