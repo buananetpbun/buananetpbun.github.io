@@ -811,15 +811,17 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-function truefalseFunction(x) {
-  if (x.matches) { // If media query matches
-   return true;
-   
    //Get the button
 var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
+
+function truefalseFunction(x) {
+  if (x.matches) { // If media query matches
+   return true;
+   
+
 
 
 
