@@ -796,15 +796,6 @@ Copyright 2021 <a href="https://buananetpbun.github.io/mikrotik">Mikrotik Script
 </div>
 
 <script>
-function truefalseFunction(x) {
-  if (x.matches) { // If media query matches
-   return true;
-   
-   //Get the button
-var mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -819,6 +810,18 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+function truefalseFunction(x) {
+  if (x.matches) { // If media query matches
+   return true;
+   
+   //Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+
 
   } else {
 return false;
