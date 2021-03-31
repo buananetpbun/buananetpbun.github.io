@@ -57,7 +57,7 @@ color:#999
 .logo {
 border-bottom:1px solid #ccc;
 margin-bottom:10px;  
- 
+margin-top:10px;
 color: #111;
 text-decoration:none;
 font-size:30px;
@@ -74,7 +74,6 @@ float:left;
 .logo-right {
 float:right;
 }
-
 #wrap{
 max-width:1180px;
 min-width:200px;
@@ -96,9 +95,14 @@ border-right:1px solid #ccc;
 color:#8E2DE2 !important;
 text-decoration:none !important;
 }
-.main-wrap{
-background-color:green;
-}     
+.header-left {
+float:left;
+margin-right:6px; 
+margin-top:-2px
+}
+.header-right {
+float:right;
+}
 .content{
 float:right;
 width:64%;
@@ -340,11 +344,14 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 <div style='clear: both;'></div>
 </div>
 <div class="header">
-<span style="float:right;font-weight:bold">Contribution your script <button style="margin-left:5px;" onclick="content('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">upload</button></span>
-<span style="float:left; display:inline;margin-right:6px; margin-top:-2px">
+
+<span class="header-left">
 <a href="https://buananetpbun.github.io/mikrotik/"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="Mikrotik Script RouterOS"></a>
-</span>
-<h1>MIKROTIK SCRIPT ROUTEROS DATABASE</h1>
+</span><h1>MIKROTIK SCRIPT ROUTEROS DATABASE</h1>
+
+<span class="header-right">Contribution your script <button style="margin-left:5px;" onclick="content('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">upload</button></span>
+
+<div style='clear: both;'></div>
 </div>	
 
 <div class="sidebar">
