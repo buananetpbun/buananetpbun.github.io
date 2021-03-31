@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>MikroTik Script RouterOS - BuanaNETPBun.Github.io</title>
@@ -27,7 +27,7 @@
 # Sosmed    : https://fb.me/buananet.pbun	
 #################################################
 ----------------------------------------------- */  
-*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+* {-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
 body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
 body {margin:20px;background:#fff;
 -ms-text-size-adjust: 100%;
@@ -59,7 +59,6 @@ border-bottom:1px solid #ccc;
 margin-bottom:10px;  
 margin-top:10px;
 color: #111;
-text-decoration:none;
 font-size:30px;
 font-weight:bold; 
 }	
@@ -67,6 +66,7 @@ font-weight:bold;
 color:#111 !important;
 text-decoration:none !important;
 font-size:30px;
+text-decoration:none;
 }
 .logo-left {
 float:left;
@@ -80,8 +80,6 @@ min-width:200px;
 margin:0 auto;
 }
 .header{
-height:auto; 
-width:100%;
 padding:10px;
 background: #8E2DE2;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
@@ -97,11 +95,11 @@ text-decoration:none !important;
 }
 .header-left {
 float:left;
-margin-right:6px; 
-margin-top:-2px
+width:425px;
 }
 .header-right {
 float:right;
+margin-top:-2px;
 }
 .content{
 float:right;
@@ -273,6 +271,13 @@ height:100%;
 display:none;
 }
 }
+@media screen and (max-width: 705px){
+.header-left, .header-right {
+float:none;
+display:block;
+width:auto;
+}
+}
 @media screen and (max-width: 550px){
 .logo-left, .logo-right {
 float:none;
@@ -280,6 +285,7 @@ display:block;
 width:auto;
 }
 }
+
 iframe {
 width:100%;
 height:520px;
@@ -344,13 +350,12 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 <div style='clear: both;'></div>
 </div>
 <div class="header">
-
 <span class="header-left">
+<span style="float:left; margin-right:6px; margin-top:-2px">
 <a href="https://buananetpbun.github.io/mikrotik/"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="Mikrotik Script RouterOS"></a>
-</span><h1>MIKROTIK SCRIPT ROUTEROS DATABASE</h1>
-
+</span>
+<h1>MIKROTIK SCRIPT ROUTEROS DATABASE</h1></span>
 <span class="header-right">Contribution your script <button style="margin-left:5px;" onclick="content('https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform')">upload</button></span>
-
 <div style='clear: both;'></div>
 </div>	
 
