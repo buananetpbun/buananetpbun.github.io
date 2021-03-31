@@ -350,7 +350,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 <table id="myTable">
 <!-- A -->
 <tr><td><span id="A" style="margin-left:5px; font-weight:bold">A</span></td></tr>
-<tr><td><p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/anti-hack-bootloader.html" onclick="getcontent(this); reloadads1(); reloadads2(); return false;">Anti Hack Protected BootLoader</a></p></td></tr>
+<tr><td><p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/anti-hack-bootloader.html" onclick="getcontent(this)">Anti Hack Protected BootLoader</a></p></td></tr>
 <tr><td><p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/auto-fix-sntp-client-and-timezone-for-indonesia-country.html" onclick="getcontent(this); reloadads1(); reloadads2(); return false;">Auto Fix SNTP and Clock for Indonesia Timezone</a></p></td></tr>
 <tr><td><p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Auto-Simple-Queue-From-DHCP-Server.html" onclick="getcontent(this); reloadads1(); reloadads2(); return false;">Auto Simple Queue From DHCP Server</a></p></td></tr>
 <tr><td><p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Auto-Connect-to-Internet-With-DHCP-Client.html" onclick="getcontent(this); reloadads1(); reloadads2(); return false;">Auto Connect to Internet With DHCP Client</a></p></td></tr>
@@ -740,6 +740,9 @@ var ahref = e.getAttribute("href");
 element.setAttribute("src", ahref);
 document.getElementById("change-iframe-url").hidden=false;
 document.getElementById("welcome").hidden=true;
+reloadads1();
+reloadads2();
+return false
 }
 
 function myFunctionSearch() {
