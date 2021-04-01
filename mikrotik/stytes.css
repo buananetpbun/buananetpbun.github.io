@@ -39,11 +39,10 @@ pre {
     word-wrap: break-word; /* IE 5.5+ */
 }
 .logo {
-border-bottom:1px solid #ccc;
-margin-bottom:7px;  
-padding-top:10px;  
+border-bottom:0px solid #ccc;
+margin-bottom:5px;
+margin-top:10px;
 color: #111;
-text-decoration:none;
 font-size:30px;
 font-weight:bold; 
 }	
@@ -51,11 +50,18 @@ font-weight:bold;
 color:#111 !important;
 text-decoration:none !important;
 font-size:30px;
+text-decoration:none;
+}
+.logo-left {
+float:left;
+}
+.logo-right {
+float:right;
 }
 .header{
-height:auto; 
-width:100%;
 padding:10px;
+height:48px;
+display:block;
 background: #8E2DE2;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -63,11 +69,18 @@ color:#fff;
 border-top:1px solid #ccc;
 border-left:1px solid #ccc;
 border-right:1px solid #ccc;
-font-weight: bold;
 }
 .header a{
 color:#8E2DE2 !important;
 text-decoration:none !important;
+}
+.header-left {
+float:left;
+width:425px;
+}
+.header-right {
+float:right;
+margin-top:-2px;
 }
 button {
 color: #fff;
