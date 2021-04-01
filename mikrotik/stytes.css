@@ -93,7 +93,7 @@ width:70px;
 font-size:16px;
 font-weight:bold;
 }
-@media screen and (max-width: 709px){
+@media screen and (max-width: 710px){
 button {
 margin-top:5px;
 }  
@@ -104,8 +104,16 @@ height:auto;
 float:none;
 display:block;
 width:auto;
+}
+.logo-left, .logo-right {
+float:none;
+display:block;
+width:auto;
 text-align: center 
 }
+.header-left, .header-right {
+  text-align: center
+}   
 }
 @media screen and (max-width: 550px){
 .logo-left a{
@@ -115,6 +123,7 @@ font-size:25px;
 float:none;
 display:block;
 width:auto;
+text-align: center 
 }
 .header-left, .header-right {
   text-align: center
