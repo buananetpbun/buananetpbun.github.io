@@ -104,6 +104,7 @@ height:auto;
 float:none;
 display:block;
 width:auto;
+text-align: center 
 }
 }
 @media screen and (max-width: 550px){
@@ -114,7 +115,6 @@ font-size:25px;
 float:none;
 display:block;
 width:auto;
-text-align: center 
 }
 .header-left, .header-right {
   text-align: center
