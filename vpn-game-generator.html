@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,9 +69,10 @@ margin-bottom:10px;
 border-top:1px solid #ccc;
 }
 .main-wrap{
-background-color:green;
+display:flex;
 }     
 .content{
+flex:1;
 float:right;
 width:800px;
 padding: 10px;
@@ -78,20 +80,24 @@ border-top:1px solid #ccc;
 border-bottom:1px solid #ccc;
 border-right:1px solid #ccc;
 background:#eee;
-height: 740px;
+height: auto;
 }
 .sidebar{
 float:left;
 width:300px;
-padding: 10px;
+Padding-top:8px;
+padding-left: 10px;
+Padding-right:10px;
+Padding-bottom:20px;
 background-color:#eee;
 border:1px solid #ccc; 
-height: 740px;
+height: auto;
 }
 .footer{
 padding-top:15px;
 clear:both;
 width:auto;
+font-size:14px;
 }
 h1 {
 color:#111;
@@ -225,7 +231,7 @@ color:white;
  display: inline-block;
  } 
  .list-mangle {
- height: 629px;
+ height: 625px;
  background:#fff;
  overflow: scroll;
  width: 100%;
@@ -269,25 +275,25 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 </span>
 <h1>STATIC ROUTING VPN GAME SCRIPT GENERATOR <span style="color:#4CAF50">{ PORT GAME ROUTING METHOD }</span></h1> 
 </div>
-
+<div class="main-wrap">
     <div class="sidebar">
          <label>Select VPN Connection</label><br>
          <select onchange="myFunction()" id="vpn-list">
             <option value="pptp">PPTP - Point to Point Tunneling Protocol</option>
             <option value="l2tp">L2TP - Layer Two Tunneling Protocol</option>
          </select>
-         <br>
-         <label>Create VPN Name on Interface</label><br>
-         <input type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME"><br>
-         <label>VPN IP Address</label><br>
-         <input type="text" id="vpn-ip" placeholder="example:137.129.63.112"><br>
-         <label>VPN Username</label><br>
-         <input type="text" id="vpn-username" placeholder="username"><br>
+         <div style="clear: both;"></div>
+         <label>Create VPN Name on Interface</label><div style="clear: both;"></div>
+         <input type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME"><div style="clear: both;"></div>
+         <label>VPN IP Address</label><div style="clear: both;"></div>
+         <input type="text" id="vpn-ip" placeholder="example:137.129.63.112"><div style="clear: both;"></div>
+         <label>VPN Username</label><div style="clear: both;"></div>
+         <input type="text" id="vpn-username" placeholder="username"><div style="clear: both;"></div>
          <label>VPN Password</label><br>
          <input type="text" id="vpn-password" placeholder="password">
          <div style="margin-top:10px;margin-bottom:10px">
 	 <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Game (optional)</label>
-         <input disabled type="text" id="ip-gateway-input" placeholder="example:192.168.2.1"><br>
+         <input disabled type="text" id="ip-gateway-input" placeholder="example:192.168.2.1"><div style="clear: both;"></div>
 	 </div>
          <label>Select Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
 		 <div class="list-game">
@@ -547,6 +553,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          <br>
          <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script to Terminal, make sure Script on the Top position!</b></span>
     </div>
+     </div>
    <div class="footer">
 <div style="float:right">
 Copyright 2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a>
