@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,9 +69,10 @@ margin-bottom:10px;
 border-top:1px solid #ccc;
 }
 .main-wrap{
-background-color:green;
+display:flex;
 }   
 .content{
+flex:1;
 float:right;
 width:800px;
 padding: 10px;
@@ -78,17 +80,21 @@ border-top:1px solid #bbb;
 border-bottom:1px solid #bbb;
 border-right:1px solid #bbb;
 background:#ddd;
-height:710px;
+height:auto;
 }
 .sidebar{
 float:left;
 width:300px;
-padding: 10px;
+Padding-top:8px;
+padding-left: 10px;
+Padding-right:10px;
+Padding-bottom:20px;
 background-color:#ddd;
 border:1px solid #bbb; 
-height:710px;
+height:auto;
 }
 .footer{
+font-size:14px;
 padding-top:15px;
 clear:both;
 width:auto;
@@ -221,7 +227,7 @@ padding: 0;
 display: inline-block;
 } 
 .list-mangle {
-height: 585px;
+height: 582px;
 background:#fff;
 overflow: scroll;
 width: 100%;
@@ -264,6 +270,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 </span>
 <h1>LB PCC / LOAD BALANCING <span style="color:#08c">PCC</span> SCRIPT GENERATOR FOR MIKROTIK ROUTEROS</h1>
 </div>
+<div class="main-wrap">
     <div class="sidebar">
 			<label>Select Number Your ISP Line</label>
 			<select style="margin-top:10px" id="wan-list" onclick="myFunctionOuput()">
@@ -423,6 +430,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          <br>
 		<button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste to Terminal, make sure Mangle Script on the Top position!</b></span>
 		</div>
+        </div>
  <div class="footer">
 <div style="float:right">
 Copyright 2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a>
