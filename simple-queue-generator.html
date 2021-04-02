@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -230,7 +231,7 @@ padding: 0;
 display: inline-block;
 } 
 .list-mangle {
-height: 700px;
+height: 753px;
 background:#fff;
 overflow: scroll;
 width: 100%;
@@ -290,6 +291,8 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
 		 </div>
 		 </div>
+		 <div style="clear: both;"></div>
+         <div style="margin-top:10px;margin-bottom:10px;border-bottom:1px solid #bbb">Sub Parent Queue / Child Queue</div>
 		 <div style="float:left;width:48%">
 		 <label>Client Name Queue</label><div style="clear: both;"></div>
          <input type="text" id="input-client" value="Client-" placeholder="Client-">
@@ -315,7 +318,6 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          <label>Down Client (K/M)</label><div style="clear: both;"></div>
          <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
 		 </div>
-		 <div style="margin-bottom:10px; height:220px">
 		 <div style="float:left; width:48%;">
 	     <label>Bucket Size Up</label><div style="clear: both;"></div>
          <select id="size-list-up">
@@ -348,8 +350,8 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 			<option value="10">10</option>
          </select>
 		 </div>
-		 </div>
-         <div style="margin-bottom:10px;font-size:14px; font-weight:bold">
+		 <div style="clear: both;"></div>
+         <div style="margin-bottom:10px;font-size:14px; font-weight:bold;padding-top:10px">
 		<span style="color:#08c;">BANDWITH WITH TOKEN BUCKET CALCULATION</span><br>
 		Bucket Capacity (BC) = bucket-size * max-limit<br>
 		Time = BC / (Parent Max-limit - Token Rate)
