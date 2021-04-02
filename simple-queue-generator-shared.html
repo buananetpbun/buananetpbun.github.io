@@ -58,8 +58,9 @@ font-weight:bold;
 width:1220px;
 margin:0 auto;
 padding:10px;
-background:#fff
+background:#fff;
 }
+
 .header{
 height:auto; 
 width:100%;
@@ -68,9 +69,10 @@ margin-bottom:10px;
 border-top:1px solid #ccc;
 }
 .main-wrap{
-background-color:green;
+display: flex;
 }   
 .content{
+flex:1;
 float:right;
 width:800px;
 padding: 10px;
@@ -78,15 +80,19 @@ border-top:1px solid #bbb;
 border-bottom:1px solid #bbb;
 border-right:1px solid #bbb;
 background:#ddd;
-height:680px;
+
 }
 .sidebar{
+
 float:left;
 width:400px;
-padding: 10px;
+Padding-top:8px;
+padding-left: 10px;
+Padding-right:10px;
+Padding-bottom:20px;
 background-color:#ddd;
 border:1px solid #bbb; 
-height:680px;
+height:auto;
 
 }
 .footer{
@@ -229,7 +235,7 @@ padding: 0;
 display: inline-block;
 } 
 .list-mangle {
-height: 565px;
+height: 564px;
 background:#fff;
 overflow: scroll;
 width: 100%;
@@ -272,6 +278,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 </span>
 <h1>SIMPLE QUEUE SCRIPT GENERATOR MIKROTIK + BANDWIDTH SHARED (UPTO) - FOR IP SUBNET /24 ONLY</h1>
 </div>
+<div class="main-wrap">
     <div class="sidebar">
 		<div style="margin-bottom:10px; height:190px">
 		 <label>Parent Name Queue</label><div style="clear: both;"></div>
@@ -365,6 +372,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          </div>
          <br>
          <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
+    </div>
     </div>
    <div class="footer">
 Copyright 2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - <a href="https://github.com/buananetpbun">Follow My Github</a>
