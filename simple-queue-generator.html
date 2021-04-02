@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,9 +68,10 @@ margin-bottom:10px;
 border-top:1px solid #ccc;
 }
 .main-wrap{
-background-color:green;
+display:flex;
 }   
 .content{
+flex:1;
 float:right;
 width:800px;
 padding: 10px;
@@ -77,7 +79,7 @@ border-top:1px solid #bbb;
 border-bottom:1px solid #bbb;
 border-right:1px solid #bbb;
 background:#ddd;
-height:850px;
+height:auto;
 }
 .sidebar{
 float:left;
@@ -88,7 +90,7 @@ Padding-right:10px;
 Padding-bottom:20px;
 background-color:#ddd;
 border:1px solid #bbb; 
-height:850px;
+height:auto;
 }
 .footer{
 font-size:14px;
@@ -228,7 +230,7 @@ padding: 0;
 display: inline-block;
 } 
 .list-mangle {
-height: 725px;
+height: 700px;
 background:#fff;
 overflow: scroll;
 width: 100%;
@@ -271,24 +273,25 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 </span>
 <h1>SIMPLE QUEUE SCRIPT GENERATOR FOR MIKROTIK PLUS TOKEN BUCKET - FOR IP SUBNET /24 ONLY</h1>
 </div>
+<div class="main-wrap">
     <div class="sidebar">
 		<div style="margin-bottom:10px; height:190px">
-		 <label>Parent Name Queue</label><br>
+		 <label>Parent Name Queue</label><div style="clear: both;"></div>
          <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
-         <label>Target Local IP / Interface</label><br>
+         <label>Target Local IP / Interface</label><div style="clear: both;"></div>
          <input type="text" id="input-ip-parent" value="192.168.88.0/24" placeholder="192.168.88.0/24 or ether1">
-		 <br>
+		 <div style="clear: both;"></div>
 		 <div style="float:left; width:48%;">
-		 <label>Up Total (K/M)</label><br>
+		 <label>Up Total (K/M)</label><div style="clear: both;"></div>
          <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
 		 </div>
 		 <div style="float:left; width:48%;margin-left:10px">
-         <label>Down Total (K/M)</label><br>
+         <label>Down Total (K/M)</label><div style="clear: both;"></div>
          <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
 		 </div>
 		 </div>
 		 <div style="float:left;width:48%">
-		 <label>Client Name Queue</label><br>
+		 <label>Client Name Queue</label><div style="clear: both;"></div>
          <input type="text" id="input-client" value="Client-" placeholder="Client-">
 		 </div>
 		 <div style="float:left;width:48%;margin-left:10px;">
@@ -296,25 +299,25 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          <input type="text" id="input-client-initial" value="1" placeholder="1">
 		 </div>
      	  <div style="float:left; width:48%;">
-		 <label>Start IP Client</label><br>
+		 <label>Start IP Client</label><div style="clear: both;"></div>
          <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
 		 </div>
 		 <div style="float:left; width:48%;margin-left:10px;">
-         <label>End IP Client</label><br>
+         <label>End IP Client</label><div style="clear: both;"></div>
          <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
 		 </div>
-		 <br>
+		 <div style="clear: both;"></div>
 		 <div style="float:left; width:48%;">
-		 <label>Up Client (K/M)</label><br>
+		 <label>Up Client (K/M)</label><div style="clear: both;"></div>
          <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
 		 </div>
 		 <div style="float:left; width:48%;margin-left:10px;">
-         <label>Down Client (K/M)</label><br>
+         <label>Down Client (K/M)</label><div style="clear: both;"></div>
          <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
 		 </div>
 		 <div style="margin-bottom:10px; height:220px">
 		 <div style="float:left; width:48%;">
-	     <label>Bucket Size Up</label><br>
+	     <label>Bucket Size Up</label><div style="clear: both;"></div>
          <select id="size-list-up">
             <option value="0.1">0.1 (default)</option>
             <option value="1">1</option>
@@ -330,7 +333,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          </select>
 		 </div>
 		 <div style="float:left; width:48%;margin-left:10px">
-	     <label>Bucket Size Down</label><br>
+	     <label>Bucket Size Down</label><div style="clear: both;"></div>
          <select id="size-list-down">
             <option value="0.1">0.1 (default)</option>
             <option value="1">1</option>
@@ -346,7 +349,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          </select>
 		 </div>
 		 </div>
-         <div style="margin-bottom:10px;">
+         <div style="margin-bottom:10px;font-size:14px; font-weight:bold">
 		<span style="color:#08c;">BANDWITH WITH TOKEN BUCKET CALCULATION</span><br>
 		Bucket Capacity (BC) = bucket-size * max-limit<br>
 		Time = BC / (Parent Max-limit - Token Rate)
@@ -392,6 +395,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          </div>
          <br>
          <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
+    </div>
     </div>
    <div class="footer">
 Copyright 2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - <a href="https://github.com/buananetpbun">Follow My Github</a>
