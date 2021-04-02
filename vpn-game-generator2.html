@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,9 +66,10 @@ margin-bottom:10px;
 border-top:1px solid #ccc;
 }
 .main-wrap{
-background-color:green;
+display:flex;
 }     
 .content{
+flex:1;
 float:right;
 width:800px;
 padding: 10px;
@@ -75,7 +77,7 @@ border-top:1px solid #ccc;
 border-bottom:1px solid #ccc;
 border-right:1px solid #ccc;
 background:#eee;
-height: 740px;
+height: auto;
 }
 .sidebar{
 float:left;
@@ -86,9 +88,10 @@ Padding-right:10px;
 Padding-bottom:20px;
 background-color:#eee;
 border:1px solid #ccc; 
-height: 740px;
+height: auto;
 }
 .footer{
+font-size:14px;
 padding-top:15px;
 clear:both;
 width:auto;
@@ -270,7 +273,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 </span>	
 <h1>STATIC ROUTING VPN GAME SCRIPT GENERATOR <span style="color:#ff6600">{ IP ADDRESS GAME ROUTING METHOD }</span></h1> 
 </div>
-
+<div class="main-wrap">
     <div class="sidebar">
          <label>Select VPN Connection</label><br>
          <select onchange="myFunction()" id="vpn-list">
@@ -554,6 +557,7 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
          <br>
          <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste to Terminal, make sure script on the Top position!</b></span>
     </div>
+     </div>
    <div class="footer">
 <div style="float:right">
 Copyright 2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a>
