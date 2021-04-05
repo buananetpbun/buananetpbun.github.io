@@ -59,6 +59,10 @@ FB              : https://fb.me/buananet.pbun
 <p><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">LB PCC Calculation / Load Balancing PCC Calculation</a> - LB PCC (Load Balancing Per Connection Classifier) Calculator</p>
 <img src="https://user-images.githubusercontent.com/42666125/111256279-52843f80-864b-11eb-9a46-11dc571872bb.png">
 
+<h2>PCQ (PER-CONNECTION-QUEUE) GENERATOR FOR QUEUE TREE AND QUEUE SIMPLE</h2>
+<p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ Generator For Queue Tree And Queue Simple</a> - Mikrotik PCQ Generator For Queue Tree And Queue Simple</p>
+<img src="https://user-images.githubusercontent.com/42666125/113601124-23218b00-966b-11eb-915b-25e06785d297.png">
+
 <br>
 Credit to : https://mikrotik.com | http://www.mikrotik.co.id <br><br>
 © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
