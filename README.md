@@ -61,7 +61,7 @@ FB              : https://fb.me/buananet.pbun
 
 <br>
 Credit to : https://mikrotik.com | http://www.mikrotik.co.id <br><br>
-Copyright 2021 <a href="https://buananetpbun.github.io/">Mikrotik Script RouterOS</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>  
+© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
 <br><br>
 <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 
