@@ -36,7 +36,7 @@ Change all Queue Type with custom Queue Type
 <code class="routeros">foreach i in=([/queue tree find]) do={
 local cmd ("queue tree set " . $i . " queue=PCQ-DOWN")
 :execute $cmd
-}
+}</code>
 
 Credit: https://www.o-om.com
 </pre>
