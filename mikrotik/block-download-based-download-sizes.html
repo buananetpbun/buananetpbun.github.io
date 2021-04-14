@@ -16,19 +16,21 @@
 <body>
 <div id="hidelink"></div>
 <h1>Block Download Based Download Sizes - MikroTik Script RouterOS</h1>
-<pre>In This Articles , i want describe , how to block download more than 10 MB per Bytes .
+<pre>In This Articles, i want describe, how to block download more than 10 MB per Bytes.
 
-Everybody Want To Download Big Size Files , After Downloaded 10 MB , Download Would Stop .
+Everybody Want To Download Big Size Files, After Downloaded 10 MB, Download Would Stop.
 
-in This Example , i Want block download per Source And Destination .
+in This Example, i Want block download per Source And Destination.
 
-For Example , Everybody can download file from one server , and he want open a new session with a new server for other works .
+For Example, Everybody can download file from one server, and he want open a new session with a new server for other works.
 
-for this reason , we sign Source And Destinations with Srd Address List And Dst Address List , And Then Download More Than 10 MB stop for These Addresses .
+for this reason, we sign Source And Destinations with Srd Address List And Dst Address List, And Then Download More Than 10 MB stop for These Addresses.
 
-We Need Three Rules .
+We Need Three Rules.
 
-Rule 1 : Match And Assign Source Of Download To A New Address List . Rule 2 : Match And Assign Destination of Download To A new Address list . Rule 3 : Block Every Session ( Download ) , That Size Is More That 10 MB .
+Rule 1: Match And Assign Source Of Download To A New Address List. 
+Rule 2: Match And Assign Destination of Download To A new Address list. 
+Rule 3: Block Every Session ( Download ), That Size Is More That 10 MB.
 
 
 <code class="routeros">/ip firewall filter
@@ -43,11 +45,11 @@ src-address=192.168.0.0/24
 add action=drop chain=forward disabled=no dst-address-list=Dst protocol=tcp \
 src-address-list=Src</code>
 
-In My Example , I Assign Every Users In 192.168.0.0/24 Subnet , They have more that 10 MB size to Download After that , in Last Rule , I Block That Session To block Download for 1 Hour .
+In My Example, I Assign Every Users In 192.168.0.0/24 Subnet, They have more that 10 MB size to Download After that, in Last Rule, I Block That Session To block Download for 1 Hour.
 
-If users want to download 40 MB file , every 10MB file downloaded , they need wait to 1 Hours , Also You can Change Connection Bytes Value And Address list Time out Value .
+If users want to download 40 MB file, every 10MB file downloaded, they need wait to 1 Hours, Also You can Change Connection Bytes Value And Address list Time out Value.
 
-Also You can start this strategy base on File Extensions , Such as ( mp3 , avi , flv , zip , ... )
+Also You can start this strategy base on File Extensions, Such as ( mp3,avi,flv,zip, ... )
 
 Reza Moghadam
 
