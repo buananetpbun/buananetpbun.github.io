@@ -178,6 +178,7 @@
 <url><loc>https://buananetpbun.github.io/mikrotik/auto-fix-sntp-client-and-timezone-for-indonesia-country.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-ads-use-dns-static.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-bigo-layer7-content-tls.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/block-download-based-download-sizes.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-facebook-layer7-content-tls.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-iflix-layer7-content-tls.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-istagram-layer7-content-tls.html</loc></url>
@@ -219,6 +220,7 @@
 <url><loc>https://buananetpbun.github.io/mikrotik/get-ip-address-list-netflix-with-raw.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/google-domain-list-or-all-google-host.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/gps-text-file-converter-to-google-earth-or-maps.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/how-to-change-mac-address.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/how-to-disable-google-ssl-using-static-dns.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/hurricane-electric-ipv6-tunnel-ipv4-endpoint-updater.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/initiating-the-update-process-new-version.html</loc></url>
@@ -243,6 +245,7 @@
 <url><loc>https://buananetpbun.github.io/mikrotik/remote-ip-public-static.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/remove-firewall-address-lists.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/reset-counter.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/restore-mac-address-to-default-interface.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/script-to-find-the-day-of-the-week.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/sending-power-on-notification-to-telegram.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/sending-text-out-over-a-serial-port.html</loc></url>
