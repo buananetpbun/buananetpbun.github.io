@@ -20,7 +20,7 @@
 
 Recently, we had to copy the settings from one MikroTik router to another and after we saved the settings file and filled it in a second, we said that the mac address was also copied.
 
-Because of that, we had to reread it to the standard.
+Because of that, we had to reread it to the standard. this script How To Restore MAC-Address to Default Interfaces.
 
 <code class="routeros">foreach i in=([/interface ethernet find]) do={
 local cmd ("interface ethernet reset-mac-address " . $i)
