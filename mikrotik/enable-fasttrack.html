@@ -28,7 +28,6 @@ add chain=forward action=fasttrack-connection connection-state=established,relat
   comment="fasttrack established/related"
 add chain=forward action=accept connection-state=established,related \
   comment="accept established/related"</code>
-  
 Notice that the first rule marks established/related connections as fast-tracked, the second rule is still required to accept packets belonging to those connections. The reason for this is that, as was mentioned earlier, some random packets from fast-tracked connections are still sent the slow path way and only UDP and TCP are fast-tracked, but we still want to accept packets for other protocols.
 
 After adding "fasttrack" rule special dummy rule appeared at the top of the list. This is not an actual rule, it is for visual information showing that some of the traffic is traveling FastPath and will not reach other firewall rules.
