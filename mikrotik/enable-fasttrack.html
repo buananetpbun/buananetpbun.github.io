@@ -31,6 +31,10 @@ add chain=forward action=accept connection-state=established,related \
   
 Notice that the first rule marks established/related connections as fast-tracked, the second rule is still required to accept packets belonging to those connections. The reason for this is that, as was mentioned earlier, some random packets from fast-tracked connections are still sent the slow path way and only UDP and TCP are fast-tracked, but we still want to accept packets for other protocols.
 
+After adding "fasttrack" rule special dummy rule appeared at the top of the list. This is not an actual rule, it is for visual information showing that some of the traffic is traveling FastPath and will not reach other firewall rules.
+
+These rules appear as soon as there is at least one fast-tracked connection tracking entry and will disappear after the last fast-tracked connection times out in the connection table.
+
 Credit: Mikrotik.com
 </pre>
 <br>
