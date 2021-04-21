@@ -23,16 +23,16 @@ I made this script for VPN Tunnel which suddenly changes the IP in the HostName 
 <code class="routeros">:global currentIP;
 :local VpnHostName "my.tunel-vpn.net";
 :local WanGatewayRouter "192.168.3.1"; 
-:local SetComments "MY-VPN-TUNNEL";
+:local SetComment "MY-VPN-TUNNEL";
 
-:local check [/ip route find where comment=$SetComments];
+:local check [/ip route find where comment=$SetComment];
 :local resolvedIP [:resolve $VpnHostName];
 
 :if (check = "") do={
- /ip route add gateway=$WanGatewayRouter dst-address=$resolvedIP comment=$SetComments;
+ /ip route add gateway=$WanGatewayRouter dst-address=$resolvedIP comment=$SetComment;
 } else={
  :if ($resolvedIP != $currentIP) do={
- /ip route set [/ip route find where comment=$SetComments] dst-address=$resolvedIP gateway=$WanGatewayRouter;
+ /ip route set [/ip route find where comment=$SetComment] dst-address=$resolvedIP gateway=$WanGatewayRouter;
  :set currentIP $resolvedIP;
  :log info "Detect New IP VPN TUNNEL = $resolvedIP"
  }
