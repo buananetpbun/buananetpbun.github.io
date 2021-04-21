@@ -20,6 +20,8 @@
 
 I made this script for VPN Tunnel which suddenly changes the IP in the HostName / Domain name without confirmation first, meaning that sometimes they can change the IP at any time, actually it doesn't matter if we only use 1 WAN ISP but it will be a different story if we use 2 ISP and first select the VPN to one ISP line only.
 
+You can use this script at starup on schedule and set duration for example 10 Minute (00:10:00)  
+
 <code class="routeros">:global currentIP;
 :local VpnHostName "my.tunel-vpn.net";
 :local WanGatewayRouter "192.168.3.1"; 
