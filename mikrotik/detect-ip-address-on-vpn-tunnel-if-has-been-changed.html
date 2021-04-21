@@ -34,7 +34,7 @@ I made this script for VPN Tunnel which suddenly changes the IP in the HostName 
  :if ($resolvedIP != $currentIP) do={
  /ip route set [/ip route find where comment=$SetComments] dst-address=$resolvedIP gateway=$WanGatewayRouter;
  :set currentIP $resolvedIP;
- :log info "Detect New VPN TUNNEL IP = $resolvedIP"
+ :log info "Detect New IP VPN TUNNEL = $resolvedIP"
  }
 }</code>
 Credit: https://www.o-om.com
