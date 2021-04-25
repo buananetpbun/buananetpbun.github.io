@@ -43,6 +43,489 @@ box-sizing: border-box;
 .Menu{
 width:100%;
 border-bottom:1px solid #ccc;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VPN Tunnel All Trafick Script Generator For Mikrotik Routeros - BuanaNETPBun.Github.io</title>
+<meta content='VPN Tunnel All Trafick Script Generator For Mikrotik Routeros  - BuanaNETPBun.Github.io' name='description'/>
+<meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+<meta property="og:title" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET">
+<meta property="og:description" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET">
+<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255425-9ece8000-8649-11eb-839c-21f25e838195.png">
+<meta property="og:image:alt" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buananetpbun.github.io/vpn-game-generator.html"> 
+<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+/* -----------------------------------------------------------------
+####################################################################
+# VPN Tunnel All Trafick Script Generator By BuanaNETPBun.Github.io!
+# Date/Time : 11/8/2020, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNET
+# Version   : v1.0 Beta
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+####################################################################
+--------------------------------------------------------------------*/  
+*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+body { font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+html, body {
+height: 100%;
+width:100%;
+margin-top: 0px;
+padding:0;
+font-size:16px;
+}
+* {
+box-sizing: border-box;
+}
+.Menu{
+width:100%;
+border-bottom:1px solid #ccc;
+height:100%;
+padding-bottom: 15px;
+margin-bottom: 20px;
+font-size:14px;
+font-weight:bold;
+ }
+.logo {
+margin-top:20px;
+color: #111;
+text-decoration:none;
+font-size:27px;
+font-weight:bold; 
+}	
+.logo a{
+color:#111 !important;
+text-decoration:none !important;
+}
+#wrap{
+width:1120px;
+margin:0 auto;
+padding:10px;
+background:#fff
+}
+.header{
+height:auto; 
+width:100%;
+margin-top:0px;
+margin-bottom:10px;
+border-top:1px solid #ccc;
+}
+.main-wrap{
+display:flex;
+}     
+.content{
+flex:1;
+float:right;
+width:800px;
+padding: 10px;
+border-top:1px solid #ccc;
+border-bottom:1px solid #ccc;
+border-right:1px solid #ccc;
+background:#eee;
+height: auto;
+}
+.sidebar{
+float:left;
+width:300px;
+Padding-top:8px;
+padding-left: 10px;
+Padding-right:10px;
+Padding-bottom:20px;
+background-color:#eee;
+border:1px solid #ccc; 
+height: auto;
+}
+.footer{
+padding-top:15px;
+clear:both;
+width:auto;
+font-size:14px;
+}
+h1 {
+color:#111;
+font-size:22px;
+margin-bottom:5px;
+margin-top:10px;
+}
+a:link {
+  color: #154c79;
+}
+a:visited {
+  color: #154c79;
+}
+a:hover {
+  color: #154c79;
+}
+a:active {
+  color: #154c79;
+}
+.menu {
+margin-bottom:13px;
+clear:both;
+width:auto;
+}
+.menu1 {
+width:300px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#154c79;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu1 a:link {
+text-decoration:none;
+color:white;
+}
+.menu1 a:visited{
+text-decoration:none;
+color:white;
+}
+.menu2 {
+width:360px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#ff6600;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu2 a:link{
+text-decoration:none;
+color:white;
+}
+.menu2 a:visited{
+text-decoration:none;
+color:white;
+}
+ button {
+ color: #fff;
+ background-color: #154c79;
+ border-color: #154c79;
+ border:none;
+ padding:8px;
+ width:135px;
+ font-size:16px;
+ font-weight:bold;
+ }
+ .row:after {
+ content: "";
+ display: table;
+ clear: both;
+ }  
+ input[type=checkbox]{
+ margin-right:7px; 
+}
+ input[type=text], select, textarea {
+ width: 100%;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-radius: 1px;
+ resize: vertical;
+ font-size:16px !important;
+ }
+ label {
+ padding: 5px 5px 5px 5px;
+ display: inline-block;
+ }
+ input[type=submit] {
+ background-color: #154c79;
+ color: white;
+ padding: 13px 20px;
+ border: none;
+ border-radius: 1px;
+ cursor: pointer;
+ float: right;
+ }
+ input[type=submit]:hover {
+ background-color: #45a049;
+ }
+ .col-25 {
+ float: left;
+ width: 25%;
+ margin-top: 6px;
+ }
+ .col-75 {
+ float: left;
+ width: 75%;
+ margin-top: 6px;
+ }
+ /* Clear floats after the columns */
+ .row:after {
+ content: "";
+ display: table;
+ clear: both;
+ }
+ .list-game {
+ height: 200px;
+ background:white;
+ overflow: scroll;
+ overflow-x: hidden;
+ width: 100%;
+ margin-top:2px;
+ padding: 3px;
+ border: 1px solid rgba(0,0,0,0.25);
+ }
+ .list-game label {
+ padding: 0;
+ display: inline-block;
+ } 
+ .list-mangle {
+ height: 466px;
+ background:#fff;
+ overflow: scroll;
+ width: 100%;
+ padding: 4px;
+ margin-top:8px;
+ border: 1px solid #ccc;
+ }
+ table, tr, td {
+border: none;
+}
+#CbiJvKRogXqD {
+z-index:99;
+display: none;
+background: #000;
+text-align: center;
+font-weight: bold;
+color: #fff;
+font-size: 4.0vw;
+position: fixed;
+width: 100%;
+height: 100%;
+top:0;
+left:0;
+opacity: 0.7;
+padding:150px;
+}
+
+</style>
+<script src="https://platform-api.sharethis.com/js/sharethis.js#property=5fa97f556a73380012578d69&product=video-share-buttons" async="async"></script>
+</head>
+<body>
+<div id="CbiJvKRogXqD">
+PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
+</div>
+<div id="wrap">	
+<div class="logo">	  
+<a href="https://buananetpbun.github.io"><span style="color:#154c79 !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/> 
+</div>	
+<div class="header">
+<span style="float:left; display:inline;margin-right:6px; margin-top:10px">
+<a href="https://buananetpbun.github.io/vpn-game-generator.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+</span>
+<h1>VPN TUNNEL ALL TRAFFIC SCRIPT GENERATOR FOR MIKROTIK ROUTEROS</h1> 
+</div>
+<div class="main-wrap">
+    <div class="sidebar">
+         <label>Select VPN Connection</label><div style="clear: both;"></div><div style="clear: both;"></div>
+         <select onchange="myFunction()" id="vpn-list">
+            <option value="pptp">PPTP - Point to Point Tunneling Protocol</option>
+            <option value="l2tp">L2TP - Layer Two Tunneling Protocol</option>
+         </select>
+         <div style="clear: both;"></div><br>
+         <label>Create VPN Name on Interface VPN</label><div style="clear: both;"></div>
+         <input type="text" id="vpn-name" value="VPN-TUNNEL" placeholder="VPN-TUNNEL"><div style="clear: both;"></div><br>
+         <label>VPN IP Address / HostName</label><div style="clear: both;"></div>
+         <input type="text" id="vpn-ip" placeholder="example:137.129.63.112"><div style="clear: both;"></div><br>
+         <label>VPN Username</label><div style="clear: both;"></div>
+         <input type="text" id="vpn-username" placeholder="username"><div style="clear: both;"></div><br>
+         <label>VPN Password</label><div style="clear: both;"></div>
+         <input type="text" id="vpn-password" placeholder="password"><div style="clear: both;"></div><br>
+	      <label style="padding-left:0px">Target IP Gateway Your ISP</label>
+         <input type="text" id="ip-gateway-input" placeholder="example:192.168.2.1"><div style="clear: both;"></div>
+         <br><br>
+         <button style="margin-right:2px" type="button" onclick="myFunction()">Generate</button> 
+		 <button type="button" onclick="location.reload()">Clear All</button> 
+         <br>
+    </div>
+    <div class="content">
+        <span style="margin-left:2px">Script Generator Results</span>
+         <div class="list-mangle">
+		<div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">	
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- MIKROTIK SCRIPT DB3 -->
+			<ins class="adsbygoogle"
+			style="display:inline-block;width:728px;height:90px"
+			data-ad-client="ca-pub-9740800920365268"
+			data-ad-slot="4637807296"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+		</div>
+            <table id="showScript" style="padding:5px;">
+               <tr>
+                  <td>
+                     <span style="color:#154c79;">
+                     ###################################################################<br>
+                     # VPN Tunnel All Trafick Script Generator By BuanaNETPBun.Github.io<br>
+                     # Date/Time: <span id="tanggalwaktu"></span><br>
+                     # BuanaNETPBun.Github.io + https://fb.me/buananet.pbun<br>
+                     # VPN Type -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
+                     ###################################################################<br>
+                     </span>
+                     <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text" style="color:#154c79; font-weight:bold" >pptp</span>-client</span><br>
+                     add connect-to="<span id="vpn-ip-text" style="color:#154c79; font-weight:bold">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1" style="color:#154c79; font-weight:bold">VPN-TUNNEL</span>" user="<span id="vpn-username-text" style="color:#154c79; font-weight:bold" >xxxxxx</span>" password="<span id="vpn-password-text" style="color:#154c79; font-weight:bold">xxxxxx</span>" comment="<span id="vpn-name-text4">VPN-TUNNEL-BY-BNT</span>"<br>
+                     <span style="color:black;font-weight:bold">/ip firewall nat</span><br>
+                     add chain=srcnat out-interface="<span id="vpn-name-text2" style="color:#154c79; font-weight:bold">VPN-TUNNEL</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-TUNNEL-BY-BNT</span>"<br>
+                     <span style="color:black;font-weight:bold">/ip route</span><br>
+                     add gateway="<span id="vpn-name-text3" style="color:#154c79; font-weight:bold">VPN-TUNNEL</span>" distance=1 comment="<span id="vpn-name-text6">VPN-TUNNEL-BY-BNT</span>"<br>
+                     <span id="ip-gateway-text" ">
+                     add dst-address="<span id="vpn-ip-text2" style="color:#154c79; font-weight:bold" >x.x.x.x.x</span>" distance=1 gateway="<span id="ip-gateway-game" style="color:#154c79; font-weight:bold">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-TUNNEL-BY-BNT</span>"
+				</td>
+				</tr>			
+			</table>
+         </div>
+         <br>
+         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script to Terminal, make sure Script on the Top position!</b></span>
+    </div>
+     </div>
+   <div class="footer">
+<div style="float:right">
+© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+</div>    
+<span style="color:#154c79">
+<b># This Script for remove all Script from this Generator</b></span><br>
+/interface pptp-client remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
+/interface l2tp-client remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
+/ip route remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
+/ip firewall nat remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
+</div> 
+</div>
+<script>  
+		var dt = new Date();
+        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+		
+	   function myFunction() {
+         var vpnlist = document.getElementById("vpn-list").value;
+         document.getElementById("vpn-list-text").innerHTML = vpnlist;
+         document.getElementById("vpn-list-text-info").innerHTML = vpnlist;
+        var vpnname = document.getElementById("vpn-name").value;
+		if (vpnname != '' && vpnname != null){
+         document.getElementById("vpn-name-text1").innerHTML = vpnname;
+         document.getElementById("vpn-name-text2").innerHTML = vpnname;
+         document.getElementById("vpn-name-text3").innerHTML = vpnname;
+		} else {
+		 document.getElementById("vpn-name-text1").innerHTML = "<span style='color:red; font-weight:bold'>[don't be empty]<span>";
+         document.getElementById("vpn-name-text2").innerHTML = "<span style='color:red; font-weight:bold'>[don't be empty]<span>";
+         document.getElementById("vpn-name-text3").innerHTML = "<span style='color:red; font-weight:bold'>[don't be empty]<span>";
+		}       
+         var vpnip = document.getElementById("vpn-ip").value;
+		 if (vpnip != '' && vpnip != null){
+         document.getElementById("vpn-ip-text").innerHTML = vpnip;
+         document.getElementById("vpn-ip-text2").innerHTML = vpnip;
+		} else {
+         document.getElementById("vpn-ip-text").innerHTML = "<span style='color:red; font-weight:bold'>[don't be empty]<span>"
+		 document.getElementById("vpn-ip-text2").innerHTML = "<span style='color:red; font-weight:bold'>[don't be empty]<span>"
+		}              
+         var vpnusername = document.getElementById("vpn-username").value;
+		 if (vpnusername != '' && vpnusername != null){
+		document.getElementById("vpn-username-text").innerHTML = vpnusername;
+		} else {
+         document.getElementById("vpn-username-text").innerHTML = "<span style='color:red; font-weight:bold'>[don't be empty]<span>"
+		}       
+         var vpnpassword = document.getElementById("vpn-password").value;
+        if (vpnpassword != '' && vpnpassword != null){
+		 document.getElementById("vpn-password-text").innerHTML = vpnpassword;
+		} else {
+          document.getElementById("vpn-password-text").innerHTML = "<span style='color:red; font-weight:bold'>[don't be empty]<span>";
+		}       
+         
+        var ipgateway = document.getElementById("ip-gateway-input").value;
+		   if (ipgateway != '' && ipgateway != null){
+		  document.getElementById("ip-gateway-game").innerHTML = ipgateway;
+		} else {
+          document.getElementById("ip-gateway-game").innerHTML = "<span style='color:red; font-weight:bold'>[don't be empty]<span>";
+		}   
+
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+  
+            // Setting text of element P with id gfg
+            $("#vpn-ip-text2").html(data.ip);
+        })
+	}
+        	 
+        function selectElementContents(el) {
+                         var body = document.body, range, sel;
+                         if (document.createRange && window.getSelection) {
+                             range = document.createRange();
+                             sel = window.getSelection();
+                             sel.removeAllRanges();
+                             try {
+                                 range.selectNodeContents(el);
+                                 sel.addRange(range);
+                             } catch (e) {
+                                 range.selectNode(el);
+                                 sel.addRange(range);
+                             }
+                         } else if (body.createTextRange) {
+                             range = body.createTextRange();
+                             range.moveToElementText(el);
+                             range.select();
+                         }
+                     document.execCommand("copy"); 
+                     }	 
+		 function toggleSub(box, id) {
+             var el = document.getElementById(id);
+             
+             if ( box.checked ) {
+                 el.style.display = 'block';
+             } else {
+                 el.style.display = 'none';
+             }
+         }			 
+		 function myFunctionGames() {
+		  var input, filter, table, tr, td, i, txtValue;
+		  input = document.getElementById("myInput");
+		  filter = input.value.toUpperCase();
+		  table = document.getElementById("myTable");
+		  tr = table.getElementsByTagName("tr");
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[0];
+			if (td) {
+			  txtValue = td.textContent || td.innerText;
+			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			  } else {
+				tr[i].style.display = "none";
+			  }
+			}       
+		  }
+		}
+	     
+	     function ValidateIPaddressOnChange(input, type) 
+		{
+			var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+
+			var strtype = "";
+
+			switch(type){
+				case "ipaddress": strtype = "IP Address"; break;
+				case "gateway": strtype = "gateway"; break;
+				case "dns": strtype = "DNS"; break;
+				case "subnet":  strtype = "subnet mask"; break;
+			}
+
+			if(!input.value.match(ipformat)) {
+				input.focus();
+				alert("Attention! IP Address Validation Incorrect! Please check your IP address again!");
+			}
+		}
+		
+      </script>
+</body>
+</html>
+
 height:100%;
 padding-bottom: 15px;
 margin-bottom: 20px;
