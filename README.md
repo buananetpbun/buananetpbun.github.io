@@ -64,7 +64,7 @@ FB              : https://fb.me/buananet.pbun
 <img src="https://user-images.githubusercontent.com/42666125/113652386-e468f080-96bd-11eb-9415-47195e1da871.png">
 
 <h2>VPN TUNNEL ALL TRAFFIC SCRIPT GENERATOR FOR MIKROTIK ROUTEROS</h2>
-<p><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">VPN Tunnel All Trafick Script Generator</a> - VPN Tunnel All Trafick Script Generator For Mikrotik RouterOS</p>
+<p><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">VPN Tunnel All Traficc Script Generator</a> - VPN Tunnel All Traffic Script Generator For Mikrotik RouterOS</p>
 <img src="https://user-images.githubusercontent.com/42666125/116002845-baa04b00-a625-11eb-8cfb-2bcd960ba880.png">
 
 <br>
