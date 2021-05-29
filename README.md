@@ -35,6 +35,10 @@ FB              : https://fb.me/buananet.pbun
 <p><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC Script Generator</a> - Lb Pcc / Load Balancing Pcc Script Generator or Script Maker For Mikrotik Routeros</p>
 <img src="https://user-images.githubusercontent.com/42666125/111255160-1c45c080-8649-11eb-8238-ae9fb987a97d.png">
 
+<h2>LOAD BALANCING NTH SCRIPT GENERATOR</h2>
+<p><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH Script Generator</a> - Lb NTH / Load Balancing NTH Script Generator or Script Maker For Mikrotik Routeros</p>
+<img src="https://user-images.githubusercontent.com/42666125/120055979-a1931b80-c063-11eb-833b-28340e8d6b49.png">
+
 <h2>SIMPLE QUEUE SCRIPT GENERATOR FOR MIKROTIK + TOCKEN BUCKET</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue Script Generator For Mikrotik + Tocken Bucket</a> - Simple Queue Script Generator or Script Maker For Mikrotik Plus Token Bucket - For IP Subnet /24 Only</p>
 <img src="https://user-images.githubusercontent.com/42666125/111255211-3a132580-8649-11eb-9408-a9cd9649a1aa.png">
