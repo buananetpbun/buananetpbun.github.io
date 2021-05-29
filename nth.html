@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Load Balancing NTH (LB NTH) Mikrotik Script Generator - BuanaNETPBun.Github.io</title>
+<meta content='Load Balancing NTH (LB NTH) Mikrotik Script Generator' name='description'/>
+<meta content='script generator, mikrotik, LB, NTH, load balancing, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+<meta property="og:title" content="Load Balancing NTH (LB NTH) Script GeneratorBy BuanaNET">
+<meta property="og:description" content="Load Balancing NTH (LB NTH) Script GeneratorBy BuanaNET">
+<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255160-1c45c080-8649-11eb-8238-ae9fb987a97d.png">
+<meta property="og:image:alt" content="Load Balancing NTH (LB NTH) Script GeneratorBy BuanaNET">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buananetpbun.github.io/nth.html">
+<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+<style>
+
+/* --------------------------------------------
+################################################
+# LOAD BALANCING NTH / LB NTH SCRIPT GENERATOR
+# Date/Time : 10/12/2020, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNET
+# Version   : v1.0 Beta
+# Github	: BuanaNETPBun.Github.io
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+################################################
+----------------------------------------------- */  
+*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+body { font-size:16px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+html, body {
+height: 100%;
+width:100%;
+margin-top: 0px;
+padding:0;
+}
+* {
+box-sizing: border-box;
+}
+.logo {
+margin-top:0px; 
+color: #111;
+text-decoration:none;
+font-size:27px;
+font-weight:bold; 
+}	
+.logo a{
+color:#111 !important;
+text-decoration:none !important;
+}
+.Menu{
+width:100%;
+border-bottom:1px solid #ccc;
+height:100%;
+padding-bottom: 15px;
+margin-bottom: 20px;
+font-size:14px;
+font-weight:bold;
+}
+#wrap{
+width:1120px;
+margin:0 auto;
+padding:10px;
+background:#fff
+}
+.header{
+height:auto; 
+width:100%;
+margin-top:0px;
+margin-bottom:10px;
+border-top:1px solid #ccc;
+}
+.main-wrap{
+display:flex;
+}   
+.content{
+flex:1;
+float:right;
+width:800px;
+padding: 10px;
+border-top:1px solid #bbb;
+border-bottom:1px solid #bbb;
+border-right:1px solid #bbb;
+background:#ddd;
+height:auto;
+}
+.sidebar{
+float:left;
+width:300px;
+Padding-top:8px;
+padding-left: 10px;
+Padding-right:10px;
+Padding-bottom:20px;
+background-color:#ddd;
+border:1px solid #bbb; 
+height:auto;
+}
+.footer{
+font-size:14px;
+padding-top:15px;
+clear:both;
+width:auto;
+}
+h1 {
+color:#111;
+font-size:22px;
+margin-bottom:10px;
+margin-top:10px;
+}
+a:link {
+color: #8E2DE2;
+}
+a:visited {
+color: #8E2DE2;
+}
+a:hover {
+color: #8E2DE2;
+}
+a:active {
+color: #8E2DE2;
+}
+.menu {
+clear:both;
+width:auto;
+padding-bottom:13px;
+}
+.menu1 {
+width:360px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#4CAF50;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu1 a:link {
+text-decoration:none;
+color:white;
+}
+.menu1 a:visited{
+text-decoration:none;
+color:white;
+}
+.menu2 {
+width:300px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#bbb;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu2 a:link{
+text-decoration:none;
+color:white;
+}
+.menu2 a:visited{
+text-decoration:none;
+color:white;
+}
+button {
+margin-top: 15px;
+color: #fff;
+background-color: #8E2DE2;
+border-color: #8E2DE2;
+border:none;
+padding:8px;
+width:130px;
+font-size:16px;
+font-weight:bold;
+display:inline-block;
+}
+.row:after {
+content: "";
+display: table;
+clear: both;
+}  
+input[type=text], select, textarea {
+width: 100%;
+padding: 5px;
+border: 1px solid #bbb;
+border-radius: 1px;
+margin-bottom:10px;
+ margin-top:10px;
+font-size:16px !important;
+}
+input[type=submit] {
+background-color: #8E2DE2;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 1px;
+cursor: pointer;
+float: right;
+}
+input[type=submit]:hover {
+background-color: #45a049;
+}
+.col-25 {
+float: left;
+width: 25%;
+margin-top: 6px;
+}
+.col-75 {
+float: left;
+width: 75%;
+margin-top: 6px;
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+.list-game {
+height: 200px;
+background:white;
+overflow: scroll;
+overflow-x: hidden;
+width: 100%;
+margin-top:2px;
+padding: 3px;
+border: 1px solid rgba(0,0,0,0.25);
+}
+.list-game label {
+padding: 0;
+display: inline-block;
+} 
+.list-mangle {
+height: 582px;
+background:#fff;
+overflow: scroll;
+width: 100%;
+padding: 4px;
+margin-top:8px;
+border: 1px solid #ccc;
+}
+table, tr, td {
+border: none;
+}
+#CbiJvKRogXqD {
+z-index:99;
+display: none;
+background: #000;
+text-align: center;
+font-weight: bold;
+color: #fff;
+font-size: 4.0vw;
+position: fixed;
+width: 100%;
+height: 100%;
+top:0;
+left:0;
+opacity: 0.7;
+padding:150px;
+}
+</style>
+</head>
+<body>
+<div id="CbiJvKRogXqD">
+PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
+</div>
+<div id="wrap">
+<div class="logo">	  
+<a href="https://buananetpbun.github.io"><span style="color:#8E2DE2 !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+</div>		
+<div class="header">
+<span style="float:left; display:inline;margin-right:6px; margin-top:10px">
+<a href="https://buananetpbun.github.io/nth.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+</span>
+<h1>LB NTH / LOAD BALANCING <span style="color:#8E2DE2"></span>NTH</span> SCRIPT GENERATOR FOR MIKROTIK ROUTEROS</h1>
+</div>
+<div class="main-wrap">
+    <div class="sidebar">
+			<label>Select Number Your ISP Line</label>
+			<select style="margin-top:10px" id="wan-list" onclick="myFunctionOuput()">
+				<option value="line2">2 Line ISP</option>
+				<option value="line3">3 Line ISP</option>
+				<option value="line4">4 Line ISP</option>
+				<option value="line5">5 Line ISP</option>
+				<option value="line6">6 Line ISP</option>
+			</select>
+			<div style="color:#8E2DE2; border:1px solid #8E2DE2; padding:7px;margin-top:0px;margin-bottom:10px">Atention! Please Change Your WAN Interface Name With Your Router Condition, Example: ether1 or E1-WAN or e1-indihome or pppoe-out1
+			</div>
+
+			<div style="float:left; width:130px;">
+				<label>WAN ISP-1</label>
+				<input type="text" id="wan1-isp" placeholder="Ex: ether1">
+			</div>	
+			<div style="float:left; width:130px;margin-left:10px">
+			     <label>Gateway ISP-1</label>
+				<input type="text" id="wan1-isp-ip" placeholder="Ex: 192.168.1.1">
+			</div>
+
+			<div style="float:left; width:130px;">
+				<label>WAN ISP-2</label>
+				<input type="text" id="wan2-isp" placeholder="Ex: ether2">
+			</div>
+			<div style="float:left; width:130px;margin-left:10px">
+				<label>Gateway ISP-2</label>
+				<input type="text" id="wan2-isp-ip" placeholder="Ex: 192.168.2.1">
+			</div>
+			<div style="float:left; width:130px;">
+				<label>WAN ISP-3</label>
+				<input type="text" id="wan3-isp" placeholder="Ex: ether3" disabled>
+			</div>
+			<div style="float:left; width:130px;margin-left:10px">
+				<label>Gateway ISP-3</label>
+
+				<input type="text" id="wan3-isp-ip" placeholder="Ex: 192.168.3.1" disabled >
+			</div>
+			<div style="float:left; width:130px;">
+				<label>WAN ISP-4</label>
+				<input type="text" id="wan4-isp" placeholder="Ex: ether4" disabled>
+			</div>
+			<div style="float:left; width:130px;margin-left:10px">
+				<label>Gateway ISP-4</label>
+				<input type="text" id="wan4-isp-ip" placeholder="Ex: 192.168.4.1" disabled >
+			</div>
+
+			<div style="float:left; width:130px;">
+				<label>WAN ISP-5</label>
+				<input type="text" id="wan5-isp" placeholder="Ex: ether5" disabled>
+			</div>
+			<div style="float:left; width:130px;margin-left:10px">
+				<label>Gateway ISP-5</label>
+	
+				<input type="text" id="wan5-isp-ip" placeholder="Ex: 192.168.5.1" disabled >
+			</div>
+	
+			<div style="float:left; width:130px;">
+				<label>WAN ISP-6</label>
+
+				<input type="text" id="wan6-isp" placeholder="Ex: ether6" disabled>
+			</div>
+			<div style="float:left; width:130px;margin-left:10px;">
+				<label>Gateway ISP-6</label>
+
+				<input type="text" id="wan6-isp-ip" placeholder="Ex: 192.168.6.1" disabled >
+			</div>
+			<button style="margin-right:2px" type="button" onclick="myFunctionInput()">Generate</button>
+			<button type="button" onclick="location.reload()">Clear All</button>
+	
+    </div>
+    <div class="content"> 
+        <span style="margin-left:2px">Script Generator Result</span>
+         <div class="list-mangle">
+		 <div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">	
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- MIKROTIK SCRIPT DB3 -->
+			<ins class="adsbygoogle"
+			style="display:inline-block;width:728px;height:90px"
+			data-ad-client="ca-pub-9740800920365268"
+			data-ad-slot="4637807296"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+		</div>
+            <table id="showScript" style="padding:5px; white-space: nowrap;">
+               <tr>
+                  <td>
+                     <span style="color:#8E2DE2;">
+                     ################################################<br>
+                     # LOAD BALANCING NTH (LB NTH) SCRIPT GENERATOR<br>
+                     # Date/Time: <span id="tanggalwaktu"></span><br>
+                     # https://fb.me/buananet.pbun<br>
+                     # Load Balancing Metode -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">NTH</span><br>
+                     ################################################<br><br>
+                     </span>
+					 <b>/ip firewall address-list</b><br>
+					 add address=192.168.0.0/16 list=LOCAL-IP comment="LB By BNT"<br>
+					 add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT" <br>
+					 add address=10.0.0.0/8 list=LOCAL-IP comment="LB By BNT"<br>
+					 
+					<b>/ip firewall nat</b><br>
+					<span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan3-nat" style="display:none">add chain=srcnat out-interface="<span id="wan3-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+					<span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+
+					<b>/ip route</b><br>
+					<span id="wan1-route">add check-gateway=ping distance=1 gateway="<span id="wan1-route-text"></span>" routing-mark="<span id="wan1-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan2-route">add check-gateway=ping distance=1 gateway="<span id="wan2-route-text"></span>" routing-mark="<span id="wan2-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan3-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan3-route-text"></span>" routing-mark="<span id="wan3-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan4-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan4-route-text"></span>" routing-mark="<span id="wan4-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan5-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan5-route-text"></span>" routing-mark="<span id="wan5-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan6-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan6-route-text"></span>" routing-mark="<span id="wan6-route-text-r"></span>" comment="LB By BNT"<br></span>
+					<span id="wan1-route-failover">add check-gateway=ping distance=1 gateway="<span id="wan1-route-failover-text"></span>" comment="LB By BNT"<br></span>
+					<span id="wan2-route-failover">add check-gateway=ping distance=2 gateway="<span id="wan2-route-failover-text"></span>" comment="LB By BNT"<br></span>
+					<span id="wan3-route-failover" style="display:none">add check-gateway=ping distance=3 gateway="<span id="wan3-route-failover-text"></span>" comment="LB By BNT"<br></span>
+					<span id="wan4-route-failover" style="display:none">add check-gateway=ping distance=4 gateway="<span id="wan4-route-failover-text"></span>" comment="LB By BNT"<br></span>
+					<span id="wan5-route-failover" style="display:none">add check-gateway=ping distance=5 gateway="<span id="wan5-route-failover-text"></span>" comment="LB By BNT"<br></span>
+					<span id="wan6-route-failover" style="display:none">add check-gateway=ping distance=6 gateway="<span id="wan6-route-failover-text"></span>" comment="LB By BNT"<br></span>
+
+					<b>/ip firewall mangle</b><br>
+					<span id="wan1-mangle-input">add action=mark-connection chain=prerouting in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-input">add action=mark-connection chain=prerouting in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=prerouting in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-input" style="display:none">add action=mark-connection chain=prerouting in-interface="<span id="wan4-mangle-input-text"></span>" new-connection-mark="<span id="wan4-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-input" style="display:none">add action=mark-connection chain=prerouting in-interface="<span id="wan5-mangle-input-text"></span>" new-connection-mark="<span id="wan5-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-input" style="display:none">add action=mark-connection chain=prerouting in-interface="<span id="wan6-mangle-input-text"></span>" new-connection-mark="<span id="wan6-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+
+					<span id="wan1-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan1-mangle-output-text"></span>" new-routing-mark="<span id="wan1-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan2-mangle-output-text"></span>" new-routing-mark="<span id="wan2-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan3-mangle-output-text"></span>" new-routing-mark="<span id="wan3-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan4-mangle-output-text"></span>" new-routing-mark="<span id="wan4-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan5-mangle-output-text"></span>" new-routing-mark="<span id="wan5-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan6-mangle-output-text"></span>" new-routing-mark="<span id="wan6-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+
+					<span id="wan1-mangle-nth">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP  new-connection-mark="<span id="wan1-mangle-nth-text"></span>" passthrough=yes connection-state=new nth=<span id="wan1-mangle-nth-both"><span style='color:#8E2DE2; font-weight:bold'>2,1</span></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-nth">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="<span id="wan2-mangle-nth-text"></span>" passthrough=yes connection-state=new nth=<span id="wan2-mangle-nth-both"><span style='color:#8E2DE2; font-weight:bold'>2,2</span></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-nth" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="<span id="wan3-mangle-nth-text"></span>" passthrough=yes connection-state=new nth=<span id="wan3-mangle-nth-both"></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-nth" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="<span id="wan4-mangle-nth-text"></span>" passthrough=yes connection-state=new nth=<span id="wan4-mangle-nth-both"></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-nth" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="<span id="wan5-mangle-nth-text"></span>" passthrough=yes connection-state=new nth=<span id="wan5-mangle-nth-both"></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-nth" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="<span id="wan6-mangle-nth-text"></span>" passthrough=yes connection-state=new nth=<span id="wan6-mangle-nth-both"></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+								 
+					<span id="wan1-mangle-pre">add action=mark-routing chain=prerouting connection-mark="<span id="wan1-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan1-mangle-pre-text-r"></span>" passthrough=no src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan2-mangle-pre">add action=mark-routing chain=prerouting connection-mark="<span id="wan2-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan2-mangle-pre-text-r"></span>" passthrough=no src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan3-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan3-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan3-mangle-pre-text-r"></span>" passthrough=no src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan4-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan4-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan4-mangle-pre-text-r"></span>" passthrough=no src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan5-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan5-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan5-mangle-pre-text-r"></span>" passthrough=no src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
+					<span id="wan6-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan6-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan6-mangle-pre-text-r"></span>" passthrough=no src-address-list=LOCAL-IP comment="LB By BNT"<br></span> 
+						
+				</td>
+				</tr>			
+			</table>
+         </div>
+         <br>
+		<button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste to Terminal, make sure Mangle Script on the Top position!</b></span>
+		</div>
+        </div>
+ <div class="footer">
+<div style="float:right">
+© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+</div>  
+<span style="color:#8E2DE2"><b># This script for remover all script from this Generator</b></span><br>
+/ip firewall nat remove [find comment="LB By BNT"]<br>
+/ip route remove [find comment="LB By BNT"]<br>
+/ip firewall mangle remove [find comment="LB By BNT"]<br>
+/ip firewall address-list remove [find comment="LB By BNT"]<br> 
+</div>
+ </div>
+<script src="///buananetpbun.github.io/ad-blocker.js" type="text/javascript"></script>
+<script>  
+var _0x18b3=['moveToElementText','wan6-mangle-output-text','94PaEqRO','wan3-isp','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>6,1<span>','wan6-mangle-pre','createRange','wan4-mangle-output','wan3-route-failover-text','DNS','wan6-mangle-nth-text','wan3-mangle-nth','wan3-nat','wan3-route-failover','wan4-mangle-nth','wan5-isp-ip','wan3-mangle-nth-both','wan5-mangle-nth-both','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>5,5<span>','wan3-mangle-pre','wan4-mangle-input-text','wan4-route-text','wan4-route-failover-text','wan1-mangle-pre-text','innerHTML','wan6-route-text-r','wan3-mangle-input','block','wan6-nat','wan2-mangle-input-text-r','6777mSNJkX','wan5-mangle-input','removeAllRanges','wan6-route-failover','wan6-mangle-output','wan3-nat-text','wan5-mangle-input-text','wan5-mangle-input-text-r','wan-list','wan4-route-failover','wan6-mangle-nth','dns','wan4-mangle-pre-text-r','wan4-isp','wan6-isp-ip','769309lMCYdl','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>6,2<span>','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>5,2<span>','wan6-mangle-pre-text-r','wan3-mangle-output','tanggalwaktu','wan3-mangle-nth-text','18969SzYBEb','<span>','wan3-route-text-r','wan3-mangle-pre-text','wan2-mangle-output-text-r','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>3,3<span>','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>6,5<span>','wan1-route-text','wan6-route','none','wan1-isp','wan6-mangle-input','wan4-mangle-input','getSelection','wan4-mangle-nth-text','style','wan4-isp-ip','wan2-mangle-pre-text-r','createTextRange','wan5-route-text-r','wan6-mangle-nth-both','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>6,4<span>','wan6-isp','wan3-isp-ip','selectNode','execCommand','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>4,3<span>','wan4-nat','wan6-route-text','wan1-mangle-nth-both','wan3-mangle-input-text-r','display','wan5-isp','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>3,2<span>','wan4-route-text-r','wan4-mangle-input-text-r','wan6-route-failover-text','ipaddress','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>4,2<span>','29ardGEv','wan2-nat-text','wan4-mangle-pre','line4','4265dBUsTi','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>5,3<span>','wan5-route','wan6-mangle-pre-text','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-','219kfeRqj','wan5-nat','wan6-mangle-input-text-r','wan5-mangle-output-text-r','IP\x20Address','focus','wan4-mangle-nth-both','getElementById','wan3-mangle-output-text','wan5-route-failover','match','disabled','subnet','wan4-route','wan1-mangle-input-text-r','wan1-nat-text','wan5-route-text','959304STJmtD','wan1-mangle-output-text','wan1-route-failover-text','wan5-mangle-nth','wan5-mangle-pre','wan2-mangle-nth-both','wan6-mangle-input-text','wan3-mangle-input-text','wan3-mangle-pre-text-r','wan5-mangle-nth-text','gateway','316621WFYKZT','1XXDigz','15WJVKkg','wan3-route','140727MCEtzW','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>3,1<span>','selectNodeContents','wan5-nat-text','wan2-mangle-output-text','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>4,1<span>','wan1-mangle-nth-text','wan2-route-text-r','value','wan5-route-failover-text','wan3-mangle-output-text-r','wan1-isp-ip','wan5-mangle-output','wan5-mangle-pre-text-r','wan1-mangle-input-text','Perhatian!\x20Validasi\x20IP\x20Address\x20Salah!\x20Silahkan\x20Cek\x20Kembali','line3','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>to-','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>2,1<span>','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>2,2<span>','<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>','wan2-mangle-pre-text','wan2-mangle-input-text'];function _0xe1b6(_0x277f0e,_0x28ac9d){_0x277f0e=_0x277f0e-0x1ce;var _0x18b321=_0x18b3[_0x277f0e];return _0x18b321;}var _0x3c222a=_0xe1b6;(function(_0x107a8d,_0x3b254f){var _0x1e14dd=_0xe1b6;while(!![]){try{var _0x227180=parseInt(_0x1e14dd(0x1e3))+parseInt(_0x1e14dd(0x1d2))*parseInt(_0x1e14dd(0x227))+parseInt(_0x1e14dd(0x236))*parseInt(_0x1e14dd(0x1ef))+parseInt(_0x1e14dd(0x20b))*-parseInt(_0x1e14dd(0x268))+-parseInt(_0x1e14dd(0x1ee))+parseInt(_0x1e14dd(0x23d))*parseInt(_0x1e14dd(0x264))+-parseInt(_0x1e14dd(0x1f0))*parseInt(_0x1e14dd(0x1f2));if(_0x227180===_0x3b254f)break;else _0x107a8d['push'](_0x107a8d['shift']());}catch(_0xbdd063){_0x107a8d['push'](_0x107a8d['shift']());}}}(_0x18b3,0xe4229));var dt=new Date();document['getElementById'](_0x3c222a(0x23b))['innerHTML']=dt['toLocaleString']();function myFunctionInput(){var _0x4001be=_0x3c222a,_0x76b1a1=document[_0x4001be(0x1d9)](_0x4001be(0x247))[_0x4001be(0x1fa)],_0x3008ed=document[_0x4001be(0x1d9)](_0x4001be(0x1fd))[_0x4001be(0x1fa)];document[_0x4001be(0x1d9)](_0x4001be(0x1e1))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x76b1a1+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x244))['innerHTML']=_0x4001be(0x206)+_0x3008ed+_0x4001be(0x23e),document[_0x4001be(0x1d9)]('wan1-route-text-r')[_0x4001be(0x221)]=_0x4001be(0x203)+_0x76b1a1+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x200))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x76b1a1+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x1e0))[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0x76b1a1+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x1e4))[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0x76b1a1+'<span>',document[_0x4001be(0x1d9)]('wan1-mangle-output-text-r')['innerHTML']=_0x4001be(0x203)+_0x76b1a1+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x1f8))[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0x76b1a1+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x220))[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-'+_0x76b1a1+_0x4001be(0x23e),document[_0x4001be(0x1d9)]('wan1-mangle-pre-text-r')[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>to-'+_0x76b1a1+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x1e5))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x3008ed+_0x4001be(0x23e);var _0x4c2e85=document['getElementById']('wan2-isp')[_0x4001be(0x1fa)],_0x495738=document[_0x4001be(0x1d9)]('wan2-isp-ip')['value'];document[_0x4001be(0x1d9)](_0x4001be(0x265))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x4c2e85+_0x4001be(0x23e),document[_0x4001be(0x1d9)]('wan2-route-text')[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>'+_0x495738+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x1f9))['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>to-'+_0x4c2e85+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x208))['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>'+_0x4c2e85+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x226))['innerHTML']=_0x4001be(0x1d1)+_0x4c2e85+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x1f6))[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-'+_0x4c2e85+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x241))[_0x4001be(0x221)]=_0x4001be(0x203)+_0x4c2e85+'<span>',document[_0x4001be(0x1d9)]('wan2-mangle-nth-text')[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0x4c2e85+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x207))['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-'+_0x4c2e85+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x24e))[_0x4001be(0x221)]=_0x4001be(0x203)+_0x4c2e85+'<span>',document[_0x4001be(0x1d9)]('wan2-route-failover-text')[_0x4001be(0x221)]=_0x4001be(0x206)+_0x495738+_0x4001be(0x23e);var _0x43baa1=document[_0x4001be(0x1d9)]('wan3-isp')['value'],_0x3fda2=document['getElementById'](_0x4001be(0x254))[_0x4001be(0x1fa)];document[_0x4001be(0x1d9)](_0x4001be(0x22c))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x43baa1+'<span>',document[_0x4001be(0x1d9)]('wan3-route-text')[_0x4001be(0x221)]=_0x4001be(0x206)+_0x3fda2+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x23f))[_0x4001be(0x221)]=_0x4001be(0x203)+_0x43baa1+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x1ea))[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>'+_0x43baa1+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x25b))['innerHTML']=_0x4001be(0x1d1)+_0x43baa1+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x1da))[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0x43baa1+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x1fc))['innerHTML']=_0x4001be(0x203)+_0x43baa1+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x23c))[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0x43baa1+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x240))[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0x43baa1+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x1eb))['innerHTML']=_0x4001be(0x203)+_0x43baa1+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x211))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x3fda2+_0x4001be(0x23e);var _0xa9ec1f=document[_0x4001be(0x1d9)](_0x4001be(0x234))['value'],_0x1da53b=document[_0x4001be(0x1d9)](_0x4001be(0x24d))[_0x4001be(0x1fa)];document[_0x4001be(0x1d9)]('wan4-nat-text')['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>'+_0xa9ec1f+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x21e))[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>'+_0x1da53b+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x25f))[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>to-'+_0xa9ec1f+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x21d))[_0x4001be(0x221)]=_0x4001be(0x206)+_0xa9ec1f+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x260))['innerHTML']=_0x4001be(0x1d1)+_0xa9ec1f+'<span>',document[_0x4001be(0x1d9)]('wan4-mangle-output-text')[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-'+_0xa9ec1f+'<span>',document[_0x4001be(0x1d9)]('wan4-mangle-output-text-r')['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>to-'+_0xa9ec1f+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x24b))[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-'+_0xa9ec1f+'<span>',document[_0x4001be(0x1d9)]('wan4-mangle-pre-text')[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0xa9ec1f+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x233))['innerHTML']=_0x4001be(0x203)+_0xa9ec1f+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x21f))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x1da53b+_0x4001be(0x23e);var _0x84be4c=document['getElementById'](_0x4001be(0x25d))[_0x4001be(0x1fa)],_0xc8453c=document[_0x4001be(0x1d9)]('wan5-isp-ip')[_0x4001be(0x1fa)];document['getElementById'](_0x4001be(0x1f5))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x84be4c+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x1e2))['innerHTML']=_0x4001be(0x206)+_0xc8453c+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x250))[_0x4001be(0x221)]=_0x4001be(0x203)+_0x84be4c+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x22d))['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>'+_0x84be4c+'<span>',document['getElementById'](_0x4001be(0x22e))['innerHTML']=_0x4001be(0x1d1)+_0x84be4c+_0x4001be(0x23e),document[_0x4001be(0x1d9)]('wan5-mangle-output-text')[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-'+_0x84be4c+'<span>',document['getElementById'](_0x4001be(0x1d5))[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>to-'+_0x84be4c+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x1ec))['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-'+_0x84be4c+_0x4001be(0x23e),document[_0x4001be(0x1d9)]('wan5-mangle-pre-text')['innerHTML']=_0x4001be(0x1d1)+_0x84be4c+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x1ff))[_0x4001be(0x221)]=_0x4001be(0x203)+_0x84be4c+_0x4001be(0x23e),document['getElementById'](_0x4001be(0x1fb))[_0x4001be(0x221)]=_0x4001be(0x206)+_0xc8453c+_0x4001be(0x23e);var _0x3d574b=document[_0x4001be(0x1d9)](_0x4001be(0x253))['value'],_0x1d9cd2=document['getElementById'](_0x4001be(0x235))[_0x4001be(0x1fa)];document[_0x4001be(0x1d9)]('wan6-nat-text')['innerHTML']=_0x4001be(0x206)+_0x3d574b+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x259))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x1d9cd2+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x222))[_0x4001be(0x221)]=_0x4001be(0x203)+_0x3d574b+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x1e9))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x3d574b+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x1d4))['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>cm-'+_0x3d574b+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x20a))['innerHTML']=_0x4001be(0x1d1)+_0x3d574b+_0x4001be(0x23e),document['getElementById']('wan6-mangle-output-text-r')[_0x4001be(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>to-'+_0x3d574b+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x213))[_0x4001be(0x221)]=_0x4001be(0x1d1)+_0x3d574b+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x1d0))['innerHTML']=_0x4001be(0x1d1)+_0x3d574b+'<span>',document[_0x4001be(0x1d9)](_0x4001be(0x239))['innerHTML']=_0x4001be(0x203)+_0x3d574b+_0x4001be(0x23e),document[_0x4001be(0x1d9)](_0x4001be(0x261))[_0x4001be(0x221)]=_0x4001be(0x206)+_0x1d9cd2+'<span>';}function myFunctionOuput(){var _0x45dce4=_0x3c222a;if(document['getElementById'](_0x45dce4(0x22f))[_0x45dce4(0x1fa)]=='line2'){document['getElementById'](_0x45dce4(0x25a))[_0x45dce4(0x221)]=_0x45dce4(0x204),document['getElementById']('wan2-mangle-nth-both')[_0x45dce4(0x221)]=_0x45dce4(0x205);;document[_0x45dce4(0x1d9)](_0x45dce4(0x20c))[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x254))[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)]('wan3-nat')[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x1f1))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)]('wan3-mangle-input')[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x23a))['style'][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x214))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x21c))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x21c))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x216))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x234))['disabled']=!![],document[_0x45dce4(0x1d9)]('wan4-isp-ip')[_0x45dce4(0x1dd)]=!![],document['getElementById'](_0x45dce4(0x258))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan4-route')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x249))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x210))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x217))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x266))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan4-route-failover')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x25d))['disabled']=!![],document[_0x45dce4(0x1d9)]('wan5-isp-ip')[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x1d3))[_0x45dce4(0x24c)]['display']='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x1cf))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x228))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document['getElementById']('wan5-mangle-output')['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x1e6))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x1e7))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x1db))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x253))[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x235))['disabled']=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x225))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan6-route')['style']['display']=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x248))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan6-mangle-output')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x231))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x20e))['style']['display']=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x22a))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246);}document[_0x45dce4(0x1d9)](_0x45dce4(0x22f))[_0x45dce4(0x1fa)]==_0x45dce4(0x202)&&(document[_0x45dce4(0x1d9)](_0x45dce4(0x25a))[_0x45dce4(0x221)]=_0x45dce4(0x1f3),document['getElementById'](_0x45dce4(0x1e8))[_0x45dce4(0x221)]=_0x45dce4(0x25e),document[_0x45dce4(0x1d9)](_0x45dce4(0x219))[_0x45dce4(0x221)]=_0x45dce4(0x242),document[_0x45dce4(0x1d9)](_0x45dce4(0x20c))[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x254))[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x215))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)]('wan3-route')['style'][_0x45dce4(0x25c)]='block',document['getElementById'](_0x45dce4(0x223))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x23a))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x214))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan3-mangle-pre')['style'][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan3-route-failover')[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x234))['disabled']=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x24d))[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x258))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document['getElementById'](_0x45dce4(0x1df))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan4-mangle-input')['style'][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x210))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x217))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan4-mangle-pre')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x230))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan5-isp')[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x218))[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x1d3))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x1cf))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document['getElementById']('wan5-mangle-input')['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x1fe))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan5-mangle-nth')['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan5-mangle-pre')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x1db))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan6-isp')[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x235))[_0x45dce4(0x1dd)]=!![],document['getElementById'](_0x45dce4(0x225))['style']['display']='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x245))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)]('wan6-mangle-input')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x22b))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x231))[_0x45dce4(0x24c)]['display']='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x20e))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x22a))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none'),document['getElementById']('wan-list')[_0x45dce4(0x1fa)]==_0x45dce4(0x267)&&(document[_0x45dce4(0x1d9)](_0x45dce4(0x25a))['innerHTML']=_0x45dce4(0x1f7),document[_0x45dce4(0x1d9)]('wan2-mangle-nth-both')['innerHTML']=_0x45dce4(0x263),document['getElementById']('wan3-mangle-nth-both')[_0x45dce4(0x221)]=_0x45dce4(0x257),document[_0x45dce4(0x1d9)](_0x45dce4(0x1d8))['innerHTML']='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>4,4<span>',document[_0x45dce4(0x1d9)](_0x45dce4(0x20c))[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x254))[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x215))['style'][_0x45dce4(0x25c)]='block',document['getElementById'](_0x45dce4(0x1f1))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x223))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan3-mangle-output')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x214))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)](_0x45dce4(0x21c))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x216))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x234))[_0x45dce4(0x1dd)]=![],document['getElementById'](_0x45dce4(0x24d))[_0x45dce4(0x1dd)]=![],document['getElementById'](_0x45dce4(0x258))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan4-route')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan4-mangle-input')['style']['display']='block',document[_0x45dce4(0x1d9)]('wan4-mangle-output')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x217))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x266))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x230))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x25d))[_0x45dce4(0x1dd)]=!![],document['getElementById']('wan5-isp-ip')[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x1d3))[_0x45dce4(0x24c)]['display']='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x1cf))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x228))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x1fe))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x1e6))['style'][_0x45dce4(0x25c)]='none',document['getElementById'](_0x45dce4(0x1e7))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document['getElementById'](_0x45dce4(0x1db))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)]('wan6-isp')['disabled']=!![],document['getElementById']('wan6-isp-ip')[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)](_0x45dce4(0x225))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document['getElementById'](_0x45dce4(0x245))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x248))['style']['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x22b))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x231))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document['getElementById']('wan6-mangle-pre')['style'][_0x45dce4(0x25c)]='none',document['getElementById']('wan6-route-failover')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none'),document[_0x45dce4(0x1d9)](_0x45dce4(0x22f))['value']=='line5'&&(document[_0x45dce4(0x1d9)]('wan1-mangle-nth-both')[_0x45dce4(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>5,1<span>',document[_0x45dce4(0x1d9)]('wan2-mangle-nth-both')['innerHTML']=_0x45dce4(0x238),document[_0x45dce4(0x1d9)]('wan3-mangle-nth-both')[_0x45dce4(0x221)]=_0x45dce4(0x1ce),document['getElementById']('wan4-mangle-nth-both')[_0x45dce4(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>5,4<span>',document[_0x45dce4(0x1d9)](_0x45dce4(0x21a))[_0x45dce4(0x221)]=_0x45dce4(0x21b),document[_0x45dce4(0x1d9)](_0x45dce4(0x20c))[_0x45dce4(0x1dd)]=![],document['getElementById']('wan3-isp-ip')[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x215))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)]('wan3-route')['style'][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x223))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById']('wan3-mangle-output')['style'][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)](_0x45dce4(0x214))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x21c))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan3-route-failover')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x234))[_0x45dce4(0x1dd)]=![],document['getElementById'](_0x45dce4(0x24d))['disabled']=![],document[_0x45dce4(0x1d9)]('wan4-isp-ip')['disabled']=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x258))['style']['display']='block',document[_0x45dce4(0x1d9)]('wan4-route')['style']['display']=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x249))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document['getElementById']('wan4-mangle-output')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x217))['style']['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x266))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x230))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x25d))['disabled']=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x218))[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)]('wan5-nat')[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x1cf))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById']('wan5-mangle-input')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x1fe))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x1e6))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x1e7))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x1db))[_0x45dce4(0x24c)]['display']='block',document[_0x45dce4(0x1d9)]('wan6-isp')[_0x45dce4(0x1dd)]=!![],document[_0x45dce4(0x1d9)]('wan6-isp-ip')['disabled']=!![],document[_0x45dce4(0x1d9)]('wan6-nat')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='none',document[_0x45dce4(0x1d9)](_0x45dce4(0x245))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x248))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x22b))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x231))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x20e))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x246),document[_0x45dce4(0x1d9)](_0x45dce4(0x22a))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x246)),document[_0x45dce4(0x1d9)](_0x45dce4(0x22f))[_0x45dce4(0x1fa)]=='line6'&&(document[_0x45dce4(0x1d9)]('wan1-mangle-nth-both')[_0x45dce4(0x221)]=_0x45dce4(0x20d),document[_0x45dce4(0x1d9)](_0x45dce4(0x1e8))[_0x45dce4(0x221)]=_0x45dce4(0x237),document[_0x45dce4(0x1d9)](_0x45dce4(0x219))[_0x45dce4(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>6,3<span>',document[_0x45dce4(0x1d9)](_0x45dce4(0x1d8))[_0x45dce4(0x221)]=_0x45dce4(0x252),document['getElementById'](_0x45dce4(0x21a))[_0x45dce4(0x221)]=_0x45dce4(0x243),document[_0x45dce4(0x1d9)](_0x45dce4(0x251))[_0x45dce4(0x221)]='<span\x20style=\x27color:#8E2DE2;\x20font-weight:bold\x27>6,6<span>',document[_0x45dce4(0x1d9)](_0x45dce4(0x20c))[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x254))['disabled']=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x215))['style']['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan3-route')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)](_0x45dce4(0x223))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x23a))[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan3-mangle-nth')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document['getElementById']('wan3-mangle-pre')['style'][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)]('wan3-route-failover')['style']['display']='block',document['getElementById'](_0x45dce4(0x234))['disabled']=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x24d))['disabled']=![],document[_0x45dce4(0x1d9)]('wan4-nat')['style'][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x1df))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)](_0x45dce4(0x249))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan4-mangle-output')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan4-mangle-nth')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)]('wan4-mangle-pre')[_0x45dce4(0x24c)]['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x230))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x25d))[_0x45dce4(0x1dd)]=![],document['getElementById'](_0x45dce4(0x218))[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x1d3))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x1cf))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x228))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan5-mangle-output')['style']['display']='block',document['getElementById']('wan5-mangle-nth')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)]('wan5-mangle-pre')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan5-route-failover')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)](_0x45dce4(0x253))[_0x45dce4(0x1dd)]=![],document[_0x45dce4(0x1d9)](_0x45dce4(0x235))[_0x45dce4(0x1dd)]=![],document['getElementById'](_0x45dce4(0x225))['style'][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById']('wan6-route')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block',document[_0x45dce4(0x1d9)](_0x45dce4(0x248))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan6-mangle-output')[_0x45dce4(0x24c)]['display']='block',document[_0x45dce4(0x1d9)](_0x45dce4(0x231))['style']['display']=_0x45dce4(0x224),document[_0x45dce4(0x1d9)]('wan6-mangle-pre')[_0x45dce4(0x24c)][_0x45dce4(0x25c)]=_0x45dce4(0x224),document['getElementById'](_0x45dce4(0x22a))[_0x45dce4(0x24c)][_0x45dce4(0x25c)]='block');}function selectElementContents(_0x21f4ee){var _0x4bc44c=_0x3c222a,_0x5a8c3a=document['body'],_0x2f1520,_0x400fce;if(document[_0x4bc44c(0x20f)]&&window[_0x4bc44c(0x24a)]){_0x2f1520=document[_0x4bc44c(0x20f)](),_0x400fce=window[_0x4bc44c(0x24a)](),_0x400fce[_0x4bc44c(0x229)]();try{_0x2f1520[_0x4bc44c(0x1f4)](_0x21f4ee),_0x400fce['addRange'](_0x2f1520);}catch(_0x264906){_0x2f1520[_0x4bc44c(0x255)](_0x21f4ee),_0x400fce['addRange'](_0x2f1520);}}else _0x5a8c3a[_0x4bc44c(0x24f)]&&(_0x2f1520=_0x5a8c3a['createTextRange'](),_0x2f1520[_0x4bc44c(0x209)](_0x21f4ee),_0x2f1520['select']());document[_0x4bc44c(0x256)]('copy');}function ValidateIPaddressOnChange(_0x263021,_0x4b2416){var _0x154b17=_0x3c222a,_0x23d479=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x24141f='';switch(_0x4b2416){case _0x154b17(0x262):_0x24141f=_0x154b17(0x1d6);break;case _0x154b17(0x1ed):_0x24141f=_0x154b17(0x1ed);break;case _0x154b17(0x232):_0x24141f=_0x154b17(0x212);break;case _0x154b17(0x1de):_0x24141f='subnet\x20mask';break;}!_0x263021[_0x154b17(0x1fa)][_0x154b17(0x1dc)](_0x23d479)&&(_0x263021[_0x154b17(0x1d7)](),alert(_0x154b17(0x201)));}
+</script>
+</body>
+</html>
