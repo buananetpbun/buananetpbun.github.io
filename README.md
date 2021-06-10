@@ -79,5 +79,5 @@ Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> |
 
 Credit to : https://mikrotik.com | http://www.mikrotik.co.id
 
-
+Dukung Tools ini dengan memberikan saya Donasi melalui https://saweria.co/buananetpbun
 
