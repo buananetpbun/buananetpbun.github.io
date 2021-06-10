@@ -14,6 +14,9 @@ Site            : http://www.o-om.com
 Github Pages    : https://buananetpbun.github.io
 FB              : https://fb.me/buananet.pbun	
 -------------------------------------------------- /*
+
+Dukung Tools ini dengan memberikan Donasi melalui https://saweria.co/buananetpbun
+
 </pre>
 <h2>MIKROTIK SCRIPT ROUTEROS DATABASE</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - We try to collect all the scripts found on the internet and combine them in one DataBase, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!</p>
@@ -78,6 +81,3 @@ Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> |
 <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 
 Credit to : https://mikrotik.com | http://www.mikrotik.co.id
-
-Dukung Tools ini dengan memberikan saya Donasi melalui https://saweria.co/buananetpbun
-
