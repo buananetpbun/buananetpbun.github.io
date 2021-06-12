@@ -17,8 +17,18 @@ By BuanaNETPBun.Github.io' name='description'/>
 <meta property="og:image:alt" content="MikroTik Online Tools (Unofficial) By BuanaNET">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://buananetpbun.github.io">  
+<!-- Bootstrap -->
+    <script type="text/javascript" src="./Default_files/jquery-1.8.3.min.js.download"></script>
+    <script type="text/javascript" src="./Default_files/bootstrap.min.js.download"></script>
+    <link rel="stylesheet" href="./Default_files/bootstrap.min.css" media="screen">
+    	<script>
+	$(document).ready(function(){
+		$("#MyPopup").modal('show');
+	});
+</script>
 <meta name="yandex-verification" content="2185da3345ca44f7" />
 <style>
+
 /* --------------------------------------------
 ################################################
 # Tools For Mikrotik By BuanaNETPBun.Github.io
@@ -287,6 +297,38 @@ padding:150px;
 </style>
 </head>
 <body> 
+	<!-- Bootstrap -->
+    <!-- Modal Popup -->
+    <div id="MyPopup" class="modal fade" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        ×</button>
+                    <h3 class="modal-title">
+                        WELCOME TO BUANANETPBUN.GITHUB.IO
+                    </h3>
+                </div>
+                <div class="modal-body">
+				<h4>SUPPORT THIS TOOL WITH DONATION<br><br>
+                   <b>If you like this tool you can gife me a donation at <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a> 
+				   <br><br>Thanks :)</b></h4>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" id="btnClosePopup" value="Close" class="btn btn-danger">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Popup -->
+    <script type="text/javascript">
+        $(function () {
+            $("#btnClosePopup").click(function () {
+                $("#MyPopup").modal("hide");
+            });
+        });
+    </script>
 <div id="CbiJvKRogXqD"> 
 PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 </div>
