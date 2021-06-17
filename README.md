@@ -75,8 +75,8 @@ Dukung Tools ini dengan memberikan Donasi melalui https://saweria.co/buananetpbu
 <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">VPN Tunnel All Traficc Script Generator</a> - VPN Tunnel All Traffic Script Generator For Mikrotik RouterOS</p>
 <img src="https://user-images.githubusercontent.com/42666125/116002845-baa04b00-a625-11eb-8cfb-2bcd960ba880.png">
 
-<h2>WIFI.ID WMS AND SEAMLESS SCRIPT GENERATOR FOR MIKROTIK ROUTEROS</h2>
-<p><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Script Generato</a> - Wifi.id WMS and Seamless Script Generato For Mikrotik RouterOS</p>
+<h2>WIFI.ID WMS AND SEAMLESS AUTO LOGIN SCRIPT GENERATOR FOR MIKROTIK ROUTEROS</h2>
+<p><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login Script Generato</a> - Wifi.id WMS and Seamless Auto login Script Generato For Mikrotik RouterOS</p>
 <img src="https://user-images.githubusercontent.com/42666125/122338353-c8a98280-cf69-11eb-8dd2-6b599ae309ed.png">
 
 <br>
