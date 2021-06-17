@@ -278,28 +278,60 @@ background-color: #8E2DE2
   background-color: #8c0615;
   border-color: #8c0615;
 }
-#CbiJvKRogXqD {
-z-index:99;
-display: none;
-background: #000;
-text-align: center;
-font-weight: bold;
-color: #fff;
-font-size: 4.0vw;
-position: fixed;
-width: 100%;
-height: 100%;
-top:0;
-left:0;
-opacity: 0.7;
-padding:150px;
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 </style>
 </head>
-<body> 
-
-<div id="CbiJvKRogXqD"> 
-PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
+<body onLoad="callmodal()">
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>SUPPORT THIS TOOL WITH DONATION</h4><br>
+   <h5><b>If you like this tool you can gife me a donation at <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a> 
+   <br> <br>
+   Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a> <br>
+   <br>
+   Jika ada pertanyaan silahkan hubungi admin disini <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a>
+   <br>
+   <br>Thanks Before :)</b></h5>
+  </div>
 </div>
 <div class="content">
 <div class="logo">	  
@@ -445,5 +477,20 @@ PLEASE DISABLE YOUR AD BLOCKER FOR SUPPORT THIS SITE! THANKS :)
 <br>Dukung Tools ini dengan memberikan Donasi melalui <a href="https://saweria.co/buananetpbun">SAWERIA</a>
 </div>
 </div>
+<script type="text/javascript">
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+function callmodal() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>
