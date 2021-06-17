@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wifi.id WMS and Seamless Script Generator For Mikrotik Routeros - BuanaNETPBun.Github.io</title>
+<meta content='Wifi.id WMS and Seamless Script Generator For Mikrotik Routeros - BuanaNETPBun.Github.io' name='description'/>
+<meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+<meta property="og:title" content="Wifi.id WMS and Seamless Script Generator For Mikrotik Routeros By BuanaNET">
+<meta property="og:description" content="Wifi.id WMS and Seamless Script Generator For Mikrotik Routeros By BuanaNET">
+<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255425-9ece8000-8649-11eb-839c-21f25e838195.png">
+<meta property="og:image:alt" content="Wifi.id WMS and Seamless Script Generator For Mikrotik Routeros By BuanaNET">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html"> 
+<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+/* -----------------------------------------------------------------
+######################################################################
+# Wifi.id WMS and Seamless Script Generator By BuanaNETPBun.Github.io!
+# Date/Time : 11/8/2020, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNET
+# Version   : v1.0 Beta
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+######################################################################
+--------------------------------------------------------------------*/  
+*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+body { font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+html, body {
+height: 100%;
+width:100%;
+margin-top: 0px;
+padding:0;
+font-size:16px;
+}
+* {
+box-sizing: border-box;
+}
+.Menu{
+width:100%;
+border-bottom:1px solid #ccc;
+height:100%;
+padding-bottom: 15px;
+margin-bottom: 20px;
+font-size:14px;
+font-weight:bold;
+ }
+.logo {
+margin-top:20px;
+color: #111;
+text-decoration:none;
+font-size:27px;
+font-weight:bold; 
+}	
+.logo a{
+color:#111 !important;
+text-decoration:none !important;
+}
+#wrap{
+width:1120px;
+margin:0 auto;
+padding:10px;
+background:#fff
+}
+.header{
+height:auto; 
+width:100%;
+margin-top:0px;
+margin-bottom:10px;
+border-top:1px solid #ccc;
+}
+.main-wrap{
+display:flex;
+}     
+.content{
+flex:1;
+float:right;
+width:800px;
+padding: 10px;
+border-top:1px solid #ccc;
+border-bottom:1px solid #ccc;
+border-right:1px solid #ccc;
+background:#eee;
+height: auto;
+}
+.sidebar{
+float:left;
+width:300px;
+Padding-top:8px;
+padding-left: 10px;
+Padding-right:10px;
+Padding-bottom:20px;
+background-color:#eee;
+border:1px solid #ccc; 
+height: auto;
+}
+.footer{
+padding-top:15px;
+clear:both;
+width:auto;
+font-size:14px;
+}
+h1 {
+color:#111;
+font-size:22px;
+margin-bottom:5px;
+margin-top:10px;
+}
+a:link {
+  color: #154c79;
+}
+a:visited {
+  color: #154c79;
+}
+a:hover {
+  color: #154c79;
+}
+a:active {
+  color: #154c79;
+}
+.menu {
+margin-bottom:13px;
+clear:both;
+width:auto;
+}
+.menu1 {
+width:300px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#154c79;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu1 a:link {
+text-decoration:none;
+color:white;
+}
+.menu1 a:visited{
+text-decoration:none;
+color:white;
+}
+.menu2 {
+width:360px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#ff6600;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu2 a:link{
+text-decoration:none;
+color:white;
+}
+.menu2 a:visited{
+text-decoration:none;
+color:white;
+}
+ button {
+ color: #fff;
+ background-color: #154c79;
+ border-color: #154c79;
+ border:none;
+ padding:8px;
+ width:135px;
+ font-size:16px;
+ font-weight:bold;
+ }
+ .row:after {
+ content: "";
+ display: table;
+ clear: both;
+ }  
+ input[type=checkbox]{
+ margin-right:7px; 
+}
+ input[type=text], select, textarea {
+ width: 100%;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-radius: 1px;
+ resize: vertical;
+ font-size:16px !important;
+ }
+ label {
+ padding: 5px 5px 5px 5px;
+ display: inline-block;
+ }
+ input[type=submit] {
+ background-color: #154c79;
+ color: white;
+ padding: 13px 20px;
+ border: none;
+ border-radius: 1px;
+ cursor: pointer;
+ float: right;
+ }
+ input[type=submit]:hover {
+ background-color: #45a049;
+ }
+ .col-25 {
+ float: left;
+ width: 25%;
+ margin-top: 6px;
+ }
+ .col-75 {
+ float: left;
+ width: 75%;
+ margin-top: 6px;
+ }
+ /* Clear floats after the columns */
+ .row:after {
+ content: "";
+ display: table;
+ clear: both;
+ }
+ .list-game {
+ height: 200px;
+ background:white;
+ overflow: scroll;
+ overflow-x: hidden;
+ width: 100%;
+ margin-top:2px;
+ padding: 3px;
+ border: 1px solid rgba(0,0,0,0.25);
+ }
+ .list-game label {
+ padding: 0;
+ display: inline-block;
+ } 
+ .list-mangle {
+ height: 527px;
+ background:#fff;
+ overflow: scroll;
+ width: 100%;
+ padding: 4px;
+ margin-top:8px;
+ border: 1px solid #ccc;
+ }
+ table, tr, td {
+border: none;
+}
+
+</style>
+</head>
+<body>
+<div id="wrap">	
+<div class="logo">	  
+<a href="https://buananetpbun.github.io"><span style="color:#154c79 !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/> 
+</div>	
+<div class="header">
+<span style="float:left; display:inline;margin-right:6px; margin-top:10px">
+<a href="https://buananetpbun.github.io/vpn-game-generator.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+</span>
+<h1>WIFI.ID WMS AND SEAMLESS SCRIPT GENERATOR FOR MIKROTIK ROUTEROS</h1> 
+</div>
+<div class="main-wrap">
+    <div class="sidebar">
+         <label>Select Wifi.id Mode</label><div style="clear: both;"></div><div style="clear: both;"></div>
+         <select onchange="myFunction()" id="wifiid-list">
+            <option value="wms wifi.id">WMS Wifi.id</option>
+            <option value="seamless wifi.id">SEAMLESS Wifi.id</option>
+         </select>
+		 <div style="clear: both;"></div>
+		 <label>Select target default interface</label><div style="clear: both;"></div><div style="clear: both;"></div>
+         <select onchange="myFunction()" id="wlan-list">
+            <option value="wlan1">wlan1</option>
+            <option value="wlan2">wlan2</option>
+         </select>
+         <div style="clear: both;"></div>
+         <label>Username wifi.id</label><div style="clear: both;"></div>
+         <input type="text" id="username-wms" placeholder="cintalaura"><div style="clear: both;"></div>
+         <label>Password wifi.id</label><div style="clear: both;"></div>
+		 <input type="text" id="password-wms" placeholder="cintaluara123"><div style="clear: both;"></div>
+         <label>makeId</label><div style="clear: both;"></div>
+         <input type="text" id="makeid-wms" placeholder="@wms.1562532780.000"><div style="clear: both;"></div>
+         <label>gw_id</label><div style="clear: both;"></div>
+         <input type="text" id="gwid-wms" placeholder="WAG-D5-KBU"><div style="clear: both;"></div>
+		 <label>wlan</label><div style="clear: both;"></div>
+         <input type="text" id="wlanid-wms" placeholder="MGMUN00048-N/TLK-DI-103929:CINTA"><div style="clear: both;"></div>
+		 <label>sessionid</label><div style="clear: both;"></div>
+         <input type="text" id="sessionid-wms" placeholder="0C02FFFF78006120-70C0DFA0"><div style="clear: both;"></div>
+		 <label>redirect</label><div style="clear: both;"></div>
+         <input type="text" id="redirectid-wms" placeholder="https://detik.com" value="https://detik.com"><div style="clear: both;"></div>
+         <br>
+         <button style="margin-right:2px" type="button" onclick="myFunction()">Generate</button> 
+		 <button type="button" onclick="location.reload()">Clear All</button> 
+         <br>
+    </div>
+    <div class="content">
+        <span style="margin-left:2px">Script Generator Results</span>
+         <div class="list-mangle">
+		<div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">	
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- MIKROTIK SCRIPT DB3 -->
+			<ins class="adsbygoogle"
+			style="display:inline-block;width:728px;height:90px"
+			data-ad-client="ca-pub-9740800920365268"
+			data-ad-slot="4637807296"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+		</div>
+            <table id="showScript" style="padding:5px;">
+               <tr>
+                  <td>
+                     <span style="color:#154c79;">
+                     #####################################################################<br>
+                     # Wifi.id WMS and Seamless Script Generator By BuanaNETPBun.Github.io<br>
+                     # Date/Time: <span id="tanggalwaktu"></span><br>
+                     # BuanaNETPBun.Github.io - https://fb.me/buananet.pbun<br>
+                     # Wifi.id Type -> <span id="wifiid-list-text-info" style="font-weight:bold;text-transform: uppercase">WMS WIFI.ID</span><br>
+                     #####################################################################<br>
+                     </span>
+					 
+					 <span style="color:black;font-weight:bold">/interface wireless</span> set [ find default-name=wlan1] name=wlan1 comment="WIFI.ID BY BNT"<br>
+					 <span style="color:black;font-weight:bold">/interface wireless</span> set [ find default-name=wlan2] name=wlan2 comment="WIFI.ID BY BNT"<br>
+					 <span style="color:black;font-weight:bold">/ip firewall nat</span> add chain=srcnat out-interface="<span id="interfaceid-wms-x-0" style="color:#154c79; font-weight:bold"></span>" action=masquerade comment="WIFI.ID BY BNT"<br>
+					 
+					 <span id="seamless-show" style="display:none">
+					 <span style="color:black;font-weight:bold">/ip dhcp-client</span><br>
+						add default-route-distance=1 comment="WIFI.ID BY BNT" disabled=no interface="<span id="interfaceid-seamless-x" style="color:#154c79; font-weight:bold">wlan1</span>" <br>
+					  <span style="color:black;font-weight:bold">/interface wireless security-profiles</span><br>
+						add comment="WIFI.ID BY BNT" authentication-types=wpa-eap,wpa2-eap eap-methods=peap mode=dynamic-keys \
+						mschapv2-password="<span id="password-seamless-x" style="color:#154c79; font-weight:bold"></span>" mschapv2-username="<span id="username-seamless-x1" style="color:#154c79; font-weight:bold"></span>" radius-mac-accounting=yes radius-mac-authentication=yes \
+						supplicant-identity="<span id="username-seamless-x2" style="color:#154c79; font-weight:bold"></span>" name="Seamless.wifi.id" tls-mode=dont-verify-certificate<br>
+					 <span style="color:black;font-weight:bold">/interface wireless</span><br>
+					    set [ find default-name="<span id="interfaceid-seamless-x1" style="color:#154c79; font-weight:bold">wlan1</span>" ] disabled=no  installation=outdoor name="<span id="interfaceid-seamless-x2" style="color:#154c79; font-weight:bold">wlan1</span>" security-profile="Seamless.wifi.id" wireless-protocol=802.11	
+					 </span>
+					 
+					 <span id="wms-show">
+                     <span style="color:black;font-weight:bold">/ip dhcp-client</span><br>
+						add default-route-distance=1 disabled=no interface="<span id="interfaceid-wms-x-4" style="color:#154c79; font-weight:bold">wlan1</span>" comment="WIFI.ID BY BNT" script=":local rma\<br>
+						rk \"<span style="color:#154c79; font-weight:bold">check-</span><span id="interfaceid-wms-x-1" style="color:#154c79; font-weight:bold"></span>\";\r\<br>
+						\n:local count [/ip route print count-only where comment=\$rmark]\r\
+						\n:if (\$count = 0) do={\r\
+						\n /ip route add gateway=\$\"gateway-address\" comment=\$rmark routing-mar\
+						k=\$rmark\r\
+						\n} else={\r\
+						\n:if (\$count = 1) do={\r\
+						\n:local test [/ip route find where comment=\$rmark]\r\
+						\n:if ([/ip route get \$test gateway] != \$\"gateway-address\") do={\r\
+						\n /ip route set \$test gateway=\$\"gateway-address\"\r\
+						\n}}}"<br>
+					 <span style="color:black;font-weight:bold">/system script</span><br>
+					add dont-require-permissions=no name="WMS-AUTO-LOGIN" comment="WIFI.ID BY BNT" policy=\
+						ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":\<br>
+						local USERNAME \"<span id="username-wms-x" style="color:#154c79; font-weight:bold"></span>.<span id="username-makeid-randomnumber-wms-x" style="color:#154c79; font-weight:bold"></span><span id="username-makeid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
+						\n:local PASSWWORD \"<span id="password-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
+						\n:local GWID \"<span id="gwid-wms-x"style="color:#154c79; font-weight:bold" ></span>\";\r\
+						\n:local WLANID \"<span id="wlanid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
+						\n:local SESSIONID \"<span id="sessionid-wms-x" style="color:#154c79; font-weight:bold">wlan1</span>\";\r\
+						\n:local INTDEFNAME \"<span id="interfaceid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
+						\n:local REDIRECT \"<span id="redirectid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
+						\n:local MAC [/interface wireless get [ find default-name=\$INTDEFNAME ] m\
+						ac-address];\r\
+						\n:local INTNAME [/interface wireless get [ find default-name=\$INTDEFNAME\
+						] name];\r\
+						\n:local IPADDR [/ip address get [/ip address find interface=\$INTNAME] ad\
+						dress];\r\
+						\n:local IPADDR [put [:pick \$IPADDR 0 [:find \$IPADDR \"/\"]]];\r\<br>
+						\n:tool fetch mode=https http-header-field=\"Content-Type: application/x-w\
+						ww-form-urlencoded; charset=UTF-8,User-Agent: Mozilla/5.0 (Windows NT 10.0\
+						; Win64; x64) AppleWebKit/537.36,Referer: https://welcome2.wifi.id/login/\
+						\?gw_id=\$GWID&client_mac=\$MAC&wlan=\$WLANID&sessionid=\$SESSIONID&redire\
+						ct=$REDIRECT\" http-method=post http-data=\"username=\$USERNAME&pa\
+						ssword=\$PASSWWORD\" url=\"https://welcome2.wifi.id/wms/auth/authnew/autol\
+						ogin/quarantine.php\\\?ipc=\$IPADDR&gw_id=\$GWID&mac=\$MAC&username=\$USER\
+						NAME&password=\$PASSWWORD&redirect=$REDIRECT&wlan=\$WLANID\";\r\
+						\n"<br>
+					<span style="color:black;font-weight:bold">/system scheduler</span><br>
+					add interval=10s name=WMS-AUTO-LOGIN comment="WIFI.ID BY BNT" on-event=":local INTNAME [/interface wire\
+						less get [ find default-name=<span id="interfaceid-wms-x-2" style="color:#154c79; font-weight:bold"></span>] name];\r\
+						\nif ([/ping address=8.8.8.8 interface=\$INTNAME routing=<span style="color:#154c79; font-weight:bold">check-</span><span id="interfaceid-wms-x-3" style="color:#154c79; font-weight:bold"></span> count\
+						=5] = 0) do={/system script run WMS-AUTO-LOGIN}" policy=\
+						ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon \
+						start-time=startup<br>
+					</span>	
+				</td>
+				</tr>			
+			</table>
+         </div>
+         <br>
+         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script to Terminal :)</b></span>
+    </div>
+     </div>
+   <div class="footer">
+<div style="float:right">
+© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+</div>    
+<span style="color:#154c79">
+<b># TUTORIAL</b></span><br>
+1.Pertama seting dulu wlan anda agar konek ke SSID pada WMS atau Seamless<br>
+2.Masukan data yang di perlukan pada tool, data WMS bisa di temukan pada URL <br> 
+halaman login pertama kali pada web browser, kemudian klik kanan lalu pilih <br>
+"View Page Source" untuk melihat data "makeid"<br>
+3.Klik Generate, lalu copy paste langsung di terminal<br>
+4.Coba ping ke 1.1.1.1 atau 8.8.8.8 jika reply berarti anda sudah berhasil<br>
+</div> 
+</div>
+<script>  
+var _0x3133=['textContent','createTextRange','interfaceid-wms-x-1','wms\x20wifi.id','username-makeid-wms-x','seamless\x20wifi.id','innerHTML','disabled','wlanid-wms','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[username]<span>','focus','gwid-wms','119315SVblPM','subnet\x20mask','username-wms-x','wms-show','password-wms-x','redirectid-wms','458609sKJOGV','length','451XvAgRD','value','toLocaleString','257243RFOfbQ','1zzmlVP','wlan-list','1331367niaNFB','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[gwid]<span>','getElementById','innerText','1wslRLs','dns','block','password-seamless-x','getJSON','sessionid-wms-x','getSelection','getElementsByTagName','interfaceid-wms-x','tanggalwaktu','seamless-show','username-seamless-x2','makeid-wms','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[makeid]<span>','createRange','selectNode','wlanid-wms-x','wifiid-list','style','username-seamless-x1','myTable','execCommand','none','copy','1511954GkfqJm','removeAllRanges','interfaceid-seamless-x1','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[wlanid]<span>','gateway','addRange','gwid-wms-x','1449986qeJudN','random','display','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[redirectid]<span>','redirectid-wms-x','username-makeid-randomnumber-wms-x','html','fromCharCode','floor','checked','sessionid-wms','interfaceid-wms-x-4','2471iLnIHG','username-wms','subnet','https://api.ipify.org?format=json','toUpperCase','myInput','interfaceid-wms-x-0','ipaddress','buananet.click','IP\x20Address','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[password]<span>','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[sessionid]<span>'];var _0x4ea162=_0x2f8b;(function(_0x2bfeaf,_0x52d2af){var _0x49bb6c=_0x2f8b;while(!![]){try{var _0x13829d=-parseInt(_0x49bb6c(0x1cc))+parseInt(_0x49bb6c(0x1a7))*parseInt(_0x49bb6c(0x1a6))+-parseInt(_0x49bb6c(0x1d8))*parseInt(_0x49bb6c(0x1a3))+-parseInt(_0x49bb6c(0x1f0))+parseInt(_0x49bb6c(0x1c5))+-parseInt(_0x49bb6c(0x1a9))*-parseInt(_0x49bb6c(0x1ad))+parseInt(_0x49bb6c(0x1a1));if(_0x13829d===_0x52d2af)break;else _0x2bfeaf['push'](_0x2bfeaf['shift']());}catch(_0x15e4e3){_0x2bfeaf['push'](_0x2bfeaf['shift']());}}}(_0x3133,0xd5bbb));var dt=new Date();document[_0x4ea162(0x1ab)](_0x4ea162(0x1b6))[_0x4ea162(0x1ea)]=dt[_0x4ea162(0x1a5)]();function myFunction(){var _0x3492ad=_0x4ea162,_0x34b0b9=document[_0x3492ad(0x1ab)]('wifiid-list')['value'];document[_0x3492ad(0x1ab)]('wifiid-list-text-info')[_0x3492ad(0x1ea)]=_0x34b0b9;document[_0x3492ad(0x1ab)](_0x3492ad(0x1be))[_0x3492ad(0x1a4)]==_0x3492ad(0x1e9)&&(document[_0x3492ad(0x1ab)](_0x3492ad(0x1b9))['disabled']=!![],document['getElementById'](_0x3492ad(0x1ef))[_0x3492ad(0x1eb)]=!![],document[_0x3492ad(0x1ab)]('wlanid-wms')[_0x3492ad(0x1eb)]=!![],document['getElementById'](_0x3492ad(0x1d6))['disabled']=!![],document[_0x3492ad(0x1ab)]('redirectid-wms')['disabled']=!![],document[_0x3492ad(0x1ab)](_0x3492ad(0x19e))[_0x3492ad(0x1bf)]['display']='none',document['getElementById'](_0x3492ad(0x1b7))[_0x3492ad(0x1bf)]['display']=_0x3492ad(0x1af));document['getElementById']('wifiid-list')[_0x3492ad(0x1a4)]==_0x3492ad(0x1e7)&&(document[_0x3492ad(0x1ab)](_0x3492ad(0x1b9))[_0x3492ad(0x1eb)]=![],document[_0x3492ad(0x1ab)](_0x3492ad(0x1ef))['disabled']=![],document['getElementById'](_0x3492ad(0x1ec))['disabled']=![],document[_0x3492ad(0x1ab)](_0x3492ad(0x1d6))[_0x3492ad(0x1eb)]=![],document['getElementById'](_0x3492ad(0x1a0))['disabled']=![],document['getElementById'](_0x3492ad(0x19e))[_0x3492ad(0x1bf)][_0x3492ad(0x1ce)]=_0x3492ad(0x1af),document[_0x3492ad(0x1ab)](_0x3492ad(0x1b7))[_0x3492ad(0x1bf)][_0x3492ad(0x1ce)]=_0x3492ad(0x1c3));var _0x2c819e=document[_0x3492ad(0x1ab)](_0x3492ad(0x1a8))[_0x3492ad(0x1a4)];document[_0x3492ad(0x1ab)](_0x3492ad(0x1b5))[_0x3492ad(0x1ea)]=_0x2c819e,document[_0x3492ad(0x1ab)](_0x3492ad(0x1de))['innerHTML']=_0x2c819e,document[_0x3492ad(0x1ab)](_0x3492ad(0x1e6))[_0x3492ad(0x1ea)]=_0x2c819e,document[_0x3492ad(0x1ab)]('interfaceid-wms-x-2')[_0x3492ad(0x1ea)]=_0x2c819e,document[_0x3492ad(0x1ab)]('interfaceid-wms-x-3')[_0x3492ad(0x1ea)]=_0x2c819e,document[_0x3492ad(0x1ab)](_0x3492ad(0x1d7))['innerHTML']=_0x2c819e,document[_0x3492ad(0x1ab)]('interfaceid-seamless-x')[_0x3492ad(0x1ea)]=_0x2c819e,document['getElementById'](_0x3492ad(0x1c7))[_0x3492ad(0x1ea)]=_0x2c819e,document['getElementById']('interfaceid-seamless-x2')[_0x3492ad(0x1ea)]=_0x2c819e;var _0x509b23=document['getElementById'](_0x3492ad(0x1d9))[_0x3492ad(0x1a4)];_0x509b23!=''&&_0x509b23!=null?(document['getElementById'](_0x3492ad(0x19d))['innerHTML']=_0x509b23,document[_0x3492ad(0x1ab)]('username-seamless-x1')['innerHTML']=_0x509b23,document['getElementById'](_0x3492ad(0x1b8))['innerHTML']=_0x509b23):(document[_0x3492ad(0x1ab)]('username-wms-x')[_0x3492ad(0x1ea)]='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[username]<span>',document[_0x3492ad(0x1ab)](_0x3492ad(0x1c0))[_0x3492ad(0x1ea)]=_0x3492ad(0x1ed),document[_0x3492ad(0x1ab)](_0x3492ad(0x1b8))['innerHTML']='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[username]<span>');var _0x3e35a9=document['getElementById']('password-wms')['value'];_0x3e35a9!=''&&_0x3e35a9!=null?(document[_0x3492ad(0x1ab)]('password-wms-x')['innerHTML']=_0x3e35a9,document[_0x3492ad(0x1ab)](_0x3492ad(0x1b0))[_0x3492ad(0x1ea)]=_0x3e35a9):(document[_0x3492ad(0x1ab)](_0x3492ad(0x19f))['innerHTML']=_0x3492ad(0x1e2),document['getElementById'](_0x3492ad(0x1b0))[_0x3492ad(0x1ea)]=_0x3492ad(0x1e2));var _0x292f53=document[_0x3492ad(0x1ab)](_0x3492ad(0x1b9))[_0x3492ad(0x1a4)];_0x292f53!=''&&_0x292f53!=null?(document['getElementById'](_0x3492ad(0x1e8))[_0x3492ad(0x1ea)]=_0x292f53,document['getElementById'](_0x3492ad(0x1d1))[_0x3492ad(0x1ea)]=randomstring(0x4)):(document[_0x3492ad(0x1ab)]('username-makeid-randomnumber-wms-x')['innerHTML']=randomstring(0x4),document[_0x3492ad(0x1ab)](_0x3492ad(0x1e8))[_0x3492ad(0x1ea)]=_0x3492ad(0x1ba));var _0x108a77=document[_0x3492ad(0x1ab)](_0x3492ad(0x1ef))[_0x3492ad(0x1a4)];_0x108a77!=''&&_0x108a77!=null?document[_0x3492ad(0x1ab)](_0x3492ad(0x1cb))[_0x3492ad(0x1ea)]=_0x108a77:document[_0x3492ad(0x1ab)]('gwid-wms-x')['innerHTML']=_0x3492ad(0x1aa);var _0x172773=document[_0x3492ad(0x1ab)](_0x3492ad(0x1ec))[_0x3492ad(0x1a4)];_0x172773!=''&&_0x172773!=null?document['getElementById']('wlanid-wms-x')['innerHTML']=_0x172773:document['getElementById'](_0x3492ad(0x1bd))[_0x3492ad(0x1ea)]=_0x3492ad(0x1c8);var _0x2dd170=document[_0x3492ad(0x1ab)]('sessionid-wms')[_0x3492ad(0x1a4)];_0x2dd170!=''&&_0x2dd170!=null?document['getElementById'](_0x3492ad(0x1b2))[_0x3492ad(0x1ea)]=_0x2dd170:document['getElementById'](_0x3492ad(0x1b2))[_0x3492ad(0x1ea)]=_0x3492ad(0x1e3);var _0x154257=document['getElementById'](_0x3492ad(0x1a0))[_0x3492ad(0x1a4)];_0x154257!=''&&_0x154257!=null?document['getElementById'](_0x3492ad(0x1d0))[_0x3492ad(0x1ea)]=_0x154257:document[_0x3492ad(0x1ab)]('redirectid-wms-x')[_0x3492ad(0x1ea)]=_0x3492ad(0x1cf),$[_0x3492ad(0x1b1)](_0x3492ad(0x1db),function(_0x372687){var _0x83fa07=_0x3492ad;$('#vpn-ip-text2')[_0x83fa07(0x1d2)](_0x83fa07(0x1e0));});}function selectElementContents(_0x26f9a7){var _0x14dadd=_0x4ea162,_0xccf718=document['body'],_0x23f00e,_0x1777f3;if(document['createRange']&&window[_0x14dadd(0x1b3)]){_0x23f00e=document[_0x14dadd(0x1bb)](),_0x1777f3=window[_0x14dadd(0x1b3)](),_0x1777f3[_0x14dadd(0x1c6)]();try{_0x23f00e['selectNodeContents'](_0x26f9a7),_0x1777f3[_0x14dadd(0x1ca)](_0x23f00e);}catch(_0x23c822){_0x23f00e[_0x14dadd(0x1bc)](_0x26f9a7),_0x1777f3[_0x14dadd(0x1ca)](_0x23f00e);}}else _0xccf718[_0x14dadd(0x1e5)]&&(_0x23f00e=_0xccf718[_0x14dadd(0x1e5)](),_0x23f00e['moveToElementText'](_0x26f9a7),_0x23f00e['select']());document[_0x14dadd(0x1c2)](_0x14dadd(0x1c4));}function _0x2f8b(_0x3d24db,_0x42c146){_0x3d24db=_0x3d24db-0x19c;var _0x313350=_0x3133[_0x3d24db];return _0x313350;}function toggleSub(_0x299632,_0x88763d){var _0x1fabde=_0x4ea162,_0x5b1523=document[_0x1fabde(0x1ab)](_0x88763d);_0x299632[_0x1fabde(0x1d5)]?_0x5b1523[_0x1fabde(0x1bf)]['display']=_0x1fabde(0x1af):_0x5b1523[_0x1fabde(0x1bf)][_0x1fabde(0x1ce)]=_0x1fabde(0x1c3);}function myFunctionGames(){var _0xd5f006=_0x4ea162,_0x38fec8,_0x54bd7e,_0x418c92,_0x512bba,_0x196858,_0x39f127,_0xb856aa;_0x38fec8=document['getElementById'](_0xd5f006(0x1dd)),_0x54bd7e=_0x38fec8[_0xd5f006(0x1a4)][_0xd5f006(0x1dc)](),_0x418c92=document['getElementById'](_0xd5f006(0x1c1)),_0x512bba=_0x418c92['getElementsByTagName']('tr');for(_0x39f127=0x0;_0x39f127<_0x512bba[_0xd5f006(0x1a2)];_0x39f127++){_0x196858=_0x512bba[_0x39f127][_0xd5f006(0x1b4)]('td')[0x0],_0x196858&&(_0xb856aa=_0x196858[_0xd5f006(0x1e4)]||_0x196858[_0xd5f006(0x1ac)],_0xb856aa[_0xd5f006(0x1dc)]()['indexOf'](_0x54bd7e)>-0x1?_0x512bba[_0x39f127][_0xd5f006(0x1bf)][_0xd5f006(0x1ce)]='':_0x512bba[_0x39f127][_0xd5f006(0x1bf)][_0xd5f006(0x1ce)]='none');}}function ValidateIPaddressOnChange(_0xe8fbd3,_0x536c13){var _0x585821=_0x4ea162,_0x541930=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x49f2fd='';switch(_0x536c13){case _0x585821(0x1df):_0x49f2fd=_0x585821(0x1e1);break;case'gateway':_0x49f2fd=_0x585821(0x1c9);break;case _0x585821(0x1ae):_0x49f2fd='DNS';break;case _0x585821(0x1da):_0x49f2fd=_0x585821(0x19c);break;}!_0xe8fbd3[_0x585821(0x1a4)]['match'](_0x541930)&&(_0xe8fbd3[_0x585821(0x1ee)](),alert('Attention!\x20IP\x20Address\x20Validation\x20Incorrect!\x20Please\x20check\x20your\x20IP\x20address\x20again!'));}function randomstring(_0x57d512){var _0x10b145='',_0x347fb0=function(){var _0x1cb33e=_0x2f8b,_0x486e45=Math[_0x1cb33e(0x1d4)](Math[_0x1cb33e(0x1cd)]()*0x3e);if(_0x486e45<0xa)return _0x486e45;if(_0x486e45<0x24)return String[_0x1cb33e(0x1d3)](_0x486e45+0x37);return String[_0x1cb33e(0x1d3)](_0x486e45+0x3d);};while(_0x10b145['length']<_0x57d512)_0x10b145+=_0x347fb0();return _0x10b145;}
+	
+      </script>
+</body>
+</html>
