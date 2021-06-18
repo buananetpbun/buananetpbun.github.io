@@ -247,10 +247,48 @@ color:white;
  table, tr, td {
 border: none;
 }
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} 
 </style>
 <script src="https://platform-api.sharethis.com/js/sharethis.js#property=5fa97f556a73380012578d69&product=video-share-buttons" async="async"></script>
 </head>
-<body>
+<body onLoad="callmodal"> 
 <div id="wrap">	
 <div class="logo">	  
 <a href="https://buananetpbun.github.io"><span style="color:#154c79 !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/> 
@@ -337,6 +375,33 @@ border: none;
 /ip firewall nat remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
 </div> 
 </div>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>SUPPORT THIS TOOL WITH DONATION :)</h4>
+   <br><b>If you like this tool you can gife me a donation at <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a> 
+   <br><br>
+   Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
+   <br><br>
+   Jika ada pertanyaan silahkan hubungi admin disini <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a><br>
+   <br>Thanks Before :)</b>
+  </div>
+</div>	 
+	<script type="text/javascript">
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+function callmodal() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script> 
 <script>  
 var _0x2fcc=['innerHTML','display','vpn-ip','checked','subnet','select','gateway','vpn-ip-text','733709SOejrs','1JVVRJS','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[don\x27t\x20be\x20empty]<span>','Attention!\x20IP\x20Address\x20Validation\x20Incorrect!\x20Please\x20check\x20your\x20IP\x20address\x20again!','31286xOLBEl','vpn-name','ip-gateway-game','myTable','getElementById','none','selectNode','403097PmePHr','innerText','length','5nZYLDI','vpn-name-text1','toLocaleString','execCommand','IP\x20Address','ip-gateway-input','subnet\x20mask','moveToElementText','vpn-username','92000gCTpeb','block','value','vpn-list-text-info','3GTUgoD','myInput','22213jMTeDl','vpn-name-text2','getSelection','selectNodeContents','772153xpYXGY','vpn-ip-text2','vpn-username-text','vpn-list','focus','268881irjfre','dns','style','createTextRange','getElementsByTagName','textContent','toUpperCase','createRange','vpn-password','tanggalwaktu','ipaddress'];var _0x30e56e=_0x40f1;(function(_0x687835,_0x5a9248){var _0x580374=_0x40f1;while(!![]){try{var _0x361dbb=-parseInt(_0x580374(0x1a6))+parseInt(_0x580374(0x172))+parseInt(_0x580374(0x186))*parseInt(_0x580374(0x185))+parseInt(_0x580374(0x190))+-parseInt(_0x580374(0x19c))+parseInt(_0x580374(0x189))*parseInt(_0x580374(0x1a0))+parseInt(_0x580374(0x193))*-parseInt(_0x580374(0x1a2));if(_0x361dbb===_0x5a9248)break;else _0x687835['push'](_0x687835['shift']());}catch(_0x5a7806){_0x687835['push'](_0x687835['shift']());}}}(_0x2fcc,0x80027));var dt=new Date();document['getElementById'](_0x30e56e(0x17b))['innerHTML']=dt[_0x30e56e(0x195)]();function myFunction(){var _0x29d724=_0x30e56e,_0x4737d1=document[_0x29d724(0x18d)](_0x29d724(0x1a9))['value'];document['getElementById']('vpn-list-text')[_0x29d724(0x17d)]=_0x4737d1,document['getElementById'](_0x29d724(0x19f))[_0x29d724(0x17d)]=_0x4737d1;var _0x2db22a=document[_0x29d724(0x18d)](_0x29d724(0x18a))['value'];_0x2db22a!=''&&_0x2db22a!=null?(document['getElementById']('vpn-name-text1')['innerHTML']=_0x2db22a,document[_0x29d724(0x18d)](_0x29d724(0x1a3))[_0x29d724(0x17d)]=_0x2db22a,document['getElementById']('vpn-name-text3')[_0x29d724(0x17d)]=_0x2db22a):(document['getElementById'](_0x29d724(0x194))[_0x29d724(0x17d)]=_0x29d724(0x187),document['getElementById']('vpn-name-text2')['innerHTML']=_0x29d724(0x187),document['getElementById']('vpn-name-text3')['innerHTML']=_0x29d724(0x187));var _0xad8e54=document[_0x29d724(0x18d)](_0x29d724(0x17f))[_0x29d724(0x19e)];_0xad8e54!=''&&_0xad8e54!=null?(document['getElementById']('vpn-ip-text')['innerHTML']=_0xad8e54,document['getElementById'](_0x29d724(0x1a7))[_0x29d724(0x17d)]=_0xad8e54):(document['getElementById'](_0x29d724(0x184))[_0x29d724(0x17d)]=_0x29d724(0x187),document['getElementById']('vpn-ip-text2')['innerHTML']='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[don\x27t\x20be\x20empty]<span>');var _0x2c210e=document['getElementById'](_0x29d724(0x19b))['value'];_0x2c210e!=''&&_0x2c210e!=null?document['getElementById'](_0x29d724(0x1a8))[_0x29d724(0x17d)]=_0x2c210e:document['getElementById']('vpn-username-text')[_0x29d724(0x17d)]=_0x29d724(0x187);var _0x2f872c=document[_0x29d724(0x18d)](_0x29d724(0x17a))[_0x29d724(0x19e)];_0x2f872c!=''&&_0x2f872c!=null?document[_0x29d724(0x18d)]('vpn-password-text')['innerHTML']=_0x2f872c:document[_0x29d724(0x18d)]('vpn-password-text')[_0x29d724(0x17d)]=_0x29d724(0x187);var _0x24de6b=document['getElementById'](_0x29d724(0x198))[_0x29d724(0x19e)];_0x24de6b!=''&&_0x24de6b!=null?document[_0x29d724(0x18d)](_0x29d724(0x18b))[_0x29d724(0x17d)]=_0x24de6b:document[_0x29d724(0x18d)]('ip-gateway-game')[_0x29d724(0x17d)]=_0x29d724(0x187);}function selectElementContents(_0xce841f){var _0x1a9c6a=_0x30e56e,_0x480b41=document['body'],_0x1a78d8,_0x5bcfc1;if(document[_0x1a9c6a(0x179)]&&window[_0x1a9c6a(0x1a4)]){_0x1a78d8=document['createRange'](),_0x5bcfc1=window['getSelection'](),_0x5bcfc1['removeAllRanges']();try{_0x1a78d8[_0x1a9c6a(0x1a5)](_0xce841f),_0x5bcfc1['addRange'](_0x1a78d8);}catch(_0x4644b1){_0x1a78d8[_0x1a9c6a(0x18f)](_0xce841f),_0x5bcfc1['addRange'](_0x1a78d8);}}else _0x480b41[_0x1a9c6a(0x175)]&&(_0x1a78d8=_0x480b41[_0x1a9c6a(0x175)](),_0x1a78d8[_0x1a9c6a(0x19a)](_0xce841f),_0x1a78d8[_0x1a9c6a(0x182)]());document[_0x1a9c6a(0x196)]('copy');}function toggleSub(_0x2be445,_0x2b0b65){var _0x520773=_0x30e56e,_0x468c2e=document[_0x520773(0x18d)](_0x2b0b65);_0x2be445[_0x520773(0x180)]?_0x468c2e[_0x520773(0x174)][_0x520773(0x17e)]=_0x520773(0x19d):_0x468c2e[_0x520773(0x174)]['display']=_0x520773(0x18e);}function _0x40f1(_0x127874,_0x6abeb8){_0x127874=_0x127874-0x171;var _0x2fcce3=_0x2fcc[_0x127874];return _0x2fcce3;}function myFunctionGames(){var _0x30c470=_0x30e56e,_0x278489,_0x12ea95,_0x38ee0a,_0x5258f1,_0x52b8e9,_0x40f187,_0x35c4c5;_0x278489=document[_0x30c470(0x18d)](_0x30c470(0x1a1)),_0x12ea95=_0x278489[_0x30c470(0x19e)]['toUpperCase'](),_0x38ee0a=document['getElementById'](_0x30c470(0x18c)),_0x5258f1=_0x38ee0a[_0x30c470(0x176)]('tr');for(_0x40f187=0x0;_0x40f187<_0x5258f1[_0x30c470(0x192)];_0x40f187++){_0x52b8e9=_0x5258f1[_0x40f187][_0x30c470(0x176)]('td')[0x0],_0x52b8e9&&(_0x35c4c5=_0x52b8e9[_0x30c470(0x177)]||_0x52b8e9[_0x30c470(0x191)],_0x35c4c5[_0x30c470(0x178)]()['indexOf'](_0x12ea95)>-0x1?_0x5258f1[_0x40f187][_0x30c470(0x174)]['display']='':_0x5258f1[_0x40f187][_0x30c470(0x174)][_0x30c470(0x17e)]=_0x30c470(0x18e));}}function ValidateIPaddressOnChange(_0x34fdd9,_0x2a0fb2){var _0x16a5c8=_0x30e56e,_0xdca6be=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x21e392='';switch(_0x2a0fb2){case _0x16a5c8(0x17c):_0x21e392=_0x16a5c8(0x197);break;case _0x16a5c8(0x183):_0x21e392='gateway';break;case _0x16a5c8(0x173):_0x21e392='DNS';break;case _0x16a5c8(0x181):_0x21e392=_0x16a5c8(0x199);break;}!_0x34fdd9[_0x16a5c8(0x19e)]['match'](_0xdca6be)&&(_0x34fdd9[_0x16a5c8(0x171)](),alert(_0x16a5c8(0x188)));}
       </script>
