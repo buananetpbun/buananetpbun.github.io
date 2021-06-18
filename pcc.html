@@ -283,7 +283,7 @@ border: none;
 }
 </style>
 </head>
-<body onLoad="callmodal"> 
+<body onLoad="callmodal()"> 
 <div id="wrap">
 <div class="logo">	  
 <a href="https://buananetpbun.github.io"><span style="color:#08c !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
@@ -465,6 +465,7 @@ border: none;
 /ip firewall mangle remove [find comment="LB By BNT"]<br>
 /ip firewall address-list remove [find comment="LB By BNT"]<br> 
 </div>
+ </div>
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
@@ -476,10 +477,8 @@ border: none;
    Jika ada pertanyaan silahkan hubungi admin disini <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a><br>
    <br>Thanks Before :)</b>
   </div>
-</div>	
- </div>
- 
-<script>
+</div>	 
+<script type="text/javascript">
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 function callmodal() {
