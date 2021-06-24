@@ -387,9 +387,25 @@ border: none;
 						\n /ip route set \$test gateway=\$\"gateway-address\"\r\
 						\n}}}"<br>
 					 <span style="color:black;font-weight:bold">/system script</span><br>
-					add dont-require-permissions=no name="WMS-AUTO-LOGIN" comment="WIFI.ID BY BNT" policy=\
+					    add comment="WIFI.ID BY BNT" dont-require-permissions=no name=WMS-AUTO-LOGIN \
+						owner=admin policy=\
 						ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":\
-						local USERNAME \"<span id="username-wms-x" style="color:#154c79; font-weight:bold"></span>.<span id="username-makeid-randomnumber-wms-x" style="color:#154c79; font-weight:bold"></span><span id="username-makeid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
+						local makeid do={\r\
+						\n:local scU \"QTDWKEAIQEOLEOCGEULYZLKJHKZYOSUKCPKVVZDNSIBOOGSUJXEEAFOELPW\
+						I\";\r\
+						\n:local scL \"lacphbllqueteripjwwbrsbropgovrjtavgwmujgiaprlgknqsmawojlrhr\
+						y\";\r\
+						\n:local scN \"84726505343334659394956870852786973021921543935466785684762\
+						8\";\r\
+						\n:local getTime [/sys clock get time];\r\
+						\n:local s (:tonum [:pic \$getTime 6 8]);\r\
+						\n:local a [:pic \$scU \$s (\$s + 1)];\r\
+						\n:local b [:pic \$scL \$s (\$s + 1)]; \r\
+						\n:local c [:pic \$scN \$s (\$s + 1)];\r\
+						\n:local d [:pic \$scU (\$s - 1) \$s];\r\
+						\n:return \"\$a\$c\$b\$d\";}\r\
+						\n:local MKid [\$makeid];\r\
+						local USERNAME \"<span id="username-wms-x" style="color:#154c79; font-weight:bold"></span>.$MKid<span id="username-makeid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
 						\n:local PASSWWORD \"<span id="password-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
 						\n:local GWID \"<span id="gwid-wms-x"style="color:#154c79; font-weight:bold" ></span>\";\r\
 						\n:local WLANID \"<span id="wlanid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
