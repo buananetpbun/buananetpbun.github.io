@@ -325,7 +325,7 @@ border: none;
 		 <label>sessionid</label><div style="clear: both;"></div>
          <input type="text" id="sessionid-wms" placeholder="0C02FFFF78006120-70C0DFA0"><div style="clear: both;"></div>
 		 <label>redirect</label><div style="clear: both;"></div>
-         <input type="text" id="redirectid-wms" placeholder="https://detik.com" value="https://detik.com"><div style="clear: both;"></div>
+         <input type="text" id="redirectid-wms" placeholder="http://detik.com" value="http://detik.com"><div style="clear: both;"></div>
          <br>
          <button style="margin-right:2px" type="button" onclick="myFunction()">Generate</button> 
 		 <button type="button" onclick="location.reload()">Clear All</button> 
@@ -373,6 +373,7 @@ border: none;
 					 </span>
 					 
 					 <span id="wms-show">
+					 /interface wireless set [ find default-name=wlan2 ] disabled=no station-roaming=enabled wmm-support=enabled
                      <span style="color:black;font-weight:bold">/ip dhcp-client</span><br>
 						add default-route-distance=1 disabled=no interface="<span id="interfaceid-wms-x-4" style="color:#154c79; font-weight:bold">wlan1</span>" comment="WIFI.ID BY BNT" script=":local rma\
 						rk \"<span style="color:#154c79; font-weight:bold">check-wms-</span><span id="interfaceid-wms-x-1" style="color:#154c79; font-weight:bold"></span>\";\r\
@@ -408,10 +409,10 @@ border: none;
 						ww-form-urlencoded; charset=UTF-8,User-Agent: Mozilla/5.0 (Windows NT 10.0\
 						; Win64; x64) AppleWebKit/537.36,Referer: https://welcome2.wifi.id/login/\
 						\?gw_id=\$GWID&client_mac=\$MAC&wlan=\$WLANID&sessionid=\$SESSIONID&redire\
-						ct=$REDIRECT\" http-method=post http-data=\"username=\$USERNAME&pa\
+						ct=\$REDIRECT\" http-method=post http-data=\"username=\$USERNAME&pa\
 						ssword=\$PASSWWORD\" url=\"https://welcome2.wifi.id/wms/auth/authnew/autol\
 						ogin/quarantine.php\\\?ipc=\$IPADDR&gw_id=\$GWID&mac=\$MAC&username=\$USER\
-						NAME&password=\$PASSWWORD&redirect=$REDIRECT&wlan=\$WLANID\";\r\
+						NAME&password=\$PASSWWORD&redirect=\$REDIRECT&wlan=\$WLANID\";\r\
 						\n"<br>
 					<span style="color:black;font-weight:bold">/system scheduler</span><br>					
 						add comment="WIFI.ID By BNT" interval=10s name=WMS-AUTO-LOGIN on-event="if ([/i\
@@ -419,8 +420,8 @@ border: none;
 						\r\
 						\n:local INTNAME [/interface wireless get [ find default-name=\"<span id="interfaceid-wms-x-2" style="color:#154c79; font-weight:bold"></span>\"] n\
 						ame];\r\
-						\n/ip dhcp-client renew \$INTNAME;\r\
-						\n:delay 5000ms;\r\
+						\n/ip dhcp-client release [find interface=\$INTNAME] ;\r\
+						\n:delay 10000ms;\r\
 						\n/system script run WMS-AUTO-LOGIN;\r\
 						\n}\r\
 						\n" policy=\
