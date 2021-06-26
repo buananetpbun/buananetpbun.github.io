@@ -373,13 +373,12 @@ border: none;
 					 </span>
 					 
 					 <span id="wms-show">
-					 /interface wireless set [ find default-name=wlan2 ] disabled=no station-roaming=enabled wmm-support=enabled
                      <span style="color:black;font-weight:bold">/ip dhcp-client</span><br>
 						add default-route-distance=1 disabled=no interface="<span id="interfaceid-wms-x-4" style="color:#154c79; font-weight:bold">wlan1</span>" comment="WIFI.ID BY BNT" script=":local rma\
 						rk \"<span style="color:#154c79; font-weight:bold">check-wms-</span><span id="interfaceid-wms-x-1" style="color:#154c79; font-weight:bold"></span>\";\r\
 						\n:local count [/ip route print count-only where comment=\$rmark]\r\
 						\n:if (\$count = 0) do={\r\
-						\n /ip route add gateway=\$\"gateway-address\" comment=\$rmark routing-mar\
+						\n /ip route add check-gateway=ping gateway=\$\"gateway-address\" comment=\$rmark routing-mar\
 						k=\$rmark\r\
 						\n} else={\r\
 						\n:if (\$count = 1) do={\r\
@@ -387,7 +386,6 @@ border: none;
 						\n:if ([/ip route get \$test gateway] != \$\"gateway-address\") do={\r\
 						\n /ip route set \$test gateway=\$\"gateway-address\"\r\
 						\n}}}"<br>
-
 					<span style="color:black;font-weight:bold">/system script</span><br>
 						add dont-require-permissions=no name="WMS-AUTO-LOGIN" comment="WIFI.ID BY BNT" policy=\
 						ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":\<br>
