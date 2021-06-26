@@ -418,13 +418,16 @@ border: none;
 						\r\
 						\n:local INTNAME [/interface wireless get [ find default-name=\"<span id="interfaceid-wms-x-2" style="color:#154c79; font-weight:bold"></span>\"] n\
 						ame];\r\
-						\n/ip dhcp-client renew [find interface=\$INTNAME] ;\r\
+						\n/ip dhcp-client disable [find interface=\$INTNAME] ;\r\
+						\n:delay 2s;\r\
+						\n/ip dhcp-client enable [find interface=\$INTNAME] ;\r\
 						\n:delay 10s;\r\
 						\n/system script run WMS-AUTO-LOGIN;\r\
 						\n}\r\
 						\n" policy=\
 						ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon \
-						start-time=startup<br>
+						start-time=startup
+						<br>
 					</span>	
 				</td>
 				</tr>			
