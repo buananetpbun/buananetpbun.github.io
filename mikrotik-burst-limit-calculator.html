@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MikroTik Burst Limit Calculator - BuanaNETPBun.Github.io</title>
+<meta content='MikroTik Burst Limit Calculator - BuanaNETPBun.Github.io' name='description'/>
+<meta content='burst, calculator, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<meta property="og:title" content="MikroTik Burst Limit Calculator By BuanaNET">
+<meta property="og:description" content="MikroTik Burst Limit Calculator By BuanaNET">
+<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111256279-52843f80-864b-11eb-9a46-11dc571872bb.png">
+<meta property="og:image:alt" content="MikroTik Burst Limit Calculator By BuanaNET">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buananetpbun.github.io/pcc-calculation.html">
+<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+<style>
+/* -----------------------------------------------
+##################################################
+# MikroTik Burst Limit Calculator
+# Date/Time : 11/8/2020, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNET
+# Version   : v1.0 Beta
+# Github	: BuanaNETPBun.Github.io
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+##################################################
+-------------------------------------------------- */  
+*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+body { font-size:16px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:20px;}
+html, body {
+height: 100%;
+width:100%;
+margin-top: 0px;
+padding:0;
+}
+* {
+box-sizing: border-box;
+}
+.logo {
+margin-top:30px;
+color: #111;
+text-decoration:none;
+font-size:27px;
+font-weight:bold; 
+}	
+.logo a{
+color:#111 !important;
+text-decoration:none !important;
+}
+
+.Menu{
+width:100%;
+border-bottom:1px solid #ccc;
+height:100%;
+padding-bottom: 15px;
+margin-bottom: 20px;
+font-weight:bold;
+}
+#wrap{
+width:940px;
+margin:0 auto;
+padding:10px;
+}
+.header{
+height:auto; 
+width:100%;
+margin-top:0px;
+margin-bottom:10px;
+border-top:1px solid #ccc;
+}
+.main-wrap{
+background-color:#08c;
+}     
+.content{
+float:right;
+width:500px;
+height:480px;
+padding: 10px;
+border-top:1px solid #bbb; 
+border-bottom:1px solid #bbb; 
+border-right:1px solid #bbb; 
+background:#ddd;
+}
+.sidebar{
+float:left;
+width:210px;
+height:480px;
+padding: 10px;
+background-color:#ddd;
+border-left:1px solid #bbb; 
+border-top:1px solid #bbb; 
+border-bottom:1px solid #bbb;
+}
+.sidebar2{
+float:left;
+width:210px;
+height:480px;
+padding: 10px;
+background-color:#ddd;
+border-top:1px solid #bbb; 
+border-bottom:1px solid #bbb;
+}
+.footer{
+font-size:14px;
+padding-top:15px;
+text-align:center;
+clear:both;
+width:auto;
+}
+h1 {
+color:#111;
+font-size:20px;
+margin-bottom:10px;
+margin-top:10px;
+}
+a:link {
+color: #08c;
+}
+a:visited {
+color: #08c;
+}
+a:hover {
+color: #08c;
+}
+a:active {
+color: #08c;
+}
+.menu {
+clear:both;
+width:auto;
+padding-bottom:13px;
+}
+.menu1 {
+width:360px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#4CAF50;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu1 a:link {
+text-decoration:none;
+color:white;
+}
+.menu1 a:visited{
+text-decoration:none;
+color:white;
+}
+.menu2 {
+width:300px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#bbb;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu2 a:link{
+text-decoration:none;
+color:white;
+}
+.menu2 a:visited{
+text-decoration:none;
+color:white;
+}
+button {
+color: #fff;
+background-color: #08c;
+border-color: #08c;
+border:none;
+padding:8px;
+width:100%;
+font-weight:bold;
+font-size:16px !important;
+}
+.row:after {
+content: "";
+display: table;
+clear: both;
+}  
+input[type=text], select, textarea {
+width: 100%;
+padding: 5px;
+border: 1px solid #bbb;
+border-radius: 1px;
+resize: vertical;
+font-weight:normal;
+margin-bottom:5px;
+font-size:16px !important;
+}
+label {
+padding: 5px 5px 5px 0;
+display: inline-block;
+}
+input[type=submit] {
+background-color: #08c;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 1px;
+cursor: pointer;
+float: right;
+}
+input[type=submit]:hover {
+background-color: #45a049;
+}
+.col-25 {
+float: left;
+width: 25%;
+margin-top: 6px;
+}
+.col-75 {
+float: left;
+width: 75%;
+margin-top: 6px;
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+.list-game {
+height: 200px;
+background:white;
+overflow: scroll;
+overflow-x: hidden;
+width: 100%;
+margin-top:2px;
+padding: 3px;
+border: 1px solid rgba(0,0,0,0.25);
+}
+.list-game label {
+padding: 0;
+display: inline-block;
+} 
+.list-mangle {
+height: 420px;
+background:#fff;
+overflow: auto;
+overflow-x: auto;
+width: 100%;
+padding: 4px;
+margin-top:8px;
+border: 1px solid #ccc;
+}
+table, tr, td {
+border: none;
+}
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} 
+</style>
+</head>
+<body onLoad="callmodal()"> 
+<div id="wrap">
+<div class="logo">	  
+<a href="https://buananetpbun.github.io"><span style="color:#08c !important">BuanaNETPBun</span>.Github.io</a>  <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+</div>	
+<div class="header">
+<span style="float:left; display:inline;margin-right:6px; margin-top:10px">
+<a href="https://buananetpbun.github.io/pcc-calculation.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+</span>	
+<h1>MIKROTIK BURST LIMIT CALCULATOR</h1>
+</div>
+   <div class="sidebar">
+		<div style="float:left; width:100%;">
+		<label><b>UPLOAD </b></label><br>
+		<label>Max Limit (kbps)</label><br>
+	    <input type="text" id="up-max-limit" placeholder="512" value="512" onkeyup="myFunction()">
+		</div>
+		<div style="float:left; width:100%;">
+		<label>Burst Limit (kbps)</label><br>
+        <input type="text" id="up-speed-bonus" value="1000" placeholder="1000" onkeyup="myFunction()" >
+		</div>
+        <div style="float:left; width:100%;padding-bottom:15px;">
+		<label>Burst Duration (second)</label><br>
+ 		<input type="text" id="up-interval-bonus" value="6" placeholder="6" onkeyup="myFunction()">
+		</div>
+		<span style="margin-top:10px;font-size:14px">
+		<b>Burst Formula:</b><br>
+		-------------------------------<br>
+		BD = (BH / BL) x BT<br>
+		-------------------------------<br>
+		BD = Burst Duration<br>
+		BH = Burst Threshold<br>
+		BL &nbsp;= Burst Limit<br>
+		BT &nbsp;= Burst Time<br>
+		</span>
+  </div>
+      <div class="sidebar2">
+	  <div style="float:left; width:100%;">
+	  <label><b>DOWNLOAD</b></label><br>
+	  <label>Max Limit (kbps)</label><br>
+	  <input type="text" id="down-max-limit" value="1000" placeholder="1000" onkeyup="myFunction()" >
+	   </div>
+		<div style="float:left; width:100%;">
+		<label>Burst Limit (kbps)</label><br>
+       <input type="text" id="down-speed-bonus" value="2000" placeholder="2000" onkeyup="myFunction()">
+		 </div>
+		  <br>
+		  <div style="float:left; width:100%;margin-bottom:15px">
+		 <label>Burst Duration (second)</label><br>
+		<input type="text" id="down-interval-bonus" value="6" placeholder="6" onkeyup="myFunction()">
+		 </div>
+		 <span style="margin-top:10px; font-size:14px">
+		 <b>Upload:</b><br>
+		BD = (<span id="for-up-burst-threshold" style='color: blue'>384k</span> / <span id="for-up-burst-limit" style='color: Crimson'>1000k</span> ) x <span id="for-up-burst-time" style='color: DarkViolet'>16</span>s<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: red'>6</span> Second<br>
+		<span style='color: green'>Burst Limit to</span> <span id="for-up-burst-limit2" style='color: Crimson'>1000k</span> in <span id="for-up-burst-duration2" style='color: red'>6</span>s<br>
+		-------------------------------<br>
+		<b>Download:</b><br>
+		BD = (<span id="for-down-burst-threshold" style='color: blue'>750k</span> / <span id="for-down-burst-limit" style='color: Crimson'>2000k</span> ) x <span id="for-down-burst-time" style='color: DarkViolet'>16</span>s<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: red'>6</span> Second<br>
+		<span style='color: green'>Burst Limit to</span> <span id="for-down-burst-limit2" style='color: Crimson'>2000k</span> in <span id="for-down-burst-duration2" style='color: red'>6</span>s<br>
+		</span>
+  </div>
+   <div class="content"> 
+        <span style="margin-left:2px"><b>Calculation Burst Result</b></span>
+        <div class="list-mangle" style="margin-bottom:10px">
+		<table style="font-weight:normal">
+			<thead>
+			<tr style="background-color: #eee;font-weight:normal">
+				<th colspan="2" style="background-color: #fff;">Tab General</th>
+				<th style="background-color: #ddd;" >Upload</th>
+				<th style="background-color: #ddd;">Download</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			 <th colspan="2" style="background-color: #eee; font-weight:normal">Max Limit</th>
+			  <td id="result-up-max-limit" style='color: DarkGreen'>512k</td>
+			  <td id="result-down-max-limit" style='color: DarkGreen'>1000k</td>
+			 </tr> 
+			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Limit</th>
+			  <td id="result-up-burst-limit" style='color: Crimson'>1000k</td>
+			  <td id="result-down-burst-limit" style='color: Crimson'>2000k</td>
+			 </tr> 
+			 <tr>
+			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Threshold</th>
+			  <td id="result-up-burst-threshold" style='color: blue' >384k</td>
+			  <td id="result-down-burst-threshold" style='color: blue'>750k</td>
+			 </tr> 
+			 <tr>
+			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Time</th>
+			  <td id="result-up-burst-time" style='color: DarkViolet'>16</td>
+			  <td id="result-down-burst-time" style='color: DarkViolet' >16</td>
+			 </tr> 
+			 <tr>
+
+			 <th colspan="2" style="background-color: #fff; font-weight:bold">Tab Advanced</th>
+			  <td style="background-color: #ddd;font-weight:bold">Upload</td>
+			  <td style="background-color: #ddd;font-weight:bold">Download</td>
+			 </tr> 
+			 <th colspan="2" style="background-color: #eee; font-weight:normal">Limit At</th>
+			  <td id="result-up-limit-at" style='color: Chocolate' >64k</td>
+			  <td id="result-down-limit-at" style='color: Chocolate'>125k</td>
+			 </tr> 
+			 <th colspan="2" style="background-color: #eee; font-weight:normal">Priority</th>
+			  <td style='color: DarkCyan'>8</td>
+			  <td style='color: DarkCyan'>8</td>
+			 </tr>
+			</tbody>
+		</table>
+		<br>
+		<table id="mytable" style="font-weight:normal">
+			<thead>
+			<tr style="background-color: #ddd; " >
+				<td><b>Rate limit for Hotspot and PPPoE<b></td>
+			</tr>
+			</thead>
+				<tr>
+				<td><span id="rate-up-max-limit" style='color: DarkGreen'>512k</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1000k</span> <span id="rate-up-burst-limit"style='color: Crimson' >1000k</span>/<span id="rate-down-burst-limit" style='color: Crimson'>2000k</span> <span id="rate-up-burst-threshold" style='color: blue'>384k</span>/<span id="rate-down-burst-threshold" style='color: blue'>750k</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64k</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125k</span></td></th>
+				</tr>
+			</table>  
+    </div>   
+    </div>
+   <div class="footer">
+ <div style="width:100%; height:90px;">	
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- MIKROTIK SCRIPT DB3 -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-9740800920365268"
+data-ad-slot="4637807296"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+</div>
+<div style="margin-top:20px; text-align:center">
+© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly poweCrimson by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+</div>
+ </div>
+  </div>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3><span style="color:DarkGreen">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
+   <br><b>If you like this tool you can gife me a donation at <span style="color:DarkGreen">PAYPAL</span> to email: <span style="color:Crimson">oom@o-om.com</span>
+   <br><br>
+   Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
+   <br><br>
+   Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a><br>
+   <br>Thanks Before :)</b>
+  </div>
+</div>	 
+	<script type="text/javascript">
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+function callmodal() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script> 
+<script>  
+	 function myFunction(){		
+		var upmaxlimit = document.getElementById("up-max-limit").value;
+		var downmaxlimit = document.getElementById("down-max-limit").value;
+		var resultupburstlimit = parseInt(upmaxlimit);
+		var resultdownburstlimit = parseInt(downmaxlimit)
+		
+		var upintervalbonus = document.getElementById("up-interval-bonus").value;
+		var downintervalbonus = document.getElementById("down-interval-bonus").value;
+		var resultupintervalbonus = parseInt(upintervalbonus);
+		var resultdownintervalbonus = parseInt(downintervalbonus)
+		
+				
+		document.getElementById("result-up-max-limit").innerHTML = upmaxlimit + "k";
+        document.getElementById("result-down-max-limit").innerHTML = downmaxlimit + "k";
+
+		var callresultupburstlimit = document.getElementById("up-speed-bonus").value;
+        document.getElementById("result-up-burst-limit").innerHTML = callresultupburstlimit + "k";
+				
+		var callresultdownburstlimit = document.getElementById("down-speed-bonus").value;
+        document.getElementById("result-down-burst-limit").innerHTML = callresultdownburstlimit + "k";
+		
+			
+		document.getElementById("result-up-burst-threshold").innerHTML = Math.ceil((resultupburstlimit*(3/4))) + "k";
+        document.getElementById("result-down-burst-threshold").innerHTML = Math.ceil((resultdownburstlimit*(3/4))) + "k";
+		
+		document.getElementById("result-up-burst-time").innerHTML = Math.ceil(((resultupintervalbonus*callresultupburstlimit)/(resultupburstlimit*(3/4))));
+        document.getElementById("result-down-burst-time").innerHTML = Math.ceil(((resultdownintervalbonus*callresultdownburstlimit)/(resultdownburstlimit*(3/4))));
+		
+		document.getElementById("result-up-limit-at").innerHTML = Math.ceil((upmaxlimit*(1/8))) + "k";
+        document.getElementById("result-down-limit-at").innerHTML = Math.ceil((downmaxlimit*(1/8))) + "k";
+		
+		
+		document.getElementById("rate-up-max-limit").innerHTML = resultupburstlimit  + "k";
+		document.getElementById("rate-down-max-limit").innerHTML = resultdownburstlimit  + "k";
+		document.getElementById("rate-up-burst-limit").innerHTML = callresultupburstlimit  + "k";
+		document.getElementById("rate-down-burst-limit").innerHTML = callresultdownburstlimit  + "k";
+		document.getElementById("rate-up-burst-threshold").innerHTML = Math.ceil((resultupburstlimit*(3/4))) + "k";
+		document.getElementById("rate-down-burst-threshold").innerHTML = Math.ceil((resultdownburstlimit*(3/4))) + "k";
+		document.getElementById("rate-up-burst-time").innerHTML = Math.ceil(((resultupintervalbonus*callresultupburstlimit)/(resultupburstlimit*(3/4))));
+		document.getElementById("rate-down-burst-time").innerHTML = Math.ceil(((resultdownintervalbonus*callresultdownburstlimit)/(resultdownburstlimit*(3/4))));
+		document.getElementById("rate-up-limit-at").innerHTML = Math.ceil((upmaxlimit*(1/8))) + "k";
+		document.getElementById("rate-down-limit-at").innerHTML = Math.ceil((downmaxlimit*(1/8))) + "k";
+		
+		document.getElementById("for-up-burst-threshold").innerHTML = Math.ceil((resultupburstlimit*(3/4))) + "k";
+		document.getElementById("for-up-burst-limit").innerHTML = callresultupburstlimit  + "k";
+		document.getElementById("for-up-burst-time").innerHTML = Math.ceil(((resultupintervalbonus*callresultupburstlimit)/(resultupburstlimit*(3/4))));
+		document.getElementById("for-up-burst-duration").innerHTML = resultupintervalbonus;
+		document.getElementById("for-up-burst-limit2").innerHTML = callresultupburstlimit  + "k";
+		document.getElementById("for-up-burst-duration2").innerHTML = resultupintervalbonus;
+		
+		document.getElementById("for-down-burst-threshold").innerHTML = Math.ceil((resultdownburstlimit*(3/4))) + "k";
+		document.getElementById("for-down-burst-limit").innerHTML = callresultdownburstlimit  + "k";
+		document.getElementById("for-down-burst-time").innerHTML = Math.ceil(((resultdownintervalbonus*callresultdownburstlimit)/(resultdownburstlimit*(3/4))));
+		document.getElementById("for-down-burst-duration").innerHTML = resultdownintervalbonus;
+		document.getElementById("for-down-burst-limit2").innerHTML = callresultdownburstlimit  + "k";
+		document.getElementById("for-down-burst-duration2").innerHTML = resultdownintervalbonus;
+	}	
+ </script>
+</body>
+</html>
