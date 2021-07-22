@@ -317,25 +317,25 @@ padding: 8px;
 		<div style="float:left; width:100%;">
 		<label><b>UPLOAD </b></label><br>
 		<label>Max Limit (Kbps)</label><br>
-	    <input type="text" id="up-max-limit" placeholder="512" value="512" onkeyup="myFunction()">
+	    <input type="text" id="up-max-limit" style='color: green' placeholder="512" value="512" onkeyup="myFunction()">
 		</div>
 		<div style="float:left; width:100%;">
 		<label>Burst Limit (Kbps)</label><br>
-        <input type="text" id="up-speed-bonus" value="1000" placeholder="1000" onkeyup="myFunction()" >
+        <input type="text" id="up-speed-bonus" style='color: #01A3DF' value="1000" placeholder="1000" onkeyup="myFunction()" >
 		</div>
         <div style="float:left; width:100%;padding-bottom:15px;">
 		<label>Burst Duration (second)</label><br>
- 		<input type="text" id="up-interval-bonus" value="6" placeholder="6" onkeyup="myFunction()">
+ 		<input type="text" id="up-interval-bonus" style='color: red' value="6" placeholder="6" onkeyup="myFunction()">
 		</div>
 		<span style="margin-top:10px;font-size:14px">
 		<b>Burst Formula:</b><br>
 		<span style='color: #555'>------------------------------</span><br>
-		<span style='color: #ff6600'>BD</span> = ( <span style='color: blue'>BH</span> * <span style='color: DarkViolet'>BT</span> ) / <span style='color: Crimson'>BL</span><br>
+		<span style='color: #ff6600'>BD</span> = ( <span style='color: blue'>BH</span> * <span style='color: DarkViolet'>BT</span> ) / <span style='color: #01A3DF'>BL</span><br>
 		<span style='color: #555'>------------------------------</span><br>
 		<span style='color: #ff6600'>BD</span> = Burst Duration<br>
 		<span style='color: blue'>BH</span> = Burst Threshold<br>
 		<span style='color: DarkViolet'>BT</span> &nbsp;= Burst Time<br>
-		<span style='color: Crimson'>BL</span> &nbsp;= Burst Limit<br>
+		<span style='color: #01A3DF'>BL</span> &nbsp;= Burst Limit<br>
 		<br>
 		<span style='color: #555; font-size:12px'>*Convert 1000Kbps = 1Mbps<br>
 		
@@ -345,27 +345,27 @@ padding: 8px;
 	  <div style="float:left; width:100%;">
 	  <label><b>DOWNLOAD</b></label><br>
 	  <label>Max Limit (Kbps)</label><br>
-	  <input type="text" id="down-max-limit" value="1000" placeholder="1000" onkeyup="myFunction()" >
+	  <input type="text" id="down-max-limit" value="1000" style='color: green' placeholder="1000" onkeyup="myFunction()" >
 	   </div>
 		<div style="float:left; width:100%;">
 		<label>Burst Limit (Kbps)</label><br>
-       <input type="text" id="down-speed-bonus" value="2000" placeholder="2000" onkeyup="myFunction()">
+       <input type="text" id="down-speed-bonus" style='color: #01A3DF' value="2000" placeholder="2000" onkeyup="myFunction()">
 		 </div>
 		  <br>
 		  <div style="float:left; width:100%;margin-bottom:15px">
 		 <label>Burst Duration (second)</label><br>
-		<input type="text" id="down-interval-bonus" value="6" placeholder="6" onkeyup="myFunction()">
+		<input type="text" id="down-interval-bonus" style='color: red' value="6" placeholder="6" onkeyup="myFunction()">
 		 </div>
 		 <span style="margin-top:10px; font-size:14px">
 		 <b>Upload:</b><br>
-		<span style='color: #ff6600'>BD</span> = ( <span id="for-up-burst-threshold" style='color: blue'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-up-burst-limit" style='color: Crimson'>1000K</span><br>
+		<span style='color: #ff6600'>BD</span> = ( <span id="for-up-burst-threshold" style='color: blue'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1000K</span><br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: red'>6</span> second<br>
-		<span style='color: green'>Burst Speed to</span> <span id="for-up-burst-limit2" style='color: Crimson'>1000K</span> in <span id="for-up-burst-duration2" style='color: red'>6</span>s<br>
+		<span style='color: black'>Burst Speed to</span> <span id="for-up-burst-limit2" style='color: #01A3DF'>1000K</span> in <span id="for-up-burst-duration2" style='color: red'>6</span>s<br>
 		<br>
 		<b>Download:</b><br>
-		<span style='color: #ff6600'>BD</span> = ( <span id="for-down-burst-threshold" style='color: blue'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-down-burst-limit" style='color: Crimson'>2000k</span><br>
+		<span style='color: #ff6600'>BD</span> = ( <span id="for-down-burst-threshold" style='color: blue'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2000k</span><br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: red'>6</span> second<br>
-		<span style='color: green'>Burst Speed to</span> <span id="for-down-burst-limit2" style='color: Crimson'>2000K</span> in <span id="for-down-burst-duration2" style='color: red'>6</span>s<br>
+		<span style='color: black'>Burst Speed to</span> <span id="for-down-burst-limit2" style='color: #01A3DF'>2000K</span> in <span id="for-down-burst-duration2" style='color: red'>6</span>s<br>
 		</span>
   </div>
    <div class="content"> 
@@ -386,8 +386,8 @@ padding: 8px;
 			  <td id="result-down-max-limit" style='color: DarkGreen'>1000K</td>
 			 </tr> 
 			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Limit</th>
-			  <td id="result-up-burst-limit" style='color: Crimson'>1000K</td>
-			  <td id="result-down-burst-limit" style='color: Crimson'>2000K</td>
+			  <td id="result-up-burst-limit" style='color: #01A3DF'>1000K</td>
+			  <td id="result-down-burst-limit" style='color: #01A3DF'>2000K</td>
 			 </tr> 
 			 <tr>
 			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Threshold</th>
@@ -423,7 +423,7 @@ padding: 8px;
 			</tr>
 			</thead>
 				<tr style="font-size:13px">
-				<td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1000K</span> <span id="rate-up-burst-limit"style='color: Crimson' >1000K</span>/<span id="rate-down-burst-limit" style='color: Crimson'>2000k</span> <span id="rate-up-burst-threshold" style='color: blue'>384K</span>/<span id="rate-down-burst-threshold" style='color: blue'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td></th>
+				<td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1000K</span> <span id="rate-up-burst-limit"style='color: #01A3DF' >1000K</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2000k</span> <span id="rate-up-burst-threshold" style='color: blue'>384K</span>/<span id="rate-down-burst-threshold" style='color: blue'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td></th>
 				</tr>
 			</table>  
     </div>   
@@ -441,7 +441,7 @@ data-ad-slot="4637807296"></ins>
 </script> 
 </div>
 <div style="margin-top:20px; text-align:center">
-© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly poweCrimson by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powe#01A3DF by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
 </div>
  </div>
   </div>
@@ -449,7 +449,7 @@ data-ad-slot="4637807296"></ins>
   <div class="modal-content">
     <span class="close">&times;</span>
     <h3><span style="color:DarkGreen">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
-   <br><b>If you like this tool you can gife me a donation at <span style="color:DarkGreen">PAYPAL</span> to email: <span style="color:Crimson">oom@o-om.com</span>
+   <br><b>If you like this tool you can gife me a donation at <span style="color:DarkGreen">PAYPAL</span> to email: <span style="color:#01A3DF">oom@o-om.com</span>
    <br><br>
    Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
    <br><br>
