@@ -473,63 +473,7 @@ window.onclick = function(event) {
 }
 </script> 
 <script>  
-	 function myFunction(){		
-		var upmaxlimit = document.getElementById("up-max-limit").value;
-		var downmaxlimit = document.getElementById("down-max-limit").value;
-		var resultupburstlimit = parseInt(upmaxlimit);
-		var resultdownburstlimit = parseInt(downmaxlimit)
-		
-		var upintervalbonus = document.getElementById("up-interval-bonus").value;
-		var downintervalbonus = document.getElementById("down-interval-bonus").value;
-		var resultupintervalbonus = parseInt(upintervalbonus);
-		var resultdownintervalbonus = parseInt(downintervalbonus)
-		
-				
-		document.getElementById("result-up-max-limit").innerHTML = upmaxlimit + "K";
-        document.getElementById("result-down-max-limit").innerHTML = downmaxlimit + "K";
-
-		var callresultupburstlimit = document.getElementById("up-speed-bonus").value;
-        document.getElementById("result-up-burst-limit").innerHTML = callresultupburstlimit + "K";
-				
-		var callresultdownburstlimit = document.getElementById("down-speed-bonus").value;
-        document.getElementById("result-down-burst-limit").innerHTML = callresultdownburstlimit + "K";
-		
-			
-		document.getElementById("result-up-burst-threshold").innerHTML = Math.ceil((resultupburstlimit*(3/4))) + "K";
-        document.getElementById("result-down-burst-threshold").innerHTML = Math.ceil((resultdownburstlimit*(3/4))) + "K";
-		
-		document.getElementById("result-up-burst-time").innerHTML = Math.ceil(((resultupintervalbonus*callresultupburstlimit)/(resultupburstlimit*(3/4))));
-        document.getElementById("result-down-burst-time").innerHTML = Math.ceil(((resultdownintervalbonus*callresultdownburstlimit)/(resultdownburstlimit*(3/4))));
-		
-		document.getElementById("result-up-limit-at").innerHTML = Math.ceil((upmaxlimit*(1/8))) + "K";
-        document.getElementById("result-down-limit-at").innerHTML = Math.ceil((downmaxlimit*(1/8))) + "K";
-		
-		
-		document.getElementById("rate-up-max-limit").innerHTML = resultupburstlimit  + "K";
-		document.getElementById("rate-down-max-limit").innerHTML = resultdownburstlimit  + "K";
-		document.getElementById("rate-up-burst-limit").innerHTML = callresultupburstlimit  + "K";
-		document.getElementById("rate-down-burst-limit").innerHTML = callresultdownburstlimit  + "K";
-		document.getElementById("rate-up-burst-threshold").innerHTML = Math.ceil((resultupburstlimit*(3/4))) + "K";
-		document.getElementById("rate-down-burst-threshold").innerHTML = Math.ceil((resultdownburstlimit*(3/4))) + "K";
-		document.getElementById("rate-up-burst-time").innerHTML = Math.ceil(((resultupintervalbonus*callresultupburstlimit)/(resultupburstlimit*(3/4))));
-		document.getElementById("rate-down-burst-time").innerHTML = Math.ceil(((resultdownintervalbonus*callresultdownburstlimit)/(resultdownburstlimit*(3/4))));
-		document.getElementById("rate-up-limit-at").innerHTML = Math.ceil((upmaxlimit*(1/8))) + "K";
-		document.getElementById("rate-down-limit-at").innerHTML = Math.ceil((downmaxlimit*(1/8))) + "K";
-		
-		document.getElementById("for-up-burst-threshold").innerHTML = Math.ceil((resultupburstlimit*(3/4))) + "K";
-		document.getElementById("for-up-burst-limit").innerHTML = callresultupburstlimit  + "K";
-		document.getElementById("for-up-burst-time").innerHTML = Math.ceil(((resultupintervalbonus*callresultupburstlimit)/(resultupburstlimit*(3/4))));
-		document.getElementById("for-up-burst-duration").innerHTML = resultupintervalbonus;
-		document.getElementById("for-up-burst-limit2").innerHTML = callresultupburstlimit  + "K";
-		document.getElementById("for-up-burst-duration2").innerHTML = resultupintervalbonus;
-		
-		document.getElementById("for-down-burst-threshold").innerHTML = Math.ceil((resultdownburstlimit*(3/4))) + "K";
-		document.getElementById("for-down-burst-limit").innerHTML = callresultdownburstlimit  + "K";
-		document.getElementById("for-down-burst-time").innerHTML = Math.ceil(((resultdownintervalbonus*callresultdownburstlimit)/(resultdownburstlimit*(3/4))));
-		document.getElementById("for-down-burst-duration").innerHTML = resultdownintervalbonus;
-		document.getElementById("for-down-burst-limit2").innerHTML = callresultdownburstlimit  + "K";
-		document.getElementById("for-down-burst-duration2").innerHTML = resultdownintervalbonus;
-	}	
+var _0x118c=['1boDPAO','for-down-burst-limit','result-down-limit-at','value','rate-up-max-limit','result-down-burst-time','rate-down-max-limit','rate-up-burst-limit','down-max-limit','950244PxMycr','196024AImBvf','result-up-burst-limit','rate-up-burst-time','innerHTML','result-up-limit-at','result-down-burst-threshold','down-interval-bonus','result-up-max-limit','up-interval-bonus','for-up-burst-threshold','for-down-burst-duration','for-up-burst-duration2','for-down-burst-threshold','rate-down-burst-time','669651fatcho','for-up-burst-limit','for-down-burst-duration2','rate-up-limit-at','up-speed-bonus','rate-up-burst-threshold','for-down-burst-limit2','ceil','205075yObSIv','rate-down-limit-at','2991443HCmScN','rate-down-burst-threshold','getElementById','1056247gEoLJk','result-up-burst-threshold','519427giTQKd','1PNkPPn','1MdfGNt','for-up-burst-limit2'];var _0x4a76ff=_0x4aaa;(function(_0x2f4250,_0x2f5b90){var _0x40245f=_0x4aaa;while(!![]){try{var _0x1d45d6=-parseInt(_0x40245f(0xd0))*-parseInt(_0x40245f(0xe3))+parseInt(_0x40245f(0xdd))*-parseInt(_0x40245f(0xe0))+-parseInt(_0x40245f(0xd8))+-parseInt(_0x40245f(0xe1))*parseInt(_0x40245f(0xdf))+-parseInt(_0x40245f(0xc1))+-parseInt(_0x40245f(0xc2))+parseInt(_0x40245f(0xda));if(_0x1d45d6===_0x2f5b90)break;else _0x2f4250['push'](_0x2f4250['shift']());}catch(_0x505a8c){_0x2f4250['push'](_0x2f4250['shift']());}}}(_0x118c,0xb337d));var upmaxlimit=document[_0x4a76ff(0xdc)]('up-max-limit')[_0x4a76ff(0xe6)],downmaxlimit=document[_0x4a76ff(0xdc)](_0x4a76ff(0xc0))['value'],resultupburstlimit=parseInt(upmaxlimit),resultdownburstlimit=parseInt(downmaxlimit),upintervalbonus=document['getElementById'](_0x4a76ff(0xca))[_0x4a76ff(0xe6)],downintervalbonus=document['getElementById'](_0x4a76ff(0xc8))[_0x4a76ff(0xe6)],resultupintervalbonus=parseInt(upintervalbonus),resultdownintervalbonus=parseInt(downintervalbonus);document['getElementById'](_0x4a76ff(0xc9))[_0x4a76ff(0xc5)]=upmaxlimit+'K',document[_0x4a76ff(0xdc)]('result-down-max-limit')[_0x4a76ff(0xc5)]=downmaxlimit+'K';var callresultupburstlimit=document['getElementById'](_0x4a76ff(0xd4))[_0x4a76ff(0xe6)];document[_0x4a76ff(0xdc)](_0x4a76ff(0xc3))['innerHTML']=callresultupburstlimit+'K';var callresultdownburstlimit=document[_0x4a76ff(0xdc)]('down-speed-bonus')[_0x4a76ff(0xe6)];function _0x4aaa(_0x4ffee4,_0x2a1957){return _0x4aaa=function(_0x118c80,_0x4aaa57){_0x118c80=_0x118c80-0xbe;var _0x650396=_0x118c[_0x118c80];return _0x650396;},_0x4aaa(_0x4ffee4,_0x2a1957);}document[_0x4a76ff(0xdc)]('result-down-burst-limit')['innerHTML']=callresultdownburstlimit+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xde))[_0x4a76ff(0xc5)]=Math[_0x4a76ff(0xd7)](resultupburstlimit*(0x3/0x4))+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xc7))[_0x4a76ff(0xc5)]=Math[_0x4a76ff(0xd7)](resultdownburstlimit*(0x3/0x4))+'K',document[_0x4a76ff(0xdc)]('result-up-burst-time')['innerHTML']=Math[_0x4a76ff(0xd7)](resultupintervalbonus*callresultupburstlimit/(resultupburstlimit*(0x3/0x4))),document[_0x4a76ff(0xdc)](_0x4a76ff(0xe8))[_0x4a76ff(0xc5)]=Math[_0x4a76ff(0xd7)](resultdownintervalbonus*callresultdownburstlimit/(resultdownburstlimit*(0x3/0x4))),document['getElementById'](_0x4a76ff(0xc6))['innerHTML']=Math[_0x4a76ff(0xd7)](upmaxlimit*(0x1/0x8))+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xe5))[_0x4a76ff(0xc5)]=Math[_0x4a76ff(0xd7)](downmaxlimit*(0x1/0x8))+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xe7))[_0x4a76ff(0xc5)]=resultupburstlimit+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xbe))[_0x4a76ff(0xc5)]=resultdownburstlimit+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xbf))[_0x4a76ff(0xc5)]=callresultupburstlimit+'K',document[_0x4a76ff(0xdc)]('rate-down-burst-limit')['innerHTML']=callresultdownburstlimit+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xd5))[_0x4a76ff(0xc5)]=Math[_0x4a76ff(0xd7)](resultupburstlimit*(0x3/0x4))+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xdb))['innerHTML']=Math[_0x4a76ff(0xd7)](resultdownburstlimit*(0x3/0x4))+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xc4))[_0x4a76ff(0xc5)]=Math['ceil'](resultupintervalbonus*callresultupburstlimit/(resultupburstlimit*(0x3/0x4))),document[_0x4a76ff(0xdc)](_0x4a76ff(0xcf))['innerHTML']=Math[_0x4a76ff(0xd7)](resultdownintervalbonus*callresultdownburstlimit/(resultdownburstlimit*(0x3/0x4))),document[_0x4a76ff(0xdc)](_0x4a76ff(0xd3))['innerHTML']=Math['ceil'](upmaxlimit*(0x1/0x8))+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xd9))['innerHTML']=Math['ceil'](downmaxlimit*(0x1/0x8))+'K',document['getElementById'](_0x4a76ff(0xcb))[_0x4a76ff(0xc5)]=Math['ceil'](resultupburstlimit*(0x3/0x4))+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xd1))['innerHTML']=callresultupburstlimit+'K',document['getElementById']('for-up-burst-time')[_0x4a76ff(0xc5)]=Math[_0x4a76ff(0xd7)](resultupintervalbonus*callresultupburstlimit/(resultupburstlimit*(0x3/0x4))),document['getElementById']('for-up-burst-duration')[_0x4a76ff(0xc5)]=resultupintervalbonus,document[_0x4a76ff(0xdc)](_0x4a76ff(0xe2))[_0x4a76ff(0xc5)]=callresultupburstlimit+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xcd))[_0x4a76ff(0xc5)]=resultupintervalbonus,document[_0x4a76ff(0xdc)](_0x4a76ff(0xce))[_0x4a76ff(0xc5)]=Math[_0x4a76ff(0xd7)](resultdownburstlimit*(0x3/0x4))+'K',document[_0x4a76ff(0xdc)](_0x4a76ff(0xe4))[_0x4a76ff(0xc5)]=callresultdownburstlimit+'K',document[_0x4a76ff(0xdc)]('for-down-burst-time')['innerHTML']=Math[_0x4a76ff(0xd7)](resultdownintervalbonus*callresultdownburstlimit/(resultdownburstlimit*(0x3/0x4))),document['getElementById'](_0x4a76ff(0xcc))['innerHTML']=resultdownintervalbonus,document['getElementById'](_0x4a76ff(0xd6))[_0x4a76ff(0xc5)]=callresultdownburstlimit+'K',document['getElementById'](_0x4a76ff(0xd2))['innerHTML']=resultdownintervalbonus;	
  </script>
 </body>
 </html>
