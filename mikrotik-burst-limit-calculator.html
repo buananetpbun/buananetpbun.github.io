@@ -191,7 +191,7 @@ padding: 5px;
 border: 1px solid #bbb;
 border-radius: 1px;
 resize: vertical;
-font-weight:normal;
+font-weight:bold;
 margin-bottom:5px;
 font-size:16px !important;
 }
@@ -325,15 +325,15 @@ padding: 8px;
 		</div>
         <div style="float:left; width:100%;padding-bottom:15px;">
 		<label>Burst Duration (second)</label><br>
- 		<input type="text" id="up-interval-bonus" style='color: red' value="6" placeholder="6" onkeyup="myFunction()">
+ 		<input type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
 		</div>
 		<span style="margin-top:10px;font-size:14px">
 		<b>Burst Formula:</b><br>
 		<span style='color: #555'>------------------------------</span><br>
-		<span style='color: #ff6600'>BD</span> = ( <span style='color: blue'>BH</span> * <span style='color: DarkViolet'>BT</span> ) / <span style='color: #01A3DF'>BL</span><br>
+		<span style='color: #ff6600'>BD</span> = ( <span style='color: #191970'>BH</span> * <span style='color: DarkViolet'>BT</span> ) / <span style='color: #01A3DF'>BL</span><br>
 		<span style='color: #555'>------------------------------</span><br>
 		<span style='color: #ff6600'>BD</span> = Burst Duration<br>
-		<span style='color: blue'>BH</span> = Burst Threshold<br>
+		<span style='color: #191970'>BH</span> = Burst Threshold<br>
 		<span style='color: DarkViolet'>BT</span> &nbsp;= Burst Time<br>
 		<span style='color: #01A3DF'>BL</span> &nbsp;= Burst Limit<br>
 		<br>
@@ -354,18 +354,18 @@ padding: 8px;
 		  <br>
 		  <div style="float:left; width:100%;margin-bottom:15px">
 		 <label>Burst Duration (second)</label><br>
-		<input type="text" id="down-interval-bonus" style='color: red' value="6" placeholder="6" onkeyup="myFunction()">
+		<input type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
 		 </div>
 		 <span style="margin-top:10px; font-size:14px">
 		 <b>Upload:</b><br>
-		<span style='color: #ff6600'>BD</span> = ( <span id="for-up-burst-threshold" style='color: blue'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1000K</span><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: red'>6</span> second<br>
-		<span style='color: black'>Burst Speed to</span> <span id="for-up-burst-limit2" style='color: #01A3DF'>1000K</span> in <span id="for-up-burst-duration2" style='color: red'>6</span>s<br>
+		<span style='color: #ff6600'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1000K</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
+		<span style='color: black'>Burst Speed to</span> <span id="for-up-burst-limit2" style='color: #01A3DF'>1000K</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span>s<br>
 		<br>
 		<b>Download:</b><br>
-		<span style='color: #ff6600'>BD</span> = ( <span id="for-down-burst-threshold" style='color: blue'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2000k</span><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: red'>6</span> second<br>
-		<span style='color: black'>Burst Speed to</span> <span id="for-down-burst-limit2" style='color: #01A3DF'>2000K</span> in <span id="for-down-burst-duration2" style='color: red'>6</span>s<br>
+		<span style='color: #ff6600'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2000k</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: Crimson'>6</span> second<br>
+		<span style='color: black'>Burst Speed to</span> <span id="for-down-burst-limit2" style='color: #01A3DF'>2000K</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span>s<br>
 		</span>
   </div>
    <div class="content"> 
@@ -382,22 +382,22 @@ padding: 8px;
 			<tbody>
 			<tr>
 			 <th colspan="2" style="background-color: #eee; font-weight:normal">Max Limit</th>
-			  <td id="result-up-max-limit" style='color: DarkGreen'>512K</td>
-			  <td id="result-down-max-limit" style='color: DarkGreen'>1000K</td>
+			  <td id="result-up-max-limit" style='font-weight:bold; color: DarkGreen'>512K</td>
+			  <td id="result-down-max-limit" style='font-weight:bold;color: DarkGreen'>1000K</td>
 			 </tr> 
 			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Limit</th>
-			  <td id="result-up-burst-limit" style='color: #01A3DF'>1000K</td>
-			  <td id="result-down-burst-limit" style='color: #01A3DF'>2000K</td>
+			  <td id="result-up-burst-limit" style='font-weight:bold;color: #01A3DF'>1000K</td>
+			  <td id="result-down-burst-limit" style='font-weight:bold;color: #01A3DF'>2000K</td>
 			 </tr> 
 			 <tr>
 			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Threshold</th>
-			  <td id="result-up-burst-threshold" style='color: blue' >384K</td>
-			  <td id="result-down-burst-threshold" style='color: blue'>750K</td>
+			  <td id="result-up-burst-threshold" style='font-weight:bold;color: #191970' >384K</td>
+			  <td id="result-down-burst-threshold" style='font-weight:bold;color: #191970'>750K</td>
 			 </tr> 
 			 <tr>
 			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Time</th>
-			  <td id="result-up-burst-time" style='color: DarkViolet'>16</td>
-			  <td id="result-down-burst-time" style='color: DarkViolet' >16</td>
+			  <td id="result-up-burst-time" style='font-weight:bold;color: DarkViolet'>16</td>
+			  <td id="result-down-burst-time" style='font-weight:bold;color: DarkViolet' >16</td>
 			 </tr> 
 			 <tr>
 
@@ -406,12 +406,12 @@ padding: 8px;
 			  <td style="background-color: #ddd;font-weight:bold">Download</td>
 			 </tr> 
 			 <th colspan="2" style="background-color: #eee; font-weight:normal">Limit At</th>
-			  <td id="result-up-limit-at" style='color: Chocolate' >64K</td>
-			  <td id="result-down-limit-at" style='color: Chocolate'>125K</td>
+			  <td id="result-up-limit-at" style='font-weight:bold;color: Chocolate' >64K</td>
+			  <td id="result-down-limit-at" style='font-weight:bold;color: Chocolate'>125K</td>
 			 </tr> 
 			 <th colspan="2" style="background-color: #eee; font-weight:normal">Priority</th>
-			  <td style='color: DarkCyan'>8</td>
-			  <td style='color: DarkCyan'>8</td>
+			  <td style='font-weight:bold;color: DarkCyan'>8</td>
+			  <td style='font-weight:bold;color: DarkCyan'>8</td>
 			 </tr>
 			</tbody>
 		</table>
@@ -422,8 +422,8 @@ padding: 8px;
 				<td><b>Rate limit for Hotspot and PPPoE<b></td>
 			</tr>
 			</thead>
-				<tr style="font-size:13px">
-				<td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1000K</span> <span id="rate-up-burst-limit"style='color: #01A3DF' >1000K</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2000k</span> <span id="rate-up-burst-threshold" style='color: blue'>384K</span>/<span id="rate-down-burst-threshold" style='color: blue'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td></th>
+				<tr style="font-size:13px;font-weight:bold">
+				<td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1000K</span> <span id="rate-up-burst-limit"style='color: #01A3DF' >1000K</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2000k</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td></th>
 				</tr>
 			</table>  
     </div>   
