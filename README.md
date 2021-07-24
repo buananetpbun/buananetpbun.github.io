@@ -85,8 +85,7 @@ Dukung Tools ini dengan memberikan Donasi melalui https://saweria.co/buananetpbu
 
 <h2>MIKROTIK PCQ BURST RATE + QUEUE SIZE CALCULATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">MikroTik PCQ Burst Rate + Queue Size Calculator</a> - MikroTik PCQ Burst Rate + Queue Size Calculator For RouterOS</p>
-<img src="https://user-images.githubusercontent.com/42666125/126877660-bdb0c722-d4cd-4caa-97bd-99c23280c7db.png">
-
+<img src="https://user-images.githubusercontent.com/42666125/126877740-dbe54ce5-fa1d-4acc-86d9-9265618253cb.png">
 
 <br>
 © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
