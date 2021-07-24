@@ -325,7 +325,7 @@ th {
 	    <input type="text" id="total-client" style='color: Tomato' placeholder="40" value="40" >
 		</div>
 		<div style="float:left; width:100%;">
-		<label>Queue Size (Packet Limit)</label><br>
+		<label>Queue Size (Limit)</label><br>
 	    <input type="text" id="queue-size" style='color: Chocolate; margin-bottom:30px' placeholder="50" value="50" >
 		</div>
 		<label><b>PCQ BURST RATE</b></label><br>
@@ -383,21 +383,21 @@ th {
 		<br>
 
 		
-		<div style="font-size:13px; padding-left:10px">
-		<b>Total Queue Size:</b><br>
+		<div style="font-size:13px; padding-left:10px; padding-right:10px">
+		<b>PCQ Queue Size:</b><br>
 		<span style='color: red'>Total Queue Size</span> = ( <span style='color: Tomato'>Total Client</span> * <span style='color: Chocolate'>Queue Size</span> ) <br>
-		<span style='color: red'>Total Queue Size</span> = ( <span id="for-total-client" style='color:Tomato'>40</span> * <span id="for-queue-size" style='color: Chocolate'>50</span> ) = <span id="for-total-queue-size" style='color: DarkCyan'>2000</span> total packets<br>
+		<span style='color: red'>Total Queue Size</span> = ( <span id="for-total-client" style='color:Tomato'>40</span> * <span id="for-queue-size" style='color: Chocolate'>50</span> ) = <span id="for-total-queue-size" style='color: DarkCyan;font-weight:bold'>2000</span> KiB<br>
 		<div style='border-top:1px solid grey; margin-top:5px;padding-top:5px;color: black'>
-		<span style='color: black'><span id="result-total-client" style='color: Tomato' >40</span> client (sub queue) can get <span id="result-queue-size2" style='color: Chocolate'>50</span> packets per client (limit) from <span id="result-total-queue-size2" style='color: DarkCyan'>2000</span> Total packets</span><br></div>
+		From <span style='color: black'><span id="result-total-client" style='color: Tomato; font-weight:bold' >40</span> client it can get <span id="result-queue-size2" style='color: Chocolate;font-weight:bold'>50</span> packets per client with <span id="result-total-queue-size2" style='color: DarkCyan;font-weight:bold'>2000</span> Size Total Packets.</span> With <span id="result-total-queue-size3" style='color: DarkCyan;font-weight:bold'>2000</span> size total packets it can drain <span id="ram" style="color:red;font-weight:bold">4MB</span> of RAM Router.</div>
 		</div>
 		<br>
-		<div style="font-size:13px;padding-left:10px">
+		<div style="font-size:13px;padding-left:10px;padding-right:10px">
 		<b>PCQ Burst Result:</b><br>
 		<span style='color: #ff6600'>Burst Duration</span> = ( <span style='color: CornflowerBlue'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> ) / <span style='color: #01A3DF'>Burst Rate</span><br>
-		<span style='color: #ff6600'>Burst Duration</span> = ( <span id="for-burst-threshold" style='color: CornflowerBlue'>384K</span> * <span id="for-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-burst-rate" style='color: #01A3DF'>1000K</span> = <span id="for-burst-duration" style='color: Crimson'>6</span> second<br>
+		<span style='color: #ff6600'>Burst Duration</span> = ( <span id="for-burst-threshold" style='color: CornflowerBlue'>384K</span> * <span id="for-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-burst-rate" style='color: #01A3DF'>1000K</span> = <span id="for-burst-duration" style='color: Crimson;font-weight:bold'>6</span> second<br>
 		<div style='border-top:1px solid grey; margin-top:5px;padding-top:5px;color: black'>
 		<span id="info-asal"> 
-		<span>Every Client (sub queue) can get Burst Speed to</span> <span id="for-burst-rate2" style='color: #01A3DF'>1000K</span> in <span id="for-burst-duration2" style='color: Crimson'>6</span> second<br>
+		<span>Every Client (sub queue) can get Burst Speed to</span> <span id="for-burst-rate2" style='color: #01A3DF;font-weight:bold'>1000K</span> in <span id="for-burst-duration2" style='color: Crimson;font-weight:bold'>6</span> second.<br>
 		</span>
 		</div>
     </div>   
