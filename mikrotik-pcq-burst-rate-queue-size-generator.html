@@ -355,24 +355,24 @@ th {
 			</thead>
 			<tbody>
 			<tr>
-			 <th  style="background-color: #eee; font-weight:normal">Rate (Kbps)</th>
+			 <th  style="background-color: #eee; font-weight:normal">Rate</th>
 			  <td id="result-max-rate" style='font-weight:bold; color: DarkGreen'>512K</td>
 			 </tr> 
-			 <th  style="background-color: #eee; font-weight:normal">Queue Size (KiB)</th>
+			 <th  style="background-color: #eee; font-weight:normal">Queue Size / Limit</th>
 			  <td id="result-queue-size" style='font-weight:bold;color: Chocolate' >50</td>
 			 </tr> 
-			 <th  style="background-color: #eee; font-weight:normal">Total Queue Size (KiB)</th>
+			 <th  style="background-color: #eee; font-weight:normal">Total Queue Size / Total Limit</th>
 			  <td id="result-total-queue-size" style='font-weight:bold;color: DarkCyan'>2000</td>
 			 </tr>
-			  <th  style="background-color: #eee; font-weight:normal">Burst Rate (Kbps)</th>
+			  <th  style="background-color: #eee; font-weight:normal">Burst Rate</th>
 			  <td id="result-burst-rate" style='font-weight:bold;color: #01A3DF'>1000K</td>
 			 </tr> 
 			 <tr>
-			  <th  style="background-color: #eee; font-weight:normal">Burst Threshold (Kbps)</th>
+			  <th  style="background-color: #eee; font-weight:normal">Burst Threshold</th>
 			  <td id="result-burst-threshold" style='font-weight:bold;color: CornflowerBlue' >384K</td>
 			 </tr> 
 			 <tr>
-			  <th  style="background-color: #eee; font-weight:normal">Burst Time (second)</th>
+			  <th  style="background-color: #eee; font-weight:normal">Burst Time</th>
 			  <td id="result-burst-time" style='font-weight:bold;color: DarkViolet'>16</td>
 			 </tr> 
 
@@ -388,7 +388,7 @@ th {
 		<span style='color: red'>Total Queue Size</span> = ( <span style='color: Tomato'>Total Client</span> * <span style='color: Chocolate'>Queue Size</span> ) <br>
 		<span style='color: red'>Total Queue Size</span> = ( <span id="for-total-client" style='color:Tomato'>40</span> * <span id="for-queue-size" style='color: Chocolate'>50</span> ) = <span id="for-total-queue-size" style='color: DarkCyan;font-weight:bold'>2000</span> KiB<br>
 		<div style='border-top:1px solid grey; margin-top:5px;padding-top:5px;color: black'>
-		From <span style='color: black'><span id="result-total-client" style='color: Tomato; font-weight:bold' >40</span> client it can get <span id="result-queue-size2" style='color: Chocolate;font-weight:bold'>50</span> packets per client with <span id="result-total-queue-size2" style='color: DarkCyan;font-weight:bold'>2000</span> Size Total Packets.</span> With <span id="result-total-queue-size3" style='color: DarkCyan;font-weight:bold'>2000</span> size total packets it can drain <span id="ram" style="color:red;font-weight:bold">4MB</span> of RAM Router.</div>
+		<span style='color: black'><span id="result-total-client" style='color: Tomato; font-weight:bold' >40</span> client, per client can get <span id="result-queue-size2" style='color: Chocolate;font-weight:bold'>50</span> packets from <span id="result-total-queue-size2" style='color: DarkCyan;font-weight:bold'>2000</span> Size Total Packets.</span> <br>With <span id="result-total-queue-size3" style='color: DarkCyan;font-weight:bold'>2000</span> total packets it can drain around <span id="ram" style="color:red;font-weight:bold">4MB</span> of RAM Router.</div>
 		</div>
 		<br>
 		<div style="font-size:13px;padding-left:10px;padding-right:10px">
