@@ -36,6 +36,7 @@ height: 100%;
 width:100%;
 margin-top: 0px;
 padding:0;
+line-height: 1.2;
 }
 * {
 box-sizing: border-box;
@@ -316,16 +317,16 @@ padding: 8px;
    <div class="sidebar">
 		<div style="float:left; width:100%;">
 		<label><b>UPLOAD </b></label><br>
-		<label>Max Limit (Kbps)</label><br>
-	    <input type="text" id="up-max-limit" style='color: green' placeholder="512" value="512" onkeyup="myFunction()">
+		<label>Max Limit (K/M)</label><br>
+	    <input onkeydown="upperCaseF(this)" type="text" id="up-max-limit" style='color: green' placeholder="512K" value="512K" onkeyup="myFunction()">
 		</div>
 		<div style="float:left; width:100%;">
-		<label>Burst Limit (Kbps)</label><br>
-        <input type="text" id="up-speed-bonus" style='color: #01A3DF' value="1000" placeholder="1000" onkeyup="myFunction()" >
+		<label>Burst Limit (K/M)</label><br>
+        <input onkeydown="upperCaseF(this)" type="text" id="up-speed-bonus" style='color: #01A3DF' value="1M" placeholder="1M" onkeyup="myFunction()" >
 		</div>
         <div style="float:left; width:100%;padding-bottom:15px;">
 		<label>Burst Duration (second)</label><br>
- 		<input type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
+ 		<input onkeydown="upperCaseF(this)" type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
 		</div>
 		<span style="margin-top:10px;font-size:14px">
 		<b>Burst Formula:</b><br>
@@ -337,35 +338,39 @@ padding: 8px;
 		<span style='color: DarkViolet'>BT</span> &nbsp;= Burst Time<br>
 		<span style='color: #01A3DF'>BL</span> &nbsp;= Burst Limit<br>
 		<br>
-		<span style='color: #555; font-size:12px'>*Convert 1000Kbps = 1Mbps<br>
+		<span style='color: #555; font-size:12px'>K = Kbps  /  M = Mbps<br>
+		<span style='color: #555; font-size:12px'>Convert 1000Kbps = 1Mbps<br>
+		
 		
 		</span>
   </div>
       <div class="sidebar2">
 	  <div style="float:left; width:100%;">
 	  <label><b>DOWNLOAD</b></label><br>
-	  <label>Max Limit (Kbps)</label><br>
-	  <input type="text" id="down-max-limit" value="1000" style='color: green' placeholder="1000" onkeyup="myFunction()" >
+	  <label>Max Limit (K/M)</label><br>
+	  <input onkeydown="upperCaseF(this)" type="text" id="down-max-limit" value="1M" style='color: green' placeholder="1M" onkeyup="myFunction()" >
 	   </div>
 		<div style="float:left; width:100%;">
-		<label>Burst Limit (Kbps)</label><br>
-       <input type="text" id="down-speed-bonus" style='color: #01A3DF' value="2000" placeholder="2000" onkeyup="myFunction()">
+		<label>Burst Limit (K/M)</label><br>
+       <input onkeydown="upperCaseF(this)" type="text" id="down-speed-bonus" style='color: #01A3DF' value="2M" placeholder="2M" onkeyup="myFunction()">
 		 </div>
 		  <br>
 		  <div style="float:left; width:100%;margin-bottom:15px">
 		 <label>Burst Duration (second)</label><br>
-		<input type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
+		<input onkeydown="upperCaseF(this)" type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
 		 </div>
 		 <span style="margin-top:10px; font-size:14px">
 		 <b>Upload Burst Result:</b><br>
-		<span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1000K</span><br>
+		<span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
-		<span style='color: black'>Burst Speed to</span> <span id="for-up-burst-limit2" style='color: #01A3DF'>1000K</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span>s<br>
+		<div style='margin-top:10px;border-bottom:1px dotted green;border-top:1px dotted green;padding-top:5px; padding-bottom:5px''>
+		<span style='color: black;'>Burst Speed to</span> <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span>s<br></div>
 		<br>
 		<b>Download Burst Result:</b><br>
-		<span style='color: Crimson'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2000k</span><br>
+		<span style='color: Crimson'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span><br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: Crimson'>6</span> second<br>
-		<span style='color: black'>Burst Speed to</span> <span id="for-down-burst-limit2" style='color: #01A3DF'>2000K</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span>s<br>
+		<div style='margin-top:10px;border-bottom:1px dotted green;border-top:1px dotted green; padding-top:5px; padding-bottom:5px'>
+		<span style='color: black; '>Burst Speed to</span> <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span>s<br></div>
 		</span>
   </div>
    <div class="content"> 
@@ -383,11 +388,11 @@ padding: 8px;
 			<tr>
 			 <th colspan="2" style="background-color: #eee; font-weight:normal">Max Limit</th>
 			  <td id="result-up-max-limit" style='font-weight:bold; color: DarkGreen'>512K</td>
-			  <td id="result-down-max-limit" style='font-weight:bold;color: DarkGreen'>1000K</td>
+			  <td id="result-down-max-limit" style='font-weight:bold;color: DarkGreen'>1M</td>
 			 </tr> 
 			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Limit</th>
-			  <td id="result-up-burst-limit" style='font-weight:bold;color: #01A3DF'>1000K</td>
-			  <td id="result-down-burst-limit" style='font-weight:bold;color: #01A3DF'>2000K</td>
+			  <td id="result-up-burst-limit" style='font-weight:bold;color: #01A3DF'>1M</td>
+			  <td id="result-down-burst-limit" style='font-weight:bold;color: #01A3DF'>2M</td>
 			 </tr> 
 			 <tr>
 			  <th colspan="2" style="background-color: #eee; font-weight:normal">Burst Threshold</th>
@@ -419,11 +424,11 @@ padding: 8px;
 		<table id="mytable" style="font-weight:normal">
 			<thead>
 			<tr style="background-color: #ddd; " >
-				<td><b>Rate Limit for <span style="color:red">Hotspot</span> and <span style="color:red">PPPoE</span><b></td>
+				<td><b>Rate limit for Hotspot and PPPoE<b></td>
 			</tr>
 			</thead>
-				<tr style="font-size:13px;font-weight:bold">
-				<td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1000K</span> <span id="rate-up-burst-limit"style='color: #01A3DF' >1000K</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2000k</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td></th>
+				<tr style="font-size:15px;font-weight:bold">
+				<td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1M</span> <span id="rate-up-burst-limit"style='color: #01A3DF' >1M</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2M</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td></th>
 				</tr>
 			</table>  
     </div>   
@@ -473,7 +478,7 @@ window.onclick = function(event) {
 }
 </script> 
 <script>  
-var _0x3a6b=['result-up-limit-at','for-down-burst-duration','for-down-burst-limit','result-down-burst-limit','8gQHyJl','result-up-burst-limit','for-down-burst-duration2','down-max-limit','result-up-burst-threshold','12798TGEuIN','736xxGSxV','up-speed-bonus','for-up-burst-limit','rate-up-limit-at','rate-up-burst-time','641847uEwWfj','rate-down-burst-limit','51tQoqhA','1215623ImNDry','for-down-burst-threshold','for-up-burst-threshold','rate-up-max-limit','285567bmpMMn','result-up-max-limit','rate-up-burst-threshold','for-down-burst-limit2','for-up-burst-time','ceil','getElementById','result-down-burst-time','innerHTML','result-up-burst-time','up-interval-bonus','640fYWGqr','result-down-max-limit','down-speed-bonus','1102367onckau','value','2KXgMiX','131513dfZlUw','for-up-burst-duration','1yxQluZ','rate-up-burst-limit'];(function(_0xbd8553,_0x4d8bc7){var _0x1a3d14=_0x1cfa;while(!![]){try{var _0xbc83cc=parseInt(_0x1a3d14(0x9c))+-parseInt(_0x1a3d14(0xaf))*-parseInt(_0x1a3d14(0x95))+-parseInt(_0x1a3d14(0xba))*-parseInt(_0x1a3d14(0x97))+-parseInt(_0x1a3d14(0xad))*-parseInt(_0x1a3d14(0xb5))+-parseInt(_0x1a3d14(0xbb))*parseInt(_0x1a3d14(0xa7))+parseInt(_0x1a3d14(0xaa))+parseInt(_0x1a3d14(0xac))*-parseInt(_0x1a3d14(0x98));if(_0xbc83cc===_0x4d8bc7)break;else _0xbd8553['push'](_0xbd8553['shift']());}catch(_0x18343e){_0xbd8553['push'](_0xbd8553['shift']());}}}(_0x3a6b,0xcb329));function _0x1cfa(_0x27bed4,_0x3d996e){return _0x1cfa=function(_0x3a6b5d,_0x1cfa6d){_0x3a6b5d=_0x3a6b5d-0x95;var _0xd058dd=_0x3a6b[_0x3a6b5d];return _0xd058dd;},_0x1cfa(_0x27bed4,_0x3d996e);}function myFunction(){var _0x585033=_0x1cfa,_0x2766df=document[_0x585033(0xa2)]('up-max-limit')['value'],_0x29d1c0=document['getElementById'](_0x585033(0xb8))[_0x585033(0xab)],_0x2d3bc2=parseInt(_0x2766df),_0x2d9035=parseInt(_0x29d1c0),_0x176c4a=document[_0x585033(0xa2)](_0x585033(0xa6))['value'],_0x5cf321=document['getElementById']('down-interval-bonus')[_0x585033(0xab)],_0x5ac5cf=parseInt(_0x176c4a),_0x5e723d=parseInt(_0x5cf321);document[_0x585033(0xa2)](_0x585033(0x9d))['innerHTML']=_0x2766df+'K',document['getElementById'](_0x585033(0xa8))['innerHTML']=_0x29d1c0+'K';var _0x2a9873=document[_0x585033(0xa2)](_0x585033(0xbc))[_0x585033(0xab)];document[_0x585033(0xa2)](_0x585033(0xb6))[_0x585033(0xa4)]=_0x2a9873+'K';var _0x398ab0=document[_0x585033(0xa2)](_0x585033(0xa9))[_0x585033(0xab)];document[_0x585033(0xa2)](_0x585033(0xb4))[_0x585033(0xa4)]=_0x398ab0+'K',document['getElementById'](_0x585033(0xb9))['innerHTML']=Math[_0x585033(0xa1)](_0x2d3bc2*(0x3/0x4))+'K',document[_0x585033(0xa2)]('result-down-burst-threshold')[_0x585033(0xa4)]=Math['ceil'](_0x2d9035*(0x3/0x4))+'K',document[_0x585033(0xa2)](_0x585033(0xa5))[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x5ac5cf*_0x2a9873/(_0x2d3bc2*(0x3/0x4))),document['getElementById'](_0x585033(0xa3))[_0x585033(0xa4)]=Math['ceil'](_0x5e723d*_0x398ab0/(_0x2d9035*(0x3/0x4))),document['getElementById'](_0x585033(0xb1))['innerHTML']=Math['ceil'](_0x2766df*(0x1/0x8))+'K',document['getElementById']('result-down-limit-at')[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x29d1c0*(0x1/0x8))+'K',document[_0x585033(0xa2)](_0x585033(0x9b))['innerHTML']=_0x2d3bc2+'K',document[_0x585033(0xa2)]('rate-down-max-limit')[_0x585033(0xa4)]=_0x2d9035+'K',document[_0x585033(0xa2)](_0x585033(0xb0))['innerHTML']=_0x2a9873+'K',document[_0x585033(0xa2)]('rate-down-burst-limit')[_0x585033(0xa4)]=_0x398ab0+'K',document['getElementById'](_0x585033(0x9e))['innerHTML']=Math[_0x585033(0xa1)](_0x2d3bc2*(0x3/0x4))+'K',document[_0x585033(0xa2)]('rate-down-burst-threshold')[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x2d9035*(0x3/0x4))+'K',document['getElementById'](_0x585033(0xbf))[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x5ac5cf*_0x2a9873/(_0x2d3bc2*(0x3/0x4))),document[_0x585033(0xa2)]('rate-down-burst-time')[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x5e723d*_0x398ab0/(_0x2d9035*(0x3/0x4))),document[_0x585033(0xa2)](_0x585033(0xbe))[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x2766df*(0x1/0x8))+'K',document[_0x585033(0xa2)]('rate-down-limit-at')['innerHTML']=Math[_0x585033(0xa1)](_0x29d1c0*(0x1/0x8))+'K',document['getElementById']('for-up-burst-threshold')[_0x585033(0xa4)]=Math['ceil'](_0x2d3bc2*(0x3/0x4))+'K',document[_0x585033(0xa2)](_0x585033(0xbd))['innerHTML']=_0x2a9873+'K',document['getElementById'](_0x585033(0xa0))[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x5ac5cf*_0x2a9873/(_0x2d3bc2*(0x3/0x4))),document['getElementById'](_0x585033(0xae))[_0x585033(0xa4)]=_0x5ac5cf,document[_0x585033(0xa2)]('for-up-burst-limit2')[_0x585033(0xa4)]=_0x2a9873+'K',document[_0x585033(0xa2)]('for-up-burst-duration2')[_0x585033(0xa4)]=_0x5ac5cf,document['getElementById'](_0x585033(0x99))[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x2d9035*(0x3/0x4))+'K',document['getElementById'](_0x585033(0xb3))['innerHTML']=_0x398ab0+'K',document[_0x585033(0xa2)]('for-down-burst-time')[_0x585033(0xa4)]=Math[_0x585033(0xa1)](_0x5e723d*_0x398ab0/(_0x2d9035*(0x3/0x4))),document[_0x585033(0xa2)](_0x585033(0xb2))['innerHTML']=_0x5e723d,document[_0x585033(0xa2)](_0x585033(0x9f))['innerHTML']=_0x398ab0+'K',document[_0x585033(0xa2)](_0x585033(0xb7))[_0x585033(0xa4)]=_0x5e723d,_0x2a9873==0x0&&(document[_0x585033(0xa2)](_0x585033(0xb0))[_0x585033(0xa4)]='0',document['getElementById']('rate-up-burst-threshold')[_0x585033(0xa4)]='0',document[_0x585033(0xa2)](_0x585033(0xb6))[_0x585033(0xa4)]='0',document['getElementById'](_0x585033(0xb9))[_0x585033(0xa4)]='0',document[_0x585033(0xa2)]('for-up-burst-limit')['innerHTML']='0',document['getElementById'](_0x585033(0x9a))[_0x585033(0xa4)]='0',document[_0x585033(0xa2)]('for-up-burst-limit')[_0x585033(0xa4)]='0',document['getElementById']('for-up-burst-limit2')[_0x585033(0xa4)]='0',document['getElementById']('for-up-burst-duration')[_0x585033(0xa4)]='0',document[_0x585033(0xa2)]('for-up-burst-duration2')['innerHTML']='0'),_0x398ab0==0x0&&(document['getElementById'](_0x585033(0x96))['innerHTML']='0',document['getElementById']('rate-down-burst-threshold')[_0x585033(0xa4)]='0',document['getElementById'](_0x585033(0xb4))[_0x585033(0xa4)]='0',document[_0x585033(0xa2)]('result-down-burst-threshold')[_0x585033(0xa4)]='0',document['getElementById'](_0x585033(0xb3))[_0x585033(0xa4)]='0',document['getElementById'](_0x585033(0x99))['innerHTML']='0',document[_0x585033(0xa2)](_0x585033(0xb3))[_0x585033(0xa4)]='0',document[_0x585033(0xa2)](_0x585033(0x9f))[_0x585033(0xa4)]='0',document[_0x585033(0xa2)](_0x585033(0xb2))[_0x585033(0xa4)]='0',document[_0x585033(0xa2)](_0x585033(0xb7))[_0x585033(0xa4)]='0');}
+var _0x5bd5=['result-up-burst-limit','result-down-limit-at','getElementById','for-up-burst-duration2','463099OyJgxc','result-up-burst-time','rate-down-burst-limit','result-down-max-limit','ceil','result-down-burst-limit','result-up-max-limit','result-up-burst-threshold','1EkKiFh','for-down-burst-limit','down-interval-bonus','for-down-burst-duration','up-interval-bonus','1209781ZkNPnF','for-up-burst-limit2','replace','for-up-burst-threshold','up-max-limit','for-up-burst-duration','697032hrJqau','result-up-limit-at','rate-down-max-limit','118SABFGA','for-down-burst-threshold','result-down-burst-time','1181845QuiMpP','rate-down-burst-threshold','match','93237NQuxis','toUpperCase','for-up-burst-limit','rate-up-burst-limit','value','4763EKaBXR','innerHTML','rate-down-limit-at','for-down-burst-duration2','764137ZxjpvG','rate-up-limit-at','for-down-burst-time','1rWYZyz','rate-up-burst-threshold','for-down-burst-limit2'];(function(_0x3d7a29,_0xbf4ad1){var _0x1e2e9e=_0x3ea1;while(!![]){try{var _0x5a3966=-parseInt(_0x1e2e9e(0x194))*parseInt(_0x1e2e9e(0x199))+parseInt(_0x1e2e9e(0x1b4))*parseInt(_0x1e2e9e(0x1bb))+parseInt(_0x1e2e9e(0x1a5))+-parseInt(_0x1e2e9e(0x1b1))+parseInt(_0x1e2e9e(0x19f))+parseInt(_0x1e2e9e(0x1a2))*parseInt(_0x1e2e9e(0x1ad))+-parseInt(_0x1e2e9e(0x1a8));if(_0x5a3966===_0xbf4ad1)break;else _0x3d7a29['push'](_0x3d7a29['shift']());}catch(_0x423159){_0x3d7a29['push'](_0x3d7a29['shift']());}}}(_0x5bd5,0xcc4f7));function _0x3ea1(_0xcaba68,_0x201fe4){return _0x3ea1=function(_0x5bd52f,_0x3ea112){_0x5bd52f=_0x5bd52f-0x18f;var _0xc4705b=_0x5bd5[_0x5bd52f];return _0xc4705b;},_0x3ea1(_0xcaba68,_0x201fe4);}function upperCaseF(_0xb53f9a){setTimeout(function(){var _0x40e245=_0x3ea1;_0xb53f9a['value']=_0xb53f9a[_0x40e245(0x1ac)][_0x40e245(0x1a9)]();},0x1);}function myFunction(){var _0xb60de3=_0x3ea1,_0xc6e288=document[_0xb60de3(0x1b9)](_0xb60de3(0x19d))['value'],_0x4690c7=_0xc6e288[_0xb60de3(0x1a7)](/[a-zA-Z]/),_0x3a2a9f=_0xc6e288[_0xb60de3(0x19b)](/[^0-9]/g,''),_0x4e3c13=document[_0xb60de3(0x1b9)]('down-max-limit')[_0xb60de3(0x1ac)],_0x2c88c0=_0x4e3c13['match'](/[a-zA-Z]/),_0x431b1f=_0x4e3c13['replace'](/[^0-9]/g,''),_0x579220=document[_0xb60de3(0x1b9)]('up-speed-bonus')[_0xb60de3(0x1ac)],_0x308596=_0x579220['match'](/[a-zA-Z]/),_0x222978=_0x579220[_0xb60de3(0x19b)](/[^0-9]/g,''),_0x57cba3=document['getElementById']('down-speed-bonus')[_0xb60de3(0x1ac)],_0x3b9019=_0x57cba3[_0xb60de3(0x1a7)](/[a-zA-Z]/),_0x30d014=_0x57cba3[_0xb60de3(0x19b)](/[^0-9]/g,''),_0x12b98e=document[_0xb60de3(0x1b9)](_0xb60de3(0x198))[_0xb60de3(0x1ac)],_0x6527c3=document['getElementById'](_0xb60de3(0x196))[_0xb60de3(0x1ac)];if(_0x4690c7=='M')var _0x3555a6=parseInt(_0x3a2a9f*0x3e8);else var _0x3555a6=parseInt(_0x3a2a9f);if(_0x2c88c0=='M')var _0x5a7b71=parseInt(_0x431b1f*0x3e8);else var _0x5a7b71=parseInt(_0x431b1f);if(_0x308596=='M')var _0xec329b=parseInt(_0x222978*0x3e8);else var _0xec329b=parseInt(_0x222978);if(_0x3b9019=='M')var _0x7d05dc=parseInt(_0x30d014*0x3e8);else var _0x7d05dc=parseInt(_0x30d014);var _0x29a30f=parseInt(_0x12b98e),_0x55dc57=parseInt(_0x6527c3);document[_0xb60de3(0x1b9)](_0xb60de3(0x192))['innerHTML']=_0xc6e288,document[_0xb60de3(0x1b9)](_0xb60de3(0x18f))['innerHTML']=_0x4e3c13,document[_0xb60de3(0x1b9)](_0xb60de3(0x1b7))[_0xb60de3(0x1ae)]=_0x579220,document[_0xb60de3(0x1b9)]('result-down-burst-limit')['innerHTML']=_0x57cba3,document[_0xb60de3(0x1b9)](_0xb60de3(0x193))[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x3555a6*(0x3/0x4))+'K',document[_0xb60de3(0x1b9)]('result-down-burst-threshold')[_0xb60de3(0x1ae)]=Math['ceil'](_0x5a7b71*(0x3/0x4))+'K',document[_0xb60de3(0x1b9)](_0xb60de3(0x1bc))[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x29a30f*_0xec329b/(_0x3555a6*(0x3/0x4))),document[_0xb60de3(0x1b9)](_0xb60de3(0x1a4))[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x55dc57*_0x7d05dc/(_0x5a7b71*(0x3/0x4))),document[_0xb60de3(0x1b9)](_0xb60de3(0x1a0))[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x3555a6*(0x1/0x8))+'K',document['getElementById'](_0xb60de3(0x1b8))[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x5a7b71*(0x1/0x8))+'K',document['getElementById']('rate-up-max-limit')[_0xb60de3(0x1ae)]=_0xc6e288,document[_0xb60de3(0x1b9)](_0xb60de3(0x1a1))[_0xb60de3(0x1ae)]=_0x4e3c13,document[_0xb60de3(0x1b9)]('rate-up-burst-limit')['innerHTML']=_0x579220,document[_0xb60de3(0x1b9)](_0xb60de3(0x1bd))[_0xb60de3(0x1ae)]=_0x57cba3,document['getElementById'](_0xb60de3(0x1b5))['innerHTML']=Math[_0xb60de3(0x190)](_0x3555a6*(0x3/0x4))+'K',document[_0xb60de3(0x1b9)](_0xb60de3(0x1a6))[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x5a7b71*(0x3/0x4))+'K',document[_0xb60de3(0x1b9)]('rate-up-burst-time')[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x29a30f*_0xec329b/(_0x3555a6*(0x3/0x4))),document['getElementById']('rate-down-burst-time')[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x55dc57*_0x7d05dc/(_0x5a7b71*(0x3/0x4))),document[_0xb60de3(0x1b9)](_0xb60de3(0x1b2))[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x3555a6*(0x1/0x8))+'K',document['getElementById'](_0xb60de3(0x1af))[_0xb60de3(0x1ae)]=Math[_0xb60de3(0x190)](_0x5a7b71*(0x1/0x8))+'K',document[_0xb60de3(0x1b9)](_0xb60de3(0x19c))[_0xb60de3(0x1ae)]=Math['ceil'](_0x3555a6*(0x3/0x4))+'K',document['getElementById'](_0xb60de3(0x1aa))[_0xb60de3(0x1ae)]=_0x579220,document['getElementById']('for-up-burst-time')[_0xb60de3(0x1ae)]=Math['ceil'](_0x29a30f*_0xec329b/(_0x3555a6*(0x3/0x4)))+'s',document[_0xb60de3(0x1b9)]('for-up-burst-duration')[_0xb60de3(0x1ae)]=_0x29a30f,document['getElementById'](_0xb60de3(0x19a))[_0xb60de3(0x1ae)]=_0x579220,document[_0xb60de3(0x1b9)](_0xb60de3(0x1ba))[_0xb60de3(0x1ae)]=_0x29a30f,document[_0xb60de3(0x1b9)]('for-down-burst-threshold')[_0xb60de3(0x1ae)]=Math['ceil'](_0x5a7b71*(0x3/0x4))+'K',document[_0xb60de3(0x1b9)](_0xb60de3(0x195))['innerHTML']=_0x57cba3,document['getElementById'](_0xb60de3(0x1b3))[_0xb60de3(0x1ae)]=Math['ceil'](_0x55dc57*_0x7d05dc/(_0x5a7b71*(0x3/0x4)))+'s',document[_0xb60de3(0x1b9)]('for-down-burst-duration')[_0xb60de3(0x1ae)]=_0x55dc57,document[_0xb60de3(0x1b9)](_0xb60de3(0x1b6))[_0xb60de3(0x1ae)]=_0x57cba3,document[_0xb60de3(0x1b9)]('for-down-burst-duration2')[_0xb60de3(0x1ae)]=_0x55dc57,_0xec329b==0x0&&(document[_0xb60de3(0x1b9)](_0xb60de3(0x1ab))[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x1b5))[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x1b7))[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x193))[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x1aa))[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)]('for-up-burst-threshold')['innerHTML']='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x1aa))[_0xb60de3(0x1ae)]='0',document['getElementById']('for-up-burst-limit2')[_0xb60de3(0x1ae)]='0',document['getElementById'](_0xb60de3(0x19e))['innerHTML']='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x1ba))['innerHTML']='0'),_0x7d05dc==0x0&&(document[_0xb60de3(0x1b9)]('rate-down-burst-limit')['innerHTML']='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x1a6))[_0xb60de3(0x1ae)]='0',document['getElementById'](_0xb60de3(0x191))[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)]('result-down-burst-threshold')[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x195))[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x1a3))[_0xb60de3(0x1ae)]='0',document[_0xb60de3(0x1b9)]('for-down-burst-limit')[_0xb60de3(0x1ae)]='0',document['getElementById']('for-down-burst-limit2')[_0xb60de3(0x1ae)]='0',document['getElementById'](_0xb60de3(0x197))['innerHTML']='0',document[_0xb60de3(0x1b9)](_0xb60de3(0x1b0))['innerHTML']='0');}
  </script>
 </body>
 </html>
