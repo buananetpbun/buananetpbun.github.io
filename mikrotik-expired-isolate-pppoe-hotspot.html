@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8' />
+	<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
+	<title>Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator - BuanaNETPBun.Github.io</title>
+	<meta content='Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator - BuanaNETPBun.Github.io' name='description' />
+	<meta content='expired, isolation, pppoe, port knocking, knock, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords' />
+	<meta content='index, follow, noodp' name='robots' />
+	<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+	<meta property="og:title" content="Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator By BuanaNET">
+	<meta property="og:description" content="Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator By BuanaNET">
+	<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111254047-cbcd6380-8646-11eb-9be9-c8edfd7bfe81.png">
+	<meta property="og:image:alt" content="Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator By BuanaNET">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://buananetpbun.github.io/port-knocking-icmp.html"> 
+	<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<style>
+		
+		/* ---------------------------------------------------------------------
+		########################################################################
+		# Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator
+		# Date/Time : 01/08/2021, 12:10:14 AM
+		# Designer  : Agus Ramadhani / BuanaNETPbun
+		# Version   : v1.0 Beta
+		# Site	    : BuanaNETPBun.Github.io
+		# Site      : http://www.o-om.com
+		# Sosmed    : https://fb.me/buananet.pbun	
+		########################################################################
+		------------------------------------------------------------------------ */  
+		*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+		body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+		body { font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+		html, body {
+		height: 100%;
+		width:100%;
+		margin-top: 0px;
+		padding:0;
+		font-size:16px;
+		}
+		* {
+		box-sizing: border-box;
+		}
+		.Menu{
+		width:100%;
+		border-bottom:1px solid #ccc;
+		height:100%;
+		padding-bottom: 15px;
+		margin-bottom: 20px;
+		font-weight:bold;
+		 }
+		#wrap{
+		width:1120px;
+		margin:0 auto;
+		padding:10px;
+		background:#fff
+		}
+		.logo {
+		margin-top:0px;
+		color: #111;
+		text-decoration:none;
+		font-size:27px;
+		font-weight:bold; 
+		}	
+		.logo a{
+		color:#111 !important;
+		text-decoration:none !important;
+		}
+		.header{
+		height:auto; 
+		width:100%;
+		margin-top:0px;
+		margin-bottom:10px;
+		border-top:1px solid #ccc;
+		}
+		.main-wrap{
+		display:flex;
+		}     
+		.content{
+        flex:1;
+		float:right;
+		width:800px;
+		padding: 10px;
+		border-top:1px solid #bbb;
+		border-bottom:1px solid #bbb;
+		border-right:1px solid #bbb;
+		background:#ddd;
+		height:auto;
+		}
+		.sidebar{
+		float:left;
+		width:300px;
+		padding: 10px;
+		background-color:#ddd;
+		border:1px solid #bbb; 
+		height:auto;
+		}
+		.footer{
+        font-size:14px;
+		padding-top:15px;
+		clear:both;
+		width:auto;
+		}
+
+		h1 {
+		color:#111;
+		font-size:24px;
+		margin-bottom:5px;
+		margin-top:10px;
+		}
+		a:link {
+		color: rgba(255,0,36,.7);
+		}
+		a:visited {
+		color: rgba(255,0,36,.7);
+		}
+		a:hover {
+		color: rgba(255,0,36,.7);
+		}
+		a:active {
+		color: rgba(255,0,36,.7);
+		}
+		.menu {
+		clear:both;
+		width:auto;
+		padding-bottom:13px;
+		}
+		.menu1 {
+		width:360px;
+		margin-bottom:1px;
+		font-weight:bold;
+		background-color:#4CAF50;
+		padding:6px;
+		color:white;
+		display: inline-block;
+		margin:0;
+		}
+		.menu1 a:link {
+		text-decoration:none;
+		color:white;
+		}
+		.menu1 a:visited{
+		text-decoration:none;
+		color:white;
+		}
+		.menu2 {
+		width:300px;
+		margin-bottom:1px;
+		font-weight:bold;
+		background-color:#bbb;
+		padding:6px;
+		color:white;
+		display: inline-block;
+		margin:0;
+		}
+		.menu2 a:link{
+		text-decoration:none;
+		color:white;
+		}
+		.menu2 a:visited{
+		text-decoration:none;
+		color:white;
+		}
+		 button {
+		 color: #fff;
+		 background-color: rgba(255,0,36,.7);
+		 border-color: rgba(255,0,36,.7);
+		 border:none;
+		 padding:7px;
+		 width:200px;
+		 font-size:16px !important;
+		 font-weight:bold;
+		 }
+		 .d-link {
+		 color: #fff;
+		 background-color: #fff;
+		 border-color: rgba(255,0,36,.7);
+		 border:none;
+		 padding:7px;
+		 width:200px;
+		 font-size:16px !important;
+		 font-weight:bold;
+		 }		 
+		 .d-link a:link{
+		 color: rgba(255,0,36,.7);
+		 text-decoration:underline;
+		 }	
+		 .d-link a:visited{
+		 color: rgba(255,0,36,.7);
+		 text-decoration:none;
+		 }	
+		 .d-link a:hover {
+		  color: rgba(255,0,36,.7);
+		}
+		.d-link a:active {
+		  color: rgba(255,0,36,.7);
+		}
+		 
+		 .row:after {
+		 content: "";
+		 display: table;
+		 clear: both;
+		 }  
+		 input[type=text], select, textarea {
+		 width: 100%;
+		 padding: 5px;
+		 border: 1px solid #bbb;
+		 border-radius: 1px;
+		 resize: vertical;
+		 margin-bottom:12px;
+		 font-size:16px !important;
+		 }
+		 label {
+		 padding: 5px 5px 5px 0;
+		 display: inline-block;
+		 }
+		 input[type=submit] {
+		 background-color: rgba(255,0,36,.7);
+		 color: white;
+		 padding: 12px 20px;
+		 border: none;
+		 border-radius: 1px;
+		 cursor: pointer;
+		 float: right;
+		 }
+		 input[type=submit]:hover {
+		 background-color: #45a049;
+		 }
+		 .col-25 {
+		 float: left;
+		 width: 25%;
+		 margin-top: 6px;
+		 }
+		 .col-75 {
+		 float: left;
+		 width: 75%;
+		 margin-top: 6px;
+		 }
+		 /* Clear floats after the columns */
+		 .row:after {
+		 content: "";
+		 display: table;
+		 clear: both;
+		 }
+		 .list-game {
+		 height: 200px;
+		 background:white;
+		 overflow: scroll;
+		 overflow-x: hidden;
+		 width: 100%;
+		 margin-top:2px;
+		 padding: 3px;
+		 border: 1px solid rgba(0,0,0,0.25);
+		 }
+		 .list-game label {
+		 padding: 0;
+		 display: inline-block;
+		 } 
+		 .list-mangle {
+		 height: 300px;
+		 background:#fff;
+		 overflow: auto;
+		 overflow-x: auto;
+		 width: 100%;
+		 padding: 4px;
+		 margin-top:8px;
+		 border: 1px solid #ccc;
+		 }
+		 
+		 .list-mangle2 {
+		 height: 300px;
+		 background-color:rgba(255,0,36,.7);
+		 overflow: auto;
+		 overflow-x: auto;
+		 width: 100%;
+		 padding: 20px;
+		 margin-top:8px;
+		 border: 2px solid #fff;
+		 color:#fff;
+		 font-family: montserrat,sans-serif;
+		 }
+		 
+		 table, tr, td {
+		border: none;
+		}
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		/* Modal Content */
+		.modal-content {
+		  background-color: #fefefe;
+		  margin: auto;
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 50%;
+		  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		/* The Close Button */
+		.close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		} 
+	</style>
+</head>
+<body onLoad="callmodal()"> 
+<div id="wrap">	
+<div class="logo">	  
+<a href="https://buananetpbun.github.io"><span style="color:rgba(255,0,36,.7) !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/> 
+</div>	
+<div class="header">
+<span style="float:left; display:inline;margin-right:6px; margin-top:10px">
+<a href="https://buananetpbun.github.io/port-knocking-icmp.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+</span>	
+<h1>MIKROTIK ALL-IN-ONE NOTIFICATION EXPIRED FOR HOTSPOT, PPPOE AND STATIC IP</h1>
+</div>
+<div class="main-wrap">
+		<div class="sidebar">
+			<label><b>Ether Name (Hotspot or LAN)</b><br> <span style='color:rgba(255,0,36,.7)'>ex: bridge1 or ether2 or E2-LOCAL</span></label>
+			<input type="text" id="interface-name" placeholder="ex: bridge1 or ether2 or E2-LOCAL" value="bridge1">
+			<label><b>IP Address For Expired</b><br> <span style='color:rgba(255,0,36,.7)'>(IP Subnet /24 only)</span></label>
+			<input type="text" id="ip-address" placeholder="10.20.20.1/24" value="10.20.20.1/24">
+			<label><b>Proxy Port (Redirect)</b><br> <span style='color:rgba(255,0,36,.7)'>Don't use 3128 or 8080</span></label>
+			<input type="text" id="proxy-port" placeholder="8082" value="8082">
+			<label><b>Expired Message</b><br><span style='color:rgba(255,0,36,.7)'>Can Use HMTL Tag</span> </label>
+			<input type="text"  id="input-msg-title" placeholder="EXPIRED!" value="EXPIRED!">
+					<textarea  name="data" id="input-msg-body" style="height:278px">
+DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. PLEASE MAKE PAYMENT OF THE BILL THROUGH THE ACCOUNT WE PROVIDE. IN ORDER FOR THE INTERNET SERVICE TO REMAIN ACTIVE, IT IS REQUESTED TO MAKE A PAYMENT BEFORE THE DUE DATE OF EACH MONTH.</textarea>
+			<input type="text"  id="input-msg-contact" placeholder="Contact Owner: +62 813-2222-3333" value="Contact Owner: +62 813-2222-3333">
+		</div>
+		<div class="content"> 
+		<div style="margin-left:2px; margin-top:5px; font-weight:bold">Copy-Paste the Script to your Terminal!</div>
+			<div class="list-mangle">
+				<table id="showScript" style="padding:5px; white-space: nowrap;">
+					<tr>
+						<td> <span style="color:rgba(255,0,36,.7);">
+							###############################################################<br>
+							# Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator<br>
+							# Date/Time: <span id="tanggalwaktu"></span><br>
+							# https://fb.me/buananet.pbun - https://buananetpbun.github.io<br>
+							###############################################################<br><br>
+							</span>	
+							<b>/ip proxy set enabled=yes port=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-set-port-proxy">8082</span> max-cache-size=none</b></br>
+							<b>/ip proxy access </b><br>
+							add action=allow dst-port=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-proxy-port">8082</span> src-address=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-proxy-ip">10.20.20.0/24</span> comment="EXPIRED By BNT"<br>
+							add action=deny comment="EXPIRED By BNT"<br>
+							<b>/ip address</b><br>
+							add address=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-ip-address">10.20.20.1/24</span> interface=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-interface">bridge1</span> comment="EXPIRED By BNT"<br>
+							<b>/ip firewall address-list</b><br>
+							add list=EXPIRED  address=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-address-list">10.20.20.0/24</span> comment="EXPIRED By BNT"<br>
+							<b>/ip pool</b><br>
+							add name=EXPIRED  ranges=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-ip-pool">10.20.20.2-10.20.20.254</span> comment="EXPIRED By BNT"<br>
+							<b>/ip firewall filter</b><br>
+							add chain=forward src-address-list=EXPIRED protocol=tcp dst-port=!80,443 action=drop comment="EXPIRED By BNT"<br>
+							<b>/ip firewall nat</b><br>
+							add chain=dstnat src-address-list=EXPIRED  protocol=tcp dst-port=80,443 action=redirect to-ports=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-nat-port">8082</span> comment="EXPIRED By BNT"<br>
+							<b>/ppp profile</b><br>
+							add name=EXPIRED  local-address=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-ppp-profile">10.20.20.1</span> remote-address=EXPIRED comment="EXPIRED By BNT"<br>
+							<b>/ip hotspot user profile</b><br>
+							add address-pool=EXPIRED !mac-cookie-timeout name=EXPIRED shared-users=100<br>
+							<b>/ip hotspot walled-garden ip</b><br>
+							add action=accept disabled=no !dst-address !dst-address-list dst-port=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-wallet-garden-port">8082</span> protocol=tcp !src-address !src-address-list comment="EXPIRED By BNT"<br>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+			<br>
+			<button style="margin-right:10px;" type="button" onclick="myFunction()">Generate Script</button>
+			<button style="margin-top:0px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button>
+			<span style="float:right;margin-bottom:15px; margin-top:0px;padding-left:20px" class="d-link"><a class="download" href="#" download="error.html">Download error.html</a></span><br>
+		<div class="list-mangle2">
+		<center>
+		<span id="msg-title" style="color:#fff; font-weight:bold; font-size:70px;">EXPIRED!</span><br>
+		<span id="msg-body" style="color:#fff; font-weight:bold; font-size:15px;line-height:2.0">
+DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. PLEASE MAKE PAYMENT OF THE BILL THROUGH THE ACCOUNT WE PROVIDE. IN ORDER FOR THE INTERNET SERVICE TO REMAIN ACTIVE, IT IS REQUESTED TO MAKE A PAYMENT BEFORE THE DUE DATE OF EACH MONTH.</span><br><br>
+		<span id="msg-contact" style="color:#fff; font-weight:bold; font-size:15px;;line-height:2.0"><span>Contact Owner: +62 813-2222-3333</span><br>
+		</center>
+		</div>	
+		<br>
+		</div>
+        </div>
+		<div class="footer">
+       <div style="margin-top:0px;float:right">
+	   <span style="color:rgba(255,0,36,.7); font-weight:bold">Tutorial How-To:</span><br>
+	   1. Download error.html and upload to winbox at "File" to webproxy Folder "webproxy/error.html"<br>
+	   2. For Enable isolation just set your Profile to "EXPIRED" at Hotspot or PPPoE on Winbox, Don't use<br>
+	   Expired for Hotspot Voucher, you can use only for Hotspot monthly.<br>
+	   3. You can set manual isolation for Static-IP, just input user IP at Firewall -> Address Lists -> EXPIRED<br>
+	   <br>
+		<br>© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator: <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+		</div>         
+		<span style="color:rgba(255,0,36,.7); font-weight:bold"># This Script for remove all Script from this Generator:</span><br>
+/ip proxy set enabled=no port=8080 max-cache-size=none <br>
+/ip pool remove [find comment="EXPIRED By BNT"]<br>
+/ip firewall nat remove [find comment="EXPIRED By BNT"]<br>
+/ip firewall filter remove [find comment="EXPIRED By BNT"]<br>
+/ip firewall address-list remove [find comment="EXPIRED By BNT"]<br>
+/ppp profile remove [find comment="EXPIRED By BNT"]<br>
+/ip proxy access remove [find comment="EXPIRED By BNT"]<br>
+/ip hotspot walled-garden ip remove [find comment="EXPIRED By BNT"]<br>
+/ip hotspot user profile remove [find name ="EXPIRED"]<br>
+/ip address remove [find comment="EXPIRED By BNT"]<br>
+	</div>
+	</div>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3><span style="color:green">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
+   <br><b>If you like this tool you can gife me a donation at <span style="color:green">PAYPAL</span> to email: <span style="color:red">oom@o-om.com</span>
+   <br><br>
+   Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
+   <br><br>
+   Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananet.pbun">fb.me/buananet.pbun</a><br>
+   <br>Thanks Before :)</b>
+  </div>
+</div>	 
+	<script type="text/javascript">
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+function callmodal() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script> 
+	<script>
+		
+
+		var dt = new Date();
+        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+	
+				function upperCaseF(a){
+			setTimeout(function(){
+				a.value = a.value.toUpperCase();
+			}, 1);
+		}
+		function myFunction(){
+		var inputmsgbody = document.getElementById("input-msg-body").value;
+		var inputmsgtitle = document.getElementById("input-msg-title").value;
+		var inputmsgcontact = document.getElementById("input-msg-contact").value;
+		var inputipaddress = document.getElementById("ip-address").value;
+		var inputproxyport = document.getElementById("proxy-port").value;
+		var inputresultinterface = document.getElementById("interface-name").value;
+		
+		
+		var inputstrip = inputipaddress;
+		var fullip = inputstrip.substring(0, inputstrip.lastIndexOf('.'));
+		
+		document.getElementById("result-proxy-ip").innerHTML = fullip + ".0/24";
+		document.getElementById("result-ip-pool").innerHTML = fullip + ".2-" + fullip + ".254";
+		document.getElementById("result-ip-address").innerHTML = inputstrip;
+		document.getElementById("result-address-list").innerHTML = fullip + ".0/24";
+		document.getElementById("result-ppp-profile").innerHTML = fullip + ".1";
+		
+		document.getElementById("result-set-port-proxy").innerHTML = inputproxyport;
+		document.getElementById("result-proxy-port").innerHTML = inputproxyport;
+		document.getElementById("result-nat-port").innerHTML = inputproxyport;
+		document.getElementById("result-wallet-garden-port").innerHTML = inputproxyport;
+		
+		document.getElementById("result-interface").innerHTML = inputresultinterface;
+		
+		document.getElementById("msg-title").innerHTML = inputmsgtitle;
+		document.getElementById("msg-body").innerHTML = inputmsgbody;
+		document.getElementById("msg-contact").innerHTML = inputmsgcontact;
+		
+		var html_source = "<!DOCTYPE html><html><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>body{font-family: montserrat, sans-serif;font-weight:700;color:#fff;background-color:rgba(255,0,36,.7);ms-text-size-adjust: 100%;-webkit-text-size-adjust:100%;}</style><body><center><div style='padding:50px'><div style='font-size:10vw;'>" + inputmsgtitle  + "</div><div style='font-size:2vw;line-height:2.0;'>" + inputmsgbody  + "</div><br><div style='font-size:2vw;line-height:2.0;'>" + inputmsgcontact  + "</div><div style='font-size:11px;'>Script Generator by buananetpbun.github.io</div></div></center></body></html></html>"
+        document.querySelector(".download").href = 'data:text;base64,' + btoa(html_source) 
+		}
+		
+    	 function selectElementContents(el) {
+            var body = document.body, range, sel;
+            if (document.createRange && window.getSelection) {
+                range = document.createRange();
+                sel = window.getSelection();
+                sel.removeAllRanges();
+                try {
+                     range.selectNodeContents(el);
+                     sel.addRange(range);
+                         } catch (e) {
+                                 range.selectNode(el);
+                                 sel.addRange(range);
+                         }
+                         } else if (body.createTextRange) {
+                             range = body.createTextRange();
+                             range.moveToElementText(el);
+                             range.select();
+                         }
+             document.execCommand("copy"); 
+        }
+		
+
+	  
+	</script>
+</body>
+</html>
