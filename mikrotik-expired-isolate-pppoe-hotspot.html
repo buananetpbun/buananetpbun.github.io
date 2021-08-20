@@ -13,7 +13,7 @@
 	<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111254047-cbcd6380-8646-11eb-9be9-c8edfd7bfe81.png">
 	<meta property="og:image:alt" content="Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator By BuanaNET">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://buananetpbun.github.io/port-knocking-icmp.html"> 
+	<meta property="og:url" content="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html"> 
 	<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<style>
 		
@@ -330,7 +330,7 @@
 </div>	
 <div class="header">
 <span style="float:left; display:inline;margin-right:6px; margin-top:10px">
-<a href="https://buananetpbun.github.io/port-knocking-icmp.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+<a href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
 </span>	
 <h1>MIKROTIK ALL-IN-ONE NOTIFICATION EXPIRED FOR HOTSPOT, PPPOE AND STATIC IP</h1>
 </div>
@@ -411,16 +411,16 @@ DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. P
 		<br>© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator: <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
 		</div>         
 		<span style="color:rgba(255,0,36,.7); font-weight:bold"># This Script for remove all Script from this Generator:</span><br>
-/ip proxy set enabled=no port=8080 max-cache-size=none <br>
-/ip pool remove [find comment="EXPIRED By BNT"]<br>
-/ip firewall nat remove [find comment="EXPIRED By BNT"]<br>
-/ip firewall filter remove [find comment="EXPIRED By BNT"]<br>
-/ip firewall address-list remove [find comment="EXPIRED By BNT"]<br>
-/ppp profile remove [find comment="EXPIRED By BNT"]<br>
-/ip proxy access remove [find comment="EXPIRED By BNT"]<br>
-/ip hotspot walled-garden ip remove [find comment="EXPIRED By BNT"]<br>
-/ip hotspot user profile remove [find name ="EXPIRED"]<br>
-/ip address remove [find comment="EXPIRED By BNT"]<br>
+		/ip proxy set enabled=no port=8080 max-cache-size=none <br>
+		/ip pool remove [find comment="EXPIRED By BNT"]<br>
+		/ip firewall nat remove [find comment="EXPIRED By BNT"]<br>
+		/ip firewall filter remove [find comment="EXPIRED By BNT"]<br>
+		/ip firewall address-list remove [find comment="EXPIRED By BNT"]<br>
+		/ppp profile remove [find comment="EXPIRED By BNT"]<br>
+		/ip proxy access remove [find comment="EXPIRED By BNT"]<br>
+		/ip hotspot walled-garden ip remove [find comment="EXPIRED By BNT"]<br>
+		/ip hotspot user profile remove [find name ="EXPIRED"]<br>
+		/ip address remove [find comment="EXPIRED By BNT"]<br>
 	</div>
 	</div>
 <div id="myModal" class="modal">
@@ -451,72 +451,7 @@ window.onclick = function(event) {
 }
 </script> 
 	<script>
-		
-
-		var dt = new Date();
-        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
-	
-				function upperCaseF(a){
-			setTimeout(function(){
-				a.value = a.value.toUpperCase();
-			}, 1);
-		}
-		function myFunction(){
-		var inputmsgbody = document.getElementById("input-msg-body").value;
-		var inputmsgtitle = document.getElementById("input-msg-title").value;
-		var inputmsgcontact = document.getElementById("input-msg-contact").value;
-		var inputipaddress = document.getElementById("ip-address").value;
-		var inputproxyport = document.getElementById("proxy-port").value;
-		var inputresultinterface = document.getElementById("interface-name").value;
-		
-		
-		var inputstrip = inputipaddress;
-		var fullip = inputstrip.substring(0, inputstrip.lastIndexOf('.'));
-		
-		document.getElementById("result-proxy-ip").innerHTML = fullip + ".0/24";
-		document.getElementById("result-ip-pool").innerHTML = fullip + ".2-" + fullip + ".254";
-		document.getElementById("result-ip-address").innerHTML = inputstrip;
-		document.getElementById("result-address-list").innerHTML = fullip + ".0/24";
-		document.getElementById("result-ppp-profile").innerHTML = fullip + ".1";
-		
-		document.getElementById("result-set-port-proxy").innerHTML = inputproxyport;
-		document.getElementById("result-proxy-port").innerHTML = inputproxyport;
-		document.getElementById("result-nat-port").innerHTML = inputproxyport;
-		document.getElementById("result-wallet-garden-port").innerHTML = inputproxyport;
-		
-		document.getElementById("result-interface").innerHTML = inputresultinterface;
-		
-		document.getElementById("msg-title").innerHTML = inputmsgtitle;
-		document.getElementById("msg-body").innerHTML = inputmsgbody;
-		document.getElementById("msg-contact").innerHTML = inputmsgcontact;
-		
-		var html_source = "<!DOCTYPE html><html><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>body{font-family: montserrat, sans-serif;font-weight:700;color:#fff;background-color:rgba(255,0,36,.7);ms-text-size-adjust: 100%;-webkit-text-size-adjust:100%;}</style><body><center><div style='padding:50px'><div style='font-size:10vw;'>" + inputmsgtitle  + "</div><div style='font-size:2vw;line-height:2.0;'>" + inputmsgbody  + "</div><br><div style='font-size:2vw;line-height:2.0;'>" + inputmsgcontact  + "</div><div style='font-size:11px;'>Script Generator by buananetpbun.github.io</div></div></center></body></html></html>"
-        document.querySelector(".download").href = 'data:text;base64,' + btoa(html_source) 
-		}
-		
-    	 function selectElementContents(el) {
-            var body = document.body, range, sel;
-            if (document.createRange && window.getSelection) {
-                range = document.createRange();
-                sel = window.getSelection();
-                sel.removeAllRanges();
-                try {
-                     range.selectNodeContents(el);
-                     sel.addRange(range);
-                         } catch (e) {
-                                 range.selectNode(el);
-                                 sel.addRange(range);
-                         }
-                         } else if (body.createTextRange) {
-                             range = body.createTextRange();
-                             range.moveToElementText(el);
-                             range.select();
-                         }
-             document.execCommand("copy"); 
-        }
-		
-
-	  
+	var _0x32b0c4=_0x4edb;(function(_0x23186f,_0x4b7f5d){var _0x4f21d5=_0x4edb,_0x363c3b=_0x23186f();while(!![]){try{var _0x30f378=parseInt(_0x4f21d5(0x178))/0x1+parseInt(_0x4f21d5(0x175))/0x2*(-parseInt(_0x4f21d5(0x16d))/0x3)+parseInt(_0x4f21d5(0x159))/0x4*(parseInt(_0x4f21d5(0x15c))/0x5)+-parseInt(_0x4f21d5(0x166))/0x6+-parseInt(_0x4f21d5(0x15e))/0x7+parseInt(_0x4f21d5(0x16b))/0x8+parseInt(_0x4f21d5(0x165))/0x9;if(_0x30f378===_0x4b7f5d)break;else _0x363c3b['push'](_0x363c3b['shift']());}catch(_0x34719f){_0x363c3b['push'](_0x363c3b['shift']());}}}(_0x5832,0xcb108));var dt=new Date();document[_0x32b0c4(0x16c)]('tanggalwaktu')[_0x32b0c4(0x174)]=dt[_0x32b0c4(0x15d)]();function _0x5832(){var _0x36397b=['addRange','select','innerHTML','82442QLCAXL','.0/24','result-wallet-garden-port','1439786sDRIaM','createTextRange','.254','execCommand','result-ip-address','result-proxy-ip','substring','copy','value','msg-contact','querySelector','</div><br><div\x20style=\x27font-size:2vw;line-height:2.0;\x27>','<!DOCTYPE\x20html><html><meta\x20name=\x27viewport\x27\x20content=\x27width=device-width,\x20initial-scale=1.0\x27><style>body{font-family:\x20montserrat,\x20sans-serif;font-weight:700;color:#fff;background-color:rgba(255,0,36,.7);ms-text-size-adjust:\x20100%;-webkit-text-size-adjust:100%;}</style><body><center><div\x20style=\x27padding:50px\x27><div\x20style=\x27font-size:10vw;\x27>','input-msg-contact','result-address-list','moveToElementText','1114088hJzsjp','selectNodeContents','getSelection','5KrOdGE','toLocaleString','8601334JMvvda','result-proxy-port','.download','result-ppp-profile','</div><div\x20style=\x27font-size:2vw;line-height:2.0;\x27>','.2-','body','3192309bmZyGn','5065608bPiYuJ','href','input-msg-title','ip-address','removeAllRanges','7313720zvtnNX','getElementById','6HXzshF','result-nat-port','proxy-port','createRange','interface-name'];_0x5832=function(){return _0x36397b;};return _0x5832();}function _0x4edb(_0x5a93cc,_0x1d8e19){var _0x583299=_0x5832();return _0x4edb=function(_0x4edb72,_0x542a17){_0x4edb72=_0x4edb72-0x14a;var _0x18c89b=_0x583299[_0x4edb72];return _0x18c89b;},_0x4edb(_0x5a93cc,_0x1d8e19);}function upperCaseF(_0x1ef8e2){setTimeout(function(){var _0x24e4b4=_0x4edb;_0x1ef8e2[_0x24e4b4(0x151)]=_0x1ef8e2[_0x24e4b4(0x151)]['toUpperCase']();},0x1);}function myFunction(){var _0x46f3f0=_0x32b0c4,_0x57e937=document['getElementById']('input-msg-body')[_0x46f3f0(0x151)],_0x54841b=document[_0x46f3f0(0x16c)](_0x46f3f0(0x168))[_0x46f3f0(0x151)],_0x544606=document[_0x46f3f0(0x16c)](_0x46f3f0(0x156))[_0x46f3f0(0x151)],_0x2b8a45=document[_0x46f3f0(0x16c)](_0x46f3f0(0x169))['value'],_0x4aaa13=document['getElementById'](_0x46f3f0(0x16f))['value'],_0x5b6dc8=document[_0x46f3f0(0x16c)](_0x46f3f0(0x171))['value'],_0x2819e7=_0x2b8a45,_0xdf4b95=_0x2819e7[_0x46f3f0(0x14f)](0x0,_0x2819e7['lastIndexOf']('.'));document[_0x46f3f0(0x16c)](_0x46f3f0(0x14e))[_0x46f3f0(0x174)]=_0xdf4b95+_0x46f3f0(0x176),document[_0x46f3f0(0x16c)]('result-ip-pool')[_0x46f3f0(0x174)]=_0xdf4b95+_0x46f3f0(0x163)+_0xdf4b95+_0x46f3f0(0x14b),document[_0x46f3f0(0x16c)](_0x46f3f0(0x14d))['innerHTML']=_0x2819e7,document[_0x46f3f0(0x16c)](_0x46f3f0(0x157))['innerHTML']=_0xdf4b95+_0x46f3f0(0x176),document[_0x46f3f0(0x16c)](_0x46f3f0(0x161))[_0x46f3f0(0x174)]=_0xdf4b95+'.1',document['getElementById']('result-set-port-proxy')[_0x46f3f0(0x174)]=_0x4aaa13,document[_0x46f3f0(0x16c)](_0x46f3f0(0x15f))[_0x46f3f0(0x174)]=_0x4aaa13,document[_0x46f3f0(0x16c)](_0x46f3f0(0x16e))[_0x46f3f0(0x174)]=_0x4aaa13,document['getElementById'](_0x46f3f0(0x177))[_0x46f3f0(0x174)]=_0x4aaa13,document[_0x46f3f0(0x16c)]('result-interface')[_0x46f3f0(0x174)]=_0x5b6dc8,document[_0x46f3f0(0x16c)]('msg-title')[_0x46f3f0(0x174)]=_0x54841b,document[_0x46f3f0(0x16c)]('msg-body')[_0x46f3f0(0x174)]=_0x57e937,document[_0x46f3f0(0x16c)](_0x46f3f0(0x152))[_0x46f3f0(0x174)]=_0x544606;var _0x43c381=_0x46f3f0(0x155)+_0x54841b+_0x46f3f0(0x162)+_0x57e937+_0x46f3f0(0x154)+_0x544606+'</div><div\x20style=\x27font-size:11px;\x27>Script\x20Generator\x20by\x20buananetpbun.github.io</div></div></center></body></html></html>';document[_0x46f3f0(0x153)](_0x46f3f0(0x160))[_0x46f3f0(0x167)]='data:text;base64,'+btoa(_0x43c381);}function selectElementContents(_0x26f6df){var _0x125b74=_0x32b0c4,_0x2b94b2=document[_0x125b74(0x164)],_0x42d1af,_0xa5fbee;if(document[_0x125b74(0x170)]&&window[_0x125b74(0x15b)]){_0x42d1af=document['createRange'](),_0xa5fbee=window['getSelection'](),_0xa5fbee[_0x125b74(0x16a)]();try{_0x42d1af[_0x125b74(0x15a)](_0x26f6df),_0xa5fbee[_0x125b74(0x172)](_0x42d1af);}catch(_0x2086d2){_0x42d1af['selectNode'](_0x26f6df),_0xa5fbee['addRange'](_0x42d1af);}}else _0x2b94b2[_0x125b74(0x14a)]&&(_0x42d1af=_0x2b94b2[_0x125b74(0x14a)](),_0x42d1af[_0x125b74(0x158)](_0x26f6df),_0x42d1af[_0x125b74(0x173)]());document[_0x125b74(0x14c)](_0x125b74(0x150));}
 	</script>
 </body>
 </html>
