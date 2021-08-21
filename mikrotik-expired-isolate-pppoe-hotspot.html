@@ -10,7 +10,7 @@
 	<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
 	<meta property="og:title" content="Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator By BuanaNET">
 	<meta property="og:description" content="Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator By BuanaNET">
-	<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111254047-cbcd6380-8646-11eb-9be9-c8edfd7bfe81.png">
+	<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/130205304-1d7dc906-4483-40db-a28e-ca031ef0d42b.png">
 	<meta property="og:image:alt" content="Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator By BuanaNET">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html"> 
@@ -375,9 +375,9 @@ DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. P
 							<b>/ip firewall nat</b><br>
 							add chain=dstnat src-address-list=EXPIRED  protocol=tcp dst-port=80,443 action=redirect to-ports=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-nat-port">8082</span> comment="EXPIRED By BNT"<br>
 							<b>/ppp profile</b><br>
-							add name=EXPIRED  local-address=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-ppp-profile">10.20.20.1</span> remote-address=EXPIRED comment="EXPIRED By BNT"<br>
+							add name=EXPIRED  local-address=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-ppp-profile">10.20.20.1</span> remote-address=EXPIRED  comment="EXPIRED By BNT"<br>
 							<b>/ip hotspot user profile</b><br>
-							add address-pool=EXPIRED !mac-cookie-timeout name=EXPIRED shared-users=100<br>
+							add address-pool=EXPIRED !mac-cookie-timeout transparent-proxy=no on-logout=":local username \$user;\r\n/ip hotspot cookie remove [find user=\$username]" name=EXPIRED shared-users=100<br>
 							<b>/ip hotspot walled-garden ip</b><br>
 							add action=accept disabled=no !dst-address !dst-address-list dst-port=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-wallet-garden-port">8082</span> protocol=tcp !src-address !src-address-list comment="EXPIRED By BNT"<br>
 						</td>
