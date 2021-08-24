@@ -371,7 +371,7 @@ DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. P
 							<b>/ip pool</b><br>
 							add name=EXPIRED  ranges=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-ip-pool">10.20.20.2-10.20.20.254</span> comment="EXPIRED By BNT"<br>
 							<b>/ip firewall filter</b><br>
-							add chain=forward src-address-list=EXPIRED protocol=tcp dst-port=!80,443 action=drop comment="EXPIRED By BNT"<br>
+							add chain=forward src-address-list=EXPIRED action=drop comment="EXPIRED By BNT"<br>
 							<b>/ip firewall nat</b><br>
 							add chain=dstnat src-address-list=EXPIRED  protocol=tcp dst-port=80,443 action=redirect to-ports=<span style="color:rgba(255,0,36,.7); font-weight:bold" id="result-nat-port">8082</span> comment="EXPIRED By BNT"<br>
 							<b>/ppp profile</b><br>
