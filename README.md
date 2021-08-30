@@ -91,6 +91,10 @@ Dukung Tools ini dengan memberikan Donasi melalui https://saweria.co/buananetpbu
 <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Mikrotik All-In-One Notification Expired For Hotspot, PPPoE And Static IP For RouterOS</p>
 <img src="https://user-images.githubusercontent.com/42666125/130205304-1d7dc906-4483-40db-a28e-ca031ef0d42b.png">
 
+<h2>MIKROTIK USERNAME PASSWORD HOTSPOT GENERATOR</h2>
+<p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Mikrotik Username Password Hotspot Voucher Generator</p>
+<img src="https://user-images.githubusercontent.com/42666125/131390634-b46aaf6d-ff4b-4acc-9a35-907899d7873a.png">
+
 <br><br><br>
 © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
 Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
