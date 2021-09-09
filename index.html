@@ -52,7 +52,6 @@ word-wrap: break-word;
 }
 h1, h2 {font-size: 25px; border-bottom:0px solid #ddd; margin-bottom:20px; color:#000;line-height:1.5}
 h3, h4, h5, h6{font-size: 20px; border-bottom:1px solid #ddd; margin-bottom:10px; padding-botto:10px; color:#000;line-height:1.5}
-
 pre {
 white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
 white-space: -pre-wrap; /* Opera */
@@ -293,10 +292,14 @@ background-color: #8E2DE2
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+
 /* Modal Content */
 .modal-content {
+  text-shadow: 0px 0px 3px #fff;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
   background-color: #fefefe;
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: right bottom; 
   background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
   margin: auto;
@@ -306,9 +309,11 @@ background-color: #8E2DE2
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
+
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  text-shadow: 0px 0px 3px #fff;
+  color: #111;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -316,10 +321,11 @@ background-color: #8E2DE2
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: red;
   text-decoration: none;
   cursor: pointer;
 }
+
 </style>
 </head>
 <body onLoad="callmodal()">
@@ -473,6 +479,7 @@ background-color: #8E2DE2
 </div>
 </div>
 <div id="myModal" class="modal">
+<img src="/w3images/notebook.jpg" alt="Notebook" style="width:100%;">
   <div class="modal-content">
     <span class="close">&times;</span>
     <h4><span style="color:green">SUPPORT THIS TOOL WITH DONATION :)</span></h4>
