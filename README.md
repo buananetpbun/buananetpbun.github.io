@@ -94,6 +94,10 @@ Dukung Tools ini dengan memberikan Donasi melalui https://saweria.co/buananetpbu
 <h2>MIKROTIK USERNAME PASSWORD HOTSPOT GENERATOR</h2>
 <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Mikrotik Username Password Hotspot Voucher Generator</p>
 <img src="https://user-images.githubusercontent.com/42666125/131390634-b46aaf6d-ff4b-4acc-9a35-907899d7873a.png">
+ 
+<h2>MIKROTIK FAILOVER SCRIPT GENERATOR</h2>
+<p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Mikrotik Failover Script Generator - Recursive, Check Gateway, Netwatch Ping</p>
+<img src="https://user-images.githubusercontent.com/42666125/132989725-ecbdf440-b598-4d39-8e53-d2b0ed6aa37c.png">
 
 <br><br><br>
 © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
