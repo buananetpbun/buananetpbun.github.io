@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mikrotik Bandwidth Share For Hotspot Shared User Generator - BuanaNETPBun.Github.io</title>
+<meta content='Mikrotik Bandwidth Share For Hotspot Shared User Script Generator - BuanaNETPBun.Github.io' name='description'/>
+<meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<meta property="og:title" content="Mikrotik Bandwidth Share For Hotspot Shared User Generator By BuanaNET-Pbun">
+<meta property="og:description" content="Mikrotik Bandwidth Share For Hotspot Shared User Generator By BuanaNET-Pbun">
+<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111256022-bf4b0a00-864a-11eb-995c-afe81b2c6c34.png">
+<meta property="og:image:alt" content="Mikrotik Bandwidth Share For Hotspot Shared User Generator By BuanaNET-Pbun">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buananetpbun.github.io/simple-queue-generator-shared.html"> 
+<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+<style>
+/* -----------------------------------------------------------------
+####################################################################
+# Mikrotik Bandwidth Share For Hotspot Shared User Generator
+# Date/Time : 11/9/2021, 12:10:14 AM
+# Designer  : Agus Ramadhani / BuanaNET
+# Github	: BuanaNETPBun.Github.io
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+####################################################################
+-------------------------------------------------------------------- */  
+*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+body { font-size:16px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+html, body {
+height: 100%;
+width:100%;
+margin-top: 0px;
+padding:0;
+}
+* {
+box-sizing: border-box;
+}
+.logo {
+margin-top:30px; 
+color: #111;
+text-decoration:none;
+font-size:27px;
+font-weight:bold; 
+}	
+.logo a{
+color:#111 !important;
+text-decoration:none !important;
+}
+.Menu{
+width:100%;
+border-bottom:1px solid #ccc;
+height:100%;
+padding-bottom: 15px;
+margin-bottom: 20px;
+font-size:14px;
+font-weight:bold;
+}
+#wrap{
+width:1000px;
+margin:0 auto;
+padding:10px;
+background:#fff;
+}
+
+.header{
+height:auto; 
+width:100%;
+margin-top:0px;
+margin-bottom:10px;
+border-top:1px solid #ccc;
+}
+.main-wrap{
+display: flex;
+}   
+.content{
+flex:1;
+float:right;
+width:600px;
+padding: 10px;
+border-top:1px solid #bbb;
+border-bottom:1px solid #bbb;
+border-right:1px solid #bbb;
+background:#ddd;
+}
+.sidebar{
+float:left;
+width:400px;
+Padding-top:8px;
+padding-left: 10px;
+Padding-right:10px;
+Padding-bottom:20px;
+background-color:#ddd;
+border:1px solid #bbb; 
+height:auto;
+
+}
+.footer{
+font-size:14px;
+padding-top:15px;
+text-align:center;
+clear:both;
+width:auto;
+}
+
+h1 {
+color:#111;
+font-size:22px;
+margin-bottom:10px;
+margin-top:10px;
+}
+a:link {
+color: rgba(255,0,36,.7);
+}
+a:visited {
+color: rgba(255,0,36,.7);
+}
+a:hover {
+color: rgba(255,0,36,.7);
+}
+a:active {
+color: rgba(255,0,36,.7);
+}
+.menu {
+clear:both;
+width:auto;
+padding-bottom:13px;
+}
+.menu1 {
+width:360px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#4CAF50;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu1 a:link {
+text-decoration:none;
+color:white;
+}
+.menu1 a:visited{
+text-decoration:none;
+color:white;
+}
+.menu2 {
+width:300px;
+margin-bottom:1px;
+font-weight:bold;
+background-color:#bbb;
+padding:6px;
+color:white;
+display: inline-block;
+margin:0;
+}
+.menu2 a:link{
+text-decoration:none;
+color:white;
+}
+.menu2 a:visited{
+text-decoration:none;
+color:white;
+}
+button {
+color: #fff;
+background-color: rgba(255,0,36,.7);
+border-color: rgba(255,0,36,.7);
+border:none;
+padding:8px;
+width:170px;
+font-size:16px;
+font-weight:bold;
+}
+.row:after {
+content: "";
+display: table;
+clear: both;
+}  
+input[type=checkbox]{
+ margin-right:7px; 
+}
+input[type=text], select, textarea {
+width: 100%;
+padding: 5px;
+border: 1px solid #bbb;
+border-radius: 1px;
+resize: vertical;
+margin-bottom:12px;
+font-size:16px !important;
+}
+label {
+padding: 5px 5px 5px 0;
+display: inline-block;
+}
+input[type=submit] {
+background-color: rgba(255,0,36,.7);
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 1px;
+cursor: pointer;
+float: right;
+}
+input[type=submit]:hover {
+background-color: #45a049;
+}
+.col-25 {
+float: left;
+width: 25%;
+margin-top: 6px;
+}
+.col-75 {
+float: left;
+width: 75%;
+margin-top: 6px;
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+.list-game {
+height: 200px;
+background:white;
+overflow: scroll;
+overflow-x: hidden;
+width: 100%;
+margin-top:2px;
+padding: 3px;
+border: 1px solid rgba(0,0,0,0.25);
+}
+.list-game label {
+padding: 0;
+display: inline-block;
+} 
+.list-mangle {
+height: 415px;
+background:#fff;
+overflow: scroll;
+width: 100%;
+padding: 4px;
+margin-top:8px;
+border: 1px solid #ccc;
+}
+table, tr, td {
+border: none;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+text-shadow: 0px 0px 3px #fff;
+  background-color: #fefefe;
+    background-repeat: no-repeat;
+  background-position: right bottom; 
+  background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* The Close Button */
+.close {
+text-shadow: 0px 0px 3px #fff;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} 
+</style>
+</head>
+<body onLoad="callmodal()"> 
+
+<div id="wrap">
+<div class="logo">	  
+<a href="https://buananetpbun.github.io"><span style="color:rgba(255,0,36,.7) !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+</div>	
+<div class="header">
+<span style="float:left; display:inline;margin-right:6px; margin-top: 10px">
+<a href="https://buananetpbun.github.io/simple-queue-generator-shared.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+</span>
+<h1>MIKROTIK BANDWIDTH SHARE FOR HOTSPOT SHARED USER SCRIPT GENERATOR</h1>
+</div>
+<div class="main-wrap">
+    <div class="sidebar">
+	 <div style="margin-bottom:10px; height:95px">
+		 <span style="color:rgba(255,0,36,.7);"><b>SIMPLE QUEUE</b><br></span>
+		  <div style="float:left; width:48%;">
+		 <label>Parent Name Queue</label><br>
+         <input type="text" id="input-parent-name" value="Jack Home" placeholder="Jack Home">
+		 </div>
+		 <div style="float:left; width:48%;margin-left:10px;">
+		 <label>Max Limit (up/down)</label><br>
+         <input onkeydown="upperCaseF(this)" type="text" id="input-max-limit" value="2M/5M" placeholder="2M/5M">
+		 </div>
+		 <div style="float:left; width:100%;">
+         <label>Target IP Address - <span style="color:green; font-size:12px">Match With Your Hotspot IP Address</span></label><br>
+         <input type="text" id="input-ip-address" value="10.5.50.0/24" placeholder="10.5.50.0/24">
+		 </div>
+		 </div>
+		   <div style="margin-bottom:10px; height:200px">
+		  <span style="color:rgba(255,0,36,.7);"><b>HOTSPOT PROFILE</b><br></span>
+		  <div style="float:left; width:100%;">
+		 <label>Profile Name</label><br>
+         <input type="text" id="input-profile-name" value="Shared-Jack-Home" placeholder="Shared-Jack-Home">
+		 </div>
+     	  <div style="float:left; width:48%;">
+		 <label>Shared User</label><br>
+         <input type="text" id="input-shared-user" value="5" placeholder="5">
+		 </div>
+		 <div style="float:left; width:48%;margin-left:10px;">
+         <label>Rate Limit (up/down)</label><br>
+         <input onkeydown="upperCaseF(this)" type="text" id="input-rate-limit" value="1M/2M" placeholder="1M/2M">
+		 </div>
+		 <div style="float:left;width:48%;">
+		 <label>User Name</label><br>
+         <input type="text" id="input-username" value="jack" placeholder="jack">
+		 </div>
+		 <div style="float:left;width:48%;margin-left:10px;">
+		 <label>Password</label>
+         <input type="text" id="input-password" value="jack123" placeholder="jack123">
+		 </div>
+		 </div>
+
+	 <div style="margin-top:20px;margin-bottom:10px">
+	 <input type="checkbox" id="auto-shared"><label for="auto-shared" style="padding-left:0px">Auto Set For Bandwidth Shared (UP-TO)</label><div style="clear: both;"></div>        
+	 </div>
+		 
+         <button style="margin-top:10px;" type="button" onclick="myFunction()">Generate Script</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All Script</button> 
+         <br>
+    </div>
+    <div class="content"> 
+        <span style="margin-left:2px">Script Generator Result</span>
+         <div class="list-mangle">
+            <table id="showScript" style="padding:5px; ">
+               <tr>
+                  <td>
+                     <span style="color:rgba(255,0,36,.7);">
+                     ###########################################################<br>
+                     # Mikrotik Bandwidth Share For Hotspot Shared User Generator <br>
+                     # Date/Time: <span id="tanggalwaktu"></span><br>
+                     # By BuanaNET Secure! https://fb.me/buananet.pbun<br>
+                     ###########################################################<br><br>
+                     </span>
+					 <div id="list-output">
+					<b>/queue simple</b><br>
+					add max-limit="<span id="simple-queue-max-limit" style="color:rgba(255,0,36,.7);"></span>" name="<span id="simple-queue-name" style="color:rgba(255,0,36,.7);"></span>" target="<span id="simple-queue-ip-address" style="color:rgba(255,0,36,.7);"></span>" packet-mark="<span id="simple-queue-packet-mark" style="color:rgba(255,0,36,.7);"></span>"<br>			
+					<b>/ip hotspot user profile</b><br>
+					add address-list="<span id="profile-address-list" style="color:rgba(255,0,36,.7)"; ></span>" name="<span id="profile-name" style="color:rgba(255,0,36,.7);"></span>" shared-users="<span id="profile-shared-user" style="color:rgba(255,0,36,.7)";></span>" rate-limit="<span id="profile-rate-limit" style="color:rgba(255,0,36,.7);"></span>"  parent-queue="<span id="profile-parent" style="color:rgba(255,0,36,.7);"></span>" insert-queue-before="bottom"<br>
+					<b>/ip hotspot user</b><br>
+					add name="<span id="hotspot-username" style="color:rgba(255,0,36,.7);"></span>" password="<span id="hotspot-password" style="color:rgba(255,0,36,.7);"></span>" profile="<span id="hotspot-profile-name" style="color:rgba(255,0,36,.7);"></span>" comment="<span id="hotspot-comment" style="color:rgba(255,0,36,.7);"></span>"<br>
+					<b>/ip firewall mangle</b><br>
+					add action=mark-packet chain=forward src-address-list="<span id="mangle-upload-src" style="color:rgba(255,0,36,.7);"></span>" new-packet-mark="<span id="mangle-packet-src" style="color:rgba(255,0,36,.7);"></span>" passthrough=no comment="<span id="mangle-comment-up" style="color:rgba(255,0,36,.7);"></span>"<br>
+					add action=mark-packet chain=forward dst-address-list="<span id="mangle-download-dst" style="color:rgba(255,0,36,.7);"></span>" new-packet-mark="<span id="mangle-packet-dst" style="color:rgba(255,0,36,.7);"></span>" passthrough=no comment="<span id="mangle-comment-down" style="color:rgba(255,0,36,.7);"></span>"<br>
+					 </div>
+				</td>
+				</tr>			
+			</table>
+         </div>
+         <br>
+         <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
+    </div>
+ </div>
+    <div class="footer">
+© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+   </div>
+ <div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3><span style="color:green">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
+   <br><b>If you like this tool you can gife me a donation at <span style="color:green">PAYPAL</span> to email: <span style="color:red">oom@o-om.com</span>
+   <br><br>
+   Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
+   <br><br>
+   Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a><br>
+   <br>
+
+   <b>MORE MIKROTIK SCRIPT GENERATOR</b>
+  <div style="margin-top:10px;font-size:14px; padding-left:20px; line-height:1.5;list-style-type: square; ; font-weight:bold">    
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik/">Mikrotik Script Routeros Database</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Script Generator</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH</a></li></ul>  
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">Load Balancing PCC Calculation</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">PCQ Burst Rate Calculator</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Games</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Generate Username and Password Hotspot</a> </li></ul>	
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Notification Expired for PPPoE, Hotspot, Static IP</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue + Tocken Bucket</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue + Bandwidth Shared (UpTo)</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree + Bandwidth Shared (UpTo)</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ For Queue Tree And Queue Simple</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">VPN Tunnel All Traffic</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking with (ping) ICMP + Packet Size</a></li></ul>
+<ul><li><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login</a></li></ul>
+ </div> 
+  </div>
+</div>	  
+	<script type="text/javascript">
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+function callmodal() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script> 
+     <script>  
+		var dt = new Date();
+        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+
+		function upperCaseF(a){
+			setTimeout(function(){
+				a.value = a.value.toUpperCase();
+			}, 1);
+		}
+
+	document.getElementById('auto-shared').onchange = function() {
+		var myscript2 = document.getElementById("auto-shared");
+            if ( myscript2.checked ) {
+			
+            document.getElementById('input-rate-limit').disabled = true;
+			document.getElementById('input-rate-limit').value = document.getElementById('input-max-limit').value;
+            document.getElementById("profile-rate-limit").innerHTML = document.getElementById('input-max-limit').value + " 0/0 0/0 0/0 8 0/0";
+            } else {
+			document.getElementById('input-rate-limit').disabled = false;
+			document.getElementById('input-rate-limit').value = "1M/2M";
+			document.getElementById("profile-rate-limit").innerHTML = "1M/2M 0/0 0/0 0/0 8 0/0";
+             }
+         };
+		 
+function myFunction(){
+		var dt = new Date();
+        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+		
+		var input_ip_address = document.getElementById("input-ip-address").value;
+		var input_parent_name = document.getElementById("input-parent-name").value;
+		var input_max_limit = document.getElementById("input-max-limit").value;
+		var input_profile_name = document.getElementById("input-profile-name").value;
+		var input_shared_user = document.getElementById("input-shared-user").value;
+		var input_rate_limit = document.getElementById("input-rate-limit").value;
+		var input_username = document.getElementById("input-username").value;
+		var input_password = document.getElementById("input-password").value
+
+
+document.getElementById("simple-queue-max-limit").innerHTML =  input_max_limit;
+document.getElementById("simple-queue-name").innerHTML =  input_parent_name;
+document.getElementById("simple-queue-ip-address").innerHTML =  input_ip_address;
+document.getElementById("simple-queue-packet-mark").innerHTML =  input_profile_name;
+
+document.getElementById("profile-address-list").innerHTML =  input_profile_name;
+document.getElementById("profile-name").innerHTML =  input_profile_name;
+document.getElementById("profile-shared-user").innerHTML =  input_shared_user;
+document.getElementById("profile-parent").innerHTML =  input_parent_name;
+ 
+document.getElementById("hotspot-username").innerHTML =  input_username;
+document.getElementById("hotspot-password").innerHTML =  input_password;
+document.getElementById("hotspot-profile-name").innerHTML =  input_profile_name;
+document.getElementById("hotspot-comment").innerHTML =  input_parent_name;
+
+document.getElementById("mangle-upload-src").innerHTML =  input_profile_name;
+document.getElementById("mangle-packet-src").innerHTML =  input_profile_name;
+document.getElementById("mangle-download-dst").innerHTML =  input_profile_name;
+document.getElementById("mangle-packet-dst").innerHTML =  input_profile_name;
+document.getElementById("mangle-comment-up").innerHTML =  input_parent_name + " Up";
+document.getElementById("mangle-comment-down").innerHTML =  input_parent_name + " Down";
+
+
+
+		var myscript2 = document.getElementById("auto-shared");
+            if ( myscript2.checked ) {
+document.getElementById("profile-rate-limit").innerHTML = input_max_limit + " 0/0 0/0 0/0 8 0/0";
+
+            } else {
+ document.getElementById("profile-rate-limit").innerHTML = input_rate_limit;          
+
+             }
+     
+		 
+}
+		
+		 function selectElementContents(el) {
+            var body = document.body, range, sel;
+            if (document.createRange && window.getSelection) {
+                range = document.createRange();
+                sel = window.getSelection();
+                sel.removeAllRanges();
+                try {
+                     range.selectNodeContents(el);
+                     sel.addRange(range);
+                         } catch (e) {
+                                 range.selectNode(el);
+                                 sel.addRange(range);
+                         }
+                         } else if (body.createTextRange) {
+                             range = body.createTextRange();
+                             range.moveToElementText(el);
+                             range.select();
+                         }
+             document.execCommand("copy"); 
+        }
+		
+
+      </script>
+	  
+	</body>
+</html>
