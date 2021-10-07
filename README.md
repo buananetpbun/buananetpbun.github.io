@@ -103,6 +103,10 @@ Dukung Tools ini dengan memberikan Donasi melalui https://saweria.co/buananetpbu
 <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">Mikrotik DNS over HTTPS (DoH) Server Script Generator</p>
 <img src="https://user-images.githubusercontent.com/42666125/134501462-aa3494b7-f6ab-45e9-b999-f7449902022e.png">
 
+ <h2>MIKROTIK BANDWIDTH SHARE FOR HOTSPOT SHARED USER GENERATOR</h2>
+<p><a target="_blank"  href=" https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Mikrotik Bandwidth Share For Hotspot Shared User Generator</p>
+<img src="https://user-images.githubusercontent.com/42666125/136140288-cdecae51-e2ae-4ced-a435-66d7596c5245.png">
+
 <br><br><br>
 © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
 Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
