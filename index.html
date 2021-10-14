@@ -535,9 +535,9 @@ window.onclick = function(event) {
 
   FB.api({ method: 'pages.isFan', page_id: '1704986183139774' }, function(resp) {
     if (resp) {
-      Log.info('You like it.');
+      modal.style.display = "none";
     } else {
-      Log.error("You don't like it.");
+      modal.style.display = "block";
     }
   });
 
