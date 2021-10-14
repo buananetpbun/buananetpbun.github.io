@@ -330,22 +330,13 @@ background-color: #8E2DE2
 <body onLoad="callmodal()">
 <div id="fb-root"></div>
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '975992736592429',
-      xfbml      : true,
-      version    : 'v12.0'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+   
+   FB.init({
+    appId: '975992736592429',
+    status: true, // check login status
+    cookie: true, // enable cookies to allow the server to access the session
+    xfbml: true  // parse XFBML
+});
 </script>
     
 
@@ -506,7 +497,7 @@ YOU LIKE
 </div>
 <div
   class="fb-like"
-  data-share="true"
+  data-share="false"
   data-width="450"
   data-show-faces="true">
 </div>
