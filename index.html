@@ -538,12 +538,12 @@ FB.api('/me/likes', onLikeCheckResponse);
 
   }
   
-function onLikeCheckResponse(response)
+function onLikeCheckResponse(response.authResponse )
 {
     // Iterate and check against your id
-    for (var i=0; i<response.data.length; i++)
+    for (var i=0; i<response.authResponse.data.length; i++)
     {
-        if (response.data[i].id=="163504083699380")
+        if (response.authResponse.data[i].id=="163504083699380")
         {
             alert("You like this app.");
             return true;
