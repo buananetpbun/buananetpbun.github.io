@@ -332,10 +332,9 @@ background-color: #8E2DE2
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-    appId: '975992736592429',
-    status: true, // check login status
-    cookie: true, // enable cookies to allow the server to access the session
-    xfbml: true  // parse XFBML
+      appId      : '975992736592429',
+      xfbml      : true,
+      version    : 'v12.0'
     });
     FB.AppEvents.logPageView();
   };
