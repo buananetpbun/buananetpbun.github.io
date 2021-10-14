@@ -515,9 +515,17 @@ var span = document.getElementsByClassName("close")[0];
 
 
 function callmodal() {
-
+ modal.style.display = "block";
   $(document).ready(function(){
-    FB.getLoginStatus(function(response) {
+
+});
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+        FB.getLoginStatus(function(response) {
         if (response.status == 'connected') {
             var user_id = response.authResponse.userID;
             var page_id = "1704986183139774"; //coca cola
@@ -528,7 +536,7 @@ function callmodal() {
 
                 if (rows.length == 1 && rows[0].uid == user_id) {
                     $("#container_like").show();
- modal.style.display = "block";
+ modal.style.display = "none";
                     //here you could also do some ajax and get the content for a "liker" instead of simply showing a hidden div in the page.
 
                 } else {
@@ -541,15 +549,6 @@ function callmodal() {
             // user is not logged in
         }
     });
-
-});
-}
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
   }
 }
 
