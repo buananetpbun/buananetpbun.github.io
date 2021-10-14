@@ -26,7 +26,6 @@ By BuanaNETPBun.Github.io' name='description'/>
 		$("#MyPopup").modal('show');
 	});
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <meta name="yandex-verification" content="2185da3345ca44f7" />
 <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
@@ -336,12 +335,23 @@ background-color: #8E2DE2
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
+
   FB.init({
     appId  : '379827522913428',
     status : true, 
     cookie : true, 
     xfbml  : true  
   });
+      FB.api('/me/likes/Pr0yjgva8i3vb', {limit: 1}, function(r) { 
+        if (r.data.length == 1) {
+            document.getElementById("container_like").style.display = "block"
+			document.getElementById("container_notlike").style.display = "block"
+        } else {
+            document.getElementById("container_notlike").style.display = "block"    
+			 document.getElementById("container_like").style.display = "block"
+        }
+    });
+	
 </script>
 
 
@@ -492,10 +502,7 @@ background-color: #8E2DE2
    <br>
    Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a>
    <br><br></b>
-
- <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
- 
-<br><br>
+   
 <div id="container_notlike">
 YOU DONT LIKE
 </div>
@@ -503,45 +510,24 @@ YOU DONT LIKE
 <div id="container_like">
 YOU LIKE
 </div>
+ <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
+ 
+<br><br>
+
   </div>
 
 </div>
 <script type="text/javascript">
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
+
+
 function callmodal() {
   modal.style.display = "block";
 
-$(document).ready(function(){
-
-    FB.login(function(response) {
-      if (response.session) {
-
-          var user_id = response.session.uid;
-          var page_id = "40796308305"; //coca cola
-          var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
-          var the_query = FB.Data.query(fql_query);
-
-          the_query.wait(function(rows) {
-
-              if (rows.length == 1 && rows[0].uid == user_id) {
-                  $("#container_like").show();
-
-                  //here you could also do some ajax and get the content for a "liker" instead of simply showing a hidden div in the page.
-
-              } else {
-                  $("#container_notlike").show();
-                  //and here you could get the content for a non liker in ajax...
-              }
-          });
 
 
-      } else {
-        // user is not logged in
-      }
-    });
 
-});
 
 }
 span.onclick = function() {
