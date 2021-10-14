@@ -326,38 +326,12 @@ background-color: #8E2DE2
   text-decoration: none;
   cursor: pointer;
 }
-#container_notlike, #container_like {
-    display:none
-}
+
 </style>
 </head>
 <body onLoad="callmodal()">
 <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<script>
-
-  FB.init({
-    appId  : '379827522913428',
-    status : true, 
-    cookie : true, 
-    xfbml  : true  
-  });
-
-FB.login(function(response)
-{
-    if (response.authResponse)
-    {
-         FB.api('379827522913428/likes/379827522913428', function(api_response)
-         {
-             // if empty, they don't like. if not empty, they do
-            console.debug(api_response); 
-         });
-    }
-    
-}, {'scope': 'user_likes'});
-</script>
-
-
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
 <div class="content">
 <div class="logo">	  
 <a href="https://buananetpbun.github.io"><span style="color:#8E2DE2 !important">BuanaNETPBun</span>.Github.io</a> 
@@ -505,14 +479,6 @@ FB.login(function(response)
    <br>
    Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a>
    <br><br></b>
-   
-<div id="container_notlike">
-YOU DONT LIKE
-</div>
-
-<div id="container_like">
-YOU LIKE
-</div>
  <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
  
 <br><br>
@@ -523,15 +489,8 @@ YOU LIKE
 <script type="text/javascript">
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
-
-
 function callmodal() {
   modal.style.display = "block";
-
-
-
-
-
 }
 span.onclick = function() {
   modal.style.display = "none";
