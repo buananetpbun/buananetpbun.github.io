@@ -331,7 +331,7 @@ background-color: #8E2DE2
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
-FB._https = true;
+FB._secure = (window.location.protocol == "https:");
   FB.init({
     appId  : '790955851517978',
     status : true, 
