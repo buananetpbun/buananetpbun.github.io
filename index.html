@@ -343,15 +343,17 @@ background-color: #8E2DE2
     xfbml  : true  
   });
 
-FB.api(
-    "/me/likes/1704986183139774",
-    function (response) {
-      if (response && !response.error) {
-                    document.getElementById("container_like").style.display = "block";
-			document.getElementById("container_notlike").style.display = "block";
+FB.login(function(response) {
+  if (response.status == 'connected') {
+    FB.api('me/likes/' + '1704986183139774', function(likes) {
+      if (likes.data.length > 0) {
+        alert('yaay, page liked');
       }
-    }
-);
+    });
+  } else {
+    alert('unable to connect to fb');
+  }
+}, {scope: 'user_likes'});
 </script>
 
 
