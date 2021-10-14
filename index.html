@@ -524,36 +524,25 @@ var span = document.getElementsByClassName("close")[0];
 
 function callmodal() {
  modal.style.display = "block";
-  $(document).ready(function(){
 
-});
 }
+
 span.onclick = function() {
   modal.style.display = "none";
 }
 
 window.onclick = function(event) {
-
-FB.api('/me/likes', onLikeCheckResponse);
-
+window.checkDoesLike = function() {
+  FB.api({ method: 'pages.isFan', page_id: '1704986183139774' }, function(resp) {
+    if (resp) {
+      Log.info('You like it.');
+    } else {
+      Log.error("You don't like it.");
+    }
+  });
+};
   }
   
-function onLikeCheckResponse(response.authResponse )
-{
-    // Iterate and check against your id
-    for (var i=0; i<response.authResponse.data.length; i++)
-    {
-        if (response.authResponse.data[i].id=="163504083699380")
-        {
-            alert("You like this app.");
-            return true;
-        }
-    }
-    alert("You didn't like this app.");
-    return false;
-}
- 
-
 
 </script>
 </body>
