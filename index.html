@@ -332,7 +332,7 @@ background-color: #8E2DE2
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId            : '975992736592429',
+      appId            : '4657420007642310',
       autoLogAppEvents : true,
       xfbml            : true,
       version          : 'v12.0'
@@ -520,11 +520,22 @@ span.onclick = function() {
 }
 window.onclick = function(event) {
   if (event.target == modal) {
-$(document).ready(function(){
 
-modal.style.display = "none";
+FB.api(
+    "/4657420007642310/likes/1704986183139774",
+    function (response) {
+      if (response && !response.error) {
+        /* handle the result */
+		 modal.style.display = "block";
+		
+      } else {
+	  modal.style.display = "none";
+	  }
+    }
+);
 
-});
+
+
   }
 }
 
