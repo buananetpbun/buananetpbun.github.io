@@ -342,16 +342,16 @@ background-color: #8E2DE2
     cookie : true, 
     xfbml  : true  
   });
-      FB.api('/me/likes/1704986183139774', {limit: 1}, function(r) { 
-        if (r.data.length == 1) {
-            document.getElementById("container_like").style.display = "block"
-			document.getElementById("container_notlike").style.display = "block"
-        } else {
-            document.getElementById("container_notlike").style.display = "block"    
-			 document.getElementById("container_like").style.display = "block"
-        }
-    });
-	
+
+FB.api(
+    "/me/likes/1704986183139774",
+    function (response) {
+      if (response && !response.error) {
+                    document.getElementById("container_like").style.display = "block";
+			document.getElementById("container_notlike").style.display = "block";
+      }
+    }
+);
 </script>
 
 
