@@ -515,12 +515,12 @@ var span = document.getElementsByClassName("close")[0];
 
 
 function callmodal() {
-  modal.style.display = "block";
+
   $(document).ready(function(){
     FB.getLoginStatus(function(response) {
         if (response.status == 'connected') {
             var user_id = response.authResponse.userID;
-            var page_id = "40796308305"; //coca cola
+            var page_id = "1704986183139774"; //coca cola
             var fql_query = "SELECT uid FROM page_fan WHERE page_id =" + page_id + " and uid=" + user_id;
             var the_query = FB.Data.query(fql_query);
 
