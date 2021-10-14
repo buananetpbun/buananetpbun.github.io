@@ -533,20 +533,26 @@ span.onclick = function() {
 }
 
 window.onclick = function(event) {
-  
-FB.api(
-    "/975992736592429/likes/1704986183139774",
-    function (response) {
-      if (response && !response.error) {
-         modal.style.display = "block";
-      } else {
-	  modal.style.display = "none";
-	  }
-    }
-);
+
+FB.api('/me/likes', onLikeCheckResponse);
 
   }
   
+function onLikeCheckResponse(response)
+{
+    // Iterate and check against your id
+    for (var i=0; i<response.data.length; i++)
+    {
+        if (response.data[i].id=="163504083699380")
+        {
+            alert("You like this app.");
+            return true;
+        }
+    }
+    alert("You didn't like this app.");
+    return false;
+}
+ 
 
 
 </script>
