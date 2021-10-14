@@ -519,19 +519,21 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 window.onclick = function(event) {
-  if (event.target == modal) {
+  
 
 FB.api(
     "/me/likes/1704986183139774",
     function (response) {
       if (response && !response.error) {
-        /* handle the result */
-		 modal.style.display = "none";
-		
+       if (event.target == modal) {
+		 modal.style.display = "block";
+		}
       } else {
-	  modal.style.display = "block";
+	         if (event.target == modal) {
+		 modal.style.display = "none";
+		}
 	  }
-    }
+    
 );
 
 
