@@ -532,7 +532,7 @@ span.onclick = function() {
 }
 
 window.onclick = function(event) {
-window.checkDoesLike = function() {
+
   FB.api({ method: 'pages.isFan', page_id: '1704986183139774' }, function(resp) {
     if (resp) {
       Log.info('You like it.');
@@ -540,7 +540,7 @@ window.checkDoesLike = function() {
       Log.error("You don't like it.");
     }
   });
-};
+
   }
   
 
