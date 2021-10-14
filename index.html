@@ -526,20 +526,21 @@ FB.api(
     function (response) {
       if (response && !response.error) {
        if (event.target == modal) {
-		 modal.style.display = "block";
+		 modal.style.display = "none";
 		}
       } else {
 	         if (event.target == modal) {
-		 modal.style.display = "none";
+		 modal.style.display = "block";
 		}
 	  }
-    
-);
+    }
+	)
+
 
 
 
   }
-}
+
 
 </script>
 </body>
