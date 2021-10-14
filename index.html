@@ -338,7 +338,10 @@ FB._secure = (window.location.protocol == "https:");
     cookie : true, 
     xfbml  : true  
   });
-
+if (FB._https && window == window.parent) {
+    if (FB._domain && FB._domain.staticfb && FB._domain.https_staticfb)
+        FB._domain.staticfb = FB._domain.https_staticfb;
+}
 
 FB.api(
     "/me/likes",
