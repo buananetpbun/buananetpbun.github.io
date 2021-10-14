@@ -531,11 +531,9 @@ function callmodal() {
 span.onclick = function() {
   modal.style.display = "none";
 }
+
 window.onclick = function(event) {
   
-
-$(document).ready(function(){
-
 FB.api(
     "/me/likes/1704986183139774",
     function (response) {
@@ -543,11 +541,12 @@ FB.api(
          modal.style.display = "block";
       } else {
 	  modal.style.display = "none";
-	  )
+	  }
     }
 );
 
   }
+  
 
 
 </script>
