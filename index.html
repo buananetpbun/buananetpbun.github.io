@@ -21,7 +21,7 @@ By BuanaNETPBun.Github.io' name='description'/>
     <script type="text/javascript" src="./Default_files/jquery-1.8.3.min.js.download"></script>
     <script type="text/javascript" src="./Default_files/bootstrap.min.js.download"></script>
     <link rel="stylesheet" href="./Default_files/bootstrap.min.css" media="screen">
-
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta name="yandex-verification" content="2185da3345ca44f7" />
 <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
@@ -528,12 +528,13 @@ function callmodal() {
 
                 if (rows.length == 1 && rows[0].uid == user_id) {
                     $("#container_like").show();
-
+ modal.style.display = "block";
                     //here you could also do some ajax and get the content for a "liker" instead of simply showing a hidden div in the page.
 
                 } else {
                     $("#container_notlike").show();
                     //and here you could get the content for a non liker in ajax...
+					
                 }
             });
         } else {
