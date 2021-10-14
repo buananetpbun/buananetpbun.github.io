@@ -540,8 +540,10 @@ FB.api(
     "/me/likes/1704986183139774",
     function (response) {
       if (response && !response.error) {
-         modal.style.display = "none";
-      }
+         modal.style.display = "block";
+      } else {
+	  modal.style.display = "none";
+	  )
     }
 );
 
