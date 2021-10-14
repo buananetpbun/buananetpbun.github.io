@@ -21,11 +21,7 @@ By BuanaNETPBun.Github.io' name='description'/>
     <script type="text/javascript" src="./Default_files/jquery-1.8.3.min.js.download"></script>
     <script type="text/javascript" src="./Default_files/bootstrap.min.js.download"></script>
     <link rel="stylesheet" href="./Default_files/bootstrap.min.css" media="screen">
-    	<script>
-	$(document).ready(function(){
-		$("#MyPopup").modal('show');
-	});
-</script>
+
 <meta name="yandex-verification" content="2185da3345ca44f7" />
 <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 <style>
@@ -326,10 +322,35 @@ background-color: #8E2DE2
   text-decoration: none;
   cursor: pointer;
 }
-
+#container_notlike, #container_like {
+    display:none
+}
 </style>
 </head>
 <body onLoad="callmodal()">
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+
+  FB.init({
+    appId  : '790955851517978',
+    status : true, 
+    cookie : true, 
+    xfbml  : true  
+  });
+
+
+FB.api(
+    "/me/likes",
+    function (response) {
+      if (response && !response.error) {
+        console.log("coba")
+      }
+    }
+);
+</script>
+
+
 <div class="content">
 <div class="logo">	  
 <a href="https://buananetpbun.github.io"><span style="color:#8E2DE2 !important">BuanaNETPBun</span>.Github.io</a> 
@@ -338,7 +359,7 @@ background-color: #8E2DE2
 <img style="float:right" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
 
   <div style="float:left; margin-right:5px; margin-top:3px">
-<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fbuananetmikrotik&width=450&layout=standard&action=like&size=small&share=false&height=35&appId=379827522913428" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+<div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="false"></div>
 </div>
 <div style="clear:both"></div>
 <span style="line-height:0;float:left; display:inline;margin-right:6px; margin-top:25px">
@@ -478,7 +499,15 @@ background-color: #8E2DE2
    Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a>
    <br><br></b>
    
-<iframe id="iframe1" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fbuananetmikrotik&width=450&layout=standard&action=like&size=small&share=false&height=35&appId=379827522913428" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+<div id="container_notlike">
+YOU DONT LIKE
+</div>
+
+<div id="container_like">
+YOU LIKE
+</div>
+ <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
+ 
 <br><br>
 
   </div>
@@ -490,13 +519,11 @@ var span = document.getElementsByClassName("close")[0];
 
 
 function callmodal() {
-modal.style.display = "block";
+  modal.style.display = "block";
 }
-
 span.onclick = function() {
   modal.style.display = "none";
 }
-
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
