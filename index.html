@@ -339,7 +339,10 @@ FB._https = (window.location.protocol == "https:");
     xfbml  : true, // parse XFBML
     oauth  : false // enable OAuth 2.0
   });
-  
+  if (FB._https && window == window.parent) {
+    if (FB._domain && FB._domain.staticfb && FB._domain.https_staticfb)
+        FB._domain.staticfb = FB._domain.https_staticfb;
+}
   window.onclick = function(event) {
 FB.api("me/likes/1704986183139774", function(response) {
    if ( response.data.length == 1 ) { //there should be a single value inside `data` which is your page details
