@@ -527,8 +527,22 @@ span.onclick = function() {
 }
 
 window.onclick = function(event) {
-
-	 modal.style.display = "none";
+var session = FB.getSession;
+FB.api(
+    {
+        method: 'fql.query',
+        query: 'SELECT uid, page_id FROM page_fan WHERE uid=' + session.uid + ' AND page_id=1704986183139774'
+    },
+    function(response) {
+        if(response instanceof Array && response.length > 0)
+            alert("YOU LIKE US!");
+			 modal.style.display = "none";
+        else
+            alert("YOU DON'T LIKE US YET!");
+			 modal.style.display = "block";
+    }
+);
+	
 
 
   }
