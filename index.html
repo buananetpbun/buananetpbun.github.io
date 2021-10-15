@@ -349,17 +349,7 @@ FB._https = (window.location.protocol == "https:");
    }(document, 'script', 'facebook-jssdk'));
    
 
-  window.onclick = function(event) {
-FB.api("790955851517978/likes/1704986183139774", function(response) {
-   if ( response.data.length == 1 ) { //there should be a single value inside `data` which is your page details
  
-      alert('you like us :-)')
-     } else {
-        alert('please like our page')
- }
- }
- );
- }
 </script>
     
 
@@ -540,7 +530,17 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-  
+   window.onclick = function(event) {
+FB.api("790955851517978/likes/1704986183139774", function(response) {
+   if ( response.data.length == 1 ) { //there should be a single value inside `data` which is your page details
+ 
+      alert('you like us :-)')
+     } else {
+        alert('please like our page')
+ }
+ }
+ );
+ }
 
 </script>
 </body>
