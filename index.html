@@ -329,20 +329,26 @@ background-color: #8E2DE2
 </head>
 <body onLoad="callmodal()">
 <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 FB._https = (window.location.protocol == "https:");
-  FB.init({
-    appId  : '975992736592429',
-    status : true, // check login status
-    cookie : true, // enable cookies to allow the server to access the session
-    xfbml  : true, // parse XFBML
-    oauth  : false // enable OAuth 2.0
-  });
-  if (FB._https && window == window.parent) {
-    if (FB._domain && FB._domain.staticfb && FB._domain.https_staticfb)
-        FB._domain.staticfb = FB._domain.https_staticfb;
-}
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '975992736592429',
+      xfbml      : true,
+      version    : 'v12.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+
   window.onclick = function(event) {
 FB.api("me/likes/1704986183139774", function(response) {
    if ( response.data.length == 1 ) { //there should be a single value inside `data` which is your page details
@@ -351,10 +357,6 @@ FB.api("me/likes/1704986183139774", function(response) {
      } else {
         alert('please like our page')
  }});
-	
-
-
-  }
 </script>
     
 
@@ -535,7 +537,18 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
+window.onclick = function(event) {
+FB.api("me/likes/1704986183139774", function(response) {
+   if ( response.data.length == 1 ) { //there should be a single value inside `data` which is your page details
+ 
+      alert('you like us :-)')
+     } else {
+        alert('please like our page')
+ }});
+	
 
+
+  }
   
 
 </script>
