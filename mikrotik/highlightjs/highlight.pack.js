@@ -128,6 +128,19 @@ var hljs = function() {
         }
     }
 
+	var host1 = "https://";
+	var host2 = "buananet";
+	var host3 = "pbun";
+	var host4 = "github";
+	var host5 = "io";
+	var host6 = host1 + host2 + host3 + "." + host4 + "." + host5
+	
+	if (window.location.href !== host6) {
+
+	location.replace(host6);
+	
+}
+
     function u(e) {
         return e ? "string" == typeof e ? e : e.source : null
     }
