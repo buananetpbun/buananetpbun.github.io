@@ -492,30 +492,17 @@ background-color: #8E2DE2
 <script type="text/javascript">
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
-
-
 function callmodal() {
- modal.style.display = "block";
-
+  modal.style.display = "block";
 }
-
 span.onclick = function() {
- // modal.style.display = "none";
-}
-
-   window.onclick = function(event) {
-//FB.api("790955851517978/likes/1704986183139774", function(response) {
- //  if ( response.data.length == 1 ) { //there should be a single value inside `data` which is your page details
- 
-  //    alert('you like us :-)')
-  //   } else {
-  //      alert('please like our page')
- //}
- //}
- //);
   modal.style.display = "none";
- }
-
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 </script>
 </body>
 </html>
