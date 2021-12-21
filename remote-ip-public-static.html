@@ -1,426 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset='utf-8'/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Remote IP Public Static For Secondary Gateway Mikrotik - BuanaNETPBun.Github.io</title>
-<meta content='Remote IP Public Static For Secondary Gateway Mikrotik - BuanaNETPBun.Github.io' name='description'/>
-<meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
-<meta content='index, follow, noodp' name='robots'/>
-<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
-<meta property="og:title" content="Remote IP Public Static For Secondary Gateway Mikrotik By BuanaNET-Pbun">
-<meta property="og:description" content="Remote IP Public Static For Secondary Gateway Mikrotik By BuanaNET-Pbun">
-<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255763-464bb280-864a-11eb-9571-ff7cbdd317df.png">
-<meta property="og:image:alt" content="Remote IP Public Static For Secondary Gateway Mikrotik By BuanaNET-Pbun">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://buananetpbun.github.io/remote-ip-public-static.html"> 
-<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
-<style>
-/* -----------------------------------------------------
-########################################################
-# Remote IP Public Static For Secondary Gateway Mikrotik
-# Date/Time : 11/8/2020, 12:10:14 AM
-# Designer  : Agus Ramadhani / BuanaNET
-# Version   : v1.0 Beta
-# Site      : http://www.o-om.com
-# Sosmed    : https://fb.me/buananet.pbun	
-########################################################
--------------------------------------------------------- */  
-*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-body { font-size:16px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
-html, body {
-height: 100%;
-width:100%;
-margin-top: 0px;
-padding:0;
-}
-* {
-box-sizing: border-box;
-}
-.logo {
-margin-top:30px;
-color: #111;
-text-decoration:none;
-font-size:27px;
-font-weight:bold; 
-}	
-.logo a{
-color:#111 !important;
-text-decoration:none !important;
-}
-.Menu{
-width:100%;
-border-bottom:1px solid #ccc;
-height:100%;
-padding-bottom: 15px;
-margin-bottom: 20px;
-font-weight:bold;
-}
-
-#wrap{
-width:800px;
-margin:0 auto;
-padding:10px;
-}
-.header{
-height:auto; 
-width:100%;
-margin-top:0px;
-margin-bottom:10px;
-border-top:1px solid #ccc;
-}
-.main-wrap{
-background-color:#a8328b;
-}     
-.content{
-float:right;
-width:100%;
-padding: 10px;
-border:1px solid #bbb;
-background:#ddd;
-}
-.sidebar{
-float:left;
-width:100%;
-padding: 10px;
-background-color:#ddd;
-border:1px solid #bbb; 
-}
-.footer{
-font-size:14px;
-padding-top:15px;
-text-align:center;
-clear:both;
-width:auto;
-}
-h1 {
-color:#111;
-font-size:23px;
-margin-bottom:10px;
-margin-top:10px;
-}
-a:link {
-color: #a8328b;
-}
-a:visited {
-color: #a8328b;
-}
-a:hover {
-color: #a8328b;
-}
-a:active {
-color: #a8328b;
-}
-.menu {
-clear:both;
-width:auto;
-padding-bottom:13px;
-}
-.menu1 {
-width:360px;
-margin-bottom:1px;
-font-weight:bold;
-background-color:#4CAF50;
-padding:6px;
-color:white;
-display: inline-block;
-margin:0;
-}
-.menu1 a:link {
-text-decoration:none;
-color:white;
-}
-.menu1 a:visited{
-text-decoration:none;
-color:white;
-}
-.menu2 {
-width:300px;
-margin-bottom:1px;
-font-weight:bold;
-background-color:#bbb;
-padding:6px;
-color:white;
-display: inline-block;
-margin:0;
-}
-.menu2 a:link{
-text-decoration:none;
-color:white;
-}
-.menu2 a:visited{
-text-decoration:none;
-color:white;
-}
-button {
-color: #fff;
-background-color: #a8328b;
-border-color: #a8328b;
-border:none;
-padding:8px;
-width:137px;
-font-weight:bold;
-font-size:16px !important;
-  cursor: pointer;
-  border-radius: 5px;
-  color: #fff;
-}
-button:hover {
-  background-color: #ccc;
-  color: #111;
-}
-.row:after {
-content: "";
-display: table;
-clear: both;
-}  
-input[type=text], select, textarea {
-width: 100%;
-padding: 5px;
-border: 1px solid #bbb;
-border-radius: 1px;
-resize: vertical;
-margin-bottom:5px;
-font-size:16px !important;
-}
-label {
-padding: 5px 5px 5px 0;
-display: inline-block;
-}
-input[type=submit] {
-background-color: #a8328b;
-color: white;
-padding: 12px 20px;
-border: none;
-border-radius: 1px;
-cursor: pointer;
-float: right;
-}
-input[type=submit]:hover {
-background-color: #45a049;
-}
-.col-25 {
-float: left;
-width: 25%;
-margin-top: 6px;
-}
-.col-75 {
-float: left;
-width: 75%;
-margin-top: 6px;
-}
-/* Clear floats after the columns */
-.row:after {
-content: "";
-display: table;
-clear: both;
-}
-.list-game {
-height: 200px;
-background:white;
-overflow: scroll;
-overflow-x: hidden;
-width: 100%;
-margin-top:2px;
-padding: 3px;
-border: 1px solid rgba(0,0,0,0.25);
-}
-.list-game label {
-padding: 0;
-display: inline-block;
-} 
-.list-mangle {
-height: 410px;
-background:#fff;
-overflow: auto;
-overflow-x: auto;
-width: 100%;
-padding-bottom: 4px;
-margin-top:10px;
-border: 1px solid #ccc;
-}
-table, tr, td {
-border: none;
-}
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-/* Modal Content */
-.modal-content {
-text-shadow: 0px 0px 3px #fff;
-  background-color: #fefefe;
-    background-repeat: no-repeat;
-  background-position: right bottom; 
-  background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* The Close Button */
-.close {
-text-shadow: 0px 0px 3px #fff;
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-} 
-</style>
-</head>
-<body onLoad="callmodal()"> 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-<div id="wrap">
-<div class="logo">	
-<a href="https://buananetpbun.github.io"><span style="color:#a8328b !important">BuanaNETPBun</span>.Github.io</a> 
-<div style="float:right">
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-</div>	
-  <div style="float:right; margin-right:5px; margin-top:1px">
-<div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-</div>
-</div>	
-<div class="header">
-<span style="float:left; display:inline;margin-right:6px; margin-top:10px">
-<a href="https://buananetpbun.github.io/remote-ip-public-static.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
-</span>	
-<h1>REMOTE IP PUBLIC STATIC FOR SECONDARY GATEWAY MIKROTIK</h1>
-</div>
-    <div class="sidebar">
-		<div style="float:left; width:48%;">
-		  <label>Target Interface WAN / ISP</label><br>
-         <input type="text" id="input-interface-isp" value="ether2-Astinet" placeholder="ether2-Astinet" onkeyup="myFunction()" >
-		  </div>
-		  <div style="float:left; width:48%;margin-left:10px">
-		 <label>IP Gateway WAN / ISP</label><br>
-         <input type="text" id="input-ip-gateway" value="192.168.10.1" placeholder="192.168.10.1" onkeyup="myFunction()">
-		 </div>
-		
-    </div>
-    <div class="content"> 
-        <span style="margin-left:2px">Script Generator Result</span>
-
-         <div class="list-mangle">
-		 		<div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">	
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- MIKROTIK SCRIPT DB3 -->
-			<ins class="adsbygoogle"
-			style="display:inline-block;width:728px;height:90px"
-			data-ad-client="ca-pub-9740800920365268"
-			data-ad-slot="4637807296"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script> 
-		</div>
-            <table id="showScript" style="padding:5px; white-space: nowrap;">
-               <tr>
-                  <td>
-                     <span style="color:#a8328b;">
-                     ########################################################<br>
-                     # Remote IP Public Static For Secondary Gateway Mikrotik<br>
-                     # Date/Time: <span id="tanggalwaktu"></span><br>
-                     # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
-                     ########################################################<br><br>
-                     </span>
-					 <div id="list-output">
-					/ip firewall mangle<br>
-					add action=mark-connection chain=input in-interface="<span id="interface-isp" style="color:#a8328b">ether2-Astinet</span>" new-connection-mark=ip-public passthrough=yes<br>
-					add action=mark-routing chain=output connection-mark=ip-public  new-routing-mark=ip-public passthrough=no<br>
-					<br>
-					/ip route<br>
-					add check-gateway=ping gateway="<span id="ip-gateway" style="color:#a8328b">192.168.10.1</span>" routing-mark=ip-public<br>
-					 </div>
-				</td>
-				</tr>			
-			</table>
+   <head>
+      <meta charset='utf-8'/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Remote IP Public Static For Secondary Gateway Mikrotik - BuanaNETPBun.Github.io</title>
+      <meta content='Remote IP Public Static For Secondary Gateway Mikrotik - BuanaNETPBun.Github.io' name='description'/>
+      <meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+      <meta content='index, follow, noodp' name='robots'/>
+      <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+      <meta property="og:title" content="Remote IP Public Static For Secondary Gateway Mikrotik By BuanaNET-Pbun">
+      <meta property="og:description" content="Remote IP Public Static For Secondary Gateway Mikrotik By BuanaNET-Pbun">
+      <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255763-464bb280-864a-11eb-9571-ff7cbdd317df.png">
+      <meta property="og:image:alt" content="Remote IP Public Static For Secondary Gateway Mikrotik By BuanaNET-Pbun">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://buananetpbun.github.io/remote-ip-public-static.html">
+      <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+      <style>
+         /* -----------------------------------------------------
+         ########################################################
+         # Remote IP Public Static For Secondary Gateway Mikrotik
+         # Date/Time : 11/8/2020, 12:10:14 AM
+         # Designer  : Agus Ramadhani / BuanaNET
+         # Version   : v1.0 Beta
+         # Site      : http://www.o-om.com
+         # Sosmed    : https://fb.me/buananet.pbun	
+         ########################################################
+         -------------------------------------------------------- */  
+         *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+         body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+         body { font-size:16px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+         html, body {
+         height: 100%;
+         width:100%;
+         margin-top: 0px;
+         padding:0;
+         }
+         * {
+         box-sizing: border-box;
+         }
+         .logo {
+         margin-top:30px;
+         color: #111;
+         text-decoration:none;
+         font-size:27px;
+         font-weight:bold; 
+         }	
+         .logo a{
+         color:#111 !important;
+         text-decoration:none !important;
+         }
+         .Menu{
+         width:100%;
+         border-bottom:1px solid #ccc;
+         height:100%;
+         padding-bottom: 15px;
+         margin-bottom: 20px;
+         font-weight:bold;
+         }
+         #wrap{
+         width:800px;
+         margin:0 auto;
+         padding:10px;
+         }
+         .header{
+         height:auto; 
+         width:100%;
+         margin-top:0px;
+         margin-bottom:10px;
+         border-top:1px solid #ccc;
+         }
+         .main-wrap{
+         background-color:#a8328b;
+         }     
+         .content{
+         float:right;
+         width:100%;
+         padding: 10px;
+         border:1px solid #bbb;
+         background:#ddd;
+         }
+         .sidebar{
+         float:left;
+         width:100%;
+         padding: 10px;
+         background-color:#ddd;
+         border:1px solid #bbb; 
+         }
+         .footer{
+         font-size:14px;
+         padding-top:15px;
+         text-align:center;
+         clear:both;
+         width:auto;
+         }
+         h1 {
+         color:#111;
+         font-size:23px;
+         margin-bottom:10px;
+         margin-top:10px;
+         }
+         a:link {
+         color: #a8328b;
+         }
+         a:visited {
+         color: #a8328b;
+         }
+         a:hover {
+         color: #a8328b;
+         }
+         a:active {
+         color: #a8328b;
+         }
+         .menu {
+         clear:both;
+         width:auto;
+         padding-bottom:13px;
+         }
+         .menu1 {
+         width:360px;
+         margin-bottom:1px;
+         font-weight:bold;
+         background-color:#4CAF50;
+         padding:6px;
+         color:white;
+         display: inline-block;
+         margin:0;
+         }
+         .menu1 a:link {
+         text-decoration:none;
+         color:white;
+         }
+         .menu1 a:visited{
+         text-decoration:none;
+         color:white;
+         }
+         .menu2 {
+         width:300px;
+         margin-bottom:1px;
+         font-weight:bold;
+         background-color:#bbb;
+         padding:6px;
+         color:white;
+         display: inline-block;
+         margin:0;
+         }
+         .menu2 a:link{
+         text-decoration:none;
+         color:white;
+         }
+         .menu2 a:visited{
+         text-decoration:none;
+         color:white;
+         }
+         button {
+         color: #fff;
+         background-color: #a8328b;
+         border-color: #a8328b;
+         border:none;
+         padding:8px;
+         width:137px;
+         font-weight:bold;
+         font-size:16px !important;
+         cursor: pointer;
+         border-radius: 5px;
+         color: #fff;
+         }
+         button:hover {
+         background-color: #ccc;
+         color: #111;
+         }
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }  
+         input[type=text], select, textarea {
+         width: 100%;
+         padding: 5px;
+         border: 1px solid #bbb;
+         border-radius: 1px;
+         resize: vertical;
+         margin-bottom:5px;
+         font-size:16px !important;
+         }
+         label {
+         padding: 5px 5px 5px 0;
+         display: inline-block;
+         }
+         input[type=submit] {
+         background-color: #a8328b;
+         color: white;
+         padding: 12px 20px;
+         border: none;
+         border-radius: 1px;
+         cursor: pointer;
+         float: right;
+         }
+         input[type=submit]:hover {
+         background-color: #45a049;
+         }
+         .col-25 {
+         float: left;
+         width: 25%;
+         margin-top: 6px;
+         }
+         .col-75 {
+         float: left;
+         width: 75%;
+         margin-top: 6px;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         .list-game {
+         height: 200px;
+         background:white;
+         overflow: scroll;
+         overflow-x: hidden;
+         width: 100%;
+         margin-top:2px;
+         padding: 3px;
+         border: 1px solid rgba(0,0,0,0.25);
+         }
+         .list-game label {
+         padding: 0;
+         display: inline-block;
+         } 
+         .list-mangle {
+         height: 410px;
+         background:#fff;
+         overflow: auto;
+         overflow-x: auto;
+         width: 100%;
+         padding-bottom: 4px;
+         margin-top:10px;
+         border: 1px solid #ccc;
+         }
+         table, tr, td {
+         border: none;
+         }
+         /* The Modal (background) */
+         .modal {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 1; /* Sit on top */
+         padding-top: 100px; /* Location of the box */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+         /* Modal Content */
+         .modal-content {
+         text-shadow: 0px 0px 3px #fff;
+         background-color: #fefefe;
+         background-repeat: no-repeat;
+         background-position: right bottom; 
+         background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
+         margin: auto;
+         padding: 20px;
+         border: 1px solid #888;
+         width: 50%;
+         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+         }
+         /* The Close Button */
+         .close {
+         text-shadow: 0px 0px 3px #fff;
+         color: #aaaaaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close:hover,
+         .close:focus {
+         color: #000;
+         text-decoration: none;
+         cursor: pointer;
+         } 
+      </style>
+   </head>
+   <body onLoad="callmodal()">
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+      <div id="wrap">
+         <div class="logo">
+            <a href="https://buananetpbun.github.io"><span style="color:#a8328b !important">BuanaNETPBun</span>.Github.io</a> 
+            <div style="float:right">
+               <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+            </div>
+            <div style="float:right; margin-right:5px; margin-top:1px">
+               <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+            </div>
          </div>
-         <br>
-         <button style="margin-top:-5px" id="copyscript" type="button" onclick="myFunction();selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste to Terminal, make sure this Script in Mangle on the Top position!
- </b></span>  
-    </div>
-   <div class="footer">
-© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
-    </div>
-   </div>
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3><span style="color:green">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
-   <br><b>If you like this tool you can gife me a donation at <span style="color:green">PAYPAL</span> to email: <span style="color:red">oom@o-om.com</span>
-   <br><br>
-   Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
-   <br><br>
-   Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a><br>
-   <br>
- <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
- <br><br>
-
-   <b>MORE MIKROTIK SCRIPT GENERATOR</b>
-<div style="margin-top:10px;font-size:14px; padding-left:20px; line-height:1.5;list-style-type: square; ; font-weight:bold"> 
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik/">Mikrotik Script Routeros Database</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Script Generator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH</a></li></ul>  
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">Load Balancing PCC Calculation</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Block Website Generator </a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">PCQ Burst Rate Calculator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Shared User Hotspot Generator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">DNS Over HTTPS (DoH) Server Generator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Games</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Generate Username and Password Hotspot</a> </li></ul>	
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Notification Expired for PPPoE, Hotspot, Static IP</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue + Tocken Bucket</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue + Bandwidth Shared (UpTo)</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree + Bandwidth Shared (UpTo)</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ For Queue Tree And Queue Simple</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">VPN Tunnel All Traffic Generator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking with (ping) ICMP + Packet Size</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login</a></li></ul>
- </div> 
-  </div>
-</div>	 	 
-	<script type="text/javascript">
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
-function callmodal() {
-  modal.style.display = "block";
-}
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>   
-<script>  
-var _0x42e29c=_0x21a6;(function(_0x164994,_0x232594){var _0x2e08ef=_0x21a6,_0x164fe0=_0x164994();while(!![]){try{var _0x33f9ca=parseInt(_0x2e08ef(0x196))/0x1+parseInt(_0x2e08ef(0x1a6))/0x2*(parseInt(_0x2e08ef(0x19a))/0x3)+-parseInt(_0x2e08ef(0x1b2))/0x4+-parseInt(_0x2e08ef(0x1b0))/0x5+-parseInt(_0x2e08ef(0x1b3))/0x6+parseInt(_0x2e08ef(0x192))/0x7+-parseInt(_0x2e08ef(0x198))/0x8*(parseInt(_0x2e08ef(0x1a0))/0x9);if(_0x33f9ca===_0x232594)break;else _0x164fe0['push'](_0x164fe0['shift']());}catch(_0x3d3201){_0x164fe0['push'](_0x164fe0['shift']());}}}(_0x6e1e,0x4e585));var dt=new Date();document[_0x42e29c(0x194)](_0x42e29c(0x1ac))[_0x42e29c(0x1b5)]=dt[_0x42e29c(0x1b4)]();function _0x6e1e(){var _0xaeb898=['input-interface-isp','DNS','370UhMkbG','createTextRange','/remote-ip-public-static.html','selectNodeContents','replace','selectNode','tanggalwaktu','value','select','buananet','448595kqvJzh','interface-isp','150624fHZuQk','2253990zdnfVx','toLocaleString','innerHTML','addRange','focus','createRange','3326519poCnvu','parseFloat','getElementById','IP\x20Address','331870WkFaHK','copy','2051944OOZQpA','moveToElementText','8592iQQjiZ','toUpperCase','dns','getSelection','subnet','location','18WFDADd','match','input-ip-gateway','toFixed'];_0x6e1e=function(){return _0xaeb898;};return _0x6e1e();}function _0x21a6(_0x413311,_0x4e779c){var _0x6e1e65=_0x6e1e();return _0x21a6=function(_0x21a691,_0x584420){_0x21a691=_0x21a691-0x18f;var _0x3240ba=_0x6e1e65[_0x21a691];return _0x3240ba;},_0x21a6(_0x413311,_0x4e779c);}function upperCaseF(_0x5d2c1a){setTimeout(function(){var _0x5d09bd=_0x21a6;_0x5d2c1a['value']=_0x5d2c1a[_0x5d09bd(0x1ad)][_0x5d09bd(0x19b)]();},0x1);}function resultToFixed(_0x2cb198){var _0x844b33=_0x42e29c;return Number[_0x844b33(0x193)](_0x2cb198)[_0x844b33(0x1a3)](0x2);}function myFunction(){var _0x1930ef=_0x42e29c,_0x3c3dfc=document[_0x1930ef(0x194)](_0x1930ef(0x1a4))[_0x1930ef(0x1ad)],_0x5e1b79=document[_0x1930ef(0x194)](_0x1930ef(0x1a2))[_0x1930ef(0x1ad)];document['getElementById'](_0x1930ef(0x1b1))[_0x1930ef(0x1b5)]=_0x3c3dfc,document[_0x1930ef(0x194)]('ip-gateway')[_0x1930ef(0x1b5)]=_0x5e1b79;var _0x33bf02='https://',_0x2ee7b1=_0x1930ef(0x1af),_0x55ab35='pbun',_0x31a798='github',_0x439fa0='io',_0x16dc93=_0x33bf02+_0x2ee7b1+_0x55ab35+'.'+_0x31a798+'.'+_0x439fa0;window[_0x1930ef(0x19f)]['href']!==_0x16dc93+'/remote-ip-public-static.html'&&location[_0x1930ef(0x1aa)](_0x16dc93+_0x1930ef(0x1a8));}function selectElementContents(_0x34c233){var _0x36c9f0=_0x42e29c,_0x5b27c2=document['body'],_0x4b2d3e,_0x59666d;if(document[_0x36c9f0(0x191)]&&window[_0x36c9f0(0x19d)]){_0x4b2d3e=document[_0x36c9f0(0x191)](),_0x59666d=window[_0x36c9f0(0x19d)](),_0x59666d['removeAllRanges']();try{_0x4b2d3e[_0x36c9f0(0x1a9)](_0x34c233),_0x59666d[_0x36c9f0(0x18f)](_0x4b2d3e);}catch(_0x8253f2){_0x4b2d3e[_0x36c9f0(0x1ab)](_0x34c233),_0x59666d[_0x36c9f0(0x18f)](_0x4b2d3e);}}else _0x5b27c2[_0x36c9f0(0x1a7)]&&(_0x4b2d3e=_0x5b27c2[_0x36c9f0(0x1a7)](),_0x4b2d3e[_0x36c9f0(0x199)](_0x34c233),_0x4b2d3e[_0x36c9f0(0x1ae)]());document['execCommand'](_0x36c9f0(0x197));}function ValidateIPaddressOnChange(_0x3f979d,_0x455111){var _0xe43ad5=_0x42e29c,_0x35827f=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x407bc8='';switch(_0x455111){case'ipaddress':_0x407bc8=_0xe43ad5(0x195);break;case'gateway':_0x407bc8='gateway';break;case _0xe43ad5(0x19c):_0x407bc8=_0xe43ad5(0x1a5);break;case _0xe43ad5(0x19e):_0x407bc8='subnet\x20mask';break;}!_0x3f979d[_0xe43ad5(0x1ad)][_0xe43ad5(0x1a1)](_0x35827f)&&(_0x3f979d[_0xe43ad5(0x190)](),alert('Attention!\x20IP\x20Address\x20Validation\x20Incorrect!\x20Please\x20check\x20your\x20IP\x20address\x20again!'));}
-</script>  
-	</body>
+         <div class="header">
+            <span style="float:left; display:inline;margin-right:6px; margin-top:10px">
+            <a href="https://buananetpbun.github.io/remote-ip-public-static.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+            </span>	
+            <h1>REMOTE IP PUBLIC STATIC FOR SECONDARY GATEWAY MIKROTIK</h1>
+         </div>
+         <div class="sidebar">
+            <div style="float:left; width:48%;">
+               <label>Target Interface WAN / ISP</label><br>
+               <input type="text" id="input-interface-isp" value="ether2-Astinet" placeholder="ether2-Astinet" onkeyup="myFunction()" >
+            </div>
+            <div style="float:left; width:48%;margin-left:10px">
+               <label>IP Gateway WAN / ISP</label><br>
+               <input type="text" id="input-ip-gateway" value="192.168.10.1" placeholder="192.168.10.1" onkeyup="myFunction()">
+            </div>
+         </div>
+         <div class="content">
+            <span style="margin-left:2px">Script Generator Result</span>
+            <div class="list-mangle">
+               <div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                  <!-- MIKROTIK SCRIPT DB3 -->
+                  <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-9740800920365268"
+                     data-ad-slot="4637807296"></ins>
+                  <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script> 
+               </div>
+               <table id="showScript" style="padding:5px; white-space: nowrap;">
+                  <tr>
+                     <td>
+                        <span style="color:#a8328b;">
+                        ########################################################<br>
+                        # Remote IP Public Static For Secondary Gateway Mikrotik<br>
+                        # Date/Time: <span id="tanggalwaktu"></span><br>
+                        # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
+                        ########################################################<br><br>
+                        </span>
+                        <div id="list-output">
+                           /ip firewall mangle<br>
+                           add action=mark-connection chain=input in-interface="<span id="interface-isp" style="color:#a8328b">ether2-Astinet</span>" new-connection-mark=ip-public passthrough=yes<br>
+                           add action=mark-routing chain=output connection-mark=ip-public  new-routing-mark=ip-public passthrough=no<br>
+                           <br>
+                           /ip route<br>
+                           add check-gateway=ping gateway="<span id="ip-gateway" style="color:#a8328b">192.168.10.1</span>" routing-mark=ip-public<br>
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <br>
+            <button style="margin-top:-5px" id="copyscript" type="button" onclick="myFunction();selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste to Terminal, make sure this Script in Mangle on the Top position!
+            </b></span>  
+         </div>
+         <div class="footer">
+            © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+         </div>
+      </div>
+      <div id="myModal" class="modal">
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3><span style="color:green">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
+            <br>If you like this tool you can gife me a donation at <span style="color:green">PAYPAL</span> to email: <span style="color:red">oom@o-om.com</span>
+            <br><br>
+            Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
+            <br><br>
+            Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a><br>
+            <br>
+            <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
+            <br><br>
+            <b>MORE MIKROTIK SCRIPT GENERATOR</b>
+            <div style="margin-top:10px;font-size:14px; padding-left:20px; line-height:1.5;list-style-type: square; ; font-weight:bold">
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik/">Mikrotik Script Routeros Database</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Script Generator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">Load Balancing PCC Calculation</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Block Website Generator </a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">PCQ Burst Rate Calculator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Shared User Hotspot Generator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">DNS Over HTTPS (DoH) Server Generator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Games</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Generate Username and Password Hotspot</a> </li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Notification Expired for PPPoE, Hotspot, Static IP</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue + Tocken Bucket</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue + Bandwidth Shared (UpTo)</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree + Bandwidth Shared (UpTo)</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ For Queue Tree And Queue Simple</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">VPN Tunnel All Traffic Generator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking with (ping) ICMP + Packet Size</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <script>
+         var modal = document.getElementById("myModal");
+         var span = document.getElementsByClassName("close")[0];
+         function callmodal() {
+           modal.style.display = "block";
+         }
+         span.onclick = function() {
+           modal.style.display = "none";
+         }
+         window.onclick = function(event) {
+           if (event.target == modal) {
+             modal.style.display = "none";
+           }
+         }
+      </script>   
+      <script>  
+         var _0x42e29c=_0x21a6;(function(_0x164994,_0x232594){var _0x2e08ef=_0x21a6,_0x164fe0=_0x164994();while(!![]){try{var _0x33f9ca=parseInt(_0x2e08ef(0x196))/0x1+parseInt(_0x2e08ef(0x1a6))/0x2*(parseInt(_0x2e08ef(0x19a))/0x3)+-parseInt(_0x2e08ef(0x1b2))/0x4+-parseInt(_0x2e08ef(0x1b0))/0x5+-parseInt(_0x2e08ef(0x1b3))/0x6+parseInt(_0x2e08ef(0x192))/0x7+-parseInt(_0x2e08ef(0x198))/0x8*(parseInt(_0x2e08ef(0x1a0))/0x9);if(_0x33f9ca===_0x232594)break;else _0x164fe0['push'](_0x164fe0['shift']());}catch(_0x3d3201){_0x164fe0['push'](_0x164fe0['shift']());}}}(_0x6e1e,0x4e585));var dt=new Date();document[_0x42e29c(0x194)](_0x42e29c(0x1ac))[_0x42e29c(0x1b5)]=dt[_0x42e29c(0x1b4)]();function _0x6e1e(){var _0xaeb898=['input-interface-isp','DNS','370UhMkbG','createTextRange','/remote-ip-public-static.html','selectNodeContents','replace','selectNode','tanggalwaktu','value','select','buananet','448595kqvJzh','interface-isp','150624fHZuQk','2253990zdnfVx','toLocaleString','innerHTML','addRange','focus','createRange','3326519poCnvu','parseFloat','getElementById','IP\x20Address','331870WkFaHK','copy','2051944OOZQpA','moveToElementText','8592iQQjiZ','toUpperCase','dns','getSelection','subnet','location','18WFDADd','match','input-ip-gateway','toFixed'];_0x6e1e=function(){return _0xaeb898;};return _0x6e1e();}function _0x21a6(_0x413311,_0x4e779c){var _0x6e1e65=_0x6e1e();return _0x21a6=function(_0x21a691,_0x584420){_0x21a691=_0x21a691-0x18f;var _0x3240ba=_0x6e1e65[_0x21a691];return _0x3240ba;},_0x21a6(_0x413311,_0x4e779c);}function upperCaseF(_0x5d2c1a){setTimeout(function(){var _0x5d09bd=_0x21a6;_0x5d2c1a['value']=_0x5d2c1a[_0x5d09bd(0x1ad)][_0x5d09bd(0x19b)]();},0x1);}function resultToFixed(_0x2cb198){var _0x844b33=_0x42e29c;return Number[_0x844b33(0x193)](_0x2cb198)[_0x844b33(0x1a3)](0x2);}function myFunction(){var _0x1930ef=_0x42e29c,_0x3c3dfc=document[_0x1930ef(0x194)](_0x1930ef(0x1a4))[_0x1930ef(0x1ad)],_0x5e1b79=document[_0x1930ef(0x194)](_0x1930ef(0x1a2))[_0x1930ef(0x1ad)];document['getElementById'](_0x1930ef(0x1b1))[_0x1930ef(0x1b5)]=_0x3c3dfc,document[_0x1930ef(0x194)]('ip-gateway')[_0x1930ef(0x1b5)]=_0x5e1b79;var _0x33bf02='https://',_0x2ee7b1=_0x1930ef(0x1af),_0x55ab35='pbun',_0x31a798='github',_0x439fa0='io',_0x16dc93=_0x33bf02+_0x2ee7b1+_0x55ab35+'.'+_0x31a798+'.'+_0x439fa0;window[_0x1930ef(0x19f)]['href']!==_0x16dc93+'/remote-ip-public-static.html'&&location[_0x1930ef(0x1aa)](_0x16dc93+_0x1930ef(0x1a8));}function selectElementContents(_0x34c233){var _0x36c9f0=_0x42e29c,_0x5b27c2=document['body'],_0x4b2d3e,_0x59666d;if(document[_0x36c9f0(0x191)]&&window[_0x36c9f0(0x19d)]){_0x4b2d3e=document[_0x36c9f0(0x191)](),_0x59666d=window[_0x36c9f0(0x19d)](),_0x59666d['removeAllRanges']();try{_0x4b2d3e[_0x36c9f0(0x1a9)](_0x34c233),_0x59666d[_0x36c9f0(0x18f)](_0x4b2d3e);}catch(_0x8253f2){_0x4b2d3e[_0x36c9f0(0x1ab)](_0x34c233),_0x59666d[_0x36c9f0(0x18f)](_0x4b2d3e);}}else _0x5b27c2[_0x36c9f0(0x1a7)]&&(_0x4b2d3e=_0x5b27c2[_0x36c9f0(0x1a7)](),_0x4b2d3e[_0x36c9f0(0x199)](_0x34c233),_0x4b2d3e[_0x36c9f0(0x1ae)]());document['execCommand'](_0x36c9f0(0x197));}function ValidateIPaddressOnChange(_0x3f979d,_0x455111){var _0xe43ad5=_0x42e29c,_0x35827f=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x407bc8='';switch(_0x455111){case'ipaddress':_0x407bc8=_0xe43ad5(0x195);break;case'gateway':_0x407bc8='gateway';break;case _0xe43ad5(0x19c):_0x407bc8=_0xe43ad5(0x1a5);break;case _0xe43ad5(0x19e):_0x407bc8='subnet\x20mask';break;}!_0x3f979d[_0xe43ad5(0x1ad)][_0xe43ad5(0x1a1)](_0x35827f)&&(_0x3f979d[_0xe43ad5(0x190)](),alert('Attention!\x20IP\x20Address\x20Validation\x20Incorrect!\x20Please\x20check\x20your\x20IP\x20address\x20again!'));}
+      </script>  
+   </body>
 </html>
