@@ -1,7 +1,17 @@
+
 <?xml version='1.0' encoding='UTF-8'?><urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://buananetpbun.github.io/</loc></url>
+<url><loc>https://buananetpbun.github.io//mikrotik-share-user-multi-login.html</loc></url>
 <url><loc>https://buananetpbun.github.io/ecmp.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik-block-website-generator.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik-failover-script-generator.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik-pcq-generator.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik-share-user-multi-login.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/A-Bit-of-Sounds.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/A-script-to-set-up-WAN-or-LAN-or-WLAN-to-get-you-started.html</loc></url>
@@ -176,10 +186,13 @@
 <url><loc>https://buananetpbun.github.io/mikrotik/auto-backup-filename-backup-and-send-to-gmail.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/auto-backup-filename-rsc-and-send-to-gmail.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/auto-fix-sntp-client-and-timezone-for-indonesia-country.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/backup-full-to-ftp.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/basic-traffic-priorities-rev-31.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-ads-use-dns-static.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-bigo-layer7-content-tls.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-download-based-download-sizes.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-facebook-layer7-content-tls.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/block-higgs-domino-firewall-tls-method.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-iflix-layer7-content-tls.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-istagram-layer7-content-tls.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/block-netflix-layer7-content-tls.html</loc></url>
@@ -201,6 +214,8 @@
 <url><loc>https://buananetpbun.github.io/mikrotik/check-ip-change.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/check-routeros-update-and-notification.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/clear-log-Mikrotik.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/create-simple-queue-from-pppoe-secret.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/detect-ip-address-on-vpn-tunnel-if-has-been-changed.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/discover-unknown-dhcp-server-on-the-network.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/dns-chace-flush.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-changeip-behind-nat.html</loc></url>
@@ -213,6 +228,7 @@
 <url><loc>https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-hurricane-electric-dns.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-namecheap.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-no-ip-dns.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/enable-fasttrack.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/expire-users-a-after-number-of-days.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/fail-over-recursive-gateway.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/filter-a-command-output.html</loc></url>
@@ -222,12 +238,15 @@
 <url><loc>https://buananetpbun.github.io/mikrotik/gps-text-file-converter-to-google-earth-or-maps.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/how-to-change-mac-address.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/how-to-disable-google-ssl-using-static-dns.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/how-to-setting-bonding-interface.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/hurricane-electric-ipv6-tunnel-ipv4-endpoint-updater.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/index.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/initiating-the-update-process-new-version.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/limiting-a-user-to-a-given-amount-of-traffic-using-queues.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/logging-average-ccq-and-wireless-clients-stats.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/logging-snr-and-thruput-values.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/make-sure-all-clients-use-router-dns.html</loc></url>
+<url><loc>https://buananetpbun.github.io/mikrotik/netwatch-monitoring-host.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/notification-of-device-connection-to-the-network.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/notification-when-public-ip-address-router-changes-to-email-or-telegram.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/only-1-hotspot-id-can-login-together.html</loc></url>
@@ -261,6 +280,7 @@
 <url><loc>https://buananetpbun.github.io/mikrotik/wake-on-lan-before-connection-to-remote-desktop.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/welcome.html</loc></url>
 <url><loc>https://buananetpbun.github.io/mikrotik/wms-auto-login.html</loc></url>
+<url><loc>https://buananetpbun.github.io/nth.html</loc></url>
 <url><loc>https://buananetpbun.github.io/pcc-calculation.html</loc></url>
 <url><loc>https://buananetpbun.github.io/pcc.html</loc></url>
 <url><loc>https://buananetpbun.github.io/port-knocking-icmp.html</loc></url>
@@ -269,4 +289,6 @@
 <url><loc>https://buananetpbun.github.io/simple-queue-generator-shared.html</loc></url>
 <url><loc>https://buananetpbun.github.io/simple-queue-generator.html</loc></url>
 <url><loc>https://buananetpbun.github.io/vpn-game-generator.html</loc></url>
-<url><loc>https://buananetpbun.github.io/vpn-game-generator2.html</loc></url></urlset>
+<url><loc>https://buananetpbun.github.io/vpn-game-generator2.html</loc></url>
+<url><loc>https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html</loc></url>
+<url><loc>https://buananetpbun.github.io/wifid-wms-seamless.html</loc></url></urlset>
