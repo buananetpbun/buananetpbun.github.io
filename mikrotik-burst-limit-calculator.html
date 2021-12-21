@@ -356,8 +356,8 @@
             <span style='color: DarkViolet'>BT</span> &nbsp;= Burst Time<br>
             <span style='color: #01A3DF'>BL</span> &nbsp;= Burst Limit<br>
             <br>
-            <span style='color: #555; font-size:12px'>K = Kbps  /  M = Mbps<br>
-            <span style='color: #555; font-size:12px'>Convert 1000Kbps = 1Mbps<br>
+            <span style='color: #555; font-size:12px'>K = Kbps  /  M = Mbps</span><br>
+            <span style='color: #555; font-size:12px'>Convert 1000Kbps = 1Mbps</span><br>
             </span>
          </div>
          <div class="sidebar2">
@@ -375,11 +375,11 @@
                <label>Burst Duration (second)</label><br>
                <input onkeydown="upperCaseF(this)" type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
             </div>
-            <span style="margin-top:10px; font-size:14px">
+            <div style="margin-top:10px; font-size:14px">
                <b>Upload Burst Result:</b><br>
                <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
-               <div style='margin-top:10px;border-bottom:1px dotted green;border-top:1px dotted green;padding-top:5px; padding-bottom:5px''>
+               <div style='margin-top:10px;border-bottom:1px dotted green;border-top:1px dotted green;padding-top:5px; padding-bottom:5px'>
                   <span style='color: black;'>Burst Speed to</span> <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span>s<br>
                </div>
                <br>
@@ -389,7 +389,7 @@
                <div style='margin-top:10px;border-bottom:1px dotted green;border-top:1px dotted green; padding-top:5px; padding-bottom:5px'>
                   <span style='color: black; '>Burst Speed to</span> <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span>s<br>
                </div>
-            </span>
+            </div>
          </div>
          <div class="content">
             <span style="margin-left:2px;font-size:15px"><b>COPY PASTE BURST RESULT TO WINBOX</b></span>
@@ -441,11 +441,11 @@
                <table id="mytable" style="font-weight:normal">
                   <thead>
                      <tr style="background-color: #ddd; " >
-                        <td><b>Rate Limit for <span style="color:red">Hotspot</span> and <span style="color:red">PPPoE</span><b></td>
+                        <td><b>Rate Limit for <span style="color:red">Hotspot</span> and <span style="color:red">PPPoE</span></b></td>
                      </tr>
                   </thead>
                   <tr style="font-size:15px;font-weight:bold">
-                     <td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1M</span> <span id="rate-up-burst-limit"style='color: #01A3DF' >1M</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2M</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td>
+                     <td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1M</span> <span id="rate-up-burst-limit" style='color: #01A3DF'>1M</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2M</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td>
                      </th>
                   </tr>
                </table>
@@ -472,7 +472,7 @@
          <div class="modal-content">
             <span class="close">&times;</span>
             <h3><span style="color:green">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
-            <br><b>If you like this tool you can gife me a donation at <span style="color:green">PAYPAL</span> to email: <span style="color:red">oom@o-om.com</span>
+            <br>If you like this tool you can gife me a donation at <span style="color:green">PAYPAL</span> to email: <span style="color:red">oom@o-om.com</span>
             <br><br>
             Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
             <br><br>
@@ -554,7 +554,7 @@
             </div>
          </div>
       </div>
-      <script type="text/javascript">
+      <script>
          var modal = document.getElementById("myModal");
          var span = document.getElementsByClassName("close")[0];
          function callmodal() {
