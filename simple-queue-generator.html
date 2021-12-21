@@ -1,510 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset='utf-8'/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simple Queue Script Generator For Mikrotik Plus Token Bucket - BuanaNETPBun.Github.io</title>
-<meta content='Simple Queue Script Generator For Mikrotik Plus Token Bucket - BuanaNETPBun.Github.io' name='description'/>
-<meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
-<meta content='index, follow, noodp' name='robots'/>
-<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
-<meta property="og:title" content="Simple Queue Script Generator For Mikrotik Plus Token Bucket By BuanaNET-Pbun">
-<meta property="og:description" content="Simple Queue Script Generator For Mikrotik Plus Token Bucket By BuanaNET-Pbun">
-<meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255211-3a132580-8649-11eb-9408-a9cd9649a1aa.png">
-<meta property="og:image:alt" content="Simple Queue Script Generator For Mikrotik Plus Token Bucket By BuanaNET-Pbun">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://buananetpbun.github.io/simple-queue-generator.html"> 
-<script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
-<style> 
-/* ----------------------------------------------------------
-#############################################################
-# Simple Queue Script Generator For Mikrotik Plus Token Bucket
-# Date/Time : 11/8/2020, 12:10:14 AM
-# Designer  : Agus Ramadhani / BuanaNET
-# Version   : v1.0 Beta
-# Github	: BuanaNETPBun.Github.io
-# Site      : http://www.o-om.com
-# Sosmed    : https://fb.me/buananet.pbun	
-############################################################
---------------------------------------------------------- */  
-*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-body { font-size:16px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
-html, body {
-height: 100%;
-width:100%;
-margin-top: 0px;
-padding:0;
-line-height:1.1;  
-}
-* {
-box-sizing: border-box;
-}
-.logo {
-margin-bottom:10px;  
-color: #111;
-text-decoration:none;
-font-size:27px;
-font-weight:bold; 
-}	
-.logo a{
-color:#111 !important;
-text-decoration:none !important;
-}
-.Menu{
-width:100%;
-border-bottom:1px solid #ccc;
-height:100%;
-padding-bottom: 15px;
-margin-bottom: 20px;
-font-size:14px;
-font-weight:bold;
-}
-#wrap{
-width:1220px;
-margin:0 auto;
-padding:10px;
-background:#fff
-}
-.header{
-height:auto; 
-width:100%;
-margin-top:0px;
-margin-bottom:10px;
-border-top:1px solid #ccc;
-}
-.main-wrap{
-display:flex;
-}   
-.content{
-flex:1;
-float:right;
-width:800px;
-padding: 8px;
-border-top:1px solid #bbb;
-border-bottom:1px solid #bbb;
-border-right:1px solid #bbb;
-background:#ddd;
-height:auto;
-}
-.sidebar{
-float:left;
-width:400px;
-Padding-top:8px;
-padding-left: 10px;
-Padding-right:10px;
-Padding-bottom:20px;
-background-color:#ddd;
-border:1px solid #bbb; 
-height:auto;
-}
-.footer{
-font-size:14px;
-padding-top:15px;
-text-align:center;
-clear:both;
-width:auto;
-}
-
-h1 {
-color:#111;
-font-size:22px;
-margin-bottom:10px;
-margin-top:10px;
-}
-a:link {
-color: #08c;
-}
-a:visited {
-color: #08c;
-}
-a:hover {
-color: #08c;
-}
-a:active {
-color: #08c;
-}
-.menu {
-clear:both;
-width:auto;
-padding-bottom:13px;
-}
-.menu1 {
-width:360px;
-margin-bottom:1px;
-font-weight:bold;
-background-color:#4CAF50;
-padding:6px;
-color:white;
-display: inline-block;
-margin:0;
-}
-.menu1 a:link {
-text-decoration:none;
-color:white;
-}
-.menu1 a:visited{
-text-decoration:none;
-color:white;
-}
-.menu2 {
-width:300px;
-margin-bottom:1px;
-font-weight:bold;
-background-color:#bbb;
-padding:6px;
-color:white;
-display: inline-block;
-margin:0;
-}
-.menu2 a:link{
-text-decoration:none;
-color:white;
-}
-.menu2 a:visited{
-text-decoration:none;
-color:white;
-}
-button {
-color: #fff;
-background-color: #08c;
-border-color: #08c;
-border:none;
-padding:8px;
-width:180px;
-font-weight:bold;
-font-size:16px !important;
-  cursor: pointer;
-  border-radius: 5px;
-  color: #fff;
-}
-button:hover {
-  background-color: #ccc;
-  color: #111;
-}
-.row:after {
-content: "";
-display: table;
-clear: both;
-}  
-input[type=text], select, textarea {
-width: 100%;
-padding: 5px;
-border: 1px solid #bbb;
-border-radius: 1px;
-resize: vertical;
-margin-bottom:12px;
-font-size:16px !important;
-}
-label {
-padding: 5px 5px 5px 0;
-display: inline-block;
-}
-input[type=submit] {
-background-color: #08c;
-color: white;
-padding: 12px 20px;
-border: none;
-border-radius: 1px;
-cursor: pointer;
-float: right;
-}
-input[type=submit]:hover {
-background-color: #45a049;
-}
-.col-25 {
-float: left;
-width: 25%;
-margin-top: 6px;
-}
-.col-75 {
-float: left;
-width: 75%;
-margin-top: 6px;
-}
-/* Clear floats after the columns */
-.row:after {
-content: "";
-display: table;
-clear: both;
-}
-.list-game {
-height: 200px;
-background:white;
-overflow: scroll;
-overflow-x: hidden;
-width: 100%;
-margin-top:2px;
-padding: 3px;
-border: 1px solid rgba(0,0,0,0.25);
-}
-.list-game label {
-padding: 0;
-display: inline-block;
-} 
-.list-mangle {
-height: 692px;
-background:#fff;
-overflow: scroll;
-width: 100%;
-padding: 4px;
-margin-top:8px;
-border: 1px solid #ccc;
-}
-table, tr, td {
-border: none;
-}
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-/* Modal Content */
-.modal-content {
-text-shadow: 0px 0px 3px #fff;
-  background-color: #fefefe;
-    background-repeat: no-repeat;
-  background-position: right bottom; 
-  background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* The Close Button */
-.close {
-text-shadow: 0px 0px 3px #fff;
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-} 
-</style>
-</head>
-<body onLoad="callmodal()"> 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-<div id="wrap">
-<div class="logo">	
-<a href="https://buananetpbun.github.io"><span style="color:#08c !important">BuanaNETPBun</span>.Github.io</a> 
-<div style="float:right">
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-</div>	
-  <div style="float:right; margin-right:5px; margin-top:5px">
-<div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-</div>
-</div>	
-<div class="header">
-<span style="float:left; display:inline;margin-right:6px; margin-top:10px">
-<a href="https://buananetpbun.github.io/simple-queue-generator.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
-</span>
-<h1>SIMPLE QUEUE SCRIPT GENERATOR FOR MIKROTIK PLUS TOKEN BUCKET - FOR IP SUBNET /24 ONLY</h1>
-</div>
-<div class="main-wrap">
-    <div class="sidebar">
-		<div style="margin-bottom:10px; height:190px">
-		 <label>Parent Name Queue</label><div style="clear: both;"></div>
-         <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
-         <label>Target Local IP / Interface</label><div style="clear: both;"></div>
-         <input type="text" id="input-ip-parent" value="192.168.88.0/24" placeholder="192.168.88.0/24 or ether1">
-		 <div style="clear: both;"></div>
-		 <div style="float:left; width:48%;">
-		 <label>Up Total (K/M)</label><div style="clear: both;"></div>
-         <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
-		 </div>
-		 <div style="float:left; width:48%;margin-left:10px">
-         <label>Down Total (K/M)</label><div style="clear: both;"></div>
-         <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
-		 </div>
-		 </div>
-		 <div style="clear: both;"></div>
-         <div style="margin-top:10px;margin-bottom:10px;border-bottom:1px solid #bbb;padding-bottom:5px">Sub Parent Queue / Child Queue</div>
-		 <div style="float:left;width:48%">
-		 <label>Client Name Queue</label><div style="clear: both;"></div>
-         <input type="text" id="input-client" value="Client-" placeholder="Client-">
-		 </div>
-		 <div style="float:left;width:48%;margin-left:10px;">
-		 <label>Client Identity</label>
-         <input type="text" id="input-client-initial" value="1" placeholder="1">
-		 </div>
-     	  <div style="float:left; width:48%;">
-		 <label>Start IP Client</label><div style="clear: both;"></div>
-         <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
-		 </div>
-		 <div style="float:left; width:48%;margin-left:10px;">
-         <label>End IP Client</label><div style="clear: both;"></div>
-         <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
-		 </div>
-		 <div style="clear: both;"></div>
-		 <div style="float:left; width:48%;">
-		 <label>Up Client (K/M)</label><div style="clear: both;"></div>
-         <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
-		 </div>
-		 <div style="float:left; width:48%;margin-left:10px;">
-         <label>Down Client (K/M)</label><div style="clear: both;"></div>
-         <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
-		 </div>
-		 <div style="float:left; width:48%;">
-	     <label>Bucket Size Up</label><div style="clear: both;"></div>
-         <select id="size-list-up">
-            <option value="0.1">0.1 (default)</option>
-            <option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-         </select>
-		 </div>
-		 <div style="float:left; width:48%;margin-left:10px">
-	     <label>Bucket Size Down</label><div style="clear: both;"></div>
-         <select id="size-list-down">
-            <option value="0.1">0.1 (default)</option>
-            <option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-         </select>
-		 </div>
-		 <div style="clear: both;"></div>
-         <div style="margin-bottom:10px;font-size:14px; font-weight:bold;padding-top:10px">
-		<span style="color:#08c;">BANDWITH WITH TOKEN BUCKET CALCULATION</span><br>
-		Bucket Capacity (BC) = bucket-size * max-limit<br>
-		Time = BC / (Parent Max-limit - Token Rate)
-		<br><br>
-		 <span style="color:#08c;">Upload Bucket Size:</span><br>
-		 Bucket Capacity = <span style="color:#08c" id="bucket-capacity-up">0</span><br>
-		 Burst <span style="color:#08c" id="bucket-size-up">0 Mbps</span><br><br>
-		 <span style="color:#08c;">Download Bucket Size:</span><br>
-		 Bucket Capacity = <span style="color:#08c" id="bucket-capacity-down">0</span><br>
-		 Burst <span style="color:#08c" id="bucket-size-down">0 Mbps</span><br>
-		 </div>
-         <button style="margin-top:10px;" type="button" onclick="myFunctionInput()">Generate Script</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All Script</button> 
-         <br>
-    </div>
-    <div class="content"> 
-        <span style="margin-left:2px">Script Generator Result</span>
-         <div class="list-mangle">
-		 	<div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">	
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- MIKROTIK SCRIPT DB3 -->
-			<ins class="adsbygoogle"
-			style="display:inline-block;width:728px;height:90px"
-			data-ad-client="ca-pub-9740800920365268"
-			data-ad-slot="4637807296"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script> 
-			</div>
-            <table id="showScript" style="padding:5px; white-space: nowrap;">
-               <tr>
-                  <td>
-                     <span style="color:#08c;">
-                     #############################################################<br>
-                     # Simple Queue Script Generator For Mikrotik Plus Token Bucket<br>
-                     # Date/Time: <span id="tanggalwaktu"></span><br>
-                     # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
-                     #############################################################<br><br>
-                     </span>
-					 <div id="list-output"></div>
-				</td>
-				</tr>			
-			</table>
+   <head>
+      <meta charset='utf-8'/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Simple Queue Script Generator For Mikrotik Plus Token Bucket - BuanaNETPBun.Github.io</title>
+      <meta content='Simple Queue Script Generator For Mikrotik Plus Token Bucket - BuanaNETPBun.Github.io' name='description'/>
+      <meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+      <meta content='index, follow, noodp' name='robots'/>
+      <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+      <meta property="og:title" content="Simple Queue Script Generator For Mikrotik Plus Token Bucket By BuanaNET-Pbun">
+      <meta property="og:description" content="Simple Queue Script Generator For Mikrotik Plus Token Bucket By BuanaNET-Pbun">
+      <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255211-3a132580-8649-11eb-9408-a9cd9649a1aa.png">
+      <meta property="og:image:alt" content="Simple Queue Script Generator For Mikrotik Plus Token Bucket By BuanaNET-Pbun">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://buananetpbun.github.io/simple-queue-generator.html">
+      <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+      <style> 
+         /* ----------------------------------------------------------
+         #############################################################
+         # Simple Queue Script Generator For Mikrotik Plus Token Bucket
+         # Date/Time : 11/8/2020, 12:10:14 AM
+         # Designer  : Agus Ramadhani / BuanaNET
+         # Version   : v1.0 Beta
+         # Github	: BuanaNETPBun.Github.io
+         # Site      : http://www.o-om.com
+         # Sosmed    : https://fb.me/buananet.pbun	
+         ############################################################
+         --------------------------------------------------------- */  
+         *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+         body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+         body { font-size:16px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:20px;}
+         html, body {
+         height: 100%;
+         width:100%;
+         margin-top: 0px;
+         padding:0;
+         line-height:1.1;  
+         }
+         * {
+         box-sizing: border-box;
+         }
+         .logo {
+         margin-bottom:10px;  
+         color: #111;
+         text-decoration:none;
+         font-size:27px;
+         font-weight:bold; 
+         }	
+         .logo a{
+         color:#111 !important;
+         text-decoration:none !important;
+         }
+         .Menu{
+         width:100%;
+         border-bottom:1px solid #ccc;
+         height:100%;
+         padding-bottom: 15px;
+         margin-bottom: 20px;
+         font-size:14px;
+         font-weight:bold;
+         }
+         #wrap{
+         width:1220px;
+         margin:0 auto;
+         padding:10px;
+         background:#fff
+         }
+         .header{
+         height:auto; 
+         width:100%;
+         margin-top:0px;
+         margin-bottom:10px;
+         border-top:1px solid #ccc;
+         }
+         .main-wrap{
+         display:flex;
+         }   
+         .content{
+         flex:1;
+         float:right;
+         width:800px;
+         padding: 8px;
+         border-top:1px solid #bbb;
+         border-bottom:1px solid #bbb;
+         border-right:1px solid #bbb;
+         background:#ddd;
+         height:auto;
+         }
+         .sidebar{
+         float:left;
+         width:400px;
+         Padding-top:8px;
+         padding-left: 10px;
+         Padding-right:10px;
+         Padding-bottom:20px;
+         background-color:#ddd;
+         border:1px solid #bbb; 
+         height:auto;
+         }
+         .footer{
+         font-size:14px;
+         padding-top:15px;
+         text-align:center;
+         clear:both;
+         width:auto;
+         }
+         h1 {
+         color:#111;
+         font-size:22px;
+         margin-bottom:10px;
+         margin-top:10px;
+         }
+         a:link {
+         color: #08c;
+         }
+         a:visited {
+         color: #08c;
+         }
+         a:hover {
+         color: #08c;
+         }
+         a:active {
+         color: #08c;
+         }
+         .menu {
+         clear:both;
+         width:auto;
+         padding-bottom:13px;
+         }
+         .menu1 {
+         width:360px;
+         margin-bottom:1px;
+         font-weight:bold;
+         background-color:#4CAF50;
+         padding:6px;
+         color:white;
+         display: inline-block;
+         margin:0;
+         }
+         .menu1 a:link {
+         text-decoration:none;
+         color:white;
+         }
+         .menu1 a:visited{
+         text-decoration:none;
+         color:white;
+         }
+         .menu2 {
+         width:300px;
+         margin-bottom:1px;
+         font-weight:bold;
+         background-color:#bbb;
+         padding:6px;
+         color:white;
+         display: inline-block;
+         margin:0;
+         }
+         .menu2 a:link{
+         text-decoration:none;
+         color:white;
+         }
+         .menu2 a:visited{
+         text-decoration:none;
+         color:white;
+         }
+         button {
+         color: #fff;
+         background-color: #08c;
+         border-color: #08c;
+         border:none;
+         padding:8px;
+         width:180px;
+         font-weight:bold;
+         font-size:16px !important;
+         cursor: pointer;
+         border-radius: 5px;
+         color: #fff;
+         }
+         button:hover {
+         background-color: #ccc;
+         color: #111;
+         }
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }  
+         input[type=text], select, textarea {
+         width: 100%;
+         padding: 5px;
+         border: 1px solid #bbb;
+         border-radius: 1px;
+         resize: vertical;
+         margin-bottom:12px;
+         font-size:16px !important;
+         }
+         label {
+         padding: 5px 5px 5px 0;
+         display: inline-block;
+         }
+         input[type=submit] {
+         background-color: #08c;
+         color: white;
+         padding: 12px 20px;
+         border: none;
+         border-radius: 1px;
+         cursor: pointer;
+         float: right;
+         }
+         input[type=submit]:hover {
+         background-color: #45a049;
+         }
+         .col-25 {
+         float: left;
+         width: 25%;
+         margin-top: 6px;
+         }
+         .col-75 {
+         float: left;
+         width: 75%;
+         margin-top: 6px;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         .list-game {
+         height: 200px;
+         background:white;
+         overflow: scroll;
+         overflow-x: hidden;
+         width: 100%;
+         margin-top:2px;
+         padding: 3px;
+         border: 1px solid rgba(0,0,0,0.25);
+         }
+         .list-game label {
+         padding: 0;
+         display: inline-block;
+         } 
+         .list-mangle {
+         height: 692px;
+         background:#fff;
+         overflow: scroll;
+         width: 100%;
+         padding: 4px;
+         margin-top:8px;
+         border: 1px solid #ccc;
+         }
+         table, tr, td {
+         border: none;
+         }
+         /* The Modal (background) */
+         .modal {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 1; /* Sit on top */
+         padding-top: 100px; /* Location of the box */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+         /* Modal Content */
+         .modal-content {
+         text-shadow: 0px 0px 3px #fff;
+         background-color: #fefefe;
+         background-repeat: no-repeat;
+         background-position: right bottom; 
+         background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
+         margin: auto;
+         padding: 20px;
+         border: 1px solid #888;
+         width: 50%;
+         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+         }
+         /* The Close Button */
+         .close {
+         text-shadow: 0px 0px 3px #fff;
+         color: #aaaaaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close:hover,
+         .close:focus {
+         color: #000;
+         text-decoration: none;
+         cursor: pointer;
+         } 
+      </style>
+   </head>
+   <body onLoad="callmodal()">
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+      <div id="wrap">
+         <div class="logo">
+            <a href="https://buananetpbun.github.io"><span style="color:#08c !important">BuanaNETPBun</span>.Github.io</a> 
+            <div style="float:right">
+               <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+            </div>
+            <div style="float:right; margin-right:5px; margin-top:5px">
+               <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+            </div>
          </div>
-         <br>
-         <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
-    </div>
-    </div>
-   <div class="footer">
-© Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
-   </div>
- </div>
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3><span style="color:green">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
-   <br><b>If you like this tool you can gife me a donation at <span style="color:green">PAYPAL</span> to email: <span style="color:red">oom@o-om.com</span>
-   <br><br>
-   Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
-   <br><br>
-   Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a><br>
-   <br>
- <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
- <br><br>
-
-   <b>MORE MIKROTIK SCRIPT GENERATOR</b>
-<div style="margin-top:10px;font-size:14px; padding-left:20px; line-height:1.5;list-style-type: square; ; font-weight:bold"> 
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik/">Mikrotik Script Routeros Database</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Script Generator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH</a></li></ul>  
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">Load Balancing PCC Calculation</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Block Website Generator </a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">PCQ Burst Rate Calculator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Shared User Hotspot Generator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">DNS Over HTTPS (DoH) Server Generator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Games</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Generate Username and Password Hotspot</a> </li></ul>	
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Notification Expired for PPPoE, Hotspot, Static IP</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue + Tocken Bucket</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue + Bandwidth Shared (UpTo)</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree + Bandwidth Shared (UpTo)</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ For Queue Tree And Queue Simple</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">VPN Tunnel All Traffic Generator</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking with (ping) ICMP + Packet Size</a></li></ul>
-<ul><li><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login</a></li></ul>
- </div> 
-  </div>
-</div>	  
-	<script type="text/javascript">
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
-function callmodal() {
-  modal.style.display = "block";
-}
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script> 
-<script>  
-function _0x19b4(_0x58d59b,_0x1648d6){var _0x4db793=_0x4db7();return _0x19b4=function(_0x19b4ed,_0x22ffb0){_0x19b4ed=_0x19b4ed-0x133;var _0x4e2a60=_0x4db793[_0x19b4ed];return _0x4e2a60;},_0x19b4(_0x58d59b,_0x1648d6);}var _0xa914d=_0x19b4;function _0x4db7(){var _0x2b9cb9=['github','gateway','1831350Lqungx','focus','248952hmGaSo','lastIndexOf','value','removeAllRanges','toFixed','input-down-parent','replace','482911FFcenb','execCommand','input-end-ip-client','2pkcmnV','input-up-parent','/queue\x20simple<br>','</span>\x22\x20bucket-size=\x22<span\x20style=\x22color:#08c;\x22>0.1/0.1</span>\x22\x20comment=\x22Script\x20Generator\x20By\x20BuanaNET\x20Secure!\x22<br>','addRange','input-up-client','input-start-ip-client','</span>\x22\x20name=\x22<span\x20style=\x22color:#08c;\x20\x22>','DNS','substring','add\x20max-limit=\x22<span\x20style=\x22color:#08c;\x22>','subnet','0.1','114018gILIpv','selectNode','bit','Mbps\x20<span\x20style=\x22color:#222\x22>send\x09in\x20</span>\x20','parseFloat','location','65JeAJQM','list-output','input-parent','input-ip-parent','13412KOOyGS','innerHTML','select','getElementById','dns','size-list-down','63IRsjCF','\x20*\x20','Mbps\x20<span\x20style=\x22color:#222\x22></span>\x20','bucket-size-down','Mbit','21735StXSwO','body','href','</span>\x22\x20bucket-size=\x22<span\x20style=\x22color:#08c;\x20\x22>','66857VJsicF','getSelection','Attention!\x20IP\x20Address\x20Validation\x20Incorrect!\x20Please\x20check\x20your\x20IP\x20address\x20again!','</span>\x22\x20target=\x22<span\x20style=\x22color:#08c;\x22>','https://','tanggalwaktu','input-client-initial','moveToElementText','9pFkCmk','buananet','ipaddress','toLocaleString','bucket-capacity-down','bucket-capacity-up','bps\x20<span\x20style=\x22color:#222\x22>send\x20in\x20</span>\x20','<span\x20style=\x22color:#222\x22>s</span>','selectNodeContents','pbun','/simple-queue-generator.html','add\x20max-limit=\x22<span\x20style=\x22color:#08c;\x20\x22>','copy','toUpperCase','createTextRange','bucket-size-up','</span>\x22<br>','match','createRange','IP\x20Address','bps\x20<span\x20style=\x22color:#222\x22>To</span>\x20','\x20=\x20'];_0x4db7=function(){return _0x2b9cb9;};return _0x4db7();}(function(_0x3f8f08,_0x871d69){var _0x10d262=_0x19b4,_0x620841=_0x3f8f08();while(!![]){try{var _0xa364c2=parseInt(_0x10d262(0x15d))/0x1*(parseInt(_0x10d262(0x137))/0x2)+-parseInt(_0x10d262(0x159))/0x3+-parseInt(_0x10d262(0x14e))/0x4*(-parseInt(_0x10d262(0x14a))/0x5)+parseInt(_0x10d262(0x144))/0x6*(-parseInt(_0x10d262(0x154))/0x7)+parseInt(_0x10d262(0x17f))/0x8+parseInt(_0x10d262(0x165))/0x9*(parseInt(_0x10d262(0x17d))/0xa)+-parseInt(_0x10d262(0x134))/0xb;if(_0xa364c2===_0x871d69)break;else _0x620841['push'](_0x620841['shift']());}catch(_0x4fe4d6){_0x620841['push'](_0x620841['shift']());}}}(_0x4db7,0x1907f));var dt=new Date();document[_0xa914d(0x151)](_0xa914d(0x162))[_0xa914d(0x14f)]=dt[_0xa914d(0x168)]();function upperCaseF(_0x3bb255){setTimeout(function(){var _0x2e3363=_0x19b4;_0x3bb255['value']=_0x3bb255[_0x2e3363(0x181)]['toUpperCase']();},0x1);}function resultToFixed(_0xb17517){var _0xa09f4b=_0xa914d;return Number[_0xa09f4b(0x148)](_0xb17517)[_0xa09f4b(0x183)](0x2);}function myFunctionInput(){var _0xfc8d9d=_0xa914d,_0x3426b8='',_0x2999bd='',_0x18b553,_0x8e4fe4=document['getElementById'](_0xfc8d9d(0x14c))[_0xfc8d9d(0x181)],_0x4fcc36=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x138))[_0xfc8d9d(0x181)],_0x3d6e92=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x184))[_0xfc8d9d(0x181)],_0x214ac4=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x14d))['value'],_0x3426b8=_0xfc8d9d(0x141)+_0x4fcc36[_0xfc8d9d(0x172)]()+'/'+_0x3d6e92[_0xfc8d9d(0x172)]()+'</span>\x22\x20target=\x22<span\x20style=\x22color:#08c;\x22>'+_0x214ac4+'</span>\x22\x20name=\x22<span\x20style=\x22color:#08c;\x22>'+_0x8e4fe4+_0xfc8d9d(0x13a),_0x43d945=document[_0xfc8d9d(0x151)]('input-client')[_0xfc8d9d(0x181)],_0x23a1f0=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x163))['value'],_0x4da67f=document['getElementById'](_0xfc8d9d(0x13c))['value'],_0x39293b=document[_0xfc8d9d(0x151)]('input-down-client')[_0xfc8d9d(0x181)],_0x12e4d4=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x13d))['value'],_0x38bafc=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x136))['value'],_0x5c8b75=document[_0xfc8d9d(0x151)]('size-list-up')[_0xfc8d9d(0x181)],_0x2a7f76=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x153))[_0xfc8d9d(0x181)],_0x16c460=_0x4da67f,_0x16b369=_0x16c460[_0xfc8d9d(0x176)](/[a-zA-Z]/),_0x5be65c=_0x16c460[_0xfc8d9d(0x133)](/[^0-9]/g,''),_0xce9b1c=_0x39293b,_0x54a48f=_0xce9b1c['match'](/[a-zA-Z]/),_0x379e5c=_0xce9b1c['replace'](/[^0-9]/g,''),_0x38e459=_0x5be65c/0x400,_0x264439=_0x379e5c/0x400;if(_0x5c8b75==_0xfc8d9d(0x143))document['getElementById']('bucket-capacity-up')[_0xfc8d9d(0x14f)]=_0x5c8b75+_0xfc8d9d(0x155)+_0x4da67f+'\x20=\x20'+resultToFixed(_0x5c8b75*_0x38e459)+_0xfc8d9d(0x158),document['getElementById'](_0xfc8d9d(0x174))[_0xfc8d9d(0x14f)]='->\x200.1\x20default\x20(no\x20effect)';else{if(_0x16b369=='K'){var _0x147686=_0x5c8b75*_0x38e459/(_0x4fcc36[_0xfc8d9d(0x133)](/[^0-9]/g,'')-_0x38e459);document[_0xfc8d9d(0x151)]('bucket-capacity-up')['innerHTML']=_0x5c8b75+_0xfc8d9d(0x155)+_0x4da67f+'\x20=\x20'+resultToFixed(_0x5c8b75*_0x38e459)+'Mbit',document['getElementById'](_0xfc8d9d(0x174))[_0xfc8d9d(0x14f)]=_0x5be65c+_0x16b369+'bps\x20<span\x20style=\x22color:#222\x22>To</span>\x20'+resultToFixed(_0x5c8b75*_0x38e459)+_0xfc8d9d(0x147)+resultToFixed(_0x147686)+'<span\x20style=\x22color:#222\x22>s</span>';}else{if(_0x16b369=='M'){var _0x479c14=_0x5c8b75*_0x5be65c/(_0x4fcc36[_0xfc8d9d(0x133)](/[^0-9]/g,'')-_0x5be65c);document[_0xfc8d9d(0x151)](_0xfc8d9d(0x16a))[_0xfc8d9d(0x14f)]=_0x5c8b75+_0xfc8d9d(0x155)+_0x4da67f+'\x20=\x20'+_0x5c8b75*_0x5be65c+''+_0x16b369+_0xfc8d9d(0x146),document['getElementById'](_0xfc8d9d(0x174))['innerHTML']=_0x5be65c+_0x16b369+_0xfc8d9d(0x179)+_0x5c8b75*_0x5be65c+''+_0x16b369+_0xfc8d9d(0x16b)+resultToFixed(_0x479c14)+_0xfc8d9d(0x16c);}}}if(_0x2a7f76==_0xfc8d9d(0x143))document[_0xfc8d9d(0x151)](_0xfc8d9d(0x169))[_0xfc8d9d(0x14f)]=_0x2a7f76+_0xfc8d9d(0x155)+_0x39293b+_0xfc8d9d(0x17a)+resultToFixed(_0x2a7f76*_0x264439)+_0xfc8d9d(0x158),document[_0xfc8d9d(0x151)](_0xfc8d9d(0x157))[_0xfc8d9d(0x14f)]='->\x200.1\x20default\x20(no\x20effect)';else{if(_0x54a48f=='K'){var _0x5a66fd=_0x2a7f76*_0x264439/(_0x3d6e92[_0xfc8d9d(0x133)](/[^0-9]/g,'')-_0x264439);document[_0xfc8d9d(0x151)](_0xfc8d9d(0x169))[_0xfc8d9d(0x14f)]=_0x2a7f76+_0xfc8d9d(0x155)+_0x39293b+_0xfc8d9d(0x17a)+resultToFixed(_0x2a7f76*_0x264439)+_0xfc8d9d(0x158),document['getElementById'](_0xfc8d9d(0x157))[_0xfc8d9d(0x14f)]=_0x379e5c+_0x54a48f+'bps\x20<span\x20style=\x22color:#222\x22>To</span>\x20'+resultToFixed(_0x2a7f76*_0x264439)+_0xfc8d9d(0x156)+resultToFixed(_0x5a66fd)+_0xfc8d9d(0x16c);}else{if(_0x54a48f=='M'){var _0x1731b1=_0x2a7f76*_0x379e5c/(_0x3d6e92[_0xfc8d9d(0x133)](/[^0-9]/g,'')-_0x379e5c);document[_0xfc8d9d(0x151)](_0xfc8d9d(0x169))[_0xfc8d9d(0x14f)]=_0x2a7f76+_0xfc8d9d(0x155)+_0x39293b+'\x20=\x20'+_0x2a7f76*_0x379e5c+''+_0x54a48f+'bit',document[_0xfc8d9d(0x151)](_0xfc8d9d(0x157))[_0xfc8d9d(0x14f)]=_0x379e5c+_0x54a48f+_0xfc8d9d(0x179)+_0x2a7f76*_0x379e5c+''+_0x54a48f+'bps\x20<span\x20style=\x22color:#222\x22>send\x09in\x20</span>\x20'+resultToFixed(_0x1731b1)+_0xfc8d9d(0x16c);}}}var _0x227876=_0xfc8d9d(0x161),_0x297f1c=_0xfc8d9d(0x166),_0x460c74=_0xfc8d9d(0x16e),_0x4832ca=_0xfc8d9d(0x17b),_0x43f9cf='io',_0x6af8b6=_0x227876+_0x297f1c+_0x460c74+'.'+_0x4832ca+'.'+_0x43f9cf;window[_0xfc8d9d(0x149)][_0xfc8d9d(0x15b)]!==_0x6af8b6+_0xfc8d9d(0x16f)&&location['replace'](_0x6af8b6+_0xfc8d9d(0x16f));var _0x1f0224=_0x12e4d4,_0x3a7154=_0x1f0224['lastIndexOf']('.'),_0x561812=_0x1f0224[_0xfc8d9d(0x140)](_0x3a7154+0x1),_0x58d270=_0x38bafc,_0x91f06a=_0x58d270[_0xfc8d9d(0x180)]('.'),_0x18066d=_0x58d270[_0xfc8d9d(0x140)](_0x91f06a+0x1),_0x3709c8=_0x12e4d4[_0xfc8d9d(0x140)](0x0,_0x12e4d4[_0xfc8d9d(0x180)]('.'));for(var _0x18b553=parseInt(_0x561812);_0x18b553<=parseInt(_0x18066d);_0x18b553++){_0x2999bd+=_0xfc8d9d(0x170)+_0x4da67f[_0xfc8d9d(0x172)]()+'/'+_0x39293b[_0xfc8d9d(0x172)]()+_0xfc8d9d(0x160)+_0x3709c8+'.'+_0x18b553+_0xfc8d9d(0x13e)+_0x43d945+_0x23a1f0++ +'</span>\x22\x20parent=\x22<span\x20style=\x22color:#08c;\x20\x22>'+_0x8e4fe4+_0xfc8d9d(0x15c)+_0x5c8b75+'/'+_0x2a7f76+_0xfc8d9d(0x175);}document[_0xfc8d9d(0x151)](_0xfc8d9d(0x14b))['innerHTML']=_0xfc8d9d(0x139)+_0x3426b8+''+_0x2999bd;}function selectElementContents(_0x3cd115){var _0x4946d5=_0xa914d,_0x4fd444=document[_0x4946d5(0x15a)],_0x576f47,_0x1ae804;if(document[_0x4946d5(0x177)]&&window[_0x4946d5(0x15e)]){_0x576f47=document[_0x4946d5(0x177)](),_0x1ae804=window[_0x4946d5(0x15e)](),_0x1ae804[_0x4946d5(0x182)]();try{_0x576f47[_0x4946d5(0x16d)](_0x3cd115),_0x1ae804[_0x4946d5(0x13b)](_0x576f47);}catch(_0xd830af){_0x576f47[_0x4946d5(0x145)](_0x3cd115),_0x1ae804[_0x4946d5(0x13b)](_0x576f47);}}else _0x4fd444[_0x4946d5(0x173)]&&(_0x576f47=_0x4fd444[_0x4946d5(0x173)](),_0x576f47[_0x4946d5(0x164)](_0x3cd115),_0x576f47[_0x4946d5(0x150)]());document[_0x4946d5(0x135)](_0x4946d5(0x171));}function ValidateIPaddressOnChange(_0x4dea1e,_0x2caa7e){var _0x55dcfb=_0xa914d,_0x46ac3d=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x4f37df='';switch(_0x2caa7e){case _0x55dcfb(0x167):_0x4f37df=_0x55dcfb(0x178);break;case _0x55dcfb(0x17c):_0x4f37df=_0x55dcfb(0x17c);break;case _0x55dcfb(0x152):_0x4f37df=_0x55dcfb(0x13f);break;case _0x55dcfb(0x142):_0x4f37df='subnet\x20mask';break;}!_0x4dea1e[_0x55dcfb(0x181)][_0x55dcfb(0x176)](_0x46ac3d)&&(_0x4dea1e[_0x55dcfb(0x17e)](),alert(_0x55dcfb(0x15f)));}
-</script>	     
-	</body>
+         <div class="header">
+            <span style="float:left; display:inline;margin-right:6px; margin-top:10px">
+            <a href="https://buananetpbun.github.io/simple-queue-generator.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+            </span>
+            <h1>SIMPLE QUEUE SCRIPT GENERATOR FOR MIKROTIK PLUS TOKEN BUCKET - FOR IP SUBNET /24 ONLY</h1>
+         </div>
+         <div class="main-wrap">
+            <div class="sidebar">
+               <div style="margin-bottom:10px; height:190px">
+                  <label>Parent Name Queue</label>
+                  <div style="clear: both;"></div>
+                  <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
+                  <label>Target Local IP / Interface</label>
+                  <div style="clear: both;"></div>
+                  <input type="text" id="input-ip-parent" value="192.168.88.0/24" placeholder="192.168.88.0/24 or ether1">
+                  <div style="clear: both;"></div>
+                  <div style="float:left; width:48%;">
+                     <label>Up Total (K/M)</label>
+                     <div style="clear: both;"></div>
+                     <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
+                  </div>
+                  <div style="float:left; width:48%;margin-left:10px">
+                     <label>Down Total (K/M)</label>
+                     <div style="clear: both;"></div>
+                     <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
+                  </div>
+               </div>
+               <div style="clear: both;"></div>
+               <div style="margin-top:10px;margin-bottom:10px;border-bottom:1px solid #bbb;padding-bottom:5px">Sub Parent Queue / Child Queue</div>
+               <div style="float:left;width:48%">
+                  <label>Client Name Queue</label>
+                  <div style="clear: both;"></div>
+                  <input type="text" id="input-client" value="Client-" placeholder="Client-">
+               </div>
+               <div style="float:left;width:48%;margin-left:10px;">
+                  <label>Client Identity</label>
+                  <input type="text" id="input-client-initial" value="1" placeholder="1">
+               </div>
+               <div style="float:left; width:48%;">
+                  <label>Start IP Client</label>
+                  <div style="clear: both;"></div>
+                  <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
+               </div>
+               <div style="float:left; width:48%;margin-left:10px;">
+                  <label>End IP Client</label>
+                  <div style="clear: both;"></div>
+                  <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
+               </div>
+               <div style="clear: both;"></div>
+               <div style="float:left; width:48%;">
+                  <label>Up Client (K/M)</label>
+                  <div style="clear: both;"></div>
+                  <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
+               </div>
+               <div style="float:left; width:48%;margin-left:10px;">
+                  <label>Down Client (K/M)</label>
+                  <div style="clear: both;"></div>
+                  <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
+               </div>
+               <div style="float:left; width:48%;">
+                  <label>Bucket Size Up</label>
+                  <div style="clear: both;"></div>
+                  <select id="size-list-up">
+                     <option value="0.1">0.1 (default)</option>
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                  </select>
+               </div>
+               <div style="float:left; width:48%;margin-left:10px">
+                  <label>Bucket Size Down</label>
+                  <div style="clear: both;"></div>
+                  <select id="size-list-down">
+                     <option value="0.1">0.1 (default)</option>
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                  </select>
+               </div>
+               <div style="clear: both;"></div>
+               <div style="margin-bottom:10px;font-size:14px; font-weight:bold;padding-top:10px">
+                  <span style="color:#08c;">BANDWITH WITH TOKEN BUCKET CALCULATION</span><br>
+                  Bucket Capacity (BC) = bucket-size * max-limit<br>
+                  Time = BC / (Parent Max-limit - Token Rate)
+                  <br><br>
+                  <span style="color:#08c;">Upload Bucket Size:</span><br>
+                  Bucket Capacity = <span style="color:#08c" id="bucket-capacity-up">0</span><br>
+                  Burst <span style="color:#08c" id="bucket-size-up">0 Mbps</span><br><br>
+                  <span style="color:#08c;">Download Bucket Size:</span><br>
+                  Bucket Capacity = <span style="color:#08c" id="bucket-capacity-down">0</span><br>
+                  Burst <span style="color:#08c" id="bucket-size-down">0 Mbps</span><br>
+               </div>
+               <button style="margin-top:10px;" type="button" onclick="myFunctionInput()">Generate Script</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All Script</button> 
+               <br>
+            </div>
+            <div class="content">
+               <span style="margin-left:2px">Script Generator Result</span>
+               <div class="list-mangle">
+                  <div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">
+                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                     <!-- MIKROTIK SCRIPT DB3 -->
+                     <ins class="adsbygoogle"
+                        style="display:inline-block;width:728px;height:90px"
+                        data-ad-client="ca-pub-9740800920365268"
+                        data-ad-slot="4637807296"></ins>
+                     <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                     </script> 
+                  </div>
+                  <table id="showScript" style="padding:5px; white-space: nowrap;">
+                     <tr>
+                        <td>
+                           <span style="color:#08c;">
+                           #############################################################<br>
+                           # Simple Queue Script Generator For Mikrotik Plus Token Bucket<br>
+                           # Date/Time: <span id="tanggalwaktu"></span><br>
+                           # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
+                           #############################################################<br><br>
+                           </span>
+                           <div id="list-output"></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <br>
+               <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
+            </div>
+         </div>
+         <div class="footer">
+            © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+         </div>
+      </div>
+      <div id="myModal" class="modal">
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3><span style="color:green">SUPPORT THIS TOOL WITH DONATION :)</span></h3>
+            <br>If you like this tool you can gife me a donation at <span style="color:green">PAYPAL</span> to email: <span style="color:red">oom@o-om.com</span>
+            <br><br>
+            Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
+            <br><br>
+            Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a><br>
+            <br>
+            <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
+            <br><br>
+            <b>MORE MIKROTIK SCRIPT GENERATOR</b>
+            <div style="margin-top:10px;font-size:14px; padding-left:20px; line-height:1.5;list-style-type: square; ; font-weight:bold">
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik/">Mikrotik Script Routeros Database</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Script Generator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">Load Balancing PCC Calculation</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Block Website Generator </a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">PCQ Burst Rate Calculator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Shared User Hotspot Generator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">DNS Over HTTPS (DoH) Server Generator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Games</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Generate Username and Password Hotspot</a> </li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Notification Expired for PPPoE, Hotspot, Static IP</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue + Tocken Bucket</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue + Bandwidth Shared (UpTo)</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree + Bandwidth Shared (UpTo)</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ For Queue Tree And Queue Simple</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">VPN Tunnel All Traffic Generator</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote IP Public Static For Secondary Gateway</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking with (ping) ICMP + Packet Size</a></li>
+               </ul>
+               <ul>
+                  <li><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <script>
+         var modal = document.getElementById("myModal");
+         var span = document.getElementsByClassName("close")[0];
+         function callmodal() {
+           modal.style.display = "block";
+         }
+         span.onclick = function() {
+           modal.style.display = "none";
+         }
+         window.onclick = function(event) {
+           if (event.target == modal) {
+             modal.style.display = "none";
+           }
+         }
+      </script> 
+      <script>  
+         function _0x19b4(_0x58d59b,_0x1648d6){var _0x4db793=_0x4db7();return _0x19b4=function(_0x19b4ed,_0x22ffb0){_0x19b4ed=_0x19b4ed-0x133;var _0x4e2a60=_0x4db793[_0x19b4ed];return _0x4e2a60;},_0x19b4(_0x58d59b,_0x1648d6);}var _0xa914d=_0x19b4;function _0x4db7(){var _0x2b9cb9=['github','gateway','1831350Lqungx','focus','248952hmGaSo','lastIndexOf','value','removeAllRanges','toFixed','input-down-parent','replace','482911FFcenb','execCommand','input-end-ip-client','2pkcmnV','input-up-parent','/queue\x20simple<br>','</span>\x22\x20bucket-size=\x22<span\x20style=\x22color:#08c;\x22>0.1/0.1</span>\x22\x20comment=\x22Script\x20Generator\x20By\x20BuanaNET\x20Secure!\x22<br>','addRange','input-up-client','input-start-ip-client','</span>\x22\x20name=\x22<span\x20style=\x22color:#08c;\x20\x22>','DNS','substring','add\x20max-limit=\x22<span\x20style=\x22color:#08c;\x22>','subnet','0.1','114018gILIpv','selectNode','bit','Mbps\x20<span\x20style=\x22color:#222\x22>send\x09in\x20</span>\x20','parseFloat','location','65JeAJQM','list-output','input-parent','input-ip-parent','13412KOOyGS','innerHTML','select','getElementById','dns','size-list-down','63IRsjCF','\x20*\x20','Mbps\x20<span\x20style=\x22color:#222\x22></span>\x20','bucket-size-down','Mbit','21735StXSwO','body','href','</span>\x22\x20bucket-size=\x22<span\x20style=\x22color:#08c;\x20\x22>','66857VJsicF','getSelection','Attention!\x20IP\x20Address\x20Validation\x20Incorrect!\x20Please\x20check\x20your\x20IP\x20address\x20again!','</span>\x22\x20target=\x22<span\x20style=\x22color:#08c;\x22>','https://','tanggalwaktu','input-client-initial','moveToElementText','9pFkCmk','buananet','ipaddress','toLocaleString','bucket-capacity-down','bucket-capacity-up','bps\x20<span\x20style=\x22color:#222\x22>send\x20in\x20</span>\x20','<span\x20style=\x22color:#222\x22>s</span>','selectNodeContents','pbun','/simple-queue-generator.html','add\x20max-limit=\x22<span\x20style=\x22color:#08c;\x20\x22>','copy','toUpperCase','createTextRange','bucket-size-up','</span>\x22<br>','match','createRange','IP\x20Address','bps\x20<span\x20style=\x22color:#222\x22>To</span>\x20','\x20=\x20'];_0x4db7=function(){return _0x2b9cb9;};return _0x4db7();}(function(_0x3f8f08,_0x871d69){var _0x10d262=_0x19b4,_0x620841=_0x3f8f08();while(!![]){try{var _0xa364c2=parseInt(_0x10d262(0x15d))/0x1*(parseInt(_0x10d262(0x137))/0x2)+-parseInt(_0x10d262(0x159))/0x3+-parseInt(_0x10d262(0x14e))/0x4*(-parseInt(_0x10d262(0x14a))/0x5)+parseInt(_0x10d262(0x144))/0x6*(-parseInt(_0x10d262(0x154))/0x7)+parseInt(_0x10d262(0x17f))/0x8+parseInt(_0x10d262(0x165))/0x9*(parseInt(_0x10d262(0x17d))/0xa)+-parseInt(_0x10d262(0x134))/0xb;if(_0xa364c2===_0x871d69)break;else _0x620841['push'](_0x620841['shift']());}catch(_0x4fe4d6){_0x620841['push'](_0x620841['shift']());}}}(_0x4db7,0x1907f));var dt=new Date();document[_0xa914d(0x151)](_0xa914d(0x162))[_0xa914d(0x14f)]=dt[_0xa914d(0x168)]();function upperCaseF(_0x3bb255){setTimeout(function(){var _0x2e3363=_0x19b4;_0x3bb255['value']=_0x3bb255[_0x2e3363(0x181)]['toUpperCase']();},0x1);}function resultToFixed(_0xb17517){var _0xa09f4b=_0xa914d;return Number[_0xa09f4b(0x148)](_0xb17517)[_0xa09f4b(0x183)](0x2);}function myFunctionInput(){var _0xfc8d9d=_0xa914d,_0x3426b8='',_0x2999bd='',_0x18b553,_0x8e4fe4=document['getElementById'](_0xfc8d9d(0x14c))[_0xfc8d9d(0x181)],_0x4fcc36=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x138))[_0xfc8d9d(0x181)],_0x3d6e92=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x184))[_0xfc8d9d(0x181)],_0x214ac4=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x14d))['value'],_0x3426b8=_0xfc8d9d(0x141)+_0x4fcc36[_0xfc8d9d(0x172)]()+'/'+_0x3d6e92[_0xfc8d9d(0x172)]()+'</span>\x22\x20target=\x22<span\x20style=\x22color:#08c;\x22>'+_0x214ac4+'</span>\x22\x20name=\x22<span\x20style=\x22color:#08c;\x22>'+_0x8e4fe4+_0xfc8d9d(0x13a),_0x43d945=document[_0xfc8d9d(0x151)]('input-client')[_0xfc8d9d(0x181)],_0x23a1f0=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x163))['value'],_0x4da67f=document['getElementById'](_0xfc8d9d(0x13c))['value'],_0x39293b=document[_0xfc8d9d(0x151)]('input-down-client')[_0xfc8d9d(0x181)],_0x12e4d4=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x13d))['value'],_0x38bafc=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x136))['value'],_0x5c8b75=document[_0xfc8d9d(0x151)]('size-list-up')[_0xfc8d9d(0x181)],_0x2a7f76=document[_0xfc8d9d(0x151)](_0xfc8d9d(0x153))[_0xfc8d9d(0x181)],_0x16c460=_0x4da67f,_0x16b369=_0x16c460[_0xfc8d9d(0x176)](/[a-zA-Z]/),_0x5be65c=_0x16c460[_0xfc8d9d(0x133)](/[^0-9]/g,''),_0xce9b1c=_0x39293b,_0x54a48f=_0xce9b1c['match'](/[a-zA-Z]/),_0x379e5c=_0xce9b1c['replace'](/[^0-9]/g,''),_0x38e459=_0x5be65c/0x400,_0x264439=_0x379e5c/0x400;if(_0x5c8b75==_0xfc8d9d(0x143))document['getElementById']('bucket-capacity-up')[_0xfc8d9d(0x14f)]=_0x5c8b75+_0xfc8d9d(0x155)+_0x4da67f+'\x20=\x20'+resultToFixed(_0x5c8b75*_0x38e459)+_0xfc8d9d(0x158),document['getElementById'](_0xfc8d9d(0x174))[_0xfc8d9d(0x14f)]='->\x200.1\x20default\x20(no\x20effect)';else{if(_0x16b369=='K'){var _0x147686=_0x5c8b75*_0x38e459/(_0x4fcc36[_0xfc8d9d(0x133)](/[^0-9]/g,'')-_0x38e459);document[_0xfc8d9d(0x151)]('bucket-capacity-up')['innerHTML']=_0x5c8b75+_0xfc8d9d(0x155)+_0x4da67f+'\x20=\x20'+resultToFixed(_0x5c8b75*_0x38e459)+'Mbit',document['getElementById'](_0xfc8d9d(0x174))[_0xfc8d9d(0x14f)]=_0x5be65c+_0x16b369+'bps\x20<span\x20style=\x22color:#222\x22>To</span>\x20'+resultToFixed(_0x5c8b75*_0x38e459)+_0xfc8d9d(0x147)+resultToFixed(_0x147686)+'<span\x20style=\x22color:#222\x22>s</span>';}else{if(_0x16b369=='M'){var _0x479c14=_0x5c8b75*_0x5be65c/(_0x4fcc36[_0xfc8d9d(0x133)](/[^0-9]/g,'')-_0x5be65c);document[_0xfc8d9d(0x151)](_0xfc8d9d(0x16a))[_0xfc8d9d(0x14f)]=_0x5c8b75+_0xfc8d9d(0x155)+_0x4da67f+'\x20=\x20'+_0x5c8b75*_0x5be65c+''+_0x16b369+_0xfc8d9d(0x146),document['getElementById'](_0xfc8d9d(0x174))['innerHTML']=_0x5be65c+_0x16b369+_0xfc8d9d(0x179)+_0x5c8b75*_0x5be65c+''+_0x16b369+_0xfc8d9d(0x16b)+resultToFixed(_0x479c14)+_0xfc8d9d(0x16c);}}}if(_0x2a7f76==_0xfc8d9d(0x143))document[_0xfc8d9d(0x151)](_0xfc8d9d(0x169))[_0xfc8d9d(0x14f)]=_0x2a7f76+_0xfc8d9d(0x155)+_0x39293b+_0xfc8d9d(0x17a)+resultToFixed(_0x2a7f76*_0x264439)+_0xfc8d9d(0x158),document[_0xfc8d9d(0x151)](_0xfc8d9d(0x157))[_0xfc8d9d(0x14f)]='->\x200.1\x20default\x20(no\x20effect)';else{if(_0x54a48f=='K'){var _0x5a66fd=_0x2a7f76*_0x264439/(_0x3d6e92[_0xfc8d9d(0x133)](/[^0-9]/g,'')-_0x264439);document[_0xfc8d9d(0x151)](_0xfc8d9d(0x169))[_0xfc8d9d(0x14f)]=_0x2a7f76+_0xfc8d9d(0x155)+_0x39293b+_0xfc8d9d(0x17a)+resultToFixed(_0x2a7f76*_0x264439)+_0xfc8d9d(0x158),document['getElementById'](_0xfc8d9d(0x157))[_0xfc8d9d(0x14f)]=_0x379e5c+_0x54a48f+'bps\x20<span\x20style=\x22color:#222\x22>To</span>\x20'+resultToFixed(_0x2a7f76*_0x264439)+_0xfc8d9d(0x156)+resultToFixed(_0x5a66fd)+_0xfc8d9d(0x16c);}else{if(_0x54a48f=='M'){var _0x1731b1=_0x2a7f76*_0x379e5c/(_0x3d6e92[_0xfc8d9d(0x133)](/[^0-9]/g,'')-_0x379e5c);document[_0xfc8d9d(0x151)](_0xfc8d9d(0x169))[_0xfc8d9d(0x14f)]=_0x2a7f76+_0xfc8d9d(0x155)+_0x39293b+'\x20=\x20'+_0x2a7f76*_0x379e5c+''+_0x54a48f+'bit',document[_0xfc8d9d(0x151)](_0xfc8d9d(0x157))[_0xfc8d9d(0x14f)]=_0x379e5c+_0x54a48f+_0xfc8d9d(0x179)+_0x2a7f76*_0x379e5c+''+_0x54a48f+'bps\x20<span\x20style=\x22color:#222\x22>send\x09in\x20</span>\x20'+resultToFixed(_0x1731b1)+_0xfc8d9d(0x16c);}}}var _0x227876=_0xfc8d9d(0x161),_0x297f1c=_0xfc8d9d(0x166),_0x460c74=_0xfc8d9d(0x16e),_0x4832ca=_0xfc8d9d(0x17b),_0x43f9cf='io',_0x6af8b6=_0x227876+_0x297f1c+_0x460c74+'.'+_0x4832ca+'.'+_0x43f9cf;window[_0xfc8d9d(0x149)][_0xfc8d9d(0x15b)]!==_0x6af8b6+_0xfc8d9d(0x16f)&&location['replace'](_0x6af8b6+_0xfc8d9d(0x16f));var _0x1f0224=_0x12e4d4,_0x3a7154=_0x1f0224['lastIndexOf']('.'),_0x561812=_0x1f0224[_0xfc8d9d(0x140)](_0x3a7154+0x1),_0x58d270=_0x38bafc,_0x91f06a=_0x58d270[_0xfc8d9d(0x180)]('.'),_0x18066d=_0x58d270[_0xfc8d9d(0x140)](_0x91f06a+0x1),_0x3709c8=_0x12e4d4[_0xfc8d9d(0x140)](0x0,_0x12e4d4[_0xfc8d9d(0x180)]('.'));for(var _0x18b553=parseInt(_0x561812);_0x18b553<=parseInt(_0x18066d);_0x18b553++){_0x2999bd+=_0xfc8d9d(0x170)+_0x4da67f[_0xfc8d9d(0x172)]()+'/'+_0x39293b[_0xfc8d9d(0x172)]()+_0xfc8d9d(0x160)+_0x3709c8+'.'+_0x18b553+_0xfc8d9d(0x13e)+_0x43d945+_0x23a1f0++ +'</span>\x22\x20parent=\x22<span\x20style=\x22color:#08c;\x20\x22>'+_0x8e4fe4+_0xfc8d9d(0x15c)+_0x5c8b75+'/'+_0x2a7f76+_0xfc8d9d(0x175);}document[_0xfc8d9d(0x151)](_0xfc8d9d(0x14b))['innerHTML']=_0xfc8d9d(0x139)+_0x3426b8+''+_0x2999bd;}function selectElementContents(_0x3cd115){var _0x4946d5=_0xa914d,_0x4fd444=document[_0x4946d5(0x15a)],_0x576f47,_0x1ae804;if(document[_0x4946d5(0x177)]&&window[_0x4946d5(0x15e)]){_0x576f47=document[_0x4946d5(0x177)](),_0x1ae804=window[_0x4946d5(0x15e)](),_0x1ae804[_0x4946d5(0x182)]();try{_0x576f47[_0x4946d5(0x16d)](_0x3cd115),_0x1ae804[_0x4946d5(0x13b)](_0x576f47);}catch(_0xd830af){_0x576f47[_0x4946d5(0x145)](_0x3cd115),_0x1ae804[_0x4946d5(0x13b)](_0x576f47);}}else _0x4fd444[_0x4946d5(0x173)]&&(_0x576f47=_0x4fd444[_0x4946d5(0x173)](),_0x576f47[_0x4946d5(0x164)](_0x3cd115),_0x576f47[_0x4946d5(0x150)]());document[_0x4946d5(0x135)](_0x4946d5(0x171));}function ValidateIPaddressOnChange(_0x4dea1e,_0x2caa7e){var _0x55dcfb=_0xa914d,_0x46ac3d=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x4f37df='';switch(_0x2caa7e){case _0x55dcfb(0x167):_0x4f37df=_0x55dcfb(0x178);break;case _0x55dcfb(0x17c):_0x4f37df=_0x55dcfb(0x17c);break;case _0x55dcfb(0x152):_0x4f37df=_0x55dcfb(0x13f);break;case _0x55dcfb(0x142):_0x4f37df='subnet\x20mask';break;}!_0x4dea1e[_0x55dcfb(0x181)][_0x55dcfb(0x176)](_0x46ac3d)&&(_0x4dea1e[_0x55dcfb(0x17e)](),alert(_0x55dcfb(0x15f)));}
+      </script>	     
+   </body>
 </html>
