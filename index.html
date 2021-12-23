@@ -36,17 +36,13 @@
          ################################################
          ----------------------------------------------- */  
          body {
-         background: #8E2DE2;  /* fallback for old browsers */
-         background: -webkit-linear-gradient(to left, #8E2DE2, #4A00E0);  /* Chrome 10-25, Safari 5.1-6 */
-         background: linear-gradient(to left, #8E2DE2, #4A00E0 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-         -ms-text-size-adjust: 100%;
-         -webkit-text-size-adjust:100%;
+         background: #222;  /* fallback for old browsers */
          line-height:2.0;
          font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
          font-size: 16px;
          word-wrap: break-word;
          }
-         h1, h2 {font-size: 25px; border-bottom:0px solid #ddd; margin-bottom:20px; color:#000;line-height:1.5}
+         h1, h2 {font-size: 50px; border-bottom:0px solid #ddd; margin-bottom:20px; color:#000;line-height:1.5}
          h3, h4, h5, h6{font-size: 20px; border-bottom:1px solid #ddd; margin-bottom:10px; padding-bottom:10px; color:#000;line-height:1.5}
          pre {
          white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
@@ -60,7 +56,7 @@
          padding:0;
          margin:5px 5px 0 17px;
          display:list-item;
-         list-style: square;
+         list-style: disc;
          }
          .logo {
          padding-top:10px;
@@ -273,51 +269,47 @@
          background-color: #8c0615;
          border-color: #8c0615;
          }
-         /* The Modal (background) */
-         .modal {
-         display: none; /* Hidden by default */
-         position: fixed; /* Stay in place */
-         z-index: 1; /* Sit on top */
-         padding-top: 100px; /* Location of the box */
-         left: 0;
-         top: 0;
-         width: 100%; /* Full width */
-         height: 100%; /* Full height */
-         overflow: auto; /* Enable scroll if needed */
-         background-color: rgb(0,0,0); /* Fallback color */
-         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-         }
-         /* Modal Content */
-         .modal-content {
-         background: rgb(0, 0, 0); /* Fallback color */
-         background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-         background-color: #fefefe;
-         background-repeat: no-repeat;
-         background-position: right bottom; 
-         background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
-         margin: auto;
-         padding: 20px;
-         border: 1px solid #888;
-         width: 50%;
-         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-         }
-         /* The Close Button */
-         .close {
-         text-shadow: 0px 0px 3px #fff;
-         color: #111;
-         float: right;
-         font-size: 28px;
-         font-weight: bold;
-         }
-         .close:hover,
-         .close:focus {
-         color: red;
-         text-decoration: none;
-         cursor: pointer;
-         }
-         #container_notlike, #container_like {
-         display:none
-         }
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		/* Modal Content */
+		.modal-content {
+		text-shadow: 0px 0px 3px #fff;
+		  background-color: #fefefe;
+			background-repeat: no-repeat;
+		  background-position: right bottom; 
+		  background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
+		  margin: auto;
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 50%;
+		  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+		}
+		/* The Close Button */
+		.close {
+		text-shadow: 0px 0px 3px #fff;
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		} 
       </style>
    </head>
    <body onLoad="callmodal()">
@@ -325,19 +317,16 @@
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v12.0&appId=975992736592429&autoLogAppEvents=1" nonce="ZxfRWa64"></script>
       <div class="content">
          <div class="logo">	  
-            <a href="https://buananetpbun.github.io"><span style="color:#8E2DE2 !important">BuanaNETPBun</span>.Github.io</a> 
+            <a href="https://buananetpbun.github.io"><span style="color:#8E2DE2 !important">B</span>uananetpbun.Github.io</a> 
          </div>
 	  <div style="float:right;">    
-         <a class="github-button" href="https://github.com/buananetpbun" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-show-count="true" aria-label="Follow @buananetpbun">Follow @buananetpbun</a>    
-         <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+         <a class="github-button" href="https://github.com/buananetpbun" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-show-count="true" aria-label="Follow @buananetpbun">Follow</a>    
+		<a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-show-count="true" aria-label="Star">Star</a>
+		 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
          </div>
 	 <div style="float:left; margin-right:5px; margin-top:3px">
          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="false"></div>
          </div>
-         <div style="clear:both"></div>
-         <span style="line-height:0;float:left; display:inline;margin-right:6px; margin-top:25px">
-         <img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME">
-         </span>	 
          <h2>FREE MIKROTIK ROUTEROS TOOLS</h2>
          <h3>MIKROTIK <span style="color:red">[</span> SCRIPT <span style="color:red">]</span> ROUTEROS DATABASE</h3>
          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!</p>
@@ -477,12 +466,8 @@
             Ingin memberikan donasi biar makin semangat membuat tool MikroTik terbaik lainnya disini <a target="_blank" href="https://saweria.co/buananetpbun">SAWERIA.CO</a>
             <br>
             Jika ada pertanyaan atau menemukan BUG silahkan hubungi admin disini <a href="https://www.facebook.com/buananetmikrotik">fb.com/buananetmikrotik</a>
-            <br><br></b>
- 		<div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="false"></div>
-		<br><br>
-		<a class="github-button" href="https://github.com/buananetpbun" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-size="small" data-show-count="true" aria-label="Follow @buananetpbun on GitHub">Follow @buananetpbun</a>
-		<a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-size="small" data-show-count="true" aria-label="Star buananetpbun/buananetpbun.github.io on GitHub">Star</a> 
-		<br><br>
+            </b><br><br>
+           <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
          </div>
       </div>
       <script>
