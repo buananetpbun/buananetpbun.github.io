@@ -38,8 +38,8 @@
          font-size: 16px;
          word-wrap: break-word;
          }
-         h1, h2 {font-size: 45px; border-bottom:0px solid #ddd; margin-bottom:20px; color:#000;line-height:1.5}
-         h3, h4, h5, h6{font-size: 20px; border-bottom:1px solid #ddd; margin-bottom:10px; padding-bottom:10px; color:#000;line-height:1.5}
+         h1, h2 {font-size: 45px; margin-bottom:20px; color:#111;display:inline;line-height:1.5;clear:both}
+         h3, h4, h5, h6{font-size: 20px; border-bottom:1px solid #ccc; margin-bottom:10px; padding-bottom:10px; line-height:1.5}
          pre {
          white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
          white-space: -pre-wrap; /* Opera */
@@ -55,14 +55,21 @@
          list-style: disc;
          }
          .logo {
-         color: #111;
+         color: #ddd;
          text-decoration:none;
          font-size:20px;
          font-weight:bold; 
          border-bottom:0px solid #ccc;
+         border-radius: 5px;
+         background: #333;
+         padding:10px;
+         color:#ddd;
+         margin-bottom:10px;
+         margin-top:10px;
+         clear:both;
          }	
          .logo a{
-         color:#111 !important;
+         color:#ddd !important;
          }
          * {
          box-sizing: border-box;
@@ -74,7 +81,7 @@
          padding: 20px;
          border-radius: 5px;
          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-         background:#fff;
+         background:#f9f9f9;
          }
          /* unvisited link */
          a:link {
@@ -93,7 +100,7 @@
          }
          @media screen and (max-width: 1024px){
          body{
-         background: #fff !important;
+         background: #ddd !important;
          padding:10px;  
          }
          .content {
@@ -101,7 +108,7 @@
          padding:0;
          border-radius: 3px;
          box-shadow: 0 0 0 0;
-         background:#fff;
+         background:#ddd;
          }  
          .logo {font-size:28px;}  
          }  
@@ -117,7 +124,7 @@
          }
          .resp-sharing-button__link {
          text-decoration: none;
-         color: #fff;
+         color: #ddd;
          margin: 0.5em
          }
          .resp-sharing-button {
@@ -137,13 +144,13 @@
          }
          /* Non solid icons get a stroke */
          .resp-sharing-button__icon {
-         stroke: #fff;
+         stroke: #ddd;
          fill: none
          }
          /* Solid icons get a fill */
          .resp-sharing-button__icon--solid,
          .resp-sharing-button__icon--solidcircle {
-         fill: #fff;
+         fill: #ddd;
          stroke: none
          }
          .resp-sharing-button--twitter {
@@ -297,7 +304,7 @@
          }
          .close:hover,
          .close:focus {
-         color: #000;
+         color: #111;
          text-decoration: none;
          cursor: pointer;
          } 
@@ -307,20 +314,19 @@
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
       <div class="content">
-         <div style="clear:both">
-            <div class="logo">	  
-               [admin@mikrotik] > { <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> }
-            </div>
-            <div style="float:right;margin-top:2px">    
-               <a class="github-button" href="https://github.com/buananetpbun" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-show-count="true" aria-label="Follow @buananetpbun">Follow</a>    
-               <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-show-count="true" aria-label="Star">Star</a>
-               <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-            </div>
-            <div style="float:right; margin-right:5px; margin-top:0px">
-               <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-            </div>
+         <div class="logo">	  
+            [admin@mikrotik] > <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>
          </div>
-         <h2>MikroTik: RouterOS Script Tools</h2>
+         <div style="float:right;margin-top:2px">    
+            <a class="github-button" href="https://github.com/buananetpbun" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-show-count="true" aria-label="Follow @buananetpbun">Follow @buananetpbun</a>    
+            <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-color-scheme="no-preference: dark; light: dark_dimmed; dark: dark;" data-show-count="true" aria-label="Star">Star buananetpbun.github.io</a>
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+         </div>
+         <div style="float:right; margin-right:3px; margin-top:0px">
+            <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+         </div>
+         <div style="clear:both;"></div>
+         <h1>MikroTik: Router-OS Script and Tools</h1>
          <h3>// MIKROTIK <span style="color:#ff6600">[</span> SCRIPT <span style="color:#ff6600">]</span> ROUTEROS DATABASE</h3>
          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!</p>
          <h3>// MIKROTIK SCRIPT GENERATOR BY BUANANET-PBUN</h3>
@@ -392,8 +398,8 @@
          <p><a target="_blank"  href="https://github.com/aviantorichad/MIKROSTATOR">MIKROSTATOR</a> - MIKROSTATOR is an application that is used to perform administration on an internet network using a mikrotik router.</p>
          <p><a target="_blank"  href="https://mikbotam.net">MIKBOTAM</a> - Mikbotam is an application that makes it easy for hotspot services, because it makes it easier to generate usernames and passwords as well as easier user management with a pleasing web interface.</p>
          <br>
-         <div style="line-height:normal">
-            <b>Share this tool with your friends</b><br>
+         <div style="line-height:normal !important; text-align:center">
+            Share this tool with your friends<br>
             <!-- Sharingbutton Facebook -->
             <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html" target="_blank" rel="noopener" aria-label="">
                <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
@@ -453,7 +459,7 @@
       <div id="myModal" class="modal">
          <div class="modal-content">
             <span class="close">&times;</span>
-            <div style="font-size:20px;font-weight:bold">// Want to give me a gift?</div>
+            <div style="font-size:20px;font-weight:bold">Want to give me a Gift?</div>
             <p>PAYPAL to <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
             <p>SAWERIA to <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
             <p>Report Bugs? <a href="https://fb.me/buananetmikrotik">fb.me/buananetmikrotik</a></p>
