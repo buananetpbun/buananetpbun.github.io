@@ -41,12 +41,6 @@
          * {
          box-sizing: border-box;
          }
-		 p {
-         padding:0;
-         margin:5px 5px 0 17px;
-         display:list-item;
-         list-style: disc;
-         }
          .logo {
          margin-top:30px;
          color: #111;
@@ -280,24 +274,11 @@
          height: 100%; /* Full height */
          overflow: auto; /* Enable scroll if needed */
          background-color: rgb(0,0,0); /* Fallback color */
-         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-         }
-         /* The Modal (background) */
-         .modal {
-         display: none; /* Hidden by default */
-         position: fixed; /* Stay in place */
-         z-index: 1; /* Sit on top */
-         padding-top: 100px; /* Location of the box */
-         left: 0;
-         top: 0;
-         width: 100%; /* Full width */
-         height: 100%; /* Full height */
-         overflow: auto; /* Enable scroll if needed */
-         background-color: rgb(0,0,0); /* Fallback color */
          background-color: rgba(0,0,0,0); /* Black w/ opacity */
          }
          /* Modal Content */
          .modal-content {
+		 line-height:2.0;
          border-radius: 5px;
          background-color: #333;
          color:#ddd;
@@ -308,6 +289,12 @@
          border: 1px solid #444;
          width: 440px;
          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+         }
+		 .modal-content p {
+         padding:0;
+         margin:5px 5px 0 17px;
+         display:list-item;
+         list-style: disc;
          }
          /* The Close Button */
          .close {
