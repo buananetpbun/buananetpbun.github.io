@@ -275,30 +275,43 @@
          background-color: rgb(0,0,0); /* Fallback color */
          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
          }
+         /* The Modal (background) */
+         .modal {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 1; /* Sit on top */
+         padding-top: 100px; /* Location of the box */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0); /* Black w/ opacity */
+         }
          /* Modal Content */
          .modal-content {
-         text-shadow: 0px 0px 3px #fff;
-         background-color: #fefefe;
+         border-radius: 5px;
+         background-color: #333;
+         color:#ddd;
          background-repeat: no-repeat;
-         background-position: right bottom; 
-         background-image: url('https://user-images.githubusercontent.com/42666125/132250766-6f12c498-566f-4244-a0a6-01e438a3a719.png') ;
+         background-position: right bottom;
          margin: auto;
          padding: 20px;
-         border: 1px solid #888;
-         width: 50%;
+         border: 1px solid #444;
+         width: 440px;
          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
          }
          /* The Close Button */
          .close {
-         text-shadow: 0px 0px 3px #fff;
          color: #aaaaaa;
          float: right;
-         font-size: 28px;
+         font-size: 20px;
          font-weight: bold;
          }
          .close:hover,
          .close:focus {
-         color: #000;
+         color: red;
          text-decoration: none;
          cursor: pointer;
          } 
