@@ -71,7 +71,7 @@
          border-top:1px solid #ccc;
          }
          .main-wrap{
-         background-color:#a8328b;
+         background-color:#ff6600;
          }     
          .content{
          float:right;
@@ -101,16 +101,16 @@
          margin-top:10px;
          }
          a:link {
-         color: #a8328b;
+         color: #ff6600;
          }
          a:visited {
-         color: #a8328b;
+         color: #ff6600;
          }
          a:hover {
-         color: #a8328b;
+         color: #ff6600;
          }
          a:active {
-         color: #a8328b;
+         color: #ff6600;
          }
          .menu {
          clear:both;
@@ -155,8 +155,8 @@
          }
          button {
          color: #fff;
-         background-color: #a8328b;
-         border-color: #a8328b;
+         background-color: #ff6600;
+         border-color: #ff6600;
          border:none;
          padding:8px;
          width:137px;
@@ -189,7 +189,7 @@
          display: inline-block;
          }
          input[type=submit] {
-         background-color: #a8328b;
+         background-color: #ff6600;
          color: white;
          padding: 12px 20px;
          border: none;
@@ -296,7 +296,7 @@
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
       <div id="wrap">
          <div class="logo">
-            <a href="https://buananetpbun.github.io"><span style="color:#a8328b !important">BuanaNETPBun</span>.Github.io</a> 
+            <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
             <div style="float:right">
                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
             </div>
@@ -337,7 +337,7 @@
                <table id="showScript" style="padding:5px; white-space: nowrap;">
                   <tr>
                      <td>
-                        <span style="color:#a8328b;">
+                        <span style="color:#ff6600;">
                         ########################################################<br>
                         # Remote IP Public Static For Secondary Gateway Mikrotik<br>
                         # Date/Time: <span id="tanggalwaktu"></span><br>
@@ -346,11 +346,11 @@
                         </span>
                         <div id="list-output">
                            /ip firewall mangle<br>
-                           add action=mark-connection chain=input in-interface="<span id="interface-isp" style="color:#a8328b">ether2-Astinet</span>" new-connection-mark=ip-public passthrough=yes<br>
+                           add action=mark-connection chain=input in-interface="<span id="interface-isp" style="color:#ff6600">ether2-Astinet</span>" new-connection-mark=ip-public passthrough=yes<br>
                            add action=mark-routing chain=output connection-mark=ip-public  new-routing-mark=ip-public passthrough=no<br>
                            <br>
                            /ip route<br>
-                           add check-gateway=ping gateway="<span id="ip-gateway" style="color:#a8328b">192.168.10.1</span>" routing-mark=ip-public<br>
+                           add check-gateway=ping gateway="<span id="ip-gateway" style="color:#ff6600">192.168.10.1</span>" routing-mark=ip-public<br>
                         </div>
                      </td>
                   </tr>

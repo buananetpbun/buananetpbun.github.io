@@ -112,16 +112,16 @@
          margin-top:10px;
          }
          a:link {
-         color: #154c79;
+         color: #ff6600;
          }
          a:visited {
-         color: #154c79;
+         color: #ff6600;
          }
          a:hover {
-         color: #154c79;
+         color: #ff6600;
          }
          a:active {
-         color: #154c79;
+         color: #ff6600;
          }
          .menu {
          margin-bottom:13px;
@@ -132,7 +132,7 @@
          width:300px;
          margin-bottom:1px;
          font-weight:bold;
-         background-color:#154c79;
+         background-color:#ff6600;
          padding:6px;
          color:white;
          display: inline-block;
@@ -166,8 +166,8 @@
          }
          button {
          color: #fff;
-         background-color: #154c79;
-         border-color: #154c79;
+         background-color: #ff6600;
+         border-color: #ff6600;
          border:none;
          padding:8px;
          width:135px;
@@ -201,7 +201,7 @@
          display: inline-block;
          }
          input[type=submit] {
-         background-color: #154c79;
+         background-color: #ff6600;
          color: white;
          padding: 13px 20px;
          border: none;
@@ -307,7 +307,7 @@
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
       <div id="wrap">
          <div class="logo">
-            <a href="https://buananetpbun.github.io"><span style="color:#154c79 !important">BuanaNETPBun</span>.Github.io</a> 
+            <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
             <div style="float:right">
                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
             </div>
@@ -372,7 +372,7 @@
                   <table id="showScript" style="padding:5px;">
                      <tr>
                         <td>
-                           <span style="color:#154c79;">
+                           <span style="color:#ff6600;">
                            ###################################################################<br>
                            # VPN Tunnel All Traffic Script Generator By BuanaNETPBun.Github.io<br>
                            # Date/Time: <span id="tanggalwaktu"></span><br>
@@ -380,14 +380,14 @@
                            # VPN Type -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
                            ###################################################################<br>
                            </span>
-                           <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text" style="color:#154c79; font-weight:bold" >pptp</span>-client</span><br>
-                           add connect-to="<span id="vpn-ip-text" style="color:#154c79; font-weight:bold">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1" style="color:#154c79; font-weight:bold">VPN-TUNNEL</span>" user="<span id="vpn-username-text" style="color:#154c79; font-weight:bold" >xxxxxx</span>" password="<span id="vpn-password-text" style="color:#154c79; font-weight:bold">xxxxxx</span>" comment="<span id="vpn-name-text4">VPN-TUNNEL-BY-BNT</span>"<br>
+                           <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text" style="color:#ff6600; font-weight:bold" >pptp</span>-client</span><br>
+                           add connect-to="<span id="vpn-ip-text" style="color:#ff6600; font-weight:bold">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1" style="color:#ff6600; font-weight:bold">VPN-TUNNEL</span>" user="<span id="vpn-username-text" style="color:#ff6600; font-weight:bold" >xxxxxx</span>" password="<span id="vpn-password-text" style="color:#ff6600; font-weight:bold">xxxxxx</span>" comment="<span id="vpn-name-text4">VPN-TUNNEL-BY-BNT</span>"<br>
                            <span style="color:black;font-weight:bold">/ip firewall nat</span><br>
-                           add chain=srcnat out-interface="<span id="vpn-name-text2" style="color:#154c79; font-weight:bold">VPN-TUNNEL</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-TUNNEL-BY-BNT</span>"<br>
+                           add chain=srcnat out-interface="<span id="vpn-name-text2" style="color:#ff6600; font-weight:bold">VPN-TUNNEL</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-TUNNEL-BY-BNT</span>"<br>
                            <span style="color:black;font-weight:bold">/ip route</span><br>
-                           add gateway="<span id="vpn-name-text3" style="color:#154c79; font-weight:bold">VPN-TUNNEL</span>" distance=1 comment="<span id="vpn-name-text6">VPN-TUNNEL-BY-BNT</span>"<br>
+                           add gateway="<span id="vpn-name-text3" style="color:#ff6600; font-weight:bold">VPN-TUNNEL</span>" distance=1 comment="<span id="vpn-name-text6">VPN-TUNNEL-BY-BNT</span>"<br>
                            <span id="ip-gateway-text">
-                           add dst-address="<span id="vpn-ip-text2" style="color:#154c79; font-weight:bold" >x.x.x.x.x</span>" distance=1 gateway="<span id="ip-gateway-game" style="color:#154c79; font-weight:bold">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-TUNNEL-BY-BNT</span>"</span><br>
+                           add dst-address="<span id="vpn-ip-text2" style="color:#ff6600; font-weight:bold" >x.x.x.x.x</span>" distance=1 gateway="<span id="ip-gateway-game" style="color:#ff6600; font-weight:bold">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-TUNNEL-BY-BNT</span>"</span><br>
                         </td>
                      </tr>
                   </table>
@@ -400,7 +400,7 @@
             <div style="float:right">
                © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
             </div>
-            <span style="color:#154c79">
+            <span style="color:#ff6600">
             <b># This Script for remove all Script from this Generator</b></span><br>
             /interface pptp-client remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
             /interface l2tp-client remove [find comment="VPN-TUNNEL-BY-BNT"]<br>

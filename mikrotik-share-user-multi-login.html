@@ -110,16 +110,16 @@
          margin-top:10px;
          }
          a:link {
-         color: rgba(255,0,36,.7);
+         color: #ff6600;
          }
          a:visited {
-         color: rgba(255,0,36,.7);
+         color: #ff6600;
          }
          a:hover {
-         color: rgba(255,0,36,.7);
+         color: #ff6600;
          }
          a:active {
-         color: rgba(255,0,36,.7);
+         color: #ff6600;
          }
          .menu {
          clear:both;
@@ -164,8 +164,8 @@
          }
          button {
          color: #fff;
-         background-color: rgba(255,0,36,.7);
-         border-color: rgba(255,0,36,.7);
+         background-color: #ff6600;
+         border-color: #ff6600;
          border:none;
          padding:8px;
          width:170px;
@@ -201,7 +201,7 @@
          display: inline-block;
          }
          input[type=submit] {
-         background-color: rgba(255,0,36,.7);
+         background-color: #ff6600;
          color: white;
          padding: 12px 20px;
          border: none;
@@ -307,7 +307,7 @@
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
       <div id="wrap">
          <div class="logo">
-            <a href="https://buananetpbun.github.io"><span style="color:rgba(255,0,36,.7) !important">BuanaNETPBun</span>.Github.io</a> 
+            <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
             <div style="float:right">
                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
             </div>
@@ -324,7 +324,7 @@
          <div class="main-wrap">
             <div class="sidebar">
                <div style="margin-bottom:10px; height:95px">
-                  <span style="color:rgba(255,0,36,.7);"><b>SIMPLE QUEUE</b><br></span>
+                  <span style="color:#ff6600;"><b>SIMPLE QUEUE</b><br></span>
                   <div style="float:left; width:48%;">
                      <label>Parent Name Queue</label><br>
                      <input type="text" id="input-parent-name" value="Jack Home" placeholder="Jack Home">
@@ -339,7 +339,7 @@
                   </div>
                </div>
                <div style="margin-bottom:10px; height:200px">
-                  <span style="color:rgba(255,0,36,.7);"><b>HOTSPOT PROFILE</b><br></span>
+                  <span style="color:#ff6600;"><b>HOTSPOT PROFILE</b><br></span>
                   <div style="float:left; width:100%;">
                      <label>Profile Name</label><br>
                      <input type="text" id="input-profile-name" value="Shared-Jack-Home" placeholder="Shared-Jack-Home">
@@ -374,7 +374,7 @@
                   <table id="showScript" style="padding:5px; ">
                      <tr>
                         <td>
-                           <span style="color:rgba(255,0,36,.7);">
+                           <span style="color:#ff6600;">
                            ###########################################################<br>
                            # Mikrotik Bandwidth Share For Hotspot Shared User Generator <br>
                            # Date/Time: <span id="tanggalwaktu"></span><br>
@@ -383,14 +383,14 @@
                            </span>
                            <div id="list-output">
                               <b>/queue simple</b><br>
-                              add max-limit="<span id="simple-queue-max-limit" style="color:rgba(255,0,36,.7);"></span>" name="<span id="simple-queue-name" style="color:rgba(255,0,36,.7);"></span>" target="<span id="simple-queue-ip-address" style="color:rgba(255,0,36,.7);"></span>" packet-mark="<span id="simple-queue-packet-mark" style="color:rgba(255,0,36,.7);"></span>"<br>			
+                              add max-limit="<span id="simple-queue-max-limit" style="color:#ff6600;"></span>" name="<span id="simple-queue-name" style="color:#ff6600;"></span>" target="<span id="simple-queue-ip-address" style="color:#ff6600;"></span>" packet-mark="<span id="simple-queue-packet-mark" style="color:#ff6600;"></span>"<br>			
                               <b>/ip hotspot user profile</b><br>
-                              add address-list="<span id="profile-address-list" style="color:rgba(255,0,36,.7)"></span>" name="<span id="profile-name" style="color:rgba(255,0,36,.7);"></span>" shared-users="<span id="profile-shared-user" style="color:rgba(255,0,36,.7)"></span>" rate-limit="<span id="profile-rate-limit" style="color:rgba(255,0,36,.7);"></span>"  parent-queue="<span id="profile-parent" style="color:rgba(255,0,36,.7);"></span>" insert-queue-before="bottom"<br>
+                              add address-list="<span id="profile-address-list" style="color:#ff6600"></span>" name="<span id="profile-name" style="color:#ff6600;"></span>" shared-users="<span id="profile-shared-user" style="color:#ff6600"></span>" rate-limit="<span id="profile-rate-limit" style="color:#ff6600;"></span>"  parent-queue="<span id="profile-parent" style="color:#ff6600;"></span>" insert-queue-before="bottom"<br>
                               <b>/ip hotspot user</b><br>
-                              add name="<span id="hotspot-username" style="color:rgba(255,0,36,.7);"></span>" password="<span id="hotspot-password" style="color:rgba(255,0,36,.7);"></span>" profile="<span id="hotspot-profile-name" style="color:rgba(255,0,36,.7);"></span>" comment="<span id="hotspot-comment" style="color:rgba(255,0,36,.7);"></span>"<br>
+                              add name="<span id="hotspot-username" style="color:#ff6600;"></span>" password="<span id="hotspot-password" style="color:#ff6600;"></span>" profile="<span id="hotspot-profile-name" style="color:#ff6600;"></span>" comment="<span id="hotspot-comment" style="color:#ff6600;"></span>"<br>
                               <b>/ip firewall mangle</b><br>
-                              add action=mark-packet chain=forward src-address-list="<span id="mangle-upload-src" style="color:rgba(255,0,36,.7);"></span>" new-packet-mark="<span id="mangle-packet-src" style="color:rgba(255,0,36,.7);"></span>" passthrough=no comment="<span id="mangle-comment-up" style="color:rgba(255,0,36,.7);"></span>"<br>
-                              add action=mark-packet chain=forward dst-address-list="<span id="mangle-download-dst" style="color:rgba(255,0,36,.7);"></span>" new-packet-mark="<span id="mangle-packet-dst" style="color:rgba(255,0,36,.7);"></span>" passthrough=no comment="<span id="mangle-comment-down" style="color:rgba(255,0,36,.7);"></span>"<br>
+                              add action=mark-packet chain=forward src-address-list="<span id="mangle-upload-src" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-src" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-up" style="color:#ff6600;"></span>"<br>
+                              add action=mark-packet chain=forward dst-address-list="<span id="mangle-download-dst" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-dst" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-down" style="color:#ff6600;"></span>"<br>
                            </div>
                         </td>
                      </tr>

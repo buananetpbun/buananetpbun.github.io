@@ -111,16 +111,16 @@
          margin-top:10px;
          }
          a:link {
-         color: #9E2A2B;
+         color: #ff6600;
          }
          a:visited {
-         color: #9E2A2B;
+         color: #ff6600;
          }
          a:hover {
-         color: #9E2A2B;
+         color: #ff6600;
          }
          a:active {
-         color: #9E2A2B;
+         color: #ff6600;
          }
          .menu {
          clear:both;
@@ -165,8 +165,8 @@
          }
          button {
          color: #fff;
-         background-color: #9E2A2B;
-         border-color: #9E2A2B;
+         background-color: #ff6600;
+         border-color: #ff6600;
          border:none;
          padding:8px;
          width:177px;
@@ -202,7 +202,7 @@
          display: inline-block;
          }
          input[type=submit] {
-         background-color: #9E2A2B;
+         background-color: #ff6600;
          color: white;
          padding: 12px 20px;
          border: none;
@@ -308,7 +308,7 @@
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
       <div id="wrap">
          <div class="logo">
-            <a href="https://buananetpbun.github.io"><span style="color:#9E2A2B !important">BuanaNETPBun</span>.Github.io</a> 
+            <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
             <div style="float:right">
                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
             </div>
@@ -320,7 +320,7 @@
             <span style="float:left; display:inline;margin-right:6px; margin-top:10px">
             <a href="https://buananetpbun.github.io/mikrotik-pcq-generator.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
             </span>
-            <h1>MIKROTIK <span style="color:#9E2A2B;">PCQ (PER-CONNECTION-QUEUE)</span> GENERATOR FOR QUEUE TREE AND QUEUE SIMPLE</h1>
+            <h1>MIKROTIK <span style="color:#ff6600;">PCQ (PER-CONNECTION-QUEUE)</span> GENERATOR FOR QUEUE TREE AND QUEUE SIMPLE</h1>
          </div>
          <div class="main-wrap">
             <div class="sidebar">
@@ -402,7 +402,7 @@
                   <table id="showScript" style="padding:5px; white-space: nowrap;">
                      <tr>
                         <td>
-                           <span style="color:#9E2A2B;">
+                           <span style="color:#ff6600;">
                            ####################################################################<br>
                            # MIKROTIK PCQ GENERATOR FOR QUEUE TREE AND QUEUE SIMPLE<br>
                            # Date/Time: <span id="tanggalwaktu"></span><br>
@@ -411,19 +411,19 @@
                            </span>
                            <div id="list-output">
                               <b>/queue type</b><br>
-                              add kind=pcq name="<span id="queue-type-name-up" style="color:#9E2A2B;">PCQ-Up</span>" pcq-classifier=src-address pcq-rate="<span id="queue-type-rate-up" style="color:#9E2A2B;">1M</span>"<br>
-                              add kind=pcq name="<span id="queue-type-name-down" style="color:#9E2A2B;">PCQ-Down</span>" pcq-classifier=dst-address pcq-rate="<span id="queue-type-rate-down" style="color:#9E2A2B;">2M</span>"<br>
+                              add kind=pcq name="<span id="queue-type-name-up" style="color:#ff6600;">PCQ-Up</span>" pcq-classifier=src-address pcq-rate="<span id="queue-type-rate-up" style="color:#ff6600;">1M</span>"<br>
+                              add kind=pcq name="<span id="queue-type-name-down" style="color:#ff6600;">PCQ-Down</span>" pcq-classifier=dst-address pcq-rate="<span id="queue-type-rate-down" style="color:#ff6600;">2M</span>"<br>
                               <span style="display:none" id="hide-show-queue-simple">
                               <b>/queue simple</b><br>
-                              add comment="Script Generator By BuanaNET Secure!" name="<span id="queue-simple-gb-1" style="color:#9E2A2B;">GLOBAL-CONNECTION</span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
-                              add max-limit="<span style="color:#9E2A2B;"><span id="queue-simple-max-1a">10M</span>/<span id="queue-simple-max-1b">10M</span></span>" name="<span id="queue-simple-name-1" style="color:#9E2A2B;">Upload-Client</span>" packet-marks="upload-client"  parent="<span id="queue-simple-gb-2" style="color:#9E2A2B;">GLOBAL-CONNECTION</span>" queue="<span style="color:#9E2A2B;"><span id="queue-simple-pcq-1">PCQ-Up</span>/default-small</span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
-                              add max-limit="<span style="color:#9E2A2B;"><span id="queue-simple-max-2a">50M</span>/<span id="queue-simple-max-2b">50M</span></span>" name="<span id="queue-simple-name-2" style="color:#9E2A2B;">Download-Client</span>" packet-marks="download-client" parent="<span id="queue-simple-gb-3" style="color:#9E2A2B;">GLOBAL-CONNECTION</span>" queue="<span style="color:#9E2A2B;">default-small/<span id="queue-simple-pcq-2">PCQ-Down</span></span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
+                              add comment="Script Generator By BuanaNET Secure!" name="<span id="queue-simple-gb-1" style="color:#ff6600;">GLOBAL-CONNECTION</span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
+                              add max-limit="<span style="color:#ff6600;"><span id="queue-simple-max-1a">10M</span>/<span id="queue-simple-max-1b">10M</span></span>" name="<span id="queue-simple-name-1" style="color:#ff6600;">Upload-Client</span>" packet-marks="upload-client"  parent="<span id="queue-simple-gb-2" style="color:#ff6600;">GLOBAL-CONNECTION</span>" queue="<span style="color:#ff6600;"><span id="queue-simple-pcq-1">PCQ-Up</span>/default-small</span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
+                              add max-limit="<span style="color:#ff6600;"><span id="queue-simple-max-2a">50M</span>/<span id="queue-simple-max-2b">50M</span></span>" name="<span id="queue-simple-name-2" style="color:#ff6600;">Download-Client</span>" packet-marks="download-client" parent="<span id="queue-simple-gb-3" style="color:#ff6600;">GLOBAL-CONNECTION</span>" queue="<span style="color:#ff6600;">default-small/<span id="queue-simple-pcq-2">PCQ-Down</span></span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
                               </span>
                               <span id="hide-show-queue-tree">
                               <b>/queue tree</b><br>
-                              add comment="Script Generator By BuanaNET Secure!" name="<span id="queue-tree-gb-1" style="color:#9E2A2B;">GLOBAL-CONNECTION</span>" parent=global<br>
-                              add max-limit="<span id="queue-tree-max-1" style="color:#9E2A2B;">10M</span>" name="<span id="queue-tree-name-1" style="color:#9E2A2B;">Upload-Client</span>" packet-mark="upload-client" parent="<span id="queue-tree-gb-2" style="color:#9E2A2B;">GLOBAL-CONNECTION</span>" queue="<span id="queue-tree-pcq-1" style="color:#9E2A2B;">PCQ-Up</span>"<br>
-                              add max-limit="<span id="queue-tree-max-2" style="color:#9E2A2B;">50M</span>" name="<span id="queue-tree-name-2" style="color:#9E2A2B;">Download-Client</span>" packet-mark="download-client" parent="<span id="queue-tree-gb-3" style="color:#9E2A2B;">GLOBAL-CONNECTION</span>" queue="<span id="queue-tree-pcq-2" style="color:#9E2A2B;">PCQ-Down</span>"<br>
+                              add comment="Script Generator By BuanaNET Secure!" name="<span id="queue-tree-gb-1" style="color:#ff6600;">GLOBAL-CONNECTION</span>" parent=global<br>
+                              add max-limit="<span id="queue-tree-max-1" style="color:#ff6600;">10M</span>" name="<span id="queue-tree-name-1" style="color:#ff6600;">Upload-Client</span>" packet-mark="upload-client" parent="<span id="queue-tree-gb-2" style="color:#ff6600;">GLOBAL-CONNECTION</span>" queue="<span id="queue-tree-pcq-1" style="color:#ff6600;">PCQ-Up</span>"<br>
+                              add max-limit="<span id="queue-tree-max-2" style="color:#ff6600;">50M</span>" name="<span id="queue-tree-name-2" style="color:#ff6600;">Download-Client</span>" packet-mark="download-client" parent="<span id="queue-tree-gb-3" style="color:#ff6600;">GLOBAL-CONNECTION</span>" queue="<span id="queue-tree-pcq-2" style="color:#ff6600;">PCQ-Down</span>"<br>
                               </span>
                               <b>/ip firewall mangle</b><br>
                               add comment="Script Generator By BuanaNET Secure!" action=mark-connection chain=forward new-connection-mark="global-conn" passthrough=yes src-address-list=LOCAL-IP<br>

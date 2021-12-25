@@ -112,16 +112,16 @@
          margin-top:10px;
          }
          a:link {
-         color: #154c79;
+         color: #ff6600;
          }
          a:visited {
-         color: #154c79;
+         color: #ff6600;
          }
          a:hover {
-         color: #154c79;
+         color: #ff6600;
          }
          a:active {
-         color: #154c79;
+         color: #ff6600;
          }
          .menu {
          margin-bottom:13px;
@@ -132,7 +132,7 @@
          width:300px;
          margin-bottom:1px;
          font-weight:bold;
-         background-color:#154c79;
+         background-color:#ff6600;
          padding:6px;
          color:white;
          display: inline-block;
@@ -166,8 +166,8 @@
          }
          button {
          color: #fff;
-         background-color: #154c79;
-         border-color: #154c79;
+         background-color: #ff6600;
+         border-color: #ff6600;
          border:none;
          padding:8px;
          width:135px;
@@ -201,7 +201,7 @@
          display: inline-block;
          }
          input[type=submit] {
-         background-color: #154c79;
+         background-color: #ff6600;
          color: white;
          padding: 13px 20px;
          border: none;
@@ -307,7 +307,7 @@
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
       <div id="wrap">
          <div class="logo">
-            <a href="https://buananetpbun.github.io"><span style="color:#154c79 !important">BuanaNETPBun</span>.Github.io</a> 
+            <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
             <div style="float:right">
                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
             </div>
@@ -390,7 +390,7 @@
                   <table id="showScript" style="padding:5px;">
                      <tr>
                         <td>
-                           <span style="color:#154c79;">
+                           <span style="color:#ff6600;">
                            #####################################################################<br>
                            # Wifi.id WMS and Seamless Auto Login Script Generator By BuanaNETPBun.Github.io<br>
                            # Date/Time: <span id="tanggalwaktu"></span><br>
@@ -400,21 +400,21 @@
                            </span>
                            <span style="color:black;font-weight:bold">/interface wireless</span> set [ find default-name=wlan1] name=wlan1 comment="WIFI.ID BY BNT"<br>
                            <span style="color:black;font-weight:bold">/interface wireless</span> set [ find default-name=wlan2] name=wlan2 comment="WIFI.ID BY BNT"<br>
-                           <span style="color:black;font-weight:bold">/ip firewall nat</span> add chain=srcnat out-interface="<span id="interfaceid-wms-x-0" style="color:#154c79; font-weight:bold"></span>" action=masquerade comment="WIFI.ID BY BNT"<br>
+                           <span style="color:black;font-weight:bold">/ip firewall nat</span> add chain=srcnat out-interface="<span id="interfaceid-wms-x-0" style="color:#ff6600; font-weight:bold"></span>" action=masquerade comment="WIFI.ID BY BNT"<br>
                            <span id="seamless-show" style="display:none">
                            <span style="color:black;font-weight:bold">/ip dhcp-client</span><br>
-                           add default-route-distance=1 comment="WIFI.ID BY BNT" disabled=no interface="<span id="interfaceid-seamless-x" style="color:#154c79; font-weight:bold">wlan1</span>" <br>
+                           add default-route-distance=1 comment="WIFI.ID BY BNT" disabled=no interface="<span id="interfaceid-seamless-x" style="color:#ff6600; font-weight:bold">wlan1</span>" <br>
                            <span style="color:black;font-weight:bold">/interface wireless security-profiles</span><br>
                            add comment="WIFI.ID BY BNT" authentication-types=wpa-eap,wpa2-eap eap-methods=peap mode=dynamic-keys \
-                           mschapv2-password="<span id="password-seamless-x" style="color:#154c79; font-weight:bold"></span>" mschapv2-username="<span id="username-seamless-x1" style="color:#154c79; font-weight:bold"></span>" radius-mac-accounting=yes radius-mac-authentication=yes \
-                           supplicant-identity="<span id="username-seamless-x2" style="color:#154c79; font-weight:bold"></span>" name="Seamless.wifi.id" tls-mode=dont-verify-certificate<br>
+                           mschapv2-password="<span id="password-seamless-x" style="color:#ff6600; font-weight:bold"></span>" mschapv2-username="<span id="username-seamless-x1" style="color:#ff6600; font-weight:bold"></span>" radius-mac-accounting=yes radius-mac-authentication=yes \
+                           supplicant-identity="<span id="username-seamless-x2" style="color:#ff6600; font-weight:bold"></span>" name="Seamless.wifi.id" tls-mode=dont-verify-certificate<br>
                            <span style="color:black;font-weight:bold">/interface wireless</span><br>
-                           set [ find default-name="<span id="interfaceid-seamless-x1" style="color:#154c79; font-weight:bold">wlan1</span>" ] disabled=no  installation=outdoor name="<span id="interfaceid-seamless-x2" style="color:#154c79; font-weight:bold">wlan1</span>" security-profile="Seamless.wifi.id" wireless-protocol=802.11	
+                           set [ find default-name="<span id="interfaceid-seamless-x1" style="color:#ff6600; font-weight:bold">wlan1</span>" ] disabled=no  installation=outdoor name="<span id="interfaceid-seamless-x2" style="color:#ff6600; font-weight:bold">wlan1</span>" security-profile="Seamless.wifi.id" wireless-protocol=802.11	
                            </span>
                            <span id="wms-show">
                            <span style="color:black;font-weight:bold">/ip dhcp-client</span><br>
-                           add default-route-distance=1 disabled=no interface="<span id="interfaceid-wms-x-4" style="color:#154c79; font-weight:bold">wlan1</span>" comment="WIFI.ID BY BNT" script=":local rma\
-                           rk \"<span style="color:#154c79; font-weight:bold">check-wms-</span><span id="interfaceid-wms-x-1" style="color:#154c79; font-weight:bold"></span>\";\r\
+                           add default-route-distance=1 disabled=no interface="<span id="interfaceid-wms-x-4" style="color:#ff6600; font-weight:bold">wlan1</span>" comment="WIFI.ID BY BNT" script=":local rma\
+                           rk \"<span style="color:#ff6600; font-weight:bold">check-wms-</span><span id="interfaceid-wms-x-1" style="color:#ff6600; font-weight:bold"></span>\";\r\
                            \n:local count [/ip route print count-only where comment=\$rmark];\r\
                            \n:if (\$count = 0) do={\r\
                            \n /ip route add gateway=\$\"gateway-address\" comment=\$rmark routing-mar\
@@ -429,17 +429,17 @@
                            add dont-require-permissions=no name="WMS-AUTO-LOGIN" comment="WIFI.ID BY BNT" policy=\
                            ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":\<br>
                            <span id="wms-username-show">
-                           local USERNAME \"<span id="username-wms-x" style="color:#154c79; font-weight:bold"></span>.<span id="username-makeid-randomnumber-wms-x" style="color:#154c79; font-weight:bold"></span><span id="username-makeid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
+                           local USERNAME \"<span id="username-wms-x" style="color:#ff6600; font-weight:bold"></span>.<span id="username-makeid-randomnumber-wms-x" style="color:#ff6600; font-weight:bold"></span><span id="username-makeid-wms-x" style="color:#ff6600; font-weight:bold"></span>\";\r\
                            </span>
                            <span id="wifiid-username-show" style="display:none">
-                           local USERNAME \"<span id="username-wms-x2" style="color:#154c79; font-weight:bold"></span><span id="username-makeid-wms-x2" style="color:#154c79; font-weight:bold"></span>\";\r\
+                           local USERNAME \"<span id="username-wms-x2" style="color:#ff6600; font-weight:bold"></span><span id="username-makeid-wms-x2" style="color:#ff6600; font-weight:bold"></span>\";\r\
                            </span>
-                           \n:local PASSWWORD \"<span id="password-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
-                           \n:local GWID \"<span id="gwid-wms-x" style="color:#154c79; font-weight:bold" ></span>\";\r\
-                           \n:local WLANID \"<span id="wlanid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
-                           \n:local SESSIONID \"<span id="sessionid-wms-x" style="color:#154c79; font-weight:bold">wlan1</span>\";\r\
-                           \n:local INTDEFNAME \"<span id="interfaceid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
-                           \n:local REDIRECT \"<span id="redirectid-wms-x" style="color:#154c79; font-weight:bold"></span>\";\r\
+                           \n:local PASSWWORD \"<span id="password-wms-x" style="color:#ff6600; font-weight:bold"></span>\";\r\
+                           \n:local GWID \"<span id="gwid-wms-x" style="color:#ff6600; font-weight:bold" ></span>\";\r\
+                           \n:local WLANID \"<span id="wlanid-wms-x" style="color:#ff6600; font-weight:bold"></span>\";\r\
+                           \n:local SESSIONID \"<span id="sessionid-wms-x" style="color:#ff6600; font-weight:bold">wlan1</span>\";\r\
+                           \n:local INTDEFNAME \"<span id="interfaceid-wms-x" style="color:#ff6600; font-weight:bold"></span>\";\r\
+                           \n:local REDIRECT \"<span id="redirectid-wms-x" style="color:#ff6600; font-weight:bold"></span>\";\r\
                            \n:local MAC [/interface wireless get [ find default-name=\$INTDEFNAME ] m\
                            ac-address];\r\
                            \n:local INTNAME [/interface wireless get [ find default-name=\$INTDEFNAME\
@@ -458,9 +458,9 @@
                            \n"<br>
                            <span style="color:black;font-weight:bold">/system scheduler</span><br>					
                            add comment="WIFI.ID By BNT" interval=1m name=WMS-AUTO-LOGIN on-event="if ([/i\
-                           p route get [/ip route find comment=\"<span style="color:#154c79; font-weight:bold">check-wms-</span><span id="interfaceid-wms-x-3" style="color:#154c79; font-weight:bold"></span>\"] active]=no) do={\
+                           p route get [/ip route find comment=\"<span style="color:#ff6600; font-weight:bold">check-wms-</span><span id="interfaceid-wms-x-3" style="color:#ff6600; font-weight:bold"></span>\"] active]=no) do={\
                            \r\
-                           \n:local INTNAME [/interface wireless get [ find default-name=\"<span id="interfaceid-wms-x-2" style="color:#154c79; font-weight:bold"></span>\"] n\
+                           \n:local INTNAME [/interface wireless get [ find default-name=\"<span id="interfaceid-wms-x-2" style="color:#ff6600; font-weight:bold"></span>\"] n\
                            ame];\r\
                            \n/ip dhcp-client disable [find interface=\$INTNAME] ;\r\
                            \n:delay 2s;\r\
@@ -485,7 +485,7 @@
             <div style="float:right">
                © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
             </div>
-            <span style="color:#154c79">
+            <span style="color:#ff6600">
             <b># TUTORIAL</b></span><br>
             1.Pertama seting dulu wlan anda agar konek ke SSID pada WMS atau Seamless<br>
             2.Masukan data yang di perlukan pada tool, data WMS bisa di temukan pada URL <br> 
