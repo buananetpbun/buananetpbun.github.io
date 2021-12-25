@@ -30,7 +30,7 @@ font-size: 16px;
 line-height: 1.4;
 word-wrap: break-word;
 }
-h1, h2, h3, h4, h5, h6{margin-top:20px; padding-bottom:20px; font-size:25px; color:#8E2DE2;}
+h1, h2, h3, h4, h5, h6{margin-top:20px; padding-bottom:20px; font-size:25px; color:#ff6600;}
 pre {
     white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
     white-space: -pre-wrap; /* Opera */
@@ -62,16 +62,16 @@ float:right;
 padding:10px;
 height:48px;
 display:block;
-background: #8E2DE2;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: #ff6600;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #4A00E0, #ff6600);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #4A00E0, #ff6600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 color:#fff;
 border-top:1px solid #ccc;
 border-left:1px solid #ccc;
 border-right:1px solid #ccc;
 }
 .header a{
-color:#8E2DE2 !important;
+color:#ff6600 !important;
 text-decoration:none !important;
 }
 .header-left {
@@ -84,8 +84,8 @@ margin-top:-2px;
 }
 button {
 color: #fff;
-background-color: #8E2DE2;
-border-color: #8E2DE2;
+background-color: #ff6600;
+border-color: #ff6600;
 border-radius: 2px;
 border:none;
 padding:5px;
