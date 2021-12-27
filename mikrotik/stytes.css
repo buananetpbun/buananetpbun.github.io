@@ -21,7 +21,7 @@ body {
 min-width: 200px;
 max-width: 1000px;
 margin:0 auto;	
-padding: 20px;
+padding: 0 10px 10px 10px;
 -ms-text-size-adjust: 100%;
 -webkit-text-size-adjust: 100%;
 color: #24292e;
