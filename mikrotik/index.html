@@ -86,13 +86,11 @@ padding-top:10px;
 padding-bottom:5px;
 display:block;
 color:#fff;
-background: #000000;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #000000, #434343,#000000);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #000000, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-border-top:1px solid #222;
-border-left:1px solid #222;
-border-right:1px solid #222;
-border-bottom:1px solid #222;  
+background: url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) right  ;
+border-top:2px solid #555;
+border-left:2px solid #555;
+border-right:2px solid #555;
+border-bottom:2px solid #555;  
 clear:both;
 }
 .header a{
@@ -112,28 +110,33 @@ border-radius: 5px;
 float:right;
 width:64%;
 padding: 0px;
-border-right:1px solid #222;
+border-right:2px solid #555;
+border-bottom:2px solid #555; 
 background:#fff;
 height: 750px;
+border-radius: 0 0 5px 0;
 }
 .sidebar{
 overflow:hidden;
 float:left;
 width:36%;
 padding: 10px;
-background-color:#eee;
-border-left:1px solid #222; 
-border-right:1px solid #ccc;   
+background-color:#ccc;
+border-left:2px solid #555; 
+border-right:0px solid #555;  
+border-bottom:2px solid #555;   
 height: 750px;
+border-radius: 0 0 0 5px;  
 }
 .footer{
 font-size:14px;
-border-top:1px solid #222;
 padding:10px;
 color:#ddd;
-clear:both;
+margin-top:20px;
 width:auto;
 text-align:center;
+font-size:14px;
+clear: both
 }
 .footer a{
 color:#ff6600 !important;
@@ -168,7 +171,7 @@ button {
 color: #fff;
 background-color: #ff6600;
 border-color: #ff6600;
-border-radius: 2px;
+border-radius: 5px;
 border:none;
 margin-top:0px;
 padding:5px;
@@ -183,7 +186,7 @@ border: 1px solid #ccc;
 border-radius: 0px;
 resize: vertical;
 font-size:16px !important;
-border-radius:3px;
+border-radius:5px;
 }
 label {
 padding: 5px 5px 5px 0;
@@ -330,7 +333,7 @@ padding:10px;
 color:#ff6600 !important;
 }
 .backtotop {
-background:#ccc;
+background:#bbb;
 text-align:center;
 width: 100%;
 border-radius:0 0 4px 4px;
@@ -338,13 +341,13 @@ height:27px;
 color: #444;
 }
 .backtotop a {
-font-size:11px; 
+font-size:14px; 
 padding:0;
-color:#444;
+color:#ff6600;
 font-weight: bold;
 width: 100%;
 text-transform: uppercase;
-background:#ccc;
+background:#bbb;
 }
 .backtotop a:hover {
 color:#ff6600;
