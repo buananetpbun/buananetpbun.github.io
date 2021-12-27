@@ -34,7 +34,8 @@ body {margin:20px;background:#fff;
 color: #24292e;
 font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 font-size: 16px;
-word-wrap: break-word;
+word-wrap: break-word; 
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;
 }
 pre {
 white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
@@ -57,12 +58,12 @@ color:#999
 border-bottom:0px solid #ccc;
 margin-bottom:5px;
 margin-top:10px;
-color: #111;
+color: #ddd;
 font-size:30px;
 font-weight:bold; 
 }	
 .logo a{
-color:#111 !important;
+color:#ddd !important;
 text-decoration:none !important;
 font-size:30px;
 text-decoration:none;
@@ -79,17 +80,17 @@ min-width:200px;
 margin:0 auto;
 }
 .header{
+border-radius: 5px 5px 0 0;
 padding:10px;
 padding-top:10px;
 padding-bottom:5px;
 display:block;
-background: #ff6600;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #4A00E0, #ff6600);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #4A00E0, #ff6600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 color:#fff;
-border-top:1px solid #ccc;
-border-left:1px solid #ccc;
-border-right:1px solid #ccc;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ; 
+border-top:1px solid #222;
+border-left:1px solid #222;
+border-right:1px solid #222;
+border-bottom:1px solid #222;  
 }
 .header a{
 color:#ff6600 !important;
@@ -102,12 +103,13 @@ width:450px;
 .header-right {
 float:right;
 margin-top:-2px;
+border-radius: 5px;  
 }
 .content{
 float:right;
 width:64%;
 padding: 0px;
-border:1px solid #ccc;
+border-right:1px solid #222;
 background:#fff;
 height: 750px;
 }
@@ -117,15 +119,15 @@ float:left;
 width:36%;
 padding: 10px;
 background-color:#eee;
-border:1px solid #ccc; 
+border-left:1px solid #222; 
+border-right:1px solid #ccc;   
 height: 750px;
 }
 .footer{
 font-size:14px;
-border-top:4px solid #ccc;
+border-top:1px solid #222;
 padding:10px;
-background:#fff;
-color:#111;
+color:#ddd;
 clear:both;
 width:auto;
 text-align:center;
