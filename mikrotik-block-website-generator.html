@@ -30,7 +30,7 @@
          -------------------------------------------------- */  
          *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
          body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-         body { font-size:16px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:20px;}
+         body { font-size:16px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:0px;}
          html, body {
          height: 100%;
          width:100%;
@@ -93,9 +93,9 @@
          height:570px;
          padding: 10px;
          background-color:#ccc;
-         border:0px solid #333; 
+         border:2px solid #ccc; 
          border-radius: 5px;
-           margin-top:5px
+         margin-top:5px
          }
          .footer{
          font-size:14px;
@@ -196,6 +196,7 @@
          font-weight:normal;
          margin-bottom:5px;
          font-size:16px !important;
+         border-radius:5px
          }
          label {
          padding: 5px 5px 5px 0;
@@ -206,7 +207,7 @@
          color: white;
          padding: 12px 20px;
          border: none;
-         border-radius: 1px;
+         border-radius: 5px;
          cursor: pointer;
          float: right;
          }
@@ -245,13 +246,14 @@
          } 
          .list-mangle {
          height: 500px;
-         background:#fff;
+         background:#f9f9f9;
          overflow: auto;
          overflow-x: auto;
          width: 660px;
          padding: 4px;
          margin-top:8px;
-         border: 1px solid #ccc;
+         border: 1px solid #bbb;
+           border-radius:5px
          }
          table, tr, td {
          border: none;
@@ -312,7 +314,7 @@
          color: red;
          text-decoration: none;
          cursor: pointer;
-         } 
+         }
       </style>
    </head>
    <body onLoad="callmodal();createTable()">
