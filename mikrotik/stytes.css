@@ -29,6 +29,7 @@ font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-seri
 font-size: 16px;
 line-height: 1.4;
 word-wrap: break-word;
+
 }
 h1, h2, h3, h4, h5, h6{margin-top:20px; padding-bottom:20px; font-size:25px; color:#ff6600;}
 pre {
@@ -40,9 +41,9 @@ pre {
 }
 .logo {
 border-bottom:0px solid #ccc;
-margin-bottom:5px;
-margin-top:10px;
-color: #111;
+margin-bottom:10px;
+margin-top:20px;
+color: #111 !important;;
 font-size:30px;
 font-weight:bold; 
 }	
@@ -62,13 +63,10 @@ float:right;
 padding:10px;
 height:48px;
 display:block;
-background: #ff6600;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #4A00E0, #ff6600);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #4A00E0, #ff6600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-color:#fff;
-border-top:1px solid #ccc;
-border-left:1px solid #ccc;
-border-right:1px solid #ccc;
+color:#ddd;
+border:0px solid #333;
+border-radius:5px;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;
 }
 .header a{
 color:#ff6600 !important;
