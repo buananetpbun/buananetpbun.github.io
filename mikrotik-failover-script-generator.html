@@ -328,14 +328,14 @@
          <div class="main-wrap">
             <div class="sidebar">
                <label>Select Your Failover Method</label>
-               <select style="margin-top:10px" id="wan-list-method" onclick="myFunctionShowHide(); myFunction()">
+               <select style="margin-top:10px" id="wan-list-method" onchange="myFunctionShowHide(); myFunction()">
                   <option value="fail-over-method1">Failover - Check Gateway</option>
                   <option value="fail-over-method2">Failover - Recursive Gateway</option>
                   <option value="fail-over-method3">Failover - Netwatch Script</option>
                   <option value="fail-over-method4" disabled>Failover - LB PCC, NTH, ECMP, Static Route (premium service)</option>
                </select>
                <label>Select Number Your ISP Line</label>
-               <select style="margin-top:10px" id="wan-list" onclick="myFunctionShowHide(); myFunction()">
+               <select style="margin-top:10px" id="wan-list" onchange="myFunctionShowHide(); myFunction()">
                   <option value="line-2">2 Line ISP</option>
                   <option value="line-3">3 Line ISP</option>
                   <option value="line-4">4 Line ISP</option>
