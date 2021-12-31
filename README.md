@@ -13,7 +13,7 @@
 - :link: Donasi melalui https://saweria.co/buananetpbun
 - :link: Bitcoin to [ <b>bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</b> ]
 
-## MIKROTIK ROUTEROS TOOLS AND SCRIPT DATABASE
+## Mikrotik Routeros Tools And Script
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - We try to collect all the scripts found on the internet and combine them in one DataBase, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!
 - <a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Game Script Generator</a> - Static Routing Vpn Game Script Generator or Script Maker (Port Game Routing Method) 
 - <a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games Script Generator</a> - Static Routing Vpn Game Script Generator or Script Maker (Ip Address Game Routing Method)
