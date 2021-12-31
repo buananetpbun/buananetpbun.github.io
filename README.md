@@ -36,8 +36,8 @@
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Mikrotik Username Password Hotspot Generator</a> - Mikrotik Username Password Hotspot Voucher Generator for RouterOS
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Mikrotik Failover Script Generato</a> - Mikrotik Failover Script Generator - Recursive, Check Gateway, Netwatch Ping for RouterOS
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">Mikrotik Dns Over Https (Doh) Server Generator</a> - Mikrotik DNS over HTTPS (DoH) Server Script Generator for RouterOS
-- <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Mikrotik Bandwidth Share For Hotspot Shared User Generator</a> - Mikrotik Bandwidth Share For Hotspot Shared User Generator for ROuterOS
-- <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Mikrotik Block Website Script Generator</a> - Mikrotik Block Website Script Generator for RouterPS
+- <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Mikrotik Bandwidth Share For Hotspot Shared User Generator</a> - Mikrotik Bandwidth Share For Hotspot Shared User Generator for RouterOS
+- <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Mikrotik Block Website Script Generator</a> - Mikrotik Block Website Script Generator for RouterOS
 
 <br>
 © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
