@@ -11,11 +11,8 @@
 ## :gift_heart: <b>Want to give me a Gift ?</b><br>
 - :link: PAYPAL to https://paypal.me/agusramadhani1<br>
 - :link: Donasi melalui https://saweria.co/buananetpbun
+- :link: Buy me a coffe https://www.buymeacoffee.com/bntpbun
 - :link: Bitcoin to [ <b>bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</b> ]
-
-## <b>License</b><br>
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)
 
 ## Mikrotik Routeros Tools And Script
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik">Complete Mikrotik RouterOS Script Database</a> - We try to collect all the scripts found on the internet and combine them in one DataBase, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!
@@ -42,7 +39,10 @@
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Mikrotik Bandwidth Share For Hotspot Shared User Generator</a> - Mikrotik Bandwidth Share For Hotspot Shared User Generator for RouterOS
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Mikrotik Block Website Script Generator</a> - Mikrotik Block Website Script Generator for RouterOS
 
-<br>
+## <b>License</b><br>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)
+
 © Copyright 2020-2021 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
 
-Credit to : https://mikrotik.com | http://www.mikrotik.co.id
+Dedicated to https://mikrotik.com
