@@ -38,6 +38,7 @@
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">Mikrotik Dns Over Https (Doh) Server Generator</a> - Mikrotik DNS over HTTPS (DoH) Server Script Generator for RouterOS
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Mikrotik Bandwidth Share For Hotspot Shared User Generator</a> - Mikrotik Bandwidth Share For Hotspot Shared User Generator for RouterOS
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Mikrotik Block Website Script Generator</a> - Mikrotik Block Website Script Generator for RouterOS
+- <a target="_blank"  href=https://buananetpbun.github.io/mikrotik-port-porward-generator.html">MikroTik Port Forwarding Script Generator</a> - MikroTik Port Forwarding Script Generator for RouterOS
 
 ## <b>License</b><br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
