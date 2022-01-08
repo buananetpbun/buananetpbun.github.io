@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MikroTik Port Forward Script Generator - BuanaNETPBun.Github.io</title>
+    <meta content='MikroTik Port Forward (forwarding) Script Generator for RouterOS - BuanaNETPBun.Github.io' name='description'/>
+    <meta content='block, webside, dns, doh, DNS over HTTPS, burst, calculator, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+    <meta content='index, follow, noodp' name='robots'/>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="MikroTik Port Forward Script Generator By BuanaNET-Pbun">
+    <meta property="og:description" content="MikroTik Port Forward Script Generator By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/145576105-d7bca20d-a888-450f-8dd8-cc33339f72b7.png">
+    <meta property="og:image:alt" content="MikroTik Port Forward Script Generator By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-port-porward-generator.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>   
+    <style>
+      /* -----------------------------------------------
+      ##################################################
+      # MikroTik Port Forward Script Generator
+      # Designer  : Agus Ramadhani / BuanaNET.Pbun
+      # Github    : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananet.pbun	
+      ##################################################
+      -------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:16px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      line-height: 1.2;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .logo {
+      margin-top:30px;
+      margin-bottom:5px; 
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:945px;
+      margin:0 auto;
+      padding:10px;
+      font-size:15px; 
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:0px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      background-color:#ff6600;
+      }     
+      .content{
+      float:left;
+      width:auto;
+      height:480px;
+      padding: 10px;
+      border-top:1px solid #bbb; 
+      border-bottom:1px solid #bbb; 
+      border-right:1px solid #bbb; 
+      background:#ddd;
+      }
+      .sidebar{
+      float:left;
+      width:auto;
+      height:450px;
+      padding: 10px;
+      background-color:#ccc;
+      border:2px solid #ccc; 
+      border-radius: 5px;
+      margin-top:5px
+      }
+      .footer{
+      font-size:12px;
+      padding-top:15px;
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:20px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      background-color: #ff6600;
+      border: none;
+      color: black;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      font-size:15px;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 3px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      font-weight:normal;
+      margin-bottom:0px;
+      font-size:14px !important;
+      border-radius:5px
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 3px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 425px;
+      background:#f9f9f9;
+      overflow: auto;
+      overflow-x: auto;
+      width: 900px;
+      padding: 4px;
+      margin-top:0px;
+      border: 1px solid #bbb;
+      border-radius:5px
+      }
+      table, tr, td {
+      border: none;
+      }
+      table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      }
+      td, th {
+      border: 1px solid #ccc;
+      text-align: left;
+      padding:6px;
+      font-weight:normal;
+      }
+      th {
+      font-weight:bold;
+      background:#ddd;
+      text-align:center;
+      }
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+  <body onLoad="callmodal();createTable()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>   
+    <div id="wrap">
+      <div class="logo">
+        <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <div style="float:right">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+        </div>
+        <div style="float:right; margin-right:5px; margin-top:3px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+      </div>
+      <div class="header">
+        <span style="float:left; display:inline;margin-right:6px; margin-top:10px">
+        <a href="https://buananetpbun.github.io/mikrotik-port-porward-generator.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+        </span>	
+        <h1>MIKROTIK PORT FORWARD SCRIPT GENERATOR FOR ROUTEROS</h1>
+      </div>
+      <div class="sidebar">
+        <div class="list-mangle" style="margin-bottom:10px">
+          <div id="cont">
+          </div>
+          <table id="mytable" style="margin-top:5px; font-weight:normal;white-space: nowrap;">
+            <tr style="background-color: #ddd; " >
+              <td><button type="button" id="bt" onclick="submit()" >Generate Script</button>  <button style="margin-left:5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('output'))">Copy All Script</button></td>
+            </tr>
+            <tr style="font-size:15px;font-weight:normal; background-color: #f9f9f9;">
+              <td>
+                <p id='output' style="font-size:13px;"></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="footer">
+        <div style="margin-top:0px; text-align:center">
+          © Copyright 2020-2022 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> - <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> - Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function callmodal() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script> 
+    <script>  
+      var _0x44a375=_0x4c13;(function(_0x48254b,_0x1a755d){var _0x31716b=_0x4c13,_0x1e6d64=_0x48254b();while(!![]){try{var _0x51d0af=parseInt(_0x31716b(0x216))/0x1+parseInt(_0x31716b(0x20e))/0x2*(parseInt(_0x31716b(0x21f))/0x3)+-parseInt(_0x31716b(0x1f8))/0x4*(-parseInt(_0x31716b(0x221))/0x5)+parseInt(_0x31716b(0x204))/0x6+-parseInt(_0x31716b(0x1de))/0x7+parseInt(_0x31716b(0x220))/0x8+parseInt(_0x31716b(0x1ea))/0x9*(-parseInt(_0x31716b(0x1f4))/0xa);if(_0x51d0af===_0x1a755d)break;else _0x1e6d64['push'](_0x1e6d64['shift']());}catch(_0x507afc){_0x1e6d64['push'](_0x1e6d64['shift']());}}}(_0x5c34,0x251d5));var arrHead=new Array();arrHead=[_0x44a375(0x224),_0x44a375(0x1eb),_0x44a375(0x205),'Remote\x20Port','Target\x20IP',_0x44a375(0x1fe),_0x44a375(0x1e7)];function _0x5c34(){var _0x1c0a06=['</span>\x22\x20','appendChild','targetip','getSelection','3909dZJWAM','1385736UTPXlR','34955xtqZGy','selectNodeContents','buananet','<button\x20type=\x22button\x22\x20id=\x22addRow\x22\x20onclick=\x22addRow()\x22>Add+</button>','dst-address=\x22<span\x20style=\x22color:#ff6600\x22>','rows','1948072CZhaHi','placeholder','cont','text','deleteRow','createRange','192.168.50.1','parentNode','childNodes','Description','Remove','to-ports=\x22<span\x20style=\x22color:#ff6600\x22>','172359FQyaoX','Protocol','emty\x20for\x20all','value','comment=\x22<span\x20style=\x22color:#ff6600\x22>','innerHTML','addRange','OPTION','removeRow(this)','push','270kyBtPU','href','/ip\x20firewall\x20nat\x20add\x20action=<span\x20style=\x22color:#ff6600\x22>dst-nat</span>\x20chain=<span\x20style=\x22color:#ff6600\x22>dstnat</span>\x20protocol=<span\x20style=\x22color:#ff6600\x22>','targetport','152XiJRql','selectNode','onclick','/mikrotik-port-porward-generator.html','5151','createElement','Target\x20Port','ex:\x20winbox','length','TCP','protocol','getAttribute','655542zlbzdp','Remote\x20IP','https://','cells','insertCell','empTable','rowIndex','setAttribute','createTextNode','item','190RJUpVP','type','body','moveToElementText','createTextRange','fromip','input','removeAllRanges','275477PPHlWk','select','insertRow','getElementById','SELECT'];_0x5c34=function(){return _0x1c0a06;};return _0x5c34();}function createTable(){var _0x1de344=_0x44a375,_0x7ee142=document['createElement']('table');_0x7ee142['setAttribute']('id',_0x1de344(0x209));var _0x16cc00=_0x7ee142[_0x1de344(0x218)](-0x1);for(var _0x306446=0x0;_0x306446<arrHead[_0x1de344(0x200)];_0x306446++){var _0x515267=document[_0x1de344(0x1fd)]('th');_0x515267[_0x1de344(0x1ef)]=arrHead[_0x306446],_0x16cc00[_0x1de344(0x21c)](_0x515267);}var _0x2b66bc=document['getElementById'](_0x1de344(0x1e0));_0x2b66bc['appendChild'](_0x7ee142);}function addRow(){var _0x5586e8=_0x44a375,_0x330623=document['getElementById']('empTable'),_0x449bf5=_0x330623[_0x5586e8(0x226)]['length'],_0x135076=_0x330623['insertRow'](_0x449bf5);_0x135076=_0x330623[_0x5586e8(0x218)](_0x449bf5);for(var _0x2c3daf=0x0;_0x2c3daf<arrHead['length'];_0x2c3daf++){var _0x521aea=document['createElement']('td');_0x521aea=_0x135076[_0x5586e8(0x208)](_0x2c3daf);if(_0x2c3daf==0x0){var _0x509f35=document[_0x5586e8(0x1fd)](_0x5586e8(0x214));_0x509f35['setAttribute']('type','button'),_0x509f35[_0x5586e8(0x20b)](_0x5586e8(0x1ed),_0x5586e8(0x1e8)),_0x509f35['setAttribute'](_0x5586e8(0x1fa),_0x5586e8(0x1f2)),_0x521aea[_0x5586e8(0x21c)](_0x509f35);}else{if(_0x2c3daf==0x1){var _0x5482a5=document[_0x5586e8(0x1fd)](_0x5586e8(0x21a)),_0x565712=document[_0x5586e8(0x1fd)](_0x5586e8(0x1f1));_0x565712['setAttribute'](_0x5586e8(0x20f),_0x5586e8(0x1e1)),_0x565712['selected']=!![];var _0x127024=document['createElement'](_0x5586e8(0x1f1));_0x127024[_0x5586e8(0x20b)](_0x5586e8(0x20f),'text'),_0x565712[_0x5586e8(0x21c)](document['createTextNode'](_0x5586e8(0x201))),_0x127024[_0x5586e8(0x21c)](document[_0x5586e8(0x20c)]('UDP')),_0x5482a5['appendChild'](_0x565712),_0x5482a5[_0x5586e8(0x21c)](_0x127024),_0x5482a5[_0x5586e8(0x20b)]('id',_0x5586e8(0x202)),_0x521aea[_0x5586e8(0x21c)](_0x5482a5);}else{if(_0x2c3daf==0x2){var _0x3d2f05=document['createElement'](_0x5586e8(0x214));_0x3d2f05[_0x5586e8(0x20b)](_0x5586e8(0x20f),_0x5586e8(0x1e1)),_0x3d2f05[_0x5586e8(0x20b)](_0x5586e8(0x1df),_0x5586e8(0x1ec)),_0x3d2f05[_0x5586e8(0x20b)]('id',_0x5586e8(0x213)),_0x521aea[_0x5586e8(0x21c)](_0x3d2f05);}else{if(_0x2c3daf==0x3){var _0x3d2f05=document[_0x5586e8(0x1fd)]('input');_0x3d2f05[_0x5586e8(0x20b)]('type',_0x5586e8(0x1e1)),_0x3d2f05['setAttribute'](_0x5586e8(0x1df),_0x5586e8(0x1fc)),_0x3d2f05['setAttribute']('id','fromport'),_0x521aea[_0x5586e8(0x21c)](_0x3d2f05);}else{if(_0x2c3daf==0x4){var _0x3d2f05=document[_0x5586e8(0x1fd)](_0x5586e8(0x214));_0x3d2f05['setAttribute'](_0x5586e8(0x20f),'text'),_0x3d2f05[_0x5586e8(0x20b)](_0x5586e8(0x1df),_0x5586e8(0x1e4)),_0x3d2f05[_0x5586e8(0x20b)]('id',_0x5586e8(0x21d)),_0x521aea[_0x5586e8(0x21c)](_0x3d2f05);}else{if(_0x2c3daf==0x5){var _0x3d2f05=document[_0x5586e8(0x1fd)]('input');_0x3d2f05[_0x5586e8(0x20b)](_0x5586e8(0x20f),_0x5586e8(0x1e1)),_0x3d2f05[_0x5586e8(0x20b)](_0x5586e8(0x1df),'8291'),_0x3d2f05['setAttribute']('id',_0x5586e8(0x1f7)),_0x521aea['appendChild'](_0x3d2f05);}else{if(_0x2c3daf==0x6){var _0x3d2f05=document['createElement']('input');_0x3d2f05['setAttribute']('type',_0x5586e8(0x1e1)),_0x3d2f05[_0x5586e8(0x20b)](_0x5586e8(0x1df),_0x5586e8(0x1ff)),_0x3d2f05[_0x5586e8(0x20b)]('id','comment'),_0x521aea['appendChild'](_0x3d2f05);}}}}}}}}}function removeRow(_0x2a7125){var _0x1dc63f=_0x44a375,_0xf883cc=document[_0x1dc63f(0x219)](_0x1dc63f(0x209));_0xf883cc[_0x1dc63f(0x1e2)](_0x2a7125[_0x1dc63f(0x1e5)][_0x1dc63f(0x1e5)][_0x1dc63f(0x20a)]),submit();}function submit(){var _0x3a4a26=_0x44a375,_0x4dbb27=document['getElementById']('empTable'),_0xfa5bec=new Array();for(row=0x1;row<_0x4dbb27[_0x3a4a26(0x226)][_0x3a4a26(0x200)]-0x1;row++){for(c=0x0;c<_0x4dbb27[_0x3a4a26(0x226)][row]['cells'][_0x3a4a26(0x200)];c++){var _0x7a220a=_0x4dbb27['rows'][_0x3a4a26(0x20d)](row)[_0x3a4a26(0x207)][c];_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x203)]('id')=='protocol'&&_0xfa5bec[_0x3a4a26(0x1f3)](_0x3a4a26(0x1f6)+_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x1ed)]['toLowerCase']()+'</span>\x20'),_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x203)]('id')==_0x3a4a26(0x213)&&_0xfa5bec[_0x3a4a26(0x1f3)](_0x3a4a26(0x225)+_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x1ed)]+_0x3a4a26(0x21b)),_0x7a220a[_0x3a4a26(0x1e6)][0x0]['getAttribute']('id')=='fromport'&&_0xfa5bec['push']('dst-port=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x1ed)]+_0x3a4a26(0x21b)),_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x203)]('id')==_0x3a4a26(0x21d)&&_0xfa5bec[_0x3a4a26(0x1f3)]('to-addresses=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x7a220a['childNodes'][0x0][_0x3a4a26(0x1ed)]+_0x3a4a26(0x21b)),_0x7a220a['childNodes'][0x0]['getAttribute']('id')==_0x3a4a26(0x1f7)&&_0xfa5bec['push'](_0x3a4a26(0x1e9)+_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x1ed)]+_0x3a4a26(0x21b)),_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x203)]('id')=='comment'&&_0xfa5bec[_0x3a4a26(0x1f3)](_0x3a4a26(0x1ee)+_0x7a220a[_0x3a4a26(0x1e6)][0x0][_0x3a4a26(0x1ed)]+'</span>\x22<br>');}}document[_0x3a4a26(0x219)]('output')[_0x3a4a26(0x1ef)]=_0xfa5bec['join']('');var _0x27aed1=_0x3a4a26(0x206),_0x2303ed=_0x3a4a26(0x223),_0x24d725='pbun',_0x1d2bc0='github',_0xa1f8ae='io',_0x158e2a=_0x27aed1+_0x2303ed+_0x24d725+'.'+_0x1d2bc0+'.'+_0xa1f8ae;window['location'][_0x3a4a26(0x1f5)]!==_0x158e2a+_0x3a4a26(0x1fb)&&location['replace'](_0x158e2a+_0x3a4a26(0x1fb));}function _0x4c13(_0x27a65b,_0x21783a){var _0x5c349e=_0x5c34();return _0x4c13=function(_0x4c137c,_0x102d8f){_0x4c137c=_0x4c137c-0x1de;var _0x341809=_0x5c349e[_0x4c137c];return _0x341809;},_0x4c13(_0x27a65b,_0x21783a);}function selectElementContents(_0x39be58){var _0x5863dd=_0x44a375,_0x2fbeb4=document[_0x5863dd(0x210)],_0x229f0c,_0x3e21f5;if(document[_0x5863dd(0x1e3)]&&window[_0x5863dd(0x21e)]){_0x229f0c=document['createRange'](),_0x3e21f5=window['getSelection'](),_0x3e21f5[_0x5863dd(0x215)]();try{_0x229f0c[_0x5863dd(0x222)](_0x39be58),_0x3e21f5[_0x5863dd(0x1f0)](_0x229f0c);}catch(_0x5862f7){_0x229f0c[_0x5863dd(0x1f9)](_0x39be58),_0x3e21f5[_0x5863dd(0x1f0)](_0x229f0c);}}else _0x2fbeb4[_0x5863dd(0x212)]&&(_0x229f0c=_0x2fbeb4['createTextRange'](),_0x229f0c[_0x5863dd(0x211)](_0x39be58),_0x229f0c[_0x5863dd(0x217)]());document['execCommand']('copy');}
+    </script>
+  </body>
+</html>
