@@ -355,7 +355,7 @@
             </select>
           </div>
           <div style="clear:both"></div>
-          <div style="color:#ff6600; border:1px solid #ff6600; padding:7px;margin-top:0px;margin-bottom:10px">Attention! Please Change Your WAN Interface Name With Your Router Condition, Example: ether1 or E1-WAN or e1-indihome or pppoe-out1
+          <div style="color:#ff6600; border:1px solid #ccc; padding:7px;margin-top:0px;margin-bottom:10px">Attention! Please Change Your WAN Interface Name With Your Router Condition, Example: ether1 or E1-WAN or e1-indihome or pppoe-out1
           </div>
           <div style="float:left; width:130px;">
             <label>WAN ISP-1</label>
@@ -426,12 +426,14 @@
               <tr>
                 <td>
                   <code class="routeros">	
+                  <span style="color:#ff6600 !important;">  
                   ###################################################################################<br>
                   # LOAD BALANCING (LB) PCC SCRIPT GENERATOR<br>
                   # Date/Time: <span id="tanggalwaktu"></span><br>
                   # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
                   # Load Balancing Method -> <span id="vpn-list-text-info" style="font-weight:bold;">PCC (Per Connection Clasifier)</span><br>
-                  ###################################################################################<br>
+                  ###################################################################################<br><br>
+                  </span>
                   <b>/ip firewall address-list</b><br>
                   add address=192.168.0.0/16 list=LOCAL-IP comment="LB By BNT"<br>
                   add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT" <br>
