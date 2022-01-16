@@ -309,6 +309,13 @@
          text-decoration: none;
          cursor: pointer;
          } 
+.hljs {
+
+
+    padding: 0 !important;
+    border: none !important;
+
+}
       </style>
    </head>
    <body onLoad="callmodal()">
@@ -422,14 +429,14 @@
                      <tr>
                         <td>
 			<code class="routeros">	
-                           <span style="color:#ff6600;">
+                           
                            ################################################<br>
                            # LOAD BALANCING (LB) PCC SCRIPT GENERATOR<br>
                            # Date/Time: <span id="tanggalwaktu"></span><br>
                            # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
                            # Load Balancing Method -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PCC</span><br>
                            ################################################<br><br>
-                           </span>
+                    
                            <b>/ip firewall address-list</b><br>
                            add address=192.168.0.0/16 list=LOCAL-IP comment="LB By BNT"<br>
                            add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT" <br>
