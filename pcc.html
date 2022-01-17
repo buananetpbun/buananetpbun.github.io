@@ -15,10 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://buananetpbun.github.io/pcc.html">
     <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
-    <script async defer src="https://buttons.github.io/buttons.js"></script>  
-    <link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
-    <script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>   
+    <script async defer src="https://buttons.github.io/buttons.js"></script>   
     <style>
       /* --------------------------------------------
       ################################################
@@ -309,10 +306,6 @@
       text-decoration: none;
       cursor: pointer;
       } 
-      .hljs {
-      padding: 0 !important;
-      border: none !important;
-      }
     </style>
   </head>
   <body onLoad="callmodal()">
@@ -433,7 +426,6 @@
                   # Load Balancing Method -> <span id="vpn-list-text-info" style="font-weight:bold;">PCC (Per Connection Clasifier)</span><br>
                   #############################################################<br><br>
                   </span>
-                  <code class="routeros">
                   <b>/ip firewall address-list</b><br>
                   add address=192.168.0.0/16 list=LOCAL-IP comment="LB By BNT"<br>
                   add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT" <br>
@@ -492,7 +484,6 @@
                   <span id="wan4-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan4-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan4-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
                   <span id="wan5-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan5-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan5-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
                   <span id="wan6-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan6-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan6-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span> 
-                  </code>
                 </td>
               </tr>
             </table>
