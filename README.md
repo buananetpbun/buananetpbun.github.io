@@ -39,7 +39,8 @@
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Mikrotik Bandwidth Share For Hotspot Shared User Generator</a> - Mikrotik Bandwidth Share For Hotspot Shared User Generator for RouterOS
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Mikrotik Block Website Script Generator</a> - Mikrotik Block Website Script Generator for RouterOS
 - <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-port-forward-generator.html">MikroTik Port Forward Script Generator</a> - MikroTik Port forward (Forwarding) Script Generator for RouterOS
-
+- <a target="_blank"  href="https://buananetpbun.github.io/mikrotik-hotspot-wizard.html">MikroTik Hotspot Wizard</a> - Make a easy with Mikrotik hotspot Wizard Generator tool for hotspot configuration with 3 step 
+- 
 ## <b>License</b><br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)
