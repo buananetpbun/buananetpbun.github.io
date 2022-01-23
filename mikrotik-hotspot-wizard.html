@@ -69,6 +69,38 @@
       text-align: center; 
       color: #777;
       }
+.mymenu {
+  margin:0 auto;
+  background-color: #333;
+  width:400px;
+  border-radius:0 0 5px 5px;
+  border: 2px solid #333;
+  font-weight:bold
+}
+
+.mymenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.mymenu li {
+  float: left;
+}
+
+.mymenu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+}
+
+.mymenu li a:hover {
+  background-color: #111;
+}
       .list-result {
       height: 380px;
       background:#fff;
@@ -203,6 +235,14 @@
     </style>
   <body>
     <body onLoad="callmodal()">
+	<div class="mymenu">
+<ul>
+  <li><a class="active" href="https://buananetpbun.github.io/">HOME</a></li>
+  <li><a href="#news">OTHER TOOL</a></li>
+  <li><a href="#contact">CONTACT</a></li>
+  <li><a href="#about">ABOUT</a></li>
+</ul>
+</div>
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>   
       <div id="wrap">
