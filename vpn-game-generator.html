@@ -1,264 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset='utf-8'/>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Vpn Game Script Generator For Mikrotik Routeros (Port Games) - BuanaNETPBun.Github.io</title>
-      <meta content='Vpn Game Script Generator For Mikrotik Routeros (Port Games) - BuanaNETPBun.Github.io' name='description'/>
-      <meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
-      <meta content='index, follow, noodp' name='robots'/>
-      <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
-      <meta property="og:title" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET-Pbun">
-      <meta property="og:description" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET-Pbun">
-      <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255425-9ece8000-8649-11eb-839c-21f25e838195.png">
-      <meta property="og:image:alt" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET-Pbun">
-      <meta property="og:type" content="website">
-      <meta property="og:url" content="https://buananetpbun.github.io/vpn-game-generator.html">
-      <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
-	  <script async defer src="https://buttons.github.io/buttons.js"></script>  
-      <style>
-
-         /* ------------------------------------------------------------
-         ###############################################################
-         # Vpn Game Script Generator By BuanaNETPBun.Github.io!
-         # Designer  : Agus Ramadhani / BuanaNET
-	 # github    : https://buananetpbun.github.io
-         # Site      : http://www.o-om.com
-         # Sosmed    : https://fb.me/buananet.pbun	
-         ###############################################################
-         --------------------------------------------------------------- */  
-         *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-         body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-         body { font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:2
-         height: 100%;
-         width:100%;
-         margin-top: 0px;
-         padding:0;
-         font-size:16px;
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  
-         }
-         * {
-         box-sizing: border-box;
-         }
-         .Menu{
-         width:100%;
-         border-bottom:1px solid #ccc;
-         height:100%;
-         padding-bottom: 15px;
-         margin-bottom: 20px;
-         font-size:14px;
-         font-weight:bold;
-         }
-         .logo {
-         margin-top:10px;
-         color: #ddd;
-         text-decoration:none;
-         font-size:27px;
-         font-weight:bold; 
-         }	
-         .logo a{
-         color:#ddd !important;
-         text-decoration:none !important;
-         }
-         #wrap{
-         width:1120px;
-         margin:0 auto;
-         padding:10px;
-         }
-         .header{
-         height:auto; 
-         width:100%;
-         margin-top:5px;
-         margin-bottom:10px;
-         border-top:1px solid #555;
-         }
-         .main-wrap{
-         display:flex;
-         }     
-         .content{
-         flex:1;
-         float:right;
-         width:800px;
-         padding: 10px;
-         border-top:1px solid #ccc;
-         border-bottom:1px solid #ccc;
-         border-right:1px solid #ccc;
-         background:#eee;
-         height: auto;
-          border-radius: 0 5px 5px 0; 
-         }
-         .sidebar{
-         float:left;
-         width:300px;
-         Padding-top:8px;
-         padding-left: 10px;
-         Padding-right:10px;
-         Padding-bottom:20px;
-         background-color:#eee;
-         border:1px solid #ccc; 
-         height: auto;
-         border-radius: 5px 0 0 5px;   
-         }
-         .footer{
-         padding-top:15px;
-		padding-bottom:15px; 
-         clear:both;
-         width:auto;
-         font-size:13px;
-           color:#ddd
-         }
-         h1 {
-         color:#ddd;
-         font-size:22px;
-         margin-bottom:5px;
-         margin-top:10px;
-         }
-         a:link {
-         color: #ff6600;
-         }
-         a:visited {
-         color: #ff6600;
-         }
-         a:hover {
-         color: #ff6600;
-         }
-         a:active {
-         color: #ff6600;
-         }
-         .menu {
-         margin-bottom:13px;
-         clear:both;
-         width:auto;
-         }
-         .menu1 {
-         width:300px;
-         margin-bottom:1px;
-         font-weight:bold;
-         background-color:#ff6600;
-         padding:6px;
-         color:white;
-         display: inline-block;
-         margin:0;
-         }
-         .menu1 a:link {
-         text-decoration:none;
-         color:white;
-         }
-         .menu1 a:visited{
-         text-decoration:none;
-         color:white;
-         }
-         .menu2 {
-         width:360px;
-         margin-bottom:1px;
-         font-weight:bold;
-         background-color:#ff6600;
-         padding:6px;
-         color:white;
-         display: inline-block;
-         margin:0;
-         }
-         .menu2 a:link{
-         text-decoration:none;
-         color:white;
-         }
-         .menu2 a:visited{
-         text-decoration:none;
-         color:white;
-         }
-         button {
-         color: #fff;
-         background-color: #ff6600;
-         border-color: #ff6600;
-         border:none;
-         padding:8px;
-         width:135px;
-         font-size:15px;
-         font-weight:bold;
-         cursor: pointer;
-         border-radius: 5px; 
-         }
-         button:hover {
-         background-color: #ccc;
-         color: #111;
-         }
-         .row:after {
-         content: "";
-         display: table;
-         clear: both;
-         }  
-         input[type=checkbox]{
-         margin-right:7px; 
-         }
-         input[type=text], select, textarea {
-         width: 100%;
-         padding: 5px;
-         border: 1px solid #ccc;
-         border-radius: 1px;
-         resize: vertical;
-         font-size:16px !important;
-          border-radius: 5px; 
-         }
-         label {
-         padding: 5px 5px 5px 5px;
-         display: inline-block;
-         }
-         input[type=submit] {
-         background-color: #ff6600;
-         color: white;
-         padding: 13px 20px;
-         border: none;
-         border-radius: 1px;
-         cursor: pointer;
-         float: right;
-         }
-         input[type=submit]:hover {
-         background-color: #45a049;
-         }
-         .col-25 {
-         float: left;
-         width: 25%;
-         margin-top: 6px;
-         }
-         .col-75 {
-         float: left;
-         width: 75%;
-         margin-top: 6px;
-         }
-         /* Clear floats after the columns */
-         .row:after {
-         content: "";
-         display: table;
-         clear: both;
-         }
-         .list-game {
-         height: 200px;
-         background:white;
-         overflow: scroll;
-         overflow-x: hidden;
-         width: 100%;
-         margin-top:2px;
-         padding: 3px;
-         border: 1px solid rgba(0,0,0,0.25);
-          border-radius: 5px; 
-         }
-         .list-game label {
-         padding: 0;
-         display: inline-block;
-         } 
-         .list-mangle {
-          border-radius: 5px; 
-         height: 625px;
-         background:#fff;
-         overflow: scroll;
-         width: 100%;
-         padding: 4px;
-         margin-top:8px;
-         border: 1px solid #ccc;
-         }
-         table, tr, td {
-         border: none;
-         }
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vpn Game Script Generator For Mikrotik Routeros (Port Games) - BuanaNETPBun.Github.io</title>
+    <meta content='Vpn Game Script Generator For Mikrotik Routeros (Port Games) - BuanaNETPBun.Github.io' name='description'/>
+    <meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+    <meta content='index, follow, noodp' name='robots'/>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET-Pbun">
+    <meta property="og:description" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255425-9ece8000-8649-11eb-839c-21f25e838195.png">
+    <meta property="og:image:alt" content="Vpn Game Script Generator For Mikrotik (Port Game) By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/vpn-game-generator.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <style>
+      /* ------------------------------------------------------------
+      ###############################################################
+      # Vpn Game Script Generator By BuanaNETPBun.Github.io!
+      # Designer  : Agus Ramadhani / BuanaNET
+      # github    : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananet.pbun	
+      ###############################################################
+      --------------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:2
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      font-size:16px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      font-size:14px;
+      font-weight:bold;
+      }
+      .logo {
+      margin-top:10px;
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      #wrap{
+      width:1120px;
+      margin:0 auto;
+      padding:10px;
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:5px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      display:flex;
+      }     
+      .content{
+      flex:1;
+      float:right;
+      width:800px;
+      padding: 10px;
+      border-top:1px solid #ccc;
+      border-bottom:1px solid #ccc;
+      border-right:1px solid #ccc;
+      background:#eee;
+      height: auto;
+      border-radius: 0 5px 5px 0; 
+      }
+      .sidebar{
+      float:left;
+      width:300px;
+      Padding-top:8px;
+      padding-left: 10px;
+      Padding-right:10px;
+      Padding-bottom:20px;
+      background-color:#eee;
+      border:1px solid #ccc; 
+      height: auto;
+      border-radius: 5px 0 0 5px;   
+      }
+      .footer{
+      padding-top:15px;
+      padding-bottom:15px; 
+      clear:both;
+      width:auto;
+      font-size:13px;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:22px;
+      margin-bottom:5px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      margin-bottom:13px;
+      clear:both;
+      width:auto;
+      }
+      .menu1 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#ff6600;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#ff6600;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:8px;
+      width:135px;
+      font-size:15px;
+      font-weight:bold;
+      cursor: pointer;
+      border-radius: 5px; 
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=checkbox]{
+      margin-right:7px; 
+      }
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 1px;
+      resize: vertical;
+      font-size:16px !important;
+      border-radius: 5px; 
+      }
+      label {
+      padding: 5px 5px 5px 5px;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 13px 20px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      float: right;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      border-radius: 5px; 
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      border-radius: 5px; 
+      height: 625px;
+      background:#fff;
+      overflow: scroll;
+      width: 100%;
+      padding: 4px;
+      margin-top:8px;
+      border: 1px solid #ccc;
+      }
+      table, tr, td {
+      border: none;
+      }
       .mymenu {
       margin:0 auto;
       background-color: #ddd;
@@ -289,622 +288,622 @@
       background-color: #bbb;
       color: #111;
       }	      
-         /* The Modal (background) */
-         .modal {
-         display: none; /* Hidden by default */
-         position: fixed; /* Stay in place */
-         z-index: 1; /* Sit on top */
-         padding-top: 150px; /* Location of the box */
-         left: 0;
-         top: 0;
-         width: 100%; /* Full width */
-         height: 100%; /* Full height */
-         overflow: auto; /* Enable scroll if needed */
-         background-color: rgb(0,0,0); /* Fallback color */
-         background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-         }
-         /* Modal Content */
-         .modal-content {
-         line-height:1.4;
-         border-radius: 5px;
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-         color:#ddd;
-         margin: auto;
-         padding: 20px;
-         border: 1px solid #444;
-         width: 390px;
-         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-         font-weight:bold;
-         }
-         .modal-content p {
-         padding:0;
-         margin:5px 5px 0 17px;
-         display:list-item;
-         line-height:2.0;
-         list-style: disc;
-         }
-         /* The Close Button */
-         .close {
-         color: #aaaaaa;
-         float: right;
-         font-size: 30px;
-         font-weight: bold;
-         margin-top:-20px;
-		 margin-right:-10px;
-         }
-         .close:hover,
-         .close:focus {
-         color: orange;
-         text-decoration: none;
-         cursor: pointer;
-         } 
-      </style>
-   </head>
-   <body onLoad="callmodal()">
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-             <div class="mymenu">
-        <ul>
-          <li><a target="_blank" href="https://buananetpbun.github.io">☰ TOOLS</a></li>
-          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-          <li><a href="javascript:callmodal()">DONATE</a></li>
-          <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
-          <img style="float:right; margin-right:10px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
-        </ul>
-      </div> 		
-	   <div id="wrap">
-         <div class="logo">
-            <a href="https://buananetpbun.github.io/vpn-game-generator.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
-            <div style="float:right">
-               <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-            </div>
-            <div style="float:right; margin-right:5px; margin-top:1px">
-               <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-            </div>
-         </div>
-         <div class="header">
-            <h1>STATIC ROUTING VPN GAME SCRIPT GENERATOR <span style="color:#ff6600">{ PORT GAME ROUTING METHOD }</span></h1>
-         </div>
-         <div class="main-wrap">
-            <div class="sidebar">
-               <label>Select VPN Connection</label>
-               <div style="clear: both;"></div>
-               <div style="clear: both;"></div>
-               <select onchange="myFunction()" id="vpn-list">
-                  <option value="pptp">PPTP - Point to Point Tunneling Protocol</option>
-                  <option value="l2tp">L2TP - Layer Two Tunneling Protocol</option>
-                  <option value="more" disabled>Need More game? (premium service)</option>
-               </select>
-               <div style="clear: both;"></div>
-               <label>Create VPN Name on Interface</label>
-               <div style="clear: both;"></div>
-               <input type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME">
-               <div style="clear: both;"></div>
-               <label>VPN IP Address</label>
-               <div style="clear: both;"></div>
-               <input type="text" id="vpn-ip" placeholder="example:137.129.63.112">
-               <div style="clear: both;"></div>
-               <label>VPN Username</label>
-               <div style="clear: both;"></div>
-               <input type="text" id="vpn-username" placeholder="username">
-               <div style="clear: both;"></div>
-               <label>VPN Password</label>
-               <div style="clear: both;"></div>
-               <input type="text" id="vpn-password" placeholder="password">
-               <div style="margin-top:10px;margin-bottom:10px">
-                  <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Game (optional)</label>
-                  <input disabled type="text" id="ip-gateway-input" placeholder="example:192.168.2.1">
-                  <div style="clear: both;"></div>
-               </div>
-               <label>Select Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
-               <div class="list-game">
-                  <table id="myTable">
-                     <!-- MOBILE GAMES -->
-                     <tr>
-                        <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">MOBILE GAMES</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BooyaDominoQiuqiu-Mobile"><label for="BooyaDominoQiuqiu-Mobile">Booya Domino Qiuqiu - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="ClashOfClans-Mobile"><label for="ClashOfClans-Mobile">Clash Of Clans - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="ClashRoyale-Mobile"><label for="ClashRoyale-Mobile">Clash Royale - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CODCallOfDuty-Mobile"><label for="CODCallOfDuty-Mobile">Call of Duty (COD) - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="DominoQq-Mobile"><label for="DominoQq-Mobile">Domino Qq - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="DragonNest-Mobile"><label for="DragonNest-Mobile">DragonNest - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="DreamLeagueSoccer-Mobile"><label for="DreamLeagueSoccer-Mobile">Dream League Soccer - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="FreeFire-Mobile"><label for="FreeFire-Mobile">FreeFire (FF) - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="LastEmpireWarZ-Mobile"><label for="LastEmpireWarZ-Mobile">Last Empire War Z - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="LineLetsGetRich-Mobile"><label for="LineLetsGetRich-Mobile">Line Lets Get Rich - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="MobileLegends-Mobile"><label for="MobileLegends-Mobile">Mobile Legends (ML) - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Mostly-Mobile"><label for="Mostly-Mobile">Mostly - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="NarutoLittleNinja-Mobile"><label for="NarutoLittleNinja-Mobile">Naruto Little Ninja - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Netmarble-Mobile"><label for="Netmarble-Mobile">Netmarble - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="PointBlank-Mobile"><label for="PointBlank-Mobile">PointBlank (PB) - Mobile </label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="PUBG-Mobile"><label for="PUBG-Mobile">PUBG - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="RpgToramOnline-Mobile"><label for="RpgToramOnline-Mobile">Rpg Toram Online - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">RulesOfSurvival (ROS) - Mobile</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="ShinobiHeroes-Mobile"><label for="ShinobiHeroes-Mobile">Shinobi Heroes - Mobile</label></td>
-                     </tr>
-                     <!-- WEB GAMES -->   
-                     <tr>
-                        <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">WEB GAMES</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BallPool-WebGames"><label for="BallPool-WebGames">8 Ball Pool - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CastleVille-WebGames"><label for="CastleVille-WebGames">Castle Ville - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Headshot-WebGames"><label for="Headshot-WebGames">Headshot - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="EmpireAllies-WebGames"><label for="EmpireAllies-WebGames">Empire Allies - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="LeagueofAngels-WebGames"><label for="LeagueofAngels-WebGames">League of Angels 2 - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="MegarealmRiseOfChaos-WebGames"><label for="MegarealmRiseOfChaos-WebGames">Megarealm RiseOfChaos-WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="PerjuanganSemut-WebGames"><label for="PerjuanganSemut-WebGames">Perjuangan Semut - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Roblox-WebGames"><label for="Roblox-WebGames">Roblox - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="SwordofAngels-WebGames"><label for="SwordofAngels-WebGames">Sword of Angels - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="TexasHoldEmPoker-WebGames"><label for="TexasHoldEmPoker-WebGames">Texas Hold EmPoker - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Warflare-WebGames"><label for="Warflare-WebGames">Warflare - WebGames</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="WildOnes-WebGames"><label for="WildOnes-WebGames">WildOnes - WebGames</label></td>
-                     </tr>
-                     <!-- DEKSTOP / PC GAMES -->    
-                     <tr>
-                        <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">DEKSTOP / PC GAMES</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">Ayodance - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="OriginAPEXLegends-PC"><label for="OriginAPEXLegends-PC">APEX Legends - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BlackDesertOnline-PC"><label for="BlackDesertOnline-PC">BlackDesert (BDO) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BlackDesertOnlinePS-PC"><label for="BlackDesertOnlinePS-PC">BlackDesert (BDO) - Playstaion</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BlackDesertOnlineSteam-PC"><label for="BlackDesertOnlineSteam-PC">BlackDesert Steam (BDO) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BlackDesertOnlineXbox-PC"><label for="BlackDesertOnlineXbox-PC">Black Desert (BDO) - Xbox</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Blackretribution-PC"><label for="Blackretribution-PC">Blackretribution - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BlizzardBattleNet-PC"><label for="BlizzardBattleNet-PC">Blizzard BattleNet - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="BountyHound-PC"><label for="BountyHound-PC">Bounty Hound - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CabalExtremePrivate-PC"><label for="CabalExtremePrivate-PC">Cabal Extreme - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CabalIndonesia-PC"><label for="CabalIndonesia-PC">Cabal Indonesia - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CallofDutyBO-PC"><label for="CallofDutyBO-PC">CallofDuty(COD)BO - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CallofDutyBOPS-PC"><label for="CallofDutyBOPS-PC">CallofDuty(COD)BO - PlaySt..</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CallofDutyBOXBox-PC"><label for="CallofDutyBOXBox-PC">CallofDuty(COD)BO - XBox</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CallofDutyMWPC-PC"><label for="CallofDutyMWPC-PC">CallofDuty(COD)MW - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CallofDutyMWPS-PC"><label for="CallofDutyMWPS-PC">CallofDuty COD)MW - Playst..</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CallofDutyMWXBox-PC"><label for="CallofDutyMWXBox-PC">CallofDuty (COD)MW - XBox </label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="ClashofGod-PC"><label for="ClashofGod-PC">Clash of God - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CSGOPlaystation-PC"><label for="CSGOPlaystation-PC">CSGO Playstation</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CSGOSteam-PC"><label for="CSGOSteam-PC">CSGO Steam - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CSGOXbox-PC"><label for="CSGOXbox-PC">CSGO Xbox - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="CrossFireindonesia-PC"><label for="CrossFireindonesia-PC">Cross Fire indonesia - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="DiabloIII-PC"><label for="DiabloIII-PC">Diablo III - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="DiabloII-PC"><label for="DiabloII-PC">Diablo II - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Diablo-PC"><label for="Diablo-PC">Diablo I - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Dota2Steam-PC"><label for="Dota2Steam-PC">DOTA 2 Steam - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="DragonNest-PC"><label for="DragonNest-PC">DragonNest - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Dragona-PC"><label for="Dragona-PC">Dragona - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="FifaOnline3-PC"><label for="FifaOnline3-PC">Fifa Online 3 (FO3) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="FORTNITEEPICGAMES-PC"><label for="FORTNITEEPICGAMES-PC">Fortnite Epic - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="LeagueofLegend-PC"><label for="LeagueofLegend-PC">League of Legend (LOL) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="GrandChase-PC"><label for="GrandChase-PC">Grand Chase - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Hearthstone-PC"><label for="Hearthstone-PC">Hearthstone - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="HeroesoftheStorm-PC"><label for="HeroesoftheStorm-PC">Heroes of the Storm - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="HONHeroesofNewerth-PC"><label for="HONHeroesofNewerth-PC">Heroes of Newerth - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="HeroesofAtarsia-PC"><label for="HeroesofAtarsia-PC">Heroes of Atarsia - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="IdolStreet-PC"><label for="IdolStreet-PC">Idol Street - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Left4Dead2Steam-PC"><label for="Left4Dead2Steam-PC">Left4Dead 2 Steam - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Lineage2-PC"><label for="Lineage2-PC">Lineage 2 - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="LostSaga-PC"><label for="LostSaga-PC">LostSaga (LS) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Luneofeden-PC"><label for="Luneofeden-PC">Lune of eden - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Mercenaryops-PC"><label for="Mercenaryops-PC">Mercenary ops - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Mircovolt-PC"><label for="Mircovolt-PC">Mircovolt - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="ModoMarble-PC"><label for="ModoMarble-PC">Modo Marble - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Overwatch-PC"><label for="Overwatch-PC">Overwatch - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="PaladinsHiRez-PC"><label for="PaladinsHiRez-PC">Paladins Hi-Rez - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="PointBlank-PC"><label for="PointBlank-PC">PointBlank - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="PUBG-PC"><label for="PUBG-PC">PUBG - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Ragnarok2-PC"><label for="Ragnarok2-PC">Ragnarok 2 - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="RFRisingForce-PC"><label for="RFRisingForce-PC">RF Rising Force - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="ROERingofElysium-PC"><label for="ROERingofElysium-PC">Ring of Elysium (ROE) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="ROSRulesOfSurvival-PC"><label for="ROSRulesOfSurvival-PC">Rules Of Survival (ROS) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="SealOnline-PC"><label for="SealOnline-PC">Seal Online - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="SpecialForce-PC"><label for="SpecialForce-PC">Special Force - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="StarCraftII-PC"><label for="StarCraftII-PC">StarCraft II - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="StarCraft-PC"><label for="StarCraft-PC">StarCraft - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Valorant-PC"><label for="Valorant-PC">Valorant (RIOT) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="WarcraftIIBattleNet-PC"><label for="WarcraftIIBattleNet-PC">Warcraft II - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="WarcraftIII-PC"><label for="WarcraftIII-PC">Warcraft III - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="WorldofTanks-PC"><label for="WorldofTanks-PC">World of Tanks (WOT) - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="WorldofWarcraft-PC"><label for="WorldofWarcraft-PC">World of Warcraft - PC</label></td>
-                     </tr>
-                     <tr>
-                        <td><input type="checkbox" id="XshotIndonesia-PC"><label for="XshotIndonesia-PC">X-shot Indonesia - PC</label></td>
-                     </tr>
-                  </table>
-               </div>
-               <br>
-               <button style="margin-right:2px" type="button" onclick="myFunction()">Generate</button> 
-               <button type="button" onclick="location.reload()">Clear All</button> 
-               <br>
-            </div>
-            <div class="content">
-               <span style="margin-left:2px">Script Generator Results</span>
-               <div class="list-mangle">
-                  <div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">
-                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                     <!-- MIKROTIK SCRIPT DB3 -->
-                     <ins class="adsbygoogle"
-                        style="display:inline-block;width:728px;height:90px"
-                        data-ad-client="ca-pub-9740800920365268"
-                        data-ad-slot="4637807296"></ins>
-                     <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                     </script> 
-                  </div>
-                  <table id="showScript" style="padding:5px;">
-                     <tr>
-                        <td>
-                           <span style="color:#ff6600;">
-                           ######################################################<br>
-                           # Vpn Game Script Generator By BuanaNETPBun.Github.io<br>
-                           # Date/Time: <span id="tanggalwaktu"></span><br>
-                           # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
-                           # VPN Type -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
-                           ######################################################<br><br>
-                           </span>
-                           <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
-                           add connect-to="<span id="vpn-ip-text">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1">VPN-GAME</span>" user="<span id="vpn-username-text">******</span>" password="<span id="vpn-password-text">******</span>" comment="<span id="vpn-name-text4">VPN-GAME</span>"<br>
-                           <span style="color:black;font-weight:bold">/ip firewall nat</span><br>
-                           add chain=srcnat out-interface="<span id="vpn-name-text2">VPN-GAME</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-GAME</span>"<br>
-                           <span style="color:black;font-weight:bold">/ip route</span><br>
-                           add gateway="<span id="vpn-name-text3">VPN-GAME</span>" routing-mark=vpn-routing-game comment="<span id="vpn-name-text6">VPN-GAME</span>"<br>
-                           <span id="ip-gateway-text" style="display:none">
-                           <span style="color:black;font-weight:bold">/ip route</span><br>
-                           add dst-address="<span id="vpn-ip-text2">x.x.x.x.x</span>" gateway="<span id="ip-gateway-game">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-GAME</span>"
-                           </span>
-                           <span style="color:black;font-weight:bold">/ip firewall mangle</span>
-                           <!-- MOBILE GAMES -->
-                           <span id="ArenaOfValorMobile" style="display:none"><span style="color:#ff6600"># Arena Of Valor - Mobile</span><br>add action=mark-routing chain=prerouting comment="Arena Of Valor - Mobile" dst-port=10001-10094 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=10080,17000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="BooyaCapsaSusunMobile" style="display:none"><span style="color:#ff6600"># Booya Capsa Susun - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Capsa Susun - Mobile" dst-port=7090-7100 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="BooyaDominoQiuqiuMobile" style="display:none"><span style="color:#ff6600"># Booya Domino Qiuqiu - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Domino Qiuqiu - Mobile" dst-port=7020-7030 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="ClashOfClansMobile" style="display:none"><span style="color:#ff6600"># Clash Of Clans - Mobile</span><br>add action=mark-routing chain=prerouting comment="Clash Of Clans - Mobile" dst-port=9330-9340 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="ClashRoyaleMobile" style="display:none"><span style="color:#ff6600"># Clash Royale (Cry) - Mobile</span><br>add action=mark-routing chain=prerouting comment="Clash Royale (Cry) - Mobile" dst-port=9330-9340 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9330-9340 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CODCallOfDutyMobile" style="display:none"><span style="color:#ff6600"># Call Of Duty - Mobile</span><br>add action=mark-routing chain=prerouting comment="Call Of Duty - Mobile" dst-port=3013,10000-10019,50000,65010,65050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7085-7995,8700,9030,10010-10019 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="DominoQqMobile" style="display:none"><span style="color:#ff6600"># Domino Qq - Mobile</span><br>add action=mark-routing chain=prerouting comment="Domino Qq - Mobile" dst-port=9122,11000-11150 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="DragonNestMobile" style="display:none"><span style="color:#ff6600"># Dragon Nest - Mobile</span><br>add action=mark-routing chain=prerouting comment="Dragon Nest - Mobile" dst-port=10514 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="DreamLeagueSoccerMobile" style="display:none"><span style="color:#ff6600"># Dream League Soccer - Mobile</span><br>add action=mark-routing chain=prerouting comment="Dream League Soccer - Mobile" dst-port=60970-60980 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="FreeFireMobile" style="display:none"><span style="color:#ff6600"># Free Fire - Mobile</span><br>add action=mark-routing chain=prerouting comment="Free Fire - Mobile" dst-port=6006,7006,8006,9006,11000-11019,39003,39006,39698,39779,10000-10007 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6008,7008,8008,9008,10000-10009,11000-11019 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="LastEmpireWarZMobile" style="display:none"><span style="color:#ff6600"># Last Empire War Z - Mobile</span><br>add action=mark-routing chain=prerouting comment="Last Empire War Z - Mobile" dst-port=9930-9940 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="LineLetsGetRichMobile" style="display:none"><span style="color:#ff6600"># Line Lets Get Rich - Mobile</span><br>add action=mark-routing chain=prerouting comment="Line Lets Get Rich - Mobile" dst-port=10500-10515 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="MobileLegendsMobile" style="display:none"><span style="color:#ff6600"># Mobile Legends - Mobile</span><br>add action=mark-routing chain=prerouting comment="Mobile Legends - Mobile" dst-port=5001-5180,5501-5680,9443,30000-30220,9001 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=5001-5180,5501-5680,9992,30020-30220,9001 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="MostlyMobile" style="display:none"><span style="color:#ff6600"># Mostly - Mobile</span><br>add action=mark-routing chain=prerouting comment="Mostly - Mobile" dst-port=9933 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="NarutoLittleNinjaMobile" style="display:none"><span style="color:#ff6600"># Naruto Little Ninja (China) - Mobile</span><br>add action=mark-routing chain=prerouting comment="Naruto Little Ninja (China) - Mobile" dst-port=6170-6180 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="NetmarbleMobile" style="display:none"><span style="color:#ff6600"># Netmarble - Mobile</span><br>add action=mark-routing chain=prerouting comment="Netmarble - Mobile" dst-port=12000-12010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="PointBlankMobile" style="display:none"><span style="color:#ff6600"># Point Blank - Mobile</span><br>add action=mark-routing chain=prerouting comment="Point Blank - Mobile" dst-port=44590-44610 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="PUBGMobile" style="display:none"><span style="color:#ff6600"># PUBG - Mobile</span> <br>add action=mark-routing chain=prerouting comment="PUBG - Mobile" dst-port=14000,17000,17500,18081,20000-20002,10012,17500 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=10020-14000,17000,17500,20000-20002,7086-7995,12070-12460,41182-42474 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="RpgToramOnlineMobile" style="display:none"><span style="color:#ff6600"># Rpg Toram Online - Mobile</span><br>add action=mark-routing chain=prerouting comment="Rpg Toram Online - Mobile" dst-port=30100-30110 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="RulesOfSurvivalMobile" style="display:none"><span style="color:#ff6600"># Rules Of Survival - Mobile</span><br>add action=mark-routing chain=prerouting comment="Rules Of Survival - Mobile" dst-port=24000-24050 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="ShinobiHeroesMobile" style="display:none"><span style="color:#ff6600"># Shinobi Heroes - Mobile</span><br>add action=mark-routing chain=prerouting comment="Shinobi Heroes - Mobile" dst-port=10005-10020 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <!-- WEB GAMES -->
-                           <span id="BallPoolWebGames" style="display:none"><span style="color:#ff6600"># 8 Ball Pool - Web Games</span><br>add action=mark-routing chain=prerouting comment="8 Ball Pool (Miniclips - Web Games" dst-port=4000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="CastleVilleWebGames" style="display:none"><span style="color:#ff6600">#CastleVille - Web Games</span><br>add action=mark-routing chain=prerouting comment="CastleVille - Web Games" dst-port=8890 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="HeadshotWebGames" style="display:none"><span style="color:#ff6600"># Headshot - Web Games</span><br>add action=mark-routing chain=prerouting comment="Headshot - Web Games" dst-port=1800-1810 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1845-1860 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="EmpireAlliesWebGames" style="display:none"><span style="color:#ff6600"># Empire & Allies - Web Games</span><br>add action=mark-routing chain=prerouting comment="Empire & Allies - Web Games" dst-port=8890 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="LeagueofAngelsWebGames" style="display:none"><span style="color:#ff6600"># League of Angels 2 - Web Games</span><br>add action=mark-routing chain=prerouting comment="League of Angels 2 - Web Games" dst-port=51700-51715 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="MegarealmRiseOfChaosWebGames" style="display:none"><span style="color:#ff6600"># Megarealm: Rise Of Chaos - Web Games</span><br>add action=mark-routing chain=prerouting comment="Megarealm: Rise Of Chaos" dst-port=26590-26600 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="PerjuanganSemutWebGames" style="display:none"><span style="color:#ff6600"># Perjuangan Semut  - Web Games</span><br>add action=mark-routing chain=prerouting comment="Perjuangan Semut  - Web Games" dst-port=7200-7210,7450-7460 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="RobloxWebGames" style="display:none"><span style="color:#ff6600"># Roblox - Web Games</span><br>add action=mark-routing chain=prerouting comment="Roblox - Web Games" dst-port=49152-65535 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="SwordofAngelsWebGames" style="display:none"><span style="color:#ff6600"># Sword of Angels - Web Games</span><br>add action=mark-routing chain=prerouting comment="Sword of Angels - Web Games" dst-port=15490-15510 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="TexasHoldEmPokerWebGames" style="display:none"><span style="color:#ff6600"># Texas HoldEm Poker - Games Web</span><br>add action=mark-routing chain=prerouting comment="Texas HoldEm Poker - Games Web" dst-port=9339 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="WarflareWebGames" style="display:none"><span style="color:#ff6600"># Warflare - Web Games</span><br>add action=mark-routing chain=prerouting comment="Warflare - Web Games" dst-port=64990-65010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="WildOnesWebGames" style="display:none"><span style="color:#ff6600"># WildOnes - Web Games</span><br>add action=mark-routing chain=prerouting comment="WildOnes - Web Games" dst-port=8000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <!-- DEKSTOP / PC GAMES -->
-                           <span id="AtlanticaPC" style="display:none"><span style="color:#ff6600"># Atlantica - PC</span><br>add action=mark-routing chain=prerouting comment="Atlantica - PC" dst-port=4300 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="AuraKingdomPC" style="display:none"><span style="color:#ff6600"># Aura Kingdom - PC</span><br>add action=mark-routing chain=prerouting comment="Aura Kingdom - PC" dst-port=5540-5580 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="AyodancePC" style="display:none"><span style="color:#ff6600"># Ayo Dance - PC</span><br>add action=mark-routing chain=prerouting comment="Ayodance - PC" dst-port=18900-18910 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="OriginAPEXLegendsPC" style="display:none"><span style="color:#ff6600"># Origin APEX Legends - PC</span><br>add action=mark-routing chain=prerouting comment="Origin APEX Legends - PC" dst-port=9960-9969,1024-1124,3216,18000,18120,18060,27900,28910,29900 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1024-1124,18000,29900,37000-40000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="BlackDesertOnlinePC" style="display:none"><span style="color:#ff6600"># Black Desert Online - PC</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online - PC" dst-port=8888,9991-9993 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=8888,9991-9993 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="BlackDesertOnlinePSPC" style="display:none"><span style="color:#ff6600"># Black Desert Online - Playstation </span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Playstation" dst-port=1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="BlackDesertOnlineSteamPC" style="display:none"><span style="color:#ff6600"># Black Desert Online Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Steam - PC" dst-port=8888,9991-9993,27015-27030,27036-27037 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=4380,8888,9991-9993,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="BlackDesertOnlineXboxPC" style="display:none"><span style="color:#ff6600"># Black Desert Online - Xbox</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Xbox - PC" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="BlackretributionPC" style="display:none"><span style="color:#ff6600"># Black retribution - PC</span><br>add action=mark-routing chain=prerouting comment="Blackretribution - PC" dst-port=7020-7050,8200-8220,9000-9020 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="BlizzardBattleNetPC" style="display:none"><span style="color:#ff6600"># Blizzard BattleNet - PC</span><br>add action=mark-routing chain=prerouting comment="Blizzard BattleNet - PC" dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="BountyHoundPC" style="display:none"><span style="color:#ff6600"># Bounty Hound - PC</span><br>add action=mark-routing chain=prerouting comment="Bounty Hound - PC" dst-port=9810-9860 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="CabalExtremePrivatePC" style="display:none"><span style="color:#ff6600"># Cabal Extreme Private - PC</span><br>add action=mark-routing chain=prerouting comment="Cabal Extreme Private - PC" dst-port=60170-60180,63000-64000,38101,38110-38600 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="CabalIndonesiaPC" style="display:none"><span style="color:#ff6600"># Cabal Indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Cabal Indonesia - PC" dst-port=63000-64000,38101,38110-38130 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="CallofDutyBOPC" style="display:none"><span style="color:#ff6600"># Call of Duty BO - PC</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - PC" dst-port=3074,27014-27050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478,4379-4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CallofDutyBOPSPC" style="display:none"><span style="color:#ff6600"># Callof Duty BO - Playstation</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - Playstation" dst-port=80,443,1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CallofDutyBOXBoxPC" style="display:none"><span style="color:#ff6600"># Call of Duty BO - XBox</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - XBox" dst-port=53,80,3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3075,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CallofDutyMWPCPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - PC</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW PC - PC" dst-port=3074,27014-27050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478,4379-4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CallofDutyMWPSPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - Playstation</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW Playstation" dst-port=1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CallofDutyMWXBoxPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - XBox</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW - XBox" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3075,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="ClashofGodPC" style="display:none"><span style="color:#ff6600"># Clash of God - PC</span><br>add action=mark-routing chain=prerouting comment="Clash of God - PC" dst-port=9430-9450,5220-5230 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="CSGOPlaystationPC" style="display:none"><span style="color:#ff6600"># CSGO - Playstation </span><br>add action=mark-routing chain=prerouting comment="CSGO - Playstation" dst-port=3478-3480,5223,8080 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479,3658 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CSGOSteamPC" style="display:none"><span style="color:#ff6600"># CSGO Steam - PC</span><br>add action=mark-routing chain=prerouting comment="CSGO Steam - PC" dst-port=27015-27030,27036-27037 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CSGOXboxPC" style="display:none"><span style="color:#ff6600"># CSGO - Xbox</span><br>add action=mark-routing chain=prerouting comment="CSGO - Xbox" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,3074 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="CrossFireindonesiaPC" style="display:none"><span style="color:#ff6600"># CrossFire indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Cross Fire indonesia - PC" dst-port=10009,13008,16666,28012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12020-12080,13000-13080 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="DiabloIIIPC" style="display:none"><span style="color:#ff6600"># Diablo III - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo III - PC" dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119,6120 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="DiabloIIPC" style="display:none"><span style="color:#ff6600"># Diablo II - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo II - PC" dst-port=6112,4000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="DiabloPC" style="display:none"><span style="color:#ff6600"># Diablo I - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo - PC" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="Dota2SteamPC" style="display:none"><span style="color:#ff6600"># DOTA2 Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Dota 2 Steam - PC" dst-port=9100-9200,8230-8250,8110-8120 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=28010-28200,27010-27200,39000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="DragonNestPC" style="display:none"><span style="color:#ff6600"># Dragon Nest - PC</span><br>add action=mark-routing chain=prerouting comment="Dragon Nest - PC" dst-port=14300-15512 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=15000-15500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="DragonaPC" style="display:none"><span style="color:#ff6600"># Dragona - PC</span><br>add action=mark-routing chain=prerouting comment="Dragona - PC" dst-port=10000-10030 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="FifaOnline3PC" style="display:none"><span style="color:#ff6600"># Fifa Online 3 - PC</span><br>add action=mark-routing chain=prerouting comment="Fifa Online 3 - PC" dst-port=7770-7790 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=16300-16350 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="FORTNITEEPICGAMESPC" style="display:none"><span style="color:#ff6600"># FORTNITE EPIC GAMES - PC</span><br>add action=mark-routing chain=prerouting comment="FORTNITE EPIC GAMES - PC" dst-port=9000-9100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="LeagueofLegendPC" style="display:none"><span style="color:#ff6600"># League of Legend - PC</span><br>add action=mark-routing chain=prerouting comment="League of Legend - PC" dst-port=2080-2099 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port="5100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="GrandChasePC" style="display:none"><span style="color:#ff6600"># Grand Chase - PC</span><br>add action=mark-routing chain=prerouting comment="Grand Chase - PC" dst-port=9300,9400,9700 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="HearthstonePC" style="display:none"><span style="color:#ff6600"># Hearthstone - PC</span><br>add action=mark-routing chain=prerouting comment="Hearthstone - PC" dst-port=1119,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port="1119,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="HeroesoftheStormPC" style="display:none"><span style="color:#ff6600"># Heroes of the Storm - PC</span><br>add action=mark-routing chain=prerouting comment="Heroes of the Storm - PC" dst-port=1119-1120,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119-1120,3478-3479,3724,5060,5062,6113,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="HONHeroesofNewerthPC" style="display:none"><span style="color:#ff6600"># HON Heroes of Newerth - PC</span><br>add action=mark-routing chain=prerouting comment="HON Heroes of Newerth - PC" dst-port=9100-9200,11200-11500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="HeroesofAtarsiaPC" style="display:none"><span style="color:#ff6600"># Heroes of Atarsia - PC</span><br>add action=mark-routing chain=prerouting comment="Heroes of Atarsia - PC" dst-port=7777,9400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="IdolStreetPC" style="display:none"><span style="color:#ff6600"># Idol Street - PC</span><br>add action=mark-routing chain=prerouting comment="Idol Street - PC" dst-port=2001-2010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="Left4Dead2SteamPC" style="display:none"><span style="color:#ff6600"># Left4Dead 2 Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Left4Dead 2 Steam - PC" dst-port=4360-4390 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="Lineage2PC" style="display:none"><span style="color:#ff6600"># Lineage 2 - PC</span><br>add action=mark-routing chain=prerouting comment="Lineage 2 - PC" dst-port=7777,10000,11000,13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="LostSagaPC" style="display:none"><span style="color:#ff6600"># Lost Saga - PC</span><br>add action=mark-routing chain=prerouting comment="Lost Saga - PC" dst-port=14000-14010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=14000-14010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="LuneofedenPC" style="display:none"><span style="color:#ff6600"># Lune of eden - PC</span><br>add action=mark-routing chain=prerouting comment="Lune of eden - PC" dst-port=8400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="MercenaryopsPC" style="display:none"><span style="color:#ff6600"># Mercenary ops - PC</span><br>add action=mark-routing chain=prerouting comment="Mercenary ops - PC" dst-port=6000-6125 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="MircovoltPC" style="display:none"><span style="color:#ff6600"># Mircovolt - PC</span><br>add action=mark-routing chain=prerouting comment="Mircovolt - PC" dst-port=13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="ModoMarblePC" style="display:none"><span style="color:#ff6600"># Modo Marble - PC</span><br>add action=mark-routing chain=prerouting comment="Modo Marble - PC" dst-port=28900-28914 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="OverwatchPC" style="display:none"><span style="color:#ff6600"># Overwatch - PC</span><br>add action=mark-routing chain=prerouting comment="Overwatch - PC" dst-port=1119,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479,5060,5062,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="PaladinsHiRezPC" style="display:none"><span style="color:#ff6600"># Paladins Hi-Rez - PC</span><br>add action=mark-routing chain=prerouting comment="Paladins Hi-Rez - PC" dst-port=9000-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9002-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="PointBlankPC" style="display:none"><span style="color:#ff6600"># Point Blank - PC</span><br>add action=mark-routing chain=prerouting comment="Point Blank - PC" dst-port=39190-39200 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=40000-40010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="PUBGPC" style="display:none"><span style="color:#ff6600"># PUBG Playerunknown Battlegrounds - PC</span><br>add action=mark-routing chain=prerouting comment="PUBG Playerunknown Battlegrounds - PC" dst-port=7080-8000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="Ragnarok2PC" style="display:none"><span style="color:#ff6600"># Ragnarok 2 - PC</span><br>add action=mark-routing chain=prerouting comment="Ragnarok 2 - PC" dst-port=7201-7210,7401-7410 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="RFRisingForcePC" style="display:none"><span style="color:#ff6600"># RF Rising Force - PC</span><br>add action=mark-routing chain=prerouting comment="RF Rising Force - PC" dst-port=27780 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="ROERingofElysiumPC" style="display:none"><span style="color:#ff6600"># ROE Ring of Elysium - PC</span><br>add action=mark-routing chain=prerouting comment="ROE Ring of Elysium - PC" dst-port=9002,10000-10015 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="ROSRulesOfSurvivalPC" style="display:none"><span style="color:#ff6600"># ROS Rules Of Survival - PC</span><br>add action=mark-routing chain=prerouting comment="ROS Rules Of Survival - PC" dst-port=24000-24100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="SealOnlinePC" style="display:none"><span style="color:#ff6600"># Seal Online - PC</span><br>add action=mark-routing chain=prerouting comment="Seal Online - PC" dst-port=1818 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="SpecialForcePC" style="display:none"><span style="color:#ff6600"># Special Force - PC</span><br>add action=mark-routing chain=prerouting comment="Special Force - PC" dst-port=27920-27940 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=30000-30030 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="StarCraftIIPC" style="display:none"><span style="color:#ff6600"># StarCraft II - PC</span><br>add action=mark-routing chain=prerouting comment="StarCraft II - PC" dst-port=1119,6113,1120,80,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119,6113,1120,80,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="StarCraftPC" style="display:none"><span style="color:#ff6600"># StarCraft - PC</span><br>add action=mark-routing chain=prerouting comment="StarCraft - PC" dst-port=6112 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9401,9600,16440-16450 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="ValorantPC" style="display:none"><span style="color:#ff6600"># Valorant - PC Games</span><br>add action=mark-routing chain=prerouting comment="Valorant - PC Games" dst-port=2099,5222-5223,8088,8393-8400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7000-7500,8088 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="WarcraftIIBattleNetPC" style="display:none"><span style="color:#ff6600"># Warcraft II BattleNet - PC</span><br>add action=mark-routing chain=prerouting comment="Warcraft II BattleNet - PC" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="WarcraftIIIPC" style="display:none"><span style="color:#ff6600"># Warcraft III - PC</span><br>add action=mark-routing chain=prerouting comment="Warcraft III - PC" dst-port=6112,6113-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
-                           <span id="WarframePC" style="display:none"><span style="color:#ff6600"># Warframe - PC</span><br>add action=mark-routing chain=prerouting comment="Warframe - PC" dst-port=4950-4955 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6695-6699 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="WorldofTanksPC" style="display:none"><span style="color:#ff6600"># World of Tanks - PC</span><br>add action=mark-routing chain=prerouting comment="World of Tanks - PC" dst-port=20000-25000,8081,8088,32801,3280 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12000-29999,32801-32825, 5060,5062,3478,3479,20014 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="WorldofWarcraftPC" style="display:none"><span style="color:#ff6600"># World of Warcraft - PC</span><br>add action=mark-routing chain=prerouting comment="World of Warcraft - PC" dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                           <span id="XshotIndonesiaPC" style="display:none"><span style="color:#ff6600"># Xshot Indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Xshot Indonesia - PC" dst-port=7320-7350 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7800-7850,30000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-                        </td>
-                     </tr>
-                  </table>
-               </div>
-               <br>
-               <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script to Terminal, make sure Script on the Top position!</b></span>
-            </div>
-         </div>
-         <div class="footer">
-            <div style="float:right">
-	  				© Copyright 2020-2022 <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+  <body onLoad="callmodal()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        <img style="float:right; margin-right:10px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
+      </ul>
+    </div>
+    <div id="wrap">
+      <div class="logo">
+        <a href="https://buananetpbun.github.io/vpn-game-generator.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <div style="float:right">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+        </div>
+        <div style="float:right; margin-right:5px; margin-top:1px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+      </div>
+      <div class="header">
+        <h1>STATIC ROUTING VPN GAME SCRIPT GENERATOR <span style="color:#ff6600">{ PORT GAME ROUTING METHOD }</span></h1>
+      </div>
+      <div class="main-wrap">
+        <div class="sidebar">
+          <label>Select VPN Connection</label>
+          <div style="clear: both;"></div>
+          <div style="clear: both;"></div>
+          <select onchange="myFunction()" id="vpn-list">
+            <option value="pptp">PPTP - Point to Point Tunneling Protocol</option>
+            <option value="l2tp">L2TP - Layer Two Tunneling Protocol</option>
+            <option value="more" disabled>Need More game? (premium service)</option>
+          </select>
+          <div style="clear: both;"></div>
+          <label>Create VPN Name on Interface</label>
+          <div style="clear: both;"></div>
+          <input type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME">
+          <div style="clear: both;"></div>
+          <label>VPN IP Address</label>
+          <div style="clear: both;"></div>
+          <input type="text" id="vpn-ip" placeholder="example:137.129.63.112">
+          <div style="clear: both;"></div>
+          <label>VPN Username</label>
+          <div style="clear: both;"></div>
+          <input type="text" id="vpn-username" placeholder="username">
+          <div style="clear: both;"></div>
+          <label>VPN Password</label>
+          <div style="clear: both;"></div>
+          <input type="text" id="vpn-password" placeholder="password">
+          <div style="margin-top:10px;margin-bottom:10px">
+            <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Game (optional)</label>
+            <input disabled type="text" id="ip-gateway-input" placeholder="example:192.168.2.1">
+            <div style="clear: both;"></div>
           </div>
-            <span style="color:#ff6600">
-            <b># This Script for remove all Script from this Generator</b></span><br>
-            /interface pptp-client remove [find comment="VPN-GAME"]<br>
-            /interface l2tp-client remove [find comment="VPN-GAME"]<br>
-            /ip route remove [find comment="VPN-GAME"]<br>
-            /ip firewall nat remove [find comment="VPN-GAME"]<br>
-            /ip firewall mangle remove [find new-routing-mark="vpn-routing-game"]
-         </div>
-      </div>
-      <div id="myModal" class="modal">
-         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
-            <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
-            <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
-            <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
-            <br>
-            <div style="float:left;margin-right:3px; margin-top:0px">
-               <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+          <label>Select Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
+          <div class="list-game">
+            <table id="myTable">
+              <!-- MOBILE GAMES -->
+              <tr>
+                <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">MOBILE GAMES</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BooyaDominoQiuqiu-Mobile"><label for="BooyaDominoQiuqiu-Mobile">Booya Domino Qiuqiu - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ClashOfClans-Mobile"><label for="ClashOfClans-Mobile">Clash Of Clans - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ClashRoyale-Mobile"><label for="ClashRoyale-Mobile">Clash Royale - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CODCallOfDuty-Mobile"><label for="CODCallOfDuty-Mobile">Call of Duty (COD) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DominoQq-Mobile"><label for="DominoQq-Mobile">Domino Qq - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DragonNest-Mobile"><label for="DragonNest-Mobile">DragonNest - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DreamLeagueSoccer-Mobile"><label for="DreamLeagueSoccer-Mobile">Dream League Soccer - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="FreeFire-Mobile"><label for="FreeFire-Mobile">FreeFire (FF) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LastEmpireWarZ-Mobile"><label for="LastEmpireWarZ-Mobile">Last Empire War Z - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LineLetsGetRich-Mobile"><label for="LineLetsGetRich-Mobile">Line Lets Get Rich - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="MobileLegends-Mobile"><label for="MobileLegends-Mobile">Mobile Legends (ML) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Mostly-Mobile"><label for="Mostly-Mobile">Mostly - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="NarutoLittleNinja-Mobile"><label for="NarutoLittleNinja-Mobile">Naruto Little Ninja - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Netmarble-Mobile"><label for="Netmarble-Mobile">Netmarble - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PointBlank-Mobile"><label for="PointBlank-Mobile">PointBlank (PB) - Mobile </label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PUBG-Mobile"><label for="PUBG-Mobile">PUBG - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="RpgToramOnline-Mobile"><label for="RpgToramOnline-Mobile">Rpg Toram Online - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">RulesOfSurvival (ROS) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ShinobiHeroes-Mobile"><label for="ShinobiHeroes-Mobile">Shinobi Heroes - Mobile</label></td>
+              </tr>
+              <!-- WEB GAMES -->   
+              <tr>
+                <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">WEB GAMES</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BallPool-WebGames"><label for="BallPool-WebGames">8 Ball Pool - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CastleVille-WebGames"><label for="CastleVille-WebGames">Castle Ville - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Headshot-WebGames"><label for="Headshot-WebGames">Headshot - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="EmpireAllies-WebGames"><label for="EmpireAllies-WebGames">Empire Allies - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LeagueofAngels-WebGames"><label for="LeagueofAngels-WebGames">League of Angels 2 - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="MegarealmRiseOfChaos-WebGames"><label for="MegarealmRiseOfChaos-WebGames">Megarealm RiseOfChaos-WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PerjuanganSemut-WebGames"><label for="PerjuanganSemut-WebGames">Perjuangan Semut - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Roblox-WebGames"><label for="Roblox-WebGames">Roblox - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="SwordofAngels-WebGames"><label for="SwordofAngels-WebGames">Sword of Angels - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="TexasHoldEmPoker-WebGames"><label for="TexasHoldEmPoker-WebGames">Texas Hold EmPoker - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Warflare-WebGames"><label for="Warflare-WebGames">Warflare - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WildOnes-WebGames"><label for="WildOnes-WebGames">WildOnes - WebGames</label></td>
+              </tr>
+              <!-- DEKSTOP / PC GAMES -->    
+              <tr>
+                <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">DEKSTOP / PC GAMES</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">Ayodance - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="OriginAPEXLegends-PC"><label for="OriginAPEXLegends-PC">APEX Legends - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlackDesertOnline-PC"><label for="BlackDesertOnline-PC">BlackDesert (BDO) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlackDesertOnlinePS-PC"><label for="BlackDesertOnlinePS-PC">BlackDesert (BDO) - Playstaion</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlackDesertOnlineSteam-PC"><label for="BlackDesertOnlineSteam-PC">BlackDesert Steam (BDO) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlackDesertOnlineXbox-PC"><label for="BlackDesertOnlineXbox-PC">Black Desert (BDO) - Xbox</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Blackretribution-PC"><label for="Blackretribution-PC">Blackretribution - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlizzardBattleNet-PC"><label for="BlizzardBattleNet-PC">Blizzard BattleNet - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BountyHound-PC"><label for="BountyHound-PC">Bounty Hound - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CabalExtremePrivate-PC"><label for="CabalExtremePrivate-PC">Cabal Extreme - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CabalIndonesia-PC"><label for="CabalIndonesia-PC">Cabal Indonesia - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyBO-PC"><label for="CallofDutyBO-PC">CallofDuty(COD)BO - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyBOPS-PC"><label for="CallofDutyBOPS-PC">CallofDuty(COD)BO - PlaySt..</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyBOXBox-PC"><label for="CallofDutyBOXBox-PC">CallofDuty(COD)BO - XBox</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyMWPC-PC"><label for="CallofDutyMWPC-PC">CallofDuty(COD)MW - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyMWPS-PC"><label for="CallofDutyMWPS-PC">CallofDuty COD)MW - Playst..</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyMWXBox-PC"><label for="CallofDutyMWXBox-PC">CallofDuty (COD)MW - XBox </label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ClashofGod-PC"><label for="ClashofGod-PC">Clash of God - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CSGOPlaystation-PC"><label for="CSGOPlaystation-PC">CSGO Playstation</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CSGOSteam-PC"><label for="CSGOSteam-PC">CSGO Steam - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CSGOXbox-PC"><label for="CSGOXbox-PC">CSGO Xbox - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CrossFireindonesia-PC"><label for="CrossFireindonesia-PC">Cross Fire indonesia - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DiabloIII-PC"><label for="DiabloIII-PC">Diablo III - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DiabloII-PC"><label for="DiabloII-PC">Diablo II - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Diablo-PC"><label for="Diablo-PC">Diablo I - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Dota2Steam-PC"><label for="Dota2Steam-PC">DOTA 2 Steam - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DragonNest-PC"><label for="DragonNest-PC">DragonNest - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Dragona-PC"><label for="Dragona-PC">Dragona - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="FifaOnline3-PC"><label for="FifaOnline3-PC">Fifa Online 3 (FO3) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="FORTNITEEPICGAMES-PC"><label for="FORTNITEEPICGAMES-PC">Fortnite Epic - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LeagueofLegend-PC"><label for="LeagueofLegend-PC">League of Legend (LOL) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="GrandChase-PC"><label for="GrandChase-PC">Grand Chase - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Hearthstone-PC"><label for="Hearthstone-PC">Hearthstone - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="HeroesoftheStorm-PC"><label for="HeroesoftheStorm-PC">Heroes of the Storm - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="HONHeroesofNewerth-PC"><label for="HONHeroesofNewerth-PC">Heroes of Newerth - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="HeroesofAtarsia-PC"><label for="HeroesofAtarsia-PC">Heroes of Atarsia - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="IdolStreet-PC"><label for="IdolStreet-PC">Idol Street - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Left4Dead2Steam-PC"><label for="Left4Dead2Steam-PC">Left4Dead 2 Steam - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Lineage2-PC"><label for="Lineage2-PC">Lineage 2 - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LostSaga-PC"><label for="LostSaga-PC">LostSaga (LS) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Luneofeden-PC"><label for="Luneofeden-PC">Lune of eden - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Mercenaryops-PC"><label for="Mercenaryops-PC">Mercenary ops - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Mircovolt-PC"><label for="Mircovolt-PC">Mircovolt - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ModoMarble-PC"><label for="ModoMarble-PC">Modo Marble - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Overwatch-PC"><label for="Overwatch-PC">Overwatch - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PaladinsHiRez-PC"><label for="PaladinsHiRez-PC">Paladins Hi-Rez - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PointBlank-PC"><label for="PointBlank-PC">PointBlank - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PUBG-PC"><label for="PUBG-PC">PUBG - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Ragnarok2-PC"><label for="Ragnarok2-PC">Ragnarok 2 - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="RFRisingForce-PC"><label for="RFRisingForce-PC">RF Rising Force - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ROERingofElysium-PC"><label for="ROERingofElysium-PC">Ring of Elysium (ROE) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ROSRulesOfSurvival-PC"><label for="ROSRulesOfSurvival-PC">Rules Of Survival (ROS) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="SealOnline-PC"><label for="SealOnline-PC">Seal Online - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="SpecialForce-PC"><label for="SpecialForce-PC">Special Force - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="StarCraftII-PC"><label for="StarCraftII-PC">StarCraft II - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="StarCraft-PC"><label for="StarCraft-PC">StarCraft - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Valorant-PC"><label for="Valorant-PC">Valorant (RIOT) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WarcraftIIBattleNet-PC"><label for="WarcraftIIBattleNet-PC">Warcraft II - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WarcraftIII-PC"><label for="WarcraftIII-PC">Warcraft III - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WorldofTanks-PC"><label for="WorldofTanks-PC">World of Tanks (WOT) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WorldofWarcraft-PC"><label for="WorldofWarcraft-PC">World of Warcraft - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="XshotIndonesia-PC"><label for="XshotIndonesia-PC">X-shot Indonesia - PC</label></td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <button style="margin-right:2px" type="button" onclick="myFunction()">Generate</button> 
+          <button type="button" onclick="location.reload()">Clear All</button> 
+          <br>
+        </div>
+        <div class="content">
+          <span style="margin-left:2px">Script Generator Results</span>
+          <div class="list-mangle">
+            <div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- MIKROTIK SCRIPT DB3 -->
+              <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-9740800920365268"
+                data-ad-slot="4637807296"></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script> 
             </div>
-            <div style="margin-top:0px">    
-               <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
-               <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
-               <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
-            </div>
-         </div>
+            <table id="showScript" style="padding:5px;">
+              <tr>
+                <td>
+                  <span style="color:#ff6600;">
+                  ######################################################<br>
+                  # Vpn Game Script Generator By BuanaNETPBun.Github.io<br>
+                  # Date/Time: <span id="tanggalwaktu"></span><br>
+                  # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
+                  # VPN Type -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
+                  ######################################################<br><br>
+                  </span>
+                  <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
+                  add connect-to="<span id="vpn-ip-text">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1">VPN-GAME</span>" user="<span id="vpn-username-text">******</span>" password="<span id="vpn-password-text">******</span>" comment="<span id="vpn-name-text4">VPN-GAME</span>"<br>
+                  <span style="color:black;font-weight:bold">/ip firewall nat</span><br>
+                  add chain=srcnat out-interface="<span id="vpn-name-text2">VPN-GAME</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-GAME</span>"<br>
+                  <span style="color:black;font-weight:bold">/ip route</span><br>
+                  add gateway="<span id="vpn-name-text3">VPN-GAME</span>" routing-mark=vpn-routing-game comment="<span id="vpn-name-text6">VPN-GAME</span>"<br>
+                  <span id="ip-gateway-text" style="display:none">
+                  <span style="color:black;font-weight:bold">/ip route</span><br>
+                  add dst-address="<span id="vpn-ip-text2">x.x.x.x.x</span>" gateway="<span id="ip-gateway-game">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-GAME</span>"
+                  </span>
+                  <span style="color:black;font-weight:bold">/ip firewall mangle</span>
+                  <!-- MOBILE GAMES -->
+                  <span id="ArenaOfValorMobile" style="display:none"><span style="color:#ff6600"># Arena Of Valor - Mobile</span><br>add action=mark-routing chain=prerouting comment="Arena Of Valor - Mobile" dst-port=10001-10094 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=10080,17000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="BooyaCapsaSusunMobile" style="display:none"><span style="color:#ff6600"># Booya Capsa Susun - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Capsa Susun - Mobile" dst-port=7090-7100 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="BooyaDominoQiuqiuMobile" style="display:none"><span style="color:#ff6600"># Booya Domino Qiuqiu - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Domino Qiuqiu - Mobile" dst-port=7020-7030 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="ClashOfClansMobile" style="display:none"><span style="color:#ff6600"># Clash Of Clans - Mobile</span><br>add action=mark-routing chain=prerouting comment="Clash Of Clans - Mobile" dst-port=9330-9340 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="ClashRoyaleMobile" style="display:none"><span style="color:#ff6600"># Clash Royale (Cry) - Mobile</span><br>add action=mark-routing chain=prerouting comment="Clash Royale (Cry) - Mobile" dst-port=9330-9340 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9330-9340 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CODCallOfDutyMobile" style="display:none"><span style="color:#ff6600"># Call Of Duty - Mobile</span><br>add action=mark-routing chain=prerouting comment="Call Of Duty - Mobile" dst-port=3013,10000-10019,50000,65010,65050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7085-7995,8700,9030,10010-10019 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="DominoQqMobile" style="display:none"><span style="color:#ff6600"># Domino Qq - Mobile</span><br>add action=mark-routing chain=prerouting comment="Domino Qq - Mobile" dst-port=9122,11000-11150 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="DragonNestMobile" style="display:none"><span style="color:#ff6600"># Dragon Nest - Mobile</span><br>add action=mark-routing chain=prerouting comment="Dragon Nest - Mobile" dst-port=10514 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="DreamLeagueSoccerMobile" style="display:none"><span style="color:#ff6600"># Dream League Soccer - Mobile</span><br>add action=mark-routing chain=prerouting comment="Dream League Soccer - Mobile" dst-port=60970-60980 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="FreeFireMobile" style="display:none"><span style="color:#ff6600"># Free Fire - Mobile</span><br>add action=mark-routing chain=prerouting comment="Free Fire - Mobile" dst-port=6006,7006,8006,9006,11000-11019,39003,39006,39698,39779,10000-10007 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6008,7008,8008,9008,10000-10009,11000-11019 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="LastEmpireWarZMobile" style="display:none"><span style="color:#ff6600"># Last Empire War Z - Mobile</span><br>add action=mark-routing chain=prerouting comment="Last Empire War Z - Mobile" dst-port=9930-9940 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="LineLetsGetRichMobile" style="display:none"><span style="color:#ff6600"># Line Lets Get Rich - Mobile</span><br>add action=mark-routing chain=prerouting comment="Line Lets Get Rich - Mobile" dst-port=10500-10515 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="MobileLegendsMobile" style="display:none"><span style="color:#ff6600"># Mobile Legends - Mobile</span><br>add action=mark-routing chain=prerouting comment="Mobile Legends - Mobile" dst-port=5001-5180,5501-5680,9443,30000-30220,9001 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=5001-5180,5501-5680,9992,30020-30220,9001 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="MostlyMobile" style="display:none"><span style="color:#ff6600"># Mostly - Mobile</span><br>add action=mark-routing chain=prerouting comment="Mostly - Mobile" dst-port=9933 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="NarutoLittleNinjaMobile" style="display:none"><span style="color:#ff6600"># Naruto Little Ninja (China) - Mobile</span><br>add action=mark-routing chain=prerouting comment="Naruto Little Ninja (China) - Mobile" dst-port=6170-6180 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="NetmarbleMobile" style="display:none"><span style="color:#ff6600"># Netmarble - Mobile</span><br>add action=mark-routing chain=prerouting comment="Netmarble - Mobile" dst-port=12000-12010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="PointBlankMobile" style="display:none"><span style="color:#ff6600"># Point Blank - Mobile</span><br>add action=mark-routing chain=prerouting comment="Point Blank - Mobile" dst-port=44590-44610 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="PUBGMobile" style="display:none"><span style="color:#ff6600"># PUBG - Mobile</span> <br>add action=mark-routing chain=prerouting comment="PUBG - Mobile" dst-port=14000,17000,17500,18081,20000-20002,10012,17500 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=10020-14000,17000,17500,20000-20002,7086-7995,12070-12460,41182-42474 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="RpgToramOnlineMobile" style="display:none"><span style="color:#ff6600"># Rpg Toram Online - Mobile</span><br>add action=mark-routing chain=prerouting comment="Rpg Toram Online - Mobile" dst-port=30100-30110 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="RulesOfSurvivalMobile" style="display:none"><span style="color:#ff6600"># Rules Of Survival - Mobile</span><br>add action=mark-routing chain=prerouting comment="Rules Of Survival - Mobile" dst-port=24000-24050 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="ShinobiHeroesMobile" style="display:none"><span style="color:#ff6600"># Shinobi Heroes - Mobile</span><br>add action=mark-routing chain=prerouting comment="Shinobi Heroes - Mobile" dst-port=10005-10020 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <!-- WEB GAMES -->
+                  <span id="BallPoolWebGames" style="display:none"><span style="color:#ff6600"># 8 Ball Pool - Web Games</span><br>add action=mark-routing chain=prerouting comment="8 Ball Pool (Miniclips - Web Games" dst-port=4000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="CastleVilleWebGames" style="display:none"><span style="color:#ff6600">#CastleVille - Web Games</span><br>add action=mark-routing chain=prerouting comment="CastleVille - Web Games" dst-port=8890 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="HeadshotWebGames" style="display:none"><span style="color:#ff6600"># Headshot - Web Games</span><br>add action=mark-routing chain=prerouting comment="Headshot - Web Games" dst-port=1800-1810 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1845-1860 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="EmpireAlliesWebGames" style="display:none"><span style="color:#ff6600"># Empire & Allies - Web Games</span><br>add action=mark-routing chain=prerouting comment="Empire & Allies - Web Games" dst-port=8890 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="LeagueofAngelsWebGames" style="display:none"><span style="color:#ff6600"># League of Angels 2 - Web Games</span><br>add action=mark-routing chain=prerouting comment="League of Angels 2 - Web Games" dst-port=51700-51715 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="MegarealmRiseOfChaosWebGames" style="display:none"><span style="color:#ff6600"># Megarealm: Rise Of Chaos - Web Games</span><br>add action=mark-routing chain=prerouting comment="Megarealm: Rise Of Chaos" dst-port=26590-26600 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="PerjuanganSemutWebGames" style="display:none"><span style="color:#ff6600"># Perjuangan Semut  - Web Games</span><br>add action=mark-routing chain=prerouting comment="Perjuangan Semut  - Web Games" dst-port=7200-7210,7450-7460 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="RobloxWebGames" style="display:none"><span style="color:#ff6600"># Roblox - Web Games</span><br>add action=mark-routing chain=prerouting comment="Roblox - Web Games" dst-port=49152-65535 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="SwordofAngelsWebGames" style="display:none"><span style="color:#ff6600"># Sword of Angels - Web Games</span><br>add action=mark-routing chain=prerouting comment="Sword of Angels - Web Games" dst-port=15490-15510 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="TexasHoldEmPokerWebGames" style="display:none"><span style="color:#ff6600"># Texas HoldEm Poker - Games Web</span><br>add action=mark-routing chain=prerouting comment="Texas HoldEm Poker - Games Web" dst-port=9339 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="WarflareWebGames" style="display:none"><span style="color:#ff6600"># Warflare - Web Games</span><br>add action=mark-routing chain=prerouting comment="Warflare - Web Games" dst-port=64990-65010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="WildOnesWebGames" style="display:none"><span style="color:#ff6600"># WildOnes - Web Games</span><br>add action=mark-routing chain=prerouting comment="WildOnes - Web Games" dst-port=8000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <!-- DEKSTOP / PC GAMES -->
+                  <span id="AtlanticaPC" style="display:none"><span style="color:#ff6600"># Atlantica - PC</span><br>add action=mark-routing chain=prerouting comment="Atlantica - PC" dst-port=4300 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="AuraKingdomPC" style="display:none"><span style="color:#ff6600"># Aura Kingdom - PC</span><br>add action=mark-routing chain=prerouting comment="Aura Kingdom - PC" dst-port=5540-5580 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="AyodancePC" style="display:none"><span style="color:#ff6600"># Ayo Dance - PC</span><br>add action=mark-routing chain=prerouting comment="Ayodance - PC" dst-port=18900-18910 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="OriginAPEXLegendsPC" style="display:none"><span style="color:#ff6600"># Origin APEX Legends - PC</span><br>add action=mark-routing chain=prerouting comment="Origin APEX Legends - PC" dst-port=9960-9969,1024-1124,3216,18000,18120,18060,27900,28910,29900 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1024-1124,18000,29900,37000-40000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="BlackDesertOnlinePC" style="display:none"><span style="color:#ff6600"># Black Desert Online - PC</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online - PC" dst-port=8888,9991-9993 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=8888,9991-9993 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="BlackDesertOnlinePSPC" style="display:none"><span style="color:#ff6600"># Black Desert Online - Playstation </span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Playstation" dst-port=1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="BlackDesertOnlineSteamPC" style="display:none"><span style="color:#ff6600"># Black Desert Online Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Steam - PC" dst-port=8888,9991-9993,27015-27030,27036-27037 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=4380,8888,9991-9993,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="BlackDesertOnlineXboxPC" style="display:none"><span style="color:#ff6600"># Black Desert Online - Xbox</span><br>add action=mark-routing chain=prerouting comment="Black Desert Online Xbox - PC" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="BlackretributionPC" style="display:none"><span style="color:#ff6600"># Black retribution - PC</span><br>add action=mark-routing chain=prerouting comment="Blackretribution - PC" dst-port=7020-7050,8200-8220,9000-9020 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="BlizzardBattleNetPC" style="display:none"><span style="color:#ff6600"># Blizzard BattleNet - PC</span><br>add action=mark-routing chain=prerouting comment="Blizzard BattleNet - PC" dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="BountyHoundPC" style="display:none"><span style="color:#ff6600"># Bounty Hound - PC</span><br>add action=mark-routing chain=prerouting comment="Bounty Hound - PC" dst-port=9810-9860 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="CabalExtremePrivatePC" style="display:none"><span style="color:#ff6600"># Cabal Extreme Private - PC</span><br>add action=mark-routing chain=prerouting comment="Cabal Extreme Private - PC" dst-port=60170-60180,63000-64000,38101,38110-38600 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="CabalIndonesiaPC" style="display:none"><span style="color:#ff6600"># Cabal Indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Cabal Indonesia - PC" dst-port=63000-64000,38101,38110-38130 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="CallofDutyBOPC" style="display:none"><span style="color:#ff6600"># Call of Duty BO - PC</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - PC" dst-port=3074,27014-27050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478,4379-4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CallofDutyBOPSPC" style="display:none"><span style="color:#ff6600"># Callof Duty BO - Playstation</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - Playstation" dst-port=80,443,1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CallofDutyBOXBoxPC" style="display:none"><span style="color:#ff6600"># Call of Duty BO - XBox</span><br>add action=mark-routing chain=prerouting comment="Call of Duty BO - XBox" dst-port=53,80,3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3075,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CallofDutyMWPCPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - PC</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW PC - PC" dst-port=3074,27014-27050 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478,4379-4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CallofDutyMWPSPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - Playstation</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW Playstation" dst-port=1935,3478-3480 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CallofDutyMWXBoxPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - XBox</span><br>add action=mark-routing chain=prerouting comment="Call of Duty MW - XBox" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,500,3074,3075,3544,4500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="ClashofGodPC" style="display:none"><span style="color:#ff6600"># Clash of God - PC</span><br>add action=mark-routing chain=prerouting comment="Clash of God - PC" dst-port=9430-9450,5220-5230 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="CSGOPlaystationPC" style="display:none"><span style="color:#ff6600"># CSGO - Playstation </span><br>add action=mark-routing chain=prerouting comment="CSGO - Playstation" dst-port=3478-3480,5223,8080 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3074,3478-3479,3658 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CSGOSteamPC" style="display:none"><span style="color:#ff6600"># CSGO Steam - PC</span><br>add action=mark-routing chain=prerouting comment="CSGO Steam - PC" dst-port=27015-27030,27036-27037 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=4380,27000-27031,27036 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CSGOXboxPC" style="display:none"><span style="color:#ff6600"># CSGO - Xbox</span><br>add action=mark-routing chain=prerouting comment="CSGO - Xbox" dst-port=3074 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=88,3074 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="CrossFireindonesiaPC" style="display:none"><span style="color:#ff6600"># CrossFire indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Cross Fire indonesia - PC" dst-port=10009,13008,16666,28012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12020-12080,13000-13080 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="DiabloIIIPC" style="display:none"><span style="color:#ff6600"># Diablo III - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo III - PC" dst-port=1119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119,6120 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="DiabloIIPC" style="display:none"><span style="color:#ff6600"># Diablo II - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo II - PC" dst-port=6112,4000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="DiabloPC" style="display:none"><span style="color:#ff6600"># Diablo I - PC</span><br>add action=mark-routing chain=prerouting comment="Diablo - PC" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="Dota2SteamPC" style="display:none"><span style="color:#ff6600"># DOTA2 Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Dota 2 Steam - PC" dst-port=9100-9200,8230-8250,8110-8120 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=28010-28200,27010-27200,39000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="DragonNestPC" style="display:none"><span style="color:#ff6600"># Dragon Nest - PC</span><br>add action=mark-routing chain=prerouting comment="Dragon Nest - PC" dst-port=14300-15512 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=15000-15500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="DragonaPC" style="display:none"><span style="color:#ff6600"># Dragona - PC</span><br>add action=mark-routing chain=prerouting comment="Dragona - PC" dst-port=10000-10030 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="FifaOnline3PC" style="display:none"><span style="color:#ff6600"># Fifa Online 3 - PC</span><br>add action=mark-routing chain=prerouting comment="Fifa Online 3 - PC" dst-port=7770-7790 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=16300-16350 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="FORTNITEEPICGAMESPC" style="display:none"><span style="color:#ff6600"># FORTNITE EPIC GAMES - PC</span><br>add action=mark-routing chain=prerouting comment="FORTNITE EPIC GAMES - PC" dst-port=9000-9100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="LeagueofLegendPC" style="display:none"><span style="color:#ff6600"># League of Legend - PC</span><br>add action=mark-routing chain=prerouting comment="League of Legend - PC" dst-port=2080-2099 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port="5100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="GrandChasePC" style="display:none"><span style="color:#ff6600"># Grand Chase - PC</span><br>add action=mark-routing chain=prerouting comment="Grand Chase - PC" dst-port=9300,9400,9700 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="HearthstonePC" style="display:none"><span style="color:#ff6600"># Hearthstone - PC</span><br>add action=mark-routing chain=prerouting comment="Hearthstone - PC" dst-port=1119,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port="1119,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="HeroesoftheStormPC" style="display:none"><span style="color:#ff6600"># Heroes of the Storm - PC</span><br>add action=mark-routing chain=prerouting comment="Heroes of the Storm - PC" dst-port=1119-1120,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119-1120,3478-3479,3724,5060,5062,6113,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="HONHeroesofNewerthPC" style="display:none"><span style="color:#ff6600"># HON Heroes of Newerth - PC</span><br>add action=mark-routing chain=prerouting comment="HON Heroes of Newerth - PC" dst-port=9100-9200,11200-11500 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="HeroesofAtarsiaPC" style="display:none"><span style="color:#ff6600"># Heroes of Atarsia - PC</span><br>add action=mark-routing chain=prerouting comment="Heroes of Atarsia - PC" dst-port=7777,9400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="IdolStreetPC" style="display:none"><span style="color:#ff6600"># Idol Street - PC</span><br>add action=mark-routing chain=prerouting comment="Idol Street - PC" dst-port=2001-2010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="Left4Dead2SteamPC" style="display:none"><span style="color:#ff6600"># Left4Dead 2 Steam - PC</span><br>add action=mark-routing chain=prerouting comment="Left4Dead 2 Steam - PC" dst-port=4360-4390 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="Lineage2PC" style="display:none"><span style="color:#ff6600"># Lineage 2 - PC</span><br>add action=mark-routing chain=prerouting comment="Lineage 2 - PC" dst-port=7777,10000,11000,13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="LostSagaPC" style="display:none"><span style="color:#ff6600"># Lost Saga - PC</span><br>add action=mark-routing chain=prerouting comment="Lost Saga - PC" dst-port=14000-14010 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=14000-14010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="LuneofedenPC" style="display:none"><span style="color:#ff6600"># Lune of eden - PC</span><br>add action=mark-routing chain=prerouting comment="Lune of eden - PC" dst-port=8400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="MercenaryopsPC" style="display:none"><span style="color:#ff6600"># Mercenary ops - PC</span><br>add action=mark-routing chain=prerouting comment="Mercenary ops - PC" dst-port=6000-6125 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="MircovoltPC" style="display:none"><span style="color:#ff6600"># Mircovolt - PC</span><br>add action=mark-routing chain=prerouting comment="Mircovolt - PC" dst-port=13000 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="ModoMarblePC" style="display:none"><span style="color:#ff6600"># Modo Marble - PC</span><br>add action=mark-routing chain=prerouting comment="Modo Marble - PC" dst-port=28900-28914 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="OverwatchPC" style="display:none"><span style="color:#ff6600"># Overwatch - PC</span><br>add action=mark-routing chain=prerouting comment="Overwatch - PC" dst-port=1119,3724,6113 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3478-3479,5060,5062,6250,12000-64000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="PaladinsHiRezPC" style="display:none"><span style="color:#ff6600"># Paladins Hi-Rez - PC</span><br>add action=mark-routing chain=prerouting comment="Paladins Hi-Rez - PC" dst-port=9000-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9002-9999 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="PointBlankPC" style="display:none"><span style="color:#ff6600"># Point Blank - PC</span><br>add action=mark-routing chain=prerouting comment="Point Blank - PC" dst-port=39190-39200 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=40000-40010 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="PUBGPC" style="display:none"><span style="color:#ff6600"># PUBG Playerunknown Battlegrounds - PC</span><br>add action=mark-routing chain=prerouting comment="PUBG Playerunknown Battlegrounds - PC" dst-port=7080-8000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="Ragnarok2PC" style="display:none"><span style="color:#ff6600"># Ragnarok 2 - PC</span><br>add action=mark-routing chain=prerouting comment="Ragnarok 2 - PC" dst-port=7201-7210,7401-7410 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="RFRisingForcePC" style="display:none"><span style="color:#ff6600"># RF Rising Force - PC</span><br>add action=mark-routing chain=prerouting comment="RF Rising Force - PC" dst-port=27780 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="ROERingofElysiumPC" style="display:none"><span style="color:#ff6600"># ROE Ring of Elysium - PC</span><br>add action=mark-routing chain=prerouting comment="ROE Ring of Elysium - PC" dst-port=9002,10000-10015 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="ROSRulesOfSurvivalPC" style="display:none"><span style="color:#ff6600"># ROS Rules Of Survival - PC</span><br>add action=mark-routing chain=prerouting comment="ROS Rules Of Survival - PC" dst-port=24000-24100 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="SealOnlinePC" style="display:none"><span style="color:#ff6600"># Seal Online - PC</span><br>add action=mark-routing chain=prerouting comment="Seal Online - PC" dst-port=1818 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="SpecialForcePC" style="display:none"><span style="color:#ff6600"># Special Force - PC</span><br>add action=mark-routing chain=prerouting comment="Special Force - PC" dst-port=27920-27940 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=30000-30030 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="StarCraftIIPC" style="display:none"><span style="color:#ff6600"># StarCraft II - PC</span><br>add action=mark-routing chain=prerouting comment="StarCraft II - PC" dst-port=1119,6113,1120,80,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=1119,6113,1120,80,3724 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="StarCraftPC" style="display:none"><span style="color:#ff6600"># StarCraft - PC</span><br>add action=mark-routing chain=prerouting comment="StarCraft - PC" dst-port=6112 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=9401,9600,16440-16450 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="ValorantPC" style="display:none"><span style="color:#ff6600"># Valorant - PC Games</span><br>add action=mark-routing chain=prerouting comment="Valorant - PC Games" dst-port=2099,5222-5223,8088,8393-8400 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7000-7500,8088 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="WarcraftIIBattleNetPC" style="display:none"><span style="color:#ff6600"># Warcraft II BattleNet - PC</span><br>add action=mark-routing chain=prerouting comment="Warcraft II BattleNet - PC" dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6112-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="WarcraftIIIPC" style="display:none"><span style="color:#ff6600"># Warcraft III - PC</span><br>add action=mark-routing chain=prerouting comment="Warcraft III - PC" dst-port=6112,6113-6119 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
+                  <span id="WarframePC" style="display:none"><span style="color:#ff6600"># Warframe - PC</span><br>add action=mark-routing chain=prerouting comment="Warframe - PC" dst-port=4950-4955 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=6695-6699 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="WorldofTanksPC" style="display:none"><span style="color:#ff6600"># World of Tanks - PC</span><br>add action=mark-routing chain=prerouting comment="World of Tanks - PC" dst-port=20000-25000,8081,8088,32801,3280 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12000-29999,32801-32825, 5060,5062,3478,3479,20014 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="WorldofWarcraftPC" style="display:none"><span style="color:#ff6600"># World of Warcraft - PC</span><br>add action=mark-routing chain=prerouting comment="World of Warcraft - PC" dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                  <span id="XshotIndonesiaPC" style="display:none"><span style="color:#ff6600"># Xshot Indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Xshot Indonesia - PC" dst-port=7320-7350 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7800-7850,30000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste Script to Terminal, make sure Script on the Top position!</b></span>
+        </div>
       </div>
-      <script>
-         var modal = document.getElementById("myModal");
-         var span = document.getElementsByClassName("close")[0];
-         function callmodal() {
-           modal.style.display = "block";
-         }
-         span.onclick = function() {
-           modal.style.display = "none";
-         }
-         window.onclick = function(event) {
-           if (event.target == modal) {
-             modal.style.display = "none";
-           }
-         }
-      </script> 
-      <script>  
-         function _0x48b7(_0x212114,_0x40ffeb){var _0x3a32fc=_0x3a32();return _0x48b7=function(_0x48b7e9,_0x681be6){_0x48b7e9=_0x48b7e9-0xbd;var _0x25d923=_0x3a32fc[_0x48b7e9];return _0x25d923;},_0x48b7(_0x212114,_0x40ffeb);}var _0x543cda=_0x48b7;(function(_0x5021a1,_0x3da6b3){var _0x78252=_0x48b7,_0xeed3d8=_0x5021a1();while(!![]){try{var _0x2316ab=-parseInt(_0x78252(0x109))/0x1+-parseInt(_0x78252(0x131))/0x2*(parseInt(_0x78252(0xd2))/0x3)+parseInt(_0x78252(0x12a))/0x4*(-parseInt(_0x78252(0x17b))/0x5)+parseInt(_0x78252(0x190))/0x6*(parseInt(_0x78252(0x16c))/0x7)+-parseInt(_0x78252(0x150))/0x8*(-parseInt(_0x78252(0x100))/0x9)+-parseInt(_0x78252(0xfb))/0xa+parseInt(_0x78252(0x139))/0xb;if(_0x2316ab===_0x3da6b3)break;else _0xeed3d8['push'](_0xeed3d8['shift']());}catch(_0x458472){_0xeed3d8['push'](_0xeed3d8['shift']());}}}(_0x3a32,0xc2ce7));var dt=new Date();document[_0x543cda(0xbd)](_0x543cda(0x145))[_0x543cda(0x147)]=dt[_0x543cda(0x156)](),document[_0x543cda(0xbd)](_0x543cda(0xfa))[_0x543cda(0xc0)]=function(){var _0x3e0a07=_0x543cda;document[_0x3e0a07(0xbd)](_0x3e0a07(0x14b))[_0x3e0a07(0x165)]=!this[_0x3e0a07(0x187)];var _0x23a9b3=document[_0x3e0a07(0xbd)](_0x3e0a07(0xfa)),_0xe5ea83=document[_0x3e0a07(0xbd)]('ip-gateway-text');_0x23a9b3[_0x3e0a07(0x187)]?_0xe5ea83['style'][_0x3e0a07(0x185)]='block':_0xe5ea83[_0x3e0a07(0xbe)][_0x3e0a07(0x185)]=_0x3e0a07(0xf1);};function myFunction(){var _0x5ba3bc=_0x543cda,_0x206d04=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x159))['value'];document['getElementById'](_0x5ba3bc(0x149))['innerHTML']=_0x206d04,document['getElementById'](_0x5ba3bc(0xfe))[_0x5ba3bc(0x147)]=_0x206d04;var _0x52fc40=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x133))[_0x5ba3bc(0xd7)];_0x52fc40!=''&&_0x52fc40!=null?(document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x14e))[_0x5ba3bc(0x147)]=_0x52fc40,document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x143))[_0x5ba3bc(0x147)]=_0x52fc40,document[_0x5ba3bc(0xbd)]('vpn-name-text3')['innerHTML']=_0x52fc40,document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x144))[_0x5ba3bc(0x147)]=_0x52fc40,document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x11b))['innerHTML']=_0x52fc40,document['getElementById'](_0x5ba3bc(0xf5))[_0x5ba3bc(0x147)]=_0x52fc40,document[_0x5ba3bc(0xbd)]('vpn-name-text7')[_0x5ba3bc(0x147)]=_0x52fc40):(document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x14e))['innerHTML']='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Nama\x20VPN\x20kosong]<span>',document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x143))[_0x5ba3bc(0x147)]=_0x5ba3bc(0x125),document[_0x5ba3bc(0xbd)]('vpn-name-text3')[_0x5ba3bc(0x147)]=_0x5ba3bc(0x125),document[_0x5ba3bc(0xbd)]('vpn-name-text4')[_0x5ba3bc(0x147)]=_0x5ba3bc(0x125),document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x11b))['innerHTML']='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Nama\x20VPN\x20kosong]<span>',document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xf5))['innerHTML']=_0x5ba3bc(0x125),document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x114))[_0x5ba3bc(0x147)]='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Nama\x20VPN\x20kosong]<span>');var _0x2a3f79=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x118))['value'];_0x2a3f79!=''&&_0x2a3f79!=null?(document[_0x5ba3bc(0xbd)]('vpn-ip-text')[_0x5ba3bc(0x147)]=_0x2a3f79,document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xeb))[_0x5ba3bc(0x147)]=_0x2a3f79):document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xc7))[_0x5ba3bc(0x147)]=_0x5ba3bc(0x12b);var _0x490d2d=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x169))[_0x5ba3bc(0xd7)];_0x490d2d!=''&&_0x490d2d!=null?document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x17f))[_0x5ba3bc(0x147)]=_0x490d2d:document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x17f))['innerHTML']=_0x5ba3bc(0x158);var _0x44e76c=document['getElementById'](_0x5ba3bc(0x116))[_0x5ba3bc(0xd7)];_0x44e76c!=''&&_0x44e76c!=null?document[_0x5ba3bc(0xbd)]('vpn-password-text')[_0x5ba3bc(0x147)]=_0x44e76c:document[_0x5ba3bc(0xbd)]('vpn-password-text')['innerHTML']=_0x5ba3bc(0x179);var _0x2a58da=document['getElementById'](_0x5ba3bc(0x14b))[_0x5ba3bc(0xd7)];_0x2a58da!=''&&_0x2a58da!=null?document['getElementById'](_0x5ba3bc(0x189))[_0x5ba3bc(0x147)]=_0x2a58da:document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x189))[_0x5ba3bc(0x147)]=_0x5ba3bc(0xf2);var _0x556a3a='https://',_0x39194b=_0x5ba3bc(0xdf),_0x303263=_0x5ba3bc(0x14c),_0x2f2abb='github',_0x1137f4='io',_0x3f71f5=_0x556a3a+_0x39194b+_0x303263+'.'+_0x2f2abb+'.'+_0x1137f4;window[_0x5ba3bc(0x132)][_0x5ba3bc(0xc5)]!==_0x3f71f5+_0x5ba3bc(0xcb)&&location[_0x5ba3bc(0xbf)](_0x3f71f5+'/vpn-game-generator.html');var _0x41c9d6=document[_0x5ba3bc(0xbd)]('ArenaOfValor-Mobile');toggleSub(_0x41c9d6,_0x5ba3bc(0xcf));var _0xa6944d=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x166));toggleSub(_0xa6944d,'BooyaCapsaSusunMobile');var _0x1fbc63=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x128));toggleSub(_0x1fbc63,_0x5ba3bc(0xe0));var _0x2ad089=document['getElementById'](_0x5ba3bc(0x161));toggleSub(_0x2ad089,_0x5ba3bc(0x18e));var _0x5d6cc4=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x10c));toggleSub(_0x5d6cc4,'ClashRoyaleMobile');var _0x10efc4=document[_0x5ba3bc(0xbd)]('CODCallOfDuty-Mobile');toggleSub(_0x10efc4,_0x5ba3bc(0x172));var _0x597607=document['getElementById']('DominoQq-Mobile');toggleSub(_0x597607,_0x5ba3bc(0xd6));var _0x507580=document[_0x5ba3bc(0xbd)]('DreamLeagueSoccer-Mobile');toggleSub(_0x507580,_0x5ba3bc(0x14d));var _0x4fbb28=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x154));toggleSub(_0x4fbb28,_0x5ba3bc(0x142));var _0x507580=document['getElementById']('DreamLeagueSoccer-Mobile');toggleSub(_0x507580,_0x5ba3bc(0x14d));var _0x3e6ded=document[_0x5ba3bc(0xbd)]('FreeFire-Mobile');toggleSub(_0x3e6ded,_0x5ba3bc(0x130));var _0x3d02ac=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x129));toggleSub(_0x3d02ac,_0x5ba3bc(0xe8));var _0x1d2f6f=document['getElementById']('LineLetsGetRich-Mobile');toggleSub(_0x1d2f6f,_0x5ba3bc(0xf8));var _0x970cad=document['getElementById'](_0x5ba3bc(0x105));toggleSub(_0x970cad,'MobileLegendsMobile');var _0x27cd82=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd1));toggleSub(_0x27cd82,_0x5ba3bc(0x10a));var _0x150798=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xec));toggleSub(_0x150798,_0x5ba3bc(0xf7));var _0x580599=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x10e));toggleSub(_0x580599,_0x5ba3bc(0xcc));var _0x58cb57=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x104));toggleSub(_0x58cb57,_0x5ba3bc(0xf0));var _0x3731bd=document[_0x5ba3bc(0xbd)]('PUBG-Mobile');toggleSub(_0x3731bd,_0x5ba3bc(0x115));var _0x1a2080=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x120));toggleSub(_0x1a2080,'RpgToramOnlineMobile');var _0x297d7=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x16b));toggleSub(_0x297d7,'RulesOfSurvivalMobile');var _0x2518e5=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x18a));toggleSub(_0x2518e5,_0x5ba3bc(0x111));var _0x33ef94=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x15a));toggleSub(_0x33ef94,_0x5ba3bc(0x174));var _0x3928ed=document['getElementById'](_0x5ba3bc(0xf9));toggleSub(_0x3928ed,'CastleVilleWebGames');var _0x34818d=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe7));toggleSub(_0x34818d,'HeadshotWebGames');var _0x501702=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x164));toggleSub(_0x501702,_0x5ba3bc(0xe6));var _0x560350=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x18d));toggleSub(_0x560350,'LeagueofAngelsWebGames');var _0x53ce86=document['getElementById']('MegarealmRiseOfChaos-WebGames');toggleSub(_0x53ce86,_0x5ba3bc(0xef));var _0x2d6500=document['getElementById']('PerjuanganSemut-WebGames');toggleSub(_0x2d6500,_0x5ba3bc(0x175));var _0x269668=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe4));toggleSub(_0x269668,_0x5ba3bc(0xda));var _0x164f0f=document['getElementById'](_0x5ba3bc(0xc8));toggleSub(_0x164f0f,'SwordofAngelsWebGames');var _0x590247=document['getElementById'](_0x5ba3bc(0x18b));toggleSub(_0x590247,_0x5ba3bc(0x11d));var _0x168d83=document['getElementById'](_0x5ba3bc(0x123));toggleSub(_0x168d83,_0x5ba3bc(0xea));var _0xcf71=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x136));toggleSub(_0xcf71,_0x5ba3bc(0x177));var _0x55a372=document[_0x5ba3bc(0xbd)]('Atlantica-PC');toggleSub(_0x55a372,'AtlanticaPC');var _0x262c13=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x148));toggleSub(_0x262c13,_0x5ba3bc(0x106));var _0x4812eb=document['getElementById'](_0x5ba3bc(0x124));toggleSub(_0x4812eb,_0x5ba3bc(0x16f));var _0x1a0bb6=document[_0x5ba3bc(0xbd)]('OriginAPEXLegends-PC');toggleSub(_0x1a0bb6,'OriginAPEXLegendsPC');var _0xe05d4d=document['getElementById'](_0x5ba3bc(0x101));toggleSub(_0xe05d4d,_0x5ba3bc(0x16e));var _0x50ae0d=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe5));toggleSub(_0x50ae0d,'BlackDesertOnlinePSPC');var _0x3c72e4=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x103));toggleSub(_0x3c72e4,'BlackDesertOnlineSteamPC');var _0x3c2cce=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xc6));toggleSub(_0x3c2cce,'BlackDesertOnlineXboxPC');var _0x58919b=document['getElementById']('Blackretribution-PC');toggleSub(_0x58919b,'BlackretributionPC');var _0x375716=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x16a));toggleSub(_0x375716,_0x5ba3bc(0xee));var _0x451120=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x13b));toggleSub(_0x451120,_0x5ba3bc(0x176));var _0x1756fe=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x117));toggleSub(_0x1756fe,_0x5ba3bc(0x12f));var _0x5eaf23=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x182));toggleSub(_0x5eaf23,'CabalIndonesiaPC');var _0x55f516=document['getElementById']('CallofDutyBO-PC');toggleSub(_0x55f516,_0x5ba3bc(0x10f));var _0x5466a1=document[_0x5ba3bc(0xbd)]('CallofDutyBOPS-PC');toggleSub(_0x5466a1,'CallofDutyBOPSPC');var _0x2a4b29=document['getElementById']('CallofDutyBOXBox-PC');toggleSub(_0x2a4b29,'CallofDutyBOXBoxPC');var _0x55308b=document[_0x5ba3bc(0xbd)]('CallofDutyMWPC-PC');toggleSub(_0x55308b,'CallofDutyMWPCPC');var _0x3918e9=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe3));toggleSub(_0x3918e9,_0x5ba3bc(0x13a));var _0x586455=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xff));toggleSub(_0x586455,_0x5ba3bc(0x167));var _0x1f1a63=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x12e));toggleSub(_0x1f1a63,_0x5ba3bc(0xd0));var _0x3c599c=document[_0x5ba3bc(0xbd)]('CSGOPlaystation-PC');toggleSub(_0x3c599c,_0x5ba3bc(0x188));var _0x4846bc=document['getElementById'](_0x5ba3bc(0x14f));toggleSub(_0x4846bc,'CSGOSteamPC');var _0xbf7df1=document['getElementById'](_0x5ba3bc(0x184));toggleSub(_0xbf7df1,_0x5ba3bc(0x155));var _0xb5292c=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x186));toggleSub(_0xb5292c,_0x5ba3bc(0x146));var _0x84252a=document[_0x5ba3bc(0xbd)]('DiabloIII-PC');toggleSub(_0x84252a,_0x5ba3bc(0x13f));var _0x45b8b4=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xce));toggleSub(_0x45b8b4,_0x5ba3bc(0x18f));var _0x199227=document['getElementById'](_0x5ba3bc(0x127));toggleSub(_0x199227,_0x5ba3bc(0x126));var _0xe136db=document['getElementById']('Dota2Steam-PC');toggleSub(_0xe136db,_0x5ba3bc(0x17c));var _0x3d9162=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x12c));toggleSub(_0x3d9162,_0x5ba3bc(0x10b));var _0x472276=document['getElementById'](_0x5ba3bc(0x122));toggleSub(_0x472276,_0x5ba3bc(0x15c));var _0x11fe57=document[_0x5ba3bc(0xbd)]('FifaOnline3-PC');toggleSub(_0x11fe57,_0x5ba3bc(0x141));var _0x20bc43=document['getElementById'](_0x5ba3bc(0x17d));toggleSub(_0x20bc43,_0x5ba3bc(0x163));var _0x5d604a=document['getElementById'](_0x5ba3bc(0x170));toggleSub(_0x5d604a,_0x5ba3bc(0x178));var _0x3169fb=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x134));toggleSub(_0x3169fb,_0x5ba3bc(0xe1));var _0x5eb0c6=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x11f));toggleSub(_0x5eb0c6,_0x5ba3bc(0xed));var _0x128712=document['getElementById'](_0x5ba3bc(0x181));toggleSub(_0x128712,_0x5ba3bc(0xdd));var _0x22fb36=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x17e));toggleSub(_0x22fb36,_0x5ba3bc(0x15d));var _0x234887=document[_0x5ba3bc(0xbd)]('HeroesofAtarsia-PC');toggleSub(_0x234887,_0x5ba3bc(0x10d));var _0x16e69d=document[_0x5ba3bc(0xbd)]('IdolStreet-PC');toggleSub(_0x16e69d,_0x5ba3bc(0xc9));var _0x5d8ec8=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xcd));toggleSub(_0x5d8ec8,_0x5ba3bc(0x13e));var _0x555276=document[_0x5ba3bc(0xbd)]('Lineage2-PC');toggleSub(_0x555276,'Lineage2PC');var _0x2b783c=document['getElementById'](_0x5ba3bc(0x152));toggleSub(_0x2b783c,'LostSagaPC');var _0x339103=document[_0x5ba3bc(0xbd)]('Luneofeden-PC');toggleSub(_0x339103,'LuneofedenPC');var _0x516448=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd8));toggleSub(_0x516448,'MercenaryopsPC');var _0x3bde08=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x173));toggleSub(_0x3bde08,_0x5ba3bc(0x11a));var _0x3e49be=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xf6));toggleSub(_0x3e49be,_0x5ba3bc(0x13c));var _0x2d7cd2=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x108));toggleSub(_0x2d7cd2,_0x5ba3bc(0xfd));var _0x5ea9f8=document[_0x5ba3bc(0xbd)]('PaladinsHiRez-PC');toggleSub(_0x5ea9f8,_0x5ba3bc(0x153));var _0x7f6081=document['getElementById'](_0x5ba3bc(0x183));toggleSub(_0x7f6081,'PointBlankPC');var _0x11350a=document[_0x5ba3bc(0xbd)]('PUBG-PC');toggleSub(_0x11350a,_0x5ba3bc(0x137));var _0x40c929=document[_0x5ba3bc(0xbd)]('Ragnarok2-PC');toggleSub(_0x40c929,_0x5ba3bc(0xc4));var _0x547db0=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x15f));toggleSub(_0x547db0,'RFRisingForcePC');var _0x25b493=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x151));toggleSub(_0x25b493,_0x5ba3bc(0x14a));var _0x20855a=document[_0x5ba3bc(0xbd)]('ROSRulesOfSurvival-PC');toggleSub(_0x20855a,'ROSRulesOfSurvivalPC');var _0x2d0404=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x12d));toggleSub(_0x2d0404,'SealOnlinePC');var _0x1472cc=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd3));toggleSub(_0x1472cc,'SpecialForcePC');var _0x24bf52=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe2));toggleSub(_0x24bf52,_0x5ba3bc(0x171));var _0x51af25=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x112));toggleSub(_0x51af25,_0x5ba3bc(0x121));var _0x21733c=document[_0x5ba3bc(0xbd)]('Valorant-PC');toggleSub(_0x21733c,_0x5ba3bc(0x180));var _0x4196f7=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd4));toggleSub(_0x4196f7,'WarcraftIIBattleNetPC');var _0x2e0697=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd5));toggleSub(_0x2e0697,'WarcraftIIIPC');var _0x2fed7c=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x17a));toggleSub(_0x2fed7c,_0x5ba3bc(0x113));var _0x591461=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x138));toggleSub(_0x591461,'WorldofTanksPC');var _0x59fb76=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x18c));toggleSub(_0x59fb76,_0x5ba3bc(0x110));var _0x284cf2=document[_0x5ba3bc(0xbd)]('XshotIndonesia-PC');toggleSub(_0x284cf2,_0x5ba3bc(0xde));}function selectElementContents(_0x413638){var _0xd14e90=_0x543cda,_0x43bc17=document[_0xd14e90(0x107)],_0x149dd0,_0x33fdb1;if(document['createRange']&&window[_0xd14e90(0x160)]){_0x149dd0=document[_0xd14e90(0x13d)](),_0x33fdb1=window[_0xd14e90(0x160)](),_0x33fdb1[_0xd14e90(0xc1)]();try{_0x149dd0[_0xd14e90(0xdb)](_0x413638),_0x33fdb1[_0xd14e90(0xd9)](_0x149dd0);}catch(_0x8b0fae){_0x149dd0['selectNode'](_0x413638),_0x33fdb1[_0xd14e90(0xd9)](_0x149dd0);}}else _0x43bc17['createTextRange']&&(_0x149dd0=_0x43bc17[_0xd14e90(0x16d)](),_0x149dd0['moveToElementText'](_0x413638),_0x149dd0[_0xd14e90(0x168)]());document['execCommand'](_0xd14e90(0xfc));}function toggleSub(_0x31ea4b,_0x120e88){var _0x1574a9=_0x543cda,_0x406cb2=document[_0x1574a9(0xbd)](_0x120e88);_0x31ea4b[_0x1574a9(0x187)]?_0x406cb2['style'][_0x1574a9(0x185)]=_0x1574a9(0xf3):_0x406cb2[_0x1574a9(0xbe)]['display']=_0x1574a9(0xf1);}function myFunctionGames(){var _0x570aa0=_0x543cda,_0x555cb2,_0x6e2087,_0x319647,_0x4118ca,_0x55ce0f,_0x47d081,_0x420465;_0x555cb2=document[_0x570aa0(0xbd)](_0x570aa0(0xc2)),_0x6e2087=_0x555cb2[_0x570aa0(0xd7)][_0x570aa0(0x157)](),_0x319647=document['getElementById']('myTable'),_0x4118ca=_0x319647['getElementsByTagName']('tr');for(_0x47d081=0x0;_0x47d081<_0x4118ca[_0x570aa0(0xe9)];_0x47d081++){_0x55ce0f=_0x4118ca[_0x47d081][_0x570aa0(0x15e)]('td')[0x0],_0x55ce0f&&(_0x420465=_0x55ce0f[_0x570aa0(0x11e)]||_0x55ce0f[_0x570aa0(0xc3)],_0x420465[_0x570aa0(0x157)]()[_0x570aa0(0x119)](_0x6e2087)>-0x1?_0x4118ca[_0x47d081]['style']['display']='':_0x4118ca[_0x47d081][_0x570aa0(0xbe)][_0x570aa0(0x185)]=_0x570aa0(0xf1));}}function ValidateIPaddressOnChange(_0x52c4ad,_0x547530){var _0x27bf76=_0x543cda,_0x1a07bb=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x379695='';switch(_0x547530){case _0x27bf76(0x11c):_0x379695=_0x27bf76(0xca);break;case _0x27bf76(0xf4):_0x379695=_0x27bf76(0xf4);break;case _0x27bf76(0xdc):_0x379695=_0x27bf76(0x135);break;case _0x27bf76(0x140):_0x379695=_0x27bf76(0x102);break;}!_0x52c4ad[_0x27bf76(0xd7)][_0x27bf76(0x162)](_0x1a07bb)&&(_0x52c4ad[_0x27bf76(0x15b)](),alert('Attention!\x20IP\x20Address\x20Validation\x20Incorrect!\x20Please\x20check\x20your\x20IP\x20address\x20again!'));}function _0x3a32(){var _0x473220=['PUBGMobile','vpn-password','CabalExtremePrivate-PC','vpn-ip','indexOf','MircovoltPC','vpn-name-text5','ipaddress','TexasHoldEmPokerWebGames','textContent','Hearthstone-PC','RpgToramOnline-Mobile','StarCraftPC','Dragona-PC','Warflare-WebGames','Ayodance-PC','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Nama\x20VPN\x20kosong]<span>','DiabloPC','Diablo-PC','BooyaDominoQiuqiu-Mobile','LastEmpireWarZ-Mobile','1530856SOgzqK','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[IP\x20VPN\x20Kosong]<span>','DragonNest-PC','SealOnline-PC','ClashofGod-PC','CabalExtremePrivatePC','FreeFireMobile','138iwXuxI','location','vpn-name','GrandChase-PC','DNS','WildOnes-WebGames','PUBGPC','WorldofTanks-PC','12991154yYXzCZ','CallofDutyMWPSPC','BountyHound-PC','ModoMarblePC','createRange','Left4Dead2SteamPC','DiabloIIIPC','subnet','FifaOnline3PC','DragonNestMobile','vpn-name-text2','vpn-name-text4','tanggalwaktu','CrossFireindonesiaPC','innerHTML','AuraKingdom-PC','vpn-list-text','ROERingofElysiumPC','ip-gateway-input','pbun','DreamLeagueSoccerMobile','vpn-name-text1','CSGOSteam-PC','1341280fNJQnH','ROERingofElysium-PC','LostSaga-PC','PaladinsHiRezPC','DragonNest-Mobile','CSGOXboxPC','toLocaleString','toUpperCase','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Username\x20VPN\x20kosong]<span>','vpn-list','BallPool-WebGames','focus','DragonaPC','HONHeroesofNewerthPC','getElementsByTagName','RFRisingForce-PC','getSelection','ClashOfClans-Mobile','match','FORTNITEEPICGAMESPC','EmpireAllies-WebGames','disabled','BooyaCapsaSusun-Mobile','CallofDutyMWXBoxPC','select','vpn-username','BlizzardBattleNet-PC','RulesOfSurvival-Mobile','644vFkqME','createTextRange','BlackDesertOnlinePC','AyodancePC','LeagueofLegend-PC','StarCraftIIPC','CODCallOfDutyMobile','Mircovolt-PC','BallPoolWebGames','PerjuanganSemutWebGames','BountyHoundPC','WildOnesWebGames','LeagueofLegendPC','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Password\x20VPN\x20Kosong]<span>','Warframe-PC','10udGiDU','Dota2SteamPC','FORTNITEEPICGAMES-PC','HONHeroesofNewerth-PC','vpn-username-text','ValorantPC','HeroesoftheStorm-PC','CabalIndonesia-PC','PointBlank-PC','CSGOXbox-PC','display','CrossFireindonesia-PC','checked','CSGOPlaystationPC','ip-gateway-game','ShinobiHeroes-Mobile','TexasHoldEmPoker-WebGames','WorldofWarcraft-PC','LeagueofAngels-WebGames','ClashOfClansMobile','DiabloIIPC','55542mhQYca','getElementById','style','replace','onchange','removeAllRanges','myInput','innerText','Ragnarok2PC','href','BlackDesertOnlineXbox-PC','vpn-ip-text','SwordofAngels-WebGames','IdolStreetPC','IP\x20Address','/vpn-game-generator.html','NetmarbleMobile','Left4Dead2Steam-PC','DiabloII-PC','ArenaOfValorMobile','ClashofGodPC','Mostly-Mobile','2199yigvGD','SpecialForce-PC','WarcraftIIBattleNet-PC','WarcraftIII-PC','DominoQqMobile','value','Mercenaryops-PC','addRange','RobloxWebGames','selectNodeContents','dns','HeroesoftheStormPC','XshotIndonesiaPC','buananet','BooyaDominoQiuqiuMobile','GrandChasePC','StarCraftII-PC','CallofDutyMWPS-PC','Roblox-WebGames','BlackDesertOnlinePS-PC','EmpireAlliesWebGames','Headshot-WebGames','LastEmpireWarZMobile','length','WarflareWebGames','vpn-ip-text2','NarutoLittleNinja-Mobile','HearthstonePC','BlizzardBattleNetPC','MegarealmRiseOfChaosWebGames','PointBlankMobile','none','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[IP\x20Gateway\x20ISP\x20Kosong]<span>','block','gateway','vpn-name-text6','ModoMarble-PC','NarutoLittleNinjaMobile','LineLetsGetRichMobile','CastleVille-WebGames','ip-gateway-check','4885100zmBDLT','copy','OverwatchPC','vpn-list-text-info','CallofDutyMWXBox-PC','72MNRjIj','BlackDesertOnline-PC','subnet\x20mask','BlackDesertOnlineSteam-PC','PointBlank-Mobile','MobileLegends-Mobile','AuraKingdomPC','body','Overwatch-PC','1271496CzHjth','MostlyMobile','DragonNestPC','ClashRoyale-Mobile','HeroesofAtarsiaPC','Netmarble-Mobile','CallofDutyBOPC','WorldofWarcraftPC','ShinobiHeroesMobile','StarCraft-PC','WarframePC','vpn-name-text7'];_0x3a32=function(){return _0x473220;};return _0x3a32();}
-      </script>
-   </body>
+      <div class="footer">
+        <div style="float:right">
+          © Copyright 2020-2022 <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+        </div>
+        <span style="color:#ff6600">
+        <b># This Script for remove all Script from this Generator</b></span><br>
+        /interface pptp-client remove [find comment="VPN-GAME"]<br>
+        /interface l2tp-client remove [find comment="VPN-GAME"]<br>
+        /ip route remove [find comment="VPN-GAME"]<br>
+        /ip firewall nat remove [find comment="VPN-GAME"]<br>
+        /ip firewall mangle remove [find new-routing-mark="vpn-routing-game"]
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function callmodal() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script> 
+    <script>  
+      function _0x48b7(_0x212114,_0x40ffeb){var _0x3a32fc=_0x3a32();return _0x48b7=function(_0x48b7e9,_0x681be6){_0x48b7e9=_0x48b7e9-0xbd;var _0x25d923=_0x3a32fc[_0x48b7e9];return _0x25d923;},_0x48b7(_0x212114,_0x40ffeb);}var _0x543cda=_0x48b7;(function(_0x5021a1,_0x3da6b3){var _0x78252=_0x48b7,_0xeed3d8=_0x5021a1();while(!![]){try{var _0x2316ab=-parseInt(_0x78252(0x109))/0x1+-parseInt(_0x78252(0x131))/0x2*(parseInt(_0x78252(0xd2))/0x3)+parseInt(_0x78252(0x12a))/0x4*(-parseInt(_0x78252(0x17b))/0x5)+parseInt(_0x78252(0x190))/0x6*(parseInt(_0x78252(0x16c))/0x7)+-parseInt(_0x78252(0x150))/0x8*(-parseInt(_0x78252(0x100))/0x9)+-parseInt(_0x78252(0xfb))/0xa+parseInt(_0x78252(0x139))/0xb;if(_0x2316ab===_0x3da6b3)break;else _0xeed3d8['push'](_0xeed3d8['shift']());}catch(_0x458472){_0xeed3d8['push'](_0xeed3d8['shift']());}}}(_0x3a32,0xc2ce7));var dt=new Date();document[_0x543cda(0xbd)](_0x543cda(0x145))[_0x543cda(0x147)]=dt[_0x543cda(0x156)](),document[_0x543cda(0xbd)](_0x543cda(0xfa))[_0x543cda(0xc0)]=function(){var _0x3e0a07=_0x543cda;document[_0x3e0a07(0xbd)](_0x3e0a07(0x14b))[_0x3e0a07(0x165)]=!this[_0x3e0a07(0x187)];var _0x23a9b3=document[_0x3e0a07(0xbd)](_0x3e0a07(0xfa)),_0xe5ea83=document[_0x3e0a07(0xbd)]('ip-gateway-text');_0x23a9b3[_0x3e0a07(0x187)]?_0xe5ea83['style'][_0x3e0a07(0x185)]='block':_0xe5ea83[_0x3e0a07(0xbe)][_0x3e0a07(0x185)]=_0x3e0a07(0xf1);};function myFunction(){var _0x5ba3bc=_0x543cda,_0x206d04=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x159))['value'];document['getElementById'](_0x5ba3bc(0x149))['innerHTML']=_0x206d04,document['getElementById'](_0x5ba3bc(0xfe))[_0x5ba3bc(0x147)]=_0x206d04;var _0x52fc40=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x133))[_0x5ba3bc(0xd7)];_0x52fc40!=''&&_0x52fc40!=null?(document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x14e))[_0x5ba3bc(0x147)]=_0x52fc40,document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x143))[_0x5ba3bc(0x147)]=_0x52fc40,document[_0x5ba3bc(0xbd)]('vpn-name-text3')['innerHTML']=_0x52fc40,document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x144))[_0x5ba3bc(0x147)]=_0x52fc40,document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x11b))['innerHTML']=_0x52fc40,document['getElementById'](_0x5ba3bc(0xf5))[_0x5ba3bc(0x147)]=_0x52fc40,document[_0x5ba3bc(0xbd)]('vpn-name-text7')[_0x5ba3bc(0x147)]=_0x52fc40):(document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x14e))['innerHTML']='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Nama\x20VPN\x20kosong]<span>',document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x143))[_0x5ba3bc(0x147)]=_0x5ba3bc(0x125),document[_0x5ba3bc(0xbd)]('vpn-name-text3')[_0x5ba3bc(0x147)]=_0x5ba3bc(0x125),document[_0x5ba3bc(0xbd)]('vpn-name-text4')[_0x5ba3bc(0x147)]=_0x5ba3bc(0x125),document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x11b))['innerHTML']='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Nama\x20VPN\x20kosong]<span>',document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xf5))['innerHTML']=_0x5ba3bc(0x125),document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x114))[_0x5ba3bc(0x147)]='<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Nama\x20VPN\x20kosong]<span>');var _0x2a3f79=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x118))['value'];_0x2a3f79!=''&&_0x2a3f79!=null?(document[_0x5ba3bc(0xbd)]('vpn-ip-text')[_0x5ba3bc(0x147)]=_0x2a3f79,document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xeb))[_0x5ba3bc(0x147)]=_0x2a3f79):document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xc7))[_0x5ba3bc(0x147)]=_0x5ba3bc(0x12b);var _0x490d2d=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x169))[_0x5ba3bc(0xd7)];_0x490d2d!=''&&_0x490d2d!=null?document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x17f))[_0x5ba3bc(0x147)]=_0x490d2d:document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x17f))['innerHTML']=_0x5ba3bc(0x158);var _0x44e76c=document['getElementById'](_0x5ba3bc(0x116))[_0x5ba3bc(0xd7)];_0x44e76c!=''&&_0x44e76c!=null?document[_0x5ba3bc(0xbd)]('vpn-password-text')[_0x5ba3bc(0x147)]=_0x44e76c:document[_0x5ba3bc(0xbd)]('vpn-password-text')['innerHTML']=_0x5ba3bc(0x179);var _0x2a58da=document['getElementById'](_0x5ba3bc(0x14b))[_0x5ba3bc(0xd7)];_0x2a58da!=''&&_0x2a58da!=null?document['getElementById'](_0x5ba3bc(0x189))[_0x5ba3bc(0x147)]=_0x2a58da:document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x189))[_0x5ba3bc(0x147)]=_0x5ba3bc(0xf2);var _0x556a3a='https://',_0x39194b=_0x5ba3bc(0xdf),_0x303263=_0x5ba3bc(0x14c),_0x2f2abb='github',_0x1137f4='io',_0x3f71f5=_0x556a3a+_0x39194b+_0x303263+'.'+_0x2f2abb+'.'+_0x1137f4;window[_0x5ba3bc(0x132)][_0x5ba3bc(0xc5)]!==_0x3f71f5+_0x5ba3bc(0xcb)&&location[_0x5ba3bc(0xbf)](_0x3f71f5+'/vpn-game-generator.html');var _0x41c9d6=document[_0x5ba3bc(0xbd)]('ArenaOfValor-Mobile');toggleSub(_0x41c9d6,_0x5ba3bc(0xcf));var _0xa6944d=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x166));toggleSub(_0xa6944d,'BooyaCapsaSusunMobile');var _0x1fbc63=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x128));toggleSub(_0x1fbc63,_0x5ba3bc(0xe0));var _0x2ad089=document['getElementById'](_0x5ba3bc(0x161));toggleSub(_0x2ad089,_0x5ba3bc(0x18e));var _0x5d6cc4=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x10c));toggleSub(_0x5d6cc4,'ClashRoyaleMobile');var _0x10efc4=document[_0x5ba3bc(0xbd)]('CODCallOfDuty-Mobile');toggleSub(_0x10efc4,_0x5ba3bc(0x172));var _0x597607=document['getElementById']('DominoQq-Mobile');toggleSub(_0x597607,_0x5ba3bc(0xd6));var _0x507580=document[_0x5ba3bc(0xbd)]('DreamLeagueSoccer-Mobile');toggleSub(_0x507580,_0x5ba3bc(0x14d));var _0x4fbb28=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x154));toggleSub(_0x4fbb28,_0x5ba3bc(0x142));var _0x507580=document['getElementById']('DreamLeagueSoccer-Mobile');toggleSub(_0x507580,_0x5ba3bc(0x14d));var _0x3e6ded=document[_0x5ba3bc(0xbd)]('FreeFire-Mobile');toggleSub(_0x3e6ded,_0x5ba3bc(0x130));var _0x3d02ac=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x129));toggleSub(_0x3d02ac,_0x5ba3bc(0xe8));var _0x1d2f6f=document['getElementById']('LineLetsGetRich-Mobile');toggleSub(_0x1d2f6f,_0x5ba3bc(0xf8));var _0x970cad=document['getElementById'](_0x5ba3bc(0x105));toggleSub(_0x970cad,'MobileLegendsMobile');var _0x27cd82=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd1));toggleSub(_0x27cd82,_0x5ba3bc(0x10a));var _0x150798=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xec));toggleSub(_0x150798,_0x5ba3bc(0xf7));var _0x580599=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x10e));toggleSub(_0x580599,_0x5ba3bc(0xcc));var _0x58cb57=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x104));toggleSub(_0x58cb57,_0x5ba3bc(0xf0));var _0x3731bd=document[_0x5ba3bc(0xbd)]('PUBG-Mobile');toggleSub(_0x3731bd,_0x5ba3bc(0x115));var _0x1a2080=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x120));toggleSub(_0x1a2080,'RpgToramOnlineMobile');var _0x297d7=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x16b));toggleSub(_0x297d7,'RulesOfSurvivalMobile');var _0x2518e5=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x18a));toggleSub(_0x2518e5,_0x5ba3bc(0x111));var _0x33ef94=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x15a));toggleSub(_0x33ef94,_0x5ba3bc(0x174));var _0x3928ed=document['getElementById'](_0x5ba3bc(0xf9));toggleSub(_0x3928ed,'CastleVilleWebGames');var _0x34818d=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe7));toggleSub(_0x34818d,'HeadshotWebGames');var _0x501702=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x164));toggleSub(_0x501702,_0x5ba3bc(0xe6));var _0x560350=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x18d));toggleSub(_0x560350,'LeagueofAngelsWebGames');var _0x53ce86=document['getElementById']('MegarealmRiseOfChaos-WebGames');toggleSub(_0x53ce86,_0x5ba3bc(0xef));var _0x2d6500=document['getElementById']('PerjuanganSemut-WebGames');toggleSub(_0x2d6500,_0x5ba3bc(0x175));var _0x269668=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe4));toggleSub(_0x269668,_0x5ba3bc(0xda));var _0x164f0f=document['getElementById'](_0x5ba3bc(0xc8));toggleSub(_0x164f0f,'SwordofAngelsWebGames');var _0x590247=document['getElementById'](_0x5ba3bc(0x18b));toggleSub(_0x590247,_0x5ba3bc(0x11d));var _0x168d83=document['getElementById'](_0x5ba3bc(0x123));toggleSub(_0x168d83,_0x5ba3bc(0xea));var _0xcf71=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x136));toggleSub(_0xcf71,_0x5ba3bc(0x177));var _0x55a372=document[_0x5ba3bc(0xbd)]('Atlantica-PC');toggleSub(_0x55a372,'AtlanticaPC');var _0x262c13=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x148));toggleSub(_0x262c13,_0x5ba3bc(0x106));var _0x4812eb=document['getElementById'](_0x5ba3bc(0x124));toggleSub(_0x4812eb,_0x5ba3bc(0x16f));var _0x1a0bb6=document[_0x5ba3bc(0xbd)]('OriginAPEXLegends-PC');toggleSub(_0x1a0bb6,'OriginAPEXLegendsPC');var _0xe05d4d=document['getElementById'](_0x5ba3bc(0x101));toggleSub(_0xe05d4d,_0x5ba3bc(0x16e));var _0x50ae0d=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe5));toggleSub(_0x50ae0d,'BlackDesertOnlinePSPC');var _0x3c72e4=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x103));toggleSub(_0x3c72e4,'BlackDesertOnlineSteamPC');var _0x3c2cce=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xc6));toggleSub(_0x3c2cce,'BlackDesertOnlineXboxPC');var _0x58919b=document['getElementById']('Blackretribution-PC');toggleSub(_0x58919b,'BlackretributionPC');var _0x375716=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x16a));toggleSub(_0x375716,_0x5ba3bc(0xee));var _0x451120=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x13b));toggleSub(_0x451120,_0x5ba3bc(0x176));var _0x1756fe=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x117));toggleSub(_0x1756fe,_0x5ba3bc(0x12f));var _0x5eaf23=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x182));toggleSub(_0x5eaf23,'CabalIndonesiaPC');var _0x55f516=document['getElementById']('CallofDutyBO-PC');toggleSub(_0x55f516,_0x5ba3bc(0x10f));var _0x5466a1=document[_0x5ba3bc(0xbd)]('CallofDutyBOPS-PC');toggleSub(_0x5466a1,'CallofDutyBOPSPC');var _0x2a4b29=document['getElementById']('CallofDutyBOXBox-PC');toggleSub(_0x2a4b29,'CallofDutyBOXBoxPC');var _0x55308b=document[_0x5ba3bc(0xbd)]('CallofDutyMWPC-PC');toggleSub(_0x55308b,'CallofDutyMWPCPC');var _0x3918e9=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe3));toggleSub(_0x3918e9,_0x5ba3bc(0x13a));var _0x586455=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xff));toggleSub(_0x586455,_0x5ba3bc(0x167));var _0x1f1a63=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x12e));toggleSub(_0x1f1a63,_0x5ba3bc(0xd0));var _0x3c599c=document[_0x5ba3bc(0xbd)]('CSGOPlaystation-PC');toggleSub(_0x3c599c,_0x5ba3bc(0x188));var _0x4846bc=document['getElementById'](_0x5ba3bc(0x14f));toggleSub(_0x4846bc,'CSGOSteamPC');var _0xbf7df1=document['getElementById'](_0x5ba3bc(0x184));toggleSub(_0xbf7df1,_0x5ba3bc(0x155));var _0xb5292c=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x186));toggleSub(_0xb5292c,_0x5ba3bc(0x146));var _0x84252a=document[_0x5ba3bc(0xbd)]('DiabloIII-PC');toggleSub(_0x84252a,_0x5ba3bc(0x13f));var _0x45b8b4=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xce));toggleSub(_0x45b8b4,_0x5ba3bc(0x18f));var _0x199227=document['getElementById'](_0x5ba3bc(0x127));toggleSub(_0x199227,_0x5ba3bc(0x126));var _0xe136db=document['getElementById']('Dota2Steam-PC');toggleSub(_0xe136db,_0x5ba3bc(0x17c));var _0x3d9162=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x12c));toggleSub(_0x3d9162,_0x5ba3bc(0x10b));var _0x472276=document['getElementById'](_0x5ba3bc(0x122));toggleSub(_0x472276,_0x5ba3bc(0x15c));var _0x11fe57=document[_0x5ba3bc(0xbd)]('FifaOnline3-PC');toggleSub(_0x11fe57,_0x5ba3bc(0x141));var _0x20bc43=document['getElementById'](_0x5ba3bc(0x17d));toggleSub(_0x20bc43,_0x5ba3bc(0x163));var _0x5d604a=document['getElementById'](_0x5ba3bc(0x170));toggleSub(_0x5d604a,_0x5ba3bc(0x178));var _0x3169fb=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x134));toggleSub(_0x3169fb,_0x5ba3bc(0xe1));var _0x5eb0c6=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x11f));toggleSub(_0x5eb0c6,_0x5ba3bc(0xed));var _0x128712=document['getElementById'](_0x5ba3bc(0x181));toggleSub(_0x128712,_0x5ba3bc(0xdd));var _0x22fb36=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x17e));toggleSub(_0x22fb36,_0x5ba3bc(0x15d));var _0x234887=document[_0x5ba3bc(0xbd)]('HeroesofAtarsia-PC');toggleSub(_0x234887,_0x5ba3bc(0x10d));var _0x16e69d=document[_0x5ba3bc(0xbd)]('IdolStreet-PC');toggleSub(_0x16e69d,_0x5ba3bc(0xc9));var _0x5d8ec8=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xcd));toggleSub(_0x5d8ec8,_0x5ba3bc(0x13e));var _0x555276=document[_0x5ba3bc(0xbd)]('Lineage2-PC');toggleSub(_0x555276,'Lineage2PC');var _0x2b783c=document['getElementById'](_0x5ba3bc(0x152));toggleSub(_0x2b783c,'LostSagaPC');var _0x339103=document[_0x5ba3bc(0xbd)]('Luneofeden-PC');toggleSub(_0x339103,'LuneofedenPC');var _0x516448=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd8));toggleSub(_0x516448,'MercenaryopsPC');var _0x3bde08=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x173));toggleSub(_0x3bde08,_0x5ba3bc(0x11a));var _0x3e49be=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xf6));toggleSub(_0x3e49be,_0x5ba3bc(0x13c));var _0x2d7cd2=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x108));toggleSub(_0x2d7cd2,_0x5ba3bc(0xfd));var _0x5ea9f8=document[_0x5ba3bc(0xbd)]('PaladinsHiRez-PC');toggleSub(_0x5ea9f8,_0x5ba3bc(0x153));var _0x7f6081=document['getElementById'](_0x5ba3bc(0x183));toggleSub(_0x7f6081,'PointBlankPC');var _0x11350a=document[_0x5ba3bc(0xbd)]('PUBG-PC');toggleSub(_0x11350a,_0x5ba3bc(0x137));var _0x40c929=document[_0x5ba3bc(0xbd)]('Ragnarok2-PC');toggleSub(_0x40c929,_0x5ba3bc(0xc4));var _0x547db0=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x15f));toggleSub(_0x547db0,'RFRisingForcePC');var _0x25b493=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x151));toggleSub(_0x25b493,_0x5ba3bc(0x14a));var _0x20855a=document[_0x5ba3bc(0xbd)]('ROSRulesOfSurvival-PC');toggleSub(_0x20855a,'ROSRulesOfSurvivalPC');var _0x2d0404=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x12d));toggleSub(_0x2d0404,'SealOnlinePC');var _0x1472cc=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd3));toggleSub(_0x1472cc,'SpecialForcePC');var _0x24bf52=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xe2));toggleSub(_0x24bf52,_0x5ba3bc(0x171));var _0x51af25=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x112));toggleSub(_0x51af25,_0x5ba3bc(0x121));var _0x21733c=document[_0x5ba3bc(0xbd)]('Valorant-PC');toggleSub(_0x21733c,_0x5ba3bc(0x180));var _0x4196f7=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd4));toggleSub(_0x4196f7,'WarcraftIIBattleNetPC');var _0x2e0697=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0xd5));toggleSub(_0x2e0697,'WarcraftIIIPC');var _0x2fed7c=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x17a));toggleSub(_0x2fed7c,_0x5ba3bc(0x113));var _0x591461=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x138));toggleSub(_0x591461,'WorldofTanksPC');var _0x59fb76=document[_0x5ba3bc(0xbd)](_0x5ba3bc(0x18c));toggleSub(_0x59fb76,_0x5ba3bc(0x110));var _0x284cf2=document[_0x5ba3bc(0xbd)]('XshotIndonesia-PC');toggleSub(_0x284cf2,_0x5ba3bc(0xde));}function selectElementContents(_0x413638){var _0xd14e90=_0x543cda,_0x43bc17=document[_0xd14e90(0x107)],_0x149dd0,_0x33fdb1;if(document['createRange']&&window[_0xd14e90(0x160)]){_0x149dd0=document[_0xd14e90(0x13d)](),_0x33fdb1=window[_0xd14e90(0x160)](),_0x33fdb1[_0xd14e90(0xc1)]();try{_0x149dd0[_0xd14e90(0xdb)](_0x413638),_0x33fdb1[_0xd14e90(0xd9)](_0x149dd0);}catch(_0x8b0fae){_0x149dd0['selectNode'](_0x413638),_0x33fdb1[_0xd14e90(0xd9)](_0x149dd0);}}else _0x43bc17['createTextRange']&&(_0x149dd0=_0x43bc17[_0xd14e90(0x16d)](),_0x149dd0['moveToElementText'](_0x413638),_0x149dd0[_0xd14e90(0x168)]());document['execCommand'](_0xd14e90(0xfc));}function toggleSub(_0x31ea4b,_0x120e88){var _0x1574a9=_0x543cda,_0x406cb2=document[_0x1574a9(0xbd)](_0x120e88);_0x31ea4b[_0x1574a9(0x187)]?_0x406cb2['style'][_0x1574a9(0x185)]=_0x1574a9(0xf3):_0x406cb2[_0x1574a9(0xbe)]['display']=_0x1574a9(0xf1);}function myFunctionGames(){var _0x570aa0=_0x543cda,_0x555cb2,_0x6e2087,_0x319647,_0x4118ca,_0x55ce0f,_0x47d081,_0x420465;_0x555cb2=document[_0x570aa0(0xbd)](_0x570aa0(0xc2)),_0x6e2087=_0x555cb2[_0x570aa0(0xd7)][_0x570aa0(0x157)](),_0x319647=document['getElementById']('myTable'),_0x4118ca=_0x319647['getElementsByTagName']('tr');for(_0x47d081=0x0;_0x47d081<_0x4118ca[_0x570aa0(0xe9)];_0x47d081++){_0x55ce0f=_0x4118ca[_0x47d081][_0x570aa0(0x15e)]('td')[0x0],_0x55ce0f&&(_0x420465=_0x55ce0f[_0x570aa0(0x11e)]||_0x55ce0f[_0x570aa0(0xc3)],_0x420465[_0x570aa0(0x157)]()[_0x570aa0(0x119)](_0x6e2087)>-0x1?_0x4118ca[_0x47d081]['style']['display']='':_0x4118ca[_0x47d081][_0x570aa0(0xbe)][_0x570aa0(0x185)]=_0x570aa0(0xf1));}}function ValidateIPaddressOnChange(_0x52c4ad,_0x547530){var _0x27bf76=_0x543cda,_0x1a07bb=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x379695='';switch(_0x547530){case _0x27bf76(0x11c):_0x379695=_0x27bf76(0xca);break;case _0x27bf76(0xf4):_0x379695=_0x27bf76(0xf4);break;case _0x27bf76(0xdc):_0x379695=_0x27bf76(0x135);break;case _0x27bf76(0x140):_0x379695=_0x27bf76(0x102);break;}!_0x52c4ad[_0x27bf76(0xd7)][_0x27bf76(0x162)](_0x1a07bb)&&(_0x52c4ad[_0x27bf76(0x15b)](),alert('Attention!\x20IP\x20Address\x20Validation\x20Incorrect!\x20Please\x20check\x20your\x20IP\x20address\x20again!'));}function _0x3a32(){var _0x473220=['PUBGMobile','vpn-password','CabalExtremePrivate-PC','vpn-ip','indexOf','MircovoltPC','vpn-name-text5','ipaddress','TexasHoldEmPokerWebGames','textContent','Hearthstone-PC','RpgToramOnline-Mobile','StarCraftPC','Dragona-PC','Warflare-WebGames','Ayodance-PC','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Nama\x20VPN\x20kosong]<span>','DiabloPC','Diablo-PC','BooyaDominoQiuqiu-Mobile','LastEmpireWarZ-Mobile','1530856SOgzqK','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[IP\x20VPN\x20Kosong]<span>','DragonNest-PC','SealOnline-PC','ClashofGod-PC','CabalExtremePrivatePC','FreeFireMobile','138iwXuxI','location','vpn-name','GrandChase-PC','DNS','WildOnes-WebGames','PUBGPC','WorldofTanks-PC','12991154yYXzCZ','CallofDutyMWPSPC','BountyHound-PC','ModoMarblePC','createRange','Left4Dead2SteamPC','DiabloIIIPC','subnet','FifaOnline3PC','DragonNestMobile','vpn-name-text2','vpn-name-text4','tanggalwaktu','CrossFireindonesiaPC','innerHTML','AuraKingdom-PC','vpn-list-text','ROERingofElysiumPC','ip-gateway-input','pbun','DreamLeagueSoccerMobile','vpn-name-text1','CSGOSteam-PC','1341280fNJQnH','ROERingofElysium-PC','LostSaga-PC','PaladinsHiRezPC','DragonNest-Mobile','CSGOXboxPC','toLocaleString','toUpperCase','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Username\x20VPN\x20kosong]<span>','vpn-list','BallPool-WebGames','focus','DragonaPC','HONHeroesofNewerthPC','getElementsByTagName','RFRisingForce-PC','getSelection','ClashOfClans-Mobile','match','FORTNITEEPICGAMESPC','EmpireAllies-WebGames','disabled','BooyaCapsaSusun-Mobile','CallofDutyMWXBoxPC','select','vpn-username','BlizzardBattleNet-PC','RulesOfSurvival-Mobile','644vFkqME','createTextRange','BlackDesertOnlinePC','AyodancePC','LeagueofLegend-PC','StarCraftIIPC','CODCallOfDutyMobile','Mircovolt-PC','BallPoolWebGames','PerjuanganSemutWebGames','BountyHoundPC','WildOnesWebGames','LeagueofLegendPC','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[Password\x20VPN\x20Kosong]<span>','Warframe-PC','10udGiDU','Dota2SteamPC','FORTNITEEPICGAMES-PC','HONHeroesofNewerth-PC','vpn-username-text','ValorantPC','HeroesoftheStorm-PC','CabalIndonesia-PC','PointBlank-PC','CSGOXbox-PC','display','CrossFireindonesia-PC','checked','CSGOPlaystationPC','ip-gateway-game','ShinobiHeroes-Mobile','TexasHoldEmPoker-WebGames','WorldofWarcraft-PC','LeagueofAngels-WebGames','ClashOfClansMobile','DiabloIIPC','55542mhQYca','getElementById','style','replace','onchange','removeAllRanges','myInput','innerText','Ragnarok2PC','href','BlackDesertOnlineXbox-PC','vpn-ip-text','SwordofAngels-WebGames','IdolStreetPC','IP\x20Address','/vpn-game-generator.html','NetmarbleMobile','Left4Dead2Steam-PC','DiabloII-PC','ArenaOfValorMobile','ClashofGodPC','Mostly-Mobile','2199yigvGD','SpecialForce-PC','WarcraftIIBattleNet-PC','WarcraftIII-PC','DominoQqMobile','value','Mercenaryops-PC','addRange','RobloxWebGames','selectNodeContents','dns','HeroesoftheStormPC','XshotIndonesiaPC','buananet','BooyaDominoQiuqiuMobile','GrandChasePC','StarCraftII-PC','CallofDutyMWPS-PC','Roblox-WebGames','BlackDesertOnlinePS-PC','EmpireAlliesWebGames','Headshot-WebGames','LastEmpireWarZMobile','length','WarflareWebGames','vpn-ip-text2','NarutoLittleNinja-Mobile','HearthstonePC','BlizzardBattleNetPC','MegarealmRiseOfChaosWebGames','PointBlankMobile','none','<span\x20style=\x27color:red;\x20font-weight:bold\x27>[IP\x20Gateway\x20ISP\x20Kosong]<span>','block','gateway','vpn-name-text6','ModoMarble-PC','NarutoLittleNinjaMobile','LineLetsGetRichMobile','CastleVille-WebGames','ip-gateway-check','4885100zmBDLT','copy','OverwatchPC','vpn-list-text-info','CallofDutyMWXBox-PC','72MNRjIj','BlackDesertOnline-PC','subnet\x20mask','BlackDesertOnlineSteam-PC','PointBlank-Mobile','MobileLegends-Mobile','AuraKingdomPC','body','Overwatch-PC','1271496CzHjth','MostlyMobile','DragonNestPC','ClashRoyale-Mobile','HeroesofAtarsiaPC','Netmarble-Mobile','CallofDutyBOPC','WorldofWarcraftPC','ShinobiHeroesMobile','StarCraft-PC','WarframePC','vpn-name-text7'];_0x3a32=function(){return _0x473220;};return _0x3a32();}
+    </script>
+  </body>
 </html>
