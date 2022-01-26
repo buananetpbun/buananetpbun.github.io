@@ -20,360 +20,349 @@
     <meta name="yandex-verification" content="2185da3345ca44f7" />
     <script async defer src="https://buttons.github.io/buttons.js"></script>   
     <style>
-      /* --------------------------------------------
-      ################################################
-      # Tools For Mikrotik By BuanaNETPBun.Github.io
-      # Designer  : Agus Ramadhani / BuanaNET
-      # Github    : https://buananetpbun.github.io
-      # Site      : http://www.o-om.com
-      # Sosmed    : https://fb.me/buananet.pbun	
-      ################################################
-      ----------------------------------------------- */  
-
-         /* --------------------------------------------
-         ################################################
-         # Tools For Mikrotik By BuanaNETPBun.Github.io
-         # Designer  : Agus Ramadhani / BuanaNET
-	 # Github    : https://buananetpbun.github.io
-         # Site      : http://www.o-om.com
-         # Sosmed    : https://fb.me/buananet.pbun	
-         ################################################
-         ----------------------------------------------- */  
-         body {
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-         font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-         font-size: 16px;
-         line-height:normal;    
-         word-wrap: break-word;
-            margin:0;
-            padding:0;
-         }
-         h1, h2 {font-size: 50px; margin-bottom:0px; color:#111;display:inline;line-height:1.4;clear:both}
-         h3, h4, h5, h6{font-size: 20px; border-bottom:1px solid #ccc; margin-bottom:10px; padding-bottom:10px; line-height:1.4}
-         pre {
-         white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
-         white-space: -pre-wrap; /* Opera */
-         white-space: -o-pre-wrap; /* Opera */
-         white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
-         word-wrap: break-word; /* IE 5.5+ */
-         }
-         b{font-size:17px}
-         p {
-         padding:0;
-         margin:5px 5px 0 17px;
-         display:list-item;
-         list-style: disc;
-         }
-         .logo {
-         color: #ddd;
-         text-decoration:none;
-         font-size:25px;
-         font-weight:bold; 
-         border-bottom:0px solid #ccc;
-         border-radius: 5px;
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-         color:#ddd;
-         margin-bottom:15px;
-         margin-top:10px;
-         padding:25px;
-         clear:both;
-            
-         }	
-         .logo a{
-         color:#ddd !important;
-         font-size:25px; 
-         }
-         * {
-         box-sizing: border-box;
-         }
-         .content {
-         max-width:900px;
-         min-width:200px;
-         margin:0 auto;
-         margin-top:30px;
-         padding: 30px;
-         border-radius: 5px;
-         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-         background:#f9f9f9;
-         line-height: 1.7  
-         }
-         /* unvisited link */
-         a:link {
-         color: #ff6600;
-         text-decoration:none;
-         font-weight:bold;
-         }
-         /* visited link */
-         a:visited {
-         color: #ff6600;
-         text-decoration:none;
-         }
-         /* mouse over link */
-         a:hover {
-         color: red;
-         }
-         @media screen and (max-width: 1024px){
-	.mymenu {
-      width:100%;
-      } 
-         body{
-         background: #f9f9f9 !important;
-         padding:10px;  
-         }
-         .content {
-         max-width:100%;
-         padding:0;
-         border-radius: 3px;
-         box-shadow: 0 0 0 0;
-         background:#f9f9f9;
-         }  
-         .logo {font-size:20px;  
-         padding:15px;
-         clear:both;
-         }
-         h1, h2 {font-size: 30px; margin-bottom:20px; color:#111;display:inline;line-height:1.5;clear:both}
-         }  
-         /* selected link */
-         a:active {
-         color: #ff6600;
-         text-decoration:none;
-         margin-top:10px !important;
-         }
-         .resp-sharing-button__link,
-         .resp-sharing-button__icon {
-         display: inline-block
-         }
-         .resp-sharing-button__link {
-         text-decoration: none;
-         color: #ddd;
-         margin: 0.5em
-         }
-         .resp-sharing-button {
-         border-radius: 5px;
-         transition: 25ms ease-out;
-         padding: 0.5em 0.75em;
-         }
-         .resp-sharing-button__icon svg {
-         width: 1em;
-         height: 1em;
-         margin-right: 0.4em;
-         vertical-align: top
-         }
-         .resp-sharing-button--small svg {
-         margin: 0;
-         vertical-align: middle
-         }
-         /* Non solid icons get a stroke */
-         .resp-sharing-button__icon {
-         stroke: #ddd;
-         fill: none
-         }
-         /* Solid icons get a fill */
-         .resp-sharing-button__icon--solid,
-         .resp-sharing-button__icon--solidcircle {
-         fill: #ddd;
-         stroke: none
-         }
-         .resp-sharing-button--twitter {
-         background-color: #55acee
-         }
-         .resp-sharing-button--twitter:hover {
-         background-color: #2795e9
-         }
-         .resp-sharing-button--pinterest {
-         background-color: #bd081c
-         }
-         .resp-sharing-button--pinterest:hover {
-         background-color: #8c0615
-         }
-         .resp-sharing-button--facebook {
-         background-color: #3b5998
-         }
-         .resp-sharing-button--facebook:hover {
-         background-color: #2d4373
-         }
-         .resp-sharing-button--tumblr {
-         background-color: #35465C
-         }
-         .resp-sharing-button--tumblr:hover {
-         background-color: #222d3c
-         }
-         .resp-sharing-button--reddit {
-         background-color: #5f99cf
-         }
-         .resp-sharing-button--reddit:hover {
-         background-color: #3a80c1
-         }
-         .resp-sharing-button--google {
-         background-color: #dd4b39
-         }
-         .resp-sharing-button--google:hover {
-         background-color: #c23321
-         }
-         .resp-sharing-button--linkedin {
-         background-color: #0077b5
-         }
-         .resp-sharing-button--linkedin:hover {
-         background-color: #046293
-         }
-         .resp-sharing-button--email {
-         background-color: #777
-         }
-         .resp-sharing-button--email:hover {
-         background-color: #5e5e5e
-         }
-         .resp-sharing-button--xing {
-         background-color: #1a7576
-         }
-         .resp-sharing-button--xing:hover {
-         background-color: #114c4c
-         }
-         .resp-sharing-button--whatsapp {
-         background-color: #25D366
-         }
-         .resp-sharing-button--whatsapp:hover {
-         background-color: #1da851
-         }
-         .resp-sharing-button--hackernews {
-         background-color: #ff6600
-         }
-         .resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
-         .resp-sharing-button--vk {
-         background-color: #507299
-         }
-         .resp-sharing-button--vk:hover {
-         background-color: #43648c
-         }
-         .resp-sharing-button--facebook {
-         background-color: #3b5998;
-         border-color: #3b5998;
-         }
-         .resp-sharing-button--facebook:hover,
-         .resp-sharing-button--facebook:active {
-         background-color: #2d4373;
-         border-color: #2d4373;
-         }
-         .resp-sharing-button--twitter {
-         background-color: #55acee;
-         border-color: #55acee;
-         }
-         .resp-sharing-button--twitter:hover,
-         .resp-sharing-button--twitter:active {
-         background-color: #2795e9;
-         border-color: #2795e9; 
-         }
-         .resp-sharing-button--tumblr {
-         background-color: #35465C;
-         border-color: #35465C;
-         }
-         .resp-sharing-button--tumblr:hover,
-         .resp-sharing-button--tumblr:active {
-         background-color: #222d3c;
-         border-color: #222d3c;
-         }
-         .resp-sharing-button--email {
-         background-color: #777777;
-         border-color: #777777;
-         }
-         .resp-sharing-button--email:hover,
-         .resp-sharing-button--email:active {
-         background-color: #5e5e5e;
-         border-color: #5e5e5e;
-         }
-         .resp-sharing-button--pinterest {
-         background-color: #bd081c;
-         border-color: #bd081c;
-         }
-         .resp-sharing-button--pinterest:hover,
-         .resp-sharing-button--pinterest:active {
-         background-color: #8c0615;
-         border-color: #8c0615;
-         }
-      .mymenu {
-      margin:0 auto;
-      background-color: #ddd;
-      width:570px;
-      border-radius:0 0 5px 5px;
-      border: 2px solid #ddd;
-      font-weight:bold;
-      font-size:13px;
-      }
-      .mymenu ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #f9f9f9;
-      }
-      .mymenu li {
-      float: left;
-      }
-      .mymenu li a {
-      display: block;
-      color: #555;
-      text-align: center;
-      padding: 8px 10px;
-      text-decoration: none;
-      }
-      .mymenu li a:hover {
-      background-color: #f0f0f0;
-      color: #111;
-      }	      
-         /* The Modal (background) */
-         .modal {
-         display: none; /* Hidden by default */
-         position: fixed; /* Stay in place */
-         z-index: 1; /* Sit on top */
-         padding-top: 150px; /* Location of the box */
-         left: 0;
-         top: 0;
-         width: 100%; /* Full width */
-         height: 100%; /* Full height */
-         overflow: auto; /* Enable scroll if needed */
-         background-color: rgb(0,0,0); /* Fallback color */
-         background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-         }
-         /* Modal Content */
-         .modal-content {
-         line-height:1.4;
-         border-radius: 5px;
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-         color:#ddd;
-         margin: auto;
-         padding: 20px;
-         border: 1px solid #444;
-         width: 390px;
-         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-         font-weight:bold;
-	font-size:14px 
-         }
-         .modal-content p {
-         padding:0;
-         margin:5px 5px 0 17px;
-         display:list-item;
-         line-height:2.0;
-         list-style: disc;
-         }
-         /* The Close Button */
-         .close {
-         color: #aaaaaa;
-         float: right;
-         font-size: 30px;
-         font-weight: bold;
-         margin-top:-20px;
-		 margin-right:-10px;
-         }
-         .close:hover,
-         .close:focus {
-         color: orange;
-         text-decoration: none;
-         cursor: pointer;
-         } 
-         .gsib_a{height:30px; padding-left:10px !important; }
-         .gsc-input input{background:#fff !important; }
-         .gsc-input-box {border-radius:5px; height:33px;background:#fff !important;margin-right: -6px !important; line-height:normal !important}
-         .gsc-search-button-v2 {border-radius:5px !important; height:33px !important;}
-	 .gsc-control-cse {background:#f9f9f9 !important;border:none !important; clear: both;}
+/* --------------------------------------------
+################################################
+# Tools For Mikrotik By BuanaNETPBun.Github.io
+# Designer  : Agus Ramadhani / BuanaNET
+# Github    : https://buananetpbun.github.io
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananet.pbun	
+################################################
+----------------------------------------------- */  
+body {
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+font-size: 16px;
+line-height:normal;    
+word-wrap: break-word;
+margin:0;
+padding:0;
+}
+h1, h2 {font-size: 50px; margin-bottom:0px; color:#111;display:inline;line-height:1.4;clear:both}
+h3, h4, h5, h6{font-size: 20px; border-bottom:1px solid #ccc; margin-bottom:10px; padding-bottom:10px; line-height:1.4}
+pre {
+white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+white-space: -pre-wrap; /* Opera */
+white-space: -o-pre-wrap; /* Opera */
+white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+word-wrap: break-word; /* IE 5.5+ */
+}
+b{font-size:17px}
+p {
+padding:0;
+margin:5px 5px 0 17px;
+display:list-item;
+list-style: disc;
+}
+.logo {
+color: #ddd;
+text-decoration:none;
+font-size:25px;
+font-weight:bold; 
+border-bottom:0px solid #ccc;
+border-radius: 5px;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+color:#ddd;
+margin-bottom:15px;
+margin-top:10px;
+padding:25px;
+clear:both;
+}	
+.logo a{
+color:#ddd !important;
+font-size:25px; 
+}
+* {
+box-sizing: border-box;
+}
+.content {
+max-width:900px;
+min-width:200px;
+margin:0 auto;
+margin-top:30px;
+padding: 30px;
+border-radius: 5px;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+background:#f9f9f9;
+line-height: 1.7  
+}
+/* unvisited link */
+a:link {
+color: #ff6600;
+text-decoration:none;
+font-weight:bold;
+}
+/* visited link */
+a:visited {
+color: #ff6600;
+text-decoration:none;
+}
+/* mouse over link */
+a:hover {
+color: red;
+}
+@media screen and (max-width: 1024px){
+.mymenu {
+width:100% !important;;
+} 
+body{
+background: #f9f9f9 !important;
+padding:10px;  
+}
+.content {
+max-width:100%;
+padding:0;
+border-radius: 3px;
+box-shadow: 0 0 0 0;
+background:#f9f9f9;
+}  
+.logo {font-size:20px;  
+padding:15px;
+clear:both;
+}
+h1, h2 {font-size: 30px; margin-bottom:20px; color:#111;display:inline;line-height:1.5;clear:both}
+}  
+/* selected link */
+a:active {
+color: #ff6600;
+text-decoration:none;
+margin-top:10px !important;
+}
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+display: inline-block
+}
+.resp-sharing-button__link {
+text-decoration: none;
+color: #ddd;
+margin: 0.5em
+}
+.resp-sharing-button {
+border-radius: 5px;
+transition: 25ms ease-out;
+padding: 0.5em 0.75em;
+}
+.resp-sharing-button__icon svg {
+width: 1em;
+height: 1em;
+margin-right: 0.4em;
+vertical-align: top
+}
+.resp-sharing-button--small svg {
+margin: 0;
+vertical-align: middle
+}
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+stroke: #ddd;
+fill: none
+}
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+fill: #ddd;
+stroke: none
+}
+.resp-sharing-button--twitter {
+background-color: #55acee
+}
+.resp-sharing-button--twitter:hover {
+background-color: #2795e9
+}
+.resp-sharing-button--pinterest {
+background-color: #bd081c
+}
+.resp-sharing-button--pinterest:hover {
+background-color: #8c0615
+}
+.resp-sharing-button--facebook {
+background-color: #3b5998
+}
+.resp-sharing-button--facebook:hover {
+background-color: #2d4373
+}
+.resp-sharing-button--tumblr {
+background-color: #35465C
+}
+.resp-sharing-button--tumblr:hover {
+background-color: #222d3c
+}
+.resp-sharing-button--reddit {
+background-color: #5f99cf
+}
+.resp-sharing-button--reddit:hover {
+background-color: #3a80c1
+}
+.resp-sharing-button--google {
+background-color: #dd4b39
+}
+.resp-sharing-button--google:hover {
+background-color: #c23321
+}
+.resp-sharing-button--linkedin {
+background-color: #0077b5
+}
+.resp-sharing-button--linkedin:hover {
+background-color: #046293
+}
+.resp-sharing-button--email {
+background-color: #777
+}
+.resp-sharing-button--email:hover {
+background-color: #5e5e5e
+}
+.resp-sharing-button--xing {
+background-color: #1a7576
+}
+.resp-sharing-button--xing:hover {
+background-color: #114c4c
+}
+.resp-sharing-button--whatsapp {
+background-color: #25D366
+}
+.resp-sharing-button--whatsapp:hover {
+background-color: #1da851
+}
+.resp-sharing-button--hackernews {
+background-color: #ff6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+.resp-sharing-button--vk {
+background-color: #507299
+}
+.resp-sharing-button--vk:hover {
+background-color: #43648c
+}
+.resp-sharing-button--facebook {
+background-color: #3b5998;
+border-color: #3b5998;
+}
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+background-color: #2d4373;
+border-color: #2d4373;
+}
+.resp-sharing-button--twitter {
+background-color: #55acee;
+border-color: #55acee;
+}
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+background-color: #2795e9;
+border-color: #2795e9; 
+}
+.resp-sharing-button--tumblr {
+background-color: #35465C;
+border-color: #35465C;
+}
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+background-color: #222d3c;
+border-color: #222d3c;
+}
+.resp-sharing-button--email {
+background-color: #777777;
+border-color: #777777;
+}
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+background-color: #5e5e5e;
+border-color: #5e5e5e;
+}
+.resp-sharing-button--pinterest {
+background-color: #bd081c;
+border-color: #bd081c;
+}
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+background-color: #8c0615;
+border-color: #8c0615;
+}
+.mymenu {
+margin:0 auto;
+background-color: #ddd;
+width:570px;
+border-radius:0 0 5px 5px;
+border: 2px solid #ddd;
+font-weight:bold;
+font-size:13px;
+}
+.mymenu ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #f9f9f9;
+}
+.mymenu li {
+float: left;
+}
+.mymenu li a {
+display: block;
+color: #555;
+text-align: center;
+padding: 8px 10px;
+text-decoration: none;
+}
+.mymenu li a:hover {
+background-color: #f0f0f0;
+color: #111;
+}	      
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 150px; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+line-height:1.4;
+border-radius: 5px;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+color:#ddd;
+margin: auto;
+padding: 20px;
+border: 1px solid #444;
+width: 390px;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+font-weight:bold;
+font-size:14px 
+}
+.modal-content p {
+padding:0;
+margin:5px 5px 0 17px;
+display:list-item;
+line-height:2.0;
+list-style: disc;
+}
+/* The Close Button */
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 30px;
+font-weight: bold;
+margin-top:-20px;
+margin-right:-10px;
+}
+.close:hover,
+.close:focus {
+color: orange;
+text-decoration: none;
+cursor: pointer;
+} 
+.gsib_a{height:30px; padding-left:10px !important; }
+.gsc-input input{background:#fff !important; }
+.gsc-input-box {border-radius:5px; height:33px;background:#fff !important;margin-right: -6px !important; line-height:normal !important}
+.gsc-search-button-v2 {border-radius:5px !important; height:33px !important;}
+.gsc-control-cse {background:#f9f9f9 !important;border:none !important; clear: both;}
     </style>
   </head>
   <body onLoad="callmodal()">
