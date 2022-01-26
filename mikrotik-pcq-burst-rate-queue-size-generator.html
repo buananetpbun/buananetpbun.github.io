@@ -41,7 +41,7 @@
          box-sizing: border-box;
          }
          .logo {
-         margin-top:30px;
+         margin-top:15px;
          color: #ddd;
          text-decoration:none;
          font-size:27px;
@@ -67,7 +67,7 @@
          .header{
          height:auto; 
          width:100%;
-         margin-top:7px;
+         margin-top:5px;
          margin-bottom:15px;
          border-top:1px solid #555;
          }
@@ -107,7 +107,7 @@
            border-radius:5px;  
          }
          .footer{
-         font-size:14px;
+         font-size:13px;
          padding-top:15px;
          padding-bottom:15px;  
          text-align:center;
@@ -283,6 +283,36 @@
          th {
          width: 50%;
          }
+	      .mymenu {
+      margin:0 auto;
+      background-color: #ddd;
+      width:550px;
+      border-radius:0 0 5px 5px;
+      border: 1px solid #ddd;
+      font-weight:bold;
+      font-size:13px;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #ddd;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #bbb;
+      color: #111;
+      }      
          /* The Modal (background) */
          .modal {
          display: none; /* Hidden by default */
@@ -337,9 +367,18 @@
    <body onLoad="callmodal()">
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-      <div id="wrap">
+              <div class="mymenu">
+        <ul>
+          <li><a target="_blank" href="https://buananetpbun.github.io">☰ TOOLS</a></li>
+          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+          <li><a href="javascript:callmodal()">DONATE</a></li>
+          <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+          <img style="float:right; margin-right:10px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
+        </ul>
+      </div> 	
+	   <div id="wrap">
          <div class="logo">
-            <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+            <a href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
             <div style="float:right">
                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
             </div>
@@ -347,11 +386,8 @@
                <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
             </div>
          </div>
-         <div class="header">
-            <span style="float:left; display:inline;margin-right:6px; margin-top:10px">
-            <a href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
-            </span>	
-            <h1>MIKROTIK PCQ BURST RATE + QUEUE SIZE CALCULATOR</h1>
+         <div class="header">>	
+            <h1>MIKROTIK <span style="color:#ff6600">PCQ BURST RATE + QUEUE SIZE</span> CALCULATOR</h1>
          </div>
          <div class="sidebar">
             <div style="padding-top:10px;float:left; width:100%;">
@@ -449,8 +485,8 @@
                </script> 
             </div>
             <div style="margin-top:20px; text-align:center">
-               © Copyright 2020-2022 <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a><br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> - <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> - Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
-            </div>
+	  				© Copyright 2020-2022 <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+          </div>
          </div>
       </div>
       <div id="myModal" class="modal">
