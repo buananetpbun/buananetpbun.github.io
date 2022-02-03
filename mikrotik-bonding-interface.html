@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mikrotik Bonding Interface / Link Aggregation Generator - BuanaNETPBun.Github.io</title>
+    <meta content='Mikrotik Bonding Interface / Link Aggregation Generator - BuanaNETPBun.Github.io' name='description'/>
+    <meta content='bonding, interface, link, aggregation, script, generator, mikrotik, router, winbox, termimal, rsc, scripts, hotspot, wireless, rtrwnet' name='keywords'/>
+    <meta content='index, follow, noodp' name='robots'/>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Mikrotik Bonding Interface / Link Aggregation Generator By BuanaNET-Pbun">
+    <meta property="og:description" content="Mikrotik Bonding Interface / Link Aggregation Generator By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/111255763-464bb280-864a-11eb-9571-ff7cbdd317df.png">
+    <meta property="og:image:alt" content="Mikrotik Bonding Interface / Link Aggregation Generator By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/remote-ip-public-static.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <style>
+      /* ------------------------------------------------------
+      #########################################################
+      # Mikrotik Bonding Interface / Link Aggregation Generator
+      # Designer  : Agus Ramadhani / BuanaNET
+      # Github    : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananet.pbun	
+      #########################################################
+      --------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:15px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;   
+      color:#333;
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .logo {
+      margin-top:10px;
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:920px;
+      margin:0 auto;
+      padding:10px;
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:5px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      background-color:#ff6600;
+      }     
+      .content{
+      float:right;
+      width:100%;
+      padding: 10px;
+      border-top:1px solid #bbb;
+      background:#ddd;
+      border-radius: 0 0 5px 5px;
+      }
+      .sidebar{
+      float:left;
+      width:100%;
+      padding: 10px;
+      background-color:#ddd;
+      border-bottom:0px solid #bbb; 
+      border-radius: 5px 5px 0 0 ;  
+      }
+      .footer{
+      font-size:13px;
+      padding-top:15px;
+      padding-bottom:15px; 
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:23px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:8px;
+      width:137px;
+      font-weight:bold;
+      font-size:15px !important;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      margin-bottom:5px;
+      font-size:16px !important;
+      border-radius: 5px;
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      float: right;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      border-radius: 5px; 
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 200px;
+      background:#fff;
+      overflow: auto;
+      overflow-x: auto;
+      width: 100%;
+      padding: 10px;
+      margin-top:10px;
+      border: 1px solid #ccc;
+      border-radius: 5px; 
+      white-space: nowrap;
+      }
+      table, tr, td {
+      border: none;
+      }
+      .mymenu {
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:600px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      } 
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+  <body onLoad="callmodal()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        <img style="float:right; margin-right:10px;margin-top:2px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
+      </ul>
+    </div>
+    <div id="wrap">
+      <div class="logo">
+        <a href="https://buananetpbun.github.io/mikrotik-bonding-interface.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <div style="float:right">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+        </div>
+        <div style="float:right; margin-right:5px; margin-top:1px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+      </div>
+      <div class="header">
+        <h1>MIKROTIK <span style="color:#ff6600">BONDING INTERFACE</span> / <span style="color:#ff6600">LINK AGGREGATION</span> MODE <span style="color:#ff6600">BALANCE-RR</span></h1>
+      </div>
+      <div class="sidebar">
+        <div style="padding:20px; text-align:center">
+          Bonding is a technology that allows the aggregation of more than one ethernet interface and combine them into one virtual link so that we will get greater bandwidth throughput. as an example your router ether1 only support 100Mbps, you can bonding with ether2 and finaly you can get more speed to 200Mbps (Support LAN only, not for WAN or Wireless)
+        </div>
+        <div style="clear:both"></div>
+        <div style="float:left; width:440px; padding:0 20px 20px 20px; border-right:1px solid #bbb">
+          <center>
+            <h2>MIKROTIK - A</h2>
+          </center>
+          <div style="padding-top:10px"></div>
+          <label><b>Bonding Name</b></label><br>
+          <input type="text" id="input-r1-name" value="bonding" placeholder="bonding" onkeyup="myFunction()">
+          <div style="padding-top:10px"></div>
+          <label><b>Bonding IP Address</b></label><br>
+          <input type="text" id="input-r1-ip" value="192.168.50.1/24" placeholder="192.168.50.1/24" onkeyup="myFunction()" >
+          <div style="padding-top:10px"></div>
+          <label><b>Bonding Slaves</b></label><br>
+          <input type="checkbox" id="R1-ether1" onclick="myCheck()" checked>
+          <label for="R1-ether1"> Ether1</label>
+          <input type="checkbox" id="R1-ether2" onclick="myCheck()" checked>
+          <label for="R1-ether2"> Ether2</label>
+          <input  type="checkbox" id="R1-ether3" onclick="myCheck()">
+          <label  for="R1-ether3"> Ether3</label>
+          <input  type="checkbox" id="R1-ether4" onclick="myCheck()">
+          <label  for="R1-ether4"> Ether4</label>
+          <input  type="checkbox" id="R1-ether5" onclick="myCheck()">
+          <label  for="R1-ether5"> Ether5</label>
+          <div style="padding-top:10px"></div>
+          <label><b>Link Monitoring / Failover Bonding Interface</b></label><br>
+          <input type="checkbox" id="R1-failover" onclick="myCheck()">
+          <label for="R1-failover"> Enable ARP Monitoring</label>
+          <div style="padding-top:20px"></div>
+          <span style="margin-left:2px">Copy-Paste in Terminal Mikrotik - A</span>
+          <div class="list-mangle">
+            <div id="list-output-r1">
+              <span style="color:#ff6600;">
+              ######################################<br>
+              # BONDING INTERFACE MIKROTIK-A<br>
+              # Created By: BuanaNETPBun.Github.io<br>
+              ######################################<br>
+              </span>
+              /interface bonding <br>
+              add name="<span style="color:#ff6600;" id='output-bonding-r1-name1'>bonding</span>" <span id="enable-arp-r1" style="display:none">link-monitoring=<span style="color:#ff6600;">arp</span> arp-ip-targets="<span style="color:#ff6600;" id='arp-ip-targets_r1'>192.168.50.2</span>"</span> mode=<span style="color:#ff6600;">balance-rr</span> slaves="<span style="color:#ff6600;" id="output-ether1-r1">ether1,</span><span style="color:#ff6600;" id="output-ether2-r1">ether2</span><span style="color:#ff6600;" id="output-ether3-r1"></span><span style="color:#ff6600;" id="output-ether4-r1"></span><span style="color:#ff6600;" id="output-ether5-r1"></span>" comment="<span style="color:#ff6600;">By BNT</span>"<br>
+              /ip address <br>
+              add address="<span style="color:#ff6600;" id='output-bonding-r1-ip'>192.168.50.2/24</span>" interface="<span style="color:#ff6600;" id='output-bonding-r1-name2'>bonding</span>" comment="<span style="color:#ff6600;">By BNT</span>"
+            </div>
+          </div>
+          <br>
+          <button style="margin-top:-5px" id="copyscript" type="button" onclick="myFunction(); myCheck();selectElementContents(document.getElementById('list-output-r1'))">Copy Script</button>  
+        </div>
+        <div style="float:right; width:440px;padding:0 20px 20px 20px;">
+          <center>
+            <h2>MIKROTIK - B</h2>
+          </center>
+          <div style="padding-top:10px"></div>
+          <label><b>Bonding Name</b></label><br>
+          <input type="text" id="input-r2-name" value="bonding" placeholder="bonding" onkeyup="myFunction()">
+          <div style="padding-top:10px"></div>
+          <label><b>Bonding IP Address</b></label><br>
+          <input type="text" id="input-r2-ip" value="192.168.50.2/24" placeholder="192.168.50.2/24" onkeyup="myFunction()">
+          <div style="padding-top:10px"></div>
+          <label><b>Bonding Slaves</b></label><br>
+          <input type="checkbox" id="R2-ether1" onclick="myCheck()" checked>
+          <label for="R2-ether1"> Ether1</label>
+          <input type="checkbox" id="R2-ether2" onclick="myCheck()" checked>
+          <label for="R2-ether2"> Ether2</label>
+          <input  type="checkbox" id="R2-ether3" onclick="myCheck()">
+          <label  for="R2-ether3"> Ether3</label>
+          <input  type="checkbox" id="R2-ether4" onclick="myCheck()">
+          <label  for="R2-ether4"> Ether4</label>
+          <input  type="checkbox" id="R2-ether5" onclick="myCheck()">
+          <label  for="R2-ether5"> Ether5</label>
+          <div style="padding-top:10px"></div>
+          <label><b>Link Monitoring / Failover Bonding Interface</b></label><br>
+          <input type="checkbox" id="R2-failover" onclick="myCheck()">
+          <label for="R2-failover"> Enable ARP Monitoring</label>
+          <div style="padding-top:20px"></div>
+          <span style="margin-left:2px">Copy-Paste in Terminal MikroTik - B</span>
+          <div class="list-mangle">
+            <div id="list-output-r2">
+              <span style="color:#ff6600;">
+              ######################################<br>
+              # BONDING INTERFACE MIKROTIK-B<br>
+              # Created By: BuanaNETPBun.Github.io<br>
+              ######################################<br>
+              </span>
+              /interface bonding <br>
+              add name="<span style="color:#ff6600;" id='output-bonding-r2-name1'>bonding</span>" <span id="enable-arp-r2" style="display:none">link-monitoring=<span style="color:#ff6600;">arp</span> arp-ip-targets="<span style="color:#ff6600;" id='arp-ip-targets_r2'>192.168.50.1</span>"</span> mode=<span style="color:#ff6600;">balance-rr</span> slaves="<span style="color:#ff6600;" id="output-ether1-r2">ether1,</span><span style="color:#ff6600;" id="output-ether2-r2">ether2</span><span style="color:#ff6600;" id="output-ether3-r2"></span><span style="color:#ff6600;" id="output-ether4-r2"></span><span style="color:#ff6600;" id="output-ether5-r2"></span>" comment="<span style="color:#ff6600;">By BNT</span>"<br>
+              /ip address <br>
+              add address="<span style="color:#ff6600;" id='output-bonding-r2-ip'>192.168.50.2/24</span>" interface="<span style="color:#ff6600;" id='output-bonding-r2-name2'>bonding</span>" comment="By BNT"
+            </div>
+          </div>
+          <br>
+          <button style="margin-top:-5px" id="copyscript" type="button" onclick="myFunction(); myCheck();selectElementContents(document.getElementById('list-output-r2'))">Copy Script</button>
+        </div>
+      </div>
+      <div class="footer">
+        © Copyright 2020-2022 <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function callmodal() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>   
+    <script>  
+    function _0x4118(_0x990f0,_0x1b75dd){var _0x46cd56=_0x46cd();return _0x4118=function(_0x411868,_0x5e0b13){_0x411868=_0x411868-0x109;var _0x26b39c=_0x46cd56[_0x411868];return _0x26b39c;},_0x4118(_0x990f0,_0x1b75dd);}function _0x46cd(){var _0x2fb26d=['R2-ether2','getElementById','createTextRange','location','286748PlYmZk','moveToElementText','output-ether3-r2','enable-arp-r1','42752kYcxmi','none','648uNUPnE','getSelection','output-ether4-r1','output-bonding-r2-name1','arp-ip-targets_r2','R2-ether4','10016508dIYDEn','inline','copy','4335366XlTrqF','R1-failover','ether5','output-bonding-r1-ip','ether2,','33LuyAst','output-ether1-r1','output-ether2-r2','R1-ether4','execCommand','1212735xFEQwU','R1-ether2','selectNodeContents','style','60gYNHch','value','selectNode','134650QNAQkv','substring','R2-failover','R1-ether5','269868fZBGXm','R2-ether3','output-ether5-r1','enable-arp-r2','display','6fvfuEv','replace','input-r2-name','checked','R1-ether1','href','ether4,','output-bonding-r2-name2','output-ether5-r2','input-r2-ip','innerHTML','/mikrotik-bonding-interface.html','removeAllRanges','select','R2-ether1','pbun','378KriPvG','output-ether4-r2','buananet','output-ether3-r1','ether3,','R1-ether3','output-bonding-r1-name1','ether1,'];_0x46cd=function(){return _0x2fb26d;};return _0x46cd();}(function(_0x2fde27,_0x1e8dfc){var _0x33350b=_0x4118,_0x2e798a=_0x2fde27();while(!![]){try{var _0x4de46f=-parseInt(_0x33350b(0x12c))/0x1*(parseInt(_0x33350b(0x131))/0x2)+-parseInt(_0x33350b(0x121))/0x3+-parseInt(_0x33350b(0x14d))/0x4*(-parseInt(_0x33350b(0x125))/0x5)+-parseInt(_0x33350b(0x117))/0x6+parseInt(_0x33350b(0x141))/0x7*(parseInt(_0x33350b(0x10c))/0x8)+-parseInt(_0x33350b(0x10e))/0x9*(parseInt(_0x33350b(0x128))/0xa)+-parseInt(_0x33350b(0x11c))/0xb*(-parseInt(_0x33350b(0x114))/0xc);if(_0x4de46f===_0x1e8dfc)break;else _0x2e798a['push'](_0x2e798a['shift']());}catch(_0x219d45){_0x2e798a['push'](_0x2e798a['shift']());}}}(_0x46cd,0xb6631));function myFunction(){var _0x4b9d14=_0x4118,_0x2d72e2=document['getElementById']('input-r1-name')[_0x4b9d14(0x126)],_0x52c504=document['getElementById']('input-r1-ip')['value'],_0x34e43c=document[_0x4b9d14(0x14a)](_0x4b9d14(0x133))['value'],_0x19accc=document[_0x4b9d14(0x14a)](_0x4b9d14(0x13a))[_0x4b9d14(0x126)],_0x36b0e9=_0x52c504,_0x4d5ec1=_0x36b0e9[_0x4b9d14(0x129)](0x0,_0x36b0e9['lastIndexOf']('.')),_0x5a5130=_0x19accc,_0x50fe89=_0x5a5130[_0x4b9d14(0x129)](0x0,_0x5a5130['lastIndexOf']('.'));document[_0x4b9d14(0x14a)](_0x4b9d14(0x147))[_0x4b9d14(0x13b)]=_0x2d72e2,document[_0x4b9d14(0x14a)](_0x4b9d14(0x11a))[_0x4b9d14(0x13b)]=_0x52c504,document['getElementById']('output-bonding-r1-name2')[_0x4b9d14(0x13b)]=_0x2d72e2,document[_0x4b9d14(0x14a)]('arp-ip-targets_r1')[_0x4b9d14(0x13b)]=_0x4d5ec1+'.2',document[_0x4b9d14(0x14a)](_0x4b9d14(0x111))[_0x4b9d14(0x13b)]=_0x34e43c,document['getElementById']('output-bonding-r2-ip')['innerHTML']=_0x19accc,document[_0x4b9d14(0x14a)](_0x4b9d14(0x138))[_0x4b9d14(0x13b)]=_0x34e43c,document[_0x4b9d14(0x14a)](_0x4b9d14(0x112))['innerHTML']=_0x50fe89+'.1';}function myCheck(){var _0x3994d0=_0x4118,_0x40f999=document[_0x3994d0(0x14a)](_0x3994d0(0x135)),_0x62c850=document[_0x3994d0(0x14a)](_0x3994d0(0x122)),_0x450a54=document[_0x3994d0(0x14a)](_0x3994d0(0x146)),_0x46d16d=document['getElementById'](_0x3994d0(0x11f)),_0x44be7f=document[_0x3994d0(0x14a)](_0x3994d0(0x12b));_0x40f999[_0x3994d0(0x134)]==!![]?document[_0x3994d0(0x14a)](_0x3994d0(0x11d))[_0x3994d0(0x13b)]=_0x3994d0(0x148):document[_0x3994d0(0x14a)](_0x3994d0(0x11d))['innerHTML']='';_0x62c850[_0x3994d0(0x134)]==!![]?document[_0x3994d0(0x14a)]('output-ether2-r1')['innerHTML']=_0x3994d0(0x11b):document['getElementById']('output-ether2-r1')[_0x3994d0(0x13b)]='';_0x450a54[_0x3994d0(0x134)]==!![]?document[_0x3994d0(0x14a)]('output-ether3-r1')['innerHTML']=_0x3994d0(0x145):document[_0x3994d0(0x14a)](_0x3994d0(0x144))['innerHTML']='';_0x46d16d[_0x3994d0(0x134)]==!![]?document['getElementById']('output-ether4-r1')[_0x3994d0(0x13b)]=_0x3994d0(0x137):document[_0x3994d0(0x14a)](_0x3994d0(0x110))['innerHTML']='';_0x44be7f[_0x3994d0(0x134)]==!![]?document[_0x3994d0(0x14a)]('output-ether5-r1')[_0x3994d0(0x13b)]='ether5':document['getElementById'](_0x3994d0(0x12e))[_0x3994d0(0x13b)]='';var _0x148e3e='https://',_0x4a30e4=_0x3994d0(0x143),_0x52e972=_0x3994d0(0x140),_0x1647cd='github',_0xfbee3f='io',_0x3333b8=_0x148e3e+_0x4a30e4+_0x52e972+'.'+_0x1647cd+'.'+_0xfbee3f;window[_0x3994d0(0x14c)][_0x3994d0(0x136)]!==_0x3333b8+_0x3994d0(0x13c)&&location[_0x3994d0(0x132)](_0x3333b8+_0x3994d0(0x13c));var _0x287ba5=document[_0x3994d0(0x14a)](_0x3994d0(0x13f)),_0x115392=document[_0x3994d0(0x14a)](_0x3994d0(0x149)),_0x4960fc=document[_0x3994d0(0x14a)](_0x3994d0(0x12d)),_0x2b7de1=document[_0x3994d0(0x14a)](_0x3994d0(0x113)),_0x1b86ce=document['getElementById']('R2-ether5');_0x287ba5[_0x3994d0(0x134)]==!![]?document[_0x3994d0(0x14a)]('output-ether1-r2')[_0x3994d0(0x13b)]=_0x3994d0(0x148):document['getElementById']('output-ether1-r2')['innerHTML']='';_0x115392[_0x3994d0(0x134)]==!![]?document[_0x3994d0(0x14a)](_0x3994d0(0x11e))[_0x3994d0(0x13b)]='ether2,':document['getElementById'](_0x3994d0(0x11e))[_0x3994d0(0x13b)]='';_0x4960fc[_0x3994d0(0x134)]==!![]?document['getElementById'](_0x3994d0(0x10a))[_0x3994d0(0x13b)]=_0x3994d0(0x145):document[_0x3994d0(0x14a)](_0x3994d0(0x10a))[_0x3994d0(0x13b)]='';_0x2b7de1[_0x3994d0(0x134)]==!![]?document[_0x3994d0(0x14a)](_0x3994d0(0x142))[_0x3994d0(0x13b)]='ether4,':document[_0x3994d0(0x14a)]('output-ether4-r2')[_0x3994d0(0x13b)]='';_0x1b86ce['checked']==!![]?document['getElementById'](_0x3994d0(0x139))['innerHTML']=_0x3994d0(0x119):document[_0x3994d0(0x14a)](_0x3994d0(0x139))[_0x3994d0(0x13b)]='';var _0x5e346d=document['getElementById'](_0x3994d0(0x118)),_0x3c4d80=document['getElementById'](_0x3994d0(0x12a));_0x5e346d['checked']==!![]?document[_0x3994d0(0x14a)]('enable-arp-r1')[_0x3994d0(0x124)][_0x3994d0(0x130)]=_0x3994d0(0x115):document[_0x3994d0(0x14a)](_0x3994d0(0x10b))[_0x3994d0(0x124)][_0x3994d0(0x130)]=_0x3994d0(0x10d),_0x3c4d80['checked']==!![]?document[_0x3994d0(0x14a)](_0x3994d0(0x12f))['style'][_0x3994d0(0x130)]=_0x3994d0(0x115):document[_0x3994d0(0x14a)](_0x3994d0(0x12f))[_0x3994d0(0x124)][_0x3994d0(0x130)]='none';}function selectElementContents(_0x3f6d3d){var _0x3bd6f0=_0x4118,_0x42bf35=document['body'],_0x13fb25,_0x5d4842;if(document['createRange']&&window[_0x3bd6f0(0x10f)]){_0x13fb25=document['createRange'](),_0x5d4842=window[_0x3bd6f0(0x10f)](),_0x5d4842[_0x3bd6f0(0x13d)]();try{_0x13fb25[_0x3bd6f0(0x123)](_0x3f6d3d),_0x5d4842['addRange'](_0x13fb25);}catch(_0x19d77d){_0x13fb25[_0x3bd6f0(0x127)](_0x3f6d3d),_0x5d4842['addRange'](_0x13fb25);}}else _0x42bf35[_0x3bd6f0(0x14b)]&&(_0x13fb25=_0x42bf35[_0x3bd6f0(0x14b)](),_0x13fb25[_0x3bd6f0(0x109)](_0x3f6d3d),_0x13fb25[_0x3bd6f0(0x13e)]());document[_0x3bd6f0(0x120)](_0x3bd6f0(0x116));}
+    </script>  
+  </body>
+</html>
