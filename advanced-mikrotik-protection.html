@@ -637,7 +637,8 @@
                      add address=192.168.2.1 list=IP-MODEM<br>
                      /ip firewall filter <br>
                      add action=drop chain=forward disabled=yes dst-address-list=IP-MODEM dst-port=21-23,80,443 protocol=tcp comment="MODEM PROTECTED"
-                     </code>	
+                     add action=drop chain=output disabled=yes dst-address-list=IP-MODEM dst-port=21-23,80,443 protocol=tcp comment="MODEM PROTECTED"
+					 </code>	
                   </td>
                </tr>
                <tr>
