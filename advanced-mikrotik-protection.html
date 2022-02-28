@@ -670,7 +670,7 @@
 # ANTI NETCUT<br>
                      /ip firewall address-list add list=netcut address=www.arcai.com comment="Anti Netcut"<br>
                      /ip firewall mangle add action=add-src-to-address-list address-list=NetcutUser address-list-timeout=1h5m chain=prerouting dst-address-list=netcut dst-port=80 protocol=tcp comment="Anti Netcut"<br>
-                     /ip firewall filter add action=drop chain=forward comment=NetCut src-address-list=NetcutUser comment="Anti Netcut"<br>
+                     /ip firewall filter add action=drop chain=forward src-address-list=NetcutUser comment="Anti Netcut"<br>
                      /system scheduler add interval=10m name="AutoBlockNetcut" comment="Anti Netcut"
                      </code>
                      </span>
