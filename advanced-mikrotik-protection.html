@@ -673,6 +673,20 @@
                      /ip firewall filter add action=drop chain=forward src-address-list=NetcutUser comment="Anti Netcut"<br>
                      /system scheduler add interval=10m name="AutoBlockNetcut" comment="Anti Netcut"
                      </code>
+			     <br>
+			Open System Scheduler and enter this script into "AutoBlockNetcut"
+			     <br>
+                     <code class="routeros">
+local a [/ip firewall address-list get [find list="NetcutUser"] address]
+local b [/ip hotspot active get [find address=$a] mac-address]
+if ($a != "") do={[
+/ip hotspot ip-binding add mac-address="$b" address="$a" type=blocked
+/ip firewall address-list remove [find address="$a"]
+/system scheduler add name ($a)  interval="01:00:00" on "/ip hotspot ip-binding remove [find mac-address=$b]
+/system scheduler remove [find name=$a]"
+]}
+                     </code>			     
+			     
                      </span>
                   </td>
                </tr>
@@ -794,8 +808,8 @@
                      /ip firewall filter<br>
                      add action=add-src-to-address-list address-list="port-knocking-first" address-list-timeout="00:00:00" chain=input packet-size="100" protocol=icmp comment="Port Knocking Use Icmp + Packet Size"<br>
                      add action=add-src-to-address-list address-list="port-knocking-second" address-list-timeout="00:00:00" chain=input packet-size="200" protocol=icmp src-address-list="port-knocking-first"<br>
-                     add action=accept chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="port-knocking-second"<br>
-                     add action=drop chain=input dst-port="8291,21,22,23,80,443" protocol=tcp src-address-list="!port-knocking-second"
+                     add action=accept chain=input dst-port="21,22,23" protocol=tcp src-address-list="port-knocking-second"<br>
+                     add action=drop chain=input dst-port="21,22,23" protocol=tcp src-address-list="!port-knocking-second"
                      </code>
                   </td>
                </tr>
