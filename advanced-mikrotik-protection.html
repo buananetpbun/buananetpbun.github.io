@@ -677,13 +677,13 @@
 			Open System Scheduler and enter this script into "AutoBlockNetcut"
 			     <br><br>
                      <code class="routeros">
-local a [/ip firewall address-list get [find list="NetcutUser"] address]
-local b [/ip hotspot active get [find address=$a] mac-address]
+local a [/ip firewall address-list get [find list="NetcutUser"] address]<br>
+local b [/ip hotspot active get [find address=$a] mac-address]<br>
 if ($a != "") do={[
-/ip hotspot ip-binding add mac-address="$b" address="$a" type=blocked
-/ip firewall address-list remove [find address="$a"]
-/system scheduler add name ($a)  interval="01:00:00" on "/ip hotspot ip-binding remove [find mac-address=$b]
-/system scheduler remove [find name=$a]"
+/ip hotspot ip-binding add mac-address="$b" address="$a" type=blocked<br>
+/ip firewall address-list remove [find address="$a"]<br>
+/system scheduler add name ($a)  interval="01:00:00" on "/ip hotspot ip-binding remove [find mac-address=$b]<br>
+/system scheduler remove [find name=$a]"<br>
 ]}
                      </code>			     
 			     
