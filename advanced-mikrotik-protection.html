@@ -722,7 +722,7 @@ if ($a != "") do={[
                      add list=WAN interface="ether to ISP" <br>
                      /ip firewall filter<br>
                      add action=drop chain=input dst-port=3128,8080 in-interface-list=WAN protocol=tcp comment="Block Open PROXY"<br>
-                     add action=drop chain=input dst-rt=3128,8080 in-interface-list=WAN protocol=udp
+                     add action=drop chain=input dst-port=3128,8080 in-interface-list=WAN protocol=udp
                      </code>
                   </td>
                </tr>
