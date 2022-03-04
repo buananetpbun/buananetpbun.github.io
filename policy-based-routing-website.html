@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MikroTik Policy Based Routing (PBR) or Static Routing Generator - BuanaNETPBun.Github.io</title>
+    <meta content='MikroTik Policy Based Routing (PBR) or Static Routing Generator - BuanaNETPBun.Github.io' name='description'/>
+    <meta content='block, webside, dns, doh, DNS over HTTPS, burst, calculator, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+    <meta content='index, follow, noodp' name='robots'/>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="MikroTik Policy Based Routing (PBR) or Static Routing Generator By BuanaNET-Pbun">
+    <meta property="og:description" content="MikroTik Policy Based Routing (PBR) or Static Routing Generator By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/145576105-d7bca20d-a888-450f-8dd8-cc33339f72b7.png">
+    <meta property="og:image:alt" content="MikroTik Policy Based Routing (PBR) or Static Routing Generator By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-block-website-generator.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>   
+    <style>
+      /* ---------------------------------------------------------------
+      ##################################################################
+      # MikroTik Policy Based Routing (PBR) or Static Routing Generator
+      # Designer  : Agus Ramadhani / BuanaNET.Pbun
+      # Github    : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananet.pbun	
+      ##################################################################
+      ------------------------------------------------------------------ */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:16px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      line-height: 1.2;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ; 
+      color:#333;
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .logo {
+      margin-top:10px;
+      margin-bottom:5px; 
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:700px;
+      margin:0 auto;
+      padding:10px;
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:0px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      background-color:#ff6600;
+      }     
+      .content{
+      float:left;
+      width:600px;
+      height:480px;
+      padding: 10px;
+      border-top:1px solid #bbb; 
+      border-bottom:1px solid #bbb; 
+      border-right:1px solid #bbb; 
+      background:#ddd;
+      }
+      .sidebar{
+      float:left;
+      width:685px;
+      height:645px;
+      padding: 10px;
+      background-color:#ccc;
+      border:2px solid #ccc; 
+      border-radius: 5px;
+      margin-top:5px
+      }
+      .footer{
+      font-size:13px;
+      padding-top:10px;
+      padding-bottom:15px; 
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:20px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      background-color: #ff6600;
+      border: none;
+      color: black;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      font-size:16px;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      font-weight:normal;
+      margin-bottom:5px;
+      font-size:16px !important;
+      border-radius:5px
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 500px;
+      background:#f9f9f9;
+      overflow: auto;
+      overflow-x: auto;
+      width: 660px;
+      padding: 4px;
+      margin-top:8px;
+      border: 1px solid #bbb;
+      border-radius:5px
+      }
+      table, tr, td {
+      border: none;
+      }
+      table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      }
+      td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      font-weight:normal;
+      }
+      .mymenu {
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:600px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      }
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+  <body onLoad="callmodal();createTable();addRow()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>   
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        <img style="float:right; margin-right:10px;margin-top:2px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
+      </ul>
+    </div>
+    <div id="wrap">
+      <div class="logo">
+        <a href="https://buananetpbun.github.io/policy-based-routing-website.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <div style="float:right">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+        </div>
+        <div style="float:right; margin-right:5px; margin-top:3px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+      </div>
+      <div class="header">
+        <h1>POLICY BASED ROUTING OR STATIC ROUTING WEBSITE GENERATOR</h1>
+      </div>
+      <div class="sidebar">
+        <div style="width:260px;float:left"><label>Target IP Gateway ISP</label> 
+          <input  type="text" id="target-ip" style='width:240px; margin-right:5px' placeholder="192.168.2.1" value="">
+        </div>
+        <div style="width:260px; float:left">
+          <label>Routing Mark / Table</label>  
+          <input  type="text" id="target-route" style='width:240px' placeholder="Streaming" value="">
+        </div>
+        <div style="width:130px; float:left">
+          <label>ROS Version</label>  <br>
+          <select style="font-size:15px; width:130px; margin-right:10px" onchange="myFunction()" id="ros-list">
+            <option value="ros6">ROS v6.xx</option>
+            <option value="ros7">ROS v7.xx</option>
+          </select>
+        </div>
+        <div style="margin-bottom:10px;clear:both"></div>
+        <select style="font-size:15px; width:250px; margin-right:10px" onchange="myFunction()" id="dns-list">
+          <option value="02">Get IP Use RAW Content</option>
+          <option value="04">Get IP Use Filter Content</option>
+          <option value="01">Get IP Use RAW TLS-Host</option>
+          <option value="03">Get IP Use Filter TLS-Host</option>
+          <option value="05">Get IP Use Layer-7</option>
+          <option disabled value="6">Expert Routing (premium service)</option>
+        </select>
+        First Regexp <input  type="text" id="first-regexp" style='color: #ff6600; font-weight:bold; width:98px; margin-right:5px' placeholder="regex" value=".">
+        Last Regexp <input  type="text" id="last-regexp" style='color: #ff6600; font-weight:bold; width:98px' placeholder="regex" value="">
+        <div class="list-mangle" style="margin-bottom:10px">
+          <div id="cont"></div>
+          <br>
+          <table id="mytable" style="font-weight:normal">
+            <tr style="background-color: #ddd; " >
+              <td><button type="button" id="bt" onclick="submit()" >Generate Script</button>  <button style="margin-left:5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('output'))">Copy All Script</button></td>
+            </tr>
+            <tr style="font-size:15px;font-weight:normal">
+              <td>
+                <p id='output'></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="footer">
+        <div style="margin-top:0px; text-align:center">
+          © Copyright 2020-2022 <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function callmodal() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script> 
+    <script>  
+ (function(_0x3edc9e,_0x1acba0){var _0xda5991=_0x3906,_0x402c8e=_0x3edc9e();while(!![]){try{var _0x4a8d98=-parseInt(_0xda5991(0x202))/0x1+parseInt(_0xda5991(0x1e2))/0x2*(parseInt(_0xda5991(0x1f8))/0x3)+parseInt(_0xda5991(0x1df))/0x4+-parseInt(_0xda5991(0x208))/0x5+-parseInt(_0xda5991(0x1ea))/0x6+-parseInt(_0xda5991(0x1d0))/0x7*(parseInt(_0xda5991(0x1fa))/0x8)+-parseInt(_0xda5991(0x1f9))/0x9*(-parseInt(_0xda5991(0x20d))/0xa);if(_0x4a8d98===_0x1acba0)break;else _0x402c8e['push'](_0x402c8e['shift']());}catch(_0x4ad9fa){_0x402c8e['push'](_0x402c8e['shift']());}}}(_0x3878,0xb3d81));var arrHead=new Array();arrHead=['<button\x20type=\x22button\x22\x20id=\x22addRow\x22\x20onclick=\x22addRow()\x22>Add\x20New\x20Domain\x20Name</button>','Try\x20with\x20\x22<span\x20style=\x22color:green;\x20font-weight:bold\x22>domain.com</span>\x22\x20or\x20use\x20with\x20Regex\x20Function'];function myFunction(){var _0xa2cae3=_0x3906,_0x9c20c2=document['getElementById'](_0xa2cae3(0x1d2))[_0xa2cae3(0x1e3)];_0x9c20c2=='01'&&(document[_0xa2cae3(0x1da)](_0xa2cae3(0x210))[_0xa2cae3(0x1e3)]='*.',document['getElementById'](_0xa2cae3(0x1d1))[_0xa2cae3(0x1e3)]=''),_0x9c20c2=='02'&&(document['getElementById'](_0xa2cae3(0x210))['value']='.',document[_0xa2cae3(0x1da)]('last-regexp')[_0xa2cae3(0x1e3)]=''),_0x9c20c2=='03'&&(document[_0xa2cae3(0x1da)](_0xa2cae3(0x210))[_0xa2cae3(0x1e3)]='*.',document[_0xa2cae3(0x1da)](_0xa2cae3(0x1d1))[_0xa2cae3(0x1e3)]=''),_0x9c20c2=='04'&&(document[_0xa2cae3(0x1da)](_0xa2cae3(0x210))['value']='.',document[_0xa2cae3(0x1da)](_0xa2cae3(0x1d1))[_0xa2cae3(0x1e3)]=''),_0x9c20c2=='05'&&(document[_0xa2cae3(0x1da)](_0xa2cae3(0x210))[_0xa2cae3(0x1e3)]='^.+(',document[_0xa2cae3(0x1da)]('last-regexp')['value']=_0xa2cae3(0x1ce));}function createTable(){var _0xb66e2f=_0x3906,_0x23e243=document['createElement'](_0xb66e2f(0x1f7));_0x23e243[_0xb66e2f(0x1e9)]('id',_0xb66e2f(0x1f1));var _0x20b6b8=_0x23e243[_0xb66e2f(0x1f2)](-0x1);for(var _0x432d97=0x0;_0x432d97<arrHead['length'];_0x432d97++){var _0x39fc8e=document['createElement']('th');_0x39fc8e[_0xb66e2f(0x1fc)]=arrHead[_0x432d97],_0x20b6b8[_0xb66e2f(0x20a)](_0x39fc8e);}var _0x466707=document[_0xb66e2f(0x1da)](_0xb66e2f(0x1d4));_0x466707[_0xb66e2f(0x20a)](_0x23e243);}function _0x3906(_0x568a30,_0x5bcd64){var _0x387896=_0x3878();return _0x3906=function(_0x390648,_0x5e6016){_0x390648=_0x390648-0x1cc;var _0x5bd741=_0x387896[_0x390648];return _0x5bd741;},_0x3906(_0x568a30,_0x5bcd64);}function addRow(){var _0x397b49=_0x3906,_0x3b17b1=document[_0x397b49(0x1da)](_0x397b49(0x1f1)),_0x3d7a1f=_0x3b17b1[_0x397b49(0x207)][_0x397b49(0x206)],_0x4519f9=_0x3b17b1[_0x397b49(0x1f2)](_0x3d7a1f);_0x4519f9=_0x3b17b1[_0x397b49(0x1f2)](_0x3d7a1f);for(var _0x42f11e=0x0;_0x42f11e<arrHead[_0x397b49(0x206)];_0x42f11e++){var _0x14c23a=document[_0x397b49(0x1e4)]('td');_0x14c23a=_0x4519f9[_0x397b49(0x1d3)](_0x42f11e);if(_0x42f11e==0x0){var _0x4ac34a=document[_0x397b49(0x1e4)]('input');_0x4ac34a['setAttribute'](_0x397b49(0x1dc),'button'),_0x4ac34a[_0x397b49(0x1e9)](_0x397b49(0x1e3),_0x397b49(0x1e7)),_0x4ac34a['setAttribute']('onclick','removeRow(this)'),_0x14c23a[_0x397b49(0x20a)](_0x4ac34a);}else{var _0x206915=document[_0x397b49(0x1e4)](_0x397b49(0x1d5));_0x206915['setAttribute'](_0x397b49(0x1dc),_0x397b49(0x1d6)),_0x206915[_0x397b49(0x1e9)](_0x397b49(0x1e3),''),_0x206915['setAttribute'](_0x397b49(0x209),_0x397b49(0x20b)),_0x14c23a[_0x397b49(0x20a)](_0x206915);}}}function removeRow(_0x473224){var _0x2b19b9=_0x3906,_0x4b6287=document['getElementById'](_0x2b19b9(0x1f1));_0x4b6287[_0x2b19b9(0x1dd)](_0x473224[_0x2b19b9(0x1f4)][_0x2b19b9(0x1f4)]['rowIndex']);}function submit(){var _0xc9a597=_0x3906,_0x2a596d=document[_0xc9a597(0x1da)](_0xc9a597(0x1f1)),_0x53973a=new Array(),_0x24bf81=document[_0xc9a597(0x1da)](_0xc9a597(0x1d2))[_0xc9a597(0x1e3)],_0x3b9bbd=document[_0xc9a597(0x1da)](_0xc9a597(0x1e0))[_0xc9a597(0x1e3)],_0x19c884=document[_0xc9a597(0x1da)](_0xc9a597(0x204))[_0xc9a597(0x1e3)],_0x277900=document[_0xc9a597(0x1da)](_0xc9a597(0x1d7))[_0xc9a597(0x1e3)],_0x597f9a=document[_0xc9a597(0x1da)]('first-regexp')['value'],_0x44b0f2=document['getElementById']('last-regexp')[_0xc9a597(0x1e3)];_0x597f9a=_0x597f9a[_0xc9a597(0x1e8)](/\\/g,'\x5c\x5c'),_0x597f9a=_0x597f9a['replace']('$','\x5c$'),_0x44b0f2=_0x44b0f2[_0xc9a597(0x1e8)](/\\/g,'\x5c\x5c'),_0x44b0f2=_0x44b0f2[_0xc9a597(0x1e8)]('$','\x5c$');for(row=0x1;row<_0x2a596d['rows']['length']-0x1;row++){for(c=0x0;c<_0x2a596d[_0xc9a597(0x207)][row]['cells'][_0xc9a597(0x206)];c++){var _0x46978a=_0x2a596d[_0xc9a597(0x207)]['item'](row)[_0xc9a597(0x1d8)][c];_0x46978a['childNodes'][0x0]['getAttribute']('type')=='text'&&(_0x24bf81=='01'&&_0x53973a[_0xc9a597(0x201)](_0xc9a597(0x1fb)+_0x19c884+_0xc9a597(0x1f6)+_0x597f9a+_0x46978a[_0xc9a597(0x1cf)][0x0][_0xc9a597(0x1e3)]+_0x44b0f2+_0xc9a597(0x1de)+_0x19c884+'\x22<br>'),_0x24bf81=='02'&&_0x53973a[_0xc9a597(0x201)](_0xc9a597(0x1fb)+_0x19c884+'-list</span>\x22\x20chain=prerouting\x20src-address-list=LOCAL-IP\x20dst-address-list=!LOCAL-IP\x20content=\x22<span\x20style=\x22color:#ff6600;font-weight:bold\x22>'+_0x597f9a+_0x46978a['childNodes'][0x0][_0xc9a597(0x1e3)]+_0x44b0f2+_0xc9a597(0x1de)+_0x19c884+_0xc9a597(0x1cd)),_0x24bf81=='03'&&_0x53973a['push'](_0xc9a597(0x1d9)+_0x19c884+'-list</span>\x22\x20chain=forward\x20src-address-list=LOCAL-IP\x20dst-address-list=!LOCAL-IP\x20protocol=tcp\x20tls-host=\x22<span\x20style=\x22color:#ff6600;font-weight:bold\x22>'+_0x597f9a+_0x46978a[_0xc9a597(0x1cf)][0x0]['value']+_0x44b0f2+_0xc9a597(0x1de)+_0x19c884+'\x22<br>'),_0x24bf81=='04'&&_0x53973a[_0xc9a597(0x201)](_0xc9a597(0x1d9)+_0x19c884+_0xc9a597(0x1f3)+_0x597f9a+_0x46978a[_0xc9a597(0x1cf)][0x0][_0xc9a597(0x1e3)]+_0x44b0f2+_0xc9a597(0x1de)+_0x19c884+_0xc9a597(0x1cd)),_0x24bf81=='05'&&_0x53973a[_0xc9a597(0x201)](_0xc9a597(0x1f5)+_0x46978a[_0xc9a597(0x1cf)][0x0][_0xc9a597(0x1e3)]+_0xc9a597(0x1ef)+_0x597f9a+_0x46978a['childNodes'][0x0][_0xc9a597(0x1e3)]+_0x44b0f2+_0xc9a597(0x1de)+_0x19c884+_0xc9a597(0x20f)+_0x19c884+_0xc9a597(0x1ed)+_0x46978a[_0xc9a597(0x1cf)][0x0]['value']+_0xc9a597(0x1de)+_0x19c884+_0xc9a597(0x1cd)));}}let _0x576311=()=>{var _0x1d9b13=_0xc9a597;let _0x11b2a=_0x53973a;_0x3b9bbd==_0x1d9b13(0x1e6)&&(document[_0x1d9b13(0x1da)](_0x1d9b13(0x200))['innerHTML']='/ip\x20firewall\x20address-list\x20add\x20address=192.168.0.0/16\x20list=LOCAL-IP<br>/ip\x20firewall\x20address-list\x20add\x20address=172.16.0.0/12\x20list=LOCAL-IP<br>/ip\x20firewall\x20address-list\x20add\x20address=10.0.0.0/8\x20list=LOCAL-IP<br>/ip\x20route\x20add\x20check-gateway=ping\x20distance=1\x20gateway=\x22<span\x20style=\x22color:green;font-weight:bold\x22>'+_0x277900+_0x1d9b13(0x1e1)+_0x19c884+'</span>\x22\x20comment=\x22'+_0x19c884+_0x1d9b13(0x1eb)+_0x19c884+'-list\x20</span>\x22\x20new-routing-mark=\x22<span\x20style=\x22color:green;font-weight:bold\x22>'+_0x19c884+'</span>\x22\x20passthrough=no\x20src-address-list=LOCAL-IP\x20comment=\x22'+_0x19c884+_0x1d9b13(0x1cd)+_0x11b2a[_0x1d9b13(0x1ec)]('')),_0x3b9bbd==_0x1d9b13(0x20c)&&(document[_0x1d9b13(0x1da)]('output')[_0x1d9b13(0x1fc)]='/ip\x20firewall\x20address-list\x20add\x20address=192.168.0.0/16\x20list=LOCAL-IP<br>/ip\x20firewall\x20address-list\x20add\x20address=172.16.0.0/12\x20list=LOCAL-IP<br>/ip\x20firewall\x20address-list\x20add\x20address=10.0.0.0/8\x20list=LOCAL-IP<br>/routing\x20table\x20add\x20name=\x22<span\x20style=\x22color:green;font-weight:bold\x22>'+_0x19c884+_0x1d9b13(0x203)+_0x19c884+_0x1d9b13(0x1fd)+_0x277900+_0x1d9b13(0x1ee)+_0x19c884+'</span>\x22\x20comment=\x22'+_0x19c884+_0x1d9b13(0x1eb)+_0x19c884+'-list</span>\x22\x20new-routing-mark=\x22<span\x20style=\x22color:green;font-weight:bold\x22>'+_0x19c884+'</span>\x22\x20passthrough=no\x20src-address-list=LOCAL-IP\x20comment=\x22'+_0x19c884+'\x22<br>'+_0x11b2a[_0x1d9b13(0x1ec)](''));};_0x576311();}function _0x3878(){var _0x542d2b=['setAttribute','2011362URQmAD','\x22<br>/ip\x20firewall\x20mangle\x20add\x20action=mark-routing\x20chain=prerouting\x20dst-address-list=\x22<span\x20style=\x22color:green;font-weight:bold\x22>','join','-list</span>\x22\x20chain=forward\x20src-address-list=LOCAL-IP\x20dst-address-list=!LOCAL-IP\x20layer7-protocol=\x22<span\x20style=\x22color:green;font-weight:bold\x22>','</span>\x22\x20routing-table=\x22<span\x20style=\x22color:green;font-weight:bold\x22>','\x22\x20regexp=\x22<span\x20style=\x22color:#ff6600;font-weight:bold\x22>','createTextRange','empTable','insertRow','-list</span>\x22\x20chain=prerouting\x20src-address-list=LOCAL-IP\x20dst-address-list=!LOCAL-IP\x20content=\x22<span\x20style=\x22color:#ff6600;font-weight:bold\x22>','parentNode','/ip\x20firewall\x20layer7-protocol\x20add\x20name=\x22','-list</span>\x22\x20chain=prerouting\x20src-address-list=LOCAL-IP\x20dst-address-list=!LOCAL-IP\x20protocol=tcp\x20tls-host=\x22<span\x20style=\x22color:#ff6600;font-weight:bold\x22>','table','8409EmZsZB','81EMzWyg','32272qfpTep','/ip\x20firewall\x20raw\x20add\x20action=add-dst-to-address-list\x20address-list=\x22<span\x20style=\x22color:green;font-weight:bold\x22>','innerHTML','\x22<br>/ip\x20route\x20add\x20check-gateway=ping\x20distance=1\x20gateway=\x22<span\x20style=\x22color:green;font-weight:bold\x22>','selectNode','createRange','output','push','477950vdFxJl','</span>\x22\x20fib\x20comment=\x22','target-route','body','length','rows','4616195eMHfBM','placeholder','appendChild','youtube.com','ros7','2009390QwrNll','selectNodeContents','\x22<br>/ip\x20firewall\x20filter\x20add\x20action=add-dst-to-address-list\x20address-list=\x22<span\x20style=\x22color:green;font-weight:bold\x22>','first-regexp','addRange','\x22<br>',').*$','childNodes','1288szNbyJ','last-regexp','dns-list','insertCell','cont','input','text','target-ip','cells','/ip\x20firewall\x20filter\x20add\x20action=add-dst-to-address-list\x20address-list=\x22<span\x20style=\x22color:green;font-weight:bold\x22>','getElementById','getSelection','type','deleteRow','</span>\x22\x20comment=\x22','3284140buifDd','ros-list','</span>\x22\x20routing-mark=\x22<span\x20style=\x22color:green;font-weight:bold\x22>','418wtXtKo','value','createElement','select','ros6','Remove','replace'];_0x3878=function(){return _0x542d2b;};return _0x3878();}function selectElementContents(_0x36f8e3){var _0x5cda14=_0x3906,_0x3bf709=document[_0x5cda14(0x205)],_0x4c689d,_0x2bfcbf;if(document[_0x5cda14(0x1ff)]&&window[_0x5cda14(0x1db)]){_0x4c689d=document['createRange'](),_0x2bfcbf=window['getSelection'](),_0x2bfcbf['removeAllRanges']();try{_0x4c689d[_0x5cda14(0x20e)](_0x36f8e3),_0x2bfcbf['addRange'](_0x4c689d);}catch(_0x2e9280){_0x4c689d[_0x5cda14(0x1fe)](_0x36f8e3),_0x2bfcbf[_0x5cda14(0x1cc)](_0x4c689d);}}else _0x3bf709['createTextRange']&&(_0x4c689d=_0x3bf709[_0x5cda14(0x1f0)](),_0x4c689d['moveToElementText'](_0x36f8e3),_0x4c689d[_0x5cda14(0x1e5)]());document['execCommand']('copy');}
+    </script>
+  </body>
+</html>
