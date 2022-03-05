@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MikroTik Port Static Routing (Policy Based Routing) - BuanaNETPBun.Github.io</title>
+    <meta content='MikroTik Port Static Routing (Policy Based Routing) Script Generator for RouterOS - BuanaNETPBun.Github.io' name='description'/>
+    <meta content='block, webside, dns, doh, DNS over HTTPS, burst, calculator, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+    <meta content='index, follow, noodp' name='robots'/>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="MikroTik Port Static Routing (Policy Based Routing) By BuanaNET-Pbun">
+    <meta property="og:description" content="MikroTik Port Static Routing (Policy Based Routing) By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/148635202-46cbd53e-debf-44ef-b652-fa09ddd492c6.png">
+    <meta property="og:image:alt" content="MikroTik Port Static Routing (Policy Based Routing) By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-port-static-routing.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>   
+    <style>
+      /* --------------------------------------------------------
+      ###########################################################
+      # MikroTik Port Static Routing (Policy Based Routing)
+      # Designer  : Agus Ramadhani / BuanaNET.Pbun
+      # Github    : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananet.pbun	
+      ###########################################################
+      -------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:16px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      line-height: 1.2;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  
+      color:#333;
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .logo {
+      margin-top:10px;
+      margin-bottom:5px; 
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:900px;
+      margin:0 auto;
+      padding:10px;
+      font-size:15px; 
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:0px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      background-color:#ff6600;
+      }     
+      .content{
+      float:left;
+      width:auto;
+      height:480px;
+      padding: 10px;
+      border-top:1px solid #bbb; 
+      border-bottom:1px solid #bbb; 
+      border-right:1px solid #bbb; 
+      background:#ddd;
+      }
+      .sidebar{
+      float:left;
+      width:auto;
+      height:510px;
+      padding: 10px;
+      background-color:#ccc;
+      border:2px solid #ccc; 
+      border-radius: 5px;
+      margin-top:5px
+      }
+      .footer{
+      font-size:13px;
+      padding-top:10px;
+      padding-bottom:15px;      
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:20px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      background-color: #ff6600;
+      border: none;
+      color: black;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      font-size:15px;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 3px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      font-weight:normal;
+      margin-bottom:0px;
+      font-size:14px !important;
+      border-radius:5px
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 3px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 425px;
+      background:#f9f9f9;
+      overflow: auto;
+      overflow-x: auto;
+      width: 850px;
+      padding: 4px;
+      margin-top:0px;
+      border: 1px solid #bbb;
+      border-radius:5px
+      }
+      table, tr, td {
+      border: none;
+      }
+      table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      }
+      td, th {
+      border: 1px solid #ccc;
+      text-align: left;
+      padding:6px;
+      font-weight:normal;
+      }
+      th {
+      font-weight:bold;
+      background:#ddd;
+      text-align:center;
+      }
+      .mymenu {
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:600px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      }     
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+  <body onLoad="callmodal();createTable();addRow()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>   
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        <img style="float:right; margin-right:10px;margin-top:2px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
+      </ul>
+    </div>
+    <div id="wrap">
+      <div class="logo">
+        <a href="https://buananetpbun.github.io/mikrotik-port-static-routing.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <div style="float:right">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+        </div>
+        <div style="float:right; margin-right:5px; margin-top:3px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+      </div>
+      <div class="header">
+        <h1>MIKROTIK PORT STATIC ROUTING (POLICY BASED ROUTING)</h1>
+      </div>
+      <div class="sidebar">
+	  <div style="width:240px;float:left">
+	  <label>Routing Option</label> 
+	      <select style="font-size:15px; width:220px; margin-right:10px" onchange="myFunction()" id="dns-list">
+          <option value="01">Fast Port Mangle Route</option>
+		  <option value="02">Port To IP Route Use RAW</option>
+          <option value="03">Port To IP Route Use Filter</option>
+          <option disabled value="4">Expert Routing (premium service)</option>
+        </select>
+		</div>
+	         <div style="width:240px;float:left"><label>Target IP Gateway ISP / VPN</label> 
+          <input  type="text" id="target-ip" style='width:220px; margin-right:5px' placeholder="192.168.2.1" value="">
+        </div>
+        <div style="width:240px; float:left">
+          <label>Routing Mark / Routing Table</label>  
+          <input  type="text" id="target-route" style='width:220px' placeholder="browsing-route" value="">
+        </div>
+        <div style="width:130px; float:left">
+          <label>ROS Version</label>  <br>
+          <select style="font-size:15px; width:130px; margin-right:10px" onchange="myFunction()" id="ros-list">
+            <option value="ros6">ROS v6.xx</option>
+            <option value="ros7">ROS v7.xx</option>
+          </select>
+        </div>
+        <div style="margin-bottom:10px;clear:both"></div>
+        <div class="list-mangle" style="margin-bottom:10px">
+          <div id="cont">
+          </div>
+          <table id="mytable" style="margin-top:5px; font-weight:normal;">
+            <tr style="background-color: #ddd; " >
+              <td><button type="button" id="bt" onclick="submit()" >Generate Script</button>  <button style="margin-left:5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('output'))">Copy All Script</button></td>
+            </tr>
+            <tr style="font-size:15px;font-weight:normal; background-color: #f9f9f9;">
+              <td>
+                <p id='output' style="font-size:13px;"></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="footer">
+        <div style="margin-top:0px; text-align:center">
+          © Copyright 2020-2022 <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function callmodal() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+      <script>  
+var _0x56129e=_0x4f32;(function(_0x1a791f,_0x30d210){var _0x38a128=_0x4f32,_0x2fe6a7=_0x1a791f();while(!![]){try{var _0x507a10=-parseInt(_0x38a128(0xf2))/0x1+-parseInt(_0x38a128(0x118))/0x2*(parseInt(_0x38a128(0xef))/0x3)+-parseInt(_0x38a128(0xfa))/0x4*(parseInt(_0x38a128(0x129))/0x5)+-parseInt(_0x38a128(0x101))/0x6*(-parseInt(_0x38a128(0x119))/0x7)+parseInt(_0x38a128(0xee))/0x8*(parseInt(_0x38a128(0xf6))/0x9)+parseInt(_0x38a128(0x11b))/0xa*(parseInt(_0x38a128(0x114))/0xb)+-parseInt(_0x38a128(0xf7))/0xc;if(_0x507a10===_0x30d210)break;else _0x2fe6a7['push'](_0x2fe6a7['shift']());}catch(_0x3687f6){_0x2fe6a7['push'](_0x2fe6a7['shift']());}}}(_0xfc83,0x3d3bc));function _0xfc83(){var _0x59cafb=['length','deleteRow','</span>\x22\x20comment=\x22<span\x20style=\x22color:#ff6600\x22>','getAttribute','createRange','dns-list','OPTION','insertCell','removeAllRanges','buananet','parentNode','-list\x20</span>\x22\x20new-routing-mark=\x22<span\x20style=\x22color:#ff6600\x22>','selected','/ip\x20firewall\x20mangle\x20add\x20action=<span\x20style=\x22color:#ff6600\x22>mark-routing</span>\x20chain=<span\x20style=\x22color:#ff6600\x22>prerouting</span>\x20src-address-list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span>\x20\x20passthrough=<span\x20style=\x22color:#ff6600\x22>no</span>\x20new-routing-mark=\x22<span\x20style=\x22color:#ff6600\x22>','TCP','</span>\x20','text','join','placeholder','440656UrfGXx','45QNXKcU','protocol','</span>\x22\x20','491763wYZvHZ','comment','80,443','github','72XvcBoJ','84228rZxfnz','createTextRange','removeRow(this)','4tkCJbI','</span>\x22<br>','</span>\x22<br>/ip\x20route\x20add\x20check-gateway=<span\x20style=\x22color:#ff6600\x22>ping</span>\x20distance=<span\x20style=\x22color:#ff6600\x22>1</span>\x20gateway=\x22<span\x20style=\x22color:#ff6600\x22>','cont','toLowerCase','moveToElementText','execCommand','531948Pjpdsa','input','-list</span>\x22\x20chain=<span\x20style=\x22color:#ff6600\x22>prerouting</span>\x20src-address-list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span>\x20dst-address-list=<span\x20style=\x22color:#ff6600\x22>!LOCAL-IP</span>\x20protocol=<span\x20style=\x22color:#ff6600\x22>','targetport','/ip\x20firewall\x20raw\x20add\x20action=<span\x20style=\x22color:#ff6600\x22>add-dst-to-address-list</span>\x20address-list=\x22<span\x20style=\x22color:#ff6600\x22>','getSelection','<button\x20type=\x22button\x22\x20id=\x22addRow\x22\x20onclick=\x22addRow()\x22>Add+</button>','select','ros-list','/ip\x20firewall\x20filter\x20add\x20action=<span\x20style=\x22color:#ff6600\x22>add-dst-to-address-list</span>\x20address-list=\x22<span\x20style=\x22color:#ff6600\x22>','Remove','UDP','</span>\x22\x20fib\x20comment=\x22<span\x20style=\x22color:#ff6600\x22>','button','</span>\x22<br>/ip\x20firewall\x20mangle\x20add\x20action=<span\x20style=\x22color:#ff6600\x22>mark-routing</span>\x20chain=<span\x20style=\x22color:#ff6600\x22>prerouting</span>\x20dst-address-list=\x22<span\x20style=\x22color:#ff6600\x22>','</span>\x22\x20passthrough=<span\x20style=\x22color:#ff6600\x22>no</span>\x20src-address-list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span>\x20comment=\x22<span\x20style=\x22color:#ff6600\x22>','SELECT','innerHTML','onclick','88BXDySn','setAttribute','addRange','replace','1548vfbtGF','14ULGrqE','appendChild','545570gYpafF','comment=\x22<span\x20style=\x22color:#ff6600\x22>','href','Description','cells','/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>192.168.0.0/16</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>172.16.0.0/12</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>10.0.0.0/8</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/ip\x20route\x20add\x20check-gateway=<span\x20style=\x22color:#ff6600\x22>ping</span>\x20distance=<span\x20style=\x22color:#ff6600\x22>1</span>\x20gateway=\x22<span\x20style=\x22color:#ff6600\x22>','output','</span>\x22\x20routing-table=\x22<span\x20style=\x22color:#ff6600\x22>','getElementById','empTable','createElement','createTextNode','type','https://','1466120HaBXLV','insertRow','Target\x20Port','body','target-ip','push','-list</span>\x22\x20chain=<span\x20style=\x22color:#ff6600\x22>forward</span>\x20src-address-list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span>\x20dst-address-list=<span\x20style=\x22color:#ff6600\x22>!LOCAL-IP</span>\x20protocol=<span\x20style=\x22color:#ff6600\x22>','childNodes','value','/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>192.168.0.0/16</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>172.16.0.0/12</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>10.0.0.0/8</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/routing\x20table\x20add\x20name=\x22<span\x20style=\x22color:#ff6600\x22>','pbun','copy','rows','target-route'];_0xfc83=function(){return _0x59cafb;};return _0xfc83();}var arrHead=new Array();arrHead=[_0x56129e(0x107),'Protocol',_0x56129e(0x12b),_0x56129e(0x11e)];function createTable(){var _0x17d815=_0x56129e,_0xa21e72=document[_0x17d815(0x125)]('table');_0xa21e72[_0x17d815(0x115)]('id',_0x17d815(0x124));var _0x545adc=_0xa21e72['insertRow'](-0x1);for(var _0x38a870=0x0;_0x38a870<arrHead[_0x17d815(0x137)];_0x38a870++){var _0x554e3b=document[_0x17d815(0x125)]('th');_0x554e3b[_0x17d815(0x112)]=arrHead[_0x38a870],_0x545adc['appendChild'](_0x554e3b);}var _0x3cd0f8=document['getElementById'](_0x17d815(0xfd));_0x3cd0f8[_0x17d815(0x11a)](_0xa21e72);var _0x281551=_0x17d815(0x128),_0x3d3151=_0x17d815(0x140),_0x2c838f=_0x17d815(0x133),_0x461423=_0x17d815(0xf5),_0x9cdf37='io',_0x3aeec5=_0x281551+_0x3d3151+_0x2c838f+'.'+_0x461423+'.'+_0x9cdf37;window['location'][_0x17d815(0x11d)]!==_0x3aeec5+'/mikrotik-port-static-routing.html'&&location[_0x17d815(0x117)](_0x3aeec5+'/mikrotik-port-static-routing.html');}function addRow(){var _0x589f30=_0x56129e,_0x37e4c4=document[_0x589f30(0x123)](_0x589f30(0x124)),_0x3a83a0=_0x37e4c4[_0x589f30(0x135)]['length'],_0x4305f1=_0x37e4c4[_0x589f30(0x12a)](_0x3a83a0);_0x4305f1=_0x37e4c4[_0x589f30(0x12a)](_0x3a83a0);for(var _0x397af9=0x0;_0x397af9<arrHead['length'];_0x397af9++){var _0x246cc3=document['createElement']('td');_0x246cc3=_0x4305f1[_0x589f30(0x13e)](_0x397af9);if(_0x397af9==0x0){var _0x1aad8b=document[_0x589f30(0x125)](_0x589f30(0x102));_0x1aad8b[_0x589f30(0x115)](_0x589f30(0x127),_0x589f30(0x10e)),_0x1aad8b['setAttribute']('value',_0x589f30(0x10b)),_0x1aad8b[_0x589f30(0x115)](_0x589f30(0x113),_0x589f30(0xf9)),_0x246cc3['appendChild'](_0x1aad8b);}else{if(_0x397af9==0x1){var _0x57d1fc=document[_0x589f30(0x125)](_0x589f30(0x111)),_0x13da9b=document['createElement'](_0x589f30(0x13d));_0x13da9b[_0x589f30(0x115)](_0x589f30(0x127),_0x589f30(0xeb)),_0x13da9b[_0x589f30(0x143)]=!![];var _0x542f3d=document[_0x589f30(0x125)]('OPTION');_0x542f3d[_0x589f30(0x115)](_0x589f30(0x127),_0x589f30(0xeb)),_0x13da9b[_0x589f30(0x11a)](document['createTextNode'](_0x589f30(0xe9))),_0x542f3d[_0x589f30(0x11a)](document[_0x589f30(0x126)](_0x589f30(0x10c))),_0x57d1fc[_0x589f30(0x11a)](_0x13da9b),_0x57d1fc[_0x589f30(0x11a)](_0x542f3d),_0x57d1fc[_0x589f30(0x115)]('id','protocol'),_0x246cc3[_0x589f30(0x11a)](_0x57d1fc);}else{if(_0x397af9==0x2){var _0x30ffc7=document[_0x589f30(0x125)](_0x589f30(0x102));_0x30ffc7[_0x589f30(0x115)](_0x589f30(0x127),_0x589f30(0xeb)),_0x30ffc7['setAttribute']('placeholder',_0x589f30(0xf4)),_0x30ffc7['setAttribute']('id',_0x589f30(0x104)),_0x246cc3['appendChild'](_0x30ffc7);}else{if(_0x397af9==0x3){var _0x30ffc7=document['createElement'](_0x589f30(0x102));_0x30ffc7[_0x589f30(0x115)](_0x589f30(0x127),_0x589f30(0xeb)),_0x30ffc7[_0x589f30(0x115)](_0x589f30(0xed),'Browsing\x20HTTP/s'),_0x30ffc7[_0x589f30(0x115)]('id',_0x589f30(0xf3)),_0x246cc3[_0x589f30(0x11a)](_0x30ffc7);}}}}}}function removeRow(_0x6b731e){var _0x135de6=_0x56129e,_0x14351b=document['getElementById'](_0x135de6(0x124));_0x14351b[_0x135de6(0x138)](_0x6b731e[_0x135de6(0x141)][_0x135de6(0x141)]['rowIndex']),submit();}function _0x4f32(_0x366197,_0x38ec02){var _0xfc83b9=_0xfc83();return _0x4f32=function(_0x4f3209,_0x56c8ed){_0x4f3209=_0x4f3209-0xe9;var _0x3cb4d7=_0xfc83b9[_0x4f3209];return _0x3cb4d7;},_0x4f32(_0x366197,_0x38ec02);}function submit(){var _0x6113fc=_0x56129e,_0x4d25bb=document[_0x6113fc(0x123)](_0x6113fc(0x124)),_0x226f39=new Array(),_0x55940e=document['getElementById'](_0x6113fc(0x13c))[_0x6113fc(0x131)],_0x407857=document[_0x6113fc(0x123)](_0x6113fc(0x109))[_0x6113fc(0x131)],_0x2649e6=document[_0x6113fc(0x123)](_0x6113fc(0x136))[_0x6113fc(0x131)],_0x39e250=document[_0x6113fc(0x123)](_0x6113fc(0x12d))[_0x6113fc(0x131)];for(row=0x1;row<_0x4d25bb['rows'][_0x6113fc(0x137)]-0x1;row++){for(c=0x0;c<_0x4d25bb[_0x6113fc(0x135)][row][_0x6113fc(0x11f)]['length'];c++){var _0x3a85a9=_0x4d25bb[_0x6113fc(0x135)]['item'](row)[_0x6113fc(0x11f)][c];_0x55940e=='01'&&(_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x13a)]('id')==_0x6113fc(0xf0)&&_0x226f39[_0x6113fc(0x12e)](_0x6113fc(0x144)+_0x2649e6+'</span>\x22\x20protocol=<span\x20style=\x22color:#ff6600\x22>'+_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x131)][_0x6113fc(0xfe)]()+_0x6113fc(0xea)),_0x3a85a9['childNodes'][0x0][_0x6113fc(0x13a)]('id')=='targetport'&&_0x226f39['push']('dst-port=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x131)]+_0x6113fc(0xf1)),_0x3a85a9['childNodes'][0x0][_0x6113fc(0x13a)]('id')=='comment'&&_0x226f39['push'](_0x6113fc(0x11c)+_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x131)]+_0x6113fc(0xfb))),_0x55940e=='02'&&(_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x13a)]('id')==_0x6113fc(0xf0)&&_0x226f39['push'](_0x6113fc(0x105)+_0x2649e6+_0x6113fc(0x103)+_0x3a85a9['childNodes'][0x0][_0x6113fc(0x131)][_0x6113fc(0xfe)]()+_0x6113fc(0xea)),_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x13a)]('id')=='targetport'&&_0x226f39['push']('dst-port=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x131)]+'</span>\x22\x20'),_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x13a)]('id')==_0x6113fc(0xf3)&&_0x226f39[_0x6113fc(0x12e)](_0x6113fc(0x11c)+_0x3a85a9[_0x6113fc(0x130)][0x0]['value']+'</span>\x22<br>')),_0x55940e=='03'&&(_0x3a85a9['childNodes'][0x0][_0x6113fc(0x13a)]('id')==_0x6113fc(0xf0)&&_0x226f39[_0x6113fc(0x12e)](_0x6113fc(0x10a)+_0x2649e6+_0x6113fc(0x12f)+_0x3a85a9['childNodes'][0x0]['value'][_0x6113fc(0xfe)]()+_0x6113fc(0xea)),_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x13a)]('id')=='targetport'&&_0x226f39[_0x6113fc(0x12e)]('dst-port=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x131)]+_0x6113fc(0xf1)),_0x3a85a9[_0x6113fc(0x130)][0x0][_0x6113fc(0x13a)]('id')==_0x6113fc(0xf3)&&_0x226f39[_0x6113fc(0x12e)]('comment=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x3a85a9['childNodes'][0x0]['value']+'</span>\x22<br>'));}}let _0x328e13=()=>{var _0x52f09d=_0x6113fc;let _0x4f8963=_0x226f39;_0x407857=='ros6'&&(_0x55940e=='01'?document[_0x52f09d(0x123)](_0x52f09d(0x121))['innerHTML']=_0x52f09d(0x120)+_0x39e250+'</span>\x22\x20routing-mark=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x2649e6+_0x52f09d(0x139)+_0x2649e6+_0x52f09d(0xfb)+_0x4f8963[_0x52f09d(0xec)](''):document[_0x52f09d(0x123)](_0x52f09d(0x121))['innerHTML']='/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>192.168.0.0/16</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>172.16.0.0/12</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/ip\x20firewall\x20address-list\x20add\x20address=<span\x20style=\x22color:#ff6600\x22>10.0.0.0/8</span>\x20list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span><br>/ip\x20route\x20add\x20check-gateway=<span\x20style=\x22color:#ff6600\x22>ping</span>\x20distance=<span\x20style=\x22color:#ff6600\x22>1</span>\x20gateway=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x39e250+'</span>\x22\x20routing-mark=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x2649e6+_0x52f09d(0x139)+_0x2649e6+_0x52f09d(0x10f)+_0x2649e6+_0x52f09d(0x142)+_0x2649e6+_0x52f09d(0x110)+_0x2649e6+_0x52f09d(0xfb)+_0x4f8963['join']('')),_0x407857=='ros7'&&(_0x55940e=='01'?document[_0x52f09d(0x123)]('output')['innerHTML']=_0x52f09d(0x132)+_0x2649e6+_0x52f09d(0x10d)+_0x2649e6+_0x52f09d(0xfc)+_0x39e250+_0x52f09d(0x122)+_0x2649e6+'</span>\x22\x20comment=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x2649e6+_0x52f09d(0xfb)+_0x4f8963['join'](''):document['getElementById'](_0x52f09d(0x121))['innerHTML']=_0x52f09d(0x132)+_0x2649e6+'</span>\x22\x20fib\x20comment=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x2649e6+'</span>\x22<br>/ip\x20route\x20add\x20check-gateway=<span\x20style=\x22color:#ff6600\x22>ping</span>\x20distance=<span\x20style=\x22color:#ff6600\x22>1</span>\x20gateway=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x39e250+_0x52f09d(0x122)+_0x2649e6+'</span>\x22\x20comment=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x2649e6+_0x52f09d(0x10f)+_0x2649e6+'-list</span>\x22\x20new-routing-mark=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x2649e6+'</span>\x22\x20passthrough=<span\x20style=\x22color:#ff6600\x22>no</span>\x20src-address-list=<span\x20style=\x22color:#ff6600\x22>LOCAL-IP</span>\x20comment=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x2649e6+_0x52f09d(0xfb)+_0x4f8963[_0x52f09d(0xec)](''));};_0x328e13();}function selectElementContents(_0x5bd053){var _0x1da478=_0x56129e,_0x4df180=document[_0x1da478(0x12c)],_0x2167e4,_0x53a4c9;if(document[_0x1da478(0x13b)]&&window['getSelection']){_0x2167e4=document[_0x1da478(0x13b)](),_0x53a4c9=window[_0x1da478(0x106)](),_0x53a4c9[_0x1da478(0x13f)]();try{_0x2167e4['selectNodeContents'](_0x5bd053),_0x53a4c9[_0x1da478(0x116)](_0x2167e4);}catch(_0x26dfb4){_0x2167e4['selectNode'](_0x5bd053),_0x53a4c9[_0x1da478(0x116)](_0x2167e4);}}else _0x4df180[_0x1da478(0xf8)]&&(_0x2167e4=_0x4df180['createTextRange'](),_0x2167e4[_0x1da478(0xff)](_0x5bd053),_0x2167e4[_0x1da478(0x108)]());document[_0x1da478(0x100)](_0x1da478(0x134));}
+      </script>
+   </body>
+</html>
