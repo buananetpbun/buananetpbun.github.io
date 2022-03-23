@@ -628,6 +628,20 @@
                </tr>
                <tr>
                   <td style="width:300px">
+                     <label style="font-weight:bold">Memcrashed - Amplification Attacks UDP 11211</label>
+                  </td>
+                  <td>
+                     This DDoS is known as Memcrashed, where the attacker exploits the UDP port 11211 protocol used by the Memcached service from the webserver. Memchaced is a technology used for data storage and distribution systems in server memory. The more dynamic the application and the web, the more problems and slowing down the system itself when it comes to retrieving (load) data from the database directly because of the frequent reading and writing processes in storage.
+                     <br><br>
+                     <code class="routeros">
+# Memcrashed - Amplification Attacks UDP 11211<br>
+                     /ip firewall filter<br>
+					add chain=forward dst-port=11211 protocol=udp action=drop comment="Memcrashed - Amplification Attacks UDP 11211"
+                     </code>
+                  </td>
+               </tr>			   
+               <tr>
+                  <td style="width:300px">
                      <label style="font-weight:bold">Block Access Modem</label>
                   </td>
                   <td>
