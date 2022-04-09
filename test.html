@@ -11,14 +11,18 @@
 
 <script>
 function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://api.maclookup.app/v2/macs/20:34:FB:E0:6D:14?apiKey=01g07y5xadt3t1xd0c1tpebe7e01g07y7ectajqg76kyc11yw20zzvlxeikk1gzm", true);
-  xhttp.send();
+let url = 'https://www.randomtext.me/api/lorem';
+
+// to only send GET request without waiting for response just call 
+fetch(url);
+
+// to wait for results use 'then'
+fetch(url).then(r=> r.json().then(j=> console.log('\nREQUEST 2',j)));
+
+// or async/await
+(async()=> 
+  console.log('\nREQUEST 3', await(await fetch(url)).json()) 
+)();
 }
 </script>
 
