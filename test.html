@@ -4,26 +4,25 @@
 
 <h1>The XMLHttpRequest Object</h1>
 
-<button type="button" onclick="loadDoc()">Request data</button>
+<button type="button" onclick="fetchText();">Request data</button>
 
-<p id="demo"></p>
+<div id="name"></div>
 
 
 <script>
-function loadDoc() {
-let url = 'https://www.randomtext.me/api/lorem';
 
-// to only send GET request without waiting for response just call 
-fetch(url);
+ async function fetchText() {
+    let response = await fetch('http://api.macvendors.com/88:53:2E:67:07:BE');
 
-// to wait for results use 'then'
-fetch(url).then(r=> r.json().then(j=> console.log('\nREQUEST 2',j)));
+    console.log(response.status); // 200
+    console.log(response.statusText); // OK
 
-// or async/await
-(async()=> 
-  console.log('\nREQUEST 3', await(await fetch(url)).json()) 
-)();
+    if (response.status === 200) {
+        let data = await response.text();
+        // handle data
+    }
 }
+
 </script>
 
 </body>
