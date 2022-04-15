@@ -604,8 +604,8 @@
                      /interface list member <br>
                      add list=WAN interface="ether to ISP" <br>
                      /ip firewall filter<br>
-                     add action=drop chain=input dst-port=21,22,23,8291,80,8728,8279 in-interface-list=WAN protocol=tcp comment="Protect Port Service from Internet"<br>
-                     add action=drop chain=input dst-port=21,22,23,8291,80,8728,8279 in-interface-list=WAN protocol=udp<br>
+                     add action=drop chain=input dst-port=21,22,23,8291,80,8728,8729 in-interface-list=WAN protocol=tcp comment="Protect Port Service from Internet"<br>
+                     add action=drop chain=input dst-port=21,22,23,8291,80,8728,8729 in-interface-list=WAN protocol=udp<br>
                      </code>
                   </td>
                </tr>
