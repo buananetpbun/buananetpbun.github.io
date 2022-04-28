@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mikrotik Block Sharing Hotspot Or Local Connections With Change TTL - BuanaNETPBun.Github.io</title>
+    <meta content='Mikrotik Block Sharing Hotspot Or Local Connections With Change TTL Script Generator for RouterOS - BuanaNETPBun.Github.io' name='description'/>
+    <meta content='hotspot, block, webside, dns, doh, DNS over HTTPS, burst, calculator, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
+    <meta content='index, follow, noodp' name='robots'/>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Mikrotik Block Sharing Hotspot Or Local Connections With Change TTL By BuanaNET-Pbun">
+    <meta property="og:description" content="Mikrotik Block Sharing Hotspot Or Local Connections With Change TTL By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/165829754-2ac573bf-a977-4c08-a527-ff6c0cfda35b.png">
+    <meta property="og:image:alt" content="Mikrotik Block Sharing Hotspot Or Local Connections With Change TTL By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-block-sharing-hotspot.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>   
+    <style>
+      /* ------------------------------------------------------------------
+      #####################################################################
+      # Mikrotik Block Sharing Hotspot Or Local Connections With Change TTL
+      # Designer  : Agus Ramadhani / BuanaNET.Pbun
+      # Github    : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananet.pbun	
+      #####################################################################
+      ------------------------------------------------------------------ */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:16px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      line-height: 1.2;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  
+      color:#333;
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .logo {
+      margin-top:25px;
+      margin-bottom:5px; 
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:945px;
+      margin:0 auto;
+      padding:10px;
+      font-size:15px; 
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:0px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      background-color:#ff6600;
+      }     
+      .content{
+      float:left;
+      width:auto;
+      height:480px;
+      padding: 10px;
+      border-top:1px solid #bbb; 
+      border-bottom:1px solid #bbb; 
+      border-right:1px solid #bbb; 
+      background:#ddd;
+      }
+      .sidebar{
+      float:left;
+      width:auto;
+      height:450px;
+      padding: 10px;
+      background-color:#ccc;
+      border:2px solid #ccc; 
+      border-radius: 5px;
+      margin-top:5px
+      }
+      .footer{
+      font-size:12px;
+      padding-top:15px;
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:20px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      background-color: #ff6600;
+      border: none;
+      color: black;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      font-size:15px;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 3px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      font-weight:normal;
+      margin-bottom:0px;
+      font-size:14px !important;
+      border-radius:5px
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 3px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 290px;
+      background:#f9f9f9;
+      overflow: auto;
+      overflow-x: auto;
+      width: 900px;
+      padding: 4px;
+      margin-top:0px;
+      border: 1px solid #bbb;
+      border-radius:5px
+      }
+      table, tr, td {
+      border: none;
+      }
+      table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      }
+      td, th {
+      border: 1px solid #ccc;
+      text-align: left;
+      padding:6px;
+      font-weight:normal;
+      }
+      th {
+      font-weight:bold;
+      background:#ddd;
+      text-align:center;
+      }
+      .mymenu {
+      margin:0 auto;
+      background-color: #ddd;
+      width:550px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #ddd;
+      font-weight:bold;
+      font-size:13px;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #ddd;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #bbb;
+      color: #111;
+      }		       
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+  <body onLoad="callmodal();createTable();addRow()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>   
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        <img style="float:right; margin-right:10px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
+      </ul>
+    </div>
+    <div id="wrap">
+      <div class="logo">
+        <a href="https://buananetpbun.github.io/mikrotik-block-sharing-hotspot.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <div style="float:right">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+        </div>
+        <div style="float:right; margin-right:5px; margin-top:3px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+      </div>
+      <div class="header">
+        <h1>MIKROTIK <span style="color:#ff6600">BLOCK SHARING HOTSPOT</span> OR <span style="color:#ff6600">LOCAL CONNECTIONS</span> WITH <span style="color:#ff6600">'CHANGE TTL'</span></h1>
+      </div>
+      <div class="sidebar">
+        <div style="margin-top:1px;">
+          <div style="clear:both"></div>
+          <img style="  display: block;  margin-left: auto;  margin-right: auto;  width: 70%;" src="https://user-images.githubusercontent.com/42666125/165828231-800cc587-3be4-466f-bf08-372e513d2ec5.png" alt="anti tethering mikrotik">
+        </div>
+        <div class="list-mangle" style="margin-bottom:10px">
+          <div id="cont">
+          </div>
+          <table id="mytable" style="margin-top:5px; font-weight:normal;white-space: nowrap;">
+            <tr style="background-color: #ddd; " >
+              <td><button type="button" id="bt" onclick="submit()" >Generate Script</button>  <button style="margin-left:5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('output'))">Copy All Script</button></td>
+            </tr>
+            <tr style="font-size:15px;font-weight:normal; background-color: #f9f9f9;">
+              <td>
+                <p id='output' style="font-size:13px;"></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="footer">
+        <div style="margin-top:0px; text-align:center">
+          © Copyright 2020-2022 <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function callmodal() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script> 
+    <script>
+   var _0xfd529b=_0xa216;(function(_0x41d4ec,_0x4aea2c){var _0x2cccbf=_0xa216,_0x5e4795=_0x41d4ec();while(!![]){try{var _0x9e28e3=parseInt(_0x2cccbf(0xe0))/0x1+parseInt(_0x2cccbf(0xb8))/0x2*(-parseInt(_0x2cccbf(0xa7))/0x3)+parseInt(_0x2cccbf(0xb2))/0x4+parseInt(_0x2cccbf(0xdb))/0x5*(-parseInt(_0x2cccbf(0x97))/0x6)+parseInt(_0x2cccbf(0xbe))/0x7*(parseInt(_0x2cccbf(0xa8))/0x8)+parseInt(_0x2cccbf(0xde))/0x9+-parseInt(_0x2cccbf(0xc8))/0xa;if(_0x9e28e3===_0x4aea2c)break;else _0x5e4795['push'](_0x5e4795['shift']());}catch(_0x4d63aa){_0x5e4795['push'](_0x5e4795['shift']());}}}(_0x5161,0x61417));var arrHead=new Array();arrHead=[_0xfd529b(0xd8),'Mangle\x20Chain',_0xfd529b(0xc1),_0xfd529b(0xae),_0xfd529b(0xa0),'Description'];function _0x5161(){var _0x172b7f=['</span>\x20','insertCell','getSelection','rows','onclick','addRange','<button\x20type=\x22button\x22\x20id=\x22addRow\x22\x20onclick=\x22addRow()\x22>Add+</button>','childNodes','button','5lCrcED','selectNodeContents','rowIndex','6787584IngYvz','createTextNode','247263hCtMXx','createElement','buananet','OPTION','getAttribute','parentNode','type','2168646AUdEMw','/mikrotik-block-sharing-hotspot.html','10.5.50.0/24','insertRow','execCommand','deleteRow','text','href','comment=\x22<span\x20style=\x22color:#ff6600\x22>','Change\x20TTL','postrouting','</span>\x22\x20','join','cells','github','comment','1863jrjuiZ','2824FkMSTE','createRange','getElementById','empTable','value','pbun','Local\x20IP\x20Address','Hotspot\x20Protect','removeRow(this)','fromether','85740mtlmzM','appendChild','removeAllRanges','input','https://','width','782joLMXd','length','placeholder','manglechain','dst-address=\x22<span\x20style=\x22color:#ff6600\x22>','createTextRange','6181zMdAIa','select','setAttribute','Local\x20Interface','fromIP','body','moveToElementText','changeTTL','item','replace','3319620lGGjyD','forward','innerHTML','push','selected','output','ether5','130px','style','Remove'];_0x5161=function(){return _0x172b7f;};return _0x5161();}function createTable(){var _0x1a20a9=_0xfd529b,_0xef8a84=document[_0x1a20a9(0xe1)]('table');_0xef8a84['setAttribute']('id','empTable');var _0x26ac55=_0xef8a84[_0x1a20a9(0x9a)](-0x1);for(var _0x2c4bfc=0x0;_0x2c4bfc<arrHead[_0x1a20a9(0xb9)];_0x2c4bfc++){var _0x2755d0=document[_0x1a20a9(0xe1)]('th');_0x2755d0[_0x1a20a9(0xca)]=arrHead[_0x2c4bfc],_0x26ac55[_0x1a20a9(0xb3)](_0x2755d0);}var _0x447d81=document[_0x1a20a9(0xaa)]('cont');_0x447d81[_0x1a20a9(0xb3)](_0xef8a84);}function addRow(){var _0x411395=_0xfd529b,_0x3351fe=document[_0x411395(0xaa)](_0x411395(0xab)),_0x46426a=_0x3351fe[_0x411395(0xd5)][_0x411395(0xb9)],_0x302ef7=_0x3351fe[_0x411395(0x9a)](_0x46426a);_0x302ef7=_0x3351fe[_0x411395(0x9a)](_0x46426a);for(var _0x764aae=0x0;_0x764aae<arrHead[_0x411395(0xb9)];_0x764aae++){var _0x22a308=document[_0x411395(0xe1)]('td');_0x22a308=_0x302ef7[_0x411395(0xd3)](_0x764aae);if(_0x764aae==0x0){var _0xd54c6b=document['createElement']('input');_0xd54c6b[_0x411395(0xc0)](_0x411395(0xe6),_0x411395(0xda)),_0xd54c6b[_0x411395(0xc0)]('value',_0x411395(0xd1)),_0xd54c6b[_0x411395(0xc0)](_0x411395(0xd6),_0x411395(0xb0)),_0x22a308[_0x411395(0xb3)](_0xd54c6b);}else{if(_0x764aae==0x1){var _0x4581a0=document[_0x411395(0xe1)]('SELECT'),_0x4bd06d=document[_0x411395(0xe1)]('OPTION');_0x4bd06d[_0x411395(0xc0)](_0x411395(0xe6),_0x411395(0x9d)),_0x4bd06d[_0x411395(0xcc)]=!![];var _0x4f16a4=document[_0x411395(0xe1)](_0x411395(0xe3));_0x4f16a4[_0x411395(0xc0)](_0x411395(0xe6),_0x411395(0x9d)),_0x4bd06d[_0x411395(0xb3)](document[_0x411395(0xdf)](_0x411395(0xa1))),_0x4f16a4[_0x411395(0xb3)](document[_0x411395(0xdf)](_0x411395(0xc9))),_0x4581a0['appendChild'](_0x4bd06d),_0x4581a0[_0x411395(0xb3)](_0x4f16a4),_0x4581a0[_0x411395(0xc0)]('id',_0x411395(0xbb)),_0x22a308[_0x411395(0xb3)](_0x4581a0),document['getElementById'](_0x411395(0xbb))[_0x411395(0xd0)][_0x411395(0xb7)]=_0x411395(0xcf);}else{if(_0x764aae==0x2){var _0x5ab872=document[_0x411395(0xe1)](_0x411395(0xb5));_0x5ab872[_0x411395(0xc0)]('type',_0x411395(0x9d)),_0x5ab872[_0x411395(0xc0)]('placeholder',_0x411395(0xce)),_0x5ab872[_0x411395(0xc0)]('id','fromether'),_0x22a308[_0x411395(0xb3)](_0x5ab872);}else{if(_0x764aae==0x3){var _0x5ab872=document['createElement']('input');_0x5ab872[_0x411395(0xc0)](_0x411395(0xe6),_0x411395(0x9d)),_0x5ab872[_0x411395(0xc0)](_0x411395(0xba),_0x411395(0x99)),_0x5ab872[_0x411395(0xc0)]('id',_0x411395(0xc2)),_0x22a308[_0x411395(0xb3)](_0x5ab872);}else{if(_0x764aae==0x4){var _0x5ab872=document['createElement'](_0x411395(0xb5));_0x5ab872[_0x411395(0xc0)](_0x411395(0xe6),_0x411395(0x9d)),_0x5ab872[_0x411395(0xc0)](_0x411395(0xba),'1'),_0x5ab872[_0x411395(0xc0)]('id',_0x411395(0xc5)),_0x22a308[_0x411395(0xb3)](_0x5ab872);}else{if(_0x764aae==0x5){var _0x5ab872=document[_0x411395(0xe1)](_0x411395(0xb5));_0x5ab872[_0x411395(0xc0)](_0x411395(0xe6),_0x411395(0x9d)),_0x5ab872[_0x411395(0xc0)]('placeholder',_0x411395(0xaf)),_0x5ab872[_0x411395(0xc0)]('id',_0x411395(0xa6)),_0x22a308['appendChild'](_0x5ab872);}}}}}}}}function _0xa216(_0x853ba8,_0x3970e7){var _0x51616d=_0x5161();return _0xa216=function(_0xa2169f,_0x57e28d){_0xa2169f=_0xa2169f-0x97;var _0x5d59ed=_0x51616d[_0xa2169f];return _0x5d59ed;},_0xa216(_0x853ba8,_0x3970e7);}function removeRow(_0x255b9b){var _0x3958af=_0xfd529b,_0x3bc362=document[_0x3958af(0xaa)](_0x3958af(0xab));_0x3bc362[_0x3958af(0x9c)](_0x255b9b[_0x3958af(0xe5)]['parentNode'][_0x3958af(0xdd)]),submit();}function submit(){var _0x2b0ea3=_0xfd529b,_0x9c95f6=document[_0x2b0ea3(0xaa)](_0x2b0ea3(0xab)),_0x10a09d=new Array();for(row=0x1;row<_0x9c95f6['rows'][_0x2b0ea3(0xb9)]-0x1;row++){for(c=0x0;c<_0x9c95f6[_0x2b0ea3(0xd5)][row][_0x2b0ea3(0xa4)]['length'];c++){var _0x8a55fd=_0x9c95f6[_0x2b0ea3(0xd5)][_0x2b0ea3(0xc6)](row)[_0x2b0ea3(0xa4)][c];_0x8a55fd[_0x2b0ea3(0xd9)][0x0]['getAttribute']('id')==_0x2b0ea3(0xbb)&&_0x10a09d[_0x2b0ea3(0xcb)]('/ip\x20firewall\x20mangle\x20add\x20action=<span\x20style=\x22color:#ff6600\x22>change-ttl</span>\x20chain=<span\x20style=\x22color:#ff6600\x22>'+_0x8a55fd[_0x2b0ea3(0xd9)][0x0][_0x2b0ea3(0xac)]['toLowerCase']()+_0x2b0ea3(0xd2)),_0x8a55fd[_0x2b0ea3(0xd9)][0x0][_0x2b0ea3(0xe4)]('id')==_0x2b0ea3(0xb1)&&_0x10a09d[_0x2b0ea3(0xcb)]('out-interface=\x22<span\x20style=\x22color:#ff6600\x22>'+_0x8a55fd[_0x2b0ea3(0xd9)][0x0]['value']+_0x2b0ea3(0xa2)),_0x8a55fd[_0x2b0ea3(0xd9)][0x0][_0x2b0ea3(0xe4)]('id')==_0x2b0ea3(0xc2)&&_0x10a09d[_0x2b0ea3(0xcb)](_0x2b0ea3(0xbc)+_0x8a55fd[_0x2b0ea3(0xd9)][0x0][_0x2b0ea3(0xac)]+_0x2b0ea3(0xa2)),_0x8a55fd[_0x2b0ea3(0xd9)][0x0][_0x2b0ea3(0xe4)]('id')==_0x2b0ea3(0xc5)&&_0x10a09d[_0x2b0ea3(0xcb)]('new-ttl=set:<span\x20style=\x22color:#ff6600\x22>'+_0x8a55fd['childNodes'][0x0][_0x2b0ea3(0xac)]+_0x2b0ea3(0xd2)),_0x8a55fd[_0x2b0ea3(0xd9)][0x0][_0x2b0ea3(0xe4)]('id')=='comment'&&_0x10a09d[_0x2b0ea3(0xcb)](_0x2b0ea3(0x9f)+_0x8a55fd[_0x2b0ea3(0xd9)][0x0]['value']+'</span>\x22\x20passthrough=no<br>');}}let _0xf69984=()=>{var _0x2c98e6=_0x2b0ea3;let _0x59cb96=_0x10a09d;document[_0x2c98e6(0xaa)](_0x2c98e6(0xcd))[_0x2c98e6(0xca)]=_0x59cb96[_0x2c98e6(0xa3)]('');};_0xf69984();var _0x31a625=_0x2b0ea3(0xb6),_0x167cf6=_0x2b0ea3(0xe2),_0x545fac=_0x2b0ea3(0xad),_0x9d1d2b=_0x2b0ea3(0xa5),_0x424a14='io',_0x3dd408=_0x31a625+_0x167cf6+_0x545fac+'.'+_0x9d1d2b+'.'+_0x424a14;window['location'][_0x2b0ea3(0x9e)]!==_0x3dd408+_0x2b0ea3(0x98)&&location[_0x2b0ea3(0xc7)](_0x3dd408+'/mikrotik-block-sharing-hotspot.html');}function selectElementContents(_0x2464c0){var _0x4e2963=_0xfd529b,_0x2f2e22=document[_0x4e2963(0xc3)],_0x37737d,_0x52de34;if(document[_0x4e2963(0xa9)]&&window[_0x4e2963(0xd4)]){_0x37737d=document[_0x4e2963(0xa9)](),_0x52de34=window['getSelection'](),_0x52de34[_0x4e2963(0xb4)]();try{_0x37737d[_0x4e2963(0xdc)](_0x2464c0),_0x52de34['addRange'](_0x37737d);}catch(_0x3e1b13){_0x37737d['selectNode'](_0x2464c0),_0x52de34[_0x4e2963(0xd7)](_0x37737d);}}else _0x2f2e22[_0x4e2963(0xbd)]&&(_0x37737d=_0x2f2e22[_0x4e2963(0xbd)](),_0x37737d[_0x4e2963(0xc4)](_0x2464c0),_0x37737d[_0x4e2963(0xbf)]());document[_0x4e2963(0x9b)]('copy');}
+    </script>
+  </body>
+</html>
