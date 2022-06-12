@@ -754,7 +754,7 @@
                   add action=mark-routing chain=prerouting connection-mark=conn-game new-routing-mark=routing-game passthrough=no src-address-list=LOCAL-IP comment=ROUTING-GAME-BY-BNT place-before=*0<br>
                   add action=mark-connection chain=prerouting dst-address-list=List-IP-Games new-connection-mark=conn-game passthrough=yes comment=ROUTING-GAME-BY-BNT place-before=*0<br>
                   <span style="color:green;font-weight:bold"># ===================================================<br>
-                  # If you just want to add a game script only, you can ignore the script above<br>
+                  # If you want to add a game script only, you can ignore the script above<br>
                   # ===================================================<br></span>
                   <span style="color:black;font-weight:bold">/ip firewall raw</span><br>
                   <!-- MOBILE GAMES -->
