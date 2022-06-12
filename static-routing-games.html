@@ -733,12 +733,12 @@
             <table id="showScript" style="padding:5px;">
               <tr>
                 <td>
-                  <span style="color:#ff6600;">
-                  ###########################################################<br>
+                  <span style="color:#ff6600;font-weight:bold">
+                  # ===================================================<br>
                   # Static Routing Games Script Generator By BuanaNETPBun.Github.io<br>
                   # Date/Time: <span id="tanggalwaktu"></span><br>
                   # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
-                  ###########################################################<br>
+                  # ===================================================<br>
                   </span>
                   <b>/ip firewall address-list</b><br>
                   add list=LOCAL-IP address=10.0.0.0/8 comment=ROUTING-GAME-BY-BNT<br>
@@ -753,9 +753,9 @@
                   <span style="color:black;font-weight:bold">/ip firewall mangle</span><br>
                   add action=mark-routing chain=prerouting connection-mark=conn-game new-routing-mark=routing-game passthrough=no src-address-list=LOCAL-IP comment=ROUTING-GAME-BY-BNT place-before=*0<br>
                   add action=mark-connection chain=prerouting dst-address-list=List-IP-Games new-connection-mark=conn-game passthrough=yes comment=ROUTING-GAME-BY-BNT place-before=*0<br>
-                  <span style="color:green;"># ==============================================<br>
+                  <span style="color:green;font-weight:bold"># ===================================================<br>
                   # If you just want to add a game script only, you can ignore the script above<br>
-                  # ==============================================<br></span>
+                  # ===================================================<br></span>
                   <span style="color:black;font-weight:bold">/ip firewall raw</span><br>
                   <!-- MOBILE GAMES -->
                   <span id="ArenaOfValorMobile" style="display:none"><span style="color:#ff6600"># Arena Of Valor - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Arena Of Valor - Mobile" dst-address-list=!LOCAL-IP dst-port=10001-10094  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=10101-10201,10080-10110,17000-18000 protocol=udp</span>
