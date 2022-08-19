@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mikrotik RouterOS Auto Backup to Mail - BuanaNETPBun.Github.io</title>
+    <meta content='Mikrotik RouterOS Auto Backup to Mail Generator - BuanaNETPBun.Github.io' name='description'/>
+    <meta content='hotspot, username, password, script generator, mikrotik, router, winbox, termimal, rsc, script, wireless, rtrwnet' name='keywords'/>
+    <meta content='index, follow, noodp' name='robots'/>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Mikrotik RouterOS Auto Backup to Mail Generator By BuanaNET-Pbun">
+    <meta property="og:description" content="Mikrotik RouterOS Auto Backup to Mail Generator By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/157744303-96539bb4-9d74-4d22-98ee-ae1f9af76075.png">
+    <meta property="og:image:alt" content="Mikrotik RouterOS Auto Backup to Mail Generator By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-backup-to-mail.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <style>
+      /* -----------------------------------------------------------------
+      ####################################################################
+      # Mikrotik RouterOS Auto Backup to Mail
+      # Designer  : Agus Ramadhani / BuanaNET
+      # Github    : https://github.com/buananetpbun
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananetmikrotik	
+      ####################################################################
+      -------------------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .logo {
+      margin-top:10px; 
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      font-size:14px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:780px;
+      margin:0 auto;
+      padding:10px;
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:5px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      display: flex;
+      }   
+      .content{
+      flex:1;
+      float:right;
+      width:800px;
+      padding: 10px;
+      border-top:1px solid #bbb;
+      border-bottom:1px solid #bbb;
+      border-right:1px solid #bbb;
+      background:#ddd;
+      border-radius:0 5px 05px 0; 
+      }
+      .sidebar{
+      float:left;
+      width:250px;
+      Padding-top:8px;
+      padding-left: 10px;
+      Padding-right:10px;
+      Padding-bottom:20px;
+      background-color:#ddd;
+      border:1px solid #bbb; 
+      height:auto;
+      border-radius:5px 0 0 5px;   
+      }
+      .footer{
+      font-size:13px;
+      padding-top:10px;
+      padding-bottom:15px; 
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:22px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:8px;
+      margin-right:5px;
+      width:150px;
+      font-size:15px;
+      font-weight:bold;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=checkbox]{
+      margin-right:7px; 
+      }
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      margin-bottom:12px;
+      font-size:15px !important;
+      border-radius:5px; 
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      float: right;
+      border-radius:5px; 
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      border-radius:5px;  
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 515px;
+      background:#fff;
+      overflow: scroll;
+      width: 500px;
+      padding: 4px;
+      margin-top:8px;
+      border: 1px solid #ccc;
+      border-radius:5px;  
+      }
+      table, tr, td {
+      border: none;
+      }
+      .mymenu {
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:600px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      }  
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+  <body onLoad="callmodal()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
+        <img style="float:right; margin-right:10px;margin-top:2px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
+      </ul>
+    </div>
+    <div id="wrap">
+    <div class="logo">	  
+      <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+    </div>
+    <div class="header">
+      <span style="float:left; display:inline;margin-right:6px; margin-top: 10px">
+      <a href="https://buananetpbun.github.io/mikrotik-backup-to-mail.html"><img src="https://buananetpbun.github.io/mikrotik/img/logo.png" alt="HOME"></a>
+      </span>
+      <h1>MIKROTIK ROUTER-OS BACKUP TO MAIL GENERATOR</h1>
+    </div>
+    <div class="main-wrap">
+      <div class="sidebar">
+        <div style="margin-bottom:10px; height:auto">
+          <label>Mail Server</label>
+          <div style="clear: both;"></div>
+          <input type="text" id="input-mail-server" value="74.125.200.109" placeholder="74.125.200.109">
+          <div style="clear: both;"></div>
+          <div style='float:left; width:100px; margin-right:10px'>
+            <label>Mail Port</label>
+            <div style="clear: both;"></div>
+            <input type="text" id="input-mail-port" value="587" placeholder="587">
+          </div>
+          <div style='float:left; width:100px'>
+            <label>Start TLS</label>
+            <div style="clear: both;"></div>
+            <select id="input-start-tls">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+              <option value="tls-only">Tls Only</option>
+            </select>
+          </div>
+          <div style="clear: both;"></div>
+          <label>Mail User</label>
+          <div style="clear: both;"></div>
+          <input style='margin-top:5px' type="text" id="input-mail-user" value="buananetmikrotik@gmail.com" placeholder="buananetmikrotik@gmail.com">
+          <div style="clear: both;"></div>
+          <label>Mail Password</label>
+          <div style="clear: both;"></div>
+          <input style='margin-top:5px' type="text" id="input-mail-password" value="jmhxbzgowsdvfiit" placeholder="jmhxbzgowsdvfiit">
+          <div style="clear: both;"></div>
+          <div style="margin-top:10px; margin-bottom:10px; border-top:5px solid #999"></div>
+          <label>Backup File Option</label>
+          <div style="clear: both;"></div>
+          <select id="input-file-option" onchange="myFunctionInput()">
+            <option value="allbackup">All Backup Files</option>
+            <option value="allrsc">All RSC Files</option>
+            <option value="queuesimplersc">Queue Simple (.rsc)</option>
+            <option value="queuetreersc">Queue Tree (.rsc)</option>
+            <option value="manglersc">Mangle (.rsc)</option>
+            <option value="hotspotrsc">Hotspot (.rsc)</option>
+            <option value="ppprsc">PPP / PPPoE (.rsc)</option>
+            <option value="addresslist">Address List (.rsc)</option>
+            <option value="ipaddress">IP Routes (.rsc)</option>
+            <option value="routing">Routing BGP, RIP etc. (.rsc)</option>
+          </select>
+          <div style="clear: both;"></div>
+          <label>Send file backup to your Mail</label>
+          <div style="clear: both;"></div>
+          <input style='margin-top:5px' type="text" id="input-to-mail" value="mail@your-mail.com" placeholder="xxx@your-mail.com">
+          <div style="clear: both;"></div>
+          <label>Mail From (title)</label>
+          <div style="clear: both;"></div>
+          <div style="clear: both;"></div>
+          <input type="text" id="input-mail-from" value="Backup From Router Distribution" placeholder="Backup From Router Distribution">
+          <div style="clear: both;"></div>
+          <label >Scheduler Send mail</label><br><span style='color:#ff6600;font-size:13px'>d (day) : 1d, 3d, 7d, 14d, 20d, 30d</span>
+          <div style="clear: both;"></div>
+          <input style='margin-top:5px' type="text" id="input-scheduler" value="7d" placeholder="7d">
+          <div style="clear: both;"></div>
+        </div>
+        <button style="margin-top:0px;" type="button" onclick="myFunctionInput()">Generate</button>
+        <div style="clear: both;"></div>
+      </div>
+      <div class="content">
+        <span style="margin-left:2px; margin-top:10px">
+        <b><span style="color:red"><i>Attention!</i></span> </b><span style="font-size:13px">We do not send your MikroTik backup file to our email, but you can use our mail server to send the file to your email. if you don't like it you can use your own email server.</span>
+        <br><br>
+        Copy-Paste the Script to the Terminal</span>
+        <div class="list-mangle">
+          <table id="showScript" style="padding:5px; white-space: nowrap;">
+            <tr>
+              <td>
+                <span style="color:#ff6600;">
+                ###################################################<br>
+                # Mikrotik RouterOS Backup to Mail Generator<br>
+                # Date/Time: <span id="tanggalwaktu"></span><br>
+                # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
+                ###################################################<br>
+                </span>
+                /tool e-mail set address="<span style="color:#ff6600" id="mail-server">74.125.200.109</span>" from="<span style="color:#ff6600" id="mail-from1">Backup From Router Distribution</span>" password="<span style="color:#ff6600" id="mail-pass">jmhxbzgowsdvfiit</span>" port="<span style="color:#ff6600"  id="mail-port">587</span>" start-tls="<span style="color:#ff6600" id="mail-tls">yes</span>" user="<span style="color:#ff6600" id="mail-user">buananetmikrotik@gmail.com</span>"</br>
+                /system scheduler rem [find name=BACKUP-TO-MAIL]<br>
+                /system scheduler add interval=<span style="color:#ff6600" id="mail-interval">7d</span> name=BACKUP-TO-MAIL on-event="#=======================================================\r\</br>
+                \n# Mikrotik RouterOS Auto Backup to Mail by Buananetpbun.github.io\r\</br>
+                \n#=======================================================\r\</br>
+                \n:global date [/system clock get date]\r\</br>
+                \n:global d [:pick \$date 4 6]\r\</br>
+                \n:global m [:pick \$date 0 3] \r\</br>
+                \n:global y [:pick \$date 7 11]\r\</br>
+                <span  id="show-hide-backup">
+                \n:log warning \"-> Backup to Mail Now\"\r\</br>
+                \n:global backupfile ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\</br>
+                \n/system backup save name=\$backupfile\r\</br>
+                \n:delay 20s\r\</br>
+                \n:log warning \"-> Backup Being Emailed\"\r\</br>	
+                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to1">mail@your-mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from2">Backup From Router Distribution</span>\" file=(\"\$backupfile\" . \".backup\")\r\</br>
+                \n:delay 20s\r\</br>
+                \n:log warning \"-> Backup File Remove\"\r\</br>
+                \n/file remove (\"\$backupfile\" . \".backup\")\r\</br>
+                \n:delay 5s\r\</br>
+                \n:log warning \"-> Backup To Mail Finished\"\r\</br>
+                \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup</br>
+                </span>
+                <span  hidden id="show-hide-rsc">
+                \n:log warning \"-> Backup To Mail Now\"\r\</br>
+                \n:global backupfilersc ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\</br>
+                \n<span id="export-rsc"></span> file=\$backupfilersc\r\</br>
+                \n:delay 20s\r\</br>
+                \n:log warning \"-> Backup Being Emailed\"\r\</br>	
+                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to2">mail@your-mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from3">Backup From Router Distribution</span>\" file=(\"\$backupfilersc\" . \".rsc\")\r\</br>
+                \n:delay 20s\r\</br>
+                \n:log warning \"-> Backup File Remove\"\r\</br>
+                \n/file remove (\"\$backupfilersc\" . \".rsc\")\r\</br>
+                \n:delay 5s\r\</br>
+                \n:log warning \"-> Backup To Mail Finished\"\r\</br>
+                \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup</br>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <br>
+        <button style="margin-top:0px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button>
+      </div>
+    </div>
+    <div class="footer">
+      <div style="margin-top:20px; text-align:center">
+        © Copyright 2020-<span id="tahun">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br> Don't Forget to Follow <a href="https://github.com/buananetpbun">My Github</a> | <a href="https://www.facebook.com/buananetmikrotik">My Facebook Page</a> | Creator by <a href="https://www.facebook.com/buananet.pbun">Agus Ramadhani</a>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function callmodal() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script> 
+    <script> 
+var _0x2d59b3=_0x2fb4;function _0x2fb4(_0x4b63ed,_0x302055){var _0x110c23=_0x110c();return _0x2fb4=function(_0x2fb491,_0x1c48ab){_0x2fb491=_0x2fb491-0x108;var _0x3fbcee=_0x110c23[_0x2fb491];return _0x3fbcee;},_0x2fb4(_0x4b63ed,_0x302055);}(function(_0x180a7d,_0x360c26){var _0x45af69=_0x2fb4,_0x5f43b7=_0x180a7d();while(!![]){try{var _0xfa0daf=parseInt(_0x45af69(0x12a))/0x1+-parseInt(_0x45af69(0x10f))/0x2+parseInt(_0x45af69(0x10c))/0x3*(parseInt(_0x45af69(0x145))/0x4)+-parseInt(_0x45af69(0x115))/0x5*(parseInt(_0x45af69(0x14e))/0x6)+-parseInt(_0x45af69(0x132))/0x7*(-parseInt(_0x45af69(0x110))/0x8)+-parseInt(_0x45af69(0x12d))/0x9*(parseInt(_0x45af69(0x13d))/0xa)+-parseInt(_0x45af69(0x14d))/0xb*(-parseInt(_0x45af69(0x133))/0xc);if(_0xfa0daf===_0x360c26)break;else _0x5f43b7['push'](_0x5f43b7['shift']());}catch(_0x1d59ce){_0x5f43b7['push'](_0x5f43b7['shift']());}}}(_0x110c,0x4c67d));var dt=new Date();document[_0x2d59b3(0x125)](_0x2d59b3(0x14c))[_0x2d59b3(0x12f)]=dt[_0x2d59b3(0x11c)](),document[_0x2d59b3(0x125)](_0x2d59b3(0x11b))['innerHTML']=dt['toLocaleString']();var n=dt[_0x2d59b3(0x143)]();document[_0x2d59b3(0x125)](_0x2d59b3(0x127))['innerHTML']=n;function myFunctionInput(){var _0x5ab4db=_0x2d59b3,_0x58281a=document['getElementById']('input-mail-server')[_0x5ab4db(0x146)],_0x1209cd=document[_0x5ab4db(0x125)](_0x5ab4db(0x13c))['value'],_0x4dea41=document[_0x5ab4db(0x125)](_0x5ab4db(0x108))[_0x5ab4db(0x146)],_0x56ad97=document[_0x5ab4db(0x125)]('input-mail-user')[_0x5ab4db(0x146)],_0x2bbc6e=document[_0x5ab4db(0x125)](_0x5ab4db(0x121))[_0x5ab4db(0x146)],_0x1df7d4=document[_0x5ab4db(0x125)](_0x5ab4db(0x13f))[_0x5ab4db(0x146)],_0x810fc6=document[_0x5ab4db(0x125)](_0x5ab4db(0x141))['value'],_0x509079=document[_0x5ab4db(0x125)]('input-mail-from')[_0x5ab4db(0x146)],_0x1ee224=document['getElementById'](_0x5ab4db(0x138))[_0x5ab4db(0x146)],_0x1416f9='/export',_0x3211ba='/queue\x20simple\x20export',_0x348996='/queue\x20tree\x20export',_0x535b30='/ip\x20firewall\x20mangle\x20export',_0x4d8dc8=_0x5ab4db(0x114),_0x150d35=_0x5ab4db(0x12e),_0x29451b='/ip\x20firewall\x20address-list\x20export',_0x1f9410=_0x5ab4db(0x12b),_0x3d7877=_0x5ab4db(0x111);document['getElementById'](_0x5ab4db(0x131))['innerHTML']=_0x58281a,document[_0x5ab4db(0x125)](_0x5ab4db(0x119))[_0x5ab4db(0x12f)]=_0x509079,document[_0x5ab4db(0x125)]('mail-from2')['innerHTML']=_0x509079,document[_0x5ab4db(0x125)]('mail-from3')['innerHTML']=_0x509079,document[_0x5ab4db(0x125)](_0x5ab4db(0x112))[_0x5ab4db(0x12f)]=_0x2bbc6e,document['getElementById'](_0x5ab4db(0x137))[_0x5ab4db(0x12f)]=_0x1209cd,document[_0x5ab4db(0x125)](_0x5ab4db(0x109))[_0x5ab4db(0x12f)]=_0x4dea41,document['getElementById'](_0x5ab4db(0x135))['innerHTML']=_0x56ad97,document[_0x5ab4db(0x125)](_0x5ab4db(0x11d))[_0x5ab4db(0x12f)]=_0x1ee224,document['getElementById'](_0x5ab4db(0x129))[_0x5ab4db(0x12f)]=_0x810fc6,document[_0x5ab4db(0x125)](_0x5ab4db(0x148))[_0x5ab4db(0x12f)]=_0x810fc6;document['getElementById'](_0x5ab4db(0x13f))['value']==_0x5ab4db(0x113)&&(document[_0x5ab4db(0x125)](_0x5ab4db(0x136))['style'][_0x5ab4db(0x118)]=_0x5ab4db(0x13a),document[_0x5ab4db(0x125)](_0x5ab4db(0x149))['style']['display']=_0x5ab4db(0x142));document['getElementById'](_0x5ab4db(0x13f))['value']==_0x5ab4db(0x10e)&&(document[_0x5ab4db(0x125)](_0x5ab4db(0x12c))[_0x5ab4db(0x12f)]=_0x1416f9,document[_0x5ab4db(0x125)](_0x5ab4db(0x136))['style']['display']=_0x5ab4db(0x142),document[_0x5ab4db(0x125)](_0x5ab4db(0x149))[_0x5ab4db(0x128)][_0x5ab4db(0x118)]='none');document['getElementById']('input-file-option')[_0x5ab4db(0x146)]=='queuesimplersc'&&(document[_0x5ab4db(0x125)](_0x5ab4db(0x12c))['innerHTML']=_0x3211ba,document['getElementById']('show-hide-rsc')[_0x5ab4db(0x128)][_0x5ab4db(0x118)]=_0x5ab4db(0x142),document['getElementById'](_0x5ab4db(0x149))[_0x5ab4db(0x128)]['display']=_0x5ab4db(0x13a));document['getElementById'](_0x5ab4db(0x13f))['value']==_0x5ab4db(0x116)&&(document[_0x5ab4db(0x125)](_0x5ab4db(0x12c))[_0x5ab4db(0x12f)]=_0x348996,document[_0x5ab4db(0x125)](_0x5ab4db(0x136))[_0x5ab4db(0x128)][_0x5ab4db(0x118)]=_0x5ab4db(0x142),document[_0x5ab4db(0x125)]('show-hide-backup')[_0x5ab4db(0x128)][_0x5ab4db(0x118)]=_0x5ab4db(0x13a));var _0x3ee621=_0x5ab4db(0x14a),_0x7d4a64=_0x5ab4db(0x11a),_0x1fe00e=_0x5ab4db(0x11e),_0x38c344=_0x5ab4db(0x134),_0x4e91df='io',_0x5554f6=_0x3ee621+_0x7d4a64+_0x1fe00e+'.'+_0x38c344+'.'+_0x4e91df;window['location']['href']!==_0x5554f6+_0x5ab4db(0x139)&&location[_0x5ab4db(0x120)](_0x5554f6+_0x5ab4db(0x139)),document[_0x5ab4db(0x125)](_0x5ab4db(0x13f))[_0x5ab4db(0x146)]==_0x5ab4db(0x140)&&(document[_0x5ab4db(0x125)]('export-rsc')[_0x5ab4db(0x12f)]=_0x535b30,document['getElementById'](_0x5ab4db(0x136))[_0x5ab4db(0x128)]['display']='block',document['getElementById'](_0x5ab4db(0x149))[_0x5ab4db(0x128)]['display']='none'),document['getElementById']('input-file-option')[_0x5ab4db(0x146)]==_0x5ab4db(0x10b)&&(document[_0x5ab4db(0x125)](_0x5ab4db(0x12c))['innerHTML']=_0x4d8dc8,document[_0x5ab4db(0x125)]('show-hide-rsc')[_0x5ab4db(0x128)][_0x5ab4db(0x118)]=_0x5ab4db(0x142),document[_0x5ab4db(0x125)]('show-hide-backup')[_0x5ab4db(0x128)][_0x5ab4db(0x118)]=_0x5ab4db(0x13a)),document[_0x5ab4db(0x125)]('input-file-option')[_0x5ab4db(0x146)]==_0x5ab4db(0x10d)&&(document[_0x5ab4db(0x125)](_0x5ab4db(0x12c))[_0x5ab4db(0x12f)]=_0x150d35,document[_0x5ab4db(0x125)](_0x5ab4db(0x136))[_0x5ab4db(0x128)][_0x5ab4db(0x118)]=_0x5ab4db(0x142),document[_0x5ab4db(0x125)](_0x5ab4db(0x149))['style']['display']=_0x5ab4db(0x13a)),document[_0x5ab4db(0x125)](_0x5ab4db(0x13f))['value']==_0x5ab4db(0x14b)&&(document['getElementById']('export-rsc')['innerHTML']=_0x29451b,document['getElementById'](_0x5ab4db(0x136))[_0x5ab4db(0x128)][_0x5ab4db(0x118)]=_0x5ab4db(0x142),document[_0x5ab4db(0x125)](_0x5ab4db(0x149))[_0x5ab4db(0x128)]['display']=_0x5ab4db(0x13a)),document['getElementById']('input-file-option')[_0x5ab4db(0x146)]==_0x5ab4db(0x124)&&(document[_0x5ab4db(0x125)]('export-rsc')[_0x5ab4db(0x12f)]=_0x1f9410,document[_0x5ab4db(0x125)](_0x5ab4db(0x136))[_0x5ab4db(0x128)][_0x5ab4db(0x118)]=_0x5ab4db(0x142),document['getElementById'](_0x5ab4db(0x149))['style'][_0x5ab4db(0x118)]='none'),document[_0x5ab4db(0x125)](_0x5ab4db(0x13f))[_0x5ab4db(0x146)]==_0x5ab4db(0x147)&&(document[_0x5ab4db(0x125)](_0x5ab4db(0x12c))[_0x5ab4db(0x12f)]=_0x3d7877,document[_0x5ab4db(0x125)](_0x5ab4db(0x136))['style'][_0x5ab4db(0x118)]=_0x5ab4db(0x142),document[_0x5ab4db(0x125)](_0x5ab4db(0x149))[_0x5ab4db(0x128)][_0x5ab4db(0x118)]='none');}function selectElementContents(_0x284c81){var _0x4c7518=_0x2d59b3,_0x6b6f46=document['body'],_0x3779d7,_0x465123;if(document[_0x4c7518(0x144)]&&window[_0x4c7518(0x13e)]){_0x3779d7=document[_0x4c7518(0x144)](),_0x465123=window[_0x4c7518(0x13e)](),_0x465123[_0x4c7518(0x122)]();try{_0x3779d7[_0x4c7518(0x130)](_0x284c81),_0x465123[_0x4c7518(0x126)](_0x3779d7);}catch(_0x1f225a){_0x3779d7['selectNode'](_0x284c81),_0x465123[_0x4c7518(0x126)](_0x3779d7);}}else _0x6b6f46[_0x4c7518(0x13b)]&&(_0x3779d7=_0x6b6f46[_0x4c7518(0x13b)](),_0x3779d7[_0x4c7518(0x123)](_0x284c81),_0x3779d7[_0x4c7518(0x11f)]());document[_0x4c7518(0x10a)](_0x4c7518(0x117));}function _0x110c(){var _0x53145d=['input-file-option','manglersc','input-to-mail','block','getFullYear','createRange','4ffQQzE','value','routing','mail-to2','show-hide-backup','https://','addresslist','tanggalwaktu','1273151UehVgA','1404150xGUqRn','input-start-tls','mail-tls','execCommand','hotspotrsc','909882LGiMsO','ppprsc','allrsc','153248ZgJXUi','1016NjvPcB','/routing\x20export','mail-pass','allbackup','/ip\x20hotspot\x20export','5QNARSi','queuetreersc','copy','display','mail-from1','buananet','tanggal-waktu','toLocaleString','mail-interval','pbun','select','replace','input-mail-password','removeAllRanges','moveToElementText','ipaddress','getElementById','addRange','tahun','style','mail-to1','596094WhFLhO','/ip\x20route\x20export','export-rsc','171dTeYkh','/ppp\x20export','innerHTML','selectNodeContents','mail-server','6062VabHba','12iOzWDs','github','mail-user','show-hide-rsc','mail-port','input-scheduler','/mikrotik-backup-to-mail.html','none','createTextRange','input-mail-port','263950Ipprom','getSelection'];_0x110c=function(){return _0x53145d;};return _0x110c();}
+    </script>
+  </body>
+</html>
