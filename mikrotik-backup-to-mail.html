@@ -401,11 +401,11 @@
             <option value="routing">Routing BGP, RIP etc. (.rsc)</option>
           </select>
           <label>Send file backup to your Mail</label>
-          <input style='margin-top:5px' type="text" id="input-to-mail" value="mail@your-mail.com" placeholder="xxx@your-mail.com">
+          <input style='margin-top:5px' type="text" id="input-to-mail" value="" placeholder="xxx@your-mail.com">
           <label>Mail From (title)</label>
-          <input type="text" id="input-mail-from" value="Backup From Router Distribution" placeholder="Backup From Router Distribution">
+          <input type="text" id="input-mail-from" value="" placeholder="Backup From Distribution">
           <label >Scheduler Send mail</label><br><span style='color:#ff6600;font-size:13px'>d (day) : 1d, 3d, 7d, 14d, 20d, 30d</span>
-          <input style='margin-top:5px' type="text" id="input-scheduler" value="7d" placeholder="7d">
+          <input style='margin-top:5px' type="text" id="input-scheduler" value="" placeholder="7d">
         </div>
         <button style="margin-top:0px;" type="button" onclick="myFunctionInput()">Generate</button>
       </div>
@@ -440,7 +440,7 @@
                 \n/system backup save name=\$backupfile\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup Being Emailed\"\r\</br>	
-                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to1">mail@your-mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from2">Backup From Router Distribution</span>\" file=(\"\$backupfile\" . \".backup\")\r\</br>
+                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to1">mail@your-mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from2">Backup From Distribution</span>\" file=(\"\$backupfile\" . \".backup\")\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup File Remove\"\r\</br>
                 \n/file remove (\"\$backupfile\" . \".backup\")\r\</br>
@@ -454,7 +454,7 @@
                 \n<span id="export-rsc"></span> file=\$backupfilersc\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup Being Emailed\"\r\</br>	
-                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to2">mail@your-mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from3">Backup From Router Distribution</span>\" file=(\"\$backupfilersc\" . \".rsc\")\r\</br>
+                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to2">mail@your-mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from3">Backup From Distribution</span>\" file=(\"\$backupfilersc\" . \".rsc\")\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup File Remove\"\r\</br>
                 \n/file remove (\"\$backupfilersc\" . \".rsc\")\r\</br>
