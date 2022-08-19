@@ -369,35 +369,25 @@
       <div class="sidebar">
         <div style="margin-bottom:10px; height:auto">
           <label>Mail Server</label>
-          <div style="clear: both;"></div>
           <input type="text" id="input-mail-server" value="74.125.200.109" placeholder="74.125.200.109">
-          <div style="clear: both;"></div>
           <div style='float:left; width:100px; margin-right:10px'>
             <label>Mail Port</label>
-            <div style="clear: both;"></div>
             <input type="text" id="input-mail-port" value="587" placeholder="587">
           </div>
           <div style='float:left; width:100px'>
             <label>Start TLS</label>
-            <div style="clear: both;"></div>
             <select id="input-start-tls">
               <option value="yes">Yes</option>
               <option value="no">No</option>
               <option value="tls-only">Tls Only</option>
             </select>
           </div>
-          <div style="clear: both;"></div>
           <label>Mail User</label>
-          <div style="clear: both;"></div>
           <input style='margin-top:5px' type="text" id="input-mail-user" value="buananetmikrotik@gmail.com" placeholder="buananetmikrotik@gmail.com">
-          <div style="clear: both;"></div>
           <label>Mail Password</label>
-          <div style="clear: both;"></div>
           <input style='margin-top:5px' type="text" id="input-mail-password" value="jmhxbzgowsdvfiit" placeholder="jmhxbzgowsdvfiit">
-          <div style="clear: both;"></div>
           <div style="margin-top:10px; margin-bottom:10px; border-top:5px solid #999"></div>
           <label>Backup File Option</label>
-          <div style="clear: both;"></div>
           <select id="input-file-option" onchange="myFunctionInput()">
             <option value="allbackup">All Backup Files</option>
             <option value="allrsc">All RSC Files</option>
@@ -410,23 +400,14 @@
             <option value="ipaddress">IP Routes (.rsc)</option>
             <option value="routing">Routing BGP, RIP etc. (.rsc)</option>
           </select>
-          <div style="clear: both;"></div>
           <label>Send file backup to your Mail</label>
-          <div style="clear: both;"></div>
           <input style='margin-top:5px' type="text" id="input-to-mail" value="mail@your-mail.com" placeholder="xxx@your-mail.com">
-          <div style="clear: both;"></div>
           <label>Mail From (title)</label>
-          <div style="clear: both;"></div>
-          <div style="clear: both;"></div>
           <input type="text" id="input-mail-from" value="Backup From Router Distribution" placeholder="Backup From Router Distribution">
-          <div style="clear: both;"></div>
           <label >Scheduler Send mail</label><br><span style='color:#ff6600;font-size:13px'>d (day) : 1d, 3d, 7d, 14d, 20d, 30d</span>
-          <div style="clear: both;"></div>
           <input style='margin-top:5px' type="text" id="input-scheduler" value="7d" placeholder="7d">
-          <div style="clear: both;"></div>
         </div>
         <button style="margin-top:0px;" type="button" onclick="myFunctionInput()">Generate</button>
-        <div style="clear: both;"></div>
       </div>
       <div class="content">
         <span style="margin-left:2px; margin-top:10px">
