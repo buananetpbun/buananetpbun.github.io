@@ -440,13 +440,25 @@
                   <b>/ip pool</b><br>
                   add name=EXPIRED  ranges=<span style="color:#ff6600; font-weight:bold" id="result-ip-pool">10.20.20.2-10.20.20.254</span> comment="EXPIRED By BNT"<br>
                   <b>/ip firewall filter</b><br>
-                  add chain=forward src-address-list=EXPIRED action=drop comment="EXPIRED By BNT"<br>
+                  add chain=forward src-address-list=EXPIRED action=drop comment="EXPIRED By BNT" disabled=yes<br>
                   <b>/ip firewall nat</b><br>
                   add chain=dstnat src-address-list=EXPIRED  protocol=tcp dst-port=80,443 action=redirect to-ports=<span style="color:#ff6600; font-weight:bold" id="result-nat-port">8082</span> comment="EXPIRED By BNT"<br>
                   <b>/ppp profile</b><br>
-                  add name=EXPIRED  local-address=<span style="color:#ff6600; font-weight:bold" id="result-ppp-profile">10.20.20.1</span> remote-address=EXPIRED  comment="EXPIRED By BNT" on-down=":local username \$\"user\";\r\n/ip proxy access remove [find comment=\"ppp-\$username\"];" on-up=":local username \$\"user\";\r\n:local address \$\"remote-address\";\r\n/ip proxy access add action=deny src-address=\$address comment=\"ppp-\$username\";"<br>
-                  <b>/ip hotspot user profile</b><br>
-                  add address-pool=EXPIRED !mac-cookie-timeout transparent-proxy=no on-login=":local username \$\"user\";\r\n:local ipaddress \$\"address\";\r\n/ip proxy access add action=deny src-address=\$ipaddress comment=\"hs-\$username\";" on-logout=":local username \$user;\r\n/ip hotspot cookie remove [find user=\$username]\r\n/ip proxy access remove [find comment=\"hs-\$username\"]" name=EXPIRED shared-users=100<br>
+					add comment="EXPIRED By BNT" local-address=<span style="color:#ff6600; font-weight:bold" id="result-ppp-profile">10.20.20.1</span> name=EXPIRED on-down=":local username \$\"user\";\r\
+    \n/ip proxy access remove [find comment=\"ppp-\$username\"];\r\
+    \n/ip firewall address-list remove [find comment=\"ppp-\$username\"];" on-up=":local username \$\"user\";\r\
+    \n:local address \$\"remote-address\";\r\
+    \n/ip proxy access add action=deny src-address=\$address comment=\"ppp-\$username\";\r\
+    \n/ip firewall address-list add list=EXPIRED address=\$address comment=\"ppp-\$username\"" remote-address=EXPIRED
+					<br>
+				  <b>/ip hotspot user profile</b><br>
+					add add-mac-cookie=no address-pool=EXPIRED !mac-cookie-timeout name=EXPIRED on-login=":local username \$\"user\";\r\
+    \n:local ipaddress \$\"address\";\r\
+    \n/ip proxy access add action=deny src-address=\$ipaddress comment=\"hs-\$username\";\r\
+    \n/ip firewall address-list add list=EXPIRED address=\$address comment=\"hs-\$username\"" on-logout=":local username \$user;\r\
+    \n/ip hotspot cookie remove [find user=\$username]\r\
+    \n/ip proxy access remove [find comment=\"hs-\$username\"]\r\
+    \n/ip firewall address-list remove [find comment=\"hs-\$username\"];" shared-users=100<br>
                   <b>/ip hotspot walled-garden ip</b><br>
                   add action=accept disabled=no !dst-address !dst-address-list dst-port=<span style="color:#ff6600; font-weight:bold" id="result-wallet-garden-port">8082</span> protocol=tcp !src-address !src-address-list comment="EXPIRED By BNT"<br>
                 </td>
