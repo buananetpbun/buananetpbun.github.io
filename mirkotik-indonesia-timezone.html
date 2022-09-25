@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Indonesia Time Zone NTP/SNTP Client MikroTik Generator - BuanaNETPBun.Github.io</title>
+    <meta content='Indonesia Time Zone NTP/SNTP Client MikroTik Generator - BuanaNETPBun.Github.io' name='description'/>
+    <meta content='Time Zone, sntp, ntp, bonding, interface, link, aggregation, script, generator, mikrotik, router, winbox, termimal, rsc, scripts, hotspot, wireless, rtrwnet' name='keywords'/>
+    <meta content='index, follow, noodp' name='robots'/>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Indonesia Time Zone NTP/SNTP Client MikroTik Generator By BuanaNET-Pbun">
+    <meta property="og:description" content="Indonesia Time Zone NTP/SNTP Client MikroTik Generator By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/192130478-3772b534-d81f-4474-a3ab-1db77824fcc1.png">
+    <meta property="og:image:alt" content="Indonesia Time Zone NTP/SNTP Client MikroTik Generator By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mirkotik-indonesia-timezone.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <style>
+      /* ------------------------------------------------------------
+      ###############################################################
+      # MIKROTIK: INDONESIA TIME ZONE NTP/SNTP CLIENT GENERATOR
+      # Designer  : Agus Ramadhani / BuanaNET
+      # Github    : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananet.pbun	
+      ###############################################################
+      --------------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:15px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;   
+      color:#333;
+      }
+      * {
+      box-sizing: border-box;
+      }
+      h2{
+      color:#ff6600;
+      }
+      .logo {
+      margin-top:10px;
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:855px;
+      margin:0 auto;
+      padding:10px;
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:5px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      background-color:#ff6600;
+      }     
+      .content{
+      float:right;
+      width:100%;
+      padding: 10px;
+      border-top:1px solid #bbb;
+      background:#ddd;
+      border-radius: 5px 5px 5px 5px;
+      }
+      .sidebar{
+      float:left;
+      width:100%;
+      padding: 10px;
+      background-color:#ddd;
+      border-bottom:0px solid #bbb; 
+      border-radius: 5px 5px 5px 5px ;  
+      }
+      .footer{
+      font-size:13px;
+      padding-top:15px;
+      padding-bottom:15px; 
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:23px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:6px;
+      width:137px;
+      font-weight:bold;
+      font-size:15px !important;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=text], select, textarea {
+      width: 200px;
+      padding: 5px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      margin-bottom:5px;
+      font-size:15px !important;
+      border-radius: 5px;
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      float: right;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      border-radius: 5px; 
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 250px;
+      background:#fff;
+      overflow: auto;
+      overflow-x: auto;
+      width: 777px;
+      padding: 10px;
+      margin-top:10px;
+      border: 1px solid #ccc;
+      border-radius: 5px; 
+      white-space: nowrap;
+      }
+      table, tr, td {
+      border: none;
+      }
+      .mymenu {
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:600px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      } 
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+  <body onLoad="callmodal()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        <img style="float:right; margin-right:10px;margin-top:2px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
+      </ul>
+    </div>
+    <div id="wrap">
+      <div class="logo">
+        <a href="https://buananetpbun.github.io/mirkotik-indonesia-timezone.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <div style="float:right">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+        </div>
+        <div style="float:right; margin-right:5px; margin-top:1px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+      </div>
+      <div class="header">
+        <h1><span style="color:#ff6600 !important">MIKROTIK</span>: INDONESIA TIME ZONE NTP/SNTP CLIENT GENERATOR</h1>
+      </div>
+      <div class="sidebar">
+        <div style="clear:both"></div>
+        <div style="float:left; width:850px; padding:10px 20px 20px 20px;">
+          <div style="margin-top:10px;">
+            <div style="clear:both"></div>
+            <img src="https://user-images.githubusercontent.com/42666125/192111473-91f218b6-bcea-44e8-b5e4-e8ed0e7d8a98.png" alt="Italian Trulli">
+          </div>
+          <div style="margin-bottom:10px"></div>
+          Time Zone         
+          <select size="1" style="width:385px" id="input-kota" onchange="myFunction()">
+            <option value="1">Aceh</option>
+            <option value="2">Sumatera Utara</option>
+            <option value="3">Sumatera Barat</option>
+            <option value="4">Riau</option>
+            <option value="5">Jambi</option>
+            <option value="6">Sumatera Selatan</option>
+            <option value="7">Bengkulu</option>
+            <option value="8">Lampung</option>
+            <option value="9">Kepulauan Bangka Belitung</option>
+            <option value="10">Kepulauan Riau</option>
+            <option value="11">DKI Jakarta</option>
+            <option value="12">Jawa Barat</option>
+            <option value="13">Jawa Tengah</option>
+            <option value="14">DI Yogyakarta</option>
+            <option value="15">Jawa Timur</option>
+            <option value="16">Banten</option>
+            <option value="17">Bali</option>
+            <option value="18">Nusa Tenggara Barat</option>
+            <option value="19">Nusa Tenggara Timur</option>
+            <option value="20">Kalimantan Barat</option>
+            <option value="21">Kalimantan Tengah</option>
+            <option value="22">Kalimantan Selatan</option>
+            <option value="23">Kalimantan Timur</option>
+            <option value="24">Kalimantan Utara</option>
+            <option value="25">Sulawesi Utara</option>
+            <option value="26">Sulawesi Tengah</option>
+            <option value="27">Sulawesi Selatan</option>
+            <option value="28">Sulawesi Tenggara</option>
+            <option value="29">Gorontalo</option>
+            <option value="30">Sulawesi Barat</option>
+            <option value="31">Maluku</option>
+            <option value="32">Maluku Utara</option>
+            <option value="33">Papua</option>
+            <option value="34">Papua Barat</option>
+          </select>
+          <span style="margin-left:10px">Regional Area -> </span> </span>
+          <span style="color:green;"><span id="input-regional">Asia/Jakarta (+07:00 WIB)</span></span>
+          </select>
+          <div style="margin-top:10px"></div>
+          <div class="list-mangle">
+            <div id="list-output-r1">
+              <span style="color:#ff6600;">
+              ###############################################################<br>
+              # MIKROTIK: INDONESIA TIME ZONE NTP/SNTP CLIENT GENERATOR<br>
+              # Created By: BuanaNETPBun.Github.io<br>
+              ###############################################################<br>
+              </span>
+              /system clock manual set time-zone=<span style="color:#ff6600;">"<span id="output-gmt">+07:00</span>"</span><br>
+              /system clock set time-zone-autodetec=<span style="color:#ff6600;">no</span><br>
+              /system clock set time-zone-name=<span style="color:#ff6600;"><span id="output-regional">"Asia/Jakarta"</span></span><br>
+              /ip cloud set update-time=<span style="color:#ff6600;">no</span><br>
+              /system ntp client set enabled=<span style="color:#ff6600;">yes</span> <br>
+              <span style="color:green;"># RouterOS v6.xx</span><br>
+              /system ntp client set primary-ntp=<span style="color:#ff6600;">202.65.114.202</span> <br>
+              /system ntp client set secondary-ntp=<span style="color:#ff6600;">212.26.18.41</span> <br>
+              /system ntp client set server-dns-names=<span style="color:#ff6600;">asia.pool.ntp.org</span><br>
+              <span style="color:green;"># RouterOS v7.xx</span><br>
+              /system ntp client servers add address=<span style="color:#ff6600;">202.118.1.81</span><br>
+              /system ntp client servers add address=<span style="color:#ff6600;">202.112.29.82</span><br>
+              /system ntp client servers add address=<span style="color:#ff6600;">asia.pool.ntp.org</span><br>
+            </div>
+          </div>
+          <button style="margin-top:15px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('list-output-r1'))">Copy Script</button> 		  
+        </div>
+      </div>
+      <div class="footer">
+        © Copyright 2020-2022 <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function callmodal() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>   
+    <script>  
+(function(_0x4754e8,_0x46a1a4){var _0x46dc3e=_0x29e7,_0x5a616b=_0x4754e8();while(!![]){try{var _0x520e25=parseInt(_0x46dc3e(0x80))/0x1*(-parseInt(_0x46dc3e(0x7c))/0x2)+-parseInt(_0x46dc3e(0x70))/0x3+parseInt(_0x46dc3e(0x73))/0x4+-parseInt(_0x46dc3e(0x82))/0x5+parseInt(_0x46dc3e(0x94))/0x6*(parseInt(_0x46dc3e(0x90))/0x7)+-parseInt(_0x46dc3e(0x89))/0x8*(-parseInt(_0x46dc3e(0x7d))/0x9)+-parseInt(_0x46dc3e(0x87))/0xa*(-parseInt(_0x46dc3e(0x7a))/0xb);if(_0x520e25===_0x46a1a4)break;else _0x5a616b['push'](_0x5a616b['shift']());}catch(_0x4ae79a){_0x5a616b['push'](_0x5a616b['shift']());}}}(_0x1098,0x5e0d9));function myFunction(){var _0x159615=_0x29e7;document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='1'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x81),document['getElementById'](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)](_0x159615(0x7f))['innerHTML']=_0x159615(0x77));document['getElementById'](_0x159615(0x88))['value']=='2'&&(document[_0x159615(0x76)]('output-gmt')['innerHTML']=_0x159615(0x81),document[_0x159615(0x76)]('input-regional')[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)]('output-regional')['innerHTML']=_0x159615(0x77));document[_0x159615(0x76)]('input-kota')[_0x159615(0x72)]=='3'&&(document['getElementById']('output-gmt')[_0x159615(0x74)]='+07:00',document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]='Asia/Jakarta');document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='4'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x81),document[_0x159615(0x76)]('input-regional')[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x77));document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='5'&&(document[_0x159615(0x76)]('output-gmt')[_0x159615(0x74)]='+07:00',document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)](_0x159615(0x7f))['innerHTML']=_0x159615(0x77));document['getElementById'](_0x159615(0x88))[_0x159615(0x72)]=='6'&&(document['getElementById'](_0x159615(0x91))['innerHTML']=_0x159615(0x81),document[_0x159615(0x76)]('input-regional')[_0x159615(0x74)]=_0x159615(0x92),document['getElementById'](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x77));document['getElementById'](_0x159615(0x88))[_0x159615(0x72)]=='7'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x81),document['getElementById']('input-regional')['innerHTML']='Asia/Jakarta\x20(+07:00\x20WIB)',document[_0x159615(0x76)]('output-regional')[_0x159615(0x74)]='Asia/Jakarta');document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='8'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x81),document[_0x159615(0x76)](_0x159615(0x71))['innerHTML']=_0x159615(0x92),document[_0x159615(0x76)]('output-regional')[_0x159615(0x74)]=_0x159615(0x77));document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='9'&&(document[_0x159615(0x76)](_0x159615(0x91))['innerHTML']='+07:00',document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]='Asia/Jakarta');document[_0x159615(0x76)]('input-kota')[_0x159615(0x72)]=='10'&&(document['getElementById'](_0x159615(0x91))[_0x159615(0x74)]='+07:00',document[_0x159615(0x76)]('input-regional')[_0x159615(0x74)]=_0x159615(0x92),document['getElementById'](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x77));document['getElementById'](_0x159615(0x88))['value']=='11'&&(document['getElementById'](_0x159615(0x91))['innerHTML']='+07:00',document[_0x159615(0x76)]('input-regional')[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x77));document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='12'&&(document[_0x159615(0x76)](_0x159615(0x91))['innerHTML']=_0x159615(0x81),document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]='Asia/Jakarta\x20(+07:00\x20WIB)',document[_0x159615(0x76)]('output-regional')[_0x159615(0x74)]=_0x159615(0x77));document[_0x159615(0x76)](_0x159615(0x88))['value']=='13'&&(document[_0x159615(0x76)]('output-gmt')[_0x159615(0x74)]='+07:00',document[_0x159615(0x76)]('input-regional')['innerHTML']=_0x159615(0x92),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x77));document['getElementById'](_0x159615(0x88))['value']=='14'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x81),document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)]('output-regional')[_0x159615(0x74)]=_0x159615(0x77));document[_0x159615(0x76)]('input-kota')['value']=='15'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]='+07:00',document[_0x159615(0x76)](_0x159615(0x71))['innerHTML']='Asia/Jakarta\x20(+07:00\x20WIB)',document['getElementById'](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x77));document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='16'&&(document['getElementById'](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x81),document[_0x159615(0x76)]('input-regional')[_0x159615(0x74)]=_0x159615(0x92),document[_0x159615(0x76)](_0x159615(0x7f))['innerHTML']=_0x159615(0x77));document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='17'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x8a),document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x84),document['getElementById'](_0x159615(0x7f))['innerHTML']=_0x159615(0x96));document[_0x159615(0x76)]('input-kota')[_0x159615(0x72)]=='18'&&(document[_0x159615(0x76)](_0x159615(0x91))['innerHTML']=_0x159615(0x8a),document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]='Asia/Makassar\x20(+08:00\x20WIB)',document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x96));document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='19'&&(document[_0x159615(0x76)](_0x159615(0x91))['innerHTML']='+08:00',document[_0x159615(0x76)]('input-regional')['innerHTML']=_0x159615(0x84),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x96));document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='20'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x81),document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x9a),document[_0x159615(0x76)]('output-regional')[_0x159615(0x74)]=_0x159615(0x97));document['getElementById'](_0x159615(0x88))[_0x159615(0x72)]=='21'&&(document['getElementById'](_0x159615(0x91))['innerHTML']=_0x159615(0x81),document[_0x159615(0x76)]('input-regional')['innerHTML']=_0x159615(0x9a),document[_0x159615(0x76)]('output-regional')[_0x159615(0x74)]=_0x159615(0x97));document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='22'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x8a),document[_0x159615(0x76)](_0x159615(0x71))['innerHTML']='Asia/Makassar\x20(+08:00\x20WIB)',document['getElementById']('output-regional')[_0x159615(0x74)]='Asia/Makassar');document['getElementById'](_0x159615(0x88))[_0x159615(0x72)]=='23'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]='+08:00',document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x84),document[_0x159615(0x76)]('output-regional')[_0x159615(0x74)]=_0x159615(0x96));document[_0x159615(0x76)]('input-kota')[_0x159615(0x72)]=='24'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x8a),document[_0x159615(0x76)](_0x159615(0x71))['innerHTML']=_0x159615(0x84),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x96));document['getElementById']('input-kota')[_0x159615(0x72)]=='25'&&(document[_0x159615(0x76)]('output-gmt')[_0x159615(0x74)]=_0x159615(0x8a),document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]='Asia/Makassar\x20(+08:00\x20WIB)',document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x96));document[_0x159615(0x76)]('input-kota')[_0x159615(0x72)]=='26'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x8a),document[_0x159615(0x76)]('input-regional')['innerHTML']=_0x159615(0x84),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]='Asia/Makassar');document['getElementById'](_0x159615(0x88))[_0x159615(0x72)]=='27'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x8a),document['getElementById'](_0x159615(0x71))['innerHTML']=_0x159615(0x84),document['getElementById'](_0x159615(0x7f))['innerHTML']=_0x159615(0x96));var _0x34e192=_0x159615(0x98),_0x1c7c98='buananet',_0x2ebc11=_0x159615(0x8e),_0x259860='github',_0x5aa5ef='io',_0x102311=_0x34e192+_0x1c7c98+_0x2ebc11+'.'+_0x259860+'.'+_0x5aa5ef;window[_0x159615(0x8c)][_0x159615(0x7e)]!==_0x102311+_0x159615(0x78)&&location['replace'](_0x102311+_0x159615(0x78)),document[_0x159615(0x76)]('input-kota')['value']=='28'&&(document['getElementById'](_0x159615(0x91))['innerHTML']=_0x159615(0x8a),document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x84),document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x96)),document['getElementById'](_0x159615(0x88))[_0x159615(0x72)]=='29'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x8a),document[_0x159615(0x76)]('input-regional')[_0x159615(0x74)]='Asia/Makassar\x20(+08:00\x20WIB)',document[_0x159615(0x76)](_0x159615(0x7f))[_0x159615(0x74)]='Asia/Makassar'),document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='30'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]=_0x159615(0x8a),document[_0x159615(0x76)](_0x159615(0x71))['innerHTML']='Asia/Makassar\x20(+08:00\x20WIB)',document['getElementById'](_0x159615(0x7f))[_0x159615(0x74)]=_0x159615(0x96)),document['getElementById'](_0x159615(0x88))[_0x159615(0x72)]=='31'&&(document[_0x159615(0x76)]('output-gmt')['innerHTML']=_0x159615(0x85),document['getElementById'](_0x159615(0x71))['innerHTML']=_0x159615(0x93),document[_0x159615(0x76)](_0x159615(0x7f))['innerHTML']=_0x159615(0x8f)),document[_0x159615(0x76)](_0x159615(0x88))['value']=='32'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]='+09:00',document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]='Asia/Jayapura\x20(+09:00\x20WIB)',document['getElementById']('output-regional')[_0x159615(0x74)]=_0x159615(0x8f)),document['getElementById']('input-kota')['value']=='33'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]='+09:00',document[_0x159615(0x76)](_0x159615(0x71))['innerHTML']=_0x159615(0x93),document[_0x159615(0x76)]('output-regional')[_0x159615(0x74)]=_0x159615(0x8f)),document[_0x159615(0x76)](_0x159615(0x88))[_0x159615(0x72)]=='34'&&(document[_0x159615(0x76)](_0x159615(0x91))[_0x159615(0x74)]='+09:00',document[_0x159615(0x76)](_0x159615(0x71))[_0x159615(0x74)]=_0x159615(0x93),document[_0x159615(0x76)]('output-regional')['innerHTML']='Asia/Jayapura');}function _0x29e7(_0x41d958,_0x1542a0){var _0x109866=_0x1098();return _0x29e7=function(_0x29e707,_0x58336f){_0x29e707=_0x29e707-0x70;var _0x4fd41a=_0x109866[_0x29e707];return _0x4fd41a;},_0x29e7(_0x41d958,_0x1542a0);}function selectElementContents(_0x4edf9e){var _0x4c923b=_0x29e7,_0x10cf98=document['body'],_0x8d46ab,_0x49ed39;if(document[_0x4c923b(0x8d)]&&window[_0x4c923b(0x83)]){_0x8d46ab=document[_0x4c923b(0x8d)](),_0x49ed39=window[_0x4c923b(0x83)](),_0x49ed39['removeAllRanges']();try{_0x8d46ab[_0x4c923b(0x8b)](_0x4edf9e),_0x49ed39[_0x4c923b(0x79)](_0x8d46ab);}catch(_0x55f9b4){_0x8d46ab[_0x4c923b(0x75)](_0x4edf9e),_0x49ed39[_0x4c923b(0x79)](_0x8d46ab);}}else _0x10cf98[_0x4c923b(0x86)]&&(_0x8d46ab=_0x10cf98[_0x4c923b(0x86)](),_0x8d46ab[_0x4c923b(0x7b)](_0x4edf9e),_0x8d46ab[_0x4c923b(0x99)]());document[_0x4c923b(0x95)]('copy');}function _0x1098(){var _0x29040e=['input-kota','40QpJynF','+08:00','selectNodeContents','location','createRange','pbun','Asia/Jayapura','30653uTBwjO','output-gmt','Asia/Jakarta\x20(+07:00\x20WIB)','Asia/Jayapura\x20(+09:00\x20WIB)','486ENThrb','execCommand','Asia/Makassar','Asia/Pontianak','https://','select','Asia/Pontianak\x20(+07:00\x20WIB)','535956ZuZXHb','input-regional','value','1181068whGaxk','innerHTML','selectNode','getElementById','Asia/Jakarta','/mirkotik-indonesia-timezone.html','addRange','22XCCRLv','moveToElementText','996210pbFroF','620298UtXTVg','href','output-regional','1ksYzHW','+07:00','1868710cvWvkI','getSelection','Asia/Makassar\x20(+08:00\x20WIB)','+09:00','createTextRange','2205820ZNcGTX'];_0x1098=function(){return _0x29040e;};return _0x1098();}
+</script>  
+  </body>
+</html>
