@@ -409,7 +409,7 @@
       </div>
       <div class="content">
         <span style="margin-left:2px; margin-top:10px">
-        <b><span style="color:red"><i>Attention!</i></span> </b><span style="font-size:13px">We do not send your MikroTik backup file to our e-mail, but you can use our e-mail server to send the file to your email. if you don't like it you can use your own email server.</span>
+        <b><span style="color:red"><i>Attention!</i></span> </b><span style="font-size:13px">We do not send your MikroTik backup file to our e-mail, but you can use our e-mail server to send the file to your e-mail. if you don't like it you can use your own e-mail server.</span>
         <br><br>
         Copy-Paste the Script to the Terminal</span>
         <div class="list-mangle">
@@ -418,7 +418,7 @@
               <td>
                 <span style="color:#ff6600;">
                 ###################################################<br>
-                # Mikrotik RouterOS Auto Backup to eMail Generator<br>
+                # Mikrotik RouterOS Auto Backup to e-Mail Generator<br>
                 # Date/Time: <span id="tanggalwaktu"></span><br>
                 # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
                 ###################################################<br>
@@ -438,7 +438,7 @@
                 \n:global backupfile ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\</br>
                 \n/system backup save name=\$backupfile\r\</br>
                 \n:delay 20s\r\</br>
-                \n:log warning \"-> Backup Being Emailed\"\r\</br>	
+                \n:log warning \"-> Backup Being e-Mailed\"\r\</br>	
                 \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to1">your-mail@mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from2">Backup From My Router</span>\" file=(\"\$backupfile\" . \".backup\") <span id="tls-option1">start-tls="yes"</span>\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup File Remove\"\r\</br>
@@ -452,7 +452,7 @@
                 \n:global backupfilersc ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\</br>
                 \n<span id="export-rsc"></span> file=\$backupfilersc\r\</br>
                 \n:delay 20s\r\</br>
-                \n:log warning \"-> Backup Being Emailed\"\r\</br>	
+                \n:log warning \"-> Backup Being e-Mailed\"\r\</br>	
                 \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to2">your-mail@your.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from3">Backup From My Router</span>\" file=(\"\$backupfilersc\" . \".rsc\") <span id="tls-option2">start-tls="yes"</span>\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup File Remove\"\r\</br>
