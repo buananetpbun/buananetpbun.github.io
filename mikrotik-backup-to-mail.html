@@ -4,15 +4,15 @@
   <head>
     <meta charset='utf-8'/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mikrotik RouterOS Auto Backup to Mail - BuanaNETPBun.Github.io</title>
-    <meta content='Mikrotik RouterOS Auto Backup to Mail Generator - BuanaNETPBun.Github.io' name='description'/>
+    <title>Mikrotik RouterOS Auto Backup to e-Mail - BuanaNETPBun.Github.io</title>
+    <meta content='Mikrotik RouterOS Auto Backup to e-Mail Generator - BuanaNETPBun.Github.io' name='description'/>
     <meta content='hotspot, username, password, script generator, mikrotik, router, winbox, termimal, rsc, script, wireless, rtrwnet' name='keywords'/>
     <meta content='index, follow, noodp' name='robots'/>
     <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
-    <meta property="og:title" content="Mikrotik RouterOS Auto Backup to Mail Generator By BuanaNET-Pbun">
-    <meta property="og:description" content="Mikrotik RouterOS Auto Backup to Mail Generator By BuanaNET-Pbun">
+    <meta property="og:title" content="Mikrotik RouterOS Auto Backup to e-Mail Generator By BuanaNET-Pbun">
+    <meta property="og:description" content="Mikrotik RouterOS Auto Backup to e-Mail Generator By BuanaNET-Pbun">
     <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/185570614-f8e5d4b2-c09e-46ab-ab96-e565e5a82d40.png">
-    <meta property="og:image:alt" content="Mikrotik RouterOS Auto Backup to Mail Generator By BuanaNET-Pbun">
+    <meta property="og:image:alt" content="Mikrotik RouterOS Auto Backup to e-Mail Generator By BuanaNET-Pbun">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-backup-to-mail.html">
     <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
@@ -20,7 +20,7 @@
     <style>
       /* -----------------------------------------------------------------
       ####################################################################
-      # MIKROTIK ROUTER-OS AUTO BACKUP TO MAIL SCRIPT GENERATOR
+      # MIKROTIK ROUTER-OS AUTO BACKUP TO e-Mail SCRIPT GENERATOR
       # Designer  : Agus Ramadhani / BuanaNET
       # Github    : https://github.com/buananetpbun
       # Site      : http://www.o-om.com
@@ -361,15 +361,15 @@
       <a href="https://buananetpbun.github.io/mikrotik-backup-to-mail.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
     </div>
     <div class="header">
-      <h1>MIKROTIK ROUTER-OS <span style='color:#ff6600;'>AUTO BACKUP TO MAIL</span> SCRIPT GENERATOR</h1>
+      <h1>MIKROTIK ROUTER-OS <span style='color:#ff6600;'>AUTO BACKUP TO e-Mail</span> SCRIPT GENERATOR</h1>
     </div>
     <div class="main-wrap">
       <div class="sidebar">
         <div style="margin-bottom:10px; height:auto">
-          <label>Mail Server</label>
+          <label>e-Mail Server</label>
           <input type="text" id="input-mail-server" value="74.125.200.109" placeholder="74.125.200.109">
           <div style='float:left; width:100px; margin-right:13px'>
-            <label>Mail Port</label>
+            <label>e-Mail Port</label>
             <input type="text" id="input-mail-port" value="587" placeholder="587">
           </div>
           <div style='float:left; width:100px'>
@@ -379,9 +379,9 @@
               <option value="ROS7">ROS v7.x</option>
             </select>
           </div>
-          <label>Mail User</label>
+          <label>e-Mail User</label>
           <input style='margin-top:5px' type="text" id="input-mail-user" value="backup.mikrotik.ros@gmail.com" placeholder="backup.mikrotik.ros@gmail.com">
-          <label>Mail Password</label>
+          <label>e-Mail Password</label>
           <input style='margin-top:5px' type="text" id="input-mail-password" value="rhcylubiwfhxycee" placeholder="rhcylubiwfhxycee">
           <div style="margin-top:10px; margin-bottom:10px; border-top:5px solid #999"></div>
           <label>Backup File Option</label>
@@ -397,11 +397,11 @@
             <option value="ipaddress">IP Routes (.rsc)</option>
             <option value="routing">Routing BGP, RIF, etc. (.rsc)</option>
           </select>
-          <label>Send Backup File To Your Mail</label>
-          <input style='margin-top:5px' type="text" id="input-to-mail" value="" placeholder="your-mail@gmail.com">
-          <label>Router Description / Mail Title</label>
+          <label>Send Backup File To Your e-Mail</label>
+          <input style='margin-top:5px' type="text" id="input-to-mail" value="" placeholder="your-mail@mail.com">
+          <label>Router Description / e-Mail Title</label>
           <input type="text" id="input-mail-from" value="" placeholder="Backup From My Router">
-          <label >Scheduler Sending Mail</label><br><span style='color:#ff6600;font-size:13px'>d (day) : 1d, 3d, 7d, 14d, 20d, 30d</span>
+          <label >Scheduler Sending e-Mail</label><br><span style='color:#ff6600;font-size:13px'>d (day) : 1d, 3d, 7d, 14d, 20d, 30d</span>
           <input style='margin-top:5px' type="text" id="input-scheduler" value="" placeholder="7d">
         </div>
         <button style="margin-top:0px;" type="button" onclick="myFunctionInput()">Generate</button>
@@ -409,7 +409,7 @@
       </div>
       <div class="content">
         <span style="margin-left:2px; margin-top:10px">
-        <b><span style="color:red"><i>Attention!</i></span> </b><span style="font-size:13px">We do not send your MikroTik backup file to our email, but you can use our mail server to send the file to your email. if you don't like it you can use your own email server.</span>
+        <b><span style="color:red"><i>Attention!</i></span> </b><span style="font-size:13px">We do not send your MikroTik backup file to our e-mail, but you can use our e-mail server to send the file to your email. if you don't like it you can use your own email server.</span>
         <br><br>
         Copy-Paste the Script to the Terminal</span>
         <div class="list-mangle">
@@ -418,47 +418,47 @@
               <td>
                 <span style="color:#ff6600;">
                 ###################################################<br>
-                # Mikrotik RouterOS Auto Backup to Mail Generator<br>
+                # Mikrotik RouterOS Auto Backup to eMail Generator<br>
                 # Date/Time: <span id="tanggalwaktu"></span><br>
                 # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
                 ###################################################<br>
                 </span>			
 				/tool e-mail set address="<span style="color:#ff6600" id="mail-server">74.125.200.109</span>" from="<span style="color:#ff6600" id="mail-from1">Backup From Distribution</span>" password="<span style="color:#ff6600" id="mail-pass">rhcylubiwfhxycee</span>" port="<span style="color:#ff6600"  id="mail-port">587</span>" <span id="tls-option">start-tls="yes"</span> </span> user="<span style="color:#ff6600" id="mail-user">backup.mikrotik.ros@gmail.com</span>"</br>
-                /system scheduler rem [find name=BACKUP-TO-MAIL]<br>
-                /system scheduler add interval=<span style="color:#ff6600" id="mail-interval">7d</span> name=BACKUP-TO-MAIL on-event="#=======================================================\r\
+                /system scheduler rem [find name=BACKUP-TO-EMAIL]<br>
+                /system scheduler add interval=<span style="color:#ff6600" id="mail-interval">7d</span> name=BACKUP-TO-EMAIL on-event="#=======================================================\r\
 				</br>
-                \n# Mikrotik RouterOS Auto Backup to Mail by Buananetpbun.github.io\r\</br>
+                \n# Mikrotik RouterOS Auto Backup to e-Mail by Buananetpbun.github.io\r\</br>
                 \n#=======================================================\r\</br>
                 \n:global date [/system clock get date]\r\</br>
                 \n:global d [:pick \$date 4 6]\r\</br>
                 \n:global m [:pick \$date 0 3] \r\</br>
                 \n:global y [:pick \$date 7 11]\r\</br>
                 <span  id="show-hide-backup">
-                \n:log warning \"-> Backup to Mail Now\"\r\</br>
+                \n:log warning \"-> Backup to e-Mail Now\"\r\</br>
                 \n:global backupfile ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\</br>
                 \n/system backup save name=\$backupfile\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup Being Emailed\"\r\</br>	
-                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to1">mail@your-mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from2">Backup From Distribution</span>\" file=(\"\$backupfile\" . \".backup\") <span id="tls-option1">start-tls="yes"</span>\r\</br>
+                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to1">your-mail@mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from2">Backup From My Router</span>\" file=(\"\$backupfile\" . \".backup\") <span id="tls-option1">start-tls="yes"</span>\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup File Remove\"\r\</br>
                 \n/file remove (\"\$backupfile\" . \".backup\")\r\</br>
                 \n:delay 5s\r\</br>
-                \n:log warning \"-> Backup To Mail Finished\"\r\</br>
+                \n:log warning \"-> Backup To e-Mail Finished\"\r\</br>
                 \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup</br>
                 </span>
                 <span  hidden id="show-hide-rsc">
-                \n:log warning \"-> Backup To Mail Now\"\r\</br>
+                \n:log warning \"-> Backup To e-Mail Now\"\r\</br>
                 \n:global backupfilersc ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\</br>
                 \n<span id="export-rsc"></span> file=\$backupfilersc\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup Being Emailed\"\r\</br>	
-                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to2">mail@your-mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from3">Backup From Distribution</span>\" file=(\"\$backupfilersc\" . \".rsc\") <span id="tls-option2">start-tls="yes"</span>\r\</br>
+                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to2">your-mail@your.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from3">Backup From My Router</span>\" file=(\"\$backupfilersc\" . \".rsc\") <span id="tls-option2">start-tls="yes"</span>\r\</br>
                 \n:delay 20s\r\</br>
                 \n:log warning \"-> Backup File Remove\"\r\</br>
                 \n/file remove (\"\$backupfilersc\" . \".rsc\")\r\</br>
                 \n:delay 5s\r\</br>
-                \n:log warning \"-> Backup To Mail Finished\"\r\</br>
+                \n:log warning \"-> Backup To e-Mail Finished\"\r\</br>
                 \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup</br>
                 </span>
               </td>
