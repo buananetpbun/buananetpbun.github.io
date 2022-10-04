@@ -423,43 +423,43 @@
                 # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
                 ###################################################<br>
                 </span>			
-				/tool e-mail set address="<span style="color:#ff6600" id="mail-server">74.125.200.109</span>" from="<span style="color:#ff6600" id="mail-from1">Backup From Distribution</span>" password="<span style="color:#ff6600" id="mail-pass">rhcylubiwfhxycee</span>" port="<span style="color:#ff6600"  id="mail-port">587</span>" <span id="tls-option">start-tls="yes"</span> </span> user="<span style="color:#ff6600" id="mail-user">backup.mikrotik.ros@gmail.com</span>"</br>
+				/tool e-mail set address="<span style="color:#ff6600" id="mail-server">74.125.200.109</span>" from="<span style="color:#ff6600" id="mail-from1">Backup From Distribution</span>" password="<span style="color:#ff6600" id="mail-pass">rhcylubiwfhxycee</span>" port="<span style="color:#ff6600"  id="mail-port">587</span>" <span id="tls-option">start-tls="yes"</span> </span> user="<span style="color:#ff6600" id="mail-user">backup.mikrotik.ros@gmail.com</span>"<br>
                 /system scheduler rem [find name=BACKUP-TO-EMAIL]<br>
                 /system scheduler add interval=<span style="color:#ff6600" id="mail-interval">7d</span> name=BACKUP-TO-EMAIL on-event="#=======================================================\r\
-				</br>
-                \n# Mikrotik RouterOS Auto Backup to E-Mail by Buananetpbun.github.io\r\</br>
-                \n#=======================================================\r\</br>
-                \n:global date [/system clock get date]\r\</br>
-                \n:global d [:pick \$date 4 6]\r\</br>
-                \n:global m [:pick \$date 0 3] \r\</br>
-                \n:global y [:pick \$date 7 11]\r\</br>
+				<br>
+                \n# Mikrotik RouterOS Auto Backup to E-Mail by Buananetpbun.github.io\r\<br>
+                \n#=======================================================\r\<br>
+                \n:global date [/system clock get date]\r\<br>
+                \n:global d [:pick \$date 4 6]\r\<br>
+                \n:global m [:pick \$date 0 3] \r\<br>
+                \n:global y [:pick \$date 7 11]\r\<br>
                 <span  id="show-hide-backup">
-                \n:log warning \"-> Backup to E-Mail Now\"\r\</br>
-                \n:global backupfile ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\</br>
-                \n/system backup save name=\$backupfile\r\</br>
-                \n:delay 20s\r\</br>
-                \n:log warning \"-> Backup Being E-Mailed\"\r\</br>	
-                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to1">your-mail@mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from2">Backup From My Router</span>\" file=(\"\$backupfile\" . \".backup\") <span id="tls-option1">start-tls="yes"</span>\r\</br>
-                \n:delay 20s\r\</br>
-                \n:log warning \"-> Backup File Remove\"\r\</br>
-                \n/file remove (\"\$backupfile\" . \".backup\")\r\</br>
-                \n:delay 5s\r\</br>
-                \n:log warning \"-> Backup To E-Mail Finished\"\r\</br>
-                \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup</br>
+                \n:log warning \"-> Backup to E-Mail Now\"\r\<br>
+                \n:global backupfile ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\<br>
+                \n/system backup save name=\$backupfile\r\<br>
+                \n:delay 20s\r\<br>
+                \n:log warning \"-> Backup Being E-Mailed\"\r\<br>	
+                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to1">your-mail@mail.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from2">Backup From My Router</span>\" file=(\"\$backupfile\" . \".backup\") <span id="tls-option1">start-tls="yes"</span>\r\<br>
+                \n:delay 20s\r\<br>
+                \n:log warning \"-> Backup File Remove\"\r\<br>
+                \n/file remove (\"\$backupfile\" . \".backup\")\r\<br>
+                \n:delay 5s\r\<br>
+                \n:log warning \"-> Backup To E-Mail Finished\"\r\<br>
+                \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup<br>
                 </span>
                 <span  hidden id="show-hide-rsc">
-                \n:log warning \"-> Backup To E-Mail Now\"\r\</br>
-                \n:global backupfilersc ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\</br>
-                \n<span id="export-rsc"></span> file=\$backupfilersc\r\</br>
-                \n:delay 20s\r\</br>
-                \n:log warning \"-> Backup Being E-Mailed\"\r\</br>	
-                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to2">your-mail@your.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from3">Backup From My Router</span>\" file=(\"\$backupfilersc\" . \".rsc\") <span id="tls-option2">start-tls="yes"</span>\r\</br>
-                \n:delay 20s\r\</br>
-                \n:log warning \"-> Backup File Remove\"\r\</br>
-                \n/file remove (\"\$backupfilersc\" . \".rsc\")\r\</br>
-                \n:delay 5s\r\</br>
-                \n:log warning \"-> Backup To E-Mail Finished\"\r\</br>
-                \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup</br>
+                \n:log warning \"-> Backup To E-Mail Now\"\r\<br>
+                \n:global backupfilersc ([/system identity get name] . \"-\" . \"\$m-\$d-\$y\")\r\<br>
+                \n<span id="export-rsc"></span> file=\$backupfilersc\r\<br>
+                \n:delay 20s\r\<br>
+                \n:log warning \"-> Backup Being E-Mailed\"\r\<br>	
+                \n/tool e-mail send to=\"<span style="color:#ff6600" id="mail-to2">your-mail@your.com</span>\" subject=([/system identity get name] . \" - \". [/system clock get time] . \" - \" . [/system clock get date] . \"\") from=\"<span style="color:#ff6600" id="mail-from3">Backup From My Router</span>\" file=(\"\$backupfilersc\" . \".rsc\") <span id="tls-option2">start-tls="yes"</span>\r\<br>
+                \n:delay 20s\r\<br>
+                \n:log warning \"-> Backup File Remove\"\r\<br>
+                \n/file remove (\"\$backupfilersc\" . \".rsc\")\r\<br>
+                \n:delay 5s\r\<br>
+                \n:log warning \"-> Backup To E-Mail Finished\"\r\<br>
+                \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup<br>
                 </span>
               </td>
             </tr>
