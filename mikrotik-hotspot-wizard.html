@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset='utf-8'/>
+    <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MikroTik Hotspot Wizard - BuanaNETPBun.Github.io</title>
-    <meta content='MikroTik Hotspot Wizard Script Generator for RouterOS - BuanaNETPBun.Github.io' name='description'/>
-    <meta content='block, webside, dns, doh, DNS over HTTPS, burst, calculator, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
-    <meta content='index, follow, noodp' name='robots'/>
+    <meta content='MikroTik Hotspot Wizard Script Generator for RouterOS - BuanaNETPBun.Github.io' name='description'>
+    <meta content='block, webside, dns, doh, DNS over HTTPS, burst, calculator, load balancing, pcc,LB, script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
     <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="MikroTik Hotspot Wizard By BuanaNET-Pbun">
     <meta property="og:description" content="MikroTik Hotspot Wizard By BuanaNET-Pbun">
@@ -85,6 +85,8 @@
       padding: 0;
       overflow: hidden;
       background-color: #f9f9f9;
+	  background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
+	  margin-right:10px;
       }
       .mymenu li {
       float: left;
@@ -232,7 +234,6 @@
       cursor: pointer;
       }  
     </style>
-  <body>
     <body onLoad="callmodal()">
       <div class="mymenu">
         <ul>
@@ -240,7 +241,6 @@
           <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
           <li><a href="javascript:callmodal()">DONATE</a></li>
           <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
-          <img style="float:right; margin-right:10px;margin-top:2px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
         </ul>
       </div>
       <div id="fb-root"></div>
@@ -249,7 +249,7 @@
         <div class="logo">
           <a href="https://buananetpbun.github.io/mikrotik-hotspot-wizard.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
           <div style="float:right">
-            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
           </div>
           <div style="float:right; margin-right:5px; margin-top:3px">
             <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
@@ -259,9 +259,9 @@
           <h1>MikroTik Hotspot Wizard</h1>
           <div class="tab">
             <b>Target Interface WAN / Internet </b>
-            <p><input type="text" placeholder="ether1" oninput="this.className = ''" value="ether1" id="eth-int"></p>
+            <input type="text" placeholder="ether1" oninput="this.className = ''" value="ether1" id="eth-int">
             <b>Target Interface WLAN / Hotspot</b>
-            <p><input type="text" placeholder="ether2" oninput="this.className = ''" value="ether2" id="eth-hs"></p>
+            <input type="text" placeholder="ether2" oninput="this.className = ''" value="ether2" id="eth-hs">
             <span style="float:left !important;">
             <input type="checkbox" id="myCheck" onclick="myCheck()">
             <label for="myCheck"> Use Mikrotik Internal Wireless</label>
@@ -269,26 +269,26 @@
           </div>
           <div class="tab">
             <b>DNS Name</b> (hotspot domain name)
-            <p><input type="text" placeholder="myhotspot.net" oninput="this.className = ''" value="myhotspot.net" id="url-hs"></p>
+            <input type="text" placeholder="myhotspot.net" oninput="this.className = ''" value="myhotspot.net" id="url-hs">
             <b>SSID Name</b> (mikrotik internal wireless support only)
-            <p><input disabled type="text" placeholder="My Wifi Home" oninput="this.className = ''" value="My Wifi Home" id="ssid-hs"></p>
+            <input disabled type="text" placeholder="My Wifi Home" oninput="this.className = ''" value="My Wifi Home" id="ssid-hs">
           </div>
           <div class="tab">
             <span style="width: 295px;float:left">
               <b>User Name </b>
-              <p><input type="text" placeholder="admin" oninput="this.className = ''" value="user" id="u-name"></p>
+              <input type="text" placeholder="admin" oninput="this.className = ''" value="user" id="u-name">
             </span>
             <span style="width: 295px;float:right">
               <b>Shared User</b>
-              <p><input type="text" placeholder="10" oninput="this.className = ''" value="10" id="shared-user"></p>
+              <input type="text" placeholder="10" oninput="this.className = ''" value="10" id="shared-user">
             </span>
             <span style="width: 295px;float:left">
               <b>Password</b>
-              <p><input type="text" placeholder="12345" oninput="this.className = ''" value="user123" id="u-pass"></p>
+              <input type="text" placeholder="12345" oninput="this.className = ''" value="user123" id="u-pass">
             </span>
             <span style="width: 295px;float:right">
               <b>Limit Per User</b> (Upload/Download)
-              <p><input type="text" placeholder="1M/2M" oninput="this.className = ''" value="1M/2M" id="limit-user"></p>
+              <input type="text" placeholder="1M/2M" oninput="this.className = ''" value="1M/2M" id="limit-user">
             </span>
             <div style="clear:both"></div>
           </div>
@@ -317,7 +317,7 @@
               <br>
               /ip hotspot profile add dns-name="<span style="color: #ff6600" id="d1">myhotspot.net</span>" hotspot-address="<span style="color: #ff6600">10.5.50.1</span>" html-directory=<span style="color: #ff6600">hotspot</span> login-by="<span style="color: #ff6600">cookie,http-chap,http-pap</span>" name="<span style="color: #ff6600">serv-prof-</span><span style="color: #ff6600" id="d2">myhotspot.net</span>"
               <br>
-              /ip hotspot add address-pool="<span style="color: #ff6600">pool-</span><span style="color: #ff6600" id="e1">myhotspot.net</span>" interface="<span style="color: #ff6600" id="e2">ether2</span>" name="<span style="color: #ff6600" id="ip-address-int">server-</span><span style="color: #ff6600" id="e3">myhotspot.net</span>" profile="<span style="color: #ff6600">serv-prof-</span><span style="color: #ff6600" id="e4">myhotspot.net</span>" disabled=<span style="color: #ff6600" id="e4">no</span>
+              /ip hotspot add address-pool="<span style="color: #ff6600">pool-</span><span style="color: #ff6600" id="e1">myhotspot.net</span>" interface="<span style="color: #ff6600" id="e2">ether2</span>" name="<span style="color: #ff6600" id="ip-address-int">server-</span><span style="color: #ff6600" id="e3">myhotspot.net</span>" profile="<span style="color: #ff6600">serv-prof-</span><span style="color: #ff6600" id="e4">myhotspot.net</span>" disabled=<span style="color: #ff6600">no</span>
               <br>
               /ip hotspot user profile add name="<span style="color: #ff6600">prof-</span><span style="color: #ff6600" id="f1">myhotspot.net</span>" rate-limit="<span style="color: #ff6600" id="f2">1M/2M</span>" shared-users="<span style="color: #ff6600" id="f3">10</span>"
               <br>
