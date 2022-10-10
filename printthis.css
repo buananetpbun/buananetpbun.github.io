@@ -1,3 +1,15 @@
+html, body {
+padding:0;
+margin:0;
+background:#fff
+}
+.list-mangle {
+height: 652px;
+width: 466px;
+padding: 4px;
+margin-top:8px;
+margin-bottom:12px;
+}
 .qrcode {
 padding-top:187px;
 padding-left:95px;
@@ -10,9 +22,4 @@ position:absolute;
 font-size:20pt;
 font-weight: bold;
 text-align: center;
-}
-html, body {
-padding:0;
-margin:0;
-background:#fff
 }
