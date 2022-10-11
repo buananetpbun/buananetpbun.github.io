@@ -1,0 +1,25 @@
+html, body {
+padding:0;
+margin:0;
+background:#fff
+}
+.list-mangle {
+height: 652px;
+width: 466px;
+padding: 4px;
+margin-top:0px;
+margin-bottom:0px;
+}
+.qrcode {
+padding-top:187px;
+padding-left:95px;
+position:absolute;
+}
+.ssid {
+padding-top:11px;
+padding-left:80px;
+position:absolute;
+font-size:20pt;
+font-weight: bold;
+text-align: center;
+}
