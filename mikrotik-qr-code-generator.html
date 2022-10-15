@@ -1,476 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset='utf-8'>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Free Hotspot and Wi-Fi QR Code Generator - BuanaNETPBun.Github.io</title>
-      <meta content='Free Hotspot and Wi-Fi QR Code Script Generator for MikroTik or Wireless Router Only - BuanaNETPBun.Github.io' name='description'>
-      <meta content='hotspot, username, password, script generator, mikrotik, router, winbox, termimal, rsc, script, wireless, rtrwnet' name='keywords'>
-      <meta content='index, follow, noodp' name='robots'>
-      <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
-      <meta property="og:title" content="Free Hotspot and Wi-Fi QR Code Generator By BuanaNET-Pbun">
-      <meta property="og:description" content="Free Hotspot and Wi-Fi QR Code Generator By BuanaNET-Pbun">
-      <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/185570614-f8e5d4b2-c09e-46ab-ab96-e565e5a82d40.png">
-      <meta property="og:image:alt" content="Free Hotspot and Wi-Fi QR Code Generator By BuanaNET-Pbun">
-      <meta property="og:type" content="website">
-      <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-qr-code-generator.html">
-      <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
-      <script async defer src="https://buttons.github.io/buttons.js"></script>  
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/lrsjng.jquery-qrcode/0.14.0/jquery-qrcode.min.js" type="text/javascript"></script>
-      <script src="//buananetpbun.github.io/qr-code/printThis.js" type="text/javascript"></script>
-      <link rel="prefetch" href="//buananetpbun.github.io/qr-code/A5.png">
-      <link rel="prefetch" href="//buananetpbun.github.io/qr-code/A6.png">
-      <link rel="prefetch" href="//buananetpbun.github.io/qr-code/A7.png">
-      <style>
-         /* -----------------------------------------------------------------
-         ####################################################################
-         # FREE HOTSPOT AND FREE WI-FI QR CODE GENERATOR
-         # Designer  : Agus Ramadhani / BuanaNET
-         # Github    : https://github.com/buananetpbun
-         # Site      : http://www.o-om.com
-         # Sosmed    : https://fb.me/buananetmikrotik	
-         ####################################################################
-         -------------------------------------------------------------------- */  
-         *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-         body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-         body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
-         html, body {
-         height: 100%;
-         width:100%;
-         margin-top: 0px;
-         padding:0;
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
-         }
-         * {
-         box-sizing: border-box;
-         }
-         .logo {
-         margin-top:10px; 
-         color: #ddd;
-         text-decoration:none;
-         font-size:27px;
-         font-weight:bold; 
-         }	
-         .logo a{
-         color:#ddd !important;
-         text-decoration:none !important;
-         }
-         .Menu{
-         width:100%;
-         border-bottom:1px solid #ccc;
-         height:100%;
-         padding-bottom: 15px;
-         margin-bottom: 20px;
-         font-size:14px;
-         font-weight:bold;
-         }
-         #wrap{
-         width:735px;
-         margin:0 auto;
-         padding:10px;
-         }
-         .header{
-         height:auto; 
-         width:100%;
-         margin-top:5px;
-         margin-bottom:10px;
-         border-top:1px solid #555;
-         }
-         .main-wrap{
-         display: flex;
-         }   
-         .content{
-         flex:1;
-         float:right;
-         padding: 10px;
-         border-top:1px solid #bbb;
-         border-bottom:1px solid #bbb;
-         border-right:1px solid #bbb;
-         background:#ddd;
-         border-radius:0 5px 05px 0; 
-         }
-         .sidebar{
-         float:left;
-         width:250px;
-         Padding-top:8px;
-         padding-left: 30px;
-         Padding-right:20px;
-         Padding-bottom:20px;
-         background-color:#ddd;
-         border:0px solid #bbb; 
-         height:auto;
-         border-radius:5px 0 0 5px;   
-         }
-         .footer{
-         font-size:13px;
-         padding-top:10px;
-         padding-bottom:15px; 
-         text-align:center;
-         clear:both;
-         width:auto;
-         color:#ddd
-         }
-         h1 {
-         color:#ddd;
-         font-size:22px;
-         margin-bottom:10px;
-         margin-top:10px;
-         }
-         a:link {
-         color: #ff6600;
-         }
-         a:visited {
-         color: #ff6600;
-         }
-         a:hover {
-         color: #ff6600;
-         }
-         a:active {
-         color: #ff6600;
-         }
-         .menu {
-         clear:both;
-         width:auto;
-         padding-bottom:13px;
-         }
-         .menu1 {
-         width:360px;
-         margin-bottom:1px;
-         font-weight:bold;
-         background-color:#4CAF50;
-         padding:6px;
-         color:white;
-         display: inline-block;
-         margin:0;
-         }
-         .menu1 a:link {
-         text-decoration:none;
-         color:white;
-         }
-         .menu1 a:visited{
-         text-decoration:none;
-         color:white;
-         }
-         .menu2 {
-         width:300px;
-         margin-bottom:1px;
-         font-weight:bold;
-         background-color:#bbb;
-         padding:6px;
-         color:white;
-         display: inline-block;
-         margin:0;
-         }
-         .menu2 a:link{
-         text-decoration:none;
-         color:white;
-         }
-         .menu2 a:visited{
-         text-decoration:none;
-         color:white;
-         }
-         button {
-         color: #fff;
-         background-color: #ff6600;
-         border-color: #ff6600;
-         border:none;
-         padding:8px;
-         margin-right:5px;
-         width:100%;
-         font-size:15px;
-         font-weight:bold;
-         cursor: pointer;
-         border-radius: 5px;
-         color: #fff;
-         }
-         button:hover {
-         background-color: #ccc;
-         color: #111;
-         }
-         .row:after {
-         content: "";
-         display: table;
-         clear: both;
-         }  
-         input[type=checkbox]{
-         margin-right:7px; 
-         }
-         input[type=text], select, textarea {
-         width: 100%;
-         padding: 10px;
-         border: 1px solid #bbb;
-         border-radius: 1px;
-         resize: vertical;
-         margin-bottom:12px;
-         font-size:15px !important;
-         border-radius:5px; 
-         }
-         label {
-         padding: 5px 5px 5px 0;
-         display: inline-block;
-         }
-         input[type=submit] {
-         background-color: #ff6600;
-         color: white;
-         padding: 12px 20px;
-         border: none;
-         border-radius: 1px;
-         cursor: pointer;
-         float: right;
-         border-radius:5px; 
-         }
-         input[type=submit]:hover {
-         background-color: #45a049;
-         }
-         .col-25 {
-         float: left;
-         width: 25%;
-         margin-top: 6px;
-         }
-         .col-75 {
-         float: left;
-         width: 75%;
-         margin-top: 6px;
-         }
-         /* Clear floats after the columns */
-         .row:after {
-         content: "";
-         display: table;
-         clear: both;
-         }
-         .list-game {
-         height: 200px;
-         background:white;
-         overflow: scroll;
-         overflow-x: hidden;
-         width: 100%;
-         margin-top:2px;
-         padding: 3px;
-         border: 1px solid rgba(0,0,0,0.25);
-         border-radius:5px;  
-         }
-         .list-game label {
-         padding: 0;
-         display: inline-block;
-         } 
-         .list-mangle {
-         height: 605px;
-         width: 428px;
-         padding: 4px;
-         margin-top:8px;
-         margin-bottom:8px;
-         border-radius:4px;
-         background:#fff
-         }
-         table, tr, td {
-         border: none;
-         }
-         .mymenu {
-         margin:0 auto;
-         background-color: #f9f9f9;
-         width:600px;
-         border-radius:0 0 5px 5px;
-         border: 2px solid #f9f9f9;
-         font-weight:bold;
-         font-size:14px;
-         }
-         .mymenu ul {
-         list-style-type: none;
-         margin: 0;
-         padding: 0;
-         overflow: hidden;
-         background-color: #f9f9f9;
-         background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
-         margin-right:10px;
-         }
-         .mymenu li {
-         float: left;
-         }
-         .mymenu li a {
-         display: block;
-         color: #555;
-         text-align: center;
-         padding: 8px 10px;
-         text-decoration: none;
-         }
-         .mymenu li a:hover {
-         background-color: #f0f0f0;
-         color: #111;
-         }  
-         /* The Modal (background) */
-         .modal {
-         display: none; /* Hidden by default */
-         position: fixed; /* Stay in place */
-         z-index: 1; /* Sit on top */
-         padding-top: 150px; /* Location of the box */
-         left: 0;
-         top: 0;
-         width: 100%; /* Full width */
-         height: 100%; /* Full height */
-         overflow: auto; /* Enable scroll if needed */
-         background-color: rgb(0,0,0); /* Fallback color */
-         background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-         }
-         /* Modal Content */
-         .modal-content {
-         line-height:1.4;
-         border-radius: 5px;
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-         color:#ddd;
-         margin: auto;
-         padding: 20px;
-         border: 1px solid #444;
-         width: 390px;
-         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-         font-weight:bold;
-         }
-         .modal-content p {
-         padding:0;
-         margin:5px 5px 0 17px;
-         display:list-item;
-         line-height:2.0;
-         list-style: disc;
-         }
-         /* The Close Button */
-         .close {
-         color: #aaaaaa;
-         float: right;
-         font-size: 30px;
-         font-weight: bold;
-         margin-top:-20px;
-         margin-right:-10px;
-         }
-         .close:hover,
-         .close:focus {
-         color: orange;
-         text-decoration: none;
-         cursor: pointer;
-         } 
-         .qrcode {
-         padding-top:193px;
-         padding-left:95px;
-         position:absolute;
-         }
-         .ssid {
-         padding-top:28px;
-         padding-left:90px;
-         position:absolute;
-         font-size:17pt;
-         font-weight: bold;
-         text-align: center;
-         color:#222;
-         }
-      </style>
-   </head>
-   <body onLoad="callmodal()">
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-      <div class="mymenu">
-         <ul>
-            <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
-            <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-            <li><a href="javascript:callmodal()">DONATE</a></li>
-            <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
-         </ul>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Hotspot and Wi-Fi QR Code Generator - BuanaNETPBun.Github.io</title>
+    <meta content='Free Hotspot and Wi-Fi QR Code Script Generator for MikroTik or Wireless Router Only - BuanaNETPBun.Github.io' name='description'>
+    <meta content='hotspot, username, password, script generator, mikrotik, router, winbox, termimal, rsc, script, wireless, rtrwnet' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Free Hotspot and Wi-Fi QR Code Generator By BuanaNET-Pbun">
+    <meta property="og:description" content="Free Hotspot and Wi-Fi QR Code Generator By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/185570614-f8e5d4b2-c09e-46ab-ab96-e565e5a82d40.png">
+    <meta property="og:image:alt" content="Free Hotspot and Wi-Fi QR Code Generator By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-qr-code-generator.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lrsjng.jquery-qrcode/0.14.0/jquery-qrcode.min.js" type="text/javascript"></script>
+    <script src="//buananetpbun.github.io/qr-code/printThis.js" type="text/javascript"></script>
+    <script src="//buananetpbun.github.io/qr-code/easy.qrcode.min.js" type="text/javascript"></script>
+    <link rel="prefetch" href="//buananetpbun.github.io/qr-code/A5.png">
+    <link rel="prefetch" href="//buananetpbun.github.io/qr-code/A6.png">
+    <link rel="prefetch" href="//buananetpbun.github.io/qr-code/A7.png">
+    <style>
+      /* -----------------------------------------------------------------
+      ####################################################################
+      # FREE HOTSPOT AND FREE WI-FI QR CODE GENERATOR
+      # Designer  : Agus Ramadhani / BuanaNET
+      # Github    : https://github.com/buananetpbun
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananetmikrotik	
+      ####################################################################
+      -------------------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .logo {
+      margin-top:10px; 
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      font-size:14px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:735px;
+      margin:0 auto;
+      padding:10px;
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:5px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      display: flex;
+      }   
+      .content{
+      flex:1;
+      float:right;
+      padding: 10px;
+      border-top:1px solid #bbb;
+      border-bottom:1px solid #bbb;
+      border-right:1px solid #bbb;
+      background:#ddd;
+      border-radius:0 5px 05px 0; 
+      }
+      .sidebar{
+      float:left;
+      width:250px;
+      Padding-top:8px;
+      padding-left: 30px;
+      Padding-right:20px;
+      Padding-bottom:20px;
+      background-color:#ddd;
+      border:0px solid #bbb; 
+      height:auto;
+      border-radius:5px 0 0 5px;   
+      }
+      .footer{
+      font-size:13px;
+      padding-top:10px;
+      padding-bottom:15px; 
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+      h1 {
+      color:#ddd;
+      font-size:22px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:8px;
+      margin-right:5px;
+      width:100%;
+      font-size:15px;
+      font-weight:bold;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=checkbox]{
+      margin-right:7px; 
+      }
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      margin-bottom:12px;
+      font-size:15px !important;
+      border-radius:5px; 
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      float: right;
+      border-radius:5px; 
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      border-radius:5px;  
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 605px;
+      width: 428px;
+      padding: 4px;
+      margin-top:8px;
+      margin-bottom:8px;
+      border-radius:4px;
+      background:#fff
+      }
+      table, tr, td {
+      border: none;
+      }
+      .mymenu {
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:600px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
+      margin-right:10px;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      }  
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+      .qrcode {
+      padding-top:185px;
+      padding-left:80px;
+      position:absolute;
+      }
+      .ssid {
+      padding-top:28px;
+      padding-left:90px;
+      position:absolute;
+      font-size:17pt;
+      font-weight: bold;
+      text-align: center;
+      color:#E12D00;
+      }
+    </style>
+  </head>
+  <body onLoad="callmodal()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
+      </ul>
+    </div>
+    <div id="wrap">
+      <div class="logo">	  
+        <a href="https://buananetpbun.github.io/mikrotik-qr-code-generator.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
       </div>
-      <div id="wrap">
-         <div class="logo">	  
-            <a href="https://buananetpbun.github.io/mikrotik-qr-code-generator.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
-         </div>
-         <div class="header">
-            <h1>FREE HOTSPOT AND FREE WI-FI <span style="color:#ff6600">QR CODE</span> GENERATOR</h1>
-         </div>
-         <div class="main-wrap">
-            <div class="sidebar">
-               <div style="margin-bottom:10px; height:auto">
-                  <label>Wireless Router Option</label>
-                  <select id="input-wifi-option" onchange="myFunctionInput()">
-                     <option value="wifi-hotspot">MikroTik Hotspot</option>
-                     <option value="wifi-non-hotspot">Wireless Router Only</option>
-                  </select>
-                  <span id="hide1" style="display:none">
-                     <label>Wi-Fi Encryption</label>
-                     <select id="input-encryption" onchange="myFunctionInput()">
-                        <option value="WPA">WPA / WPA2</option>
-                        <option value="WEP">WEP</option>
-                        <option value="nopass">None</option>
-                     </select>
-                  </span>
-                  <label>SSID / Network</label>
-                  <input style='margin-top:5px' type="text" id="input-ssid" value="MYCAFE-WIFI" placeholder="Your Name SSID">
-                  <span id="hide2">
-                  <label>Hotspot DNS Name</label>
-                  <input style='margin-top:5px' type="text" id="input-dns-name" value="mycafe.net" placeholder="myhotspot.net">
-                  </span>
-                  <span id="hide3">
-                  <label>Username</label>
-                  <input type="text" id="input-username" value="mycafe" placeholder="username">
-                  </span>
-                  <label >Password / Wi-Fi Key</label><br>
-                  <input style='margin-top:5px' type="text" id="input-password" value="12345678" placeholder="Password">
-               </div>
-               <button style="margin-bottom: 20px;" type="button" onclick="myFunctionInput()">Generate QR Code</button>
-               <div style="clear: both;"></div>
-               <label>Template Size</label>
-               <select id="template-size" onchange="myFunctionInput()">
-                  <option value="A5">A5 Paper Size</option>
-                  <option value="A6">A6 Paper Size</option>
-                  <option value="A7">A7 Paper Size</option>
-               </select>
-               <button style="margin-top:0px; margin-bottom:20px;" id="btn" type="button" onclick="printDiv()">Print QR Template</button>
-            </div>
-            <div class="content">
-               <div  id="list-mangle" class="list-mangle">
-                  <div class="qrcode" id="qrcode"></div>
-                  <span class="ssid" id="text-ssid">MYCAFE-WIFI</span>
-                  <img id="myImage" src="//buananetpbun.github.io/qr-code/A5.png" alt="QR CODE WIFI GENERATOR">
-               </div>
-               <span style="font-size:12px"><b>Result: <span style="color:#ff6600" id="result">https://buananetpbun.github.io</span></b></span>
-            </div>
-         </div>
-         <div class="footer">
-            <div style="margin-top:0px; text-align:center">
-               © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
-            </div>
-         </div>
+      <div class="header">
+        <h1>FREE HOTSPOT AND FREE WI-FI <span style="color:#ff6600">QR CODE</span> GENERATOR</h1>
       </div>
-      <div id="myModal" class="modal">
-         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
-            <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
-            <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
-            <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
-            <br>
-            <div style="float:left;margin-right:3px; margin-top:0px">
-               <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-            </div>
-            <div style="margin-top:0px">    
-               <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
-               <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
-               <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
-            </div>
-         </div>
+      <div class="main-wrap">
+        <div class="sidebar">
+          <div style="margin-bottom:10px; height:auto">
+            <label>Wireless Router Option</label>
+            <select id="input-wifi-option" onchange="myFunctionInput()">
+              <option value="wifi-hotspot">MikroTik Hotspot</option>
+              <option value="wifi-non-hotspot">Wireless Router Only</option>
+            </select>
+            <span id="hide1" style="display:none">
+              <label>Wi-Fi Encryption</label>
+              <select id="input-encryption" onchange="myFunctionInput()">
+                <option value="WPA">WPA / WPA2</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">None</option>
+              </select>
+            </span>
+            <label>SSID / Network</label>
+            <input style='margin-top:5px' type="text" id="input-ssid" value="MYCAFE-WIFI" placeholder="Your Name SSID">
+            <span id="hide2">
+            <label>Hotspot DNS Name</label>
+            <input style='margin-top:5px' type="text" id="input-dns-name" value="mycafe.net" placeholder="myhotspot.net">
+            </span>
+            <span id="hide3">
+            <label>Username</label>
+            <input type="text" id="input-username" value="mycafe" placeholder="username">
+            </span>
+            <label >Password / Wi-Fi Key</label><br>
+            <input style='margin-top:5px' type="text" id="input-password" value="12345678" placeholder="Password">
+          </div>
+          <button style="margin-bottom: 20px;" type="button" onclick="myFunctionInput()">Generate QR Code</button>
+          <div style="clear: both;"></div>
+          <label>Template Size</label>
+          <select id="template-size" onchange="myFunctionInput()">
+            <option value="A5">A5 Paper Size</option>
+            <option value="A6">A6 Paper Size</option>
+            <option value="A7">A7 Paper Size</option>
+          </select>
+          <button style="margin-top:0px; margin-bottom:20px;" id="btn" type="button" onclick="printDiv()">Print QR Template</button>
+        </div>
+        <div class="content">
+          <div  id="list-mangle" class="list-mangle">
+            <div class="qrcode" id="qrcode"></div>
+            <span class="ssid" id="text-ssid">MYCAFE-WIFI</span>
+            <img id="myImage" src="//buananetpbun.github.io/qr-code/A5.png" alt="QR CODE WIFI GENERATOR">
+          </div>
+          <span style="font-size:12px"><b>Result: <span style="color:#ff6600" id="result">https://buananetpbun.github.io</span></b></span>
+        </div>
       </div>
-      <script>
-         document.getElementById("year").innerHTML = new Date().getFullYear();
-              var modal = document.getElementById("myModal");
-              var span = document.getElementsByClassName("close")[0];
-              function callmodal() {
-                modal.style.display = "block";
-              }
-              span.onclick = function() {
-                modal.style.display = "none";
-              }
-              window.onclick = function(event) {
-                if (event.target == modal) {
-                  modal.style.display = "none";
-                }
-              }
-      </script> 
-      <script> 
-      (function(_0x593f47,_0x41ba19){var _0x45cd33=_0x5ce6,_0x3f7072=_0x593f47();while(!![]){try{var _0x1ff051=parseInt(_0x45cd33(0x92))/0x1+parseInt(_0x45cd33(0xa7))/0x2*(-parseInt(_0x45cd33(0xa3))/0x3)+parseInt(_0x45cd33(0x86))/0x4*(parseInt(_0x45cd33(0x90))/0x5)+-parseInt(_0x45cd33(0x95))/0x6+-parseInt(_0x45cd33(0x7a))/0x7*(parseInt(_0x45cd33(0x81))/0x8)+parseInt(_0x45cd33(0x78))/0x9*(parseInt(_0x45cd33(0xbc))/0xa)+parseInt(_0x45cd33(0x8c))/0xb*(parseInt(_0x45cd33(0x7e))/0xc);if(_0x1ff051===_0x41ba19)break;else _0x3f7072['push'](_0x3f7072['shift']());}catch(_0x33d5bf){_0x3f7072['push'](_0x3f7072['shift']());}}}(_0x1557,0xb91ff));function _0x1557(){var _0x48da3a=['src','//buananetpbun.github.io/qr-code/A6.png','getElementsByTagName','wifi-non-hotspot','myImage','103px','21729QKzGgp','printThis','28px','231','124KijIhd','25px','https://',';H:;','buananet','63px','github','17pt','paddingLeft',';P:','replace','WIFI:S:','pbun','block','value','#fff','10pt','input-password','href','145px','29px','30gWgPWE','/login?username=','text-ssid','innerHTML','style','/mikrotik-qr-code-generator.html','result','3210741ucXePi','72px','16282KHBLVv','canvas','//buananetpbun.github.io/qr-code/A5.png','#qrcode','9144CMRoPE','none','hide2','4024QidAOn','70px','input-dns-name','input-encryption','90px','4EOHSvB','fontSize','193px','input-username','getElementById','display','594xUjDXC','hide3',';T:','qrcode','477905RUByNJ','154','1453780AvFlYD','95px','paddingTop','1700646WuqXhh','hide1','#list-mangle','//buananetpbun.github.io/qr-code/printthis.css','input-wifi-option','https://buananetpbun.github.io','input-ssid','template-size'];_0x1557=function(){return _0x48da3a;};return _0x1557();}function printDiv(){var _0xfc7fa9=_0x5ce6;$(_0xfc7fa9(0x97))[_0xfc7fa9(0xa4)]({'importCSS':![],'importStyle':![],'loadCSS':_0xfc7fa9(0x98)});}function _0x5ce6(_0x9465c9,_0x114f6b){var _0x1557c8=_0x1557();return _0x5ce6=function(_0x5ce60e,_0x29d73f){_0x5ce60e=_0x5ce60e-0x78;var _0x226fb0=_0x1557c8[_0x5ce60e];return _0x226fb0;},_0x5ce6(_0x9465c9,_0x114f6b);}function myFunctionInput(){var _0x2ae3c3=_0x5ce6,_0x41a32=document[_0x2ae3c3(0x8a)](_0x2ae3c3(0xa1)),_0x28b67e=document[_0x2ae3c3(0x8a)]('text-ssid'),_0x4aac82=document['getElementById'](_0x2ae3c3(0x8f));if(document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x99))[_0x2ae3c3(0xb5)]=='wifi-hotspot'){document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x96))['style'][_0x2ae3c3(0x8b)]=_0x2ae3c3(0x7f),document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x80))[_0x2ae3c3(0xc0)]['display']=_0x2ae3c3(0xb4),document['getElementById'](_0x2ae3c3(0x8d))[_0x2ae3c3(0xc0)][_0x2ae3c3(0x8b)]=_0x2ae3c3(0xb4);var _0x5f39f=document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x83))['value'],_0x708ed=document['getElementById'](_0x2ae3c3(0x9b))['value'],_0x2b79ab=document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x89))['value'],_0x302ffa=document[_0x2ae3c3(0x8a)](_0x2ae3c3(0xb8))['value'];document[_0x2ae3c3(0x8a)](_0x2ae3c3(0xbe))[_0x2ae3c3(0xbf)]=_0x708ed;var _0x5d2472='http://'+_0x5f39f+_0x2ae3c3(0xbd)+_0x2b79ab+'&password='+_0x302ffa;document['getElementById'](_0x2ae3c3(0xc2))[_0x2ae3c3(0xbf)]=_0x5d2472;}var _0x192b4d=_0x2ae3c3(0xa9),_0x341b36=_0x2ae3c3(0xab),_0x3f5cc2=_0x2ae3c3(0xb3),_0x4d953a=_0x2ae3c3(0xad),_0x3f22a3='io',_0x434d55=_0x192b4d+_0x341b36+_0x3f5cc2+'.'+_0x4d953a+'.'+_0x3f22a3;window['location'][_0x2ae3c3(0xb9)]!==_0x434d55+'/mikrotik-qr-code-generator.html'&&location[_0x2ae3c3(0xb1)](_0x434d55+_0x2ae3c3(0xc1));if(document['getElementById'](_0x2ae3c3(0x99))[_0x2ae3c3(0xb5)]==_0x2ae3c3(0xa0)){document['getElementById'](_0x2ae3c3(0x96))[_0x2ae3c3(0xc0)][_0x2ae3c3(0x8b)]=_0x2ae3c3(0xb4),document['getElementById']('hide2')[_0x2ae3c3(0xc0)][_0x2ae3c3(0x8b)]=_0x2ae3c3(0x7f),document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x8d))['style']['display']='none';var _0x708ed=document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x9b))[_0x2ae3c3(0xb5)],_0x302ffa=document[_0x2ae3c3(0x8a)](_0x2ae3c3(0xb8))['value'],_0x49874f=document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x84))[_0x2ae3c3(0xb5)];document[_0x2ae3c3(0x8a)]('text-ssid')[_0x2ae3c3(0xbf)]=_0x708ed;var _0x1e7e07=_0x708ed['replace'](';','\x5c;'),_0x1ee096=_0x1e7e07[_0x2ae3c3(0xb1)](':','\x5c:'),_0x5d2472=_0x2ae3c3(0xb2)+_0x1ee096+_0x2ae3c3(0x8e)+_0x49874f+_0x2ae3c3(0xb0)+_0x302ffa+_0x2ae3c3(0xaa);document[_0x2ae3c3(0x8a)](_0x2ae3c3(0xc2))[_0x2ae3c3(0xbf)]=_0x5d2472;}if(document['getElementById']('template-size')[_0x2ae3c3(0xb5)]=='A5'){document[_0x2ae3c3(0x8a)](_0x2ae3c3(0xa1))[_0x2ae3c3(0x9d)]=_0x2ae3c3(0x7c),_0x28b67e[_0x2ae3c3(0xc0)][_0x2ae3c3(0x94)]=_0x2ae3c3(0xa5),_0x28b67e['style']['paddingLeft']=_0x2ae3c3(0x85),_0x28b67e[_0x2ae3c3(0xc0)][_0x2ae3c3(0x87)]=_0x2ae3c3(0xae),_0x4aac82[_0x2ae3c3(0xc0)]['paddingTop']=_0x2ae3c3(0x88),_0x4aac82[_0x2ae3c3(0xc0)][_0x2ae3c3(0xaf)]=_0x2ae3c3(0x93);var _0x5d7788=_0x2ae3c3(0xa6);}if(document['getElementById'](_0x2ae3c3(0x9c))['value']=='A6'){document[_0x2ae3c3(0x8a)](_0x2ae3c3(0xa1))[_0x2ae3c3(0x9d)]=_0x2ae3c3(0x9e),_0x28b67e['style'][_0x2ae3c3(0x94)]=_0x2ae3c3(0xbb),_0x28b67e[_0x2ae3c3(0xc0)][_0x2ae3c3(0xaf)]=_0x2ae3c3(0x82),_0x28b67e['style']['fontSize']='13pt',_0x4aac82[_0x2ae3c3(0xc0)][_0x2ae3c3(0x94)]=_0x2ae3c3(0xba),_0x4aac82[_0x2ae3c3(0xc0)]['paddingLeft']=_0x2ae3c3(0x79);var _0x5d7788=_0x2ae3c3(0x91);}if(document[_0x2ae3c3(0x8a)](_0x2ae3c3(0x9c))[_0x2ae3c3(0xb5)]=='A7'){document['getElementById'](_0x2ae3c3(0xa1))['src']='//buananetpbun.github.io/qr-code/A7.png',_0x28b67e[_0x2ae3c3(0xc0)][_0x2ae3c3(0x94)]=_0x2ae3c3(0xa8),_0x28b67e[_0x2ae3c3(0xc0)][_0x2ae3c3(0xaf)]=_0x2ae3c3(0xac),_0x28b67e[_0x2ae3c3(0xc0)]['fontSize']=_0x2ae3c3(0xb7),_0x4aac82['style'][_0x2ae3c3(0x94)]=_0x2ae3c3(0xa2),_0x4aac82[_0x2ae3c3(0xc0)][_0x2ae3c3(0xaf)]='49px';var _0x5d7788='113';}jQuery(function(){var _0x2e28a2=_0x2ae3c3;jQuery(_0x2e28a2(0x7d))[_0x2e28a2(0x8f)]({'render':_0x2e28a2(0x7b),'size':_0x5d7788,'minVersion':0x5,'maxVersion':0x5,'ecLevel':'L','mode':0x0,'text':_0x5d2472,'quiet':0x0,'background':_0x2e28a2(0xb6)});});var _0x3c6f60=document[_0x2ae3c3(0x9f)](_0x2ae3c3(0x7b))[0x0];document['getElementsByClassName'](_0x2ae3c3(0x8f))[0x0]['removeChild'](_0x3c6f60);}jQuery(function(){var _0x3c8aaf=_0x5ce6;jQuery('#qrcode')[_0x3c8aaf(0x8f)]({'render':_0x3c8aaf(0x7b),'size':0xe7,'minVersion':0x5,'maxVersion':0x5,'ecLevel':'L','mode':0x0,'text':_0x3c8aaf(0x9a),'quiet':0x0,'background':_0x3c8aaf(0xb6)});});
-     </script>
-   </body>
+      <div class="footer">
+        <div style="margin-top:0px; text-align:center">
+          © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+           var modal = document.getElementById("myModal");
+           var span = document.getElementsByClassName("close")[0];
+           function callmodal() {
+             modal.style.display = "block";
+           }
+           span.onclick = function() {
+             modal.style.display = "none";
+           }
+           window.onclick = function(event) {
+             if (event.target == modal) {
+               modal.style.display = "none";
+             }
+           }
+    </script> 
+    <script> 
+      var _0x319687=_0x2c2b;(function(_0x5754e3,_0x4d1830){var _0x2d0db5=_0x2c2b,_0x3aff67=_0x5754e3();while(!![]){try{var _0x265129=-parseInt(_0x2d0db5(0x138))/0x1*(parseInt(_0x2d0db5(0x155))/0x2)+-parseInt(_0x2d0db5(0x146))/0x3+-parseInt(_0x2d0db5(0x175))/0x4+parseInt(_0x2d0db5(0x150))/0x5+-parseInt(_0x2d0db5(0x158))/0x6+-parseInt(_0x2d0db5(0x147))/0x7+-parseInt(_0x2d0db5(0x13b))/0x8*(-parseInt(_0x2d0db5(0x154))/0x9);if(_0x265129===_0x4d1830)break;else _0x3aff67['push'](_0x3aff67['shift']());}catch(_0x374524){_0x3aff67['push'](_0x3aff67['shift']());}}}(_0x39eb,0x43e37));function _0x39eb(){var _0x3ed084=['style','13pt','25px','input-dns-name','28px','#009ACD','CorrectLevel','2033750yXqEkl','value','getElementsByClassName','result','45ZwkwiN','228610ataHyD','#000000','hide2','1996032EbIubY','replace','removeChild','#B03060','innerHTML','myImage','paddingTop','hide1','github','src','paddingLeft','getElementById','https://buananetpbun.github.io/qr-code/A5.png','getElementsByTagName','hide3','qrcode','/mikrotik-qr-code-generator.html','https://','canvas','none','fontSize','29px','https://buananetpbun.github.io/qr-code/printthis.css','/login?username=','text-ssid','https://buananetpbun.github.io/qr-code/A6.png',';T:','block','input-ssid','814540IKOzkL','location','wifi-hotspot',';H:;','input-password','buananet','#ffffff','wifi-non-hotspot','display','70px','&password=','input-encryption','1jKiBGG','https://buananetpbun.github.io','input-wifi-option','1025864pUtoXX','WIFI:S:','17pt','printThis','80px','#BF3030','185px','#269926','href','142px','90px','62838hkUATk','688002rJfxCD','template-size'];_0x39eb=function(){return _0x3ed084;};return _0x39eb();}function printDiv(){var _0x37d2f3=_0x2c2b;$('#list-mangle')[_0x37d2f3(0x13e)]({'importCSS':![],'importStyle':![],'loadCSS':_0x37d2f3(0x16e)});}function myFunctionInput(){var _0x66cf37=_0x2c2b,_0x303f73=document[_0x66cf37(0x163)](_0x66cf37(0x15d)),_0x3bd472=document[_0x66cf37(0x163)](_0x66cf37(0x170)),_0x2b75ea=document[_0x66cf37(0x163)](_0x66cf37(0x167));if(document['getElementById'](_0x66cf37(0x13a))[_0x66cf37(0x151)]==_0x66cf37(0x177)){document[_0x66cf37(0x163)](_0x66cf37(0x15f))[_0x66cf37(0x149)]['display']=_0x66cf37(0x16b),document[_0x66cf37(0x163)](_0x66cf37(0x157))[_0x66cf37(0x149)][_0x66cf37(0x134)]=_0x66cf37(0x173),document[_0x66cf37(0x163)]('hide3')[_0x66cf37(0x149)][_0x66cf37(0x134)]=_0x66cf37(0x173);var _0x185efa=document[_0x66cf37(0x163)](_0x66cf37(0x14c))[_0x66cf37(0x151)],_0x1370eb=document['getElementById'](_0x66cf37(0x174))[_0x66cf37(0x151)],_0x3381b3=document[_0x66cf37(0x163)]('input-username')['value'],_0xf8f96c=document[_0x66cf37(0x163)](_0x66cf37(0x130))[_0x66cf37(0x151)];document['getElementById']('text-ssid')[_0x66cf37(0x15c)]=_0x1370eb;var _0x38e60b='http://'+_0x185efa+_0x66cf37(0x16f)+_0x3381b3+_0x66cf37(0x136)+_0xf8f96c;document[_0x66cf37(0x163)]('result')[_0x66cf37(0x15c)]=_0x38e60b;}var _0x3593c7=_0x66cf37(0x169),_0x34f762=_0x66cf37(0x131),_0x268923='pbun',_0x5561f3=_0x66cf37(0x160),_0x462b41='io',_0x5cc6d2=_0x3593c7+_0x34f762+_0x268923+'.'+_0x5561f3+'.'+_0x462b41;window[_0x66cf37(0x176)][_0x66cf37(0x143)]!==_0x5cc6d2+_0x66cf37(0x168)&&location[_0x66cf37(0x159)](_0x5cc6d2+_0x66cf37(0x168));if(document[_0x66cf37(0x163)](_0x66cf37(0x13a))[_0x66cf37(0x151)]==_0x66cf37(0x133)){document[_0x66cf37(0x163)](_0x66cf37(0x15f))[_0x66cf37(0x149)][_0x66cf37(0x134)]=_0x66cf37(0x173),document[_0x66cf37(0x163)](_0x66cf37(0x157))[_0x66cf37(0x149)][_0x66cf37(0x134)]=_0x66cf37(0x16b),document[_0x66cf37(0x163)](_0x66cf37(0x166))[_0x66cf37(0x149)][_0x66cf37(0x134)]=_0x66cf37(0x16b);var _0x1370eb=document[_0x66cf37(0x163)]('input-ssid')[_0x66cf37(0x151)],_0xf8f96c=document[_0x66cf37(0x163)](_0x66cf37(0x130))[_0x66cf37(0x151)],_0xd7f563=document[_0x66cf37(0x163)](_0x66cf37(0x137))['value'];document[_0x66cf37(0x163)]('text-ssid')[_0x66cf37(0x15c)]=_0x1370eb;var _0x27bd2a=_0x1370eb['replace'](';','\x5c;'),_0x21d228=_0x27bd2a[_0x66cf37(0x159)](':','\x5c:'),_0x38e60b=_0x66cf37(0x13c)+_0x21d228+_0x66cf37(0x172)+_0xd7f563+';P:'+_0xf8f96c+_0x66cf37(0x12f);document['getElementById'](_0x66cf37(0x153))['innerHTML']=_0x38e60b;}if(document[_0x66cf37(0x163)]('template-size')[_0x66cf37(0x151)]=='A5'){document[_0x66cf37(0x163)](_0x66cf37(0x15d))[_0x66cf37(0x161)]=_0x66cf37(0x164),_0x3bd472[_0x66cf37(0x149)][_0x66cf37(0x15e)]=_0x66cf37(0x14d),_0x3bd472[_0x66cf37(0x149)]['paddingLeft']=_0x66cf37(0x145),_0x3bd472[_0x66cf37(0x149)][_0x66cf37(0x16c)]=_0x66cf37(0x13d),_0x2b75ea[_0x66cf37(0x149)][_0x66cf37(0x15e)]=_0x66cf37(0x141),_0x2b75ea[_0x66cf37(0x149)]['paddingLeft']=_0x66cf37(0x13f);var _0x536041=0xfa,_0x378a2d=0xfa;}if(document['getElementById'](_0x66cf37(0x148))[_0x66cf37(0x151)]=='A6'){document['getElementById'](_0x66cf37(0x15d))[_0x66cf37(0x161)]=_0x66cf37(0x171),_0x3bd472[_0x66cf37(0x149)][_0x66cf37(0x15e)]=_0x66cf37(0x16d),_0x3bd472[_0x66cf37(0x149)][_0x66cf37(0x162)]=_0x66cf37(0x135),_0x3bd472[_0x66cf37(0x149)][_0x66cf37(0x16c)]=_0x66cf37(0x14a),_0x2b75ea[_0x66cf37(0x149)][_0x66cf37(0x15e)]=_0x66cf37(0x144),_0x2b75ea[_0x66cf37(0x149)][_0x66cf37(0x162)]='60px';var _0x536041=0xa0,_0x378a2d=0xa0;}if(document[_0x66cf37(0x163)](_0x66cf37(0x148))[_0x66cf37(0x151)]=='A7'){document['getElementById'](_0x66cf37(0x15d))[_0x66cf37(0x161)]='https://buananetpbun.github.io/qr-code/A7.png',_0x3bd472[_0x66cf37(0x149)]['paddingTop']=_0x66cf37(0x14b),_0x3bd472[_0x66cf37(0x149)]['paddingLeft']='63px',_0x3bd472['style'][_0x66cf37(0x16c)]='10pt',_0x2b75ea[_0x66cf37(0x149)][_0x66cf37(0x15e)]='102px',_0x2b75ea[_0x66cf37(0x149)]['paddingLeft']='50px';var _0x536041=0x78,_0x378a2d=0x78;}var _0x3d939b={'text':_0x38e60b,'width':_0x536041,'height':_0x378a2d,'colorDark':'#000000','colorLight':'#ffffff','PI':_0x66cf37(0x140),'PO':_0x66cf37(0x142),'AI':_0x66cf37(0x14e),'AO':_0x66cf37(0x15b),'dotScale':0.9,'drawer':_0x66cf37(0x16a),'version':0x3,'correctLevel':QRCode[_0x66cf37(0x14f)]['L']};new QRCode(document[_0x66cf37(0x163)](_0x66cf37(0x167)),_0x3d939b);var _0x262741=document[_0x66cf37(0x165)](_0x66cf37(0x16a))[0x0];document[_0x66cf37(0x152)](_0x66cf37(0x167))[0x0][_0x66cf37(0x15a)](_0x262741);}var ssid_size=document[_0x319687(0x163)]('text-ssid'),qrcode_size=document[_0x319687(0x163)](_0x319687(0x167));ssid_size[_0x319687(0x149)][_0x319687(0x15e)]=_0x319687(0x14d),ssid_size[_0x319687(0x149)][_0x319687(0x162)]=_0x319687(0x145),ssid_size[_0x319687(0x149)][_0x319687(0x16c)]=_0x319687(0x13d),qrcode_size[_0x319687(0x149)][_0x319687(0x15e)]=_0x319687(0x141),qrcode_size[_0x319687(0x149)][_0x319687(0x162)]=_0x319687(0x13f);function _0x2c2b(_0x168953,_0x32a123){var _0x39eb32=_0x39eb();return _0x2c2b=function(_0x2c2b47,_0x1171f8){_0x2c2b47=_0x2c2b47-0x12f;var _0x1fa9c4=_0x39eb32[_0x2c2b47];return _0x1fa9c4;},_0x2c2b(_0x168953,_0x32a123);}var qr_sizeA5_w=0xfa,qr_sizeA5_h=0xfa,options={'text':_0x319687(0x139),'width':0xfa,'height':0xfa,'colorDark':_0x319687(0x156),'colorLight':_0x319687(0x132),'PI':_0x319687(0x140),'PO':_0x319687(0x142),'dotScale':0.9,'AI':_0x319687(0x14e),'AO':_0x319687(0x15b),'tooltip':!![],'drawer':_0x319687(0x16a),'version':0x3,'correctLevel':QRCode[_0x319687(0x14f)]['L']};new QRCode(document[_0x319687(0x163)](_0x319687(0x167)),options);
+           
+    </script>
+  </body>
 </html>
