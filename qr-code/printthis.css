@@ -4,7 +4,7 @@ width:100%;
 margin-top: 0px;
 padding:0;
 background:#fff;
-font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;
+font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;
 }
 .list-mangle {
 height: 652px;
@@ -12,17 +12,11 @@ width: 466px;
 padding: 4px;
 margin-top:0px;
 margin-bottom:0px;
+background:#fff;
 }
 .qrcode {
-padding-top:193px;
-padding-left:83px;
 position:absolute;
 }
 .ssid {
-padding-top:28px;
-padding-left:95px;
 position:absolute;
-font-size:17pt;
-font-weight: bold;
-text-align: center;
 }
