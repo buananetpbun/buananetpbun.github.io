@@ -12,14 +12,4 @@ width: 428px;
 background:#fff;
 padding: 0px;
 margin:0px;
-margin-top:0px;
-margin-bottom:0px;
-}
-.qrcode {
-position:absolute;
-}
-.ssid {
-position:absolute;
-font-weight: bold;
-text-align: center;
 }
