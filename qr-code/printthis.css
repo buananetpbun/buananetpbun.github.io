@@ -13,3 +13,9 @@ background:#fff;
 padding: 0px;
 margin:0px;
 }
+.qrcode {
+position:absolute;
+}
+.ssid {
+position:absolute;
+}
