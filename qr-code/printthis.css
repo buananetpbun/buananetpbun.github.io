@@ -6,13 +6,6 @@ padding:0;
 background:#fff;
 font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;
 }
-.list-mangle {
-height: 605px;
-width: 428px;
-background:#fff;
-padding: 0px;
-margin:0px;
-}
 .qrcode {
 position:absolute;
 }
