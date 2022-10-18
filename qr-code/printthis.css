@@ -1,17 +1,17 @@
 html, body {
-height: 100%;
-width:100%;
-margin-top: 0px;
-padding:0;
+margin: 0px;
+padding:0px;
+top:0px;
+bottom:0px;
 background:#fff;
-font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;
+font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .list-mangle {
 height: 652px;
 width: 466px;
 padding: 4px;
-margin-top:0px;
-margin-bottom:0px;
+margin:0px;
+margin:0px;
 background:#fff;
 }
 .qrcode {
@@ -21,5 +21,5 @@ position:absolute;
 position:absolute;
 font-weight: bold;
 position:absolute;
- color:#E12D00;
+color:#E12D00;
 }
