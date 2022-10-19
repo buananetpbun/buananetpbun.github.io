@@ -365,9 +365,77 @@
     </style>
   </head>
   <body onLoad="callmodal()">
+  
     <div id="fb-root"></div>
+	
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-    <div class="mymenu">
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '790955851517978', // App ID
+          channelUrl : 'https://buananetpbun.github.io/index.html', // Channel File
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true  // parse XFBML
+        });
+
+        FB.getLoginStatus(function(response) {
+          var page_id = "790955851517978'";
+          if (response && response.authResponse) {
+            var user_id = response.authResponse.userID;
+            var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
+            FB.Data.query(fql_query).wait(function(rows) {
+              if (rows.length == 1 && rows[0].uid == user_id) {
+                console.log("LIKE");
+                $('#container_like').show();
+              } else {
+                console.log("NO LIKEY");
+                $('#container_notlike').show();
+              }
+            });
+          } else {
+            FB.login(function(response) {
+              if (response && response.authResponse) {
+                var user_id = response.authResponse.userID;
+                var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
+                FB.Data.query(fql_query).wait(function(rows) {
+                  if (rows.length == 1 && rows[0].uid == user_id) {
+                    console.log("LIKE");
+                    $('#container_like').show();
+                  } else {
+                    console.log("NO LIKEY");
+                    $('#container_notlike').show();
+                  }
+                });
+              } else {
+                console.log("NO LIKEY");
+                $('#container_notlike').show();
+              }
+            }, {scope: 'user_likes'});
+          }
+        });
+      };
+
+      // Load the SDK Asynchronously
+      (function(d){
+        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+      }(document));
+    </script>
+
+    <div id="container_notlike">
+      YOU DON'T LIKE ME :(
+    </div>
+
+    <div id="container_like">
+      YOU LIKE ME :)
+    </div>
+
+	
+	<div class="mymenu">
       <ul>
         <li><a href="https://buananetpbun.github.io">☰ HOME</a></li>
         <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
