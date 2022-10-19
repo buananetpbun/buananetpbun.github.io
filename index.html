@@ -384,7 +384,7 @@
         });
 
         FB.getLoginStatus(function(response) {
-          var page_id = "790955851517978'";
+          var page_id = "1704986183139774'";
           if (response && response.authResponse) {
             var user_id = response.authResponse.userID;
             var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
