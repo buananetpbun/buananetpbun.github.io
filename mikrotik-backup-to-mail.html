@@ -648,7 +648,10 @@
         showRegistration();
       });
 
-
+		document.querySelector("#ros-version").disabled = false;
+document.querySelector("#input-file-option").disabled = false;
+document.querySelector("#disabled-button").disabled = false;
+document.querySelector("#list-mangle").disabled = false;
 
       const showRegistration = () => {
         document.querySelector("#registration-page").classList.remove("hide");
@@ -761,6 +764,11 @@
         document.querySelector("#login-page").classList.add("hide");
         document.querySelector("#homepage").classList.remove("hide");
         document.querySelector("#myLogin").style.display = "none";
+		
+		document.querySelector("#ros-version").disabled = true;
+document.querySelector("#input-file-option").disabled = true;
+document.querySelector("#disabled-button").disabled = true;
+document.querySelector("#list-mangle").disabled = true;
       };
 
       const signOut = () => {
