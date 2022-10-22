@@ -650,8 +650,17 @@
 
 		document.querySelector("#ros-version").disabled = true
 document.querySelector("#input-file-option").disabled = true;
-document.querySelector("#disabled-button").disabled = true;
-document.querySelector("#copyscript").disabled = true;
+document.querySelector("#input-mail-server").disabled = true;
+document.querySelector("#input-mail-port").disabled = true;
+
+		document.querySelector("#input-mail-user").disabled = true
+document.querySelector("#input-mail-password").disabled = true;
+document.querySelector("#input-to-mail").disabled = true;
+document.querySelector("#input-mail-from").disabled = true;
+document.querySelector("#input-scheduler").disabled = true;
+
+
+
 
       const showRegistration = () => {
         document.querySelector("#registration-page").classList.remove("hide");
@@ -767,8 +776,15 @@ document.querySelector("#copyscript").disabled = true;
 		
 		document.querySelector("#ros-version").disabled = false;
 document.querySelector("#input-file-option").disabled = false;
-document.querySelector("#disabled-button").disabled = false;
-document.querySelector("#copyscript").disabled = false;
+document.querySelector("#input-mail-server").disabled = false;
+document.querySelector("#input-mail-port").disabled = false;
+
+		document.querySelector("#input-mail-user").disabled = false
+document.querySelector("#input-mail-password").disabled = false;
+document.querySelector("#input-to-mail").disabled = false;
+document.querySelector("#input-mail-from").disabled = false;
+document.querySelector("#input-scheduler").disabled = false;
+
       };
 
       const signOut = () => {
