@@ -424,7 +424,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
   
-  <body onLoad="CallLogin()">
+  <body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
     <div class="mymenu">
@@ -610,6 +610,12 @@
     </div>
 
     <script>
+	
+		window.onload = function() {
+ CallLogin();
+ CallModal();
+}
+
       document.getElementById("year").innerHTML = new Date().getFullYear();
            var modal_click = document.getElementById("myModal");
            var span_click = document.getElementsByClassName("close")[0];
