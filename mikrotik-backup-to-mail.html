@@ -633,7 +633,7 @@
 	
 		window.onload = function() {
  CallLogin();
- CallModal();
+ //CallModal();
 }
 
       document.getElementById("year").innerHTML = new Date().getFullYear();
@@ -809,6 +809,8 @@
       auth.onAuthStateChanged((firebaseUser) => {
         if (firebaseUser) {
           showHomepage();
+		  document.querySelector("#modal-content-login").style.display = "none";
+        document.querySelector("#myLogin").style.display = "none";
         }
       });
 
