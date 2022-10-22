@@ -402,27 +402,7 @@
       display:list-item;
       line-height:2.0;
       list-style: disc;
-      }
-	   .modal-content-login {
-      line-height:1.4;
-      border-radius: 5px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-      color:#ddd;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #444;
-      width: 390px;
-      box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      font-weight:bold;
-      }
-      .modal-content-login p {
-      padding:0;
-      margin:5px 5px 0 17px;
-      display:list-item;
-      line-height:2.0;
-      list-style: disc;
-      }
-	  
+      }  
       /* The Close Button */
       .close {
       color: #aaaaaa;
@@ -579,7 +559,7 @@
       </div>
     </div>
     <div id="myLogin" class="modal-login">
-      <div id="modal-content-login" class="modal-content-login">
+      <div class="modal-content">
         <div class="forms-out">
           <div class="forms-in">
             <div id="registration-page" class="hide">
@@ -631,11 +611,6 @@
 
     <script>
 	
-		window.onload = function() {
- //CallLogin();
- //CallModal();
-}
-
       document.getElementById("year").innerHTML = new Date().getFullYear();
            var modal_click = document.getElementById("myModal");
            var span_click = document.getElementsByClassName("close")[0];
@@ -651,10 +626,6 @@
              }
            }
 
-      function CallLogin() {
-
-        document.querySelector("#myLogin").style.display = "block";
-      }
       
             // Your web app's Firebase configuration
       var firebaseConfig = {
@@ -789,8 +760,6 @@
         document.querySelector("#registration-page").classList.add("hide");
         document.querySelector("#login-page").classList.add("hide");
         document.querySelector("#homepage").classList.remove("hide");
-		//document.querySelector(".modal-login").classList.add("hide");
-		document.querySelector("#modal-content-login").style.display = "none";
         document.querySelector("#myLogin").style.display = "none";
       };
 
