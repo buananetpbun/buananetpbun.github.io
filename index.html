@@ -459,6 +459,20 @@
       text-decoration: none;
       cursor: pointer;
       } 
+	  .close2 {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close2:hover,
+      .close2:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
       .gsib_a{height:30px; padding-left:10px !important; }
       .gsc-input input{background:#fff !important; }
       .gsc-input-box {border-radius:5px; height:33px;background:#fff !important;margin-right: -6px !important; line-height:normal !important}
@@ -684,6 +698,7 @@
     </div>
 	<div id="myLogin" class="modal-login">
       <div class="modal-content">
+	  <span class="close2">&times;</span>
         <div class="forms-out">
           <div class="forms-in">
             <div id="registration-page" class="hide">
@@ -714,7 +729,6 @@
         </div>
       </div>
     </div>
-	  
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -734,236 +748,8 @@
         </div>
       </div>
     </div>
-
     <script>
-	
-document.getElementById("year").innerHTML = new Date().getFullYear();
-var modal_click = document.getElementById("myModal");
-var span_click = document.getElementsByClassName("close")[0];
-
-function callmodal() {
-    modal_click.style.display = "block";
-}
-span_click.onclick = function() {
-    modal_click.style.display = "none";
-}
-
-
-         var modal_login = document.getElementById("myLogin");
-
-         function callmodalLogin() {
-           modal_login.style.display = "block";
-         }
-
-         window.onclick = function(event) {
-           if (event.target == modal_login) {
-             modal_login.style.display = "none";
-           }
-		  if (event.target == modal_click) {
-             modal_click.style.display = "none";
-           }
-         }
-		 
-
-
-
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
-    authDomain: "buananetpbun-5d979.firebaseapp.com",
-    databaseURL: "https://buananetpbun-5d979.firebaseio.com",
-    projectId: "buananetpbun-5d979",
-    storageBucket: "buananetpbun-5d979.appspot.com",
-    messagingSenderId: "912166778245",
-    appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
-    measurementId: "G-FSDV7HGD99"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-//invokes firebase authentication.
-const auth = firebase.auth();
-
-
-
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    var uid = user.uid;
-
-	const email = user.email;
-  document.getElementById('welcome-email').innerHTML = email
-  } else {
-
-  }
-});
-
-
-
-
-document.querySelector("#show-register").addEventListener("click", () => {
-    showRegistration();
-});
-
-const showRegistration = () => {
-    document.querySelector("#registration-page").classList.remove("hide");
-    document.querySelector("#login-page").classList.add("hide");
-    document.querySelector("#homepage").classList.add("hide");
-    document.querySelector("#show-login").classList.remove("hide");
-    document.querySelector("#show-register").classList.add("hide");
-};
-
-document.querySelector("#show-login").addEventListener("click", () => {
-    showLogin();
-});
-
-const showLogin = () => {
-    document.querySelector("#registration-page").classList.add("hide");
-    document.querySelector("#login-page").classList.remove("hide");
-    document.querySelector("#homepage").classList.add("hide");
-    document.querySelector("#show-login").classList.add("hide");
-    document.querySelector("#show-register").classList.remove("hide");
-};
-
-document.querySelector("#signout").addEventListener("click", () => {
-    signOut();
-});
-
-const register = () => {
-    const email = document.querySelector("#registration-email").value;
-    const reemail = document.querySelector("#registration-reemail").value;
-    const password = document.querySelector("#registration-password").value;
-
-    if (email.trim() == "") {
-        alert("Enter E-mail.");
-    } else if (password.trim().length < 6) {
-        alert("Password must be at least 6 characters.");
-    } else if (email != reemail) {
-        alert("emails do not match.");
-    } else {
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                alert(errorMessage);
-                // ...
-            });
-        alert("Congratulations! you are now a member.");
-    }
-};
-
-document.querySelector("#register").addEventListener("click", () => {
-    register();
-});
-
-//register when you hit the enter key
-document
-    .querySelector("#registration-password")
-    .addEventListener("keyup", (e) => {
-        if (event.keyCode === 13) {
-            e.preventDefault();
-            register();
-        }
-    });
-
-
-
-
-const login = () => {
-    const email = document.querySelector("#login-email").value;
-    const password = document.querySelector("#login-password").value;
-
-    if (email.trim() == "") {
-        alert("Enter E-mail.");
-    } else if (password.trim() == "") {
-        alert("Enter Password.");
-    } else {
-        authenticate(email, password);
-    }
-};
-
-document.querySelector("#login").addEventListener("click", () => {
-    login();
-});
-
-//sign in when you hit enter
-document
-    .querySelector("#login-password")
-    .addEventListener("keyup", (e) => {
-        if (event.keyCode === 13) {
-            e.preventDefault();
-            login();
-        }
-    });
-
-const authenticate = (email, password) => {
-    const auth = firebase.auth();
-    auth.signInWithEmailAndPassword(email, password);
-    firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-
-        .catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-
-            alert(errorMessage);
-        });
-};
-
-const showHomepage = () => {
-    document.querySelector("#registration-page").classList.add("hide");
-    document.querySelector("#login-page").classList.add("hide");
-    document.querySelector("#homepage").classList.remove("hide");
-    document.querySelector("#myLogin").style.display = "none";
-	document.querySelector("#show-login-menu").style.display = "none";
-};
-
-const signOut = () => {
-    firebase
-        .auth()
-        .signOut()
-        .then(function() {
-            location.reload();
-        })
-        .catch(function(error) {
-            alert("error signing out, check network connection");
-        });
-};
-
-auth.onAuthStateChanged((firebaseUser) => {
-    if (firebaseUser) {
-        showHomepage();
-
-    }
-});
-
-document
-    .querySelector("#forgot-password")
-    .addEventListener("click", () => {
-        const email = document.querySelector("#login-email").value;
-        if (email.trim() == "") {
-            alert("Enter Your E-mail.");
-        } else {
-            forgotPassword(email);
-        }
-    });
-
-const forgotPassword = (email) => {
-    auth
-        .sendPasswordResetEmail(email)
-        .then(function() {
-            alert("Send to your e-mail successfully! if you don't see it, please check on the spam folder.");
-        })
-        .catch(function(error) {
-            alert("invalid e-mail or bad network connection.");
-        });
-};
-
+	const _0x466719=_0x3bdf;(function(_0x281879,_0x10eac7){const _0x814ae9=_0x3bdf,_0x4762e4=_0x281879();while(!![]){try{const _0x5ef494=-parseInt(_0x814ae9(0x133))/0x1+-parseInt(_0x814ae9(0x143))/0x2+parseInt(_0x814ae9(0x13e))/0x3+-parseInt(_0x814ae9(0x144))/0x4*(-parseInt(_0x814ae9(0x12e))/0x5)+-parseInt(_0x814ae9(0x137))/0x6+parseInt(_0x814ae9(0x152))/0x7+-parseInt(_0x814ae9(0x128))/0x8*(-parseInt(_0x814ae9(0x126))/0x9);if(_0x5ef494===_0x10eac7)break;else _0x4762e4['push'](_0x4762e4['shift']());}catch(_0x4b2a7d){_0x4762e4['push'](_0x4762e4['shift']());}}}(_0x173f,0x8daa5),document[_0x466719(0x136)](_0x466719(0x134))[_0x466719(0x12a)]=new Date()['getFullYear']());var modal_click=document[_0x466719(0x136)]('myModal'),span_click=document[_0x466719(0x142)](_0x466719(0x12f))[0x0],span_click2=document['getElementsByClassName'](_0x466719(0x160))[0x0];function _0x3bdf(_0x589686,_0x3ab9d2){const _0x173f76=_0x173f();return _0x3bdf=function(_0x3bdf5d,_0x4a8e92){_0x3bdf5d=_0x3bdf5d-0x121;let _0x404839=_0x173f76[_0x3bdf5d];return _0x404839;},_0x3bdf(_0x589686,_0x3ab9d2);}function callmodal(){const _0xbcfbfd=_0x466719;modal_click['style'][_0xbcfbfd(0x123)]=_0xbcfbfd(0x157);}span_click[_0x466719(0x14b)]=function(){const _0x2efce4=_0x466719;modal_click[_0x2efce4(0x129)][_0x2efce4(0x123)]=_0x2efce4(0x12d);};var modal_login=document[_0x466719(0x136)](_0x466719(0x124));function callmodalLogin(){const _0x21d03c=_0x466719;modal_login[_0x21d03c(0x129)]['display']=_0x21d03c(0x157);}window['onclick']=function(_0xce09be){const _0x49204f=_0x466719;_0xce09be['target']==modal_login&&(modal_login[_0x49204f(0x129)]['display']='none'),_0xce09be['target']==modal_click&&(modal_click[_0x49204f(0x129)]['display']=_0x49204f(0x12d));},span_click2['onclick']=function(){const _0x1bb2a=_0x466719;modal_login['style'][_0x1bb2a(0x123)]=_0x1bb2a(0x12d);};var firebaseConfig={'apiKey':'AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','authDomain':'buananetpbun-5d979.firebaseapp.com','databaseURL':'https://buananetpbun-5d979.firebaseio.com','projectId':_0x466719(0x161),'storageBucket':_0x466719(0x127),'messagingSenderId':_0x466719(0x155),'appId':'1:912166778245:web:c845ec7e720f7bd84580ec','measurementId':'G-FSDV7HGD99'};firebase['initializeApp'](firebaseConfig);const auth=firebase[_0x466719(0x153)]();firebase['auth']()[_0x466719(0x164)](_0x5b0f6c=>{const _0x3f1d34=_0x466719;if(_0x5b0f6c){var _0x5a3801=_0x5b0f6c[_0x3f1d34(0x14d)];const _0x12aef1=_0x5b0f6c[_0x3f1d34(0x15e)];document[_0x3f1d34(0x136)]('welcome-email')[_0x3f1d34(0x12a)]=_0x12aef1;}else{}}),document[_0x466719(0x148)](_0x466719(0x165))[_0x466719(0x13c)](_0x466719(0x145),()=>{showRegistration();});const showRegistration=()=>{const _0x4ed8f5=_0x466719;document[_0x4ed8f5(0x148)](_0x4ed8f5(0x140))['classList']['remove'](_0x4ed8f5(0x12c)),document[_0x4ed8f5(0x148)]('#login-page')['classList'][_0x4ed8f5(0x122)]('hide'),document[_0x4ed8f5(0x148)](_0x4ed8f5(0x158))[_0x4ed8f5(0x15d)][_0x4ed8f5(0x122)](_0x4ed8f5(0x12c)),document[_0x4ed8f5(0x148)](_0x4ed8f5(0x15c))[_0x4ed8f5(0x15d)]['remove'](_0x4ed8f5(0x12c)),document[_0x4ed8f5(0x148)]('#show-register')[_0x4ed8f5(0x15d)][_0x4ed8f5(0x122)](_0x4ed8f5(0x12c));};document[_0x466719(0x148)](_0x466719(0x15c))[_0x466719(0x13c)]('click',()=>{showLogin();});const showLogin=()=>{const _0x1213cc=_0x466719;document['querySelector']('#registration-page')[_0x1213cc(0x15d)][_0x1213cc(0x122)](_0x1213cc(0x12c)),document[_0x1213cc(0x148)]('#login-page')[_0x1213cc(0x15d)][_0x1213cc(0x147)](_0x1213cc(0x12c)),document[_0x1213cc(0x148)](_0x1213cc(0x158))[_0x1213cc(0x15d)]['add']('hide'),document['querySelector'](_0x1213cc(0x15c))[_0x1213cc(0x15d)][_0x1213cc(0x122)]('hide'),document[_0x1213cc(0x148)](_0x1213cc(0x165))['classList'][_0x1213cc(0x147)](_0x1213cc(0x12c));};document[_0x466719(0x148)](_0x466719(0x12b))[_0x466719(0x13c)](_0x466719(0x145),()=>{signOut();});function _0x173f(){const _0x3edec2=['9090PltvtH','buananetpbun-5d979.appspot.com','7712pEohlB','style','innerHTML','#signout','hide','none','1825HegeRX','close','#login-email','sendPasswordResetEmail','reload','373321ejjlxE','year','preventDefault','getElementById','4066284HxgwBV','catch','trim','Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.','code','addEventListener','Enter\x20E-mail.','2216934PkpMbX','#myLogin','#registration-page','message','getElementsByClassName','709596hLvszV','1060BSKSMR','click','Enter\x20Your\x20E-mail.','remove','querySelector','createUserWithEmailAndPassword','#login-password','onclick','#show-login-menu','uid','Password\x20must\x20be\x20at\x20least\x206\x20characters.','signInWithEmailAndPassword','keyup','#register','1237257RGdiXd','auth','length','912166778245','error\x20signing\x20out,\x20check\x20network\x20connection','block','#homepage','signOut','then','emails\x20do\x20not\x20match.','#show-login','classList','email','Congratulations!\x20you\x20are\x20now\x20a\x20member.','close2','buananetpbun-5d979','value','keyCode','onAuthStateChanged','#show-register','#login-page','add','display','myLogin','#registration-password'];_0x173f=function(){return _0x3edec2;};return _0x173f();}const register=()=>{const _0x394e49=_0x466719,_0x1a1c4f=document['querySelector']('#registration-email')[_0x394e49(0x162)],_0x22b59e=document[_0x394e49(0x148)]('#registration-reemail')[_0x394e49(0x162)],_0x14b62a=document[_0x394e49(0x148)]('#registration-password')['value'];if(_0x1a1c4f[_0x394e49(0x139)]()=='')alert(_0x394e49(0x13d));else{if(_0x14b62a[_0x394e49(0x139)]()[_0x394e49(0x154)]<0x6)alert(_0x394e49(0x14e));else _0x1a1c4f!=_0x22b59e?alert(_0x394e49(0x15b)):(auth[_0x394e49(0x149)](_0x1a1c4f,_0x14b62a)['catch'](function(_0x3de83d){const _0x5228a2=_0x394e49;var _0x395fba=_0x3de83d[_0x5228a2(0x13b)],_0x584bef=_0x3de83d[_0x5228a2(0x141)];alert(_0x584bef);}),alert(_0x394e49(0x15f)));}};document[_0x466719(0x148)](_0x466719(0x151))[_0x466719(0x13c)](_0x466719(0x145),()=>{register();}),document[_0x466719(0x148)](_0x466719(0x125))[_0x466719(0x13c)](_0x466719(0x150),_0x6fb63f=>{const _0x511068=_0x466719;event[_0x511068(0x163)]===0xd&&(_0x6fb63f[_0x511068(0x135)](),register());});const login=()=>{const _0x31725b=_0x466719,_0x5e6446=document[_0x31725b(0x148)](_0x31725b(0x130))[_0x31725b(0x162)],_0x532a7f=document[_0x31725b(0x148)]('#login-password')[_0x31725b(0x162)];if(_0x5e6446[_0x31725b(0x139)]()=='')alert('Enter\x20E-mail.');else _0x532a7f['trim']()==''?alert('Enter\x20Password.'):authenticate(_0x5e6446,_0x532a7f);};document['querySelector']('#login')['addEventListener'](_0x466719(0x145),()=>{login();}),document['querySelector'](_0x466719(0x14a))[_0x466719(0x13c)]('keyup',_0x29a595=>{const _0x2baba=_0x466719;event['keyCode']===0xd&&(_0x29a595[_0x2baba(0x135)](),login());});const authenticate=(_0x31db09,_0xe4812e)=>{const _0x2ed916=_0x466719,_0x2ae13b=firebase[_0x2ed916(0x153)]();_0x2ae13b[_0x2ed916(0x14f)](_0x31db09,_0xe4812e),firebase[_0x2ed916(0x153)]()[_0x2ed916(0x14f)](_0x31db09,_0xe4812e)[_0x2ed916(0x138)](function(_0x3ae7df){const _0x53ff2c=_0x2ed916;var _0x5b63a0=_0x3ae7df[_0x53ff2c(0x13b)],_0x2fedb4=_0x3ae7df[_0x53ff2c(0x141)];alert(_0x2fedb4);});},showHomepage=()=>{const _0x268bc0=_0x466719;document[_0x268bc0(0x148)]('#registration-page')[_0x268bc0(0x15d)]['add'](_0x268bc0(0x12c)),document[_0x268bc0(0x148)](_0x268bc0(0x121))[_0x268bc0(0x15d)][_0x268bc0(0x122)](_0x268bc0(0x12c)),document['querySelector']('#homepage')[_0x268bc0(0x15d)][_0x268bc0(0x147)](_0x268bc0(0x12c)),document[_0x268bc0(0x148)](_0x268bc0(0x13f))[_0x268bc0(0x129)][_0x268bc0(0x123)]=_0x268bc0(0x12d),document['querySelector'](_0x268bc0(0x14c))[_0x268bc0(0x129)][_0x268bc0(0x123)]='none';},signOut=()=>{const _0x579032=_0x466719;firebase[_0x579032(0x153)]()[_0x579032(0x159)]()[_0x579032(0x15a)](function(){const _0x48aee9=_0x579032;location[_0x48aee9(0x132)]();})[_0x579032(0x138)](function(_0x16e2c1){const _0xe6b630=_0x579032;alert(_0xe6b630(0x156));});};auth['onAuthStateChanged'](_0x55a2e5=>{_0x55a2e5&&showHomepage();}),document['querySelector']('#forgot-password')['addEventListener'](_0x466719(0x145),()=>{const _0x5be3c0=_0x466719,_0x253346=document[_0x5be3c0(0x148)](_0x5be3c0(0x130))[_0x5be3c0(0x162)];_0x253346[_0x5be3c0(0x139)]()==''?alert(_0x5be3c0(0x146)):forgotPassword(_0x253346);});const forgotPassword=_0x1888e2=>{const _0x201bed=_0x466719;auth[_0x201bed(0x131)](_0x1888e2)[_0x201bed(0x15a)](function(){const _0x13c517=_0x201bed;alert(_0x13c517(0x13a));})[_0x201bed(0x138)](function(_0x1401aa){alert('invalid\x20e-mail\x20or\x20bad\x20network\x20connection.');});};
     </script>
   </body>
 </html>
