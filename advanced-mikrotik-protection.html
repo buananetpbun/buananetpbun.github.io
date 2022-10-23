@@ -257,15 +257,17 @@
          table, tr, td {
          border: none;
          }
-         .mymenu {
-         margin:0 auto;
-         background-color: #f9f9f9;
-         width:600px;
-         border-radius:0 0 5px 5px;
-         border: 2px solid #f9f9f9;
-         font-weight:bold;
-         font-size:14px;
-         }
+		  .mymenu {
+		  z-index: 10;
+		  margin:0 auto;
+		  background-color: #f9f9f9;
+		  width:600px;
+		  border-radius:0 0 5px 5px;
+		  border: 2px solid #f9f9f9;
+		  font-weight:bold;
+		  font-size:14px;
+		  position:relative;
+		  }
          .mymenu ul {
          list-style-type: none;
          margin: 0;
@@ -289,55 +291,141 @@
          background-color: #f0f0f0;
          color: #111;
          } 
-         /* The Modal (background) */
-         .modal {
-         display: none; /* Hidden by default */
-         position: fixed; /* Stay in place */
-         z-index: 1; /* Sit on top */
-         padding-top: 150px; /* Location of the box */
-         left: 0;
-         top: 0;
-         width: 100%; /* Full width */
-         height: 100%; /* Full height */
-         overflow: auto; /* Enable scroll if needed */
-         background-color: rgb(0,0,0); /* Fallback color */
-         background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-         }
-         /* Modal Content */
-         .modal-content {
-         line-height:1.4;
-         border-radius: 5px;
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-         color:#ddd;
-         margin: auto;
-         padding: 20px;
-         border: 1px solid #444;
-         width: 390px;
-         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-         font-weight:bold;
-         }
-         .modal-content p {
-         padding:0;
-         margin:5px 5px 0 17px;
-         display:list-item;
-         line-height:2.0;
-         list-style: disc;
-         }
-         /* The Close Button */
-         .close {
-         color: #cccaaa;
-         float: right;
-         font-size: 30px;
-         font-weight: bold;
-         margin-top:-20px;
-         margin-right:-10px;
-         }
-         .close:hover,
-         .close:focus {
-         color: orange;
-         text-decoration: none;
-         cursor: pointer;
-         } 
+		   /* LOGIN Content */
+		  .forms-out {
+			margin: 0 auto;
+		   padding: 0;
+		   font-size:14px;
+		  }
+		  .forms-in {
+			width: 100%;
+			margin: 0 auto;
+			color: white;
+			padding: 0;
+			font-size:14px;
+		  }
+		  .forms-in div {
+			padding: 0;
+			max-width: 350px;
+			margin: 0 auto;      
+			border-radius: 5px;
+			margin-bottom: 15px;
+		  }
+		  .forms-in h3 {
+			text-align: center;
+		  }
+		  .forms-in input {
+			border: none;
+			width: 100%;
+			margin-bottom: 15px;
+			padding: 10px;
+			box-sizing: border-box;
+			border-radius: 3px;
+		  }
+
+		  .forms-in button {
+			border: none;
+			padding: 7px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-weight: bold;
+			margin-top:10px;
+			margin-bottom:15px;
+		  }
+
+		  .forms-in button:hover {
+			opacity: 0.7;
+		  }
+
+		  .hide {
+			display: none;
+		  }
+
+		  #forgot-password {
+			cursor: pointer;
+		  }
+
+		  #forgot-password:hover {
+			opacity: 0.7;
+		  }
+		  
+		  #show-register {
+			cursor: pointer;
+		  }
+
+		  #show-register:hover {
+			opacity: 0.7;
+		  }
+		  
+		  #show-login {
+			cursor: pointer;
+		  }
+
+		   #show-login:hover {
+			opacity: 0.7;
+		  }
+		 /* The Modal (background) */
+		  .modal {
+		  display: block; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 150px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		  }
+		  .modal-login {
+		  display: block; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 2; /* Sit on top */
+		  padding-top: 150px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		  }
+		  /* Modal Content */
+		  .modal-content {
+		  line-height:1.4;
+		  border-radius: 5px;
+		  background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+		  color:#ddd;
+		  margin: auto;
+		  padding: 20px;
+		  border: 1px solid #444;
+		  width: 380px;
+		  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+		  font-weight:bold;
+		  }
+		  .modal-content p {
+		  padding:0;
+		  margin:5px 5px 0 17px;
+		  display:list-item;
+		  line-height:2.0;
+		  list-style: disc;
+		  }
+		  /* The Close Button */
+		  .close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 30px;
+		  font-weight: bold;
+		  margin-top:-20px;
+		  margin-right:-10px;
+		  }
+		  .close:hover,
+		  .close:focus {
+		  color: orange;
+		  text-decoration: none;
+		  cursor: pointer;
+		  } 
          table {
          font-family: arial, sans-serif;
          border-collapse: collapse;
@@ -353,7 +441,9 @@
          }
       </style>
    </head>
-   <body onLoad="callmodal()">
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+   <body>
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
       <div class="mymenu">
@@ -363,6 +453,10 @@
             <li><a href="javascript:callmodal()">DONATE</a></li>
             <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
          </ul>
+	  <div id="homepage" class="hide">
+         <button style="width:100px !important; padding:2px; margin:3px; font-weight:bold" id="signout">Logout</button>
+         <span style="font-weight:normal">Welcome [ <span style="color:green" id="welcome-email"></span> ]</span>
+     </div>		 
       </div>
       <div id="wrap">
          <div class="logo">
@@ -833,6 +927,38 @@ if ($a != "") do={[
             © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
          </div>
       </div>
+	<div id="myLogin" class="modal-login">
+      <div class="modal-content">
+        <div class="forms-out">
+          <div class="forms-in">
+            <div id="registration-page" class="hide">
+              <h2>SIGN UP</h2>
+              <br>
+              <label>E-Mail</label>
+              <input type="email" id="registration-email" placeholder="E-Mail"></input>
+              <label>Confirm E-mail</label> 
+              <input type="email" id="registration-reemail" autocomplete="disable" placeholder="Confirm E-Mail"></input>
+              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
+              <input type="password" id="registration-password" placeholder="Password"></input>
+              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="font-weight:normal !important; float:right"><span id="show-login">Back to Sign-In</span></span>
+            </div>
+            <div id="login-page">
+              <h2>SIGN IN</h2>
+              <br>
+              <label>E-Mail</label>
+              <input type="email" id="login-email" placeholder="E-Mail"></input>
+              <label>Password</label>
+              <input type="password" id="login-password" placeholder="Password"></input>
+              <button style="width:100% !important;" id="login">Login</button>
+              <br>
+              <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
+              <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       <div id="myModal" class="modal">
          <div class="modal-content">
             <span class="close">&times;</span>
@@ -852,20 +978,7 @@ if ($a != "") do={[
          </div>
       </div>
       <script>
-	  document.getElementById("year").innerHTML = new Date().getFullYear();
-         var modal = document.getElementById("myModal");
-         var span = document.getElementsByClassName("close")[0];
-         function callmodal() {
-           modal.style.display = "block";
-         }
-         span.onclick = function() {
-           modal.style.display = "none";
-         }
-         window.onclick = function(event) {
-           if (event.target == modal) {
-             modal.style.display = "none";
-           }
-         }
+	  const _0x4aeb5c=_0x3bcb;(function(_0x24989e,_0x9b8ec1){const _0x53ec8e=_0x3bcb,_0x2c80f6=_0x24989e();while(!![]){try{const _0x49208a=-parseInt(_0x53ec8e(0x1bb))/0x1*(-parseInt(_0x53ec8e(0x1e5))/0x2)+parseInt(_0x53ec8e(0x1d7))/0x3+parseInt(_0x53ec8e(0x1b0))/0x4+-parseInt(_0x53ec8e(0x1d5))/0x5+parseInt(_0x53ec8e(0x1d9))/0x6+parseInt(_0x53ec8e(0x1e7))/0x7*(parseInt(_0x53ec8e(0x1ec))/0x8)+parseInt(_0x53ec8e(0x1ea))/0x9*(-parseInt(_0x53ec8e(0x1ba))/0xa);if(_0x49208a===_0x9b8ec1)break;else _0x2c80f6['push'](_0x2c80f6['shift']());}catch(_0x18ae6c){_0x2c80f6['push'](_0x2c80f6['shift']());}}}(_0x27a8,0x5c93d));function CheckFunction(){const _0x28b9ca=_0x3bcb;var _0x3d0161=document['getElementsByClassName']('modal-login');if(_0x3d0161[_0x28b9ca(0x1e2)]>0x0){}else alert(_0x28b9ca(0x1cb)),location[_0x28b9ca(0x1e3)]();}document[_0x4aeb5c(0x1cf)]('year')[_0x4aeb5c(0x1c8)]=new Date()[_0x4aeb5c(0x1d4)]();var modal_click=document[_0x4aeb5c(0x1cf)](_0x4aeb5c(0x1ca)),span_click=document['getElementsByClassName'](_0x4aeb5c(0x1b7))[0x0];function callmodal(){const _0x21ebf3=_0x4aeb5c;modal_click['style'][_0x21ebf3(0x1d6)]=_0x21ebf3(0x1c5);}span_click[_0x4aeb5c(0x1df)]=function(){const _0x3b376a=_0x4aeb5c;modal_click[_0x3b376a(0x1ee)][_0x3b376a(0x1d6)]='none';},window['onclick']=function(_0x48a760){const _0x2ffb4f=_0x4aeb5c;_0x48a760[_0x2ffb4f(0x1d3)]==modal_click&&(modal_click[_0x2ffb4f(0x1ee)]['display']=_0x2ffb4f(0x1a8));};var firebaseConfig={'apiKey':_0x4aeb5c(0x1c7),'authDomain':'buananetpbun-5d979.firebaseapp.com','databaseURL':_0x4aeb5c(0x1c2),'projectId':'buananetpbun-5d979','storageBucket':'buananetpbun-5d979.appspot.com','messagingSenderId':_0x4aeb5c(0x1af),'appId':_0x4aeb5c(0x1ab),'measurementId':'G-FSDV7HGD99'};firebase['initializeApp'](firebaseConfig);const auth=firebase['auth']();firebase[_0x4aeb5c(0x1b8)]()[_0x4aeb5c(0x1eb)](_0x39207e=>{const _0x65fda3=_0x4aeb5c;if(_0x39207e){var _0x3d330c=_0x39207e[_0x65fda3(0x1bc)];const _0x44f726=_0x39207e[_0x65fda3(0x1ce)];document[_0x65fda3(0x1cf)](_0x65fda3(0x1b2))[_0x65fda3(0x1c8)]=_0x44f726;}else{}}),document[_0x4aeb5c(0x1b4)](_0x4aeb5c(0x1dc))[_0x4aeb5c(0x1c6)]('click',()=>{showRegistration();});const showRegistration=()=>{const _0x4df2e7=_0x4aeb5c;document[_0x4df2e7(0x1b4)](_0x4df2e7(0x1b3))[_0x4df2e7(0x1ad)]['remove']('hide'),document[_0x4df2e7(0x1b4)](_0x4df2e7(0x1b5))[_0x4df2e7(0x1ad)][_0x4df2e7(0x1ed)](_0x4df2e7(0x1c0)),document[_0x4df2e7(0x1b4)]('#homepage')[_0x4df2e7(0x1ad)][_0x4df2e7(0x1ed)](_0x4df2e7(0x1c0)),document[_0x4df2e7(0x1b4)](_0x4df2e7(0x1c4))['classList'][_0x4df2e7(0x1a9)](_0x4df2e7(0x1c0)),document['querySelector'](_0x4df2e7(0x1dc))[_0x4df2e7(0x1ad)][_0x4df2e7(0x1ed)]('hide');};document[_0x4aeb5c(0x1b4)](_0x4aeb5c(0x1c4))[_0x4aeb5c(0x1c6)](_0x4aeb5c(0x1e9),()=>{showLogin();});const showLogin=()=>{const _0x2d93fc=_0x4aeb5c;document[_0x2d93fc(0x1b4)](_0x2d93fc(0x1b3))[_0x2d93fc(0x1ad)][_0x2d93fc(0x1ed)](_0x2d93fc(0x1c0)),document['querySelector'](_0x2d93fc(0x1b5))['classList'][_0x2d93fc(0x1a9)](_0x2d93fc(0x1c0)),document[_0x2d93fc(0x1b4)](_0x2d93fc(0x1e0))['classList'][_0x2d93fc(0x1ed)]('hide'),document['querySelector']('#show-login')[_0x2d93fc(0x1ad)]['add']('hide'),document[_0x2d93fc(0x1b4)](_0x2d93fc(0x1dc))[_0x2d93fc(0x1ad)][_0x2d93fc(0x1a9)](_0x2d93fc(0x1c0));};document[_0x4aeb5c(0x1b4)](_0x4aeb5c(0x1c9))[_0x4aeb5c(0x1c6)](_0x4aeb5c(0x1e9),()=>{signOut();});const register=()=>{const _0x38f03f=_0x4aeb5c,_0x2c43df=document[_0x38f03f(0x1b4)](_0x38f03f(0x1da))['value'],_0x535153=document[_0x38f03f(0x1b4)](_0x38f03f(0x1c3))['value'],_0x209d6f=document[_0x38f03f(0x1b4)](_0x38f03f(0x1db))[_0x38f03f(0x1b1)];if(_0x2c43df[_0x38f03f(0x1d8)]()=='')alert(_0x38f03f(0x1ac));else{if(_0x209d6f[_0x38f03f(0x1d8)]()[_0x38f03f(0x1e2)]<0x6)alert('Password\x20must\x20be\x20at\x20least\x206\x20characters.');else _0x2c43df!=_0x535153?alert(_0x38f03f(0x1e8)):(auth[_0x38f03f(0x1de)](_0x2c43df,_0x209d6f)[_0x38f03f(0x1cc)](function(_0x50285a){const _0x554c3e=_0x38f03f;var _0x1766d8=_0x50285a['code'],_0x284573=_0x50285a[_0x554c3e(0x1d0)];alert(_0x284573);}),alert(_0x38f03f(0x1b6)));}};document[_0x4aeb5c(0x1b4)]('#register')['addEventListener'](_0x4aeb5c(0x1e9),()=>{register();}),document[_0x4aeb5c(0x1b4)](_0x4aeb5c(0x1db))[_0x4aeb5c(0x1c6)]('keyup',_0x4fa442=>{const _0x2d73a8=_0x4aeb5c;event[_0x2d73a8(0x1d2)]===0xd&&(_0x4fa442[_0x2d73a8(0x1cd)](),register());});const login=()=>{const _0x47ccf9=_0x4aeb5c,_0x126f55=document['querySelector'](_0x47ccf9(0x1bf))[_0x47ccf9(0x1b1)],_0xded159=document[_0x47ccf9(0x1b4)](_0x47ccf9(0x1c1))['value'];if(_0x126f55[_0x47ccf9(0x1d8)]()=='')alert(_0x47ccf9(0x1ac));else _0xded159[_0x47ccf9(0x1d8)]()==''?alert('Enter\x20Password.'):authenticate(_0x126f55,_0xded159);};document[_0x4aeb5c(0x1b4)](_0x4aeb5c(0x1e4))[_0x4aeb5c(0x1c6)](_0x4aeb5c(0x1e9),()=>{login();}),document[_0x4aeb5c(0x1b4)](_0x4aeb5c(0x1c1))[_0x4aeb5c(0x1c6)](_0x4aeb5c(0x1be),_0x138cd0=>{event['keyCode']===0xd&&(_0x138cd0['preventDefault'](),login());});function _0x27a8(){const _0x24c516=['2767434piCRMJ','#registration-email','#registration-password','#show-register','sendPasswordResetEmail','createUserWithEmailAndPassword','onclick','#homepage','#forgot-password','length','reload','#login','4978shNIiN','Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.','84hNiTGj','emails\x20do\x20not\x20match.','click','9kPEsII','onAuthStateChanged','504184FIdzXO','add','style','none','remove','signOut','1:912166778245:web:c845ec7e720f7bd84580ec','Enter\x20E-mail.','classList','signInWithEmailAndPassword','912166778245','683348GEuTZu','value','welcome-email','#registration-page','querySelector','#login-page','Congratulations!\x20you\x20are\x20now\x20a\x20member.','close','auth','code','17968610fwZjBZ','197CZhleF','uid','invalid\x20e-mail\x20or\x20bad\x20network\x20connection.','keyup','#login-email','hide','#login-password','https://buananetpbun-5d979.firebaseio.com','#registration-reemail','#show-login','block','addEventListener','AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','innerHTML','#signout','myModal','Please\x20Login\x20First.','catch','preventDefault','email','getElementById','message','then','keyCode','target','getFullYear','427640BiUPXQ','display','1148703pGtVNk','trim'];_0x27a8=function(){return _0x24c516;};return _0x27a8();}const authenticate=(_0x52827a,_0xbeeb07)=>{const _0x3fcf18=_0x4aeb5c,_0x581f47=firebase[_0x3fcf18(0x1b8)]();_0x581f47[_0x3fcf18(0x1ae)](_0x52827a,_0xbeeb07),firebase[_0x3fcf18(0x1b8)]()[_0x3fcf18(0x1ae)](_0x52827a,_0xbeeb07)[_0x3fcf18(0x1cc)](function(_0x5744aa){const _0x18a53b=_0x3fcf18;var _0x2dbe5f=_0x5744aa[_0x18a53b(0x1b9)],_0x133a5b=_0x5744aa['message'];alert(_0x133a5b);});},showHomepage=()=>{const _0x263147=_0x4aeb5c;document[_0x263147(0x1b4)](_0x263147(0x1b3))[_0x263147(0x1ad)]['add'](_0x263147(0x1c0)),document[_0x263147(0x1b4)](_0x263147(0x1b5))['classList'][_0x263147(0x1ed)]('hide'),document[_0x263147(0x1b4)]('#homepage')['classList'][_0x263147(0x1a9)](_0x263147(0x1c0)),document[_0x263147(0x1b4)]('#myLogin')['style'][_0x263147(0x1d6)]='none';},signOut=()=>{const _0x3b7ba1=_0x4aeb5c;firebase[_0x3b7ba1(0x1b8)]()[_0x3b7ba1(0x1aa)]()[_0x3b7ba1(0x1d1)](function(){const _0x760ee9=_0x3b7ba1;location[_0x760ee9(0x1e3)]();})[_0x3b7ba1(0x1cc)](function(_0x1b681e){alert('error\x20signing\x20out,\x20check\x20network\x20connection');});};function _0x3bcb(_0x5d519b,_0x4c7719){const _0x27a8d0=_0x27a8();return _0x3bcb=function(_0x3bcbac,_0x58b9a3){_0x3bcbac=_0x3bcbac-0x1a8;let _0x381a05=_0x27a8d0[_0x3bcbac];return _0x381a05;},_0x3bcb(_0x5d519b,_0x4c7719);}auth[_0x4aeb5c(0x1eb)](_0x166dab=>{_0x166dab&&showHomepage();}),document['querySelector'](_0x4aeb5c(0x1e1))[_0x4aeb5c(0x1c6)](_0x4aeb5c(0x1e9),()=>{const _0x1ccae7=_0x4aeb5c,_0x2c8087=document['querySelector'](_0x1ccae7(0x1bf))['value'];_0x2c8087['trim']()==''?alert('Enter\x20Your\x20E-mail.'):forgotPassword(_0x2c8087);});const forgotPassword=_0x26fe5f=>{const _0x2a6ad2=_0x4aeb5c;auth[_0x2a6ad2(0x1dd)](_0x26fe5f)['then'](function(){const _0x16d923=_0x2a6ad2;alert(_0x16d923(0x1e6));})[_0x2a6ad2(0x1cc)](function(_0x1c97f0){const _0x47aac2=_0x2a6ad2;alert(_0x47aac2(0x1bd));});};
       </script>   
    </body>
 </html>
