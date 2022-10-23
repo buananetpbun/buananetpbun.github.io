@@ -306,9 +306,99 @@
       background-color: #f0f0f0;
       color: #111;
       }	      
+	  button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:8px;
+      width:135px;
+      font-size:15px;
+      font-weight:bold;
+      cursor: pointer;
+      border-radius: 5px; 
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+	   /* LOGIN Content */
+	  .forms-out {
+        margin: 0 auto;
+       padding: 0;
+	   font-size:14px;
+      }
+      .forms-in {
+        width: 100%;
+        margin: 0 auto;
+        color: white;
+        padding: 0;
+		font-size:14px;
+      }
+      .forms-in div {
+        padding: 0;
+        max-width: 350px;
+        margin: 0 auto;      
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+      .forms-in h3 {
+        text-align: center;
+      }
+      .forms-in input {
+        border: none;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 3px;
+      }
+
+      .forms-in button {
+        border: none;
+        padding: 7px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+		margin-top:10px;
+		margin-bottom:15px;
+      }
+
+      .forms-in button:hover {
+        opacity: 0.7;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      #forgot-password {
+        cursor: pointer;
+      }
+
+      #forgot-password:hover {
+        opacity: 0.7;
+      }
+	  
+	  #show-register {
+        cursor: pointer;
+      }
+
+      #show-register:hover {
+        opacity: 0.7;
+      }
+	  
+	  #show-login {
+        cursor: pointer;
+      }
+
+       #show-login:hover {
+        opacity: 0.7;
+      }
+	  
       /* The Modal (background) */
       .modal {
-      display: none; /* Hidden by default */
+      display: block; /* Hidden by default */
       position: fixed; /* Stay in place */
       z-index: 1; /* Sit on top */
       padding-top: 150px; /* Location of the box */
@@ -319,6 +409,19 @@
       overflow: auto; /* Enable scroll if needed */
       background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+      }
+	  .modal-login {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 2; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
       }
       /* Modal Content */
       .modal-content {
@@ -367,77 +470,14 @@
 	  
     </style>
   </head>
-  <body onLoad="callmodal()">
+   	<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script> 
+  <body>
   
     <div id="fb-root"></div>
-	<script src="//connect.facebook.net/en_US/all.js"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '790955851517978', // App ID
-          channelUrl : 'https://buananetpbun.github.io/index.html', // Channel File
-          status     : true, // check login status
-          cookie     : true, // enable cookies to allow the server to access the session
-          xfbml      : true  // parse XFBML
-        });
-
-        FB.getLoginStatus(function(response) {
-          var page_id = "1704986183139774'";
-          if (response && response.authResponse) {
-            var user_id = response.authResponse.userID;
-            var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
-            FB.Data.query(fql_query).wait(function(rows) {
-              if (rows.length == 1 && rows[0].uid == user_id) {
-                console.log("LIKE");
-                $('#container_like').show();
-              } else {
-                console.log("NO LIKEY");
-                $('#container_notlike').show();
-              }
-            });
-          } else {
-            FB.login(function(response) {
-              if (response && response.authResponse) {
-                var user_id = response.authResponse.userID;
-                var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
-                FB.Data.query(fql_query).wait(function(rows) {
-                  if (rows.length == 1 && rows[0].uid == user_id) {
-                    console.log("LIKE");
-                    $('#container_like').show();
-                  } else {
-                    console.log("NO LIKEY");
-                    $('#container_notlike').show();
-                  }
-                });
-              } else {
-                console.log("NO LIKEY");
-                $('#container_notlike').show();
-              }
-            }, {scope: 'user_likes'});
-          }
-        });
-      };
-
-      // Load the SDK Asynchronously
-      (function(d){
-        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        d.getElementsByTagName('head')[0].appendChild(js);
-      }(document));
-    </script>
-
-    <div id="container_notlike">
-      YOU DON'T LIKE ME :(
-    </div>
-
-    <div id="container_like">
-      YOU LIKE ME :)
-    </div>
-
 	
+   
 	<div class="mymenu">
       <ul>
         <li><a href="https://buananetpbun.github.io">☰ HOME</a></li>
@@ -445,8 +485,20 @@
         <li><a href="javascript:callmodal()">DONATE</a></li>
         <li><a target="_blank" href="https://fb.me/buananetmikrotik/">CONTACT</a></li>
       </ul>
+	 <div id="show-login-menu">
+		 <button style="width:100px !important; padding:5px; margin:5px; font-weight:bold" onclick="callmodalLogin();showLogin()">Login</button>
+		 <button style="width:100px !important; padding:5px; margin:5px; font-weight:bold" onclick="callmodalLogin();showRegistration()">Sign Up</button>
+		 <span style="font-size:13px; font-weight:normal; color:#555">Single Login to access all my tools, join now, it's free :)</span>
+	</div>	 
+		 <div id="homepage" class="hide">
+         <button style="width:100px !important; padding:5px; margin:5px; font-weight:bold" id="signout">Logout</button>
+         <span style="font-weight:normal">Welcome [ <span style="color:green" id="welcome-email"></span> ]</span>
+     </div> 
+
     </div>
+
     <div class="content">
+	
       <div style="float:left; margin-right:5px; margin-top:10px">
         <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
       </div>
@@ -630,6 +682,39 @@
         © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io">buananetpbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - Creator by <a href="https://www.facebook.com/buananet.pbun">BuanaNet.Pbun</a> 
       </div>
     </div>
+	<div id="myLogin" class="modal-login">
+      <div class="modal-content">
+        <div class="forms-out">
+          <div class="forms-in">
+            <div id="registration-page" class="hide">
+              <span style="font-size:25px !important;color:#ff6600;">SIGN UP</span>
+              <br><br>
+              <label>E-Mail</label>
+              <input style="margin-top:5px" type="email" id="registration-email" placeholder="E-Mail"></input>
+              <label>Confirm E-mail</label> 
+              <input style="margin-top:5px" type="email" id="registration-reemail" autocomplete="disable" placeholder="Confirm E-Mail"></input>
+              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
+              <input style="margin-top:5px" type="password" id="registration-password" placeholder="Password"></input>
+              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="font-weight:normal !important; float:right"><span id="show-login">Back to Sign-In</span></span>
+            </div>
+            <div id="login-page">
+              <span style="font-size:25px !important; color:#ff6600;">SIGN IN</span>
+              <br><br>
+              <label>E-Mail</label>
+              <input style="margin-top:5px" type="email" id="login-email" placeholder="E-Mail"></input>
+              <label>Password</label>
+              <input style="margin-top:5px" type="password" id="login-password" placeholder="Password"></input>
+              <button style="width:100% !important;" id="login">Login</button>
+              <br>
+              <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
+              <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	  
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -649,22 +734,236 @@
         </div>
       </div>
     </div>
+
     <script>
-      document.getElementById("year").innerHTML = new Date().getFullYear();
-            var modal = document.getElementById("myModal");
-            var span = document.getElementsByClassName("close")[0];
-            function callmodal() {
-              modal.style.display = "block";
-            }
-            span.onclick = function() {
-              modal.style.display = "none";
-            }
-            window.onclick = function(event) {
-              if (event.target == modal) {
-                modal.style.display = "none";
-              }
-            }
-         
+	
+document.getElementById("year").innerHTML = new Date().getFullYear();
+var modal_click = document.getElementById("myModal");
+var span_click = document.getElementsByClassName("close")[0];
+
+function callmodal() {
+    modal_click.style.display = "block";
+}
+span_click.onclick = function() {
+    modal_click.style.display = "none";
+}
+
+
+         var modal_login = document.getElementById("myLogin");
+
+         function callmodalLogin() {
+           modal_login.style.display = "block";
+         }
+
+         window.onclick = function(event) {
+           if (event.target == modal_login) {
+             modal_login.style.display = "none";
+           }
+		  if (event.target == modal_click) {
+             modal_click.style.display = "none";
+           }
+         }
+		 
+
+
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
+    authDomain: "buananetpbun-5d979.firebaseapp.com",
+    databaseURL: "https://buananetpbun-5d979.firebaseio.com",
+    projectId: "buananetpbun-5d979",
+    storageBucket: "buananetpbun-5d979.appspot.com",
+    messagingSenderId: "912166778245",
+    appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
+    measurementId: "G-FSDV7HGD99"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+//invokes firebase authentication.
+const auth = firebase.auth();
+
+
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    var uid = user.uid;
+
+	const email = user.email;
+  document.getElementById('welcome-email').innerHTML = email
+  } else {
+
+  }
+});
+
+
+
+
+document.querySelector("#show-register").addEventListener("click", () => {
+    showRegistration();
+});
+
+const showRegistration = () => {
+    document.querySelector("#registration-page").classList.remove("hide");
+    document.querySelector("#login-page").classList.add("hide");
+    document.querySelector("#homepage").classList.add("hide");
+    document.querySelector("#show-login").classList.remove("hide");
+    document.querySelector("#show-register").classList.add("hide");
+};
+
+document.querySelector("#show-login").addEventListener("click", () => {
+    showLogin();
+});
+
+const showLogin = () => {
+    document.querySelector("#registration-page").classList.add("hide");
+    document.querySelector("#login-page").classList.remove("hide");
+    document.querySelector("#homepage").classList.add("hide");
+    document.querySelector("#show-login").classList.add("hide");
+    document.querySelector("#show-register").classList.remove("hide");
+};
+
+document.querySelector("#signout").addEventListener("click", () => {
+    signOut();
+});
+
+const register = () => {
+    const email = document.querySelector("#registration-email").value;
+    const reemail = document.querySelector("#registration-reemail").value;
+    const password = document.querySelector("#registration-password").value;
+
+    if (email.trim() == "") {
+        alert("Enter E-mail.");
+    } else if (password.trim().length < 6) {
+        alert("Password must be at least 6 characters.");
+    } else if (email != reemail) {
+        alert("emails do not match.");
+    } else {
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert(errorMessage);
+                // ...
+            });
+        alert("Congratulations! you are now a member.");
+    }
+};
+
+document.querySelector("#register").addEventListener("click", () => {
+    register();
+});
+
+//register when you hit the enter key
+document
+    .querySelector("#registration-password")
+    .addEventListener("keyup", (e) => {
+        if (event.keyCode === 13) {
+            e.preventDefault();
+            register();
+        }
+    });
+
+
+
+
+const login = () => {
+    const email = document.querySelector("#login-email").value;
+    const password = document.querySelector("#login-password").value;
+
+    if (email.trim() == "") {
+        alert("Enter E-mail.");
+    } else if (password.trim() == "") {
+        alert("Enter Password.");
+    } else {
+        authenticate(email, password);
+    }
+};
+
+document.querySelector("#login").addEventListener("click", () => {
+    login();
+});
+
+//sign in when you hit enter
+document
+    .querySelector("#login-password")
+    .addEventListener("keyup", (e) => {
+        if (event.keyCode === 13) {
+            e.preventDefault();
+            login();
+        }
+    });
+
+const authenticate = (email, password) => {
+    const auth = firebase.auth();
+    auth.signInWithEmailAndPassword(email, password);
+    firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+
+        .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            alert(errorMessage);
+        });
+};
+
+const showHomepage = () => {
+    document.querySelector("#registration-page").classList.add("hide");
+    document.querySelector("#login-page").classList.add("hide");
+    document.querySelector("#homepage").classList.remove("hide");
+    document.querySelector("#myLogin").style.display = "none";
+	document.querySelector("#show-login-menu").style.display = "none";
+};
+
+const signOut = () => {
+    firebase
+        .auth()
+        .signOut()
+        .then(function() {
+            location.reload();
+        })
+        .catch(function(error) {
+            alert("error signing out, check network connection");
+        });
+};
+
+auth.onAuthStateChanged((firebaseUser) => {
+    if (firebaseUser) {
+        showHomepage();
+
+    }
+});
+
+document
+    .querySelector("#forgot-password")
+    .addEventListener("click", () => {
+        const email = document.querySelector("#login-email").value;
+        if (email.trim() == "") {
+            alert("Enter Your E-mail.");
+        } else {
+            forgotPassword(email);
+        }
+    });
+
+const forgotPassword = (email) => {
+    auth
+        .sendPasswordResetEmail(email)
+        .then(function() {
+            alert("Send to your e-mail successfully! if you don't see it, please check on the spam folder.");
+        })
+        .catch(function(error) {
+            alert("invalid e-mail or bad network connection.");
+        });
+};
+
     </script>
   </body>
 </html>
