@@ -31,9 +31,9 @@
       * {
       box-sizing: border-box;
       }
-	 h2 {
-	 color:#ff6600;;
-	 }	  	  
+      h2 {
+      color:#ff6600;;
+      }	  	  
       h1 {
       color:#ddd;
       font-size:22px;
@@ -125,7 +125,7 @@
       border: none;
       }
       .mymenu {
-	  z-index: 10;
+      z-index: 10;
       margin:0 auto;
       background-color: #f9f9f9;
       width:600px;
@@ -133,7 +133,7 @@
       border: 2px solid #f9f9f9;
       font-weight:bold;
       font-size:14px;
-	  position:relative;
+      position:relative;
       }
       .mymenu ul {
       list-style-type: none;
@@ -284,8 +284,8 @@
       } 
     </style>
   </head>
-    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
   <body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
@@ -297,10 +297,10 @@
         <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
       </ul>
       <div id="homepage" class="hide">
-        <button style="width:80px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px" id="signout">Logout</button>
-        <span style="font-weight:normal;font-size:14px">ID: <span style="color:green" id="welcome-email"></span></span>
-		<span style="font-weight:normal; font-size:14px"> - Email Verified: <span style="" id="email_Verified"></span></span> <button id="verify" style="width:120px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px" onclick="sendVerificationEmail()">Verified Now!</button>
-    
+        <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold" id="signout">Logout</button>
+        <span style="font-weight:normal">ID: <span style="color:green" id="welcome-email"></span></span>
+        <span style="font-weight:normal; font-size:14px"> - Email Verified: <span style="" id="email_Verified"></span></span> 
+        <button id="verify" style="width:120px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px" onclick="sendVerificationEmail()">Verified Now!</button>
       </div>
     </div>
     <div id="wrap">
@@ -312,11 +312,11 @@
               <h2>SIGN UP</h2>
               <br>
               <label>E-Mail</label>
-              <input type="email" id="registration-email" placeholder="E-Mail" value="buananetpbun@gmail.com"></input>
+              <input type="email" id="registration-email" placeholder="E-Mail"></input>
               <label>Confirm E-mail</label> 
-              <input type="email" id="registration-reemail" autocomplete="disable" placeholder="Confirm E-Mail" value="buananetpbun@gmail.com"></input>
+              <input type="email" id="registration-reemail" autocomplete="disable" placeholder="Confirm E-Mail" ></input>
               <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
-              <input type="password" id="registration-password" placeholder="Password" value="7857369"></input>
+              <input type="password" id="registration-password" placeholder="Password"></input>
               <button style="width:100% !important;" id="register">Sign Up</button><br>
               <span style="font-weight:normal !important; float:right"><span id="show-login">Back to Sign-In</span></span>
             </div>
@@ -324,9 +324,9 @@
               <h2>SIGN IN</h2>
               <br>
               <label>E-Mail</label>
-              <input type="email" id="login-email" placeholder="E-Mail" value="buananetpbun@gmail.com"></input>
+              <input type="email" id="login-email" placeholder="E-Mail" ></input>
               <label>Password</label>
-              <input type="password" id="login-password" placeholder="Password" value="7857369"></input>
+              <input type="password" id="login-password" placeholder="Password"></input>
               <button style="width:100% !important;" id="login">Login</button>
               <br>
               <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
@@ -354,247 +354,235 @@
         </div>
       </div>
     </div>
-	<script>
-	
+    <script>
+     var modal_click = document.getElementById("myModal");
+     var span_click = document.getElementsByClassName("close")[0];
 
-function CheckFunction() {
-    var isModalLogin = document.getElementsByClassName('modal-login');
-    if (isModalLogin.length > 0) {} else {
-        alert("Please Login First.");
-        location.reload();
-    }
+     function callmodal() {
+     	modal_click.style.display = "block";
+     }
+     span_click.onclick = function() {
+     	modal_click.style.display = "none";
+     }
+     window.onclick = function(event) {
+     	if (event.target == modal_click) {
+     		modal_click.style.display = "none";
+     	}
+     }
 
-}
+     // Your web app's Firebase configuration
+     var firebaseConfig = {
+     	apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
+     	authDomain: "buananetpbun-5d979.firebaseapp.com",
+     	databaseURL: "https://buananetpbun-5d979.firebaseio.com",
+     	projectId: "buananetpbun-5d979",
+     	storageBucket: "buananetpbun-5d979.appspot.com",
+     	messagingSenderId: "912166778245",
+     	appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
+     	measurementId: "G-FSDV7HGD99"
+     };
 
-var modal_click = document.getElementById("myModal");
-var span_click = document.getElementsByClassName("close")[0];
+     // Initialize Firebase
+     firebase.initializeApp(firebaseConfig);
 
-function callmodal() {
-    modal_click.style.display = "block";
-}
-span_click.onclick = function() {
-    modal_click.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target == modal_click) {
-        modal_click.style.display = "none";
-    }
-}
+     //invokes firebase authentication.
+     const auth = firebase.auth();
 
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
-    authDomain: "buananetpbun-5d979.firebaseapp.com",
-    databaseURL: "https://buananetpbun-5d979.firebaseio.com",
-    projectId: "buananetpbun-5d979",
-    storageBucket: "buananetpbun-5d979.appspot.com",
-    messagingSenderId: "912166778245",
-    appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
-    measurementId: "G-FSDV7HGD99"
-};
+     firebase.auth().onAuthStateChanged((user) => {
+     	if (user) {
+     		// User is signed in, see docs for a list of available properties
+     		// https://firebase.google.com/docs/reference/js/firebase.User
+     		const uid = user.uid;
+     		const email = user.email;
+     		const emailVerified = user.emailVerified;
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+     		document.getElementById('welcome-email').innerHTML = email
 
-//invokes firebase authentication.
-const auth = firebase.auth();
+     		if (emailVerified == true) {
+     			document.getElementById("verify").style.display = "none"
+     			document.getElementById('email_Verified').innerHTML = "✅"
+     		} else {
+     			document.getElementById('email_Verified').innerHTML = "❌"
+     		}
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-	const email = user.email;
-    const emailVerified = user.emailVerified;
-	   
-	   document.getElementById('welcome-email').innerHTML = email
-	   
-	                    if(emailVerified == true){
-                        document.getElementById("verify").style.display = "none"
-						document.getElementById('email_Verified').innerHTML = "✅"
-						} else {
-						document.getElementById('email_Verified').innerHTML = "❌" 
-                    }
-					
-  } else {
+     	} else {
 
-  }
-});
+     	}
+     });
 
-const user = firebase.auth().currentUser;   
-
-            
-            function sendVerificationEmail(){
-                var user = firebase.auth().currentUser;
-                user.sendEmailVerification().then(function() {
-                    window.alert("Verification link sent to your email. if you don't see it, please check on the spam folder.")
-                }).catch(function(error) {
-                // An error happened.
-				 var errorCode = error.code;
-                var errorMessage = error.message;
-                alert(errorMessage);
-                });                
-            }  
-			
-document.querySelector("#show-register").addEventListener("click", () => {
-    showRegistration();
-});
+     const user = firebase.auth().currentUser;
 
 
-const showRegistration = () => {
-    document.querySelector("#registration-page").classList.remove("hide");
-    document.querySelector("#login-page").classList.add("hide");
-    document.querySelector("#homepage").classList.add("hide");
-    document.querySelector("#show-login").classList.remove("hide");
-    document.querySelector("#show-register").classList.add("hide");
-};
+     function sendVerificationEmail() {
+     	var user = firebase.auth().currentUser;
+     	user.sendEmailVerification().then(function() {
+     		window.alert("Verification link sent to your email. if you don't see it, please check on the spam folder.")
+     	}).catch(function(error) {
+     		// An error happened.
+     		var errorCode = error.code;
+     		var errorMessage = error.message;
+     		alert(errorMessage);
+     	});
+     }
 
-document.querySelector("#show-login").addEventListener("click", () => {
-    showLogin();
-});
-
-const showLogin = () => {
-    document.querySelector("#registration-page").classList.add("hide");
-    document.querySelector("#login-page").classList.remove("hide");
-    document.querySelector("#homepage").classList.add("hide");
-    document.querySelector("#show-login").classList.add("hide");
-    document.querySelector("#show-register").classList.remove("hide");
-};
-
-document.querySelector("#signout").addEventListener("click", () => {
-    signOut();
-});
-
-const register = () => {
-    const email = document.querySelector("#registration-email").value;
-    const reemail = document.querySelector("#registration-reemail").value;
-    const password = document.querySelector("#registration-password").value;
-
-    if (email.trim() == "") {
-        alert("Enter E-mail.");
-    } else if (password.trim().length < 6) {
-        alert("Password must be at least 6 characters.");
-    } else if (email != reemail) {
-        alert("emails do not match.");
-    } else {
-        auth
-            .createUserWithEmailAndPassword(email, password)
-
-            .catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                alert(errorMessage);
-                // ...
-            });
-			
-
-    }
-};
-
-document.querySelector("#register").addEventListener("click", () => {
-    register();
-});
-
-//register when you hit the enter key
-document
-    .querySelector("#registration-password")
-    .addEventListener("keyup", (e) => {
-        if (event.keyCode === 13) {
-            e.preventDefault();
-            register();
-        }
-    });
+     document.querySelector("#show-register").addEventListener("click", () => {
+     	showRegistration();
+     });
 
 
-const login = () => {
-    const email = document.querySelector("#login-email").value;
-    const password = document.querySelector("#login-password").value;
+     const showRegistration = () => {
+     	document.querySelector("#registration-page").classList.remove("hide");
+     	document.querySelector("#login-page").classList.add("hide");
+     	document.querySelector("#homepage").classList.add("hide");
+     	document.querySelector("#show-login").classList.remove("hide");
+     	document.querySelector("#show-register").classList.add("hide");
+     };
 
-    if (email.trim() == "") {
-        alert("Enter E-mail.");
-    } else if (password.trim() == "") {
-        alert("Enter Password.");
-    } else {
-        authenticate(email, password);
-    }
-};
+     document.querySelector("#show-login").addEventListener("click", () => {
+     	showLogin();
+     });
 
-document.querySelector("#login").addEventListener("click", () => {
-    login();
-});
+     const showLogin = () => {
+     	document.querySelector("#registration-page").classList.add("hide");
+     	document.querySelector("#login-page").classList.remove("hide");
+     	document.querySelector("#homepage").classList.add("hide");
+     	document.querySelector("#show-login").classList.add("hide");
+     	document.querySelector("#show-register").classList.remove("hide");
+     };
 
-//sign in when you hit enter
-document
-    .querySelector("#login-password")
-    .addEventListener("keyup", (e) => {
-        if (event.keyCode === 13) {
-            e.preventDefault();
-            login();
-        }
-    });
+     document.querySelector("#signout").addEventListener("click", () => {
+     	signOut();
+     });
 
-const authenticate = (email, password) => {
-    const auth = firebase.auth();
-    auth.signInWithEmailAndPassword(email, password);
-    firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-        .catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
+     const register = () => {
+     	const email = document.querySelector("#registration-email").value;
+     	const reemail = document.querySelector("#registration-reemail").value;
+     	const password = document.querySelector("#registration-password").value;
 
-            alert(errorMessage);
-        });
-};
+     	if (email.trim() == "") {
+     		alert("Enter E-mail.");
+     	} else if (password.trim().length < 6) {
+     		alert("Password must be at least 6 characters.");
+     	} else if (email != reemail) {
+     		alert("emails do not match.");
+     	} else {
+     		auth
+     			.createUserWithEmailAndPassword(email, password)
 
-const showHomepage = () => {
-    document.querySelector("#registration-page").classList.add("hide");
-    document.querySelector("#login-page").classList.add("hide");
-    document.querySelector("#homepage").classList.remove("hide");
-    document.querySelector("#myLogin").style.display = "none";
-};
+     			.catch(function(error) {
+     				// Handle Errors here.
+     				var errorCode = error.code;
+     				var errorMessage = error.message;
+     				alert(errorMessage);
+     				// ...
+     			});
+     	}
+     };
 
-const signOut = () => {
-    firebase
-        .auth()
-        .signOut()
-        .then(function() {
-            location.reload();
-        })
-        .catch(function(error) {
-            alert("error signing out, check network connection");
-        });
-};
+     document.querySelector("#register").addEventListener("click", () => {
+     	register();
+     });
 
-auth.onAuthStateChanged((firebaseUser) => {
-    if (firebaseUser) {
-        showHomepage();
-    }
-});
+     //register when you hit the enter key
+     document
+     	.querySelector("#registration-password")
+     	.addEventListener("keyup", (e) => {
+     		if (event.keyCode === 13) {
+     			e.preventDefault();
+     			register();
+     		}
+     	});
 
-document
-    .querySelector("#forgot-password")
-    .addEventListener("click", () => {
-        const email = document.querySelector("#login-email").value;
-        if (email.trim() == "") {
-            alert("Enter Your E-mail.");
-        } else {
-            forgotPassword(email);
-        }
-    });
 
-const forgotPassword = (email) => {
-    auth
-        .sendPasswordResetEmail(email)
-        .then(function() {
-            alert("Send to your e-mail successfully! if you don't see it, please check on the spam folder.");
-        })
-        .catch(function(error) {
-            alert("invalid e-mail or bad network connection.");
-        });
-};
-	</script>
+     const login = () => {
+     	const email = document.querySelector("#login-email").value;
+     	const password = document.querySelector("#login-password").value;
+
+     	if (email.trim() == "") {
+     		alert("Enter E-mail.");
+     	} else if (password.trim() == "") {
+     		alert("Enter Password.");
+     	} else {
+     		authenticate(email, password);
+     	}
+     };
+
+     document.querySelector("#login").addEventListener("click", () => {
+     	login();
+     });
+
+     //sign in when you hit enter
+     document
+     	.querySelector("#login-password")
+     	.addEventListener("keyup", (e) => {
+     		if (event.keyCode === 13) {
+     			e.preventDefault();
+     			login();
+     		}
+     	});
+
+     const authenticate = (email, password) => {
+     	const auth = firebase.auth();
+     	auth.signInWithEmailAndPassword(email, password);
+     	firebase
+     		.auth()
+     		.signInWithEmailAndPassword(email, password)
+     		.catch(function(error) {
+     			// Handle Errors here.
+     			var errorCode = error.code;
+     			var errorMessage = error.message;
+
+     			alert(errorMessage);
+     		});
+     };
+
+     const showHomepage = () => {
+     	document.querySelector("#registration-page").classList.add("hide");
+     	document.querySelector("#login-page").classList.add("hide");
+     	document.querySelector("#homepage").classList.remove("hide");
+     	document.querySelector("#myLogin").style.display = "none";
+     };
+
+     const signOut = () => {
+     	firebase
+     		.auth()
+     		.signOut()
+     		.then(function() {
+     			location.reload();
+     		})
+     		.catch(function(error) {
+     			alert("error signing out, check network connection");
+     		});
+     };
+
+     auth.onAuthStateChanged((firebaseUser) => {
+     	if (firebaseUser) {
+     		showHomepage();
+     	}
+     });
+
+     document
+     	.querySelector("#forgot-password")
+     	.addEventListener("click", () => {
+     		const email = document.querySelector("#login-email").value;
+     		if (email.trim() == "") {
+     			alert("Enter Your E-mail.");
+     		} else {
+     			forgotPassword(email);
+     		}
+     	});
+
+     const forgotPassword = (email) => {
+     	auth
+     		.sendPasswordResetEmail(email)
+     		.then(function() {
+     			alert("Send to your e-mail successfully! if you don't see it, please check on the spam folder.");
+     		})
+     		.catch(function(error) {
+     			alert("invalid e-mail or bad network connection.");
+     		});
+     };
+      	
+    </script>
   </body>
 </html>
