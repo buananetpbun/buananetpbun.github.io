@@ -1,317 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mikrotik RouterOS Auto Backup to E-Mail - BuanaNETPBun.Github.io</title>
+    <meta content='Mikrotik RouterOS Auto Backup to E-Mail Generator - BuanaNETPBun.Github.io' name='description'>
+    <meta content='hotspot, username, password, script generator, mikrotik, router, winbox, termimal, rsc, script, wireless, rtrwnet' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Mikrotik RouterOS Auto Backup to E-Mail Generator By BuanaNET-Pbun">
+    <meta property="og:description" content="Mikrotik RouterOS Auto Backup to E-Mail Generator By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/185570614-f8e5d4b2-c09e-46ab-ab96-e565e5a82d40.png">
+    <meta property="og:image:alt" content="Mikrotik RouterOS Auto Backup to E-Mail Generator By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-backup-to-mail.html">
+    <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <style>
+      /* -----------------------------------------------------------------
+      ####################################################################
+      # MIKROTIK ROUTER-OS AUTO BACKUP TO E-Mail SCRIPT GENERATOR
+      # Designer  : Agus Ramadhani / BuanaNET
+      # Github    : https://github.com/buananetpbun
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananetmikrotik	
+      ####################################################################
+      -------------------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
+      }
+      * {
+      box-sizing: border-box;
+      }
+      .logo {
+      margin-top:10px; 
+      color: #ddd;
+      text-decoration:none;
+      font-size:27px;
+      font-weight:bold; 
+      }	
+      .logo a{
+      color:#ddd !important;
+      text-decoration:none !important;
+      }
+      .Menu{
+      width:100%;
+      border-bottom:1px solid #ccc;
+      height:100%;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      font-size:14px;
+      font-weight:bold;
+      }
+      #wrap{
+      width:780px;
+      margin:0 auto;
+      padding:10px;
+      }
+      .header{
+      height:auto; 
+      width:100%;
+      margin-top:5px;
+      margin-bottom:10px;
+      border-top:1px solid #555;
+      }
+      .main-wrap{
+      display: flex;
+      }   
+      .content{
+      flex:1;
+      float:right;
+      width:800px;
+      padding: 10px;
+      border-top:1px solid #bbb;
+      border-bottom:1px solid #bbb;
+      border-right:1px solid #bbb;
+      background:#ddd;
+      border-radius:0 5px 05px 0; 
+      }
+      .sidebar{
+      float:left;
+      width:250px;
+      Padding-top:8px;
+      padding-left: 10px;
+      Padding-right:10px;
+      Padding-bottom:20px;
+      background-color:#ddd;
+      border:1px solid #bbb; 
+      height:auto;
+      border-radius:5px 0 0 5px;   
+      }
+      .footer{
+      font-size:13px;
+      padding-top:10px;
+      padding-bottom:15px; 
+      text-align:center;
+      clear:both;
+      width:auto;
+      color:#ddd
+      }
+	 h2 {
+	 color:#ff6600;;
+	 }	  	  
+      h1 {
+      color:#ddd;
+      font-size:22px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      .menu {
+      clear:both;
+      width:auto;
+      padding-bottom:13px;
+      }
+      .menu1 {
+      width:360px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#4CAF50;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu1 a:link {
+      text-decoration:none;
+      color:white;
+      }
+      .menu1 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 {
+      width:300px;
+      margin-bottom:1px;
+      font-weight:bold;
+      background-color:#bbb;
+      padding:6px;
+      color:white;
+      display: inline-block;
+      margin:0;
+      }
+      .menu2 a:link{
+      text-decoration:none;
+      color:white;
+      }
+      .menu2 a:visited{
+      text-decoration:none;
+      color:white;
+      }
+      button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:8px;
+      margin-right:5px;
+      width:150px;
+      font-size:15px;
+      font-weight:bold;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=checkbox]{
+      margin-right:7px; 
+      }
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      margin-bottom:12px;
+      font-size:15px !important;
+      border-radius:5px; 
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      float: right;
+      border-radius:5px; 
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .list-game {
+      height: 200px;
+      background:white;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top:2px;
+      padding: 3px;
+      border: 1px solid rgba(0,0,0,0.25);
+      border-radius:5px;  
+      }
+      .list-game label {
+      padding: 0;
+      display: inline-block;
+      } 
+      .list-mangle {
+      height: 515px;
+      background:#fff;
+      overflow: scroll;
+      width: 500px;
+      padding: 4px;
+      margin-top:8px;
+      border: 1px solid #ccc;
+      border-radius:5px;  
+      }
+      table, tr, td {
+      border: none;
+      }
+      .mymenu {
+	  z-index: 10;
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:600px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+	  position:relative;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
+      margin-right:10px;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      }  
+      /* LOGIN Content */
+      .forms-out {
+      margin: 0 auto;
+      padding: 0;
+      }
+      .forms-in {
+      width: 100%;
+      margin: 0 auto;
+      color: white;
+      padding: 0;
+      }
+      .forms-in div {
+      padding: 0;
+      max-width: 350px;
+      margin: 0 auto;      
+      border-radius: 5px;
+      margin-bottom: 15px;
+      }
+      .forms-in h3 {
+      text-align: center;
+      }
+      .forms-in input {
+      border: none;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      }
+      .forms-in button {
+      border: none;
+      padding: 7px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top:10px;
+      margin-bottom:15px;
+      }
+      .forms-in button:hover {
+      opacity: 0.7;
+      }
+      .hide {
+      display: none;
+      }
+      #forgot-password {
+      cursor: pointer;
+      }
+      #forgot-password:hover {
+      opacity: 0.7;
+      }
+      #show-register {
+      cursor: pointer;
+      }
+      #show-register:hover {
+      opacity: 0.7;
+      }
+      #show-login {
+      cursor: pointer;
+      }
+      #show-login:hover {
+      opacity: 0.7;
+      }
+      /* The Modal (background) */
+      .modal {
+      display: block; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      .modal-login {
+      display: block; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 2; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 390px;
+      box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }  
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
+  </head>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+  <body>
+      <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
+      </ul>
+      <div id="homepage" class="hide">
+        <button style="width:100px !important; padding:2px; margin:3px; font-weight:bold" id="signout">Logout</button>
+        <span style="font-weight:normal"> Welcome [ <span style="color:green" id="welcome-email"></span> ]</span>
+      </div>
+    </div>
 
-<html>
-<head>
-<title>Firebase Authentication</title>
-
-<style>
-/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);*/
-*:focus {
-  outline: none;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #DDD;
-  font-size: 16px;
-  color: #222;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-}
-
-#login-box {
-  position: relative;
-  margin: 5% auto;
-  width: 600px;
-  height: 400px;
-  background: #FFF;
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  padding: 40px;
-  width: 300px;
-  height: 400px;
-}
-
-h1 {
-  margin: 0 0 20px 0;
-  font-weight: 300;
-  font-size: 28px;
-}
-
-input[type="text"],
-input[type="password"] {
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  padding: 4px;
-  width: 220px;
-  height: 32px;
-  border: none;
-  border-bottom: 1px solid #AAA;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  transition: 0.2s ease;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-bottom: 2px solid #16a085;
-  color: #16a085;
-  transition: 0.2s ease;
-}
-
-input[type="submit"] {
-  margin-top: 28px;
-  width: 120px;
-  height: 32px;
-  background: #16a085;
-  border: none;
-  border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: 0.1s ease;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-  opacity: 0.8;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
-}
-
-input[type="submit"]:active {
-  opacity: 1;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
-}
-
-.or {
-  position: absolute;
-  top: 180px;
-  left: 280px;
-  width: 40px;
-  height: 40px;
-  background: #DDD;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  line-height: 40px;
-  text-align: center;
-}
-
-.right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  box-sizing: border-box;
-  padding: 40px;
-  width: 300px;
-  height: 400px;
-  background: url('https://goo.gl/YbktSj');
-  background-size: cover;
-  background-position: center;
-  border-radius: 0 2px 2px 0;
-}
-
-.right .loginwith {
-  display: block;
-  margin-bottom: 40px;
-  font-size: 28px;
-  color: #FFF;
-  text-align: center;
-}
-
-button.social-signin {
-  margin-bottom: 20px;
-  width: 220px;
-  height: 36px;
-  border: none;
-  border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  transition: 0.2s ease;
-  cursor: pointer;
-}
-
-button.social-signin:hover,
-button.social-signin:focus {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease;
-}
-
-button.social-signin:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease;
-}
-
-button.social-signin.facebook {
-  background: #32508E;
-}
-
-button.social-signin.twitter {
-  background: #55ACEE;
-}
-
-button.social-signin.google {
-  background: #DD4B39;
-}
-</style>
-</head>
-  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
-<body>
-  
-<div id="login-box">
-  <div class="left">
-    <h1 id='status'>login</h1>
-    <input type="text" id="email" name="email" placeholder="E-mail" />
-    <input type="password" id="password" name="password" placeholder="Password" />
-    
-    <input type="submit" id='login' name="login" value="Login" />
-
-  </div>
-  
-      <div id="myModal" class="modal">
+    <div oncontextmenu="return false;" id="myLogin" class="modal-login">
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
-        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
-        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
-        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
-        <br>
-        <div style="float:left;margin-right:3px; margin-top:0px">
-          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-        </div>
-        <div style="margin-top:0px">    
-          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
-          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
-          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        <div class="forms-out">
+          <div class="forms-in">
+            <div id="registration-page" class="hide">
+              <h2>SIGN UP</h2>
+              <br>
+              <label>E-Mail</label>
+              <input type="email" id="registration-email" placeholder="E-Mail"></input>
+              <label>Confirm E-mail</label> 
+              <input type="email" id="registration-reemail" autocomplete="disable" placeholder="Confirm E-Mail"></input>
+              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
+              <input type="password" id="registration-password" placeholder="Password"></input>
+              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="font-weight:normal !important; float:right"><span id="show-login">Back to Sign-In</span></span>
+            </div>
+            <div id="login-page">
+              <h2>SIGN IN</h2>
+              <br>
+              <label>E-Mail</label>
+              <input type="email" id="login-email" placeholder="E-Mail"></input>
+              <label>Password</label>
+              <input type="password" id="login-password" placeholder="Password"></input>
+              <button style="width:100% !important;" id="login">Login</button>
+              <br>
+              <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
+              <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <script>
 	
-  <div class="right">
-    <span class="loginwith">Sign in with<br />social network</span>
-    
-    <button class="social-signin facebook">Log in with facebook</button>
-    <button class="social-signin twitter">Log in with Twitter</button>
-    <button class="social-signin google">Log in with Google+</button>
-  </div>
-  <div class="or">OR</div>
-</div>
-</body>
-
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-  apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
-  authDomain: "buananetpbun-5d979.firebaseapp.com",
-  databaseURL: "https://buananetpbun-5d979.firebaseio.com",
-  projectId: "buananetpbun-5d979",
-  storageBucket: "buananetpbun-5d979.appspot.com",
-  messagingSenderId: "912166778245",
-  appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
-  measurementId: "G-FSDV7HGD99"
- 
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
-  const auth = getAuth();
+document.getElementById("myLogin").addEventListener('contextmenu',(e)=>{
+    e.preventDefault();
+  }
+  );
+  document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+     return false;
+  }
+}
 
 
 
- login.addEventListener('click',(e)=>{
-   var email = document.getElementById('email').value;
-   var password = document.getElementById('password').value;
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
+    authDomain: "buananetpbun-5d979.firebaseapp.com",
+    databaseURL: "https://buananetpbun-5d979.firebaseio.com",
+    projectId: "buananetpbun-5d979",
+    storageBucket: "buananetpbun-5d979.appspot.com",
+    messagingSenderId: "912166778245",
+    appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
+    measurementId: "G-FSDV7HGD99"
+};
 
-      signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
 
-        const dt = new Date();
-         update(ref(database, 'users/' + user.uid),{
-          last_login: dt,
-        })
 
-         alert('User loged in!');
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-        alert(errorMessage);
-  });
+//invokes firebase authentication.
+const auth = firebase.auth();
 
- });
 
-const user = auth.currentUser;
-onAuthStateChanged(auth, (user) => {
+
+firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    //bla bla bla
-    // ...
+    var uid = user.uid;
+
+	const email = user.email;
+  document.getElementById('welcome-email').innerHTML = email
   } else {
-    // User is signed out
-    // ...
-    //bla bla bla
+
   }
 });
 
-logout.addEventListener('click',(e)=>{
+// Confirm the link is a sign-in with email link.
+if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
+  // Additional state parameters can also be passed via URL.
+  // This can be used to continue the user's intended action before triggering
+  // the sign-in operation.
+  // Get the email if available. This should be available if the user completes
+  // the flow on the same device where they started it.
+  var email = window.localStorage.getItem('emailForSignIn');
+  if (!email) {
+    // User opened the link on a different device. To prevent session fixation
+    // attacks, ask the user to provide the associated email again. For example:
+    email = window.prompt('Please provide your email for confirmation');
+  }
+  // The client SDK will parse the code from the link for you.
+  firebase.auth().signInWithEmailLink(email, window.location.href)
+    .then((result) => {
+      // Clear email from storage.
+      window.localStorage.removeItem('emailForSignIn');
+      // You can access the new user via result.user
+      // Additional user info profile not available via:
+      // result.additionalUserInfo.profile == null
+      // You can check if the user is new or existing:
+      // result.additionalUserInfo.isNewUser
+    })
+    .catch((error) => {
+      // Some error occurred, you can inspect the code: error.code
+      // Common errors could be invalid email and invalid or expired OTPs.
+    });
+}
 
-   signOut(auth).then(() => {
-     // Sign-out successful.
-     alert('user loged out');
-   }).catch((error) => {
-     // An error happened.
-     const errorCode = error.code;
-     const errorMessage = error.message;
-
-        alert(errorMessage);
-   });
-
+document.querySelector("#show-register").addEventListener("click", () => {
+    showRegistration();
 });
 
-</script>
-	    <script>
-			
-      var modal = document.getElementById("myModal");
-      var span = document.getElementsByClassName("close")[0];
-      function callmodal() {
-        modal.style.display = "block";
-      }
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
+const showRegistration = () => {
+    document.querySelector("#registration-page").classList.remove("hide");
+    document.querySelector("#login-page").classList.add("hide");
+    document.querySelector("#homepage").classList.add("hide");
+    document.querySelector("#show-login").classList.remove("hide");
+    document.querySelector("#show-register").classList.add("hide");
+};
+
+document.querySelector("#show-login").addEventListener("click", () => {
+    showLogin();
+});
+
+const showLogin = () => {
+    document.querySelector("#registration-page").classList.add("hide");
+    document.querySelector("#login-page").classList.remove("hide");
+    document.querySelector("#homepage").classList.add("hide");
+    document.querySelector("#show-login").classList.add("hide");
+    document.querySelector("#show-register").classList.remove("hide");
+};
+
+document.querySelector("#signout").addEventListener("click", () => {
+    signOut();
+});
+
+const register = () => {
+    const email = document.querySelector("#registration-email").value;
+    const reemail = document.querySelector("#registration-reemail").value;
+    const password = document.querySelector("#registration-password").value;
+
+    if (email.trim() == "") {
+        alert("Enter E-mail.");
+    } else if (password.trim().length < 6) {
+        alert("Password must be at least 6 characters.");
+    } else if (email != reemail) {
+        alert("emails do not match.");
+    } else {
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert(errorMessage);
+                // ...
+            });
+        alert("Congratulations! now you are member.");
+    }
+};
+
+document.querySelector("#register").addEventListener("click", () => {
+    register();
+});
+
+//register when you hit the enter key
+document
+    .querySelector("#registration-password")
+    .addEventListener("keyup", (e) => {
+        if (event.keyCode === 13) {
+            e.preventDefault();
+            register();
         }
-      }
-    </script> 
+    });
+
+
+
+
+const login = () => {
+    const email = document.querySelector("#login-email").value;
+    const password = document.querySelector("#login-password").value;
+
+    if (email.trim() == "") {
+        alert("Enter E-mail.");
+    } else if (password.trim() == "") {
+        alert("Enter Password.");
+    } else {
+        authenticate(email, password);
+    }
+};
+
+document.querySelector("#login").addEventListener("click", () => {
+    login();
+});
+
+//sign in when you hit enter
+document
+    .querySelector("#login-password")
+    .addEventListener("keyup", (e) => {
+        if (event.keyCode === 13) {
+            e.preventDefault();
+            login();
+        }
+    });
+
+const authenticate = (email, password) => {
+    const auth = firebase.auth();
+    auth.signInWithEmailAndPassword(email, password);
+    firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            alert(errorMessage);
+        });
+};
+
+const showHomepage = () => {
+    document.querySelector("#registration-page").classList.add("hide");
+    document.querySelector("#login-page").classList.add("hide");
+    document.querySelector("#homepage").classList.remove("hide");
+    document.querySelector("#myLogin").style.display = "none";
+	window.location.href = "http://buananetpbun.github.io";
+};
+
+const signOut = () => {
+    firebase
+        .auth()
+        .signOut()
+        .then(function() {
+            location.reload();
+        })
+        .catch(function(error) {
+            alert("error signing out, check network connection");
+        });
+};
+
+auth.onAuthStateChanged((firebaseUser) => {
+    if (firebaseUser) {
+        showHomepage();
+
+    }
+});
+
+document
+    .querySelector("#forgot-password")
+    .addEventListener("click", () => {
+        const email = document.querySelector("#login-email").value;
+        if (email.trim() == "") {
+            alert("Enter Your E-mail.");
+        } else {
+            forgotPassword(email);
+        }
+    });
+
+const forgotPassword = (email) => {
+    auth
+        .sendPasswordResetEmail(email)
+        .then(function() {
+            alert("Send to your e-mail successfully! if you don't see it, please check on the spam folder.");
+        })
+        .catch(function(error) {
+            alert("invalid e-mail or bad network connection.");
+        });
+};
+	</script>
+  </body>
 </html>
