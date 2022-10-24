@@ -39,73 +39,6 @@
       * {
       box-sizing: border-box;
       }
-      .logo {
-      margin-top:10px; 
-      color: #ddd;
-      text-decoration:none;
-      font-size:27px;
-      font-weight:bold; 
-      }	
-      .logo a{
-      color:#ddd !important;
-      text-decoration:none !important;
-      }
-      .Menu{
-      width:100%;
-      border-bottom:1px solid #ccc;
-      height:100%;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-      font-size:14px;
-      font-weight:bold;
-      }
-      #wrap{
-      width:780px;
-      margin:0 auto;
-      padding:10px;
-      }
-      .header{
-      height:auto; 
-      width:100%;
-      margin-top:5px;
-      margin-bottom:10px;
-      border-top:1px solid #555;
-      }
-      .main-wrap{
-      display: flex;
-      }   
-      .content{
-      flex:1;
-      float:right;
-      width:800px;
-      padding: 10px;
-      border-top:1px solid #bbb;
-      border-bottom:1px solid #bbb;
-      border-right:1px solid #bbb;
-      background:#ddd;
-      border-radius:0 5px 05px 0; 
-      }
-      .sidebar{
-      float:left;
-      width:250px;
-      Padding-top:8px;
-      padding-left: 10px;
-      Padding-right:10px;
-      Padding-bottom:20px;
-      background-color:#ddd;
-      border:1px solid #bbb; 
-      height:auto;
-      border-radius:5px 0 0 5px;   
-      }
-      .footer{
-      font-size:13px;
-      padding-top:10px;
-      padding-bottom:15px; 
-      text-align:center;
-      clear:both;
-      width:auto;
-      color:#ddd
-      }
 	 h2 {
 	 color:#ff6600;;
 	 }	  	  
@@ -126,47 +59,6 @@
       }
       a:active {
       color: #ff6600;
-      }
-      .menu {
-      clear:both;
-      width:auto;
-      padding-bottom:13px;
-      }
-      .menu1 {
-      width:360px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#4CAF50;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu1 a:link {
-      text-decoration:none;
-      color:white;
-      }
-      .menu1 a:visited{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 {
-      width:300px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#bbb;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu2 a:link{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 a:visited{
-      text-decoration:none;
-      color:white;
       }
       button {
       color: #fff;
@@ -236,31 +128,6 @@
       content: "";
       display: table;
       clear: both;
-      }
-      .list-game {
-      height: 200px;
-      background:white;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: 100%;
-      margin-top:2px;
-      padding: 3px;
-      border: 1px solid rgba(0,0,0,0.25);
-      border-radius:5px;  
-      }
-      .list-game label {
-      padding: 0;
-      display: inline-block;
-      } 
-      .list-mangle {
-      height: 515px;
-      background:#fff;
-      overflow: scroll;
-      width: 500px;
-      padding: 4px;
-      margin-top:8px;
-      border: 1px solid #ccc;
-      border-radius:5px;  
       }
       table, tr, td {
       border: none;
@@ -363,9 +230,9 @@
       }
       /* The Modal (background) */
       .modal {
-      display: block; /* Hidden by default */
+      display: none; /* Hidden by default */
       position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
+      z-index: 2; /* Sit on top */
       padding-top: 150px; /* Location of the box */
       left: 0;
       top: 0;
@@ -378,7 +245,7 @@
       .modal-login {
       display: block; /* Hidden by default */
       position: fixed; /* Stay in place */
-      z-index: 2; /* Sit on top */
+      z-index: 1; /* Sit on top */
       padding-top: 150px; /* Location of the box */
       left: 0;
       top: 0;
@@ -428,7 +295,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
   <body>
-      <div class="mymenu">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div class="mymenu">
       <ul>
         <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
         <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
@@ -440,7 +309,7 @@
         <span style="font-weight:normal"> Welcome [ <span style="color:green" id="welcome-email"></span> ]</span>
       </div>
     </div>
-
+    <div id="wrap">
     <div oncontextmenu="return false;" id="myLogin" class="modal-login">
       <div class="modal-content">
         <div class="forms-out">
@@ -473,258 +342,26 @@
         </div>
       </div>
     </div>
-
-    <script>
-	
-document.getElementById("myLogin").addEventListener('contextmenu',(e)=>{
-    e.preventDefault();
-  }
-  );
-  document.onkeydown = function(e) {
-  if(event.keyCode == 123) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-     return false;
-  }
-}
-
-
-
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
-    authDomain: "buananetpbun-5d979.firebaseapp.com",
-    databaseURL: "https://buananetpbun-5d979.firebaseio.com",
-    projectId: "buananetpbun-5d979",
-    storageBucket: "buananetpbun-5d979.appspot.com",
-    messagingSenderId: "912166778245",
-    appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
-    measurementId: "G-FSDV7HGD99"
-};
-
-
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-//invokes firebase authentication.
-const auth = firebase.auth();
-
-
-
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    var uid = user.uid;
-
-	const email = user.email;
-  document.getElementById('welcome-email').innerHTML = email
-  } else {
-
-  }
-});
-
-// Confirm the link is a sign-in with email link.
-if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
-  // Additional state parameters can also be passed via URL.
-  // This can be used to continue the user's intended action before triggering
-  // the sign-in operation.
-  // Get the email if available. This should be available if the user completes
-  // the flow on the same device where they started it.
-  var email = window.localStorage.getItem('emailForSignIn');
-  if (!email) {
-    // User opened the link on a different device. To prevent session fixation
-    // attacks, ask the user to provide the associated email again. For example:
-    email = window.prompt('Please provide your email for confirmation');
-  }
-  // The client SDK will parse the code from the link for you.
-  firebase.auth().signInWithEmailLink(email, window.location.href)
-    .then((result) => {
-      // Clear email from storage.
-      window.localStorage.removeItem('emailForSignIn');
-      // You can access the new user via result.user
-      // Additional user info profile not available via:
-      // result.additionalUserInfo.profile == null
-      // You can check if the user is new or existing:
-      // result.additionalUserInfo.isNewUser
-    })
-    .catch((error) => {
-      // Some error occurred, you can inspect the code: error.code
-      // Common errors could be invalid email and invalid or expired OTPs.
-    });
-}
-
-document.querySelector("#show-register").addEventListener("click", () => {
-    showRegistration();
-});
-
-const showRegistration = () => {
-    document.querySelector("#registration-page").classList.remove("hide");
-    document.querySelector("#login-page").classList.add("hide");
-    document.querySelector("#homepage").classList.add("hide");
-    document.querySelector("#show-login").classList.remove("hide");
-    document.querySelector("#show-register").classList.add("hide");
-};
-
-document.querySelector("#show-login").addEventListener("click", () => {
-    showLogin();
-});
-
-const showLogin = () => {
-    document.querySelector("#registration-page").classList.add("hide");
-    document.querySelector("#login-page").classList.remove("hide");
-    document.querySelector("#homepage").classList.add("hide");
-    document.querySelector("#show-login").classList.add("hide");
-    document.querySelector("#show-register").classList.remove("hide");
-};
-
-document.querySelector("#signout").addEventListener("click", () => {
-    signOut();
-});
-
-const register = () => {
-    const email = document.querySelector("#registration-email").value;
-    const reemail = document.querySelector("#registration-reemail").value;
-    const password = document.querySelector("#registration-password").value;
-
-    if (email.trim() == "") {
-        alert("Enter E-mail.");
-    } else if (password.trim().length < 6) {
-        alert("Password must be at least 6 characters.");
-    } else if (email != reemail) {
-        alert("emails do not match.");
-    } else {
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                alert(errorMessage);
-                // ...
-            });
-        alert("Congratulations! now you are member.");
-    }
-};
-
-document.querySelector("#register").addEventListener("click", () => {
-    register();
-});
-
-//register when you hit the enter key
-document
-    .querySelector("#registration-password")
-    .addEventListener("keyup", (e) => {
-        if (event.keyCode === 13) {
-            e.preventDefault();
-            register();
-        }
-    });
-
-
-
-
-const login = () => {
-    const email = document.querySelector("#login-email").value;
-    const password = document.querySelector("#login-password").value;
-
-    if (email.trim() == "") {
-        alert("Enter E-mail.");
-    } else if (password.trim() == "") {
-        alert("Enter Password.");
-    } else {
-        authenticate(email, password);
-    }
-};
-
-document.querySelector("#login").addEventListener("click", () => {
-    login();
-});
-
-//sign in when you hit enter
-document
-    .querySelector("#login-password")
-    .addEventListener("keyup", (e) => {
-        if (event.keyCode === 13) {
-            e.preventDefault();
-            login();
-        }
-    });
-
-const authenticate = (email, password) => {
-    const auth = firebase.auth();
-    auth.signInWithEmailAndPassword(email, password);
-    firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-        .catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-
-            alert(errorMessage);
-        });
-};
-
-const showHomepage = () => {
-    document.querySelector("#registration-page").classList.add("hide");
-    document.querySelector("#login-page").classList.add("hide");
-    document.querySelector("#homepage").classList.remove("hide");
-    document.querySelector("#myLogin").style.display = "none";
-	window.location.href = "http://buananetpbun.github.io";
-};
-
-const signOut = () => {
-    firebase
-        .auth()
-        .signOut()
-        .then(function() {
-            location.reload();
-        })
-        .catch(function(error) {
-            alert("error signing out, check network connection");
-        });
-};
-
-auth.onAuthStateChanged((firebaseUser) => {
-    if (firebaseUser) {
-        showHomepage();
-
-    }
-});
-
-document
-    .querySelector("#forgot-password")
-    .addEventListener("click", () => {
-        const email = document.querySelector("#login-email").value;
-        if (email.trim() == "") {
-            alert("Enter Your E-mail.");
-        } else {
-            forgotPassword(email);
-        }
-    });
-
-const forgotPassword = (email) => {
-    auth
-        .sendPasswordResetEmail(email)
-        .then(function() {
-            alert("Send to your e-mail successfully! if you don't see it, please check on the spam folder.");
-        })
-        .catch(function(error) {
-            alert("invalid e-mail or bad network connection.");
-        });
-};
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <p><b>PayPal</b>  <a target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <br>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+	<script>
+	const _0x3c86d4=_0x5225;(function(_0x484186,_0x3e69ea){const _0x42fa36=_0x5225,_0x38a8f3=_0x484186();while(!![]){try{const _0x57d78e=parseInt(_0x42fa36(0x1cc))/0x1*(parseInt(_0x42fa36(0x1ed))/0x2)+-parseInt(_0x42fa36(0x1fd))/0x3+-parseInt(_0x42fa36(0x209))/0x4*(-parseInt(_0x42fa36(0x1ee))/0x5)+-parseInt(_0x42fa36(0x1cd))/0x6*(parseInt(_0x42fa36(0x1c6))/0x7)+-parseInt(_0x42fa36(0x1f2))/0x8+parseInt(_0x42fa36(0x1d8))/0x9*(-parseInt(_0x42fa36(0x1d0))/0xa)+parseInt(_0x42fa36(0x1c0))/0xb*(parseInt(_0x42fa36(0x1af))/0xc);if(_0x57d78e===_0x3e69ea)break;else _0x38a8f3['push'](_0x38a8f3['shift']());}catch(_0x15d226){_0x38a8f3['push'](_0x38a8f3['shift']());}}}(_0x1316,0xa1832),document[_0x3c86d4(0x1b0)](_0x3c86d4(0x1e2))['addEventListener']('contextmenu',_0x13053e=>{_0x13053e['preventDefault']();}),document[_0x3c86d4(0x1c2)]=function(_0x24acae){const _0x408650=_0x3c86d4;if(event[_0x408650(0x1bd)]==0x7b)return![];if(_0x24acae['ctrlKey']&&_0x24acae[_0x408650(0x1c1)]&&_0x24acae[_0x408650(0x1bd)]=='I'['charCodeAt'](0x0))return![];if(_0x24acae['ctrlKey']&&_0x24acae[_0x408650(0x1c1)]&&_0x24acae['keyCode']=='C'[_0x408650(0x201)](0x0))return![];if(_0x24acae[_0x408650(0x1d1)]&&_0x24acae['shiftKey']&&_0x24acae['keyCode']=='J'['charCodeAt'](0x0))return![];if(_0x24acae[_0x408650(0x1d1)]&&_0x24acae[_0x408650(0x1bd)]=='U'[_0x408650(0x201)](0x0))return![];});function _0x5225(_0x3a865c,_0x242ef1){const _0x131683=_0x1316();return _0x5225=function(_0x52253f,_0x361bd6){_0x52253f=_0x52253f-0x1af;let _0x5f5640=_0x131683[_0x52253f];return _0x5f5640;},_0x5225(_0x3a865c,_0x242ef1);}function _0x1316(){const _0x1a6481=['onAuthStateChanged','myLogin','#login-password','reload','#signout','display','myModal','Please\x20provide\x20your\x20email\x20for\x20confirmation','modal-login','querySelector','href','invalid\x20e-mail\x20or\x20bad\x20network\x20connection.','3338oPyxVD','1068980lhHuoa','location','getItem','localStorage','1017264kHvtwt','innerHTML','signInWithEmailLink','#registration-password','#registration-email','initializeApp','hide','error\x20signing\x20out,\x20check\x20network\x20connection','style','https://buananetpbun-5d979.firebaseio.com','removeItem','2897046wyMrVy','trim','sendPasswordResetEmail','Enter\x20E-mail.','charCodeAt','catch','Enter\x20Password.','target','block','prompt','buananetpbun-5d979','#show-login','4CsDJkk','5212872ylGwls','getElementById','createUserWithEmailAndPassword','preventDefault','getElementsByClassName','onclick','keyup','#myLogin','#login','length','buananetpbun-5d979.appspot.com','addEventListener','emails\x20do\x20not\x20match.','#registration-reemail','keyCode','Congratulations!\x20now\x20you\x20are\x20member.','#register','55drBmht','shiftKey','onkeydown','912166778245','#homepage','click','3901457IFXjQQ','message','signInWithEmailAndPassword','add','remove','#show-register','526cUuvJO','6OmDTfy','emailForSignIn','classList','250zgUEbl','ctrlKey','Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.','#registration-page','isSignInWithEmailLink','#login-page','close','Password\x20must\x20be\x20at\x20least\x206\x20characters.','342711SoLLwi','code','then','value','#forgot-password','uid','auth','none','buananetpbun-5d979.firebaseapp.com'];_0x1316=function(){return _0x1a6481;};return _0x1316();}function CheckFunction(){const _0x2497e6=_0x3c86d4;var _0x3867f8=document[_0x2497e6(0x1b3)](_0x2497e6(0x1e9));if(_0x3867f8[_0x2497e6(0x1b8)]>0x0){}else alert('Please\x20Login\x20First.'),location[_0x2497e6(0x1e4)]();}var modal_click=document[_0x3c86d4(0x1b0)](_0x3c86d4(0x1e7)),span_click=document[_0x3c86d4(0x1b3)](_0x3c86d4(0x1d6))[0x0];function callmodal(){const _0x3c1b01=_0x3c86d4;modal_click[_0x3c1b01(0x1fa)][_0x3c1b01(0x1e6)]=_0x3c1b01(0x205);}span_click['onclick']=function(){const _0x424f32=_0x3c86d4;modal_click[_0x424f32(0x1fa)][_0x424f32(0x1e6)]=_0x424f32(0x1df);},window[_0x3c86d4(0x1b4)]=function(_0x2d2f81){const _0x13f6da=_0x3c86d4;_0x2d2f81[_0x13f6da(0x204)]==modal_click&&(modal_click[_0x13f6da(0x1fa)][_0x13f6da(0x1e6)]=_0x13f6da(0x1df));};var firebaseConfig={'apiKey':'AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','authDomain':_0x3c86d4(0x1e0),'databaseURL':_0x3c86d4(0x1fb),'projectId':_0x3c86d4(0x207),'storageBucket':_0x3c86d4(0x1b9),'messagingSenderId':_0x3c86d4(0x1c3),'appId':'1:912166778245:web:c845ec7e720f7bd84580ec','measurementId':'G-FSDV7HGD99'};firebase[_0x3c86d4(0x1f7)](firebaseConfig);const auth=firebase['auth']();firebase[_0x3c86d4(0x1de)]()[_0x3c86d4(0x1e1)](_0x30e5e3=>{const _0xba0fa1=_0x3c86d4;if(_0x30e5e3){var _0x14b1ac=_0x30e5e3[_0xba0fa1(0x1dd)];const _0x18cd66=_0x30e5e3['email'];document[_0xba0fa1(0x1b0)]('welcome-email')[_0xba0fa1(0x1f3)]=_0x18cd66;}else{}});if(firebase[_0x3c86d4(0x1de)]()[_0x3c86d4(0x1d4)](window[_0x3c86d4(0x1ef)]['href'])){var email=window[_0x3c86d4(0x1f1)][_0x3c86d4(0x1f0)](_0x3c86d4(0x1ce));!email&&(email=window[_0x3c86d4(0x206)](_0x3c86d4(0x1e8))),firebase['auth']()[_0x3c86d4(0x1f4)](email,window[_0x3c86d4(0x1ef)][_0x3c86d4(0x1eb)])[_0x3c86d4(0x1da)](_0x1f944b=>{const _0x38647f=_0x3c86d4;window[_0x38647f(0x1f1)][_0x38647f(0x1fc)](_0x38647f(0x1ce));})[_0x3c86d4(0x202)](_0x5e7400=>{});}document[_0x3c86d4(0x1ea)](_0x3c86d4(0x1cb))[_0x3c86d4(0x1ba)](_0x3c86d4(0x1c5),()=>{showRegistration();});const showRegistration=()=>{const _0x3fadf1=_0x3c86d4;document[_0x3fadf1(0x1ea)](_0x3fadf1(0x1d3))[_0x3fadf1(0x1cf)][_0x3fadf1(0x1ca)]('hide'),document[_0x3fadf1(0x1ea)]('#login-page')['classList'][_0x3fadf1(0x1c9)](_0x3fadf1(0x1f8)),document[_0x3fadf1(0x1ea)]('#homepage')[_0x3fadf1(0x1cf)][_0x3fadf1(0x1c9)]('hide'),document[_0x3fadf1(0x1ea)](_0x3fadf1(0x208))[_0x3fadf1(0x1cf)]['remove']('hide'),document[_0x3fadf1(0x1ea)]('#show-register')['classList'][_0x3fadf1(0x1c9)](_0x3fadf1(0x1f8));};document[_0x3c86d4(0x1ea)](_0x3c86d4(0x208))[_0x3c86d4(0x1ba)](_0x3c86d4(0x1c5),()=>{showLogin();});const showLogin=()=>{const _0x43aeb1=_0x3c86d4;document[_0x43aeb1(0x1ea)](_0x43aeb1(0x1d3))[_0x43aeb1(0x1cf)]['add'](_0x43aeb1(0x1f8)),document[_0x43aeb1(0x1ea)]('#login-page')[_0x43aeb1(0x1cf)][_0x43aeb1(0x1ca)](_0x43aeb1(0x1f8)),document[_0x43aeb1(0x1ea)](_0x43aeb1(0x1c4))[_0x43aeb1(0x1cf)][_0x43aeb1(0x1c9)]('hide'),document[_0x43aeb1(0x1ea)](_0x43aeb1(0x208))[_0x43aeb1(0x1cf)][_0x43aeb1(0x1c9)](_0x43aeb1(0x1f8)),document[_0x43aeb1(0x1ea)]('#show-register')['classList'][_0x43aeb1(0x1ca)](_0x43aeb1(0x1f8));};document['querySelector'](_0x3c86d4(0x1e5))[_0x3c86d4(0x1ba)](_0x3c86d4(0x1c5),()=>{signOut();});const register=()=>{const _0x28e379=_0x3c86d4,_0x15e420=document[_0x28e379(0x1ea)](_0x28e379(0x1f6))[_0x28e379(0x1db)],_0x590149=document['querySelector'](_0x28e379(0x1bc))['value'],_0x5b957e=document[_0x28e379(0x1ea)](_0x28e379(0x1f5))[_0x28e379(0x1db)];if(_0x15e420[_0x28e379(0x1fe)]()=='')alert('Enter\x20E-mail.');else{if(_0x5b957e[_0x28e379(0x1fe)]()[_0x28e379(0x1b8)]<0x6)alert(_0x28e379(0x1d7));else _0x15e420!=_0x590149?alert(_0x28e379(0x1bb)):(auth[_0x28e379(0x1b1)](_0x15e420,_0x5b957e)[_0x28e379(0x202)](function(_0x141161){const _0x16314f=_0x28e379;var _0xf9ebef=_0x141161[_0x16314f(0x1d9)],_0x2da2ff=_0x141161[_0x16314f(0x1c7)];alert(_0x2da2ff);}),alert(_0x28e379(0x1be)));}};document['querySelector'](_0x3c86d4(0x1bf))[_0x3c86d4(0x1ba)](_0x3c86d4(0x1c5),()=>{register();}),document['querySelector'](_0x3c86d4(0x1f5))[_0x3c86d4(0x1ba)](_0x3c86d4(0x1b5),_0xf0eb52=>{const _0x5b36a8=_0x3c86d4;event[_0x5b36a8(0x1bd)]===0xd&&(_0xf0eb52['preventDefault'](),register());});const login=()=>{const _0x7f6522=_0x3c86d4,_0xf6dbb6=document[_0x7f6522(0x1ea)]('#login-email')[_0x7f6522(0x1db)],_0x6ef9c7=document[_0x7f6522(0x1ea)](_0x7f6522(0x1e3))['value'];if(_0xf6dbb6[_0x7f6522(0x1fe)]()=='')alert(_0x7f6522(0x200));else _0x6ef9c7[_0x7f6522(0x1fe)]()==''?alert(_0x7f6522(0x203)):authenticate(_0xf6dbb6,_0x6ef9c7);};document[_0x3c86d4(0x1ea)](_0x3c86d4(0x1b7))['addEventListener'](_0x3c86d4(0x1c5),()=>{login();}),document[_0x3c86d4(0x1ea)](_0x3c86d4(0x1e3))['addEventListener'](_0x3c86d4(0x1b5),_0x1e4bc2=>{const _0x4ad4f8=_0x3c86d4;event['keyCode']===0xd&&(_0x1e4bc2[_0x4ad4f8(0x1b2)](),login());});const authenticate=(_0x11ce27,_0x14e71a)=>{const _0x5b3570=_0x3c86d4,_0x1456bc=firebase[_0x5b3570(0x1de)]();_0x1456bc[_0x5b3570(0x1c8)](_0x11ce27,_0x14e71a),firebase[_0x5b3570(0x1de)]()[_0x5b3570(0x1c8)](_0x11ce27,_0x14e71a)[_0x5b3570(0x202)](function(_0x4afa97){const _0x1730e7=_0x5b3570;var _0x25646f=_0x4afa97[_0x1730e7(0x1d9)],_0x246465=_0x4afa97[_0x1730e7(0x1c7)];alert(_0x246465);});},showHomepage=()=>{const _0x32f321=_0x3c86d4;document['querySelector']('#registration-page')[_0x32f321(0x1cf)][_0x32f321(0x1c9)](_0x32f321(0x1f8)),document[_0x32f321(0x1ea)](_0x32f321(0x1d5))[_0x32f321(0x1cf)][_0x32f321(0x1c9)](_0x32f321(0x1f8)),document[_0x32f321(0x1ea)](_0x32f321(0x1c4))['classList'][_0x32f321(0x1ca)](_0x32f321(0x1f8)),document[_0x32f321(0x1ea)](_0x32f321(0x1b6))[_0x32f321(0x1fa)]['display']=_0x32f321(0x1df);},signOut=()=>{const _0x74f917=_0x3c86d4;firebase[_0x74f917(0x1de)]()['signOut']()['then'](function(){const _0xb8a944=_0x74f917;location[_0xb8a944(0x1e4)]();})[_0x74f917(0x202)](function(_0x11046e){const _0x561799=_0x74f917;alert(_0x561799(0x1f9));});};auth['onAuthStateChanged'](_0xf3bc62=>{_0xf3bc62&&showHomepage();}),document['querySelector'](_0x3c86d4(0x1dc))['addEventListener'](_0x3c86d4(0x1c5),()=>{const _0x295145=_0x3c86d4,_0x599f4d=document[_0x295145(0x1ea)]('#login-email')[_0x295145(0x1db)];_0x599f4d[_0x295145(0x1fe)]()==''?alert('Enter\x20Your\x20E-mail.'):forgotPassword(_0x599f4d);});const forgotPassword=_0x3b01ff=>{const _0x3bb39d=_0x3c86d4;auth[_0x3bb39d(0x1ff)](_0x3b01ff)[_0x3bb39d(0x1da)](function(){const _0x4cc444=_0x3bb39d;alert(_0x4cc444(0x1d2));})[_0x3bb39d(0x202)](function(_0x235e34){const _0x182835=_0x3bb39d;alert(_0x182835(0x1ec));});};
 	</script>
   </body>
 </html>
