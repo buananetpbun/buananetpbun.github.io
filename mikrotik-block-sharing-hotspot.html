@@ -105,9 +105,9 @@
       width:auto;
       color:#ddd
       }
-	 h2 {
-	 color:#ff6600;;
-	 }	  	  
+      h2 {
+      color:#ff6600;;
+      }	    
       h1 {
       color:#ddd;
       font-size:20px;
@@ -277,16 +277,16 @@
       background:#ddd;
       text-align:center;
       }
-      .mymenu {
-	  z-index: 10;
+	  .mymenu {
+      z-index: 4;
       margin:0 auto;
       background-color: #f9f9f9;
-      width:600px;
+      width:700px;
       border-radius:0 0 5px 5px;
       border: 2px solid #f9f9f9;
       font-weight:bold;
       font-size:14px;
-	  position:relative;
+      position:relative;
       }
       .mymenu ul {
       list-style-type: none;
@@ -379,19 +379,6 @@
       .modal {
       display: block; /* Hidden by default */
       position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-      }
-      .modal-login {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
       z-index: 2; /* Sit on top */
       padding-top: 150px; /* Location of the box */
       left: 0;
@@ -400,8 +387,34 @@
       height: 100%; /* Full height */
       overflow: auto; /* Enable scroll if needed */
       background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
       }
+      .modal-login {
+      display: block; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 3; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+      }
+      .lock-screen {
+      display: block; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+      }	  
       /* Modal Content */
       .modal-content {
       line-height:1.4;
@@ -411,8 +424,8 @@
       margin: auto;
       padding: 20px;
       border: 1px solid #444;
-      width: 390px;
-      box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      width: 380px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
       font-weight:bold;
       }
       .modal-content p {
@@ -421,7 +434,7 @@
       display:list-item;
       line-height:2.0;
       list-style: disc;
-      }  
+      }
       /* The Close Button */
       .close {
       color: #aaaaaa;
@@ -452,8 +465,10 @@
         <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
       </ul>
       <div id="homepage" class="hide">
-        <button style="width:100px !important; padding:2px; margin:3px; font-weight:bold" id="signout">Logout</button>
-        <span style="font-weight:normal"> Welcome [ <span style="color:green" id="welcome-email"></span> ]</span>
+        <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold" id="signout">Logout</button>
+        <span style="font-weight:normal">ID: <span style="color:green" id="welcome-email"></span></span>
+        <span style="font-weight:normal; font-size:14px"> ** E-Mail Verified: <span style="" id="email_Verified"></span></span> 
+        <button id="verify" style="width:120px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px" onclick="sendVerificationEmail()">Verified Now!</button>
       </div>
     </div>
     <div id="wrap">
@@ -479,7 +494,7 @@
           </div>
           <table id="mytable" style="margin-top:5px; font-weight:normal;white-space: nowrap;">
             <tr style="background-color: #ddd; " >
-              <td><button type="button" id="bt" onclick="CheckFunction();submit()" >Generate Script</button>  <button style="margin-left:5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('output'))">Copy All Script</button></td>
+              <td><button type="button" id="bt" onclick=";submit()" >Generate Script</button>  <button style="margin-left:5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('output'))">Copy All Script</button></td>
             </tr>
             <tr style="font-size:15px;font-weight:normal; background-color: #f9f9f9;">
               <td>
@@ -495,6 +510,8 @@
         </div>
       </div>
     </div>
+    <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen"></div>
+    <div oncontextmenu="return false;" id="myLogin" class="modal-login">	
     <div oncontextmenu="return false;" id="myLogin" class="modal-login">
       <div class="modal-content">
         <div class="forms-out">
