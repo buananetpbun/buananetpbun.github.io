@@ -262,16 +262,16 @@
       table, tr, td {
       border: none;
       }
-  	  .mymenu {
-	  z-index: 10;
+	  .mymenu {
+      z-index: 4;
       margin:0 auto;
       background-color: #f9f9f9;
-      width:600px;
+      width:650px;
       border-radius:0 0 5px 5px;
       border: 2px solid #f9f9f9;
       font-weight:bold;
       font-size:14px;
-	  position:relative;
+      position:relative;
       }
       .mymenu ul {
       list-style-type: none;
@@ -369,21 +369,72 @@
        #show-login:hover {
         opacity: 0.7;
       }
-	 /* The Modal (background) */
-      .modal {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ /* LOGIN Content */
+      .forms-out {
+      margin: 0 auto;
+      padding: 0;
+      font-size:14px;
       }
-	  .modal-login {
+      .forms-in {
+      width: 100%;
+      margin: 0 auto;
+      color: white;
+      padding: 0;
+      font-size:14px;
+      }
+      .forms-in div {
+      padding: 0;
+      max-width: 350px;
+      margin: 0 auto;      
+      border-radius: 5px;
+      margin-bottom: 15px;
+      }
+      .forms-in h3 {
+      text-align: center;
+      }
+      .forms-in input {
+      border: none;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      }
+      .forms-in button {
+      border: none;
+      padding: 7px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top:10px;
+      margin-bottom:15px;
+      }
+      .forms-in button:hover {
+      opacity: 0.7;
+      }
+      .hide {
+      display: none;
+      }
+      #forgot-password {
+      cursor: pointer;
+      }
+      #forgot-password:hover {
+      opacity: 0.7;
+      }
+      #show-register {
+      cursor: pointer;
+      }
+      #show-register:hover {
+      opacity: 0.7;
+      }
+      #show-login {
+      cursor: pointer;
+      }
+      #show-login:hover {
+      opacity: 0.7;
+      }
+      /* The Modal (background) */
+      .modal {
       display: block; /* Hidden by default */
       position: fixed; /* Stay in place */
       z-index: 2; /* Sit on top */
@@ -394,8 +445,34 @@
       height: 100%; /* Full height */
       overflow: auto; /* Enable scroll if needed */
       background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
       }
+      .modal-login {
+      display: block; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 3; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+      }
+      .lock-screen {
+      display: block; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+      }	  
       /* Modal Content */
       .modal-content {
       line-height:1.4;
@@ -440,15 +517,17 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
     <div class="mymenu">
       <ul>
-        <li><a target="_blank" href="https://buananetpbun.github.io">☰ ALL TOOLS</a></li>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ HOME</a></li>
         <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
         <li><a href="javascript:callmodal()">DONATE</a></li>
         <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
       </ul>
-	  <div id="homepage" class="hide">
-         <button style="width:100px !important; padding:2px; margin:3px; font-weight:bold" id="signout">Logout</button>
-         <span style="font-weight:normal">Welcome [ <span style="color:green" id="welcome-email"></span> ]</span>
-     </div>	  
+      <div id="homepage" class="hide">
+        <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold;font-size:14px" id="signout">Logout</button>
+        <span style="font-weight:normal">ID: <span style="color:green;font-size:14px" id="welcome-email"></span></span>
+        <span style="font-weight:normal; font-size:14px"> ** E-Mail Verified: <span style="" id="email_Verified"></span></span> 
+        <button id="verify" style="width:120px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px" onclick="sendVerificationEmail()">Verified Now!</button>
+      </div>
     </div>
     <div id="wrap">
       <div class="logo">
