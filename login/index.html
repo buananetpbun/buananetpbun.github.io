@@ -330,9 +330,11 @@
               <br>
               <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
               <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+			  
+			  <br><br>
+			  <span id="google-sign-in">Sign-In with Google</span>
             </div>
 			
-			<span id="google-sign-in">google</span>
           </div>
         </div>
       </div>
@@ -438,12 +440,9 @@
       document.querySelector("#google-sign-in").addEventListener("click", () => {
      	        console.log('Login Btn Call')
         firebase.auth().signInWithPopup(provider).then(res=>{
-          console.log(res.user)
-          //document.getElementById('LoginScreen').style.display="none"
-          //document.getElementById('dashboard').style.display="block"
-          //showUserDetails(res.user)
+
         }).catch(e=>{
-          console.log(e)
+
         })
      });
 	 
