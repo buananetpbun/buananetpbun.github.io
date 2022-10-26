@@ -455,7 +455,7 @@ const provider3 = new firebase.auth.GithubAuthProvider();
 		 
 		 document.getElementById('welcome-email').innerHTML = user
          // ...
-		 showHomepage();
+
 		 
          }).catch(function(error) {
          // Handle Errors here.
@@ -476,7 +476,7 @@ const provider3 = new firebase.auth.GithubAuthProvider();
          var user = result.user;
 		 document.getElementById('welcome-email').innerHTML = user
          // ...
-		 showHomepage();
+
          }).catch(function(error) {
          // Handle Errors here.
          var errorCode = error.code;
@@ -498,7 +498,7 @@ const provider3 = new firebase.auth.GithubAuthProvider();
         var user = result.user;
 		 document.getElementById('welcome-email').innerHTML = user
          // ...
-		 showHomepage();
+
          }).catch(function(error) {
          // Handle Errors here.
          var errorCode = error.code;
