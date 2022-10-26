@@ -495,10 +495,10 @@ const provider3 = new firebase.auth.GithubAuthProvider();
          // ...
          }
          // The signed-in user info.
+        var user = result.user;
 		 document.getElementById('welcome-email').innerHTML = user
          // ...
 		 showHomepage();
-		 
          }).catch(function(error) {
          // Handle Errors here.
          var errorCode = error.code;
@@ -734,7 +734,6 @@ const provider3 = new firebase.auth.GithubAuthProvider();
          		});
          };
           	
-			FirebaseAuth.getInstance().signOut();
       </script>
    </body>
 </html>
