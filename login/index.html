@@ -1,96 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Firebase Auth: Google - TechFerment</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOGIN - BuanaNETPBun.Github.io</title>
+    <meta content='Mikrotik RouterOS Auto Backup to E-Mail Generator - BuanaNETPBun.Github.io' name='description'>
+    <meta content='hotspot, username, password, script generator, mikrotik, router, winbox, termimal, rsc, script, wireless, rtrwnet' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <style>
+      /* -----------------------------------------------------------------
+      ####################################################################
+      # LOGIN FORM BUANANETPBUN.GITHUB.IO
+      # Designer  : Agus Ramadhani / BuanaNET
+      # Github    : https://github.com/buananetpbun
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananetmikrotik	
+      ####################################################################
+      -------------------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
+      }
+      * {
+      box-sizing: border-box;
+      }
+      h2 {
+      color:#ff6600;;
+      }	  	  
+      h1 {
+      color:#ddd;
+      font-size:22px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:8px;
+      margin-right:5px;
+      width:150px;
+      font-size:15px;
+      font-weight:bold;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=checkbox]{
+      margin-right:7px; 
+      }
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      margin-bottom:12px;
+      font-size:15px !important;
+      border-radius:5px; 
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      float: right;
+      border-radius:5px; 
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      table, tr, td {
+      border: none;
+      }
+	  .mymenu {
+      z-index: 4;
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:650px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+      position:relative;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
+      margin-right:10px;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      }  
+      /* LOGIN Content */
+      .forms-out {
+      margin: 0 auto;
+      padding: 0;
+      }
+      .forms-in {
+      width: 100%;
+      margin: 0 auto;
+      color: white;
+      padding: 0;
+      }
+      .forms-in div {
+      padding: 0;
+      max-width: 350px;
+      margin: 0 auto;      
+      border-radius: 5px;
+      margin-bottom: 15px;
+      }
+      .forms-in h3 {
+      text-align: center;
+      }
+      .forms-in input {
+      border: none;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      }
+      .forms-in button {
+      border: none;
+      padding: 7px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top:10px;
+      margin-bottom:15px;
+      }
+      .forms-in button:hover {
+      opacity: 0.7;
+      }
+      .hide {
+      display: none;
+      }
+      #forgot-password {
+      cursor: pointer;
+      }
+      #forgot-password:hover {
+      opacity: 0.7;
+      }
+      #show-register {
+      cursor: pointer;
+      }
+      #show-register:hover {
+      opacity: 0.7;
+      }
+      #show-login {
+      cursor: pointer;
+      }
+      #show-login:hover {
+      opacity: 0.7;
+      }
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 2; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      .modal-login {
+      display: block; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 150px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+      line-height:1.4;
+      border-radius: 5px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+      color:#ddd;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 400px;
+      box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      font-weight:bold;
+      }
+      .modal-content p {
+      padding:0;
+      margin:5px 5px 0 17px;
+      display:list-item;
+      line-height:2.0;
+      list-style: disc;
+      }  
+      /* The Close Button */
+      .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top:-20px;
+      margin-right:-10px;
+      }
+      .close:hover,
+      .close:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer;
+      } 
+    </style>
   </head>
   <body>
-    <h1>Welcome : Firebase Auth: Google</h1>
-    <p>TechFerment: Firebase For Web</p>
-
-    <div id="LoginScreen">
-      <button id="login">Login with Google</button>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ HOME</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
+      </ul>
+      <div id="homepage" class="hide">
+        <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+        <span style="font-weight:normal;font-size:14px">Welcome: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+        <span style="font-weight:normal; font-size:14px"> - Verified Status: [ <span id="email_Verified"></span> ]</span> 
+        <button id="verify" style="width:100px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:green" onclick="sendVerificationEmail()">Verify Now!</button>
+      </div>
     </div>
-
-    <div id="dashboard">
-      <div id="userDetails"></div>
-      <button id="logout">Logout</button>
+    <div id="myLogin" class="modal-login">
+      <div class="modal-content">
+        <div class="forms-out">
+          <div class="forms-in">
+            <div id="registration-page" class="hide">
+              <h2>SIGN UP</h2>
+              <br>
+              <label>E-Mail</label>
+              <input type="email" id="registration-email" placeholder="E-Mail"></input>
+              <label>Confirm E-mail</label> 
+              <input type="email" id="registration-reemail" autocomplete="disable" placeholder="Confirm E-Mail" ></input>
+              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
+              <input type="password" id="registration-password" placeholder="Password"></input>
+              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
+            </div>
+            <div id="login-page">
+              <h2>SIGN IN</h2>
+              <br>
+              <label>E-Mail</label>
+              <input type="email" id="login-email" placeholder="E-Mail" ></input>
+              <label>Password</label>
+              <input type="password" id="login-password" placeholder="Password"></input>
+              <button style="width:100% !important;" id="login">Login</button>
+              <br>
+              <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
+              <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
+    <div oncontextmenu="return false;" id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:22px;font-weight:bold">Want to give me a Gift ?</div>
+		<div style="font-size:16px;font-weight:bold;margin-bottom:17px; margin-top:10px">
+        <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+        <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+        <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
+        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        </div>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+    </div>
+    </div>
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-  apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
-  authDomain: "buananetpbun-5d979.firebaseapp.com",
-  databaseURL: "https://buananetpbun-5d979-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "buananetpbun-5d979",
-  storageBucket: "buananetpbun-5d979.appspot.com",
-  messagingSenderId: "912166778245",
-  appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
-  measurementId: "G-FSDV7HGD99"
-		
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-
-      document.getElementById('dashboard').style.display="none"
-
-      document.getElementById('login').addEventListener('click', GoogleLogin)
-      document.getElementById('logout').addEventListener('click', LogoutUser)
-
-      let provider = new firebase.auth.GoogleAuthProvider()
-
-      function GoogleLogin(){
-        console.log('Login Btn Call')
-        firebase.auth().signInWithPopup(provider).then(res=>{
-          console.log(res.user)
-          document.getElementById('LoginScreen').style.display="none"
-          document.getElementById('dashboard').style.display="block"
-          showUserDetails(res.user)
-        }).catch(e=>{
-          console.log(e)
-        })
-      }
-
-      function showUserDetails(user){
-        document.getElementById('userDetails').innerHTML = `
-          <img src="${user.photoURL}" style="width:10%">
-          <p>Name: ${user.displayName}</p>
-          <p>Email: ${user.email}</p>
-        `
-      }
-
-      function checkAuthState(){
-        firebase.auth().onAuthStateChanged(user=>{
-          if(user){
-            document.getElementById('LoginScreen').style.display="none"
-            document.getElementById('dashboard').style.display="block"
-            showUserDetails(user)
-          }else{
-
-          }
-        })
-      }
-
-      function LogoutUser(){
-        console.log('Logout Btn Call')
-        firebase.auth().signOut().then(()=>{
-          document.getElementById('LoginScreen').style.display="block"
-          document.getElementById('dashboard').style.display="none"
-        }).catch(e=>{
-          console.log(e)
-        })
-      }
-      checkAuthState()
+  const _0xade7fa=_0x17c8;(function(_0xf9f23e,_0x1d59e5){const _0x3732e3=_0x17c8,_0x44e673=_0xf9f23e();while(!![]){try{const _0x28231f=parseInt(_0x3732e3(0x1fb))/0x1+parseInt(_0x3732e3(0x227))/0x2+-parseInt(_0x3732e3(0x232))/0x3*(-parseInt(_0x3732e3(0x225))/0x4)+-parseInt(_0x3732e3(0x20f))/0x5*(parseInt(_0x3732e3(0x1f9))/0x6)+parseInt(_0x3732e3(0x236))/0x7+parseInt(_0x3732e3(0x238))/0x8+-parseInt(_0x3732e3(0x1f7))/0x9;if(_0x28231f===_0x1d59e5)break;else _0x44e673['push'](_0x44e673['shift']());}catch(_0x52df3b){_0x44e673['push'](_0x44e673['shift']());}}}(_0x3131,0xc76bd));function _0x3131(){const _0x3b2676=['#login-password','#homepage','1:912166778245:web:c845ec7e720f7bd84580ec','#registration-password','hide','3225240vkQOLV','Enter\x20Your\x20E-mail.','39612BrCPDx','AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','1209762IwMiLi','#signout','emails\x20do\x20not\x20match.','then','preventDefault','sendPasswordResetEmail','Enter\x20Password.','emailVerified','getElementById','none','onclick','Password\x20must\x20be\x20at\x20least\x206\x20characters.','G-FSDV7HGD99','target','keyCode','currentUser','#login-email','#show-register','#registration-page','message','865MepYMO','alert','verify','buananetpbun-5d979.firebaseapp.com','reload','buananetpbun-5d979','signOut','invalid\x20e-mail\x20or\x20bad\x20network\x20connection.','block','initializeApp','sendEmailVerification','#show-login','#login-page','auth','https://buananetpbun-5d979.firebaseio.com','addEventListener','catch','#login','#forgot-password','#myLogin','signInWithEmailAndPassword','add','64964WroqOq','buananetpbun-5d979.appspot.com','1217696JUDixK','click','querySelector','keyup','trim','Enter\x20E-mail.','length','onAuthStateChanged','#register','email_Verified','style','3ytJegj','myModal','display','912166778245','1762670aKKqAu','value','1845392SdnDBt','email','code','classList','Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.','#registration-reemail','innerHTML','remove'];_0x3131=function(){return _0x3b2676;};return _0x3131();}var modal_click=document['getElementById'](_0xade7fa(0x233)),span_click=document['getElementsByClassName']('close')[0x0];function callmodal(){const _0x2d6244=_0xade7fa;modal_click[_0x2d6244(0x231)]['display']=_0x2d6244(0x217);}span_click[_0xade7fa(0x205)]=function(){const _0x4ca7d6=_0xade7fa;modal_click['style'][_0x4ca7d6(0x234)]='none';},window[_0xade7fa(0x205)]=function(_0x199070){const _0x10ab26=_0xade7fa;_0x199070[_0x10ab26(0x208)]==modal_click&&(modal_click['style'][_0x10ab26(0x234)]=_0x10ab26(0x204));};var firebaseConfig={'apiKey':_0xade7fa(0x1fa),'authDomain':_0xade7fa(0x212),'databaseURL':_0xade7fa(0x21d),'projectId':_0xade7fa(0x214),'storageBucket':_0xade7fa(0x226),'messagingSenderId':_0xade7fa(0x235),'appId':_0xade7fa(0x1f4),'measurementId':_0xade7fa(0x207)};firebase[_0xade7fa(0x218)](firebaseConfig);const auth=firebase[_0xade7fa(0x21c)]();firebase[_0xade7fa(0x21c)]()['onAuthStateChanged'](_0xd6714c=>{const _0x5787b8=_0xade7fa;if(_0xd6714c){const _0x138e7c=_0xd6714c['uid'],_0xf0e4f=_0xd6714c[_0x5787b8(0x1eb)],_0x50842f=_0xd6714c[_0x5787b8(0x202)];document['getElementById']('welcome-email')['innerHTML']=_0xf0e4f,_0x50842f==!![]?(document[_0x5787b8(0x203)](_0x5787b8(0x211))[_0x5787b8(0x231)][_0x5787b8(0x234)]=_0x5787b8(0x204),document['getElementById'](_0x5787b8(0x230))[_0x5787b8(0x1f0)]='✔️'):document[_0x5787b8(0x203)]('email_Verified')['innerHTML']='❌';}else{}});const user=firebase[_0xade7fa(0x21c)]()[_0xade7fa(0x20a)];function sendVerificationEmail(){const _0x945dc4=_0xade7fa;var _0x52cc9f=firebase[_0x945dc4(0x21c)]()[_0x945dc4(0x20a)];_0x52cc9f[_0x945dc4(0x219)]()[_0x945dc4(0x1fe)](function(){const _0x329d2=_0x945dc4;window[_0x329d2(0x210)]('Verification\x20link\x20sent\x20to\x20your\x20email.\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.');})[_0x945dc4(0x21f)](function(_0x28e8f1){const _0x5a01bc=_0x945dc4;var _0x232202=_0x28e8f1[_0x5a01bc(0x1ec)],_0x40612e=_0x28e8f1['message'];alert(_0x40612e);});}document[_0xade7fa(0x229)](_0xade7fa(0x20c))[_0xade7fa(0x21e)]('click',()=>{showRegistration();});const showRegistration=()=>{const _0x55ab33=_0xade7fa;document[_0x55ab33(0x229)](_0x55ab33(0x20d))[_0x55ab33(0x1ed)][_0x55ab33(0x1f1)](_0x55ab33(0x1f6)),document[_0x55ab33(0x229)](_0x55ab33(0x21b))[_0x55ab33(0x1ed)][_0x55ab33(0x224)]('hide'),document[_0x55ab33(0x229)](_0x55ab33(0x1f3))[_0x55ab33(0x1ed)][_0x55ab33(0x224)](_0x55ab33(0x1f6)),document[_0x55ab33(0x229)](_0x55ab33(0x21a))[_0x55ab33(0x1ed)]['remove'](_0x55ab33(0x1f6)),document[_0x55ab33(0x229)]('#show-register')[_0x55ab33(0x1ed)][_0x55ab33(0x224)]('hide');};document[_0xade7fa(0x229)](_0xade7fa(0x21a))[_0xade7fa(0x21e)]('click',()=>{showLogin();});const showLogin=()=>{const _0x40a5e1=_0xade7fa;document['querySelector'](_0x40a5e1(0x20d))[_0x40a5e1(0x1ed)]['add'](_0x40a5e1(0x1f6)),document[_0x40a5e1(0x229)]('#login-page')['classList'][_0x40a5e1(0x1f1)](_0x40a5e1(0x1f6)),document[_0x40a5e1(0x229)](_0x40a5e1(0x1f3))['classList'][_0x40a5e1(0x224)](_0x40a5e1(0x1f6)),document[_0x40a5e1(0x229)](_0x40a5e1(0x21a))['classList'][_0x40a5e1(0x224)](_0x40a5e1(0x1f6)),document[_0x40a5e1(0x229)](_0x40a5e1(0x20c))['classList'][_0x40a5e1(0x1f1)](_0x40a5e1(0x1f6));};document[_0xade7fa(0x229)](_0xade7fa(0x1fc))[_0xade7fa(0x21e)]('click',()=>{signOut();});const register=()=>{const _0x35f303=_0xade7fa,_0x2d500a=document[_0x35f303(0x229)]('#registration-email')[_0x35f303(0x237)],_0x28557a=document[_0x35f303(0x229)](_0x35f303(0x1ef))['value'],_0x32dbc6=document[_0x35f303(0x229)]('#registration-password')[_0x35f303(0x237)];if(_0x2d500a[_0x35f303(0x22b)]()=='')alert('Enter\x20E-mail.');else{if(_0x32dbc6[_0x35f303(0x22b)]()[_0x35f303(0x22d)]<0x6)alert(_0x35f303(0x206));else _0x2d500a!=_0x28557a?alert(_0x35f303(0x1fd)):auth['createUserWithEmailAndPassword'](_0x2d500a,_0x32dbc6)[_0x35f303(0x21f)](function(_0x1255da){const _0x24a844=_0x35f303;var _0x276c4e=_0x1255da[_0x24a844(0x1ec)],_0x3aeaec=_0x1255da['message'];alert(_0x3aeaec);});}};document['querySelector'](_0xade7fa(0x22f))[_0xade7fa(0x21e)](_0xade7fa(0x228),()=>{register();}),document[_0xade7fa(0x229)](_0xade7fa(0x1f5))[_0xade7fa(0x21e)](_0xade7fa(0x22a),_0x5afa58=>{const _0x56a079=_0xade7fa;event[_0x56a079(0x209)]===0xd&&(_0x5afa58[_0x56a079(0x1ff)](),register());});const login=()=>{const _0x212346=_0xade7fa,_0x3f52ad=document[_0x212346(0x229)](_0x212346(0x20b))[_0x212346(0x237)],_0x53e68b=document[_0x212346(0x229)]('#login-password')[_0x212346(0x237)];if(_0x3f52ad[_0x212346(0x22b)]()=='')alert(_0x212346(0x22c));else _0x53e68b['trim']()==''?alert(_0x212346(0x201)):authenticate(_0x3f52ad,_0x53e68b);};function _0x17c8(_0x5cd779,_0x10bd3b){const _0x3131d2=_0x3131();return _0x17c8=function(_0x17c82e,_0x945a1e){_0x17c82e=_0x17c82e-0x1eb;let _0x5e7d33=_0x3131d2[_0x17c82e];return _0x5e7d33;},_0x17c8(_0x5cd779,_0x10bd3b);}document[_0xade7fa(0x229)](_0xade7fa(0x220))['addEventListener'](_0xade7fa(0x228),()=>{login();}),document['querySelector'](_0xade7fa(0x1f2))[_0xade7fa(0x21e)](_0xade7fa(0x22a),_0x34466d=>{const _0x37b99c=_0xade7fa;event[_0x37b99c(0x209)]===0xd&&(_0x34466d[_0x37b99c(0x1ff)](),login());});const authenticate=(_0x33064c,_0x4f94f2)=>{const _0x2e87af=_0xade7fa,_0x13c7df=firebase['auth']();_0x13c7df[_0x2e87af(0x223)](_0x33064c,_0x4f94f2),firebase['auth']()[_0x2e87af(0x223)](_0x33064c,_0x4f94f2)[_0x2e87af(0x21f)](function(_0x3670cc){const _0x126d01=_0x2e87af;var _0x14f316=_0x3670cc['code'],_0x32c5ae=_0x3670cc[_0x126d01(0x20e)];alert(_0x32c5ae);});},showHomepage=()=>{const _0x1ad770=_0xade7fa;document['querySelector'](_0x1ad770(0x20d))['classList'][_0x1ad770(0x224)](_0x1ad770(0x1f6)),document[_0x1ad770(0x229)](_0x1ad770(0x21b))[_0x1ad770(0x1ed)][_0x1ad770(0x224)](_0x1ad770(0x1f6)),document[_0x1ad770(0x229)]('#homepage')[_0x1ad770(0x1ed)][_0x1ad770(0x1f1)]('hide'),document['querySelector'](_0x1ad770(0x222))[_0x1ad770(0x231)][_0x1ad770(0x234)]=_0x1ad770(0x204);},signOut=()=>{const _0x1c077d=_0xade7fa;firebase[_0x1c077d(0x21c)]()[_0x1c077d(0x215)]()[_0x1c077d(0x1fe)](function(){const _0x2a3b46=_0x1c077d;location[_0x2a3b46(0x213)]();})['catch'](function(_0xf60cb3){alert('error\x20signing\x20out,\x20check\x20network\x20connection');});};auth[_0xade7fa(0x22e)](_0x2c50c0=>{_0x2c50c0&&showHomepage();}),document[_0xade7fa(0x229)](_0xade7fa(0x221))[_0xade7fa(0x21e)](_0xade7fa(0x228),()=>{const _0x48482f=_0xade7fa,_0x18bbac=document[_0x48482f(0x229)](_0x48482f(0x20b))['value'];_0x18bbac[_0x48482f(0x22b)]()==''?alert(_0x48482f(0x1f8)):forgotPassword(_0x18bbac);});const forgotPassword=_0x131bd2=>{const _0x65cbe6=_0xade7fa;auth[_0x65cbe6(0x200)](_0x131bd2)[_0x65cbe6(0x1fe)](function(){const _0x495c7f=_0x65cbe6;alert(_0x495c7f(0x1ee));})[_0x65cbe6(0x21f)](function(_0x525f0f){const _0x2dccad=_0x65cbe6;alert(_0x2dccad(0x216));});};
+      	
     </script>
   </body>
 </html>
