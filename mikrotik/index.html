@@ -398,9 +398,9 @@
       background-color: #f0f0f0;
       color: #111;
       }	    
-    
-     </style> 
- <link rel="stylesheet" href="//buanananetpbun.github.io/login/login.css">
+   
+    </style>
+	<link rel="stylesheet" href="../login/login.css">
   </head>
   <body>
    	<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
@@ -418,7 +418,7 @@
         <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
         <span style="font-weight:normal;font-size:14px">USER-ID: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
         <span style="font-weight:normal; font-size:14px"> - VERIFIED: [ <span id="email_Verified"></span> ]</span>
-        <button id="verify" style="width:100px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:green" >Verify Now!</button>
+        <button id="verify" style="width:100px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:green">Verify Now!</button>
       </div>
       </div>
 	<div id="wrap">
@@ -868,36 +868,32 @@ Send Your Mikrotik RouterOS Script For Contribution -> <a href="https://docs.goo
           <div class="forms-in">
             <div id="registration-page" class="hide">
               <h2>SIGN UP</h2>
-              <br><br>
+              <br>
               <label>E-Mail</label>
               <input type="email" id="registration-email" placeholder="E-Mail"></input>
               <label>Confirm E-mail</label> 
               <input type="email" id="registration-reemail" autocomplete="disable" placeholder="Confirm E-Mail"></input>
-              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real email password!</span></label>
+              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
               <input type="password" id="registration-password" placeholder="Password"></input>
               <button style="width:100% !important;" id="register">Sign Up</button><br>
               <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
-			  <br>
             </div>
             <div id="login-page">
               <h2>SIGN IN</h2>
-              <span class="myButtonGoogle">
-              <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiElEQVRoge2Xb0gTcRjHp5tlYJRlkRK9iF5I9ke7O5WhnbstU+yPu2OVhQTSu5IIiiCqm5EFvYgiCbJId3OQKxAiNyWwF/2BikFpRBhoyW41ndsEZyXl9Zz5Z+q8uXm79eK+8GUwdj8+3+f3/J77TaGQJUuWLFmyZE2rT4dsZQnsmFOL3QAzLIE2s1qszkmgNEvklg+o1cvjzThHvfj2lQB7HmC7AZYL41EI+JQlkF3x5lZwCkUCQJ8EDy4AfI6dBPbimwbLigu8qyR7zXglowCfFWKY1WGHJYX/qsvJgJ7+uFj4ILdyBoNSEnj+EDq16Aex4KEQ9u6STUslgefFalFrmJYIwOd9VoNUuDR5CFuMZLI6pMCpQU/D969nwbf14niyZPAwafYIVpRATSyOpIVbA3bwO7hdUniOViS6D2W1hKy6FhuDsXhioWt92Y2k9+XnL4sl7xwF7Mp9I3YV5zmz4dX4LJ8ZwigpTDQCeCsfgPfQ7dT30ALuieo7JJsg0YqzKpQjNpV/MgDvwKNkt6ss28FfD+LNF1Y/25ZkBsNP+UmSh6NxldCzGqO3mjB670RqHT2QIVqAgE25N2QAm8oe7lnC6GsFcxG7xlsoWoARe2Jl6ADKu7EKUFTjo2IeACbTvVgF0NC+KtECxKOFtEb/QdECzHuIbSqPwSo8QqNvIS8uWgB+jAbsqqFg+GFbkvtUs/oNYqL2Cz2L0+6Ugqv+1FAupv2rCNrbHypA4eX+dNEC8Ap+kfW3Jr8rtZS6UDPFoQzlCLcL80lDe3eG7n9vj6jwvCbPwdvHaS/zm8pHx+GnTF6MdD2DlVNqjL7nIQMYfbdED8Bf5q48zG6ZCT5hhhoDH49gtQQect4zQPtzRQ/ACzHry0IGmDBiphowU/lqoTVyzfr16pumeeGhfTpiAj8VgqEeCIWAdhpGGLIeNVEkyui3oBZyIwTfgZrIStglC2Imf/C/y6s/21FUM/BrFvxv7SVfTkwDbLYaUqDSXcIhFmas8UgXXvvZOd373gsxhZ8U1mBYhzJkpxghYEcHC661d8Kbt4mmuURJAvBCLBVpANC2+BDkH4Q5UIvTnOCtNjbiFAnQ39XQUp6oqm8mezBGXyI9+CwhVsMKADoHh/dTWPB/I9cBoY/iz4T/S8RFWCOVBaBV0BrXwSYI1QyVroMzQwN0xTZGvzbejLJkyZIlS9Z/o7/Q0bCX5++bJAAAAABJRU5ErkJggg==">
-              <span id="google-sign-in">Sign-In with Google</span>
-              </span>
-              <br><br>
+              <br>
               <label>E-Mail</label>
               <input type="email" id="login-email" placeholder="E-Mail"></input>
               <label>Password</label>
               <input type="password" id="login-password" placeholder="Password"></input>
               <button style="width:100% !important;" id="login">Login</button>
+              <br>
               <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
               <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div>	
       <div oncontextmenu="return false;" id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -919,7 +915,7 @@ Send Your Mikrotik RouterOS Script For Contribution -> <a href="https://docs.goo
         </div>
       </div>
 	  </div>
-	<script src="//buananetpbun.github.io/login/login.js"></script>		  
+	 <script src="../login/login.js"></script>
 	 <script>
       
 	var _0x1c0c08=_0x2093;(function(_0x5d0f63,_0x437eb4){var _0x1c16af=_0x2093,_0xc066d1=_0x5d0f63();while(!![]){try{var _0x2b24f2=-parseInt(_0x1c16af(0x1a2))/0x1+parseInt(_0x1c16af(0x18f))/0x2+parseInt(_0x1c16af(0x180))/0x3*(parseInt(_0x1c16af(0x189))/0x4)+-parseInt(_0x1c16af(0x19e))/0x5+parseInt(_0x1c16af(0x192))/0x6*(parseInt(_0x1c16af(0x199))/0x7)+-parseInt(_0x1c16af(0x19d))/0x8+-parseInt(_0x1c16af(0x1a1))/0x9*(-parseInt(_0x1c16af(0x19f))/0xa);if(_0x2b24f2===_0x437eb4)break;else _0xc066d1['push'](_0xc066d1['shift']());}catch(_0x4d81b1){_0xc066d1['push'](_0xc066d1['shift']());}}}(_0xb894,0xbee86));function truefalseFunction(_0x44ce18){var _0x76d35c=_0x2093;return _0x44ce18[_0x76d35c(0x18a)]?!![]:![];}var host1=_0x1c0c08(0x17f),host2=_0x1c0c08(0x182),host3=_0x1c0c08(0x188),host4='github',host5='io',host6=host1+host2+host3+'.'+host4+'.'+host5;window['location']['href']!==host6+'/mikrotik/index.html'&&location[_0x1c0c08(0x1a4)](host6+_0x1c0c08(0x191));var x=window[_0x1c0c08(0x196)](_0x1c0c08(0x198));function _0x2093(_0x5ee661,_0x518cbc){var _0xb89434=_0xb894();return _0x2093=function(_0x2093bb,_0x3034e5){_0x2093bb=_0x2093bb-0x17e;var _0x236d71=_0xb89434[_0x2093bb];return _0x236d71;},_0x2093(_0x5ee661,_0x518cbc);}truefalseFunction(x),x[_0x1c0c08(0x194)](truefalseFunction),document[_0x1c0c08(0x19a)](_0x1c0c08(0x17e))['hidden']=!![];function reloadads1(){var _0x10a694=_0x1c0c08;document[_0x10a694(0x19a)](_0x10a694(0x190))[_0x10a694(0x1a8)]=document[_0x10a694(0x19a)]('reloadads1')[_0x10a694(0x1a8)];}function reloadads2(){var _0x5c663a=_0x1c0c08;document['getElementById']('reloadads2')['innerHTML']=document['getElementById']('reloadads2')[_0x5c663a(0x1a8)];}function content(_0x35c6ed){var _0x2707fb=_0x1c0c08,_0x39d88c=document[_0x2707fb(0x19a)](_0x2707fb(0x17e));_0x39d88c[_0x2707fb(0x197)]('src',_0x35c6ed),document[_0x2707fb(0x19a)]('change-iframe-url')['hidden']=![],document[_0x2707fb(0x19a)](_0x2707fb(0x19c))[_0x2707fb(0x193)]=!![];}function getcontent(_0x3ff643){var _0x5b7c21=_0x1c0c08,_0x35065c=document[_0x5b7c21(0x19a)]('change-iframe-url'),_0x4ee688=_0x3ff643['getAttribute'](_0x5b7c21(0x1a7));_0x35065c[_0x5b7c21(0x197)](_0x5b7c21(0x18c),_0x4ee688),document[_0x5b7c21(0x19a)](_0x5b7c21(0x17e))[_0x5b7c21(0x193)]=![],document[_0x5b7c21(0x19a)]('welcome')[_0x5b7c21(0x193)]=!![],reloadads1(),reloadads2();}function myFunctionSearch(){var _0x4adcfd=_0x1c0c08,_0x48eafd,_0x5d42aa,_0x164367,_0x4939f1,_0x455ff2,_0x1c3f2c,_0x1ca6eb;_0x48eafd=document[_0x4adcfd(0x19a)](_0x4adcfd(0x186)),_0x5d42aa=_0x48eafd[_0x4adcfd(0x187)]['toUpperCase'](),_0x164367=document[_0x4adcfd(0x19a)]('myTable'),_0x4939f1=_0x164367['getElementsByTagName']('tr');for(_0x1c3f2c=0x0;_0x1c3f2c<_0x4939f1['length'];_0x1c3f2c++){_0x455ff2=_0x4939f1[_0x1c3f2c][_0x4adcfd(0x184)]('td')[0x0],_0x455ff2&&(_0x1ca6eb=_0x455ff2[_0x4adcfd(0x18d)]||_0x455ff2[_0x4adcfd(0x1a6)],_0x1ca6eb['toUpperCase']()[_0x4adcfd(0x185)](_0x5d42aa)>-0x1?_0x4939f1[_0x1c3f2c][_0x4adcfd(0x1a5)][_0x4adcfd(0x18b)]='':_0x4939f1[_0x1c3f2c][_0x4adcfd(0x1a5)][_0x4adcfd(0x18b)]='none');}}var header=document[_0x1c0c08(0x19a)](_0x1c0c08(0x181)),btns=header['getElementsByClassName'](_0x1c0c08(0x1a3));for(var i=0x0;i<btns[_0x1c0c08(0x18e)];i++){btns[i]['addEventListener'](_0x1c0c08(0x1a0),function(){var _0xc43121=_0x1c0c08,_0x3714b4=document[_0xc43121(0x195)]('active1');_0x3714b4[0x0][_0xc43121(0x183)]=_0x3714b4[0x0]['className'][_0xc43121(0x1a4)](_0xc43121(0x19b),''),this['className']+=_0xc43121(0x19b);});}function _0xb894(){var _0x47304a=['https://','52803nsSgZY','myTable','buananet','className','getElementsByTagName','indexOf','myInput','value','pbun','36jFYTcP','matches','display','src','textContent','length','197556eqwijr','reloadads1','/mikrotik/index.html','1822164XmaMym','hidden','addListener','getElementsByClassName','matchMedia','setAttribute','(max-width:\x201024px)','7klxMkS','getElementById','\x20active1','welcome','7699440mKnBCx','5486565IpGHDl','70byCeIl','click','4822533AAFaYC','1470039OiwOrH','linkPress','replace','style','innerText','href','innerHTML','change-iframe-url'];_0xb894=function(){return _0x47304a;};return _0xb894();}
