@@ -77,6 +77,26 @@ document.onkeydown = function(e) {
 	}
 }
 
+document.getElementById("mymenu").addEventListener('contextmenu', (e) => {
+	e.preventDefault();
+});
+document.onkeydown = function(e) {
+	if (event.keyCode == 123) {
+		return false;
+	}
+	if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+		return false;
+	}
+	if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+		return false;
+	}
+	if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+		return false;
+	}
+	if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+		return false;
+	}
+}
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -165,13 +185,12 @@ firebase.auth().onAuthStateChanged((user) => {
 		document.getElementById('welcome-email').innerHTML = email
 
 		if (emailVerified == true) {
-			document.getElementById("verify").classList.add = "hide"
+			document.getElementById("verify").style.display = "none"
 			document.getElementById('email_Verified').innerHTML = "✔️"
 			document.getElementById("myLockScreen").style.display = "none";
 		} else {
 			document.getElementById('email_Verified').innerHTML = "❌"
 			document.getElementById("myLockScreen").style.display = "block";
-			document.getElementById("verify").classList.remove = "hide"
 		}
 
 	} else {
