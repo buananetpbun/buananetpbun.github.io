@@ -295,147 +295,10 @@
       background-color: #f0f0f0;
       color: #111;
       }   
- /* LOGIN Content */
-      .forms-out {
-      margin: 0 auto;
-      padding: 0;
-      font-size:14px;
-      }
-      .forms-in {
-      width: 100%;
-      margin: 0 auto;
-      color: white;
-      padding: 0;
-      font-size:14px;
-      }
-      .forms-in div {
-      padding: 0;
-      max-width: 350px;
-      margin: 0 auto;      
-      border-radius: 5px;
-      margin-bottom: 15px;
-      }
-      .forms-in h3 {
-      text-align: center;
-      }
-      .forms-in input {
-      border: none;
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      box-sizing: border-box;
-      border-radius: 3px;
-      }
-      .forms-in button {
-      border: none;
-      padding: 7px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top:10px;
-      margin-bottom:15px;
-      }
-      .forms-in button:hover {
-      opacity: 0.7;
-      }
-      .hide {
-      display: none;
-      }
-      #forgot-password {
-      cursor: pointer;
-      }
-      #forgot-password:hover {
-      opacity: 0.7;
-      }
-      #show-register {
-      cursor: pointer;
-      }
-      #show-register:hover {
-      opacity: 0.7;
-      }
-      #show-login {
-      cursor: pointer;
-      }
-      #show-login:hover {
-      opacity: 0.7;
-      }
-      /* The Modal (background) */
-      .modal {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 2; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
-      }
-      .modal-login {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 3; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
-      }
-      .lock-screen {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
-      }	  
-      /* Modal Content */
-      .modal-content {
-      line-height:1.4;
-      border-radius: 5px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-      color:#ddd;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #444;
-      width: 400px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      font-weight:bold;
-      }
-      .modal-content p {
-      padding:0;
-      margin:5px 5px 0 17px;
-      display:list-item;
-      line-height:2.0;
-      list-style: disc;
-      }
-      /* The Close Button */
-      .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 30px;
-      font-weight: bold;
-      margin-top:-20px;
-      margin-right:-10px;
-      }
-      .close:hover,
-      .close:focus {
-      color: orange;
-      text-decoration: none;
-      cursor: pointer;
-      } 
+ 
 	  
-    </style>
+     </style> 
+ <link rel="stylesheet" href="./login/login.css">
   </head>   
   <body>
    	<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
@@ -454,7 +317,7 @@
         <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
         <span style="font-weight:normal;font-size:14px">USER-ID: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
         <span style="font-weight:normal; font-size:14px"> - VERIFIED: [ <span id="email_Verified"></span> ]</span>
-        <button id="verify" style="width:100px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:green" onclick="sendVerificationEmail()">Verify Now!</button>
+        <button id="verify" style="width:100px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:green" >Verify Now!</button>
       </div>  
     </div>
     <div id="wrap">
@@ -559,7 +422,7 @@
           <div class="forms-in">
             <div id="registration-page" class="hide">
               <h2>SIGN UP</h2>
-              <br>
+              <br><br>
               <label>E-Mail</label>
               <input type="email" id="registration-email" placeholder="E-Mail"></input>
               <label>Confirm E-mail</label> 
@@ -568,10 +431,15 @@
               <input type="password" id="registration-password" placeholder="Password"></input>
               <button style="width:100% !important;" id="register">Sign Up</button><br>
               <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
+			  <br>
             </div>
             <div id="login-page">
               <h2>SIGN IN</h2>
-              <br>
+              <span class="myButtonGoogle">
+              <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiElEQVRoge2Xb0gTcRjHp5tlYJRlkRK9iF5I9ke7O5WhnbstU+yPu2OVhQTSu5IIiiCqm5EFvYgiCbJId3OQKxAiNyWwF/2BikFpRBhoyW41ndsEZyXl9Zz5Z+q8uXm79eK+8GUwdj8+3+f3/J77TaGQJUuWLFmyZE2rT4dsZQnsmFOL3QAzLIE2s1qszkmgNEvklg+o1cvjzThHvfj2lQB7HmC7AZYL41EI+JQlkF3x5lZwCkUCQJ8EDy4AfI6dBPbimwbLigu8qyR7zXglowCfFWKY1WGHJYX/qsvJgJ7+uFj4ILdyBoNSEnj+EDq16Aex4KEQ9u6STUslgefFalFrmJYIwOd9VoNUuDR5CFuMZLI6pMCpQU/D969nwbf14niyZPAwafYIVpRATSyOpIVbA3bwO7hdUniOViS6D2W1hKy6FhuDsXhioWt92Y2k9+XnL4sl7xwF7Mp9I3YV5zmz4dX4LJ8ZwigpTDQCeCsfgPfQ7dT30ALuieo7JJsg0YqzKpQjNpV/MgDvwKNkt6ss28FfD+LNF1Y/25ZkBsNP+UmSh6NxldCzGqO3mjB670RqHT2QIVqAgE25N2QAm8oe7lnC6GsFcxG7xlsoWoARe2Jl6ADKu7EKUFTjo2IeACbTvVgF0NC+KtECxKOFtEb/QdECzHuIbSqPwSo8QqNvIS8uWgB+jAbsqqFg+GFbkvtUs/oNYqL2Cz2L0+6Ugqv+1FAupv2rCNrbHypA4eX+dNEC8Ap+kfW3Jr8rtZS6UDPFoQzlCLcL80lDe3eG7n9vj6jwvCbPwdvHaS/zm8pHx+GnTF6MdD2DlVNqjL7nIQMYfbdED8Bf5q48zG6ZCT5hhhoDH49gtQQect4zQPtzRQ/ACzHry0IGmDBiphowU/lqoTVyzfr16pumeeGhfTpiAj8VgqEeCIWAdhpGGLIeNVEkyui3oBZyIwTfgZrIStglC2Imf/C/y6s/21FUM/BrFvxv7SVfTkwDbLYaUqDSXcIhFmas8UgXXvvZOd373gsxhZ8U1mBYhzJkpxghYEcHC661d8Kbt4mmuURJAvBCLBVpANC2+BDkH4Q5UIvTnOCtNjbiFAnQ39XQUp6oqm8mezBGXyI9+CwhVsMKADoHh/dTWPB/I9cBoY/iz4T/S8RFWCOVBaBV0BrXwSYI1QyVroMzQwN0xTZGvzbejLJkyZIlS9Z/o7/Q0bCX5++bJAAAAABJRU5ErkJggg==">
+              <span id="google-sign-in">Sign-In with Google</span>
+              </span>
+              <br><br>
               <label>E-Mail</label>
               <input type="email" id="login-email" placeholder="E-Mail"></input>
               <label>Password</label>
@@ -583,7 +451,7 @@
           </div>
         </div>
       </div>
-    </div>	
+    </div>
         <div oncontextmenu="return false;" id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -604,8 +472,8 @@
         </div>
     </div>
     </div>
+	<script src="./login/login.js"></script>		
     <script>
-	const _0x580a4d=_0xd966;function _0xd966(_0xed5e20,_0x29a1ba){const _0x30be9d=_0x30be();return _0xd966=function(_0xd96694,_0x4d739d){_0xd96694=_0xd96694-0x14a;let _0x57aa08=_0x30be9d[_0xd96694];return _0x57aa08;},_0xd966(_0xed5e20,_0x29a1ba);}(function(_0x4d920e,_0x48c510){const _0x4101b4=_0xd966,_0x166a4e=_0x4d920e();while(!![]){try{const _0x4c89f4=parseInt(_0x4101b4(0x187))/0x1*(-parseInt(_0x4101b4(0x161))/0x2)+parseInt(_0x4101b4(0x17a))/0x3*(parseInt(_0x4101b4(0x14f))/0x4)+parseInt(_0x4101b4(0x159))/0x5+-parseInt(_0x4101b4(0x183))/0x6*(-parseInt(_0x4101b4(0x17b))/0x7)+parseInt(_0x4101b4(0x190))/0x8*(parseInt(_0x4101b4(0x18d))/0x9)+parseInt(_0x4101b4(0x17f))/0xa+-parseInt(_0x4101b4(0x188))/0xb;if(_0x4c89f4===_0x48c510)break;else _0x166a4e['push'](_0x166a4e['shift']());}catch(_0x1aafad){_0x166a4e['push'](_0x166a4e['shift']());}}}(_0x30be,0x43953),document[_0x580a4d(0x185)](_0x580a4d(0x184))[_0x580a4d(0x172)]=new Date()[_0x580a4d(0x163)]());var modal_click=document[_0x580a4d(0x185)](_0x580a4d(0x180)),span_click=document[_0x580a4d(0x177)]('close')[0x0];function callmodal(){const _0x36ea22=_0x580a4d;modal_click[_0x36ea22(0x157)][_0x36ea22(0x16b)]=_0x36ea22(0x154);}span_click[_0x580a4d(0x170)]=function(){const _0x446d43=_0x580a4d;modal_click[_0x446d43(0x157)][_0x446d43(0x16b)]=_0x446d43(0x16a);},window[_0x580a4d(0x170)]=function(_0x1b274a){const _0x835b93=_0x580a4d;_0x1b274a[_0x835b93(0x195)]==modal_click&&(modal_click[_0x835b93(0x157)]['display']=_0x835b93(0x16a));},document[_0x580a4d(0x185)]('myLogin')[_0x580a4d(0x175)]('contextmenu',_0x5d069e=>{const _0x5564c0=_0x580a4d;_0x5d069e[_0x5564c0(0x16f)]();}),document[_0x580a4d(0x14e)]=function(_0x3f7733){const _0x1b760a=_0x580a4d;if(event['keyCode']==0x7b)return![];if(_0x3f7733[_0x1b760a(0x169)]&&_0x3f7733['shiftKey']&&_0x3f7733['keyCode']=='I'[_0x1b760a(0x15a)](0x0))return![];if(_0x3f7733[_0x1b760a(0x169)]&&_0x3f7733[_0x1b760a(0x155)]&&_0x3f7733[_0x1b760a(0x17d)]=='C'[_0x1b760a(0x15a)](0x0))return![];if(_0x3f7733[_0x1b760a(0x169)]&&_0x3f7733['shiftKey']&&_0x3f7733[_0x1b760a(0x17d)]=='J'['charCodeAt'](0x0))return![];if(_0x3f7733[_0x1b760a(0x169)]&&_0x3f7733['keyCode']=='U'[_0x1b760a(0x15a)](0x0))return![];},document[_0x580a4d(0x185)](_0x580a4d(0x165))[_0x580a4d(0x175)]('contextmenu',_0x306348=>{const _0x6cbc6=_0x580a4d;_0x306348[_0x6cbc6(0x16f)]();}),document[_0x580a4d(0x14e)]=function(_0x3c8063){const _0x14d317=_0x580a4d;if(event[_0x14d317(0x17d)]==0x7b)return![];if(_0x3c8063[_0x14d317(0x169)]&&_0x3c8063['shiftKey']&&_0x3c8063[_0x14d317(0x17d)]=='I'[_0x14d317(0x15a)](0x0))return![];if(_0x3c8063[_0x14d317(0x169)]&&_0x3c8063[_0x14d317(0x155)]&&_0x3c8063[_0x14d317(0x17d)]=='C'['charCodeAt'](0x0))return![];if(_0x3c8063[_0x14d317(0x169)]&&_0x3c8063[_0x14d317(0x155)]&&_0x3c8063[_0x14d317(0x17d)]=='J'[_0x14d317(0x15a)](0x0))return![];if(_0x3c8063['ctrlKey']&&_0x3c8063[_0x14d317(0x17d)]=='U'[_0x14d317(0x15a)](0x0))return![];};var firebaseConfig={'apiKey':_0x580a4d(0x15b),'authDomain':'buananetpbun-5d979.firebaseapp.com','databaseURL':_0x580a4d(0x151),'projectId':_0x580a4d(0x156),'storageBucket':_0x580a4d(0x150),'messagingSenderId':'912166778245','appId':'1:912166778245:web:c845ec7e720f7bd84580ec','measurementId':_0x580a4d(0x168)};firebase['initializeApp'](firebaseConfig);const auth=firebase[_0x580a4d(0x18a)](),user=firebase[_0x580a4d(0x18a)]()[_0x580a4d(0x197)];function sendVerificationEmail(){const _0x3d904c=_0x580a4d;var _0x1970e9=firebase['auth']()['currentUser'];_0x1970e9[_0x3d904c(0x15d)]()[_0x3d904c(0x18c)](function(){const _0x183d01=_0x3d904c;window[_0x183d01(0x194)](_0x183d01(0x16e));})['catch'](function(_0x58ff6f){const _0x288f43=_0x3d904c;var _0x4fa363=_0x58ff6f[_0x288f43(0x19b)],_0x597975=_0x58ff6f[_0x288f43(0x166)];alert(_0x597975);});}firebase[_0x580a4d(0x18a)]()['onAuthStateChanged'](_0x30a531=>{const _0x43d337=_0x580a4d;if(_0x30a531){const _0x25879d=_0x30a531[_0x43d337(0x179)],_0x4a032c=_0x30a531['email'],_0xd5386a=_0x30a531[_0x43d337(0x192)];document[_0x43d337(0x185)](_0x43d337(0x158))[_0x43d337(0x172)]=_0x4a032c,_0xd5386a==!![]?(document[_0x43d337(0x185)](_0x43d337(0x15e))[_0x43d337(0x157)][_0x43d337(0x16b)]=_0x43d337(0x16a),document['getElementById']('email_Verified')[_0x43d337(0x172)]='✔️',document['getElementById'](_0x43d337(0x165))[_0x43d337(0x157)][_0x43d337(0x16b)]=_0x43d337(0x16a)):(document['getElementById'](_0x43d337(0x178))[_0x43d337(0x172)]='❌',document[_0x43d337(0x185)](_0x43d337(0x165))[_0x43d337(0x157)][_0x43d337(0x16b)]='block');}else{}}),document[_0x580a4d(0x15f)](_0x580a4d(0x14a))[_0x580a4d(0x175)](_0x580a4d(0x160),()=>{showRegistration();});const showRegistration=()=>{const _0x2995b3=_0x580a4d;document[_0x2995b3(0x15f)](_0x2995b3(0x196))[_0x2995b3(0x162)]['remove'](_0x2995b3(0x15c)),document['querySelector']('#login-page')['classList'][_0x2995b3(0x19a)]('hide'),document['querySelector'](_0x2995b3(0x18f))[_0x2995b3(0x162)]['add'](_0x2995b3(0x15c)),document[_0x2995b3(0x15f)]('#show-login')[_0x2995b3(0x162)][_0x2995b3(0x152)](_0x2995b3(0x15c)),document[_0x2995b3(0x15f)](_0x2995b3(0x14a))[_0x2995b3(0x162)][_0x2995b3(0x19a)]('hide');};document[_0x580a4d(0x15f)](_0x580a4d(0x199))[_0x580a4d(0x175)]('click',()=>{showLogin();});const showLogin=()=>{const _0x23ef1f=_0x580a4d;document[_0x23ef1f(0x15f)](_0x23ef1f(0x196))[_0x23ef1f(0x162)][_0x23ef1f(0x19a)]('hide'),document[_0x23ef1f(0x15f)](_0x23ef1f(0x174))['classList'][_0x23ef1f(0x152)]('hide'),document['querySelector'](_0x23ef1f(0x18f))[_0x23ef1f(0x162)][_0x23ef1f(0x19a)](_0x23ef1f(0x15c)),document[_0x23ef1f(0x15f)]('#show-login')[_0x23ef1f(0x162)]['add'](_0x23ef1f(0x15c)),document[_0x23ef1f(0x15f)](_0x23ef1f(0x14a))[_0x23ef1f(0x162)]['remove'](_0x23ef1f(0x15c));};document['querySelector'](_0x580a4d(0x14b))['addEventListener'](_0x580a4d(0x160),()=>{signOut();});const register=()=>{const _0x99b583=_0x580a4d,_0x1af74c=document[_0x99b583(0x15f)]('#registration-email')[_0x99b583(0x191)],_0x32c6d2=document[_0x99b583(0x15f)](_0x99b583(0x186))[_0x99b583(0x191)],_0x5212a3=document[_0x99b583(0x15f)]('#registration-password')[_0x99b583(0x191)];if(_0x1af74c[_0x99b583(0x176)]()=='')alert(_0x99b583(0x193));else{if(_0x5212a3['trim']()[_0x99b583(0x164)]<0x6)alert('Password\x20must\x20be\x20at\x20least\x206\x20characters.');else _0x1af74c!=_0x32c6d2?alert('emails\x20do\x20not\x20match.'):auth['createUserWithEmailAndPassword'](_0x1af74c,_0x5212a3)[_0x99b583(0x167)](function(_0x46a57c){const _0x289ccf=_0x99b583;var _0x2704fe=_0x46a57c['code'],_0x5067fb=_0x46a57c[_0x289ccf(0x166)];alert(_0x5067fb);});}};document[_0x580a4d(0x15f)](_0x580a4d(0x181))[_0x580a4d(0x175)](_0x580a4d(0x160),()=>{register();}),document[_0x580a4d(0x15f)](_0x580a4d(0x14c))[_0x580a4d(0x175)]('keyup',_0x3c8c3b=>{const _0x1c03e2=_0x580a4d;event['keyCode']===0xd&&(_0x3c8c3b[_0x1c03e2(0x16f)](),register());});const login=()=>{const _0x52ed36=_0x580a4d,_0x5775bf=document[_0x52ed36(0x15f)](_0x52ed36(0x182))[_0x52ed36(0x191)],_0x490839=document[_0x52ed36(0x15f)](_0x52ed36(0x17c))[_0x52ed36(0x191)];if(_0x5775bf[_0x52ed36(0x176)]()=='')alert(_0x52ed36(0x193));else _0x490839[_0x52ed36(0x176)]()==''?alert(_0x52ed36(0x16c)):authenticate(_0x5775bf,_0x490839);};document[_0x580a4d(0x15f)](_0x580a4d(0x18e))[_0x580a4d(0x175)](_0x580a4d(0x160),()=>{login();}),document[_0x580a4d(0x15f)](_0x580a4d(0x17c))[_0x580a4d(0x175)](_0x580a4d(0x18b),_0x4999e5=>{const _0x45d20c=_0x580a4d;event[_0x45d20c(0x17d)]===0xd&&(_0x4999e5[_0x45d20c(0x16f)](),login());});function _0x30be(){const _0x495377=['myLockScreen','message','catch','G-FSDV7HGD99','ctrlKey','none','display','Enter\x20Password.','signOut','Verification\x20link\x20sent\x20to\x20your\x20email.\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.','preventDefault','onclick','signInWithEmailAndPassword','innerHTML','Enter\x20Your\x20E-mail.','#login-page','addEventListener','trim','getElementsByClassName','email_Verified','uid','45777TDuoxr','7XySyBQ','#login-password','keyCode','#myLogin','4018850SQzxeJ','myModal','#register','#login-email','1692618QZZrQt','year','getElementById','#registration-reemail','328397PZWfbo','12090826HXwGSR','reload','auth','keyup','then','586053fYzoYe','#login','#homepage','56xhVmqR','value','emailVerified','Enter\x20E-mail.','alert','target','#registration-page','currentUser','#forgot-password','#show-login','add','code','#show-register','#signout','#registration-password','error\x20signing\x20out,\x20check\x20network\x20connection','onkeydown','92iDrXku','buananetpbun-5d979.appspot.com','https://buananetpbun-5d979.firebaseio.com','remove','sendPasswordResetEmail','block','shiftKey','buananetpbun-5d979','style','welcome-email','1068090yEvLgP','charCodeAt','AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','hide','sendEmailVerification','verify','querySelector','click','2SqHwGu','classList','getFullYear','length'];_0x30be=function(){return _0x495377;};return _0x30be();}const authenticate=(_0x33d4dc,_0x3849c4)=>{const _0x5e0e91=_0x580a4d,_0x41abac=firebase['auth']();_0x41abac[_0x5e0e91(0x171)](_0x33d4dc,_0x3849c4),firebase[_0x5e0e91(0x18a)]()[_0x5e0e91(0x171)](_0x33d4dc,_0x3849c4)[_0x5e0e91(0x167)](function(_0xc712ff){const _0xb410e5=_0x5e0e91;var _0x4f4e84=_0xc712ff[_0xb410e5(0x19b)],_0x22a8f7=_0xc712ff[_0xb410e5(0x166)];alert(_0x22a8f7);});},showHomepage=()=>{const _0x58a05d=_0x580a4d;document['querySelector'](_0x58a05d(0x196))[_0x58a05d(0x162)][_0x58a05d(0x19a)]('hide'),document['querySelector']('#login-page')[_0x58a05d(0x162)]['add']('hide'),document[_0x58a05d(0x15f)](_0x58a05d(0x18f))[_0x58a05d(0x162)]['remove']('hide'),document[_0x58a05d(0x15f)](_0x58a05d(0x17e))[_0x58a05d(0x157)][_0x58a05d(0x16b)]='none';},signOut=()=>{const _0x225107=_0x580a4d;firebase[_0x225107(0x18a)]()[_0x225107(0x16d)]()['then'](function(){const _0x52d50b=_0x225107;location[_0x52d50b(0x189)]();})[_0x225107(0x167)](function(_0x4a60a1){const _0x4ee9e1=_0x225107;alert(_0x4ee9e1(0x14d));});};auth['onAuthStateChanged'](_0xb485e=>{_0xb485e&&showHomepage();}),document[_0x580a4d(0x15f)](_0x580a4d(0x198))[_0x580a4d(0x175)](_0x580a4d(0x160),()=>{const _0x3ebcef=_0x580a4d,_0x35f5da=document[_0x3ebcef(0x15f)]('#login-email')[_0x3ebcef(0x191)];_0x35f5da[_0x3ebcef(0x176)]()==''?alert(_0x3ebcef(0x173)):forgotPassword(_0x35f5da);});const forgotPassword=_0x31897f=>{const _0x2cbadf=_0x580a4d;auth[_0x2cbadf(0x153)](_0x31897f)[_0x2cbadf(0x18c)](function(){alert('Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.');})[_0x2cbadf(0x167)](function(_0x3f53d8){alert('invalid\x20e-mail\x20or\x20bad\x20network\x20connection.');});};	
 	
     var _0x3b1120=_0x45ca;function _0x3519(){var _0x8b4c49=['simple-queue-max-limit','input-password','value','1124984SYzovo','getElementById','profile-shared-user','5590OsSmiH','auto-shared','input-parent-name','toUpperCase','hotspot-username','createTextRange','innerHTML','onchange','hotspot-comment','removeAllRanges','simple-queue-ip-address','/mikrotik-share-user-multi-login.html','448904aWWVdh','24fVAbSZ','mangle-packet-src','getSelection','body','simple-queue-name','295272dvmdeP','hotspot-profile-name','profile-parent','\x200/0\x200/0\x200/0\x208\x200/0','simple-queue-packet-mark','replace','input-username','execCommand','toLocaleString','680VHcbHH','10nUYsMy','profile-rate-limit','disabled','2822244KWcpoV','tanggalwaktu','mangle-upload-src','profile-name','input-profile-name','2035iCytBe','357591QTznfo','buananet','365bvfsnO','mangle-comment-down','createRange','hotspot-password','pbun','input-rate-limit','1M/2M','input-max-limit','mangle-packet-dst','copy','checked','selectNode','href'];_0x3519=function(){return _0x8b4c49;};return _0x3519();}(function(_0x52de2c,_0x64ba16){var _0x2b25e8=_0x45ca,_0x3020b2=_0x52de2c();while(!![]){try{var _0x594475=-parseInt(_0x2b25e8(0x1a8))/0x1*(-parseInt(_0x2b25e8(0x19c))/0x2)+-parseInt(_0x2b25e8(0x1a6))/0x3+-parseInt(_0x2b25e8(0x18d))/0x4*(-parseInt(_0x2b25e8(0x19d))/0x5)+-parseInt(_0x2b25e8(0x1a0))/0x6+-parseInt(_0x2b25e8(0x17e))/0x7*(-parseInt(_0x2b25e8(0x18e))/0x8)+-parseInt(_0x2b25e8(0x193))/0x9+parseInt(_0x2b25e8(0x181))/0xa*(parseInt(_0x2b25e8(0x1a5))/0xb);if(_0x594475===_0x64ba16)break;else _0x3020b2['push'](_0x3020b2['shift']());}catch(_0x1c6404){_0x3020b2['push'](_0x3020b2['shift']());}}}(_0x3519,0x4c1ac));var dt=new Date();document[_0x3b1120(0x17f)](_0x3b1120(0x1a1))['innerHTML']=dt[_0x3b1120(0x19b)]();function upperCaseF(_0x278060){setTimeout(function(){var _0xde317c=_0x45ca;_0x278060[_0xde317c(0x17d)]=_0x278060[_0xde317c(0x17d)][_0xde317c(0x184)]();},0x1);}document[_0x3b1120(0x17f)]('auto-shared')[_0x3b1120(0x188)]=function(){var _0xff8acc=_0x3b1120,_0x54c214=document[_0xff8acc(0x17f)](_0xff8acc(0x182));_0x54c214[_0xff8acc(0x1b2)]?(document[_0xff8acc(0x17f)](_0xff8acc(0x1ad))['disabled']=!![],document[_0xff8acc(0x17f)](_0xff8acc(0x1ad))[_0xff8acc(0x17d)]=document[_0xff8acc(0x17f)](_0xff8acc(0x1af))[_0xff8acc(0x17d)],document[_0xff8acc(0x17f)](_0xff8acc(0x19e))[_0xff8acc(0x187)]=document[_0xff8acc(0x17f)](_0xff8acc(0x1af))['value']+_0xff8acc(0x196)):(document['getElementById']('input-rate-limit')[_0xff8acc(0x19f)]=![],document['getElementById']('input-rate-limit')['value']=_0xff8acc(0x1ae),document['getElementById'](_0xff8acc(0x19e))[_0xff8acc(0x187)]='1M/2M\x200/0\x200/0\x200/0\x208\x200/0');};function _0x45ca(_0x241685,_0x5e48e7){var _0x351973=_0x3519();return _0x45ca=function(_0x45ca7d,_0x1666f0){_0x45ca7d=_0x45ca7d-0x17d;var _0x458842=_0x351973[_0x45ca7d];return _0x458842;},_0x45ca(_0x241685,_0x5e48e7);}function myFunction(){var _0x2414d9=_0x3b1120,_0x46c4b7=new Date();document[_0x2414d9(0x17f)](_0x2414d9(0x1a1))['innerHTML']=_0x46c4b7[_0x2414d9(0x19b)]();var _0x3d00dd=document[_0x2414d9(0x17f)]('input-ip-address')[_0x2414d9(0x17d)],_0x26b0b9=document[_0x2414d9(0x17f)](_0x2414d9(0x183))[_0x2414d9(0x17d)],_0x15121d=document[_0x2414d9(0x17f)](_0x2414d9(0x1af))[_0x2414d9(0x17d)],_0x49cb6f=document[_0x2414d9(0x17f)](_0x2414d9(0x1a4))[_0x2414d9(0x17d)],_0x281a53=document[_0x2414d9(0x17f)]('input-shared-user')[_0x2414d9(0x17d)],_0x413029=document['getElementById']('input-rate-limit')[_0x2414d9(0x17d)],_0x5f015c=document[_0x2414d9(0x17f)](_0x2414d9(0x199))[_0x2414d9(0x17d)],_0x4962e8=document[_0x2414d9(0x17f)](_0x2414d9(0x1b6))['value'];document[_0x2414d9(0x17f)](_0x2414d9(0x1b5))[_0x2414d9(0x187)]=_0x15121d,document['getElementById'](_0x2414d9(0x192))[_0x2414d9(0x187)]=_0x26b0b9,document[_0x2414d9(0x17f)](_0x2414d9(0x18b))[_0x2414d9(0x187)]=_0x3d00dd,document[_0x2414d9(0x17f)](_0x2414d9(0x197))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)]('profile-address-list')['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x1a3))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x180))['innerHTML']=_0x281a53,document['getElementById'](_0x2414d9(0x195))[_0x2414d9(0x187)]=_0x26b0b9,document[_0x2414d9(0x17f)](_0x2414d9(0x185))[_0x2414d9(0x187)]=_0x5f015c,document[_0x2414d9(0x17f)](_0x2414d9(0x1ab))['innerHTML']=_0x4962e8,document[_0x2414d9(0x17f)](_0x2414d9(0x194))[_0x2414d9(0x187)]=_0x49cb6f,document['getElementById'](_0x2414d9(0x189))[_0x2414d9(0x187)]=_0x26b0b9,document['getElementById'](_0x2414d9(0x1a2))['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x18f))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)]('mangle-download-dst')['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x1b0))['innerHTML']=_0x49cb6f,document['getElementById']('mangle-comment-up')[_0x2414d9(0x187)]=_0x26b0b9+'\x20Up',document[_0x2414d9(0x17f)](_0x2414d9(0x1a9))['innerHTML']=_0x26b0b9+'\x20Down';var _0x4088f0='https://',_0x5b1e44=_0x2414d9(0x1a7),_0x3d484f=_0x2414d9(0x1ac),_0x3f2955='github',_0x49993b='io',_0x1bd3d0=_0x4088f0+_0x5b1e44+_0x3d484f+'.'+_0x3f2955+'.'+_0x49993b;window['location'][_0x2414d9(0x1b4)]!==_0x1bd3d0+_0x2414d9(0x18c)&&location[_0x2414d9(0x198)](_0x1bd3d0+_0x2414d9(0x18c));var _0x4227b7=document['getElementById']('auto-shared');_0x4227b7[_0x2414d9(0x1b2)]?document[_0x2414d9(0x17f)](_0x2414d9(0x19e))[_0x2414d9(0x187)]=_0x15121d+_0x2414d9(0x196):document[_0x2414d9(0x17f)](_0x2414d9(0x19e))[_0x2414d9(0x187)]=_0x413029;}function selectElementContents(_0x116418){var _0x551118=_0x3b1120,_0x55c6de=document[_0x551118(0x191)],_0x1f5a2a,_0x4cc9bb;if(document[_0x551118(0x1aa)]&&window[_0x551118(0x190)]){_0x1f5a2a=document['createRange'](),_0x4cc9bb=window[_0x551118(0x190)](),_0x4cc9bb[_0x551118(0x18a)]();try{_0x1f5a2a['selectNodeContents'](_0x116418),_0x4cc9bb['addRange'](_0x1f5a2a);}catch(_0x3a8103){_0x1f5a2a[_0x551118(0x1b3)](_0x116418),_0x4cc9bb['addRange'](_0x1f5a2a);}}else _0x55c6de[_0x551118(0x186)]&&(_0x1f5a2a=_0x55c6de[_0x551118(0x186)](),_0x1f5a2a['moveToElementText'](_0x116418),_0x1f5a2a['select']());document[_0x551118(0x19a)](_0x551118(0x1b1));}
     </script>

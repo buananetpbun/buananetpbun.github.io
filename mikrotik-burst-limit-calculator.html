@@ -313,147 +313,10 @@
       background-color: #f0f0f0;
       color: #111;
       } 
- /* LOGIN Content */
-      .forms-out {
-      margin: 0 auto;
-      padding: 0;
-      font-size:14px;
-      }
-      .forms-in {
-      width: 100%;
-      margin: 0 auto;
-      color: white;
-      padding: 0;
-      font-size:14px;
-      }
-      .forms-in div {
-      padding: 0;
-      max-width: 350px;
-      margin: 0 auto;      
-      border-radius: 5px;
-      margin-bottom: 15px;
-      }
-      .forms-in h3 {
-      text-align: center;
-      }
-      .forms-in input {
-      border: none;
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      box-sizing: border-box;
-      border-radius: 3px;
-      }
-      .forms-in button {
-      border: none;
-      padding: 7px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top:10px;
-      margin-bottom:15px;
-      }
-      .forms-in button:hover {
-      opacity: 0.7;
-      }
-      .hide {
-      display: none;
-      }
-      #forgot-password {
-      cursor: pointer;
-      }
-      #forgot-password:hover {
-      opacity: 0.7;
-      }
-      #show-register {
-      cursor: pointer;
-      }
-      #show-register:hover {
-      opacity: 0.7;
-      }
-      #show-login {
-      cursor: pointer;
-      }
-      #show-login:hover {
-      opacity: 0.7;
-      }
-      /* The Modal (background) */
-      .modal {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 2; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
-      }
-      .modal-login {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 3; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
-      }
-      .lock-screen {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
-      }	  
-      /* Modal Content */
-      .modal-content {
-      line-height:1.4;
-      border-radius: 5px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-      color:#ddd;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #444;
-      width: 400px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      font-weight:bold;
-      }
-      .modal-content p {
-      padding:0;
-      margin:5px 5px 0 17px;
-      display:list-item;
-      line-height:2.0;
-      list-style: disc;
-      }
-      /* The Close Button */
-      .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 30px;
-      font-weight: bold;
-      margin-top:-20px;
-      margin-right:-10px;
-      }
-      .close:hover,
-      .close:focus {
-      color: orange;
-      text-decoration: none;
-      cursor: pointer;
-      } 
+
 	  
-    </style>
+     </style> 
+ <link rel="stylesheet" href="./login/login.css">
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
@@ -471,7 +334,7 @@
         <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
         <span style="font-weight:normal;font-size:14px">USER-ID: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
         <span style="font-weight:normal; font-size:14px"> - VERIFIED: [ <span id="email_Verified"></span> ]</span>
-        <button id="verify" style="width:100px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:green" onclick="sendVerificationEmail()">Verify Now!</button>
+        <button id="verify" style="width:100px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:green" >Verify Now!</button>
       </div>
     </div>
     <div id="wrap">
@@ -614,39 +477,42 @@
         </div>
       </div>
     </div>
-    <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen"></div>	
-	   <div oncontextmenu="return false;" id="myLogin" class="modal-login">
+    <div oncontextmenu="return false;" id="myLogin" class="modal-login">
       <div class="modal-content">
         <div class="forms-out">
           <div class="forms-in">
             <div id="registration-page" class="hide">
               <h2>SIGN UP</h2>
-              <br>
+              <br><br>
               <label>E-Mail</label>
               <input type="email" id="registration-email" placeholder="E-Mail"></input>
               <label>Confirm E-mail</label> 
               <input type="email" id="registration-reemail" autocomplete="disable" placeholder="Confirm E-Mail"></input>
-              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
+              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real email password!</span></label>
               <input type="password" id="registration-password" placeholder="Password"></input>
               <button style="width:100% !important;" id="register">Sign Up</button><br>
               <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
+			  <br>
             </div>
             <div id="login-page">
               <h2>SIGN IN</h2>
-              <br>
+              <span class="myButtonGoogle">
+              <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiElEQVRoge2Xb0gTcRjHp5tlYJRlkRK9iF5I9ke7O5WhnbstU+yPu2OVhQTSu5IIiiCqm5EFvYgiCbJId3OQKxAiNyWwF/2BikFpRBhoyW41ndsEZyXl9Zz5Z+q8uXm79eK+8GUwdj8+3+f3/J77TaGQJUuWLFmyZE2rT4dsZQnsmFOL3QAzLIE2s1qszkmgNEvklg+o1cvjzThHvfj2lQB7HmC7AZYL41EI+JQlkF3x5lZwCkUCQJ8EDy4AfI6dBPbimwbLigu8qyR7zXglowCfFWKY1WGHJYX/qsvJgJ7+uFj4ILdyBoNSEnj+EDq16Aex4KEQ9u6STUslgefFalFrmJYIwOd9VoNUuDR5CFuMZLI6pMCpQU/D969nwbf14niyZPAwafYIVpRATSyOpIVbA3bwO7hdUniOViS6D2W1hKy6FhuDsXhioWt92Y2k9+XnL4sl7xwF7Mp9I3YV5zmz4dX4LJ8ZwigpTDQCeCsfgPfQ7dT30ALuieo7JJsg0YqzKpQjNpV/MgDvwKNkt6ss28FfD+LNF1Y/25ZkBsNP+UmSh6NxldCzGqO3mjB670RqHT2QIVqAgE25N2QAm8oe7lnC6GsFcxG7xlsoWoARe2Jl6ADKu7EKUFTjo2IeACbTvVgF0NC+KtECxKOFtEb/QdECzHuIbSqPwSo8QqNvIS8uWgB+jAbsqqFg+GFbkvtUs/oNYqL2Cz2L0+6Ugqv+1FAupv2rCNrbHypA4eX+dNEC8Ap+kfW3Jr8rtZS6UDPFoQzlCLcL80lDe3eG7n9vj6jwvCbPwdvHaS/zm8pHx+GnTF6MdD2DlVNqjL7nIQMYfbdED8Bf5q48zG6ZCT5hhhoDH49gtQQect4zQPtzRQ/ACzHry0IGmDBiphowU/lqoTVyzfr16pumeeGhfTpiAj8VgqEeCIWAdhpGGLIeNVEkyui3oBZyIwTfgZrIStglC2Imf/C/y6s/21FUM/BrFvxv7SVfTkwDbLYaUqDSXcIhFmas8UgXXvvZOd373gsxhZ8U1mBYhzJkpxghYEcHC661d8Kbt4mmuURJAvBCLBVpANC2+BDkH4Q5UIvTnOCtNjbiFAnQ39XQUp6oqm8mezBGXyI9+CwhVsMKADoHh/dTWPB/I9cBoY/iz4T/S8RFWCOVBaBV0BrXwSYI1QyVroMzQwN0xTZGvzbejLJkyZIlS9Z/o7/Q0bCX5++bJAAAAABJRU5ErkJggg==">
+              <span id="google-sign-in">Sign-In with Google</span>
+              </span>
+              <br><br>
               <label>E-Mail</label>
               <input type="email" id="login-email" placeholder="E-Mail"></input>
               <label>Password</label>
               <input type="password" id="login-password" placeholder="Password"></input>
               <button style="width:100% !important;" id="login">Login</button>
-              <br>
               <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
               <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
             </div>
           </div>
         </div>
       </div>
-    </div>	
+    </div>
     <div oncontextmenu="return false;" id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -667,8 +533,9 @@
         </div>
     </div>
     </div>
+	<script src="./login/login.js"></script>		
     <script>
-	const _0x580a4d=_0xd966;function _0xd966(_0xed5e20,_0x29a1ba){const _0x30be9d=_0x30be();return _0xd966=function(_0xd96694,_0x4d739d){_0xd96694=_0xd96694-0x14a;let _0x57aa08=_0x30be9d[_0xd96694];return _0x57aa08;},_0xd966(_0xed5e20,_0x29a1ba);}(function(_0x4d920e,_0x48c510){const _0x4101b4=_0xd966,_0x166a4e=_0x4d920e();while(!![]){try{const _0x4c89f4=parseInt(_0x4101b4(0x187))/0x1*(-parseInt(_0x4101b4(0x161))/0x2)+parseInt(_0x4101b4(0x17a))/0x3*(parseInt(_0x4101b4(0x14f))/0x4)+parseInt(_0x4101b4(0x159))/0x5+-parseInt(_0x4101b4(0x183))/0x6*(-parseInt(_0x4101b4(0x17b))/0x7)+parseInt(_0x4101b4(0x190))/0x8*(parseInt(_0x4101b4(0x18d))/0x9)+parseInt(_0x4101b4(0x17f))/0xa+-parseInt(_0x4101b4(0x188))/0xb;if(_0x4c89f4===_0x48c510)break;else _0x166a4e['push'](_0x166a4e['shift']());}catch(_0x1aafad){_0x166a4e['push'](_0x166a4e['shift']());}}}(_0x30be,0x43953),document[_0x580a4d(0x185)](_0x580a4d(0x184))[_0x580a4d(0x172)]=new Date()[_0x580a4d(0x163)]());var modal_click=document[_0x580a4d(0x185)](_0x580a4d(0x180)),span_click=document[_0x580a4d(0x177)]('close')[0x0];function callmodal(){const _0x36ea22=_0x580a4d;modal_click[_0x36ea22(0x157)][_0x36ea22(0x16b)]=_0x36ea22(0x154);}span_click[_0x580a4d(0x170)]=function(){const _0x446d43=_0x580a4d;modal_click[_0x446d43(0x157)][_0x446d43(0x16b)]=_0x446d43(0x16a);},window[_0x580a4d(0x170)]=function(_0x1b274a){const _0x835b93=_0x580a4d;_0x1b274a[_0x835b93(0x195)]==modal_click&&(modal_click[_0x835b93(0x157)]['display']=_0x835b93(0x16a));},document[_0x580a4d(0x185)]('myLogin')[_0x580a4d(0x175)]('contextmenu',_0x5d069e=>{const _0x5564c0=_0x580a4d;_0x5d069e[_0x5564c0(0x16f)]();}),document[_0x580a4d(0x14e)]=function(_0x3f7733){const _0x1b760a=_0x580a4d;if(event['keyCode']==0x7b)return![];if(_0x3f7733[_0x1b760a(0x169)]&&_0x3f7733['shiftKey']&&_0x3f7733['keyCode']=='I'[_0x1b760a(0x15a)](0x0))return![];if(_0x3f7733[_0x1b760a(0x169)]&&_0x3f7733[_0x1b760a(0x155)]&&_0x3f7733[_0x1b760a(0x17d)]=='C'[_0x1b760a(0x15a)](0x0))return![];if(_0x3f7733[_0x1b760a(0x169)]&&_0x3f7733['shiftKey']&&_0x3f7733[_0x1b760a(0x17d)]=='J'['charCodeAt'](0x0))return![];if(_0x3f7733[_0x1b760a(0x169)]&&_0x3f7733['keyCode']=='U'[_0x1b760a(0x15a)](0x0))return![];},document[_0x580a4d(0x185)](_0x580a4d(0x165))[_0x580a4d(0x175)]('contextmenu',_0x306348=>{const _0x6cbc6=_0x580a4d;_0x306348[_0x6cbc6(0x16f)]();}),document[_0x580a4d(0x14e)]=function(_0x3c8063){const _0x14d317=_0x580a4d;if(event[_0x14d317(0x17d)]==0x7b)return![];if(_0x3c8063[_0x14d317(0x169)]&&_0x3c8063['shiftKey']&&_0x3c8063[_0x14d317(0x17d)]=='I'[_0x14d317(0x15a)](0x0))return![];if(_0x3c8063[_0x14d317(0x169)]&&_0x3c8063[_0x14d317(0x155)]&&_0x3c8063[_0x14d317(0x17d)]=='C'['charCodeAt'](0x0))return![];if(_0x3c8063[_0x14d317(0x169)]&&_0x3c8063[_0x14d317(0x155)]&&_0x3c8063[_0x14d317(0x17d)]=='J'[_0x14d317(0x15a)](0x0))return![];if(_0x3c8063['ctrlKey']&&_0x3c8063[_0x14d317(0x17d)]=='U'[_0x14d317(0x15a)](0x0))return![];};var firebaseConfig={'apiKey':_0x580a4d(0x15b),'authDomain':'buananetpbun-5d979.firebaseapp.com','databaseURL':_0x580a4d(0x151),'projectId':_0x580a4d(0x156),'storageBucket':_0x580a4d(0x150),'messagingSenderId':'912166778245','appId':'1:912166778245:web:c845ec7e720f7bd84580ec','measurementId':_0x580a4d(0x168)};firebase['initializeApp'](firebaseConfig);const auth=firebase[_0x580a4d(0x18a)](),user=firebase[_0x580a4d(0x18a)]()[_0x580a4d(0x197)];function sendVerificationEmail(){const _0x3d904c=_0x580a4d;var _0x1970e9=firebase['auth']()['currentUser'];_0x1970e9[_0x3d904c(0x15d)]()[_0x3d904c(0x18c)](function(){const _0x183d01=_0x3d904c;window[_0x183d01(0x194)](_0x183d01(0x16e));})['catch'](function(_0x58ff6f){const _0x288f43=_0x3d904c;var _0x4fa363=_0x58ff6f[_0x288f43(0x19b)],_0x597975=_0x58ff6f[_0x288f43(0x166)];alert(_0x597975);});}firebase[_0x580a4d(0x18a)]()['onAuthStateChanged'](_0x30a531=>{const _0x43d337=_0x580a4d;if(_0x30a531){const _0x25879d=_0x30a531[_0x43d337(0x179)],_0x4a032c=_0x30a531['email'],_0xd5386a=_0x30a531[_0x43d337(0x192)];document[_0x43d337(0x185)](_0x43d337(0x158))[_0x43d337(0x172)]=_0x4a032c,_0xd5386a==!![]?(document[_0x43d337(0x185)](_0x43d337(0x15e))[_0x43d337(0x157)][_0x43d337(0x16b)]=_0x43d337(0x16a),document['getElementById']('email_Verified')[_0x43d337(0x172)]='✔️',document['getElementById'](_0x43d337(0x165))[_0x43d337(0x157)][_0x43d337(0x16b)]=_0x43d337(0x16a)):(document['getElementById'](_0x43d337(0x178))[_0x43d337(0x172)]='❌',document[_0x43d337(0x185)](_0x43d337(0x165))[_0x43d337(0x157)][_0x43d337(0x16b)]='block');}else{}}),document[_0x580a4d(0x15f)](_0x580a4d(0x14a))[_0x580a4d(0x175)](_0x580a4d(0x160),()=>{showRegistration();});const showRegistration=()=>{const _0x2995b3=_0x580a4d;document[_0x2995b3(0x15f)](_0x2995b3(0x196))[_0x2995b3(0x162)]['remove'](_0x2995b3(0x15c)),document['querySelector']('#login-page')['classList'][_0x2995b3(0x19a)]('hide'),document['querySelector'](_0x2995b3(0x18f))[_0x2995b3(0x162)]['add'](_0x2995b3(0x15c)),document[_0x2995b3(0x15f)]('#show-login')[_0x2995b3(0x162)][_0x2995b3(0x152)](_0x2995b3(0x15c)),document[_0x2995b3(0x15f)](_0x2995b3(0x14a))[_0x2995b3(0x162)][_0x2995b3(0x19a)]('hide');};document[_0x580a4d(0x15f)](_0x580a4d(0x199))[_0x580a4d(0x175)]('click',()=>{showLogin();});const showLogin=()=>{const _0x23ef1f=_0x580a4d;document[_0x23ef1f(0x15f)](_0x23ef1f(0x196))[_0x23ef1f(0x162)][_0x23ef1f(0x19a)]('hide'),document[_0x23ef1f(0x15f)](_0x23ef1f(0x174))['classList'][_0x23ef1f(0x152)]('hide'),document['querySelector'](_0x23ef1f(0x18f))[_0x23ef1f(0x162)][_0x23ef1f(0x19a)](_0x23ef1f(0x15c)),document[_0x23ef1f(0x15f)]('#show-login')[_0x23ef1f(0x162)]['add'](_0x23ef1f(0x15c)),document[_0x23ef1f(0x15f)](_0x23ef1f(0x14a))[_0x23ef1f(0x162)]['remove'](_0x23ef1f(0x15c));};document['querySelector'](_0x580a4d(0x14b))['addEventListener'](_0x580a4d(0x160),()=>{signOut();});const register=()=>{const _0x99b583=_0x580a4d,_0x1af74c=document[_0x99b583(0x15f)]('#registration-email')[_0x99b583(0x191)],_0x32c6d2=document[_0x99b583(0x15f)](_0x99b583(0x186))[_0x99b583(0x191)],_0x5212a3=document[_0x99b583(0x15f)]('#registration-password')[_0x99b583(0x191)];if(_0x1af74c[_0x99b583(0x176)]()=='')alert(_0x99b583(0x193));else{if(_0x5212a3['trim']()[_0x99b583(0x164)]<0x6)alert('Password\x20must\x20be\x20at\x20least\x206\x20characters.');else _0x1af74c!=_0x32c6d2?alert('emails\x20do\x20not\x20match.'):auth['createUserWithEmailAndPassword'](_0x1af74c,_0x5212a3)[_0x99b583(0x167)](function(_0x46a57c){const _0x289ccf=_0x99b583;var _0x2704fe=_0x46a57c['code'],_0x5067fb=_0x46a57c[_0x289ccf(0x166)];alert(_0x5067fb);});}};document[_0x580a4d(0x15f)](_0x580a4d(0x181))[_0x580a4d(0x175)](_0x580a4d(0x160),()=>{register();}),document[_0x580a4d(0x15f)](_0x580a4d(0x14c))[_0x580a4d(0x175)]('keyup',_0x3c8c3b=>{const _0x1c03e2=_0x580a4d;event['keyCode']===0xd&&(_0x3c8c3b[_0x1c03e2(0x16f)](),register());});const login=()=>{const _0x52ed36=_0x580a4d,_0x5775bf=document[_0x52ed36(0x15f)](_0x52ed36(0x182))[_0x52ed36(0x191)],_0x490839=document[_0x52ed36(0x15f)](_0x52ed36(0x17c))[_0x52ed36(0x191)];if(_0x5775bf[_0x52ed36(0x176)]()=='')alert(_0x52ed36(0x193));else _0x490839[_0x52ed36(0x176)]()==''?alert(_0x52ed36(0x16c)):authenticate(_0x5775bf,_0x490839);};document[_0x580a4d(0x15f)](_0x580a4d(0x18e))[_0x580a4d(0x175)](_0x580a4d(0x160),()=>{login();}),document[_0x580a4d(0x15f)](_0x580a4d(0x17c))[_0x580a4d(0x175)](_0x580a4d(0x18b),_0x4999e5=>{const _0x45d20c=_0x580a4d;event[_0x45d20c(0x17d)]===0xd&&(_0x4999e5[_0x45d20c(0x16f)](),login());});function _0x30be(){const _0x495377=['myLockScreen','message','catch','G-FSDV7HGD99','ctrlKey','none','display','Enter\x20Password.','signOut','Verification\x20link\x20sent\x20to\x20your\x20email.\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.','preventDefault','onclick','signInWithEmailAndPassword','innerHTML','Enter\x20Your\x20E-mail.','#login-page','addEventListener','trim','getElementsByClassName','email_Verified','uid','45777TDuoxr','7XySyBQ','#login-password','keyCode','#myLogin','4018850SQzxeJ','myModal','#register','#login-email','1692618QZZrQt','year','getElementById','#registration-reemail','328397PZWfbo','12090826HXwGSR','reload','auth','keyup','then','586053fYzoYe','#login','#homepage','56xhVmqR','value','emailVerified','Enter\x20E-mail.','alert','target','#registration-page','currentUser','#forgot-password','#show-login','add','code','#show-register','#signout','#registration-password','error\x20signing\x20out,\x20check\x20network\x20connection','onkeydown','92iDrXku','buananetpbun-5d979.appspot.com','https://buananetpbun-5d979.firebaseio.com','remove','sendPasswordResetEmail','block','shiftKey','buananetpbun-5d979','style','welcome-email','1068090yEvLgP','charCodeAt','AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','hide','sendEmailVerification','verify','querySelector','click','2SqHwGu','classList','getFullYear','length'];_0x30be=function(){return _0x495377;};return _0x30be();}const authenticate=(_0x33d4dc,_0x3849c4)=>{const _0x5e0e91=_0x580a4d,_0x41abac=firebase['auth']();_0x41abac[_0x5e0e91(0x171)](_0x33d4dc,_0x3849c4),firebase[_0x5e0e91(0x18a)]()[_0x5e0e91(0x171)](_0x33d4dc,_0x3849c4)[_0x5e0e91(0x167)](function(_0xc712ff){const _0xb410e5=_0x5e0e91;var _0x4f4e84=_0xc712ff[_0xb410e5(0x19b)],_0x22a8f7=_0xc712ff[_0xb410e5(0x166)];alert(_0x22a8f7);});},showHomepage=()=>{const _0x58a05d=_0x580a4d;document['querySelector'](_0x58a05d(0x196))[_0x58a05d(0x162)][_0x58a05d(0x19a)]('hide'),document['querySelector']('#login-page')[_0x58a05d(0x162)]['add']('hide'),document[_0x58a05d(0x15f)](_0x58a05d(0x18f))[_0x58a05d(0x162)]['remove']('hide'),document[_0x58a05d(0x15f)](_0x58a05d(0x17e))[_0x58a05d(0x157)][_0x58a05d(0x16b)]='none';},signOut=()=>{const _0x225107=_0x580a4d;firebase[_0x225107(0x18a)]()[_0x225107(0x16d)]()['then'](function(){const _0x52d50b=_0x225107;location[_0x52d50b(0x189)]();})[_0x225107(0x167)](function(_0x4a60a1){const _0x4ee9e1=_0x225107;alert(_0x4ee9e1(0x14d));});};auth['onAuthStateChanged'](_0xb485e=>{_0xb485e&&showHomepage();}),document[_0x580a4d(0x15f)](_0x580a4d(0x198))[_0x580a4d(0x175)](_0x580a4d(0x160),()=>{const _0x3ebcef=_0x580a4d,_0x35f5da=document[_0x3ebcef(0x15f)]('#login-email')[_0x3ebcef(0x191)];_0x35f5da[_0x3ebcef(0x176)]()==''?alert(_0x3ebcef(0x173)):forgotPassword(_0x35f5da);});const forgotPassword=_0x31897f=>{const _0x2cbadf=_0x580a4d;auth[_0x2cbadf(0x153)](_0x31897f)[_0x2cbadf(0x18c)](function(){alert('Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20on\x20the\x20spam\x20folder.');})[_0x2cbadf(0x167)](function(_0x3f53d8){alert('invalid\x20e-mail\x20or\x20bad\x20network\x20connection.');});};	
+	
 
     function _0x80db(_0x596fdf,_0x3f4962){var _0x2e8c5d=_0x2e8c();return _0x80db=function(_0x80dbf0,_0x2caf6a){_0x80dbf0=_0x80dbf0-0x18a;var _0x348048=_0x2e8c5d[_0x80dbf0];return _0x348048;},_0x80db(_0x596fdf,_0x3f4962);}(function(_0x5c86f1,_0x322aca){var _0x4ebe4c=_0x80db,_0xa024e=_0x5c86f1();while(!![]){try{var _0x5562dd=-parseInt(_0x4ebe4c(0x1b2))/0x1*(parseInt(_0x4ebe4c(0x1a3))/0x2)+parseInt(_0x4ebe4c(0x1a8))/0x3+parseInt(_0x4ebe4c(0x197))/0x4*(-parseInt(_0x4ebe4c(0x19f))/0x5)+parseInt(_0x4ebe4c(0x1b5))/0x6+parseInt(_0x4ebe4c(0x18b))/0x7+-parseInt(_0x4ebe4c(0x18f))/0x8*(parseInt(_0x4ebe4c(0x1b6))/0x9)+-parseInt(_0x4ebe4c(0x191))/0xa*(parseInt(_0x4ebe4c(0x198))/0xb);if(_0x5562dd===_0x322aca)break;else _0xa024e['push'](_0xa024e['shift']());}catch(_0x271cab){_0xa024e['push'](_0xa024e['shift']());}}}(_0x2e8c,0xd15e8));function _0x2e8c(){var _0x538480=['rate-down-burst-threshold','931830oESiBp','up-interval-bonus','result-down-burst-threshold','result-down-limit-at','8154aAdrtf','for-up-burst-limit2','result-up-limit-at','for-up-burst-duration2','down-interval-bonus','3432351KfitKg','for-up-burst-duration','for-up-burst-limit','value','getElementById','replace','rate-down-burst-limit','for-up-burst-threshold','for-down-burst-limit2','rate-up-burst-limit','333TfuPjo','result-up-burst-limit','rate-down-burst-time','9467388GfNdtH','115254FmzOIu','rate-up-burst-time','result-up-burst-threshold','pbun','ceil','toUpperCase','rate-down-limit-at','down-max-limit','for-down-burst-threshold','for-down-burst-duration2','match','buananet','7435225Zvmzjb','rate-down-max-limit','for-down-burst-time','github','592FHDSNH','for-down-burst-duration','10qPxdMe','/mikrotik-burst-limit-calculator.html','rate-up-burst-threshold','for-down-burst-limit','result-up-burst-time','up-speed-bonus','12OZSLCV','684541SlBlds','new-burst-up','innerHTML','rate-up-limit-at','for-up-burst-time','result-down-burst-limit'];_0x2e8c=function(){return _0x538480;};return _0x2e8c();}function upperCaseF(_0x571915){setTimeout(function(){var _0x2d2bbe=_0x80db;_0x571915[_0x2d2bbe(0x1ab)]=_0x571915[_0x2d2bbe(0x1ab)][_0x2d2bbe(0x1bb)]();},0x1);}function myFunction(){var _0x18e609=_0x80db,_0x55cb99=document[_0x18e609(0x1ac)]('up-max-limit')[_0x18e609(0x1ab)],_0x471d71=_0x55cb99[_0x18e609(0x1c0)](/[a-zA-Z]/),_0x4fe505=_0x55cb99['replace'](/[^0-9]/g,''),_0x1ea6da=document['getElementById'](_0x18e609(0x1bd))['value'],_0x3c2b0b=_0x1ea6da[_0x18e609(0x1c0)](/[a-zA-Z]/),_0x3adb73=_0x1ea6da[_0x18e609(0x1ad)](/[^0-9]/g,''),_0x1605a9=document['getElementById'](_0x18e609(0x196))[_0x18e609(0x1ab)],_0x20e9c3=_0x1605a9[_0x18e609(0x1c0)](/[a-zA-Z]/),_0x4f0084=_0x1605a9[_0x18e609(0x1ad)](/[^0-9]/g,''),_0xeea5c8=document[_0x18e609(0x1ac)]('down-speed-bonus')[_0x18e609(0x1ab)],_0x1bcd76=_0xeea5c8['match'](/[a-zA-Z]/),_0x486e37=_0xeea5c8[_0x18e609(0x1ad)](/[^0-9]/g,''),_0x18857f=parseInt(document['getElementById'](_0x18e609(0x1a0))[_0x18e609(0x1ab)]),_0x4e57b0=parseInt(document[_0x18e609(0x1ac)](_0x18e609(0x1a7))[_0x18e609(0x1ab)]);if(_0x471d71=='M')var _0x3ab489=parseInt(_0x4fe505*0x3e8);else var _0x3ab489=parseInt(_0x4fe505);if(_0x3c2b0b=='M')var _0x3b4ccd=parseInt(_0x3adb73*0x3e8);else var _0x3b4ccd=parseInt(_0x3adb73);if(_0x20e9c3=='M')var _0x5412e9=parseInt(_0x4f0084*0x3e8);else var _0x5412e9=parseInt(_0x4f0084);if(_0x1bcd76=='M')var _0x1e08e2=parseInt(_0x486e37*0x3e8);else var _0x1e08e2=parseInt(_0x486e37);var _0x233523='https://',_0x15dfde=_0x18e609(0x18a),_0x153c84=_0x18e609(0x1b9),_0x5a024a=_0x18e609(0x18e),_0x414d18='io',_0x5962d2=_0x233523+_0x15dfde+_0x153c84+'.'+_0x5a024a+'.'+_0x414d18;window['location']['href']!==_0x5962d2+_0x18e609(0x192)&&location['replace'](_0x5962d2+_0x18e609(0x192));var _0x433f41=Math['ceil'](_0x18857f*_0x5412e9/(_0x3ab489*(0x3/0x4))),_0x167d97=Math['ceil'](_0x4e57b0*_0x1e08e2/(_0x3b4ccd*(0x3/0x4))),_0x514641=Math[_0x18e609(0x1ba)](_0x3ab489*(0x3/0x4)),_0x5b0788=Math[_0x18e609(0x1ba)](_0x3b4ccd*(0x3/0x4)),_0x16a6c4=Math[_0x18e609(0x1ba)](_0x3ab489*(0x1/0x8)),_0x52bc5e=Math[_0x18e609(0x1ba)](_0x3b4ccd*(0x1/0x8)),_0x379be4=Math['ceil'](_0x514641*(_0x18857f*_0x5412e9/_0x514641)/_0x5412e9),_0x4ec883=Math[_0x18e609(0x1ba)](_0x5b0788*(_0x4e57b0*_0x1e08e2/_0x5b0788)/_0x1e08e2);document[_0x18e609(0x1ac)]('result-up-max-limit')[_0x18e609(0x19a)]=_0x55cb99,document[_0x18e609(0x1ac)]('result-down-max-limit')['innerHTML']=_0x1ea6da,document[_0x18e609(0x1ac)](_0x18e609(0x1b3))['innerHTML']=_0x1605a9,document[_0x18e609(0x1ac)](_0x18e609(0x19d))['innerHTML']=_0xeea5c8,document[_0x18e609(0x1ac)]('result-up-burst-threshold')[_0x18e609(0x19a)]=_0x514641+'K',document[_0x18e609(0x1ac)](_0x18e609(0x1a1))[_0x18e609(0x19a)]=_0x5b0788+'K',document[_0x18e609(0x1ac)](_0x18e609(0x195))['innerHTML']=_0x433f41,document['getElementById']('result-down-burst-time')[_0x18e609(0x19a)]=_0x167d97,document[_0x18e609(0x1ac)](_0x18e609(0x1a5))[_0x18e609(0x19a)]=_0x16a6c4+'K',document['getElementById'](_0x18e609(0x1a2))[_0x18e609(0x19a)]=_0x52bc5e+'K',document[_0x18e609(0x1ac)]('rate-up-max-limit')[_0x18e609(0x19a)]=_0x55cb99,document[_0x18e609(0x1ac)](_0x18e609(0x18c))[_0x18e609(0x19a)]=_0x1ea6da,document[_0x18e609(0x1ac)](_0x18e609(0x1b1))[_0x18e609(0x19a)]=_0x1605a9,document['getElementById'](_0x18e609(0x1ae))['innerHTML']=_0xeea5c8,document[_0x18e609(0x1ac)]('rate-up-burst-threshold')['innerHTML']=_0x514641+'K',document[_0x18e609(0x1ac)](_0x18e609(0x19e))[_0x18e609(0x19a)]=_0x5b0788+'K',document['getElementById'](_0x18e609(0x1b7))['innerHTML']=_0x433f41,document['getElementById'](_0x18e609(0x1b4))[_0x18e609(0x19a)]=_0x167d97,document[_0x18e609(0x1ac)](_0x18e609(0x19b))[_0x18e609(0x19a)]=_0x16a6c4+'K',document[_0x18e609(0x1ac)](_0x18e609(0x1bc))[_0x18e609(0x19a)]=_0x52bc5e+'K',document[_0x18e609(0x1ac)](_0x18e609(0x1af))['innerHTML']=_0x514641+'K',document['getElementById']('for-up-burst-limit')[_0x18e609(0x19a)]=_0x1605a9,document[_0x18e609(0x1ac)](_0x18e609(0x19c))[_0x18e609(0x19a)]=_0x433f41+'s',document[_0x18e609(0x1ac)]('for-up-burst-duration')[_0x18e609(0x19a)]=_0x379be4,document[_0x18e609(0x1ac)]('for-up-burst-limit2')[_0x18e609(0x19a)]=_0x1605a9,document[_0x18e609(0x1ac)](_0x18e609(0x1a6))[_0x18e609(0x19a)]=_0x379be4,document['getElementById'](_0x18e609(0x199))[_0x18e609(0x19a)]=_0x55cb99,document[_0x18e609(0x1ac)]('for-down-burst-threshold')[_0x18e609(0x19a)]=_0x5b0788+'K',document[_0x18e609(0x1ac)](_0x18e609(0x194))['innerHTML']=_0xeea5c8,document[_0x18e609(0x1ac)](_0x18e609(0x18d))[_0x18e609(0x19a)]=_0x167d97+'s',document[_0x18e609(0x1ac)]('for-down-burst-duration')[_0x18e609(0x19a)]=_0x4ec883,document[_0x18e609(0x1ac)](_0x18e609(0x1b0))[_0x18e609(0x19a)]=_0xeea5c8,document['getElementById']('for-down-burst-duration2')[_0x18e609(0x19a)]=_0x4ec883,document['getElementById']('new-burst-down')[_0x18e609(0x19a)]=_0x1ea6da,_0x5412e9==0x0&&(document[_0x18e609(0x1ac)]('rate-up-burst-limit')['innerHTML']='0',document['getElementById'](_0x18e609(0x193))[_0x18e609(0x19a)]='0',document['getElementById'](_0x18e609(0x1b3))[_0x18e609(0x19a)]='0',document['getElementById'](_0x18e609(0x1b8))[_0x18e609(0x19a)]='0',document[_0x18e609(0x1ac)](_0x18e609(0x1aa))['innerHTML']='0',document[_0x18e609(0x1ac)](_0x18e609(0x1af))[_0x18e609(0x19a)]='0',document[_0x18e609(0x1ac)](_0x18e609(0x1aa))['innerHTML']='0',document['getElementById'](_0x18e609(0x1a4))['innerHTML']='0',document['getElementById'](_0x18e609(0x1a9))[_0x18e609(0x19a)]='0',document[_0x18e609(0x1ac)](_0x18e609(0x1a6))[_0x18e609(0x19a)]='0'),_0x1e08e2==0x0&&(document[_0x18e609(0x1ac)](_0x18e609(0x1ae))[_0x18e609(0x19a)]='0',document[_0x18e609(0x1ac)](_0x18e609(0x19e))[_0x18e609(0x19a)]='0',document[_0x18e609(0x1ac)](_0x18e609(0x19d))['innerHTML']='0',document['getElementById'](_0x18e609(0x1a1))[_0x18e609(0x19a)]='0',document['getElementById'](_0x18e609(0x194))[_0x18e609(0x19a)]='0',document[_0x18e609(0x1ac)](_0x18e609(0x1be))[_0x18e609(0x19a)]='0',document[_0x18e609(0x1ac)](_0x18e609(0x194))[_0x18e609(0x19a)]='0',document['getElementById'](_0x18e609(0x1b0))[_0x18e609(0x19a)]='0',document[_0x18e609(0x1ac)](_0x18e609(0x190))['innerHTML']='0',document['getElementById'](_0x18e609(0x1bf))['innerHTML']='0');}
     </script>
