@@ -171,6 +171,7 @@ firebase.auth().onAuthStateChanged((user) => {
 		} else {
 			document.getElementById('email_Verified').innerHTML = "❌"
 			document.getElementById("myLockScreen").style.display = "block";
+			document.getElementById("verify").style.display = "block"
 		}
 
 	} else {
