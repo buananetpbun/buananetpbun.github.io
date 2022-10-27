@@ -147,8 +147,8 @@ const user = firebase.auth().currentUser;
 		 
 
 
-function sendVerificationEmail() {
-  var user = firebase.auth().currentUser;
+         document.querySelector("#verify").addEventListener("click", () => {
+         	  var user = firebase.auth().currentUser;
   user.sendEmailVerification().then(function () {
     window.alert("Verification link sent to your email. if you don't see it, please check on the spam folder.")
   }).catch(function (error) {
@@ -156,10 +156,6 @@ function sendVerificationEmail() {
     var errorMessage = error.message;
     alert(errorMessage);
   });
-}
-
-         document.querySelector("#verify").addEventListener("click", () => {
-         	sendVerificationEmail();
          });
 
 firebase.auth().onAuthStateChanged((user) => {
