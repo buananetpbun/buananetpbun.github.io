@@ -36,9 +36,9 @@ document.onkeydown = function(e) {
 }
 
 document.getElementById("myLockScreen").addEventListener('contextmenu', (e) => {
-	alert("please verification your E-Mail for activate!")
-	
+	e.preventDefault();
 });
+
 document.onkeydown = function(e) {
 	if (event.keyCode == 123) {
 		return false;
@@ -79,10 +79,8 @@ document.onkeydown = function(e) {
 }
 
 document.querySelector("#myLockScreen").addEventListener("click", () => {
-	firebase.auth().signInWithPopup(provider).then(res => {}).catch(e => {})
+		alert("please verification your mail for activate")
 });
-
-
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
