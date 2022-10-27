@@ -1,37 +1,3 @@
-function CustomAlert(){
-  this.alert = function(message,title){
-    document.body.innerHTML = document.body.innerHTML + '<div id="dialogoverlay"></div><div id="dialogbox" class="slit-in-vertical"><div><div id="dialogboxhead"></div><div id="dialogboxbody"></div><div id="dialogboxfoot"></div></div></div>';
-
-    let dialogoverlay = document.getElementById('dialogoverlay');
-    let dialogbox = document.getElementById('dialogbox');
-    
-    let winH = window.innerHeight;
-    dialogoverlay.style.height = winH+"px";
-    
-    dialogbox.style.top = "100px";
-
-    dialogoverlay.style.display = "block";
-    dialogbox.style.display = "block";
-    
-    document.getElementById('dialogboxhead').style.display = 'block';
-
-    if(typeof title === 'undefined') {
-      document.getElementById('dialogboxhead').style.display = 'none';
-    } else {
-      document.getElementById('dialogboxhead').innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> '+ title;
-    }
-    document.getElementById('dialogboxbody').innerHTML = message;
-    document.getElementById('dialogboxfoot').innerHTML = '<button class="pure-material-button-contained active" onclick="customAlert.ok()">OK</button>';
-  }
-  
-  this.ok = function(){
-    document.getElementById('dialogbox').style.display = "none";
-    document.getElementById('dialogoverlay').style.display = "none";
-  }
-}
-
-let customAlert = new CustomAlert();
-
 document.getElementById("year").innerHTML = new Date().getFullYear();
 var modal_click = document.getElementById("myModal");
 var span_click = document.getElementsByClassName("close")[0];
@@ -180,11 +146,11 @@ document.querySelector("#google-sign-in").addEventListener("click", () => {
 document.querySelector("#verify").addEventListener("click", () => {
 	var user = firebase.auth().currentUser;
 	user.sendEmailVerification().then(function() {
-		customAlert.alert("Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
+		window.alert("Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
 	}).catch(function(error) {
 		var errorCode = error.code;
 		var errorMessage = error.message;
-		customAlert.alert(errorMessage);
+		alert(errorMessage);
 	});
 });
 
@@ -205,7 +171,6 @@ firebase.auth().onAuthStateChanged((user) => {
 		} else {
 			document.getElementById('email_Verified').innerHTML = "❌"
 			document.getElementById("myLockScreen").style.display = "block";
-			document.getElementById("verify").style.display = "block"
 		}
 
 	} else {
@@ -250,11 +215,11 @@ const register = () => {
 	const password = document.querySelector("#registration-password").value;
 
 	if (email.trim() == "") {
-		customAlert.alert("Enter E-mail.");
+		alert("Enter E-mail.");
 	} else if (password.trim().length < 6) {
-		customAlert.alert("Password must be at least 6 characters.");
+		alert("Password must be at least 6 characters.");
 	} else if (email != reemail) {
-		customAlert.alert("emails do not match.");
+		alert("emails do not match.");
 	} else {
 		auth
 			.createUserWithEmailAndPassword(email, password)
@@ -263,7 +228,7 @@ const register = () => {
 				// Handle Errors here.
 				var errorCode = error.code;
 				var errorMessage = error.message;
-				customAlert.alert(errorMessage);
+				alert(errorMessage);
 				// ...
 			});
 	}
@@ -289,9 +254,9 @@ const login = () => {
 	const password = document.querySelector("#login-password").value;
 
 	if (email.trim() == "") {
-		customAlert.alert("Enter E-mail.");
+		alert("Enter E-mail.");
 	} else if (password.trim() == "") {
-		customAlert.alert("Enter Password.");
+		alert("Enter Password.");
 	} else {
 		authenticate(email, password);
 	}
@@ -322,7 +287,7 @@ const authenticate = (email, password) => {
 			var errorCode = error.code;
 			var errorMessage = error.message;
 
-			customAlert.alert(errorMessage);
+			alert(errorMessage);
 		});
 };
 
@@ -341,7 +306,7 @@ const signOut = () => {
 			location.reload();
 		})
 		.catch(function(error) {
-			customAlert.alert("error signing out, check network connection");
+			alert("error signing out, check network connection");
 		});
 };
 
@@ -356,7 +321,7 @@ document
 	.addEventListener("click", () => {
 		const email = document.querySelector("#login-email").value;
 		if (email.trim() == "") {
-			customAlert.alert("Enter Your E-mail.");
+			alert("Enter Your E-mail.");
 		} else {
 			forgotPassword(email);
 		}
@@ -366,9 +331,9 @@ const forgotPassword = (email) => {
 	auth
 		.sendPasswordResetEmail(email)
 		.then(function() {
-			customAlert.alert("Send to your e-mail successfully! if you don't see it, please check your mail inbox in spam folder.");
+			alert("Send to your e-mail successfully! if you don't see it, please check your mail inbox in spam folder.");
 		})
 		.catch(function(error) {
-			customAlert.alert("invalid e-mail or bad network connection.");
+			alert("invalid e-mail or bad network connection.");
 		});
 }
