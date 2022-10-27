@@ -165,13 +165,13 @@ firebase.auth().onAuthStateChanged((user) => {
 		document.getElementById('welcome-email').innerHTML = email
 
 		if (emailVerified == true) {
-			document.getElementById("verify").style.display = "none"
+			document.getElementById("verify").classList.add = "hide"
 			document.getElementById('email_Verified').innerHTML = "✔️"
 			document.getElementById("myLockScreen").style.display = "none";
 		} else {
 			document.getElementById('email_Verified').innerHTML = "❌"
 			document.getElementById("myLockScreen").style.display = "block";
-			document.getElementById("verify").style.display = "block"
+			document.getElementById("verify").classList.remove = "hide"
 		}
 
 	} else {
