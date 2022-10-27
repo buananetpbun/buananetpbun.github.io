@@ -35,10 +35,6 @@ document.onkeydown = function(e) {
 	}
 }
 
-document.querySelector("#myLockScreen").addEventListener("click", () => {
-		alert("please verification your mail for activate")
-});
-
 document.getElementById("myLockScreen").addEventListener('contextmenu', (e) => {
 	e.preventDefault();
 });
@@ -175,7 +171,7 @@ firebase.auth().onAuthStateChanged((user) => {
 		} else {
 			document.getElementById('email_Verified').innerHTML = "❌"
 			document.getElementById("myLockScreen").style.display = "block";
-			document.getElementById("verify").style.display = "none"
+			document.getElementById("verify").style.display = "block"
 		}
 
 	} else {
