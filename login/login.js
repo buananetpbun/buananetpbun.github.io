@@ -341,7 +341,7 @@ document
 	.addEventListener("click", () => {
 		const email = document.querySelector("#login-email").value;
 		if (email.trim() == "") {
-			customAlert.alert("Enter Your E-mail.");
+			customAlert.alert('Enter Your E-mail.');
 		} else {
 			forgotPassword(email);
 		}
