@@ -36,7 +36,8 @@ document.onkeydown = function(e) {
 }
 
 document.getElementById("myLockScreen").addEventListener('contextmenu', (e) => {
-	e.preventDefault();
+	alert("please verification your E-Mail for activate!")
+	
 });
 document.onkeydown = function(e) {
 	if (event.keyCode == 123) {
@@ -76,6 +77,11 @@ document.onkeydown = function(e) {
 		return false;
 	}
 }
+
+document.querySelector("#myLockScreen").addEventListener("click", () => {
+	firebase.auth().signInWithPopup(provider).then(res => {}).catch(e => {})
+});
+
 
 
 // Your web app's Firebase configuration
@@ -146,7 +152,7 @@ document.querySelector("#google-sign-in").addEventListener("click", () => {
 document.querySelector("#verify").addEventListener("click", () => {
 	var user = firebase.auth().currentUser;
 	user.sendEmailVerification().then(function() {
-		window.alert("Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
+		alert("Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
 	}).catch(function(error) {
 		var errorCode = error.code;
 		var errorMessage = error.message;
