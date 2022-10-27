@@ -35,10 +35,13 @@ document.onkeydown = function(e) {
 	}
 }
 
+document.querySelector("#myLockScreen").addEventListener("click", () => {
+		alert("please verification your mail for activate")
+});
+
 document.getElementById("myLockScreen").addEventListener('contextmenu', (e) => {
 	e.preventDefault();
 });
-
 document.onkeydown = function(e) {
 	if (event.keyCode == 123) {
 		return false;
@@ -78,9 +81,6 @@ document.onkeydown = function(e) {
 	}
 }
 
-document.querySelector("#myLockScreen").addEventListener("click", () => {
-		alert("please verification your mail for activate")
-});
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -150,7 +150,7 @@ document.querySelector("#google-sign-in").addEventListener("click", () => {
 document.querySelector("#verify").addEventListener("click", () => {
 	var user = firebase.auth().currentUser;
 	user.sendEmailVerification().then(function() {
-		alert("Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
+		window.alert("Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
 	}).catch(function(error) {
 		var errorCode = error.code;
 		var errorMessage = error.message;
@@ -175,7 +175,7 @@ firebase.auth().onAuthStateChanged((user) => {
 		} else {
 			document.getElementById('email_Verified').innerHTML = "❌"
 			document.getElementById("myLockScreen").style.display = "block";
-			document.getElementById("verify").style.display = "block"
+			document.getElementById("verify").style.display = "none"
 		}
 
 	} else {
