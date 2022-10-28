@@ -1,243 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset='utf-8'>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>LOGIN - BuanaNETPBun.Github.io</title>
-      <meta content='Mikrotik RouterOS Auto Backup to E-Mail Generator - BuanaNETPBun.Github.io' name='description'>
-      <meta content='hotspot, username, password, script generator, mikrotik, router, winbox, termimal, rsc, script, wireless, rtrwnet' name='keywords'>
-      <meta content='index, follow, noodp' name='robots'>
-      <script async defer src="https://buttons.github.io/buttons.js"></script>  
-      <style>
-         /* -----------------------------------------------------------------
-         ####################################################################
-         # LOGIN FORM BUANANETPBUN.GITHUB.IO
-         # Designer  : Agus Ramadhani / BuanaNET
-         # Github    : https://github.com/buananetpbun
-         # Site      : http://www.o-om.com
-         # Sosmed    : https://fb.me/buananetmikrotik	
-         ####################################################################
-         -------------------------------------------------------------------- */  
-         *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-         body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-         body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
-         html, body {
-         height: 100%;
-         width:100%;
-         margin-top: 0px;
-         padding:0;
-         background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
-         }
-         * {
-         box-sizing: border-box;
-         }
-         h2 {
-         color:#ff6600;
-         float:left;
-         }	  	  
-         h1 {
-         color:#ddd;
-         font-size:22px;
-         margin-bottom:10px;
-         margin-top:10px;
-         }
-         a:link {
-         color: #ff6600;
-         }
-         a:visited {
-         color: #ff6600;
-         }
-         a:hover {
-         color: #ff6600;
-         }
-         a:active {
-         color: #ff6600;
-         }
-         button {
-         color: #fff;
-         background-color: #ff6600;
-         border-color: #ff6600;
-         border:none;
-         padding:8px;
-         margin-right:5px;
-         width:150px;
-         font-size:15px;
-         font-weight:bold;
-         cursor: pointer;
-         border-radius: 5px;
-         color: #fff;
-         }
-         button:hover {
-         background-color: #ccc;
-         color: #111;
-         }
-         .row:after {
-         content: "";
-         display: table;
-         clear: both;
-         }  
-         input[type=checkbox]{
-         margin-right:7px; 
-         }
-         input[type=text], select, textarea {
-         width: 100%;
-         padding: 5px;
-         border: 1px solid #bbb;
-         border-radius: 1px;
-         resize: vertical;
-         margin-bottom:12px;
-         font-size:15px !important;
-         border-radius:5px; 
-         }
-         label {
-         padding: 5px 5px 5px 0;
-         display: inline-block;
-         }
-         input[type=submit] {
-         background-color: #ff6600;
-         color: white;
-         padding: 12px 20px;
-         border: none;
-         border-radius: 1px;
-         cursor: pointer;
-         float: right;
-         border-radius:5px; 
-         }
-         input[type=submit]:hover {
-         background-color: #45a049;
-         }
-         .col-25 {
-         float: left;
-         width: 25%;
-         margin-top: 6px;
-         }
-         .col-75 {
-         float: left;
-         width: 75%;
-         margin-top: 6px;
-         }
-         /* Clear floats after the columns */
-         .row:after {
-         content: "";
-         display: table;
-         clear: both;
-         }
-         table, tr, td {
-         border: none;
-         }
-         .mymenu {
-         z-index: 4;
-         margin:0 auto;
-         background-color: #f9f9f9;
-         width:650px;
-         border-radius:0 0 5px 5px;
-         border: 2px solid #f9f9f9;
-         font-weight:bold;
-         font-size:14px;
-         position:relative;
-         }
-         .mymenu ul {
-         list-style-type: none;
-         margin: 0;
-         padding: 0;
-         overflow: hidden;
-         background-color: #f9f9f9;
-         background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
-         margin-right:10px;
-         }
-         .mymenu li {
-         float: left;
-         }
-         .mymenu li a {
-         display: block;
-         color: #555;
-         text-align: center;
-         padding: 8px 10px;
-         text-decoration: none;
-         }
-         .mymenu li a:hover {
-         background-color: #f0f0f0;
-         color: #111;
-         }  
-
-       </style> 
- <link rel="stylesheet" href="./login.css">
-   </head>
-   <body>
-      <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-      <div id="mymenu" class="mymenu">
-         <ul>
-            <li><a target="_blank" href="https://buananetpbun.github.io">☰ HOME</a></li>
-            <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-            <li><a href="javascript:callmodal()">DONATE</a></li>
-            <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
-         </ul>
-         <div id="homepage" class="hide">
-            <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
-            <span style="font-weight:normal;font-size:14px">USER-ID: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-            <span style="font-weight:normal; font-size:14px"> - VERIFIED: [ <span id="email_Verified"></span> ]</span>
-            <button id="verify" style="width:180px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:red">Click here for Activate</button>
-         </div>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOGIN - BuanaNETPBun.Github.io</title>
+    <meta content='Mikrotik RouterOS Auto Backup to E-Mail Generator - BuanaNETPBun.Github.io' name='description'>
+    <meta content='hotspot, username, password, script generator, mikrotik, router, winbox, termimal, rsc, script, wireless, rtrwnet' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <style>
+      /* -----------------------------------------------------------------
+      ####################################################################
+      # LOGIN FORM BUANANETPBUN.GITHUB.IO
+      # Designer  : Agus Ramadhani / BuanaNET
+      # Github    : https://github.com/buananetpbun
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananetmikrotik	
+      ####################################################################
+      -------------------------------------------------------------------- */  
+      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+      body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+      html, body {
+      height: 100%;
+      width:100%;
+      margin-top: 0px;
+      padding:0;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
+      }
+      * {
+      box-sizing: border-box;
+      }
+      h2 {
+      color:#ff6600;
+      float:left;
+      }	  	  
+      h1 {
+      color:#ddd;
+      font-size:22px;
+      margin-bottom:10px;
+      margin-top:10px;
+      }
+      a:link {
+      color: #ff6600;
+      }
+      a:visited {
+      color: #ff6600;
+      }
+      a:hover {
+      color: #ff6600;
+      }
+      a:active {
+      color: #ff6600;
+      }
+      button {
+      color: #fff;
+      background-color: #ff6600;
+      border-color: #ff6600;
+      border:none;
+      padding:8px;
+      margin-right:5px;
+      width:150px;
+      font-size:15px;
+      font-weight:bold;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      }
+      button:hover {
+      background-color: #ccc;
+      color: #111;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }  
+      input[type=checkbox]{
+      margin-right:7px; 
+      }
+      input[type=text], select, textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      resize: vertical;
+      margin-bottom:12px;
+      font-size:15px !important;
+      border-radius:5px; 
+      }
+      label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+      }
+      input[type=submit] {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      float: right;
+      border-radius:5px; 
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+      .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      }
+      .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      table, tr, td {
+      border: none;
+      }
+      .mymenu {
+      z-index: 4;
+      margin:0 auto;
+      background-color: #f9f9f9;
+      width:650px;
+      border-radius:0 0 5px 5px;
+      border: 2px solid #f9f9f9;
+      font-weight:bold;
+      font-size:14px;
+      position:relative;
+      }
+      .mymenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
+      margin-right:10px;
+      }
+      .mymenu li {
+      float: left;
+      }
+      .mymenu li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      }
+      .mymenu li a:hover {
+      background-color: #f0f0f0;
+      color: #111;
+      }  
+    </style>
+    <link rel="stylesheet" href="./login.css">
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div id="mymenu" class="mymenu">
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">☰ HOME</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
+      </ul>
+      <div id="homepage" class="hide">
+        <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+        <span style="font-weight:normal;font-size:14px">USER-ID: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+        <span style="font-weight:normal; font-size:14px"> - VERIFIED: [ <span id="email_Verified"></span> ]</span>
+        <button id="verify" style="width:180px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:red">Click here for Activate</button>
       </div>
-      <div id="myLogin" class="modal-login">
-         <div class="modal-content">
-            <div class="forms-out">
-               <div class="forms-in">
-                  <div id="registration-page" class="hide">
-                     <h2>SIGN UP</h2>
-                     <br><br>
-                     <label>E-Mail</label>
-                     <input type="email" id="registration-email" placeholder="E-Mail">
-                     <label>Confirm E-mail</label> 
-                     <input type="email" id="registration-reemail" autocomplete="off" placeholder="Confirm E-Mail" >
-                     <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
-                     <input type="password" id="registration-password" placeholder="Password">
-                     <button style="width:100% !important;" id="register">Sign Up</button><br>
-                     <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
-                  </div>
-                  <div id="login-page">
-                     <h2>SIGN IN</h2>
-                     <span class="myButtonGoogle">
-                     <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiElEQVRoge2Xb0gTcRjHp5tlYJRlkRK9iF5I9ke7O5WhnbstU+yPu2OVhQTSu5IIiiCqm5EFvYgiCbJId3OQKxAiNyWwF/2BikFpRBhoyW41ndsEZyXl9Zz5Z+q8uXm79eK+8GUwdj8+3+f3/J77TaGQJUuWLFmyZE2rT4dsZQnsmFOL3QAzLIE2s1qszkmgNEvklg+o1cvjzThHvfj2lQB7HmC7AZYL41EI+JQlkF3x5lZwCkUCQJ8EDy4AfI6dBPbimwbLigu8qyR7zXglowCfFWKY1WGHJYX/qsvJgJ7+uFj4ILdyBoNSEnj+EDq16Aex4KEQ9u6STUslgefFalFrmJYIwOd9VoNUuDR5CFuMZLI6pMCpQU/D969nwbf14niyZPAwafYIVpRATSyOpIVbA3bwO7hdUniOViS6D2W1hKy6FhuDsXhioWt92Y2k9+XnL4sl7xwF7Mp9I3YV5zmz4dX4LJ8ZwigpTDQCeCsfgPfQ7dT30ALuieo7JJsg0YqzKpQjNpV/MgDvwKNkt6ss28FfD+LNF1Y/25ZkBsNP+UmSh6NxldCzGqO3mjB670RqHT2QIVqAgE25N2QAm8oe7lnC6GsFcxG7xlsoWoARe2Jl6ADKu7EKUFTjo2IeACbTvVgF0NC+KtECxKOFtEb/QdECzHuIbSqPwSo8QqNvIS8uWgB+jAbsqqFg+GFbkvtUs/oNYqL2Cz2L0+6Ugqv+1FAupv2rCNrbHypA4eX+dNEC8Ap+kfW3Jr8rtZS6UDPFoQzlCLcL80lDe3eG7n9vj6jwvCbPwdvHaS/zm8pHx+GnTF6MdD2DlVNqjL7nIQMYfbdED8Bf5q48zG6ZCT5hhhoDH49gtQQect4zQPtzRQ/ACzHry0IGmDBiphowU/lqoTVyzfr16pumeeGhfTpiAj8VgqEeCIWAdhpGGLIeNVEkyui3oBZyIwTfgZrIStglC2Imf/C/y6s/21FUM/BrFvxv7SVfTkwDbLYaUqDSXcIhFmas8UgXXvvZOd373gsxhZ8U1mBYhzJkpxghYEcHC661d8Kbt4mmuURJAvBCLBVpANC2+BDkH4Q5UIvTnOCtNjbiFAnQ39XQUp6oqm8mezBGXyI9+CwhVsMKADoHh/dTWPB/I9cBoY/iz4T/S8RFWCOVBaBV0BrXwSYI1QyVroMzQwN0xTZGvzbejLJkyZIlS9Z/o7/Q0bCX5++bJAAAAABJRU5ErkJggg==">
-                     <span id="google-sign-in">Sign-In with Google</span>
-                     </span>
-                     <br><br>
-                     <label>E-Mail</label>
-                     <input type="email" id="login-email" placeholder="E-Mail">
-                     <label>Password</label>
-                     <input type="password" id="login-password" placeholder="Password">
-                     <button style="width:100% !important;" id="login">Login</button>
-                     <br>
-                     <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
-                     <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
-                  </div>
-               </div>
+    </div>
+    <div id="myLogin" class="modal-login">
+      <div class="modal-content">
+        <div class="forms-out">
+          <div class="forms-in">
+            <div id="registration-page" class="hide">
+              <h2>SIGN UP</h2>
+              <br><br>
+              <label>E-Mail</label>
+              <input type="email" id="registration-email" placeholder="E-Mail">
+              <label>Confirm E-mail</label> 
+              <input type="email" id="registration-reemail" autocomplete="off" placeholder="Confirm E-Mail" >
+              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
+              <input type="password" id="registration-password" placeholder="Password">
+              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
             </div>
-         </div>
+            <div id="login-page">
+              <h2>SIGN IN</h2>
+              <span class="myButtonGoogle">
+              <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiElEQVRoge2Xb0gTcRjHp5tlYJRlkRK9iF5I9ke7O5WhnbstU+yPu2OVhQTSu5IIiiCqm5EFvYgiCbJId3OQKxAiNyWwF/2BikFpRBhoyW41ndsEZyXl9Zz5Z+q8uXm79eK+8GUwdj8+3+f3/J77TaGQJUuWLFmyZE2rT4dsZQnsmFOL3QAzLIE2s1qszkmgNEvklg+o1cvjzThHvfj2lQB7HmC7AZYL41EI+JQlkF3x5lZwCkUCQJ8EDy4AfI6dBPbimwbLigu8qyR7zXglowCfFWKY1WGHJYX/qsvJgJ7+uFj4ILdyBoNSEnj+EDq16Aex4KEQ9u6STUslgefFalFrmJYIwOd9VoNUuDR5CFuMZLI6pMCpQU/D969nwbf14niyZPAwafYIVpRATSyOpIVbA3bwO7hdUniOViS6D2W1hKy6FhuDsXhioWt92Y2k9+XnL4sl7xwF7Mp9I3YV5zmz4dX4LJ8ZwigpTDQCeCsfgPfQ7dT30ALuieo7JJsg0YqzKpQjNpV/MgDvwKNkt6ss28FfD+LNF1Y/25ZkBsNP+UmSh6NxldCzGqO3mjB670RqHT2QIVqAgE25N2QAm8oe7lnC6GsFcxG7xlsoWoARe2Jl6ADKu7EKUFTjo2IeACbTvVgF0NC+KtECxKOFtEb/QdECzHuIbSqPwSo8QqNvIS8uWgB+jAbsqqFg+GFbkvtUs/oNYqL2Cz2L0+6Ugqv+1FAupv2rCNrbHypA4eX+dNEC8Ap+kfW3Jr8rtZS6UDPFoQzlCLcL80lDe3eG7n9vj6jwvCbPwdvHaS/zm8pHx+GnTF6MdD2DlVNqjL7nIQMYfbdED8Bf5q48zG6ZCT5hhhoDH49gtQQect4zQPtzRQ/ACzHry0IGmDBiphowU/lqoTVyzfr16pumeeGhfTpiAj8VgqEeCIWAdhpGGLIeNVEkyui3oBZyIwTfgZrIStglC2Imf/C/y6s/21FUM/BrFvxv7SVfTkwDbLYaUqDSXcIhFmas8UgXXvvZOd373gsxhZ8U1mBYhzJkpxghYEcHC661d8Kbt4mmuURJAvBCLBVpANC2+BDkH4Q5UIvTnOCtNjbiFAnQ39XQUp6oqm8mezBGXyI9+CwhVsMKADoHh/dTWPB/I9cBoY/iz4T/S8RFWCOVBaBV0BrXwSYI1QyVroMzQwN0xTZGvzbejLJkyZIlS9Z/o7/Q0bCX5++bJAAAAABJRU5ErkJggg==">
+              <span id="google-sign-in">Sign-In with Google</span>
+              </span>
+              <br><br>
+              <label>E-Mail</label>
+              <input type="email" id="login-email" placeholder="E-Mail">
+              <label>Password</label>
+              <input type="password" id="login-password" placeholder="Password">
+              <button style="width:100% !important;" id="login">Login</button>
+              <br>
+              <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
+              <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+            </div>
+          </div>
+        </div>
       </div>
-      <div oncontextmenu="return false;" id="myModal" class="modal">
-         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div style="font-size:22px;font-weight:bold">Want to give me a Gift ?</div>
-            <div style="font-size:16px;font-weight:bold;margin-bottom:17px; margin-top:10px">
-               <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
-               <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
-               <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
-               <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
-            </div>
-            <div style="float:left;margin-right:3px; margin-top:0px">
-               <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-            </div>
-            <div style="margin-top:0px">    
-               <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
-               <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
-               <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
-            </div>
-         </div>
+    </div>
+    <div oncontextmenu="return false;" id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="font-size:22px;font-weight:bold">Want to give me a Gift ?</div>
+        <div style="font-size:16px;font-weight:bold;margin-bottom:17px; margin-top:10px">
+          <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+          <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+          <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
+          <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        </div>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-top:0px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
       </div>
-<script src="./index.js"></script>
-   </body>
+    </div>
+    <script src="./index.js"></script>
+  </body>
 </html>

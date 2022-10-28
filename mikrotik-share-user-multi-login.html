@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset='utf-8'/>
+    <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mikrotik Bandwidth Share For Hotspot Shared User Generator - BuanaNETPBun.Github.io</title>
-    <meta content='Mikrotik Bandwidth Share For Hotspot Shared User Script Generator - BuanaNETPBun.Github.io' name='description'/>
-    <meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'/>
-    <meta content='index, follow, noodp' name='robots'/>
+    <meta content='Mikrotik Bandwidth Share For Hotspot Shared User Script Generator - BuanaNETPBun.Github.io' name='description'>
+    <meta content='script generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless, rtrwnet' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
     <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Mikrotik Bandwidth Share For Hotspot Shared User Generator By BuanaNET-Pbun">
     <meta property="og:description" content="Mikrotik Bandwidth Share For Hotspot Shared User Generator By BuanaNET-Pbun">
@@ -263,7 +263,6 @@
       table, tr, td {
       border: none;
       }
-
       .mymenu ul {
       list-style-type: none;
       margin: 0;
@@ -271,16 +270,11 @@
       overflow: hidden;
       background-color: #f9f9f9;
       }
-
-
-   
- 
-	  
-     </style> 
- <link rel="stylesheet" href="./login/login.css">
-  </head>   
+    </style>
+    <link rel="stylesheet" href="./login/login.css">
+  </head>
   <body>
-   	<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>   
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
@@ -290,109 +284,109 @@
         <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
         <li><a href="javascript:callmodal()">DONATE</a></li>
         <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
-        <img style="float:right; margin-right:10px;margin-top:2px" src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png" alt="Mikrotik RouterOS">
       </ul>
       <div id="homepage" class="hide">
         <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
         <span style="font-weight:normal;font-size:14px">USER-ID: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
         <span style="font-weight:normal; font-size:14px"> - VERIFIED: [ <span id="email_Verified"></span> ]</span>
         <button id="verify" style="width:180px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:red" >Click here for Activate</button>
-      </div>  
+      </div>
     </div>
     <div id="wrap">
-    <div class="logo">
-      <a href="https://buananetpbun.github.io//mikrotik-share-user-multi-login.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
-      <div style="float:right">
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/>
-      </div>
-      <div style="float:right; margin-right:5px; margin-top:1px">
-        <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-      </div>
-    </div>
-    <div class="header">
-      <h1>MIKROTIK <span style="color:#ff6600">BANDWIDTH SHARE</span> FOR <span style="color:#ff6600">HOTSPOT SHARED USER</span> SCRIPT GENERATOR</h1>
-    </div>
-    <div class="main-wrap">
-      <div class="sidebar">
-        <div style="margin-bottom:10px; height:95px">
-          <span style="color:#ff6600;"><b>SIMPLE QUEUE</b><br></span>
-          <div style="float:left; width:48%;">
-            <label>Parent Name Queue</label><br>
-            <input type="text" id="input-parent-name" value="Jack Home" placeholder="Jack Home">
-          </div>
-          <div style="float:left; width:48%;margin-left:10px;">
-            <label>Max Limit (up/down)</label><br>
-            <input onkeydown="upperCaseF(this)" type="text" id="input-max-limit" value="2M/5M" placeholder="2M/5M">
-          </div>
-          <div style="float:left; width:100%;">
-            <label>Target IP Address - <span style="color:green; font-size:12px">Match With Your Hotspot IP Address</span></label><br>
-            <input type="text" id="input-ip-address" value="10.5.50.0/24" placeholder="10.5.50.0/24">
-          </div>
+      <div class="logo">
+        <a href="https://buananetpbun.github.io//mikrotik-share-user-multi-login.html"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <div style="float:right">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
         </div>
-        <div style="margin-bottom:10px; height:200px">
-          <span style="color:#ff6600;"><b>HOTSPOT PROFILE</b><br></span>
-          <div style="float:left; width:100%;">
-            <label>Profile Name</label><br>
-            <input type="text" id="input-profile-name" value="Shared-Jack-Home" placeholder="Shared-Jack-Home">
-          </div>
-          <div style="float:left; width:48%;">
-            <label>Shared User</label><br>
-            <input type="text" id="input-shared-user" value="5" placeholder="5">
-          </div>
-          <div style="float:left; width:48%;margin-left:10px;">
-            <label>Rate Limit (up/down)</label><br>
-            <input onkeydown="upperCaseF(this)" type="text" id="input-rate-limit" value="1M/2M" placeholder="1M/2M">
-          </div>
-          <div style="float:left;width:48%;">
-            <label>User Name</label><br>
-            <input type="text" id="input-username" value="jack" placeholder="jack">
-          </div>
-          <div style="float:left;width:48%;margin-left:10px;">
-            <label>Password</label>
-            <input type="text" id="input-password" value="jack123" placeholder="jack123">
-          </div>
+        <div style="float:right; margin-right:5px; margin-top:1px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
         </div>
-        <div style="margin-top:20px;margin-bottom:10px">
-          <input type="checkbox" id="auto-shared"><label for="auto-shared" style="padding-left:0px">Auto Set For Bandwidth Shared (UP-TO)</label>
-          <div style="clear: both;"></div>
-        </div>
-        <button style="margin-top:10px;" type="button" onclick="myFunction()">Generate Script</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All Script</button> 
-        <br>
       </div>
-      <div class="content">
-        <span style="margin-left:2px">Script Generator Result</span>
-        <div class="list-mangle">
-          <table id="showScript" style="padding:5px; ">
-            <tr>
-              <td>
-                <span style="color:#ff6600;">
-                ###########################################################<br>
-                # Mikrotik Bandwidth Share For Hotspot Shared User Generator <br>
-                # Date/Time: <span id="tanggalwaktu"></span><br>
-                # By BuanaNET Secure! https://fb.me/buananet.pbun<br>
-                ###########################################################<br><br>
-                </span>
-                <div id="list-output">
-                  <b>/queue simple</b><br>
-                  add max-limit="<span id="simple-queue-max-limit" style="color:#ff6600;"></span>" name="<span id="simple-queue-name" style="color:#ff6600;"></span>" target="<span id="simple-queue-ip-address" style="color:#ff6600;"></span>" packet-mark="<span id="simple-queue-packet-mark" style="color:#ff6600;"></span>"<br>			
-                  <b>/ip hotspot user profile</b><br>
-                  add address-list="<span id="profile-address-list" style="color:#ff6600"></span>" name="<span id="profile-name" style="color:#ff6600;"></span>" shared-users="<span id="profile-shared-user" style="color:#ff6600"></span>" rate-limit="<span id="profile-rate-limit" style="color:#ff6600;"></span>"  parent-queue="<span id="profile-parent" style="color:#ff6600;"></span>" insert-queue-before="bottom"<br>
-                  <b>/ip hotspot user</b><br>
-                  add name="<span id="hotspot-username" style="color:#ff6600;"></span>" password="<span id="hotspot-password" style="color:#ff6600;"></span>" profile="<span id="hotspot-profile-name" style="color:#ff6600;"></span>" comment="<span id="hotspot-comment" style="color:#ff6600;"></span>"<br>
-                  <b>/ip firewall mangle</b><br>
-                  add action=mark-packet chain=forward src-address-list="<span id="mangle-upload-src" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-src" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-up" style="color:#ff6600;"></span>"<br>
-                  add action=mark-packet chain=forward dst-address-list="<span id="mangle-download-dst" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-dst" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-down" style="color:#ff6600;"></span>"<br>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <br>
-        <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
+      <div class="header">
+        <h1>MIKROTIK <span style="color:#ff6600">BANDWIDTH SHARE</span> FOR <span style="color:#ff6600">HOTSPOT SHARED USER</span> SCRIPT GENERATOR</h1>
       </div>
-    </div>
-    <div class="footer">
-      © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+      <div class="main-wrap">
+        <div class="sidebar">
+          <div style="margin-bottom:10px; height:95px">
+            <span style="color:#ff6600;"><b>SIMPLE QUEUE</b><br></span>
+            <div style="float:left; width:48%;">
+              <label>Parent Name Queue</label><br>
+              <input type="text" id="input-parent-name" value="Jack Home" placeholder="Jack Home">
+            </div>
+            <div style="float:left; width:48%;margin-left:10px;">
+              <label>Max Limit (up/down)</label><br>
+              <input onkeydown="upperCaseF(this)" type="text" id="input-max-limit" value="2M/5M" placeholder="2M/5M">
+            </div>
+            <div style="float:left; width:100%;">
+              <label>Target IP Address - <span style="color:green; font-size:12px">Match With Your Hotspot IP Address</span></label><br>
+              <input type="text" id="input-ip-address" value="10.5.50.0/24" placeholder="10.5.50.0/24">
+            </div>
+          </div>
+          <div style="margin-bottom:10px; height:200px">
+            <span style="color:#ff6600;"><b>HOTSPOT PROFILE</b><br></span>
+            <div style="float:left; width:100%;">
+              <label>Profile Name</label><br>
+              <input type="text" id="input-profile-name" value="Shared-Jack-Home" placeholder="Shared-Jack-Home">
+            </div>
+            <div style="float:left; width:48%;">
+              <label>Shared User</label><br>
+              <input type="text" id="input-shared-user" value="5" placeholder="5">
+            </div>
+            <div style="float:left; width:48%;margin-left:10px;">
+              <label>Rate Limit (up/down)</label><br>
+              <input onkeydown="upperCaseF(this)" type="text" id="input-rate-limit" value="1M/2M" placeholder="1M/2M">
+            </div>
+            <div style="float:left;width:48%;">
+              <label>User Name</label><br>
+              <input type="text" id="input-username" value="jack" placeholder="jack">
+            </div>
+            <div style="float:left;width:48%;margin-left:10px;">
+              <label>Password</label>
+              <input type="text" id="input-password" value="jack123" placeholder="jack123">
+            </div>
+          </div>
+          <div style="margin-top:20px;margin-bottom:10px">
+            <input type="checkbox" id="auto-shared"><label for="auto-shared" style="padding-left:0px">Auto Set For Bandwidth Shared (UP-TO)</label>
+            <div style="clear: both;"></div>
+          </div>
+          <button style="margin-top:10px;" type="button" onclick="myFunction()">Generate Script</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All Script</button> 
+          <br>
+        </div>
+        <div class="content">
+          <span style="margin-left:2px">Script Generator Result</span>
+          <div class="list-mangle">
+            <table id="showScript" style="padding:5px; ">
+              <tr>
+                <td>
+                  <span style="color:#ff6600;">
+                  ###########################################################<br>
+                  # Mikrotik Bandwidth Share For Hotspot Shared User Generator <br>
+                  # Date/Time: <span id="tanggalwaktu"></span><br>
+                  # By BuanaNET Secure! https://fb.me/buananet.pbun<br>
+                  ###########################################################<br><br>
+                  </span>
+                  <div id="list-output">
+                    <b>/queue simple</b><br>
+                    add max-limit="<span id="simple-queue-max-limit" style="color:#ff6600;"></span>" name="<span id="simple-queue-name" style="color:#ff6600;"></span>" target="<span id="simple-queue-ip-address" style="color:#ff6600;"></span>" packet-mark="<span id="simple-queue-packet-mark" style="color:#ff6600;"></span>"<br>			
+                    <b>/ip hotspot user profile</b><br>
+                    add address-list="<span id="profile-address-list" style="color:#ff6600"></span>" name="<span id="profile-name" style="color:#ff6600;"></span>" shared-users="<span id="profile-shared-user" style="color:#ff6600"></span>" rate-limit="<span id="profile-rate-limit" style="color:#ff6600;"></span>"  parent-queue="<span id="profile-parent" style="color:#ff6600;"></span>" insert-queue-before="bottom"<br>
+                    <b>/ip hotspot user</b><br>
+                    add name="<span id="hotspot-username" style="color:#ff6600;"></span>" password="<span id="hotspot-password" style="color:#ff6600;"></span>" profile="<span id="hotspot-profile-name" style="color:#ff6600;"></span>" comment="<span id="hotspot-comment" style="color:#ff6600;"></span>"<br>
+                    <b>/ip firewall mangle</b><br>
+                    add action=mark-packet chain=forward src-address-list="<span id="mangle-upload-src" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-src" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-up" style="color:#ff6600;"></span>"<br>
+                    add action=mark-packet chain=forward dst-address-list="<span id="mangle-download-dst" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-dst" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-down" style="color:#ff6600;"></span>"<br>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
+        </div>
+      </div>
+      <div class="footer">
+        © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> - Made for <a target="_blank" href="https://www.mikrotik.com">MikroTik RouterOS</a>
+      </div>
     </div>
     <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen"></div>
     <div oncontextmenu="return false;" id="myLogin" class="modal-login">
@@ -410,7 +404,7 @@
               <input type="password" id="registration-password" placeholder="Password">
               <button style="width:100% !important;" id="register">Sign Up</button><br>
               <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
-			  <br>
+              <br>
             </div>
             <div id="login-page">
               <h2>SIGN IN</h2>
@@ -431,15 +425,15 @@
         </div>
       </div>
     </div>
-        <div oncontextmenu="return false;" id="myModal" class="modal">
+    <div oncontextmenu="return false;" id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <div style="font-size:22px;font-weight:bold">Want to give me a Gift ?</div>
-		<div style="font-size:16px;font-weight:bold;margin-bottom:17px; margin-top:10px">
-        <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
-        <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
-        <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
-        <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        <div style="font-size:16px;font-weight:bold;margin-bottom:17px; margin-top:10px">
+          <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+          <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+          <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
+          <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
         </div>
         <div style="float:left;margin-right:3px; margin-top:0px">
           <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
@@ -449,12 +443,11 @@
           <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
           <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
         </div>
+      </div>
     </div>
-    </div>
-	<script src="./login/login.js"></script>		
+    <script src="./login/login.js"></script>		
     <script>
-	
-    var _0x3b1120=_0x45ca;function _0x3519(){var _0x8b4c49=['simple-queue-max-limit','input-password','value','1124984SYzovo','getElementById','profile-shared-user','5590OsSmiH','auto-shared','input-parent-name','toUpperCase','hotspot-username','createTextRange','innerHTML','onchange','hotspot-comment','removeAllRanges','simple-queue-ip-address','/mikrotik-share-user-multi-login.html','448904aWWVdh','24fVAbSZ','mangle-packet-src','getSelection','body','simple-queue-name','295272dvmdeP','hotspot-profile-name','profile-parent','\x200/0\x200/0\x200/0\x208\x200/0','simple-queue-packet-mark','replace','input-username','execCommand','toLocaleString','680VHcbHH','10nUYsMy','profile-rate-limit','disabled','2822244KWcpoV','tanggalwaktu','mangle-upload-src','profile-name','input-profile-name','2035iCytBe','357591QTznfo','buananet','365bvfsnO','mangle-comment-down','createRange','hotspot-password','pbun','input-rate-limit','1M/2M','input-max-limit','mangle-packet-dst','copy','checked','selectNode','href'];_0x3519=function(){return _0x8b4c49;};return _0x3519();}(function(_0x52de2c,_0x64ba16){var _0x2b25e8=_0x45ca,_0x3020b2=_0x52de2c();while(!![]){try{var _0x594475=-parseInt(_0x2b25e8(0x1a8))/0x1*(-parseInt(_0x2b25e8(0x19c))/0x2)+-parseInt(_0x2b25e8(0x1a6))/0x3+-parseInt(_0x2b25e8(0x18d))/0x4*(-parseInt(_0x2b25e8(0x19d))/0x5)+-parseInt(_0x2b25e8(0x1a0))/0x6+-parseInt(_0x2b25e8(0x17e))/0x7*(-parseInt(_0x2b25e8(0x18e))/0x8)+-parseInt(_0x2b25e8(0x193))/0x9+parseInt(_0x2b25e8(0x181))/0xa*(parseInt(_0x2b25e8(0x1a5))/0xb);if(_0x594475===_0x64ba16)break;else _0x3020b2['push'](_0x3020b2['shift']());}catch(_0x1c6404){_0x3020b2['push'](_0x3020b2['shift']());}}}(_0x3519,0x4c1ac));var dt=new Date();document[_0x3b1120(0x17f)](_0x3b1120(0x1a1))['innerHTML']=dt[_0x3b1120(0x19b)]();function upperCaseF(_0x278060){setTimeout(function(){var _0xde317c=_0x45ca;_0x278060[_0xde317c(0x17d)]=_0x278060[_0xde317c(0x17d)][_0xde317c(0x184)]();},0x1);}document[_0x3b1120(0x17f)]('auto-shared')[_0x3b1120(0x188)]=function(){var _0xff8acc=_0x3b1120,_0x54c214=document[_0xff8acc(0x17f)](_0xff8acc(0x182));_0x54c214[_0xff8acc(0x1b2)]?(document[_0xff8acc(0x17f)](_0xff8acc(0x1ad))['disabled']=!![],document[_0xff8acc(0x17f)](_0xff8acc(0x1ad))[_0xff8acc(0x17d)]=document[_0xff8acc(0x17f)](_0xff8acc(0x1af))[_0xff8acc(0x17d)],document[_0xff8acc(0x17f)](_0xff8acc(0x19e))[_0xff8acc(0x187)]=document[_0xff8acc(0x17f)](_0xff8acc(0x1af))['value']+_0xff8acc(0x196)):(document['getElementById']('input-rate-limit')[_0xff8acc(0x19f)]=![],document['getElementById']('input-rate-limit')['value']=_0xff8acc(0x1ae),document['getElementById'](_0xff8acc(0x19e))[_0xff8acc(0x187)]='1M/2M\x200/0\x200/0\x200/0\x208\x200/0');};function _0x45ca(_0x241685,_0x5e48e7){var _0x351973=_0x3519();return _0x45ca=function(_0x45ca7d,_0x1666f0){_0x45ca7d=_0x45ca7d-0x17d;var _0x458842=_0x351973[_0x45ca7d];return _0x458842;},_0x45ca(_0x241685,_0x5e48e7);}function myFunction(){var _0x2414d9=_0x3b1120,_0x46c4b7=new Date();document[_0x2414d9(0x17f)](_0x2414d9(0x1a1))['innerHTML']=_0x46c4b7[_0x2414d9(0x19b)]();var _0x3d00dd=document[_0x2414d9(0x17f)]('input-ip-address')[_0x2414d9(0x17d)],_0x26b0b9=document[_0x2414d9(0x17f)](_0x2414d9(0x183))[_0x2414d9(0x17d)],_0x15121d=document[_0x2414d9(0x17f)](_0x2414d9(0x1af))[_0x2414d9(0x17d)],_0x49cb6f=document[_0x2414d9(0x17f)](_0x2414d9(0x1a4))[_0x2414d9(0x17d)],_0x281a53=document[_0x2414d9(0x17f)]('input-shared-user')[_0x2414d9(0x17d)],_0x413029=document['getElementById']('input-rate-limit')[_0x2414d9(0x17d)],_0x5f015c=document[_0x2414d9(0x17f)](_0x2414d9(0x199))[_0x2414d9(0x17d)],_0x4962e8=document[_0x2414d9(0x17f)](_0x2414d9(0x1b6))['value'];document[_0x2414d9(0x17f)](_0x2414d9(0x1b5))[_0x2414d9(0x187)]=_0x15121d,document['getElementById'](_0x2414d9(0x192))[_0x2414d9(0x187)]=_0x26b0b9,document[_0x2414d9(0x17f)](_0x2414d9(0x18b))[_0x2414d9(0x187)]=_0x3d00dd,document[_0x2414d9(0x17f)](_0x2414d9(0x197))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)]('profile-address-list')['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x1a3))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x180))['innerHTML']=_0x281a53,document['getElementById'](_0x2414d9(0x195))[_0x2414d9(0x187)]=_0x26b0b9,document[_0x2414d9(0x17f)](_0x2414d9(0x185))[_0x2414d9(0x187)]=_0x5f015c,document[_0x2414d9(0x17f)](_0x2414d9(0x1ab))['innerHTML']=_0x4962e8,document[_0x2414d9(0x17f)](_0x2414d9(0x194))[_0x2414d9(0x187)]=_0x49cb6f,document['getElementById'](_0x2414d9(0x189))[_0x2414d9(0x187)]=_0x26b0b9,document['getElementById'](_0x2414d9(0x1a2))['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x18f))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)]('mangle-download-dst')['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x1b0))['innerHTML']=_0x49cb6f,document['getElementById']('mangle-comment-up')[_0x2414d9(0x187)]=_0x26b0b9+'\x20Up',document[_0x2414d9(0x17f)](_0x2414d9(0x1a9))['innerHTML']=_0x26b0b9+'\x20Down';var _0x4088f0='https://',_0x5b1e44=_0x2414d9(0x1a7),_0x3d484f=_0x2414d9(0x1ac),_0x3f2955='github',_0x49993b='io',_0x1bd3d0=_0x4088f0+_0x5b1e44+_0x3d484f+'.'+_0x3f2955+'.'+_0x49993b;window['location'][_0x2414d9(0x1b4)]!==_0x1bd3d0+_0x2414d9(0x18c)&&location[_0x2414d9(0x198)](_0x1bd3d0+_0x2414d9(0x18c));var _0x4227b7=document['getElementById']('auto-shared');_0x4227b7[_0x2414d9(0x1b2)]?document[_0x2414d9(0x17f)](_0x2414d9(0x19e))[_0x2414d9(0x187)]=_0x15121d+_0x2414d9(0x196):document[_0x2414d9(0x17f)](_0x2414d9(0x19e))[_0x2414d9(0x187)]=_0x413029;}function selectElementContents(_0x116418){var _0x551118=_0x3b1120,_0x55c6de=document[_0x551118(0x191)],_0x1f5a2a,_0x4cc9bb;if(document[_0x551118(0x1aa)]&&window[_0x551118(0x190)]){_0x1f5a2a=document['createRange'](),_0x4cc9bb=window[_0x551118(0x190)](),_0x4cc9bb[_0x551118(0x18a)]();try{_0x1f5a2a['selectNodeContents'](_0x116418),_0x4cc9bb['addRange'](_0x1f5a2a);}catch(_0x3a8103){_0x1f5a2a[_0x551118(0x1b3)](_0x116418),_0x4cc9bb['addRange'](_0x1f5a2a);}}else _0x55c6de[_0x551118(0x186)]&&(_0x1f5a2a=_0x55c6de[_0x551118(0x186)](),_0x1f5a2a['moveToElementText'](_0x116418),_0x1f5a2a['select']());document[_0x551118(0x19a)](_0x551118(0x1b1));}
+      var _0x3b1120=_0x45ca;function _0x3519(){var _0x8b4c49=['simple-queue-max-limit','input-password','value','1124984SYzovo','getElementById','profile-shared-user','5590OsSmiH','auto-shared','input-parent-name','toUpperCase','hotspot-username','createTextRange','innerHTML','onchange','hotspot-comment','removeAllRanges','simple-queue-ip-address','/mikrotik-share-user-multi-login.html','448904aWWVdh','24fVAbSZ','mangle-packet-src','getSelection','body','simple-queue-name','295272dvmdeP','hotspot-profile-name','profile-parent','\x200/0\x200/0\x200/0\x208\x200/0','simple-queue-packet-mark','replace','input-username','execCommand','toLocaleString','680VHcbHH','10nUYsMy','profile-rate-limit','disabled','2822244KWcpoV','tanggalwaktu','mangle-upload-src','profile-name','input-profile-name','2035iCytBe','357591QTznfo','buananet','365bvfsnO','mangle-comment-down','createRange','hotspot-password','pbun','input-rate-limit','1M/2M','input-max-limit','mangle-packet-dst','copy','checked','selectNode','href'];_0x3519=function(){return _0x8b4c49;};return _0x3519();}(function(_0x52de2c,_0x64ba16){var _0x2b25e8=_0x45ca,_0x3020b2=_0x52de2c();while(!![]){try{var _0x594475=-parseInt(_0x2b25e8(0x1a8))/0x1*(-parseInt(_0x2b25e8(0x19c))/0x2)+-parseInt(_0x2b25e8(0x1a6))/0x3+-parseInt(_0x2b25e8(0x18d))/0x4*(-parseInt(_0x2b25e8(0x19d))/0x5)+-parseInt(_0x2b25e8(0x1a0))/0x6+-parseInt(_0x2b25e8(0x17e))/0x7*(-parseInt(_0x2b25e8(0x18e))/0x8)+-parseInt(_0x2b25e8(0x193))/0x9+parseInt(_0x2b25e8(0x181))/0xa*(parseInt(_0x2b25e8(0x1a5))/0xb);if(_0x594475===_0x64ba16)break;else _0x3020b2['push'](_0x3020b2['shift']());}catch(_0x1c6404){_0x3020b2['push'](_0x3020b2['shift']());}}}(_0x3519,0x4c1ac));var dt=new Date();document[_0x3b1120(0x17f)](_0x3b1120(0x1a1))['innerHTML']=dt[_0x3b1120(0x19b)]();function upperCaseF(_0x278060){setTimeout(function(){var _0xde317c=_0x45ca;_0x278060[_0xde317c(0x17d)]=_0x278060[_0xde317c(0x17d)][_0xde317c(0x184)]();},0x1);}document[_0x3b1120(0x17f)]('auto-shared')[_0x3b1120(0x188)]=function(){var _0xff8acc=_0x3b1120,_0x54c214=document[_0xff8acc(0x17f)](_0xff8acc(0x182));_0x54c214[_0xff8acc(0x1b2)]?(document[_0xff8acc(0x17f)](_0xff8acc(0x1ad))['disabled']=!![],document[_0xff8acc(0x17f)](_0xff8acc(0x1ad))[_0xff8acc(0x17d)]=document[_0xff8acc(0x17f)](_0xff8acc(0x1af))[_0xff8acc(0x17d)],document[_0xff8acc(0x17f)](_0xff8acc(0x19e))[_0xff8acc(0x187)]=document[_0xff8acc(0x17f)](_0xff8acc(0x1af))['value']+_0xff8acc(0x196)):(document['getElementById']('input-rate-limit')[_0xff8acc(0x19f)]=![],document['getElementById']('input-rate-limit')['value']=_0xff8acc(0x1ae),document['getElementById'](_0xff8acc(0x19e))[_0xff8acc(0x187)]='1M/2M\x200/0\x200/0\x200/0\x208\x200/0');};function _0x45ca(_0x241685,_0x5e48e7){var _0x351973=_0x3519();return _0x45ca=function(_0x45ca7d,_0x1666f0){_0x45ca7d=_0x45ca7d-0x17d;var _0x458842=_0x351973[_0x45ca7d];return _0x458842;},_0x45ca(_0x241685,_0x5e48e7);}function myFunction(){var _0x2414d9=_0x3b1120,_0x46c4b7=new Date();document[_0x2414d9(0x17f)](_0x2414d9(0x1a1))['innerHTML']=_0x46c4b7[_0x2414d9(0x19b)]();var _0x3d00dd=document[_0x2414d9(0x17f)]('input-ip-address')[_0x2414d9(0x17d)],_0x26b0b9=document[_0x2414d9(0x17f)](_0x2414d9(0x183))[_0x2414d9(0x17d)],_0x15121d=document[_0x2414d9(0x17f)](_0x2414d9(0x1af))[_0x2414d9(0x17d)],_0x49cb6f=document[_0x2414d9(0x17f)](_0x2414d9(0x1a4))[_0x2414d9(0x17d)],_0x281a53=document[_0x2414d9(0x17f)]('input-shared-user')[_0x2414d9(0x17d)],_0x413029=document['getElementById']('input-rate-limit')[_0x2414d9(0x17d)],_0x5f015c=document[_0x2414d9(0x17f)](_0x2414d9(0x199))[_0x2414d9(0x17d)],_0x4962e8=document[_0x2414d9(0x17f)](_0x2414d9(0x1b6))['value'];document[_0x2414d9(0x17f)](_0x2414d9(0x1b5))[_0x2414d9(0x187)]=_0x15121d,document['getElementById'](_0x2414d9(0x192))[_0x2414d9(0x187)]=_0x26b0b9,document[_0x2414d9(0x17f)](_0x2414d9(0x18b))[_0x2414d9(0x187)]=_0x3d00dd,document[_0x2414d9(0x17f)](_0x2414d9(0x197))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)]('profile-address-list')['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x1a3))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x180))['innerHTML']=_0x281a53,document['getElementById'](_0x2414d9(0x195))[_0x2414d9(0x187)]=_0x26b0b9,document[_0x2414d9(0x17f)](_0x2414d9(0x185))[_0x2414d9(0x187)]=_0x5f015c,document[_0x2414d9(0x17f)](_0x2414d9(0x1ab))['innerHTML']=_0x4962e8,document[_0x2414d9(0x17f)](_0x2414d9(0x194))[_0x2414d9(0x187)]=_0x49cb6f,document['getElementById'](_0x2414d9(0x189))[_0x2414d9(0x187)]=_0x26b0b9,document['getElementById'](_0x2414d9(0x1a2))['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x18f))[_0x2414d9(0x187)]=_0x49cb6f,document[_0x2414d9(0x17f)]('mangle-download-dst')['innerHTML']=_0x49cb6f,document[_0x2414d9(0x17f)](_0x2414d9(0x1b0))['innerHTML']=_0x49cb6f,document['getElementById']('mangle-comment-up')[_0x2414d9(0x187)]=_0x26b0b9+'\x20Up',document[_0x2414d9(0x17f)](_0x2414d9(0x1a9))['innerHTML']=_0x26b0b9+'\x20Down';var _0x4088f0='https://',_0x5b1e44=_0x2414d9(0x1a7),_0x3d484f=_0x2414d9(0x1ac),_0x3f2955='github',_0x49993b='io',_0x1bd3d0=_0x4088f0+_0x5b1e44+_0x3d484f+'.'+_0x3f2955+'.'+_0x49993b;window['location'][_0x2414d9(0x1b4)]!==_0x1bd3d0+_0x2414d9(0x18c)&&location[_0x2414d9(0x198)](_0x1bd3d0+_0x2414d9(0x18c));var _0x4227b7=document['getElementById']('auto-shared');_0x4227b7[_0x2414d9(0x1b2)]?document[_0x2414d9(0x17f)](_0x2414d9(0x19e))[_0x2414d9(0x187)]=_0x15121d+_0x2414d9(0x196):document[_0x2414d9(0x17f)](_0x2414d9(0x19e))[_0x2414d9(0x187)]=_0x413029;}function selectElementContents(_0x116418){var _0x551118=_0x3b1120,_0x55c6de=document[_0x551118(0x191)],_0x1f5a2a,_0x4cc9bb;if(document[_0x551118(0x1aa)]&&window[_0x551118(0x190)]){_0x1f5a2a=document['createRange'](),_0x4cc9bb=window[_0x551118(0x190)](),_0x4cc9bb[_0x551118(0x18a)]();try{_0x1f5a2a['selectNodeContents'](_0x116418),_0x4cc9bb['addRange'](_0x1f5a2a);}catch(_0x3a8103){_0x1f5a2a[_0x551118(0x1b3)](_0x116418),_0x4cc9bb['addRange'](_0x1f5a2a);}}else _0x55c6de[_0x551118(0x186)]&&(_0x1f5a2a=_0x55c6de[_0x551118(0x186)](),_0x1f5a2a['moveToElementText'](_0x116418),_0x1f5a2a['select']());document[_0x551118(0x19a)](_0x551118(0x1b1));}
     </script>
   </body>
 </html>
