@@ -120,7 +120,7 @@
 
 /* The Modal (background) */
 .modal {
-	display: block;
+	display: none;
 	/* Hidden by default */
 	position: fixed;
 	/* Stay in place */
@@ -143,7 +143,7 @@
 }
 
 .modal-login {
-	display: block;
+	display: none;
 	/* Hidden by default */
 	position: fixed;
 	/* Stay in place */
@@ -166,7 +166,7 @@
 }
 
 .lock-screen {
-	display: block;
+	display: none;
 	/* Hidden by default */
 	position: fixed;
 	/* Stay in place */
