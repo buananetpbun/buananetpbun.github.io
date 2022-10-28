@@ -1,4 +1,5 @@
-#dialogoverlay{
+/* CUSTOM ALERT */
+#dialogoverlay {
 	display: none;
 	opacity: .6;
 	position: fixed;
@@ -8,18 +9,43 @@
 	width: 100%;
 	z-index: 10;
 }
-#dialogbox{
+
+#dialogbox {
 	display: none;
 	position: fixed;
 	background: #000;
-	border-radius:5px; 
-	width:500px;
+	border-radius: 5px;
+	width: 500px;
 	z-index: 10;
 }
-#dialogbox > div{ border-radius:5px; margin:2px;background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ; }
-#dialogbox > div > #dialogboxhead{ background: #111; opacity: 0.5;font-weight:bold; font-size:16px; padding:10px; color:#fff; }
-#dialogbox > div > #dialogboxbody{ ;font-weight:bold; font-size:15px; padding:20px; color:#ccc; }
-#dialogbox > div > #dialogboxfoot{  padding:10px; text-align:right; }
+
+#dialogbox>div {
+	border-radius: 5px;
+	margin: 2px;
+	background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
+}
+
+#dialogbox>div>#dialogboxhead {
+	background: #111;
+	opacity: 0.5;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px;
+	color: #fff;
+}
+
+#dialogbox>div>#dialogboxbody {
+	;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 20px;
+	color: #ccc;
+}
+
+#dialogbox>div>#dialogboxfoot {
+	padding: 10px;
+	text-align: right;
+}
 
 /* The Main Menu */
 .mymenu {
@@ -161,7 +187,7 @@
 	/* Enable scroll if needed */
 	background-color: rgb(0, 0, 0);
 	/* Fallback color */
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.3);
 	/* Black w/ opacity */
 }
 
@@ -184,7 +210,7 @@
 	/* Enable scroll if needed */
 	background-color: rgb(0, 0, 0);
 	/* Fallback color */
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.5);
 	/* Black w/ opacity */
 }
 
