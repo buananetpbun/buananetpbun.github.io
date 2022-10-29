@@ -182,7 +182,7 @@
 	/* Enable scroll if needed */
 	background-color: rgb(0, 0, 0);
 	/* Fallback color */
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 	/* Black w/ opacity */
 }
 
@@ -228,7 +228,7 @@
 	/* Enable scroll if needed */
 	background-color: rgb(0, 0, 0);
 	/* Fallback color */
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.7);
 	/* Black w/ opacity */
 	text-align: center;
 	color: #fff;
