@@ -251,7 +251,7 @@ width:300px !important; padding:10px; margin:4px; font-weight:bold;font-size:18p
 
 /* Modal Content */
 .modal-content {
-	line-height: 1.4;
+	line-height: 1.3;
 	border-radius: 5px;
 	background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
 	color: #ddd;
