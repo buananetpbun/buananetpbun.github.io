@@ -192,7 +192,7 @@ document.querySelector("#verify").addEventListener("click", () => {
 var actionCodeSettings = {
   // After email is verified, the user will be give the ability to go back
   // to the sign-in page.
-  url: 'window.location.href',
+  url: window.location.href,
   handleCodeInApp: false
 };
 firebase.auth().currentUser.sendEmailVerification(actionCodeSettings)
