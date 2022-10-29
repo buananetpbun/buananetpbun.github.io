@@ -188,13 +188,11 @@ document.querySelector("#google-sign-in").addEventListener("click", () => {
 
 document.querySelector("#verify").addEventListener("click", () => {
 
-var currentLocation = window.location;
-	
 var actionCodeSettings = {
   // After email is verified, the user will be give the ability to go back
   // to the sign-in page.
   
-  url: currentLocation,
+  url: "https://buananetpbun.github.io/",
   handleCodeInApp: false
 };
 firebase.auth().currentUser.sendEmailVerification(actionCodeSettings)
