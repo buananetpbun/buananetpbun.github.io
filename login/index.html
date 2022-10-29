@@ -169,6 +169,50 @@
 	text-align: right;
 }	  
 
+/* CUSTOM ALERT */
+#dialogoverlay {
+	display: none;
+	opacity: .5;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #292929;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox {
+	display: none;
+	position: fixed;
+	background: #000;
+	border-radius: 5px;
+	width: 500px;
+	z-index: 10;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
+}
+#dialogbox>div {
+	border-radius: 5px;
+	margin: 3px;
+	background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
+}
+#dialogbox>div>#dialogboxhead {
+	background: #111;
+	opacity: 0.5;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px;
+	color: #fff;
+}
+#dialogbox>div>#dialogboxbody {
+	font-weight: bold;
+	font-size: 15px;
+	padding: 20px;
+	color: #ccc;
+}
+#dialogbox>div>#dialogboxfoot {
+	padding: 10px;
+	text-align: right;
+}	  
+
 /* The Main Menu */
 .mymenu {
 	z-index: 4;
@@ -366,10 +410,14 @@
 .center-screen {
 	position: fixed;
 	/* or absolute */
-	top: 50%;
+	top: 40%;
 	left: 50%;
 	/* bring your own prefixes */
 	transform: translate(-50%, -50%);
+}
+
+.center-screen button{
+width:300px !important; padding:10px; margin:4px; font-weight:bold;font-size:18px;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Modal Content */
