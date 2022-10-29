@@ -187,8 +187,6 @@ document.querySelector("#google-sign-in").addEventListener("click", () => {
 
 
 document.querySelector("#verify").addEventListener("click", () => {
-
-	
 var actionCodeSettings = {
   // After email is verified, the user will be give the ability to go back
   // to the sign-in page.
