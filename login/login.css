@@ -19,7 +19,6 @@
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
 }
 #dialogbox>div {
-	border: 1px solid #444;
 	border-radius: 5px;
 	margin: 3px;
 	background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
