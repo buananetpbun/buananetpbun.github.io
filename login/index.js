@@ -42,6 +42,7 @@ const user = firebase.auth().currentUser;
  var token = result.credential.accessToken;
  // The signed-in user info.
  var user = result.user;
+ document.getElementById('user-id').innerHTML = user
  // ...
  }).catch(function(error) {
  // Handle Errors here.
