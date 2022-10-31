@@ -336,7 +336,7 @@
       /* Black w/ opacity */
       }
       .modal-login {
-      display: block;
+      display: none;
       /* Hidden by default */
       position: fixed;
       /* Stay in place */
@@ -357,6 +357,28 @@
       background-color: rgba(0, 0, 0, 0.5);
       /* Black w/ opacity */
       }
+      .modal-profile {
+      display: block;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 150px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black w/ opacity */
+      }	  
       .lock-screen {
       display: none;
       /* Hidden by default */
@@ -469,13 +491,23 @@
         <li><a href="javascript:callmodal()">DONATE</a></li>
         <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
       </ul>
-      <div id="homepage" class="hide">
-        <button style="width:80px !important; padding:4px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
-        <span style="font-weight:normal;font-size:14px">MEMBER-ID: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-        <span style="font-weight:normal; font-size:14px"> - ACTIVATED: [ <span id="email_Verified"></span> ]</span>
-        <button id="verify" style="width:180px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button>
-      </div>
+
     </div>
+	<div class="modal-profile">
+	<div style="width: 600px;" class="modal-content">
+	<div id="homepage">
+	   <h2>USER PROFILE</h2><br><br><br>
+	   	<span style="font-weight:normal; font-size:14px">USER ID: <span style="color:#ff6600;font-weight:bold;" id="user-id"></span></span><br><br>
+        <span style="font-weight:normal;font-size:14px">EMAIL: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span><br><br>
+        <span style="font-weight:normal; font-size:14px">E-MAIL ACTIVATED: [ <span id="email_Verified"></span> ]</span> <button id="verify" style="width:180px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button><br>
+
+		<br>
+		<button style="width:80px !important; padding:4px; margin:4px; margin-left:0x; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+        <button style="width:80px !important; padding:4px; margin:4px; margin-left:0x; margin-bottom:10px; font-weight:bold; font-size:14px" id="delete">Delete</button>
+      </div>
+	  </div>
+	  </div>
+	  
     <div id="myLogin" class="modal-login">
       <div style="width: 400px;" class="modal-content">
         <div class="forms-out">
@@ -483,11 +515,11 @@
             <div id="registration-page" class="hide">
               <h2>SIGN UP</h2>
               <br><br>
-              <label>E-Mail</label>
+              <label>E-Mail <span style="color:#ff6600">*</span></label>
               <input type="email" id="registration-email" placeholder="E-Mail">
-              <label>Confirm E-mail</label> 
+              <label>Confirm E-mail <span style="color:#ff6600">*</span></label> 
               <input type="email" id="registration-reemail" autocomplete="off" placeholder="Confirm E-Mail" >
-              <label>Password <span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
+              <label>Password <span style="color:#ff6600">*</span><span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
               <input type="password" id="registration-password" placeholder="Password">
               <button style="width:100% !important;" id="register">Sign Up</button><br>
               <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
