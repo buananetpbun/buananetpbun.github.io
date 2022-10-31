@@ -42,7 +42,6 @@ const user = firebase.auth().currentUser;
  var token = result.credential.accessToken;
  // The signed-in user info.
  var user = result.user;
- document.getElementById('user-id').innerHTML = user
  // ...
  }).catch(function(error) {
  // Handle Errors here.
@@ -116,6 +115,7 @@ firebase.auth().onAuthStateChanged((user) => {
 	const photoUrl = user.photoUrl
     const name = user.displayName
 
+document.getElementById("myProfile").style.display = "block";
 
     document.getElementById('welcome-email').innerHTML = email
     document.getElementById('user-id').innerHTML = uid
@@ -123,10 +123,10 @@ firebase.auth().onAuthStateChanged((user) => {
     if (emailVerified == true) {
 			document.getElementById("verify").style.display = "none"
 			document.getElementById('email_Verified').innerHTML = "✔️"
-			document.getElementById('myModal').style.display = "block";
+			//document.getElementById('myModal').style.display = "block";
     } else {
      		document.getElementById('email_Verified').innerHTML = "❌"
-			document.getElementById('myModal').style.display = "none";
+			//document.getElementById('myModal').style.display = "none";
     }
 
   } else {

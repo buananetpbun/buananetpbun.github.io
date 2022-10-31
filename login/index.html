@@ -358,13 +358,13 @@
       /* Black w/ opacity */
       }
       .modal-profile {
-      display: block;
+      display: none;
       /* Hidden by default */
       position: fixed;
       /* Stay in place */
       z-index: 1;
       /* Sit on top */
-      padding-top: 150px;
+      padding-top: 80px;
       /* Location of the box */
       left: 0;
       top: 0;
@@ -493,21 +493,17 @@
       </ul>
 
     </div>
-	<div class="modal-profile">
-	<div style="width: 600px;" class="modal-content">
-	<div id="homepage">
+  <div id="myProfile" class="modal-profile">
+	<div id="homepage" style="width: 600px;" class="modal-content">
 	   <h2>USER PROFILE</h2><br><br><br>
 	   	<span style="font-weight:normal; font-size:14px">USER ID: <span style="color:#ff6600;font-weight:bold;" id="user-id"></span></span><br><br>
         <span style="font-weight:normal;font-size:14px">EMAIL: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span><br><br>
         <span style="font-weight:normal; font-size:14px">E-MAIL ACTIVATED: [ <span id="email_Verified"></span> ]</span> <button id="verify" style="width:180px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button><br>
-
 		<br>
 		<button style="width:80px !important; padding:4px; margin:4px; margin-left:0x; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
         <button style="width:80px !important; padding:4px; margin:4px; margin-left:0x; margin-bottom:10px; font-weight:bold; font-size:14px" id="delete">Delete</button>
       </div>
-	  </div>
-	  </div>
-	  
+	  </div> 
     <div id="myLogin" class="modal-login">
       <div style="width: 400px;" class="modal-content">
         <div class="forms-out">
