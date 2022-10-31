@@ -115,18 +115,18 @@ firebase.auth().onAuthStateChanged((user) => {
     const emailVerified = user.emailVerified;
 	const photoUrl = user.photoUrl
     const name = user.displayName
-const providerId = user.providerId
+
 
     document.getElementById('welcome-email').innerHTML = email
-    document.getElementById('user-id').innerHTML = providerId 
+    document.getElementById('user-id').innerHTML = uid
 
     if (emailVerified == true) {
 			document.getElementById("verify").style.display = "none"
 			document.getElementById('email_Verified').innerHTML = "✔️"
-			//document.getElementById('myModal').style.display = "block";
+			document.getElementById('myModal').style.display = "block";
     } else {
      		document.getElementById('email_Verified').innerHTML = "❌"
-			//document.getElementById('myModal').style.display = "none";
+			document.getElementById('myModal').style.display = "none";
     }
 
   } else {
