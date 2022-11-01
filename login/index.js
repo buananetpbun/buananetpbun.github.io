@@ -137,7 +137,7 @@ firebase.auth().onAuthStateChanged((user) => {
     document.getElementById('user-id').innerHTML = uid
 	document.getElementById('your-name').innerHTML = user.displayName
     document.getElementById('avatar').src = photoUrl
-	document.getElementById('user-contact').src = usercontact
+	document.getElementById('user-contact').innerHTML  = usercontact
 
 console.log (photoUrl)
 
