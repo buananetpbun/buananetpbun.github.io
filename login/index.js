@@ -364,7 +364,7 @@ const CangeProfile = () => {
   } else if (profilephone.trim() == "") {
     Alert.render("❌ Enter Your Phone Number");
   } else {
-    user.updateProfile({displayName: profilename, phoneNumber: profilephone, photoURL: 'https://lh3.googleusercontent.com/a/ALm5wu2tciGsxKQhNvHWuW7ETuvsNb4tejBhYzeY8atGVQ=s288-p-rw-no'})
+    user.updateProfile({displayName: profilename, phoneNumber: profilephone, photoURL: 'https://lh3.googleusercontent.com/a/ALm5wu2tciGsxKQhNvHWuW7ETuvsNb4tejBhYzeY8atGVQ'})
 
 	//user.updatePhoneNumber(profilephone)
       .then(function () {
