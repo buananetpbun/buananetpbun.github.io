@@ -129,7 +129,7 @@ firebase.auth().onAuthStateChanged((user) => {
     const emailVerified = user.emailVerified;
     const photoUrl = user.photoUrl
     const name = user.displayName
-
+    const usercontact = user.phoneNumber
     document.getElementById("myProfile").style.display = "block";
 
     document.getElementById('welcome-email').innerHTML = email
@@ -137,6 +137,7 @@ firebase.auth().onAuthStateChanged((user) => {
     document.getElementById('user-id').innerHTML = uid
 	document.getElementById('your-name').innerHTML = user.displayName
     document.getElementById('avatar').src = photoUrl
+	document.getElementById('user-contact').src = usercontact
 
 console.log (photoUrl)
 
