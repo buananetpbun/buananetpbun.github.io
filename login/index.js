@@ -360,9 +360,9 @@ const CangeProfile = () => {
   if (profilename.trim() == "") {
     Alert.render("❌ Enter your name");
   } else if (profilephone.trim() == "") {
-    //Alert.render("❌ Enter Your Phone Number");
+    Alert.render("❌ Enter Your Phone Number");
   } else {
-    user.updateProfile({displayName: profilename})
+    user.updateProfile({displayName: profilename, phoneNumber: profilephone})
 
 	//user.updatePhoneNumber(profilephone)
       .then(function () {
