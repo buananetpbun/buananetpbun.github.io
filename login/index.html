@@ -216,7 +216,7 @@
       z-index: 4;
       margin: 0 auto;
       background-color: #f9f9f9;
-      width: 800px;
+      width: 700px;
       border-radius: 0 0 5px 5px;
       border: 2px solid #f9f9f9;
       font-weight: bold;
@@ -499,6 +499,20 @@
       padding: 0;
       margin: 0;
       }
+	  .avatar img {
+	float: right;
+    display: block;
+    width: 130px;
+    height: 130px;
+    margin: 8px 10px 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    border-radius: 99em;
+    border: 4px solid #ccc;
+	}
     </style>
   </head>
   <body>
@@ -515,7 +529,10 @@
       </ul>
     </div>
     <div id="myProfile" class="modal-profile">
-      <div id="homepage" style="width: 800px;" class="modal-content">
+      <div id="homepage" style="width: 700px;" class="modal-content">
+	    <div class="avatar">
+		<img src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png">
+		</div>
         <span style="font-weight:bold; font-size:25px; color:#fff">PROFILE - <span id="profile-email" style="color:#fff"></span></span>
         <br><br>
         <span style="font-weight:bold; font-size:14px">USER UID : <span style="color:#ff6600;font-weight:bold;" id="user-id"></span></span><br><br>
