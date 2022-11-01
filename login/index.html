@@ -526,11 +526,10 @@
         <span style="font-weight:bold;font-size:14px">IDENTIFIER E-MAIL: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span><br><br>
         <span style="font-weight:bold; font-size:14px">E-MAIL ACTIVATED: [ <span id="email_Verified"></span> ]</span> <button id="verify" style="width:180px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button><br>
 		<br><br>
-		<button  id="signout">Logout</button>
+		<button style="margin-bottom:20px" id="signout">Logout</button>
 		<button  onclick="CallModalChangePasswordShow()">Set New Password</button>
         <button  id="delete-user" onclick="DeleteMember()">Delete Account</button>
       </div>
-	  	<br>
 	  </div> 
 	  
 	<div id="myChangePassword" class="modal-change-password">
@@ -542,9 +541,8 @@
               <input type="password" id="new-password" placeholder="New Password">
               <label>Confirm Password <span style="color:#ff6600">*</span></label>
               <input type="password" id="re-new-password" placeholder="Confirm New Password">
-              <button style="width:150px !important;" id="change-pass-button">Change Now</button>
+              <button style="width:150px !important;margin-bottom:20px" id="change-pass-button">Change Now</button>
 			  <button style="width:150px !important;" onclick="CallModalChangePasswordHide()" >Cancel</button>
-		<br>
       </div>
 	  </div> 
 	   </div>
