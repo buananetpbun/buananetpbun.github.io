@@ -1,1 +1,469 @@
-function _0x4662(){var _0x3e077b=['delete','❌\x20invalid\x20e-mail\x20or\x20bad\x20network\x20connection.','#myLogin','signInWithPopup','✔️\x20Update\x20Profile\x20successfully!\x20Relogin\x20please\x20wait..','click','phoneNumber','innerHTML','#user-contact','credential','message','#dialogboxbody','then','catch','\x20[❌]\x20<span\x20style=\x27color:red;font-weight:bold;\x27>NOT\x20ACTIVATED</span>','currentUser','render','trim','1086725oMgjjp','getRedirectResult','1775144arfstR','accessToken','❌\x20Enter\x20New\x20Password','buananetpbun-5d979.firebaseapp.com','1147867UuPFvE','<i>Confirmation!</i>','#login-password','✔️\x20Update\x20New\x20Password\x20successfully!\x20Relogin\x20please\x20wait..','#profile-email','innerWidth','✔️\x20Delete\x20Member\x20Accound\x20successfully!\x20Relogin\x20Please\x20Wait..','add','hide','❌\x20Enter\x20E-mail.','<i>Information!</i>','2075070WIQVIb','updateProfile','✔️\x20Verification\x20link\x20sent\x20to\x20your\x20email.\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','block','keyCode','onAuthStateChanged','#show-login','#dialogoverlay','auth','reload','#verify','updatePassword','1:912166778245:web:c845ec7e720f7bd84580ec','close','buananetpbun-5d979','#welcome-email','displayName','58ccaqNz','#login','❌\x20Password\x20must\x20be\x20at\x20least\x206\x20characters.','<button\x20style=\x22width:100px\x22\x20onclick=\x22Alert.ok()\x22>OK</button>','143123NEuORI','#forgot-password','src','remove','#register','display','#registration-reemail','#myChangePassword','❌\x20New\x20Password\x20do\x20not\x20match.','initializeApp','#myavatar','#profile-name','✔️\x20Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','#dialogboxhead','#profile-phone','height','length','signInWithEmailAndPassword','#login-page','left','https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png','#google-sign-in','onclick','#myChangeProfile','#dialogboxfoot','#dialogbox','#registration-page','email','712280sendgk','render2','#login-email','100px','#show-register','#homepage','preventDefault','keyup','#email_Verified','value','GoogleAuthProvider','39156WCgQQA','innerHeight','querySelector','photoURL','classList','code','#re-new-password','sendPasswordResetEmail','❓\x20Are\x20you\x20sure\x20for\x20delete\x20this\x20member\x20account?','❌\x20Enter\x20Your\x20E-mail.','#registration-password','user','#profile-url','#new-password','addEventListener','none','style'];_0x4662=function(){return _0x3e077b;};return _0x4662();}var _0x1ec86e=_0x1922;(function(_0x4ef5b0,_0xf7e490){var _0x47275a=_0x1922,_0x1ff46c=_0x4ef5b0();while(!![]){try{var _0x580ca7=parseInt(_0x47275a(0x102))/0x1+parseInt(_0x47275a(0xfe))/0x2*(-parseInt(_0x47275a(0x129))/0x3)+-parseInt(_0x47275a(0x11e))/0x4+parseInt(_0x47275a(0xdc))/0x5+parseInt(_0x47275a(0xed))/0x6+-parseInt(_0x47275a(0xe2))/0x7+parseInt(_0x47275a(0xde))/0x8;if(_0x580ca7===_0xf7e490)break;else _0x1ff46c['push'](_0x1ff46c['shift']());}catch(_0x2d9dec){_0x1ff46c['push'](_0x1ff46c['shift']());}}}(_0x4662,0x32b1f));var modal_click=document['querySelector']('#myModal'),span_click=document['getElementsByClassName'](_0x1ec86e(0xfa))[0x0];function CallModalChangePasswordShow(){var _0x560fa7=_0x1ec86e;document['querySelector'](_0x560fa7(0x109))['style'][_0x560fa7(0x107)]='block';}function CallModalChangePasswordHide(){var _0x4516d0=_0x1ec86e;document[_0x4516d0(0x12b)]('#myChangePassword')[_0x4516d0(0xc9)][_0x4516d0(0x107)]=_0x4516d0(0xc8);}function CallModalChangeProfileShow(){var _0x26e37d=_0x1ec86e;document['querySelector'](_0x26e37d(0x119))[_0x26e37d(0xc9)][_0x26e37d(0x107)]=_0x26e37d(0xf0),document[_0x26e37d(0x12b)](_0x26e37d(0x10d))[_0x26e37d(0x127)]=document[_0x26e37d(0x12b)]('#your-name')[_0x26e37d(0xd1)],document['querySelector']('#profile-phone')[_0x26e37d(0x127)]=document[_0x26e37d(0x12b)]('#user-contact')['innerHTML'],document[_0x26e37d(0x12b)](_0x26e37d(0xc5))[_0x26e37d(0x127)]=document['querySelector'](_0x26e37d(0x10c))[_0x26e37d(0x104)];}function CallModalChangeProfileHide(){var _0x361164=_0x1ec86e;document[_0x361164(0x12b)](_0x361164(0x119))[_0x361164(0xc9)][_0x361164(0x107)]=_0x361164(0xc8);}function callmodal(){var _0x171809=_0x1ec86e;modal_click[_0x171809(0xc9)][_0x171809(0x107)]='block';}span_click[_0x1ec86e(0x118)]=function(){var _0x3ac525=_0x1ec86e;modal_click[_0x3ac525(0xc9)][_0x3ac525(0x107)]='none';},window[_0x1ec86e(0x118)]=function(_0x50fb00){var _0x2ede6b=_0x1ec86e;_0x50fb00['target']==modal_click&&(modal_click[_0x2ede6b(0xc9)][_0x2ede6b(0x107)]='none');};var firebaseConfig={'apiKey':'AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','authDomain':_0x1ec86e(0xe1),'databaseURL':'https://buananetpbun-5d979.firebaseio.com','projectId':_0x1ec86e(0xfb),'storageBucket':'buananetpbun-5d979.appspot.com','messagingSenderId':'912166778245','appId':_0x1ec86e(0xf9),'measurementId':'G-FSDV7HGD99'};firebase[_0x1ec86e(0x10b)](firebaseConfig);const auth=firebase[_0x1ec86e(0xf5)](),user=firebase[_0x1ec86e(0xf5)]()[_0x1ec86e(0xd9)],provider=new firebase[(_0x1ec86e(0xf5))][(_0x1ec86e(0x128))]();firebase[_0x1ec86e(0xf5)]()['signInWithPopup'](provider)[_0x1ec86e(0xd6)](function(_0x1ee56a){var _0x3b8cbb=_0x1ec86e,_0xc8bb76=_0x1ee56a[_0x3b8cbb(0xd3)][_0x3b8cbb(0xdf)],_0x5e87ce=_0x1ee56a[_0x3b8cbb(0xc4)];})[_0x1ec86e(0xd7)](function(_0x4e7d5f){var _0x5640a4=_0x1ec86e,_0x229715=_0x4e7d5f[_0x5640a4(0x12e)],_0x2c8327=_0x4e7d5f[_0x5640a4(0xd4)],_0x5dfe95=_0x4e7d5f[_0x5640a4(0x11d)],_0x3c1ce1=_0x4e7d5f[_0x5640a4(0xd3)];}),firebase['auth']()[_0x1ec86e(0xdd)]()[_0x1ec86e(0xd6)](function(_0x1c66d1){var _0x476361=_0x1ec86e;if(_0x1c66d1[_0x476361(0xd3)])var _0x33f82=_0x1c66d1[_0x476361(0xd3)][_0x476361(0xdf)];var _0x32c24e=_0x1c66d1[_0x476361(0xc4)];})[_0x1ec86e(0xd7)](function(_0x4cd7a8){var _0x30b5f1=_0x1ec86e,_0x4e29cf=_0x4cd7a8['code'],_0x56847f=_0x4cd7a8[_0x30b5f1(0xd4)],_0x256d2f=_0x4cd7a8['email'],_0x384756=_0x4cd7a8[_0x30b5f1(0xd3)];}),document['querySelector'](_0x1ec86e(0x117))[_0x1ec86e(0xc7)](_0x1ec86e(0xcf),()=>{var _0x55e2dc=_0x1ec86e;firebase[_0x55e2dc(0xf5)]()[_0x55e2dc(0xcd)](provider)[_0x55e2dc(0xd6)](_0x4cba7b=>{})[_0x55e2dc(0xd7)](_0x2420af=>{});}),document[_0x1ec86e(0x12b)](_0x1ec86e(0xf7))[_0x1ec86e(0xc7)](_0x1ec86e(0xcf),()=>{var _0x55f3e5=_0x1ec86e,_0x4d4b73={'url':'https://buananetpbun.github.io/','handleCodeInApp':![]};firebase[_0x55f3e5(0xf5)]()[_0x55f3e5(0xd9)]['sendEmailVerification'](_0x4d4b73)['then'](function(){var _0x209c11=_0x55f3e5;Alert[_0x209c11(0xda)](_0x209c11(0xef));})[_0x55f3e5(0xd7)](function(_0xcde6dc){var _0x497b9f=_0x55f3e5,_0x3622b2=_0xcde6dc[_0x497b9f(0x12e)],_0x4318cc=_0xcde6dc[_0x497b9f(0xd4)];Alert[_0x497b9f(0xda)]('❌\x20'+_0x4318cc);});}),firebase['auth']()[_0x1ec86e(0xf2)](_0x3d0e05=>{var _0x3b52af=_0x1ec86e;_0x3d0e05?(document[_0x3b52af(0x12b)]('#myProfile')[_0x3b52af(0xc9)]['display']=_0x3b52af(0xf0),document[_0x3b52af(0x12b)](_0x3b52af(0xfc))['innerHTML']=firebase[_0x3b52af(0xf5)]()['currentUser'][_0x3b52af(0x11d)],document['querySelector'](_0x3b52af(0xe6))[_0x3b52af(0xd1)]=firebase[_0x3b52af(0xf5)]()[_0x3b52af(0xd9)]['email'],document[_0x3b52af(0x12b)]('#your-name')[_0x3b52af(0xd1)]=firebase['auth']()[_0x3b52af(0xd9)][_0x3b52af(0xfd)],document[_0x3b52af(0x12b)](_0x3b52af(0x10c))[_0x3b52af(0x104)]=firebase[_0x3b52af(0xf5)]()[_0x3b52af(0xd9)][_0x3b52af(0x12c)],document[_0x3b52af(0x12b)](_0x3b52af(0xd2))[_0x3b52af(0xd1)]=firebase[_0x3b52af(0xf5)]()[_0x3b52af(0xd9)][_0x3b52af(0xd0)],firebase[_0x3b52af(0xf5)]()[_0x3b52af(0xd9)][_0x3b52af(0x12c)]==null&&(document['querySelector'](_0x3b52af(0x10c))[_0x3b52af(0x104)]=_0x3b52af(0x116)),firebase[_0x3b52af(0xf5)]()[_0x3b52af(0xd9)]['emailVerified']==!![]?(document[_0x3b52af(0x12b)](_0x3b52af(0xf7))[_0x3b52af(0xc9)][_0x3b52af(0x107)]=_0x3b52af(0xc8),document[_0x3b52af(0x12b)]('#email_Verified')[_0x3b52af(0xd1)]='\x20[✔️]\x20<span\x20style=\x27color:green;font-weight:bold;\x27>ACTIVATED</span>'):document['querySelector'](_0x3b52af(0x126))['innerHTML']=_0x3b52af(0xd8)):document[_0x3b52af(0x12b)]('#myLogin')[_0x3b52af(0xc9)]['display']='block';}),document[_0x1ec86e(0x12b)](_0x1ec86e(0x122))['addEventListener'](_0x1ec86e(0xcf),()=>{showRegistration();});const showRegistration=()=>{var _0x2bb700=_0x1ec86e;document[_0x2bb700(0x12b)](_0x2bb700(0x11c))['classList']['remove'](_0x2bb700(0xea)),document['querySelector']('#login-page')[_0x2bb700(0x12d)][_0x2bb700(0xe9)](_0x2bb700(0xea)),document[_0x2bb700(0x12b)](_0x2bb700(0x123))[_0x2bb700(0x12d)][_0x2bb700(0xe9)](_0x2bb700(0xea)),document['querySelector'](_0x2bb700(0xf3))['classList'][_0x2bb700(0x105)]('hide'),document[_0x2bb700(0x12b)](_0x2bb700(0x122))[_0x2bb700(0x12d)][_0x2bb700(0xe9)]('hide');};document[_0x1ec86e(0x12b)](_0x1ec86e(0xf3))[_0x1ec86e(0xc7)](_0x1ec86e(0xcf),()=>{showLogin();});const showLogin=()=>{var _0x23ca4a=_0x1ec86e;document['querySelector'](_0x23ca4a(0x11c))[_0x23ca4a(0x12d)][_0x23ca4a(0xe9)](_0x23ca4a(0xea)),document[_0x23ca4a(0x12b)](_0x23ca4a(0x114))['classList'][_0x23ca4a(0x105)]('hide'),document[_0x23ca4a(0x12b)](_0x23ca4a(0x123))[_0x23ca4a(0x12d)][_0x23ca4a(0xe9)]('hide'),document[_0x23ca4a(0x12b)]('#show-login')['classList'][_0x23ca4a(0xe9)](_0x23ca4a(0xea)),document[_0x23ca4a(0x12b)](_0x23ca4a(0x122))[_0x23ca4a(0x12d)][_0x23ca4a(0x105)](_0x23ca4a(0xea));};document[_0x1ec86e(0x12b)]('#signout')[_0x1ec86e(0xc7)](_0x1ec86e(0xcf),()=>{signOut();});const register=()=>{var _0xa8fe93=_0x1ec86e;const _0x263a60=document[_0xa8fe93(0x12b)]('#registration-email')[_0xa8fe93(0x127)],_0x308f78=document[_0xa8fe93(0x12b)](_0xa8fe93(0x108))[_0xa8fe93(0x127)],_0x49921a=document[_0xa8fe93(0x12b)](_0xa8fe93(0xc3))[_0xa8fe93(0x127)];if(_0x263a60[_0xa8fe93(0xdb)]()=='')Alert[_0xa8fe93(0xda)]('❌\x20Enter\x20E-mail.');else{if(_0x49921a[_0xa8fe93(0xdb)]()['length']<0x6)Alert['render'](_0xa8fe93(0x100));else _0x263a60!=_0x308f78?Alert['render']('❌\x20emails\x20do\x20not\x20match.'):auth['createUserWithEmailAndPassword'](_0x263a60,_0x49921a)['catch'](function(_0x50770a){var _0x16b6a4=_0xa8fe93,_0x483119=_0x50770a[_0x16b6a4(0x12e)],_0x331bf9=_0x50770a[_0x16b6a4(0xd4)];Alert['render']('❌\x20'+_0x331bf9);});}};document[_0x1ec86e(0x12b)](_0x1ec86e(0x106))[_0x1ec86e(0xc7)](_0x1ec86e(0xcf),()=>{register();}),document[_0x1ec86e(0x12b)](_0x1ec86e(0xc3))[_0x1ec86e(0xc7)]('keyup',_0x1a85e9=>{var _0x522295=_0x1ec86e;event[_0x522295(0xf1)]===0xd&&(_0x1a85e9[_0x522295(0x124)](),register());});const login=()=>{var _0x5a11da=_0x1ec86e;const _0x168496=document[_0x5a11da(0x12b)]('#login-email')['value'],_0x1069e7=document[_0x5a11da(0x12b)](_0x5a11da(0xe4))['value'];if(_0x168496[_0x5a11da(0xdb)]()=='')Alert[_0x5a11da(0xda)](_0x5a11da(0xeb));else _0x1069e7[_0x5a11da(0xdb)]()==''?Alert[_0x5a11da(0xda)]('❌\x20Enter\x20Password.'):authenticate(_0x168496,_0x1069e7);};document[_0x1ec86e(0x12b)](_0x1ec86e(0xff))[_0x1ec86e(0xc7)]('click',()=>{login();}),document[_0x1ec86e(0x12b)](_0x1ec86e(0xe4))[_0x1ec86e(0xc7)](_0x1ec86e(0x125),_0x18af7c=>{var _0x4fbac2=_0x1ec86e;event[_0x4fbac2(0xf1)]===0xd&&(_0x18af7c[_0x4fbac2(0x124)](),login());});const authenticate=(_0x307aa3,_0xe3b592)=>{var _0x4314ee=_0x1ec86e;const _0xed8fe6=firebase[_0x4314ee(0xf5)]();_0xed8fe6['signInWithEmailAndPassword'](_0x307aa3,_0xe3b592),firebase[_0x4314ee(0xf5)]()[_0x4314ee(0x113)](_0x307aa3,_0xe3b592)[_0x4314ee(0xd7)](function(_0x58bae3){var _0xe5af57=_0x4314ee,_0x560482=_0x58bae3[_0xe5af57(0x12e)],_0x5cacdf=_0x58bae3['message'];Alert[_0xe5af57(0xda)]('❌\x20'+_0x5cacdf);});},showHomepage=()=>{var _0x87ee19=_0x1ec86e;document[_0x87ee19(0x12b)](_0x87ee19(0x11c))[_0x87ee19(0x12d)][_0x87ee19(0xe9)]('hide'),document['querySelector'](_0x87ee19(0x114))[_0x87ee19(0x12d)][_0x87ee19(0xe9)](_0x87ee19(0xea)),document[_0x87ee19(0x12b)](_0x87ee19(0x123))[_0x87ee19(0x12d)][_0x87ee19(0x105)](_0x87ee19(0xea)),document[_0x87ee19(0x12b)](_0x87ee19(0xcc))['style'][_0x87ee19(0x107)]=_0x87ee19(0xc8);},signOut=()=>{var _0x530cf1=_0x1ec86e;firebase['auth']()['signOut']()['then'](function(){var _0x3ebcc5=_0x1922;location[_0x3ebcc5(0xf6)]();})[_0x530cf1(0xd7)](function(_0x2b2ea8){var _0x2da2ba=_0x530cf1;Alert[_0x2da2ba(0xda)]('❌\x20error\x20signing\x20out,\x20check\x20network\x20connection');});};auth['onAuthStateChanged'](_0x4069f6=>{_0x4069f6&&showHomepage();}),document[_0x1ec86e(0x12b)](_0x1ec86e(0x103))[_0x1ec86e(0xc7)]('click',()=>{var _0xfa24d3=_0x1ec86e;const _0x2ee824=document[_0xfa24d3(0x12b)](_0xfa24d3(0x120))[_0xfa24d3(0x127)];_0x2ee824[_0xfa24d3(0xdb)]()==''?Alert[_0xfa24d3(0xda)](_0xfa24d3(0xc2)):forgotPassword(_0x2ee824);});const forgotPassword=_0x2af343=>{var _0x46f568=_0x1ec86e;auth[_0x46f568(0x130)](_0x2af343)[_0x46f568(0xd6)](function(){var _0x1ffcdf=_0x46f568;Alert['render'](_0x1ffcdf(0x10e));})['catch'](function(_0xaafc89){var _0x4b6e66=_0x46f568;Alert[_0x4b6e66(0xda)](_0x4b6e66(0xcb));});};document[_0x1ec86e(0x12b)]('#change-pass-button')['addEventListener'](_0x1ec86e(0xcf),()=>{CangePassword();});const CangePassword=()=>{var _0x4a9028=_0x1ec86e;const _0x2b8be1=firebase[_0x4a9028(0xf5)]()[_0x4a9028(0xd9)],_0x4457a3=document[_0x4a9028(0x12b)](_0x4a9028(0xc6))[_0x4a9028(0x127)],_0x30da18=document[_0x4a9028(0x12b)](_0x4a9028(0x12f))['value'];if(_0x4457a3['trim']()=='')Alert[_0x4a9028(0xda)](_0x4a9028(0xe0));else{if(_0x4457a3[_0x4a9028(0xdb)]()[_0x4a9028(0x112)]<0x6)Alert[_0x4a9028(0xda)]('❌\x20Password\x20must\x20be\x20at\x20least\x206\x20characters.');else _0x4457a3!=_0x30da18?Alert[_0x4a9028(0xda)](_0x4a9028(0x10a)):_0x2b8be1[_0x4a9028(0xf8)](_0x4457a3)[_0x4a9028(0xd6)](function(){var _0x5887da=_0x4a9028;document['querySelector']('#myChangePassword')[_0x5887da(0xc9)]['display']=_0x5887da(0xc8),Alert[_0x5887da(0xda)](_0x5887da(0xe5)),setTimeout(signOut,0x2710);})[_0x4a9028(0xd7)](_0x595396=>{var _0x2cafe2=_0x4a9028,_0x5b4a06=_0x595396[_0x2cafe2(0x12e)],_0x305aa9=_0x595396[_0x2cafe2(0xd4)];Alert[_0x2cafe2(0xda)]('❌\x20'+_0x305aa9);});}},CangeProfile=()=>{var _0x5751c1=_0x1ec86e;const _0x492f5d=firebase['auth']()[_0x5751c1(0xd9)],_0x7b2135=document[_0x5751c1(0x12b)](_0x5751c1(0x10d))[_0x5751c1(0x127)],_0x1dcf9b=document['querySelector'](_0x5751c1(0x110))[_0x5751c1(0x127)],_0x5f4dfb=document[_0x5751c1(0x12b)](_0x5751c1(0xc5))[_0x5751c1(0x127)];_0x492f5d[_0x5751c1(0xee)]({'displayName':_0x7b2135,'photoURL':_0x5f4dfb,'phoneNumber':_0x1dcf9b})[_0x5751c1(0xd6)](function(){var _0x2ea31f=_0x5751c1;document[_0x2ea31f(0x12b)](_0x2ea31f(0x119))[_0x2ea31f(0xc9)]['display']=_0x2ea31f(0xc8),Alert[_0x2ea31f(0xda)](_0x2ea31f(0xce));})['catch'](_0x408a4a=>{var _0x44c399=_0x5751c1,_0x50c9d5=_0x408a4a[_0x44c399(0x12e)],_0x346b0f=_0x408a4a['message'];Alert['render']('❌\x20'+_0x346b0f);});},DeleteMember=()=>{var _0x25b2b8=_0x1ec86e;Confirm[_0x25b2b8(0x11f)](_0x25b2b8(0x131));};function CustomAlert(){this['render']=function(_0x1b1c45){var _0x2d608f=_0x1922,_0x21f26f=window[_0x2d608f(0xe7)],_0x2b5037=window['innerHeight'],_0x5761fd=document[_0x2d608f(0x12b)](_0x2d608f(0xf4)),_0x27f016=document[_0x2d608f(0x12b)](_0x2d608f(0x11b));_0x5761fd['style']['display']=_0x2d608f(0xf0),_0x5761fd[_0x2d608f(0xc9)][_0x2d608f(0x111)]=_0x2b5037+'px',_0x27f016[_0x2d608f(0xc9)][_0x2d608f(0x115)]=_0x21f26f/0x2-0x226*0.5+'px',_0x27f016[_0x2d608f(0xc9)]['top']=_0x2d608f(0x121),_0x27f016[_0x2d608f(0xc9)][_0x2d608f(0x107)]=_0x2d608f(0xf0),document[_0x2d608f(0x12b)](_0x2d608f(0x10f))[_0x2d608f(0xd1)]=_0x2d608f(0xec),document[_0x2d608f(0x12b)](_0x2d608f(0xd5))[_0x2d608f(0xd1)]=_0x1b1c45,document['querySelector'](_0x2d608f(0x11a))[_0x2d608f(0xd1)]=_0x2d608f(0x101);},this['ok']=function(){var _0xf4511=_0x1922;document[_0xf4511(0x12b)](_0xf4511(0x11b))[_0xf4511(0xc9)][_0xf4511(0x107)]=_0xf4511(0xc8),document[_0xf4511(0x12b)]('#dialogoverlay')['style'][_0xf4511(0x107)]=_0xf4511(0xc8);};}function _0x1922(_0xa5a605,_0x41026c){var _0x46620c=_0x4662();return _0x1922=function(_0x19229e,_0x206614){_0x19229e=_0x19229e-0xc2;var _0x5ebf28=_0x46620c[_0x19229e];return _0x5ebf28;},_0x1922(_0xa5a605,_0x41026c);}var Alert=new CustomAlert();function CustomConfirm(){var _0x3822c9=_0x1ec86e;this[_0x3822c9(0x11f)]=function(_0x26a6d9){var _0x2cbe6f=_0x3822c9,_0x706f68=window[_0x2cbe6f(0xe7)],_0x296164=window[_0x2cbe6f(0x12a)],_0x446197=document['querySelector'](_0x2cbe6f(0xf4)),_0x4a4d55=document['querySelector']('#dialogbox');_0x446197[_0x2cbe6f(0xc9)][_0x2cbe6f(0x107)]=_0x2cbe6f(0xf0),_0x446197['style'][_0x2cbe6f(0x111)]=_0x296164+'px',_0x4a4d55[_0x2cbe6f(0xc9)]['left']=_0x706f68/0x2-0x226*0.5+'px',_0x4a4d55[_0x2cbe6f(0xc9)]['top']='100px',_0x4a4d55[_0x2cbe6f(0xc9)]['display']='block',document[_0x2cbe6f(0x12b)](_0x2cbe6f(0x10f))[_0x2cbe6f(0xd1)]=_0x2cbe6f(0xe3),document[_0x2cbe6f(0x12b)](_0x2cbe6f(0xd5))['innerHTML']=_0x26a6d9,document[_0x2cbe6f(0x12b)](_0x2cbe6f(0x11a))[_0x2cbe6f(0xd1)]='<button\x20style=\x22width:100px\x22\x20onclick=\x22Confirm.ok()\x22>OK</button><button\x20style=\x22width:100px\x22\x20onclick=\x22Confirm.cancel()\x22>Cancel</button>';},this['ok']=function(){var _0x8d1955=_0x3822c9;document[_0x8d1955(0x12b)](_0x8d1955(0x11b))[_0x8d1955(0xc9)][_0x8d1955(0x107)]=_0x8d1955(0xc8),document['querySelector'](_0x8d1955(0xf4))['style']['display']=_0x8d1955(0xc8);const _0x26b73a=firebase[_0x8d1955(0xf5)]()[_0x8d1955(0xd9)];_0x26b73a[_0x8d1955(0xca)]()[_0x8d1955(0xd6)](()=>{var _0x5c74fb=_0x8d1955;Alert[_0x5c74fb(0xda)](_0x5c74fb(0xe8)),setTimeout(signOut,0x2710);})['catch'](_0xc9c1a2=>{var _0x19a193=_0x8d1955,_0x837497=_0xc9c1a2['code'],_0x4495bf=_0xc9c1a2[_0x19a193(0xd4)];Alert['render']('❌\x20'+_0x4495bf);});;},this['cancel']=function(){var _0x4675c5=_0x3822c9;return document[_0x4675c5(0x12b)]('#dialogbox')[_0x4675c5(0xc9)][_0x4675c5(0x107)]=_0x4675c5(0xc8),document['querySelector']('#dialogoverlay')[_0x4675c5(0xc9)][_0x4675c5(0x107)]=_0x4675c5(0xc8),![];};}var Confirm=new CustomConfirm();
+var modal_click = document.querySelector("#myModal");
+var span_click = document.getElementsByClassName("close")[0];
+
+
+function CallModalChangePasswordShow() {
+  document.querySelector("#myChangePassword").style.display = "block";
+}
+
+function CallModalChangePasswordHide() {
+  document.querySelector("#myChangePassword").style.display = "none";
+}
+
+function CallModalChangeProfileShow() {
+  document.querySelector("#myChangeProfile").style.display = "block";
+  document.querySelector("#profile-name").value = document.querySelector("#your-name").innerHTML
+  document.querySelector("#profile-phone").value = document.querySelector("#user-contact").innerHTML
+  document.querySelector("#profile-url").value = document.querySelector("#myavatar").src
+}
+
+function CallModalChangeProfileHide() {
+  document.querySelector("#myChangeProfile").style.display = "none";
+}
+
+function callmodal() {
+  modal_click.style.display = "block";
+}
+span_click.onclick = function () {
+  modal_click.style.display = "none";
+}
+
+window.onclick = function (event) {
+
+  if (event.target == modal_click) {
+    modal_click.style.display = "none";
+  }
+}
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
+  authDomain: "buananetpbun-5d979.firebaseapp.com",
+  databaseURL: "https://buananetpbun-5d979.firebaseio.com",
+  projectId: "buananetpbun-5d979",
+  storageBucket: "buananetpbun-5d979.appspot.com",
+  messagingSenderId: "912166778245",
+  appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
+  measurementId: "G-FSDV7HGD99"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+//invokes firebase authentication.
+const auth = firebase.auth();
+
+const user = firebase.auth().currentUser;
+
+const provider = new firebase.auth.GoogleAuthProvider();
+
+//const newPassword = firebase.auth().getASecureRandomPassword;
+
+firebase.auth().signInWithPopup(provider).then(function (result) {
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  // ...
+}).catch(function (error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+
+
+firebase.auth().getRedirectResult().then(function (result) {
+  if (result.credential) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // ...
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function (error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+
+
+document.querySelector("#google-sign-in").addEventListener("click", () => {
+  firebase.auth().signInWithPopup(provider).then(res => {}).catch(e => {})
+});
+
+
+document.querySelector("#verify").addEventListener("click", () => {
+  var actionCodeSettings = {
+    // After email is verified, the user will be give the ability to go back
+    // to the sign-in page.
+    url: 'https://buananetpbun.github.io/',
+    handleCodeInApp: false
+  };
+  firebase.auth().currentUser.sendEmailVerification(actionCodeSettings)
+    .then(function () {
+      // Verification email sent.
+      Alert.render("✔️ Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
+    })
+    .catch(function (error) {
+      // Error occurred. Inspect error.code.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      Alert.render('❌ ' + errorMessage);
+    });
+
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+	
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    
+
+	//const uid = user.uid;
+   // const email = user.email;
+    //const emailVerified = user.emailVerified;
+    //const photoUrl = user.photoUrl;
+    //const displayName = user.displayName;
+   // const phoneNumber = user.phoneNumber;
+	
+    document.querySelector("#myProfile").style.display = "block";
+
+    document.querySelector('#welcome-email').innerHTML = firebase.auth().currentUser.email;
+	document.querySelector('#profile-email').innerHTML = firebase.auth().currentUser.email;
+	document.querySelector('#your-name').innerHTML = firebase.auth().currentUser.displayName;
+    document.querySelector('#myavatar').src = firebase.auth().currentUser.photoURL;
+	
+    document.querySelector('#user-contact').innerHTML = firebase.auth().currentUser.phoneNumber;
+
+if (firebase.auth().currentUser.photoURL == null) {
+document.querySelector('#myavatar').src = "https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png";
+}
+
+    if (firebase.auth().currentUser.emailVerified == true) {
+      document.querySelector("#verify").style.display = "none"
+      document.querySelector('#email_Verified').innerHTML = " ✔️ <span style='color:#16C60C;font-weight:bold;'>ACTIVATED</span>"
+
+    } else {
+      document.querySelector('#email_Verified').innerHTML = " ❌ <span style='color:red;font-weight:bold;'>NOT ACTIVATED</span>"
+
+    }
+
+  } else {
+    document.querySelector("#myLogin").style.display = "block";
+  }
+});
+
+
+document.querySelector("#show-register").addEventListener("click", () => {
+  showRegistration();
+});
+
+
+const showRegistration = () => {
+  document.querySelector("#registration-page").classList.remove("hide");
+  document.querySelector("#login-page").classList.add("hide");
+  document.querySelector("#homepage").classList.add("hide");
+  document.querySelector("#show-login").classList.remove("hide");
+  document.querySelector("#show-register").classList.add("hide");
+};
+
+document.querySelector("#show-login").addEventListener("click", () => {
+  showLogin();
+});
+
+const showLogin = () => {
+  document.querySelector("#registration-page").classList.add("hide");
+  document.querySelector("#login-page").classList.remove("hide");
+  document.querySelector("#homepage").classList.add("hide");
+  document.querySelector("#show-login").classList.add("hide");
+  document.querySelector("#show-register").classList.remove("hide");
+};
+
+document.querySelector("#signout").addEventListener("click", () => {
+  signOut();
+});
+
+
+const register = () => {
+  const email = document.querySelector("#registration-email").value;
+  const reemail = document.querySelector("#registration-reemail").value;
+  const password = document.querySelector("#registration-password").value;
+
+  if (email.trim() == "") {
+    Alert.render("❌ Enter E-mail.");
+  } else if (password.trim().length < 6) {
+    Alert.render("❌ Password must be at least 6 characters.");
+  } else if (email != reemail) {
+    Alert.render("❌ emails do not match.");
+  } else {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+
+      .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        Alert.render('❌ ' + errorMessage);
+        // ...
+      });
+  }
+};
+
+document.querySelector("#register").addEventListener("click", () => {
+  register();
+});
+
+//register when you hit the enter key
+document
+  .querySelector("#registration-password")
+  .addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      register();
+    }
+  });
+
+
+const login = () => {
+  const email = document.querySelector("#login-email").value;
+  const password = document.querySelector("#login-password").value;
+
+  if (email.trim() == "") {
+    Alert.render("❌ Enter E-mail.");
+  } else if (password.trim() == "") {
+    Alert.render("❌ Enter Password.");
+  } else {
+    authenticate(email, password);
+  }
+};
+
+document.querySelector("#login").addEventListener("click", () => {
+  login();
+});
+
+//sign in when you hit enter
+document
+  .querySelector("#login-password")
+  .addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      login();
+    }
+  });
+
+const authenticate = (email, password) => {
+  const auth = firebase.auth();
+  auth.signInWithEmailAndPassword(email, password);
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      Alert.render('❌ ' + errorMessage);
+    });
+};
+
+const showHomepage = () => {
+  document.querySelector("#registration-page").classList.add("hide");
+  document.querySelector("#login-page").classList.add("hide");
+  document.querySelector("#homepage").classList.remove("hide");
+  document.querySelector("#myLogin").style.display = "none";
+};
+
+const signOut = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(function () {
+      location.reload();
+    })
+    .catch(function (error) {
+      Alert.render("❌ error signing out, check network connection");
+    });
+};
+
+auth.onAuthStateChanged((firebaseUser) => {
+  if (firebaseUser) {
+    showHomepage();
+  }
+});
+
+document
+  .querySelector("#forgot-password")
+  .addEventListener("click", () => {
+    const email = document.querySelector("#login-email").value;
+    if (email.trim() == "") {
+      Alert.render("❌ Enter Your E-mail.");
+    } else {
+      forgotPassword(email);
+    }
+  });
+
+const forgotPassword = (email) => {
+  auth
+    .sendPasswordResetEmail(email)
+    .then(function () {
+      Alert.render("✔️ Send to your e-mail successfully! if you don't see it, please check your mail inbox in spam folder.");
+    })
+    .catch(function (error) {
+      Alert.render("❌ invalid e-mail or bad network connection.");
+    });
+};
+
+
+document.querySelector("#change-pass-button").addEventListener("click", () => {
+  CangePassword();
+});
+
+const CangePassword = () => {
+  const user = firebase.auth().currentUser;
+  const newpassword = document.querySelector("#new-password").value;
+  const renewpassword = document.querySelector("#re-new-password").value;
+
+  if (newpassword.trim() == "") {
+    Alert.render("❌ Enter New Password");
+  } else if (newpassword.trim().length < 6) {
+    Alert.render("❌ Password must be at least 6 characters.");
+  } else if (newpassword != renewpassword) {
+    Alert.render("❌ New Password do not match.");
+  } else {
+    user.updatePassword(newpassword)
+      .then(function () {
+        document.querySelector("#myChangePassword").style.display = "none";
+        Alert.render("✔️ Update New Password successfully! Relogin please wait..");
+        setTimeout(signOut, 10000)
+      })
+      // Update successful.
+
+      .catch((error) => {
+        // An error ocurred
+        // ...
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        Alert.render('❌ ' + errorMessage);
+        // ...
+      });
+
+  }
+};
+
+
+const CangeProfile = () => {
+	const user = firebase.auth().currentUser;
+  const profilename = document.querySelector("#profile-name").value;
+  const profilephone = document.querySelector("#profile-phone").value;
+  const profileurl = document.querySelector("#profile-url").value;
+
+            user.updateProfile({
+            displayName: profilename,
+            photoURL: profileurl,
+         	phoneNumber: profilephone,	
+        })
+
+      .then(function () {
+        document.querySelector("#myChangeProfile").style.display = "none";
+        Alert.render("✔️ Update Profile successfully! Relogin please wait..");
+
+
+      })
+      // Update successful.
+
+      .catch((error) => {
+        // An error ocurred
+        // ...
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        Alert.render('❌ ' + errorMessage);
+        // ...
+      });
+
+ 
+};
+
+
+const DeleteMember = () => {
+
+
+  Confirm.render2("❓ Are you sure for delete this member account?");
+
+
+};
+
+
+function CustomAlert() {
+  this.render = function (dialog) {
+    var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var dialogoverlay = document.querySelector('#dialogoverlay');
+    var dialogbox = document.querySelector('#dialogbox');
+    dialogoverlay.style.display = "block";
+    dialogoverlay.style.height = winH + "px";
+    dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
+    dialogbox.style.top = "100px";
+    dialogbox.style.display = "block";
+    document.querySelector('#dialogboxhead').innerHTML = "<i>Information!</i>";
+    document.querySelector('#dialogboxbody').innerHTML = dialog;
+    document.querySelector('#dialogboxfoot').innerHTML = '<button style="width:100px" onclick="Alert.ok()">OK</button>';
+  }
+  this.ok = function () {
+    document.querySelector('#dialogbox').style.display = "none";
+    document.querySelector('#dialogoverlay').style.display = "none";
+  }
+}
+var Alert = new CustomAlert();
+
+
+function CustomConfirm() {
+  this.render2 = function (dialog) {
+    var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var dialogoverlay = document.querySelector('#dialogoverlay');
+    var dialogbox = document.querySelector('#dialogbox');
+    dialogoverlay.style.display = "block";
+    dialogoverlay.style.height = winH + "px";
+    dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
+    dialogbox.style.top = "100px";
+    dialogbox.style.display = "block";
+    document.querySelector('#dialogboxhead').innerHTML = "<i>Confirmation!</i>";
+    document.querySelector('#dialogboxbody').innerHTML = dialog;
+    document.querySelector('#dialogboxfoot').innerHTML = '<button style="width:100px" onclick="Confirm.ok()">OK</button><button style="width:100px" onclick="Confirm.cancel()">Cancel</button>';
+  }
+  this.ok = function () {
+    document.querySelector('#dialogbox').style.display = "none";
+    document.querySelector('#dialogoverlay').style.display = "none";
+    const user = firebase.auth().currentUser;
+
+    user.delete().then(() => {
+      // User deleted.
+      Alert.render("✔️ Delete Member Accound successfully! Relogin Please Wait..");
+      setTimeout(signOut, 10000)
+    }).catch((error) => {
+      // An error ocurred
+      // ...
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      Alert.render('❌ ' + errorMessage);
+    });;
+  }
+  this.cancel = function () {
+    document.querySelector('#dialogbox').style.display = "none";
+    document.querySelector('#dialogoverlay').style.display = "none";
+    return false
+  }
+}
+
+var Confirm = new CustomConfirm();
