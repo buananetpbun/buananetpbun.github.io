@@ -65,7 +65,7 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
   var token = result.credential.accessToken;
   // The signed-in user info.
   var user = result.user;
-  document.querySelector('#user-contact').innerHTML = user;
+   document.querySelector('#user-contact').innerHTML = user;
   // ...
 }).catch(function (error) {
   // Handle Errors here.
@@ -364,27 +364,6 @@ const CangePassword = () => {
   }
 };
 
-function save(phone: string, e) {
-    e.preventDefault();
-    const { currentUser:fuser } = firebase.auth();
-    if(fuser && fuser.phoneNumber !== phone) {
-        try {
-            const verifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
-                callback: (response) => console.log('callback', response),
-                size: 'invisible',
-            });
-            const phoneProvider = new firebase.auth.PhoneAuthProvider();
-            const id = await phoneProvider.verifyPhoneNumber(phone, verifier);
-            const code = window.prompt('Bitte zugeschickten Code eingeben');
-            const cred = firebase.auth.PhoneAuthProvider.credential(id, code);
-            await fuser.updatePhoneNumber(cred);
-            console.log('phone number changed', id, cred, fuser);
-            setSuccess(true);
-        } catch(e) {
-            console.error(e);
-        }
-    }
-}
 
 const CangeProfile = () => {
 	const user = firebase.auth().currentUser;
