@@ -557,13 +557,13 @@
 	    <div  class="avatar">
 		<img id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
 		</div>
-        <span style="font-weight:bold; font-size:25px; color:#fff">PROFILE - <span id="profile-email" style="color:#fff"></span></span>
+        <span style="font-weight:bold; font-size:22px; color:#fff">PROFILE - <span id="profile-email" style="color:#fff"></span></span>
         <br><br>
-        
-        <span style="font-weight:bold;font-size:14px">E-MAIL IDENTIFIER : <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span><br><br>
-        <span style="font-weight:bold; font-size:14px">E-MAIL AUTH: <span id="email_Verified"></span></span> <button id="verify" style="width:180px !important; padding:4px; margin:4px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button><br><br>
-		<span style="font-weight:bold; font-size:14px">YOUR NAME : <span style="color:#ff6600;font-weight:bold;" id="your-name"></span></span><br><br>
-		<span style="font-weight:bold; font-size:14px">PHONE NUMBER : <span style="color:#ff6600;font-weight:bold;" id="user-contact"></span></span><br><br><br>
+		<span style="font-weight:bold; font-size:14px">E-MAIL AUTH <span style="margin-left:42px;margin-right:6px">:</span> <span id="email_Verified"></span></span> <button id="verify" style="width:170px !important; padding:4px; margin-left:5px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button><br><br>
+        <span style="font-weight:bold;font-size:14px">E-MAIL IDENTIFIER <span style="margin-left:10px; margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span><br><br>
+		<span style="font-weight:bold; font-size:14px">USER UID <span style="margin-left:70px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="user-id"></span></span><br><br>
+		<span style="font-weight:bold; font-size:14px">YOUR NAME <span style="margin-left:48px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="your-name"></span></span>
+		<br><br><br>
         <button style="padding:8px" id="edit-user" onclick="CallModalChangeProfileShow()">Edit Profile</button>
 		<button style="padding:8px" onclick="CallModalChangePasswordShow()">Change Password</button>
         <button style="padding:8px" id="delete-user" onclick="DeleteMember()">Delete Account</button>
@@ -594,8 +594,6 @@
             <br><br>
             <label>Your Name: <span style="color:#ff6600"></span></label>
             <input id="profile-name" placeholder="your name">
-            <label>Your Phone: <span style="color:#ff6600"></span></label>
-            <input id="profile-phone" autocomplete="off" placeholder="your phone">
 			<label>Your Image URL: <span style="color:#ff6600"></span></label>
             <input id="profile-url" autocomplete="off" placeholder="your image URL">
             <button style="width:150px !important;margin-bottom:20px" onclick="CangeProfile()">Change Now</button>
