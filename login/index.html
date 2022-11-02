@@ -554,8 +554,8 @@
     </div>
     <div id="myProfile" class="modal-profile">
       <div id="homepage" style="width: 700px;" class="modal-content">
-	    <div  class="avatar">
-		<img id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+	    <div class="avatar">
+		<img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
 		</div>
         <span style="font-weight:bold; font-size:22px; color:#fff">PROFILE - <span id="profile-email" style="color:#fff"></span></span>
         <br><br>
@@ -565,7 +565,7 @@
 		<span style="font-weight:bold; font-size:14px">YOUR NAME <span style="margin-left:48px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="your-name"></span></span>
 		<br><br><br>
         <button style="padding:8px" id="edit-user" onclick="CallModalChangeProfileShow()">Edit Profile</button>
-		<button style="padding:8px" onclick="CallModalChangePasswordShow()">Change Password</button>
+		<button style="padding:8px" onclick="CallModalChangePasswordShow()">Set Password</button>
         <button style="padding:8px" id="delete-user" onclick="DeleteMember()">Delete Account</button>
 		<button style="margin-bottom:10px;padding:8px" id="signout">Logout</button>
       </div>
@@ -580,7 +580,7 @@
             <input type="password" id="new-password" placeholder="New Password">
             <label>Confirm Password <span style="color:#ff6600">*</span></label>
             <input type="password" id="re-new-password" autocomplete="off" placeholder="Confirm New Password">
-            <button style="width:150px !important;margin-bottom:20px" id="change-pass-button">Change Now</button>
+            <button style="width:150px !important;margin-bottom:20px" id="change-pass-button">Save</button>
             <button style="width:150px !important;" onclick="CallModalChangePasswordHide()" >Cancel</button>
           </div>
         </div>
@@ -596,7 +596,7 @@
             <input id="profile-name" placeholder="your name">
 			<label>Your Image URL: <span style="color:#ff6600"></span></label>
             <input id="profile-url" autocomplete="off" placeholder="your image URL">
-            <button style="width:150px !important;margin-bottom:20px" onclick="CangeProfile()">Change Now</button>
+            <button style="width:150px !important;margin-bottom:20px" onclick="CangeProfile()">Save</button>
             <button style="width:150px !important;" onclick="CallModalChangeProfileHide()" >Cancel</button>
           </div>
         </div>
