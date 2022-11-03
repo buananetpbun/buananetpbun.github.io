@@ -379,8 +379,7 @@
       background-color: rgba(0, 0, 0, 0.5);
       /* Black w/ opacity */
       }	  
-	  
-	  .modal-change-profile{
+      .modal-change-profile{
       display: none;
       /* Hidden by default */
       position: fixed;
@@ -402,7 +401,6 @@
       background-color: rgba(0, 0, 0, 0.5);
       /* Black w/ opacity */
       }	  
-	  
       .modal-change-password {
       display: none;
       /* Hidden by default */
@@ -523,20 +521,20 @@
       padding: 0;
       margin: 0;
       }
-	  .avatar img {
-	float: right;
-    display: block;
-    width: 130px;
-    height: 130px;
-    margin: 8px 10px 0 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-border-radius: 99em;
-    -moz-border-radius: 99em;
-    border-radius: 99em;
-    border: 4px solid #ccc;
-	}
+      .avatar img {
+      float: right;
+      display: block;
+      width: 130px;
+      height: 130px;
+      margin: 8px 10px 0 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-border-radius: 99em;
+      -moz-border-radius: 99em;
+      border-radius: 99em;
+      border: 4px solid #ccc;
+      }
     </style>
   </head>
   <body>
@@ -554,21 +552,21 @@
     </div>
     <div id="myProfile" class="modal-profile">
       <div id="homepage" style="width: 700px;" class="modal-content">
-	    <div class="avatar">
-		<img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
-		</div>
+        <div class="avatar">
+          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+        </div>
         <span style="font-weight:bold; font-size:22px; color:#fff">PROFILE - <span id="profile-email" style="color:#fff"></span></span>
         <br><br>
-		<span style="font-weight:bold; font-size:14px">E-MAIL AUTH <span style="margin-left:42px;margin-right:6px">:</span> <span id="email_Verified"></span></span> <button id="verify" style="width:170px !important; padding:4px; margin-left:5px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button><br><br>
+        <span style="font-weight:bold; font-size:14px">E-MAIL AUTH <span style="margin-left:42px;margin-right:6px">:</span> <span id="email_Verified"></span></span> <button id="verify" style="width:170px !important; padding:4px; margin-left:5px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button><br><br>
         <span style="font-weight:bold;font-size:14px">E-MAIL IDENTIFIER <span style="margin-left:10px; margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span><br><br>
-		<span style="font-weight:bold; font-size:14px">USER UID <span style="margin-left:70px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="user-id"></span></span><br><br>
-		<span style="font-weight:bold; font-size:14px">YOUR NAME <span style="margin-left:48px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="your-name"></span></span>
-		<br><br><br>
-		<button style="padding:6px; width:124px" id="edit-user" onclick="location.href = 'https://buananetpbun.github.io'">Back Home</button>
+        <span style="font-weight:bold; font-size:14px">USER UID <span style="margin-left:70px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="user-id"></span></span><br><br>
+        <span style="font-weight:bold; font-size:14px">YOUR NAME <span style="margin-left:48px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="your-name"></span></span>
+        <br><br><br>
+        <button style="padding:6px; width:124px" id="back-home" onclick="location.href = 'https://buananetpbun.github.io'">Back Home</button>
         <button style="padding:6px; width:124px" id="edit-user" onclick="CallModalChangeProfileShow()">Edit Profile</button>
-		<button style="padding:6px; width:124px " onclick="CallModalChangePasswordShow()">Set Password</button>
+        <button style="padding:6px; width:124px " onclick="CallModalChangePasswordShow()">Set Password</button>
         <button style="padding:6px; width:124px" id="delete-user" onclick="DeleteMember()">Delete Account</button>
-		<button style="margin-bottom:10px;padding:6px;width:100px" id="signout">Logout</button>
+        <button style="margin-bottom:10px;padding:6px;width:100px" id="signout">Logout</button>
       </div>
     </div>
     <div id="myChangePassword" class="modal-change-password">
@@ -595,20 +593,21 @@
             <br><br>
             <label>Your Name: <span style="color:#ff6600"></span></label>
             <input id="profile-name" placeholder="your name">
-			<label>Your Image URL: <span style="color:#ff6600"></span></label>
+            <label>Your Image URL: <span style="color:#ff6600"></span></label>
             <input id="profile-url" autocomplete="off" placeholder="your image URL">
             <button style="width:150px !important;margin-bottom:20px" onclick="CangeProfile()">Save</button>
             <button style="width:150px !important;" onclick="CallModalChangeProfileHide()" >Cancel</button>
           </div>
         </div>
       </div>
-    </div>	
+    </div>
     <div id="myLogin" class="modal-login">
       <div style="width: 400px;" class="modal-content">
         <div class="forms-out">
           <div class="forms-in">
             <div id="registration-page" class="hide">
-              <h2>SIGN UP</h2><br>
+              <h2>SIGN UP</h2>
+              <br>
               <br><br>
               <label>E-Mail <span style="color:#ff6600">*</span></label>
               <input type="email" id="registration-email" placeholder="E-Mail">
