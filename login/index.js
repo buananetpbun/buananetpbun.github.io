@@ -78,7 +78,7 @@ firebase.auth().signInWithPopup(provider).then(function (result) {
   // ...
 });
 
-firebase.auth().signInWithPopup(provider_github).then(function (result) {
+firebase.auth().signInWithPopup(provider).then(function (result) {
   // This gives you a Google Access Token. You can use it to access the Google API.
   var token = result.credential.accessToken;
   // The signed-in user info.
@@ -95,7 +95,7 @@ firebase.auth().signInWithPopup(provider_github).then(function (result) {
   // ...
 });
 
-firebase.auth().signInWithPopup(provider).then(function (result) {
+firebase.auth().signInWithPopup(provider_github).then(function (result) {
   // This gives you a Google Access Token. You can use it to access the Google API.
   var token = result.credential.accessToken;
   // The signed-in user info.
@@ -134,6 +134,10 @@ firebase.auth().getRedirectResult().then(function (result) {
 
 document.querySelector("#google-sign-in").addEventListener("click", () => {
   firebase.auth().signInWithPopup(provider).then(res => {}).catch(e => {})
+});
+
+document.querySelector("#github-sign-in").addEventListener("click", () => {
+  firebase.auth().signInWithPopup(provider_github).then(res => {}).catch(e => {})
 });
 
 
