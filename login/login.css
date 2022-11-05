@@ -284,6 +284,9 @@
 .modal-content h2 {
 	color: #ff6600;
 	float: left;
+	font-size:23px;
+	padding:0;
+	margin:0;
 }
 
 /* The Close Button */
