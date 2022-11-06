@@ -175,7 +175,7 @@
 	/* Stay in place */
 	z-index: 2;
 	/* Sit on top */
-	padding-top: 220px;
+	padding-top: 150px;
 	/* Location of the box */
 	left: 0;
 	top: 0;
@@ -198,7 +198,7 @@
 	/* Stay in place */
 	z-index: 3;
 	/* Sit on top */
-	padding-top: 220px;
+	padding-top: 150px;
 	/* Location of the box */
 	left: 0;
 	top: 0;
@@ -221,7 +221,7 @@
 	/* Stay in place */
 	z-index: 1;
 	/* Sit on top */
-	padding-top: 220px;
+	padding-top: 150px;
 	/* Location of the box */
 	left: 0;
 	top: 0;
