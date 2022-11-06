@@ -614,23 +614,25 @@
 			  </div>			  
             <div id="registration-page" class="hide">
               <h2>SIGN UP</h2>
-             <br><br><br>
+             <br><br>
               <label>E-Mail <span style="color:#ff6600">*</span></label>
               <input type="email" id="registration-email" placeholder="E-Mail">
               <label>Confirm E-mail <span style="color:#ff6600">*</span></label> 
               <input type="email" id="registration-reemail" autocomplete="off" placeholder="Confirm E-Mail" >
               <label>Password <span style="color:#ff6600">*</span><span style="font-weight:normal; font-size:13px"> - Don't use your real e-mail password.</span></label>
               <input type="password" id="registration-password" placeholder="Password">
-              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="float:left; margin-top:10px" id="captcha-signup"></span><input autocomplete="off" style="margin-top:10px;width:180px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignUp">
+			  <button style="width:100% !important;" id="register">Sign Up</button><br>
               <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
             </div>
             <div id="login-page">
              <h2>SIGN IN</h2>
-              <br><br><br>
+              <br><br>
               <label>E-Mail</label>
               <input type="email" id="login-email" placeholder="E-Mail">
               <label>Password</label>
               <input type="password" id="login-password" placeholder="Password">
+			  <span style="float:left; margin-top:10px" id="captcha-signin"></span><input autocomplete="off" style="margin-top:10px;width:180px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignIn">
 			  <button style="width:100% !important;" id="login">Login</button>
               <br>
               <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
