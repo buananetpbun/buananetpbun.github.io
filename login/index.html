@@ -271,7 +271,21 @@
       .forms-in h3 {
       text-align: center;
       }
-      .forms-in input {
+	  
+.checkboxes label {
+  display: inline-block;
+
+  white-space: nowrap;
+  margin-bottom:5px;
+  font-weight:normal
+}
+.checkboxes input {
+  vertical-align: middle;
+}
+.checkboxes label span {
+  vertical-align: middle;
+}
+      .forms-in input[type=text], input[type=email], input[type=password] {
       border: none;
       width: 100%;
       margin-bottom: 15px;
@@ -594,7 +608,7 @@
             <h2>EDIT PROFILE</h2>
             <br><br>
             <label>Your Name: <span style="color:#ff6600"></span></label>
-            <input id="profile-name" placeholder="your name">
+            <input type="text" id="profile-name" placeholder="your name">
             <label>Your Image URL: <span style="color:#ff6600"></span></label>
             <input id="profile-url" autocomplete="off" placeholder="your image URL">
             <button style="width:150px !important;margin-bottom:20px" onclick="CangeProfile()">Save</button>
@@ -613,7 +627,7 @@
 			  </div>			  
             <div id="registration-page" class="hide">
               <h2>SIGN UP</h2>
-             <div style="clear:both"></div>
+             <br><br>
               <label>E-Mail <span style="color:#ff6600">*</span></label>
               <input type="email" id="registration-email" placeholder="E-Mail">
               <label>Confirm E-mail <span style="color:#ff6600">*</span></label> 
@@ -625,12 +639,12 @@
             </div>
             <div id="login-page">
              <h2>SIGN IN</h2>
-              <br><br><br>
+              <br><br>
               <label>E-Mail</label>
               <input type="email" id="login-email" placeholder="E-Mail">
               <label>Password</label>
               <input type="password" id="login-password" placeholder="Password">
-              <button style="width:100% !important;" id="login">Login</button>
+			  <button style="width:100% !important;" id="login">Login</button>
               <br>
               <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
               <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
