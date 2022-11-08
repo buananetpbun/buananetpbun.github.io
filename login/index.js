@@ -1,1 +1,647 @@
-var _0x1945dc=_0x1ed3;(function(_0x30def4,_0x546181){var _0x2e978c=_0x1ed3,_0xe072b3=_0x30def4();while(!![]){try{var _0x234502=parseInt(_0x2e978c(0x18e))/0x1+-parseInt(_0x2e978c(0x152))/0x2+parseInt(_0x2e978c(0x11e))/0x3*(-parseInt(_0x2e978c(0x19a))/0x4)+parseInt(_0x2e978c(0x1a4))/0x5+-parseInt(_0x2e978c(0x161))/0x6*(-parseInt(_0x2e978c(0x132))/0x7)+parseInt(_0x2e978c(0x16e))/0x8*(-parseInt(_0x2e978c(0x172))/0x9)+-parseInt(_0x2e978c(0x153))/0xa*(-parseInt(_0x2e978c(0x192))/0xb);if(_0x234502===_0x546181)break;else _0xe072b3['push'](_0xe072b3['shift']());}catch(_0x35fd2d){_0xe072b3['push'](_0xe072b3['shift']());}}}(_0x3409,0x7da37),window['onload']=function(){createCaptchaSignIn(),createCaptchaSignUp();});var code_signin;function createCaptchaSignIn(){var _0xc69d1c=_0x1ed3;document[_0xc69d1c(0x162)]('captcha-signin')[_0xc69d1c(0x120)]='';var _0x540b28=_0xc69d1c(0x186),_0x4e2e4c=0x4,_0x3fdf1a=[];for(var _0x444b12=0x0;_0x444b12<_0x4e2e4c;_0x444b12++){var _0x53d917=Math['floor'](Math['random']()*_0x540b28[_0xc69d1c(0x146)]);if(_0x3fdf1a['indexOf'](_0x540b28[_0x53d917])==-0x1)_0x3fdf1a['push'](_0x540b28[_0x53d917]);else _0x444b12--;}var _0x5c6f7f=document[_0xc69d1c(0x182)]('canvas');_0x5c6f7f['id']='captcha',_0x5c6f7f[_0xc69d1c(0x149)]=0x96,_0x5c6f7f['height']=0x28;var _0x36a3c3=_0x5c6f7f[_0xc69d1c(0x15f)]('2d');_0x36a3c3[_0xc69d1c(0x195)]='38px\x20verdana';var _0x207331=_0x36a3c3[_0xc69d1c(0x160)](0x0,0x0,_0x5c6f7f['width'],0x0);_0x207331[_0xc69d1c(0x11f)]('0',_0xc69d1c(0x12f)),_0x207331[_0xc69d1c(0x11f)](_0xc69d1c(0x194),'pink'),_0x207331[_0xc69d1c(0x11f)]('1.0',_0xc69d1c(0x1aa)),_0x36a3c3[_0xc69d1c(0x121)]=_0x207331,_0x36a3c3['lineWidth']=0x2,[_0xc69d1c(0x145),_0xc69d1c(0x14b),_0xc69d1c(0x15b)][_0xc69d1c(0x1a5)]((_0x419f37,_0x256f6c)=>{var _0x322daa=_0xc69d1c;_0x36a3c3[_0x322daa(0x11d)]=_0x419f37,_0x36a3c3['beginPath'](),_0x36a3c3['moveTo'](0x0,0x0),_0x36a3c3[_0x322daa(0x119)](0x8c,0x28),_0x36a3c3[_0x322daa(0x197)]();}),_0x36a3c3[_0xc69d1c(0x14a)](_0x3fdf1a['join'](''),0x14,0x23),code_signin=_0x3fdf1a[_0xc69d1c(0x127)](''),document[_0xc69d1c(0x162)](_0xc69d1c(0x16d))[_0xc69d1c(0x170)](_0x5c6f7f);}var code_signup;function createCaptchaSignUp(){var _0x24b90e=_0x1ed3;document['getElementById'](_0x24b90e(0x13c))[_0x24b90e(0x120)]='';var _0x34002c=_0x24b90e(0x186),_0x4c5f99=0x4,_0x16881e=[];for(var _0x45d575=0x0;_0x45d575<_0x4c5f99;_0x45d575++){var _0x24dd75=Math[_0x24b90e(0x112)](Math[_0x24b90e(0x171)]()*_0x34002c['length']);if(_0x16881e[_0x24b90e(0x1a3)](_0x34002c[_0x24dd75])==-0x1)_0x16881e[_0x24b90e(0x114)](_0x34002c[_0x24dd75]);else _0x45d575--;}var _0xf34fbd=document['createElement'](_0x24b90e(0x198));_0xf34fbd['id']=_0x24b90e(0x14d),_0xf34fbd[_0x24b90e(0x149)]=0x96,_0xf34fbd[_0x24b90e(0x140)]=0x28;var _0x2249fa=_0xf34fbd[_0x24b90e(0x15f)]('2d');_0x2249fa[_0x24b90e(0x195)]=_0x24b90e(0x12d);var _0xb61032=_0x2249fa['createLinearGradient'](0x0,0x0,_0xf34fbd[_0x24b90e(0x149)],0x0);_0xb61032[_0x24b90e(0x11f)]('0','magenta'),_0xb61032[_0x24b90e(0x11f)]('0.5','pink'),_0xb61032[_0x24b90e(0x11f)]('1.0',_0x24b90e(0x1aa)),_0x2249fa[_0x24b90e(0x121)]=_0xb61032,_0x2249fa[_0x24b90e(0x190)]=0x2,[_0x24b90e(0x145),_0x24b90e(0x14b),_0x24b90e(0x15b)][_0x24b90e(0x1a5)]((_0x414a60,_0x198538)=>{var _0x46b544=_0x24b90e;_0x2249fa['lineJoin']=_0x414a60,_0x2249fa[_0x46b544(0x128)](),_0x2249fa[_0x46b544(0x178)](0x0,0x0),_0x2249fa['lineTo'](0x8c,0x28),_0x2249fa[_0x46b544(0x197)]();}),_0x2249fa['strokeText'](_0x16881e[_0x24b90e(0x127)](''),0x14,0x23),code_signup=_0x16881e[_0x24b90e(0x127)](''),document[_0x24b90e(0x162)](_0x24b90e(0x13c))[_0x24b90e(0x170)](_0xf34fbd);}document[_0x1945dc(0x12e)](_0x1945dc(0x1a0))['addEventListener'](_0x1945dc(0x1a9),_0x257b33=>{var _0x1048c5=_0x1945dc;event['keyCode']===0xd&&(_0x257b33[_0x1048c5(0x11a)](),login());}),document[_0x1945dc(0x12e)](_0x1945dc(0x199))['addEventListener'](_0x1945dc(0x1a9),_0x5bbb45=>{var _0x1ba168=_0x1945dc;event['keyCode']===0xd&&(_0x5bbb45[_0x1ba168(0x11a)](),register());});var modal_click=document[_0x1945dc(0x12e)](_0x1945dc(0x138)),span_click=document[_0x1945dc(0x13a)]('close')[0x0];function CallModalChangePasswordShow(){var _0x495094=_0x1945dc;document[_0x495094(0x12e)]('#myChangePassword')[_0x495094(0x130)][_0x495094(0x134)]=_0x495094(0x183);}function CallModalChangePasswordHide(){var _0x4a80e9=_0x1945dc;document[_0x4a80e9(0x12e)](_0x4a80e9(0x13e))[_0x4a80e9(0x130)][_0x4a80e9(0x134)]='none';}function CallModalChangeProfileShow(){var _0x4fb3e2=_0x1945dc;document[_0x4fb3e2(0x12e)](_0x4fb3e2(0x18a))[_0x4fb3e2(0x130)][_0x4fb3e2(0x134)]=_0x4fb3e2(0x183),document[_0x4fb3e2(0x12e)](_0x4fb3e2(0x188))[_0x4fb3e2(0x187)]=document[_0x4fb3e2(0x12e)]('#your-name')['innerHTML'],document[_0x4fb3e2(0x12e)](_0x4fb3e2(0x111))['value']=document[_0x4fb3e2(0x12e)]('#myavatar')[_0x4fb3e2(0x176)];}function CallModalChangeProfileHide(){var _0x49bfad=_0x1945dc;document['querySelector'](_0x49bfad(0x18a))[_0x49bfad(0x130)][_0x49bfad(0x134)]=_0x49bfad(0x118);}function _0x3409(){var _0x4f33a9=['#registration-email','emailVerified','sendPasswordResetEmail','❌\x20Enter\x20New\x20Password','❌\x20Invalid\x20Captcha.\x20try\x20Again','#registration-page','miter','✔️\x20Update\x20New\x20Password\x20successfully!\x20Relogin\x20please\x20wait..','✔️\x20Delete\x20Member\x20Accound\x20successfully!\x20Relogin\x20Please\x20Wait..','❌\x20error\x20signing\x20out,\x20check\x20network\x20connection','getContext','createLinearGradient','1278cgGgIQ','getElementById','credential','912166778245','left','location','❌\x20Enter\x20E-mail.','https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png','#dialogoverlay','AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','#email_Verified','https://buananetpbun.github.io/','captcha-signin','9840ulgfUK','classList','appendChild','random','4266ZagqBn','#registration-password','#signout','<i>Information!</i>','src','render2','moveTo','currentUser','hide','signInWithEmailAndPassword','✔️\x20Verification\x20link\x20sent\x20to\x20your\x20email.\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','<button\x20style=\x22width:100px\x22\x20onclick=\x22Confirm.ok()\x22>OK</button><button\x20style=\x22width:100px\x22\x20onclick=\x22Confirm.cancel()\x22>Cancel</button>','✔️\x20Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','#dialogboxfoot','cpatchaTextBoxSignUp','#registration-reemail','createElement','block','add','#your-name','0123456789','value','#profile-name','#dialogbox','#myChangeProfile','reload','#verify','catch','450746tAqPAM','uid','lineWidth','email','44hDhGSI','innerWidth','0.5','font','onclick','stroke','canvas','#cpatchaTextBoxSignUp','4vVZieH','#show-login','#re-new-password','#welcome-email','then','click','#cpatchaTextBoxSignIn','✔️\x20Update\x20Profile\x20successfully!\x20reload\x20page,\x20please\x20wait..','getRedirectResult','indexOf','4615700dWUayn','forEach','buananetpbun-5d979','cpatchaTextBoxSignIn','accessToken','keyup','red','#login-email','<button\x20style=\x22width:100px\x22\x20onclick=\x22Alert.ok()\x22>OK</button>','cancel','#profile-url','floor','updatePassword','push','#profile-email','remove','#login-password','none','lineTo','preventDefault','#homepage','#dialogboxhead','lineJoin','1681899dVpjIA','addColorStop','innerHTML','strokeStyle','delete','#myLogin','render','auth','G-FSDV7HGD99','join','beginPath','#login-page','createUserWithEmailAndPassword','top','100px','38px\x20verdana','querySelector','magenta','style','signInWithPopup','25053EvareB','#show-register','display','\x20❌\x20<span\x20style=\x27color:red;font-weight:bold;\x27>NOT\x20ACTIVATED</span>','innerHeight','sendEmailVerification','#myModal','user','getElementsByClassName','trim','captcha-signup','#login','#myChangePassword','❌\x20Password\x20must\x20be\x20at\x20least\x206\x20characters.','height','❓\x20Are\x20you\x20sure\x20for\x20delete\x20this\x20member\x20account?','code','initializeApp','#dialogboxbody','round','length','#change-pass-button','❌\x20Enter\x20Password.','width','strokeText','bevel','message','captcha','keyCode','\x20✔️\x20<span\x20style=\x27color:#16C60C;font-weight:bold;\x27>ACTIVATED</span>','addEventListener','target','1229266YjFLgv','341720uGvMUS','<i>Confirmation!</i>'];_0x3409=function(){return _0x4f33a9;};return _0x3409();}function callmodal(){var _0x27b448=_0x1945dc;modal_click[_0x27b448(0x130)][_0x27b448(0x134)]=_0x27b448(0x183);}span_click[_0x1945dc(0x196)]=function(){var _0x78657b=_0x1945dc;modal_click['style'][_0x78657b(0x134)]='none';},window[_0x1945dc(0x196)]=function(_0x200035){var _0x5c1b66=_0x1945dc;_0x200035[_0x5c1b66(0x151)]==modal_click&&(modal_click[_0x5c1b66(0x130)][_0x5c1b66(0x134)]=_0x5c1b66(0x118));};var firebaseConfig={'apiKey':_0x1945dc(0x16a),'authDomain':'buananetpbun-5d979.firebaseapp.com','databaseURL':'https://buananetpbun-5d979-default-rtdb.asia-southeast1.firebasedatabase.app','projectId':_0x1945dc(0x1a6),'storageBucket':'buananetpbun-5d979.appspot.com','messagingSenderId':_0x1945dc(0x164),'appId':'1:912166778245:web:c845ec7e720f7bd84580ec','measurementId':_0x1945dc(0x126)};firebase[_0x1945dc(0x143)](firebaseConfig);const auth=firebase['auth'](),user=firebase['auth']()[_0x1945dc(0x179)],provider=new firebase[(_0x1945dc(0x125))]['GoogleAuthProvider']();firebase[_0x1945dc(0x125)]()[_0x1945dc(0x131)](provider)[_0x1945dc(0x19e)](function(_0x1032e4){var _0x363ba4=_0x1945dc,_0x29c7c3=_0x1032e4[_0x363ba4(0x163)][_0x363ba4(0x1a8)],_0x14e334=_0x1032e4[_0x363ba4(0x139)];})[_0x1945dc(0x18d)](function(_0x5e360a){var _0x30e2c=_0x1945dc,_0x53b7fd=_0x5e360a['code'],_0x41ca9b=_0x5e360a[_0x30e2c(0x14c)],_0x3c96af=_0x5e360a[_0x30e2c(0x191)],_0x1ed777=_0x5e360a['credential'];}),firebase[_0x1945dc(0x125)]()[_0x1945dc(0x1a2)]()[_0x1945dc(0x19e)](function(_0x5b77de){var _0x2a5549=_0x1945dc;if(_0x5b77de[_0x2a5549(0x163)])var _0x3f9d5d=_0x5b77de[_0x2a5549(0x163)][_0x2a5549(0x1a8)];var _0x2f5026=_0x5b77de[_0x2a5549(0x139)];})[_0x1945dc(0x18d)](function(_0x256bf8){var _0x14cf90=_0x1945dc,_0x1cb45f=_0x256bf8[_0x14cf90(0x142)],_0x171e26=_0x256bf8[_0x14cf90(0x14c)],_0x4b3f88=_0x256bf8[_0x14cf90(0x191)],_0x183e10=_0x256bf8[_0x14cf90(0x163)];}),document[_0x1945dc(0x12e)]('#google-sign-in')[_0x1945dc(0x150)](_0x1945dc(0x19f),()=>{var _0x164565=_0x1945dc;firebase[_0x164565(0x125)]()['signInWithPopup'](provider)[_0x164565(0x19e)](_0xd72ab9=>{})[_0x164565(0x18d)](_0x3e0e28=>{});}),document[_0x1945dc(0x12e)]('#verify')[_0x1945dc(0x150)]('click',()=>{var _0x2fcd63=_0x1945dc,_0x3921f7={'url':_0x2fcd63(0x16c),'handleCodeInApp':![]};firebase[_0x2fcd63(0x125)]()[_0x2fcd63(0x179)][_0x2fcd63(0x137)](_0x3921f7)[_0x2fcd63(0x19e)](function(){var _0x5ab3e2=_0x2fcd63;Alert['render'](_0x5ab3e2(0x17c));})[_0x2fcd63(0x18d)](function(_0x53170c){var _0x569162=_0x2fcd63,_0x30e257=_0x53170c[_0x569162(0x142)],_0x2995a6=_0x53170c[_0x569162(0x14c)];Alert[_0x569162(0x124)]('❌\x20'+_0x2995a6);});}),firebase[_0x1945dc(0x125)]()['onAuthStateChanged'](_0x29f928=>{var _0x1f610a=_0x1945dc;_0x29f928?(document['querySelector']('#myProfile')[_0x1f610a(0x130)][_0x1f610a(0x134)]='block',document[_0x1f610a(0x12e)]('#user-id')['innerHTML']=firebase[_0x1f610a(0x125)]()[_0x1f610a(0x179)][_0x1f610a(0x18f)],document['querySelector'](_0x1f610a(0x19d))['innerHTML']=firebase[_0x1f610a(0x125)]()[_0x1f610a(0x179)][_0x1f610a(0x191)],document[_0x1f610a(0x12e)](_0x1f610a(0x115))[_0x1f610a(0x120)]=firebase[_0x1f610a(0x125)]()['currentUser']['email'],document[_0x1f610a(0x12e)](_0x1f610a(0x185))[_0x1f610a(0x120)]=firebase[_0x1f610a(0x125)]()[_0x1f610a(0x179)]['displayName'],document['querySelector']('#myavatar')['src']=firebase[_0x1f610a(0x125)]()[_0x1f610a(0x179)]['photoURL'],firebase[_0x1f610a(0x125)]()[_0x1f610a(0x179)]['photoURL']==null&&(document[_0x1f610a(0x12e)]('#myavatar')[_0x1f610a(0x176)]=_0x1f610a(0x168)),firebase[_0x1f610a(0x125)]()['currentUser'][_0x1f610a(0x156)]==!![]?(document[_0x1f610a(0x12e)](_0x1f610a(0x18c))[_0x1f610a(0x130)][_0x1f610a(0x134)]='none',document[_0x1f610a(0x12e)](_0x1f610a(0x16b))[_0x1f610a(0x120)]=_0x1f610a(0x14f)):document[_0x1f610a(0x12e)](_0x1f610a(0x16b))[_0x1f610a(0x120)]=_0x1f610a(0x135)):document[_0x1f610a(0x12e)](_0x1f610a(0x123))[_0x1f610a(0x130)][_0x1f610a(0x134)]=_0x1f610a(0x183);}),document[_0x1945dc(0x12e)]('#show-register')['addEventListener'](_0x1945dc(0x19f),()=>{showRegistration();});const showRegistration=()=>{var _0x3556c4=_0x1945dc;document[_0x3556c4(0x12e)]('#registration-page')['classList'][_0x3556c4(0x116)](_0x3556c4(0x17a)),document[_0x3556c4(0x12e)]('#login-page')[_0x3556c4(0x16f)][_0x3556c4(0x184)](_0x3556c4(0x17a)),document['querySelector'](_0x3556c4(0x11b))[_0x3556c4(0x16f)]['add'](_0x3556c4(0x17a)),document['querySelector'](_0x3556c4(0x19b))['classList'][_0x3556c4(0x116)]('hide'),document[_0x3556c4(0x12e)](_0x3556c4(0x133))['classList'][_0x3556c4(0x184)](_0x3556c4(0x17a));};document[_0x1945dc(0x12e)](_0x1945dc(0x19b))['addEventListener'](_0x1945dc(0x19f),()=>{showLogin();});const showLogin=()=>{var _0x59a882=_0x1945dc;document[_0x59a882(0x12e)](_0x59a882(0x15a))[_0x59a882(0x16f)][_0x59a882(0x184)](_0x59a882(0x17a)),document[_0x59a882(0x12e)](_0x59a882(0x129))[_0x59a882(0x16f)][_0x59a882(0x116)](_0x59a882(0x17a)),document[_0x59a882(0x12e)](_0x59a882(0x11b))[_0x59a882(0x16f)][_0x59a882(0x184)](_0x59a882(0x17a)),document[_0x59a882(0x12e)](_0x59a882(0x19b))[_0x59a882(0x16f)][_0x59a882(0x184)](_0x59a882(0x17a)),document['querySelector'](_0x59a882(0x133))[_0x59a882(0x16f)][_0x59a882(0x116)](_0x59a882(0x17a));};document['querySelector'](_0x1945dc(0x174))[_0x1945dc(0x150)](_0x1945dc(0x19f),()=>{signOut();});function _0x1ed3(_0x3b5f87,_0x283990){var _0x340983=_0x3409();return _0x1ed3=function(_0x1ed376,_0x1e8dc6){_0x1ed376=_0x1ed376-0x111;var _0x567b98=_0x340983[_0x1ed376];return _0x567b98;},_0x1ed3(_0x3b5f87,_0x283990);}const register=()=>{var _0x440e07=_0x1945dc;const _0x406132=document[_0x440e07(0x12e)](_0x440e07(0x155))[_0x440e07(0x187)],_0x2bf030=document[_0x440e07(0x12e)](_0x440e07(0x181))[_0x440e07(0x187)],_0x3a3daf=document[_0x440e07(0x12e)](_0x440e07(0x173))[_0x440e07(0x187)];if(_0x406132[_0x440e07(0x13b)]()=='')Alert['render'](_0x440e07(0x167));else{if(_0x3a3daf['trim']()[_0x440e07(0x146)]<0x6)Alert[_0x440e07(0x124)](_0x440e07(0x13f));else _0x406132!=_0x2bf030?Alert[_0x440e07(0x124)]('❌\x20emails\x20do\x20not\x20match.'):(event[_0x440e07(0x11a)](),document[_0x440e07(0x162)](_0x440e07(0x180))[_0x440e07(0x187)]==code_signup?auth[_0x440e07(0x12a)](_0x406132,_0x3a3daf)[_0x440e07(0x18d)](function(_0x519432){var _0x2b67b3=_0x440e07,_0x332be9=_0x519432['code'],_0x2ca126=_0x519432[_0x2b67b3(0x14c)];Alert['render']('❌\x20'+_0x2ca126);}):(Alert['render'](_0x440e07(0x159)),createCaptchaSignUp(),document[_0x440e07(0x162)](_0x440e07(0x180))['value']=''));}};document['querySelector']('#register')[_0x1945dc(0x150)](_0x1945dc(0x19f),()=>{register();}),document[_0x1945dc(0x12e)]('#registration-password')[_0x1945dc(0x150)](_0x1945dc(0x1a9),_0x2bd648=>{var _0x373f9f=_0x1945dc;event[_0x373f9f(0x14e)]===0xd&&(_0x2bd648[_0x373f9f(0x11a)](),register());});const login=()=>{var _0x5c4acc=_0x1945dc;const _0x27a238=document[_0x5c4acc(0x12e)](_0x5c4acc(0x1ab))[_0x5c4acc(0x187)],_0x1e1031=document[_0x5c4acc(0x12e)](_0x5c4acc(0x117))[_0x5c4acc(0x187)];if(_0x27a238['trim']()=='')Alert['render']('❌\x20Enter\x20E-mail.');else _0x1e1031['trim']()==''?Alert[_0x5c4acc(0x124)](_0x5c4acc(0x148)):(event[_0x5c4acc(0x11a)](),document['getElementById']('cpatchaTextBoxSignIn')['value']==code_signin?authenticate(_0x27a238,_0x1e1031):(Alert[_0x5c4acc(0x124)](_0x5c4acc(0x159)),document[_0x5c4acc(0x162)](_0x5c4acc(0x1a7))['value']='',createCaptchaSignIn()));};document[_0x1945dc(0x12e)](_0x1945dc(0x13d))[_0x1945dc(0x150)](_0x1945dc(0x19f),()=>{login();}),document[_0x1945dc(0x12e)]('#login-password')[_0x1945dc(0x150)](_0x1945dc(0x1a9),_0x1a23a3=>{var _0x2576aa=_0x1945dc;event[_0x2576aa(0x14e)]===0xd&&(_0x1a23a3['preventDefault'](),login());});const authenticate=(_0x2d8e6b,_0x54c0c5)=>{var _0x467639=_0x1945dc;const _0x532b7e=firebase['auth']();_0x532b7e[_0x467639(0x17b)](_0x2d8e6b,_0x54c0c5),firebase[_0x467639(0x125)]()[_0x467639(0x17b)](_0x2d8e6b,_0x54c0c5)['catch'](function(_0x2634d3){var _0x18d451=_0x467639,_0x55ac9d=_0x2634d3['code'],_0x207d8a=_0x2634d3[_0x18d451(0x14c)];Alert[_0x18d451(0x124)]('❌\x20'+_0x207d8a);});},showHomepage=()=>{var _0x34a770=_0x1945dc;document[_0x34a770(0x12e)]('#registration-page')[_0x34a770(0x16f)]['add']('hide'),document[_0x34a770(0x12e)](_0x34a770(0x129))[_0x34a770(0x16f)][_0x34a770(0x184)](_0x34a770(0x17a)),document[_0x34a770(0x12e)](_0x34a770(0x11b))[_0x34a770(0x16f)][_0x34a770(0x116)](_0x34a770(0x17a)),document[_0x34a770(0x12e)](_0x34a770(0x123))[_0x34a770(0x130)][_0x34a770(0x134)]='none';},signOut=()=>{var _0x32121c=_0x1945dc;firebase[_0x32121c(0x125)]()['signOut']()[_0x32121c(0x19e)](function(){var _0x41b7cb=_0x32121c;location[_0x41b7cb(0x18b)]();})['catch'](function(_0x27411e){var _0x5858fe=_0x32121c;Alert[_0x5858fe(0x124)](_0x5858fe(0x15e));});};auth['onAuthStateChanged'](_0x4d24ee=>{_0x4d24ee&&showHomepage();}),document[_0x1945dc(0x12e)]('#forgot-password')['addEventListener'](_0x1945dc(0x19f),()=>{var _0x4488ed=_0x1945dc;const _0x3ad0ea=document[_0x4488ed(0x12e)](_0x4488ed(0x1ab))[_0x4488ed(0x187)];_0x3ad0ea['trim']()==''?Alert[_0x4488ed(0x124)]('❌\x20Enter\x20Your\x20E-mail.'):forgotPassword(_0x3ad0ea);});const forgotPassword=_0x5cb50c=>{var _0x2699f5=_0x1945dc;auth[_0x2699f5(0x157)](_0x5cb50c)[_0x2699f5(0x19e)](function(){var _0x2e6304=_0x2699f5;Alert[_0x2e6304(0x124)](_0x2e6304(0x17e));})[_0x2699f5(0x18d)](function(_0x181091){var _0x3fcfe5=_0x2699f5;Alert[_0x3fcfe5(0x124)]('❌\x20invalid\x20e-mail\x20or\x20bad\x20network\x20connection.');});};document[_0x1945dc(0x12e)](_0x1945dc(0x147))['addEventListener'](_0x1945dc(0x19f),()=>{CangePassword();});const CangePassword=()=>{var _0x453518=_0x1945dc;const _0xc78e2f=firebase['auth']()[_0x453518(0x179)],_0x40ff9f=document[_0x453518(0x12e)]('#new-password')[_0x453518(0x187)],_0x5d0b68=document[_0x453518(0x12e)](_0x453518(0x19c))[_0x453518(0x187)];if(_0x40ff9f[_0x453518(0x13b)]()=='')Alert[_0x453518(0x124)](_0x453518(0x158));else{if(_0x40ff9f[_0x453518(0x13b)]()[_0x453518(0x146)]<0x6)Alert[_0x453518(0x124)](_0x453518(0x13f));else _0x40ff9f!=_0x5d0b68?Alert['render']('❌\x20New\x20Password\x20do\x20not\x20match.'):_0xc78e2f[_0x453518(0x113)](_0x40ff9f)[_0x453518(0x19e)](function(){var _0xc67337=_0x453518;document['querySelector'](_0xc67337(0x13e))[_0xc67337(0x130)]['display']='none',Alert[_0xc67337(0x124)](_0xc67337(0x15c)),setTimeout(signOut,0x2710);})[_0x453518(0x18d)](_0xe0e9df=>{var _0x1bd2fb=_0x453518,_0xc1c748=_0xe0e9df[_0x1bd2fb(0x142)],_0x5b0898=_0xe0e9df[_0x1bd2fb(0x14c)];Alert['render']('❌\x20'+_0x5b0898);});}},CangeProfile=()=>{var _0xf00f87=_0x1945dc;const _0x33f803=firebase['auth']()[_0xf00f87(0x179)],_0x170b8e=document[_0xf00f87(0x12e)](_0xf00f87(0x188))[_0xf00f87(0x187)],_0x4b9b65=document['querySelector'](_0xf00f87(0x111))['value'];_0x33f803['updateProfile']({'displayName':_0x170b8e,'photoURL':_0x4b9b65})[_0xf00f87(0x19e)](function(){var _0x468212=_0xf00f87;document[_0x468212(0x12e)](_0x468212(0x18a))[_0x468212(0x130)][_0x468212(0x134)]=_0x468212(0x118),Alert[_0x468212(0x124)](_0x468212(0x1a1)),setTimeout(()=>{var _0xe134c4=_0x468212;document[_0xe134c4(0x166)][_0xe134c4(0x18b)]();},0x1388);})['catch'](_0x1df5c5=>{var _0x5f2900=_0xf00f87,_0x2450a7=_0x1df5c5['code'],_0x5f0602=_0x1df5c5[_0x5f2900(0x14c)];Alert[_0x5f2900(0x124)]('❌\x20'+_0x5f0602);});},DeleteMember=()=>{var _0x473756=_0x1945dc;Confirm[_0x473756(0x177)](_0x473756(0x141));};function CustomAlert(){var _0x571cb2=_0x1945dc;this[_0x571cb2(0x124)]=function(_0x407104){var _0x3a1503=_0x571cb2,_0x59425f=window[_0x3a1503(0x193)],_0x4d51bd=window['innerHeight'],_0x254edc=document[_0x3a1503(0x12e)](_0x3a1503(0x169)),_0xefba12=document[_0x3a1503(0x12e)](_0x3a1503(0x189));_0x254edc[_0x3a1503(0x130)][_0x3a1503(0x134)]=_0x3a1503(0x183),_0x254edc[_0x3a1503(0x130)][_0x3a1503(0x140)]=_0x4d51bd+'px',_0xefba12['style'][_0x3a1503(0x165)]=_0x59425f/0x2-0x226*0.5+'px',_0xefba12[_0x3a1503(0x130)]['top']='100px',_0xefba12[_0x3a1503(0x130)]['display']='block',document[_0x3a1503(0x12e)](_0x3a1503(0x11c))['innerHTML']=_0x3a1503(0x175),document['querySelector'](_0x3a1503(0x144))['innerHTML']=_0x407104,document[_0x3a1503(0x12e)](_0x3a1503(0x17f))[_0x3a1503(0x120)]=_0x3a1503(0x1ac);},this['ok']=function(){var _0x15da93=_0x571cb2;document['querySelector'](_0x15da93(0x189))[_0x15da93(0x130)]['display']=_0x15da93(0x118),document[_0x15da93(0x12e)](_0x15da93(0x169))[_0x15da93(0x130)]['display']=_0x15da93(0x118);};}var Alert=new CustomAlert();function CustomConfirm(){var _0x52ed88=_0x1945dc;this[_0x52ed88(0x177)]=function(_0x58e401){var _0x4aac6d=_0x52ed88,_0x523f30=window[_0x4aac6d(0x193)],_0x216237=window[_0x4aac6d(0x136)],_0x517e9f=document[_0x4aac6d(0x12e)](_0x4aac6d(0x169)),_0x96c33=document['querySelector'](_0x4aac6d(0x189));_0x517e9f[_0x4aac6d(0x130)]['display']=_0x4aac6d(0x183),_0x517e9f[_0x4aac6d(0x130)][_0x4aac6d(0x140)]=_0x216237+'px',_0x96c33[_0x4aac6d(0x130)][_0x4aac6d(0x165)]=_0x523f30/0x2-0x226*0.5+'px',_0x96c33[_0x4aac6d(0x130)][_0x4aac6d(0x12b)]=_0x4aac6d(0x12c),_0x96c33['style']['display']=_0x4aac6d(0x183),document[_0x4aac6d(0x12e)](_0x4aac6d(0x11c))['innerHTML']=_0x4aac6d(0x154),document['querySelector']('#dialogboxbody')[_0x4aac6d(0x120)]=_0x58e401,document[_0x4aac6d(0x12e)]('#dialogboxfoot')[_0x4aac6d(0x120)]=_0x4aac6d(0x17d);},this['ok']=function(){var _0x221248=_0x52ed88;document[_0x221248(0x12e)](_0x221248(0x189))[_0x221248(0x130)][_0x221248(0x134)]=_0x221248(0x118),document[_0x221248(0x12e)](_0x221248(0x169))['style'][_0x221248(0x134)]=_0x221248(0x118);const _0x24b42e=firebase[_0x221248(0x125)]()[_0x221248(0x179)];_0x24b42e[_0x221248(0x122)]()[_0x221248(0x19e)](()=>{var _0x433190=_0x221248;Alert[_0x433190(0x124)](_0x433190(0x15d)),setTimeout(signOut,0x2710);})[_0x221248(0x18d)](_0x51aa6f=>{var _0x5bef04=_0x221248,_0x35ed9=_0x51aa6f[_0x5bef04(0x142)],_0x293e87=_0x51aa6f[_0x5bef04(0x14c)];Alert['render']('❌\x20'+_0x293e87);});;},this[_0x52ed88(0x1ad)]=function(){var _0x13da2f=_0x52ed88;return document[_0x13da2f(0x12e)](_0x13da2f(0x189))[_0x13da2f(0x130)][_0x13da2f(0x134)]='none',document['querySelector'](_0x13da2f(0x169))[_0x13da2f(0x130)][_0x13da2f(0x134)]=_0x13da2f(0x118),![];};}var Confirm=new CustomConfirm();
+window.onload = function() {
+    createCaptchaSignIn();
+	createCaptchaSignUp();
+}
+
+var code_signin;
+function createCaptchaSignIn() {
+  //clear the contents of captcha div first 
+  document.getElementById('captcha-signin').innerHTML = "";
+  var charsArray =
+  "0123456789";
+  var lengthOtp = 4;
+  var captcha = [];
+  for (var i = 0; i < lengthOtp; i++) {
+    //below code will not allow Repetition of Characters
+    var index = Math.floor(Math.random() * charsArray.length); //get the next character from the array
+    if (captcha.indexOf(charsArray[index]) == -1)
+      captcha.push(charsArray[index]);
+    else i--;
+  }
+  var canv = document.createElement("canvas");
+  canv.id = "captcha";
+  canv.width = 150;
+  canv.height = 40;
+  var ctx = canv.getContext("2d");
+   ctx.font = "38px verdana";
+
+
+// Create gradient
+var gradient = ctx.createLinearGradient(0, 0, canv.width, 0);
+gradient.addColorStop("0", "magenta");
+gradient.addColorStop("0.5", "pink");
+gradient.addColorStop("1.0", "red");
+
+// Fill with gradient
+ctx.strokeStyle = gradient;
+ctx.lineWidth = 2;
+["round", "bevel", "miter"].forEach((join, i) => {
+  ctx.lineJoin = join;
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(140, 40);
+  ctx.stroke();
+});
+
+ ctx.strokeText(captcha.join(""), 20, 35);
+
+  //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+  code_signin = captcha.join("");
+  document.getElementById("captcha-signin").appendChild(canv); // adds the canvas to the body element
+}
+
+var code_signup;
+function createCaptchaSignUp() {
+  //clear the contents of captcha div first 
+  document.getElementById('captcha-signup').innerHTML = "";
+  var charsArray =
+  "0123456789";
+  var lengthOtp = 4;
+  var captcha = [];
+  for (var i = 0; i < lengthOtp; i++) {
+    //below code will not allow Repetition of Characters
+    var index = Math.floor(Math.random() * charsArray.length); //get the next character from the array
+    if (captcha.indexOf(charsArray[index]) == -1)
+      captcha.push(charsArray[index]);
+    else i--;
+  }
+  var canv = document.createElement("canvas");
+  canv.id = "captcha";
+  canv.width = 150;
+  canv.height = 40;
+  var ctx = canv.getContext("2d");
+   ctx.font = "38px verdana";
+
+
+// Create gradient
+var gradient = ctx.createLinearGradient(0, 0, canv.width, 0);
+gradient.addColorStop("0", "magenta");
+gradient.addColorStop("0.5", "pink");
+gradient.addColorStop("1.0", "red");
+
+// Fill with gradient
+ctx.strokeStyle = gradient;
+ctx.lineWidth = 2;
+["round", "bevel", "miter"].forEach((join, i) => {
+  ctx.lineJoin = join;
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(140, 40);
+  ctx.stroke();
+});
+
+ ctx.strokeText(captcha.join(""), 20, 35);
+  
+  //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+  code_signup = captcha.join("");
+  document.getElementById("captcha-signup").appendChild(canv); // adds the canvas to the body element
+}
+
+document.querySelector("#cpatchaTextBoxSignIn").addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      login();
+    }
+  });
+  
+document.querySelector("#cpatchaTextBoxSignUp").addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      register();
+    }
+  });  
+  
+var modal_click = document.querySelector("#myModal");
+var span_click = document.getElementsByClassName("close")[0];
+
+
+function CallModalChangePasswordShow() {
+  document.querySelector("#myChangePassword").style.display = "block";
+}
+
+function CallModalChangePasswordHide() {
+  document.querySelector("#myChangePassword").style.display = "none";
+}
+
+function CallModalChangeProfileShow() {
+  document.querySelector("#myChangeProfile").style.display = "block";
+  document.querySelector("#profile-name").value = document.querySelector("#your-name").innerHTML
+  document.querySelector("#profile-url").value = document.querySelector("#myavatar").src
+}
+
+function CallModalChangeProfileHide() {
+  document.querySelector("#myChangeProfile").style.display = "none";
+}
+
+function callmodal() {
+  modal_click.style.display = "block";
+}
+span_click.onclick = function () {
+  modal_click.style.display = "none";
+}
+
+window.onclick = function (event) {
+
+  if (event.target == modal_click) {
+    modal_click.style.display = "none";
+  }
+}
+
+
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
+  authDomain: "buananetpbun-5d979.firebaseapp.com",
+  databaseURL: "https://buananetpbun-5d979-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "buananetpbun-5d979",
+  storageBucket: "buananetpbun-5d979.appspot.com",
+  messagingSenderId: "912166778245",
+  appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
+  measurementId: "G-FSDV7HGD99"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+//invokes firebase authentication.
+const auth = firebase.auth();
+
+const user = firebase.auth().currentUser;
+
+const provider = new firebase.auth.GoogleAuthProvider();
+
+
+//const newPassword = firebase.auth().getASecureRandomPassword;
+
+
+//const rmCheck = document.getElementById("rememberMe"), emailInput = document.getElementById("login-email"), passInput = document.getElementById("login-password"); ;
+
+//if (localStorage.checkbox && localStorage.checkbox !== "") {
+ // rmCheck.setAttribute("checked", "checked");
+ // emailInput.value = localStorage.username;
+ // passInput.value = localStorage.password;
+//} else {
+//  rmCheck.removeAttribute("checked");
+ // emailInput.value = "";
+ // passInput.value = "";
+//}
+
+//function lsRememberMe() {
+  //if (rmCheck.checked && emailInput.value !== "") {
+  //  localStorage.username = emailInput.value;
+	//localStorage.password = passInput.value;
+   // localStorage.checkbox = rmCheck.value;
+ // } else {
+ //   localStorage.username = "";
+//	localStorage.password = "";
+  //  localStorage.checkbox = "";
+ // }
+//}
+  
+
+
+firebase.auth().signInWithPopup(provider).then(function (result) {
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  // ...
+}).catch(function (error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+
+
+firebase.auth().getRedirectResult().then(function (result) {
+  if (result.credential) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // ...
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function (error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+
+
+document.querySelector("#google-sign-in").addEventListener("click", () => {
+  firebase.auth().signInWithPopup(provider).then(res => {}).catch(e => {})
+});
+
+
+document.querySelector("#verify").addEventListener("click", () => {
+  var actionCodeSettings = {
+    // After email is verified, the user will be give the ability to go back
+    // to the sign-in page.
+    url: 'https://buananetpbun.github.io/',
+    handleCodeInApp: false
+  };
+  firebase.auth().currentUser.sendEmailVerification(actionCodeSettings)
+    .then(function () {
+      // Verification email sent.
+      Alert.render("✔️ Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
+    })
+    .catch(function (error) {
+      // Error occurred. Inspect error.code.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      Alert.render('❌ ' + errorMessage);
+    });
+
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+	
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    
+
+	//const uid = user.uid;
+   // const email = user.email;
+    //const emailVerified = user.emailVerified;
+    //const photoUrl = user.photoUrl;
+    //const displayName = user.displayName;
+   // const phoneNumber = user.phoneNumber;
+	
+    document.querySelector("#myProfile").style.display = "block";
+	
+    document.querySelector('#user-id').innerHTML = firebase.auth().currentUser.uid;
+    document.querySelector('#welcome-email').innerHTML = firebase.auth().currentUser.email;
+	document.querySelector('#profile-email').innerHTML = firebase.auth().currentUser.email;
+	document.querySelector('#your-name').innerHTML = firebase.auth().currentUser.displayName;
+    document.querySelector('#myavatar').src = firebase.auth().currentUser.photoURL;
+	
+    
+
+
+if (firebase.auth().currentUser.photoURL == null) {
+document.querySelector('#myavatar').src = "https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png";
+}
+
+    if (firebase.auth().currentUser.emailVerified == true) {
+      document.querySelector("#verify").style.display = "none"
+      document.querySelector('#email_Verified').innerHTML = " ✔️ <span style='color:#16C60C;font-weight:bold;'>ACTIVATED</span>"
+
+    } else {
+      document.querySelector('#email_Verified').innerHTML = " ❌ <span style='color:red;font-weight:bold;'>NOT ACTIVATED</span>"
+
+    }
+
+  } else {
+    document.querySelector("#myLogin").style.display = "block";
+  }
+});
+
+
+document.querySelector("#show-register").addEventListener("click", () => {
+  showRegistration();
+});
+
+
+const showRegistration = () => {
+  document.querySelector("#registration-page").classList.remove("hide");
+  document.querySelector("#login-page").classList.add("hide");
+  document.querySelector("#homepage").classList.add("hide");
+  document.querySelector("#show-login").classList.remove("hide");
+  document.querySelector("#show-register").classList.add("hide");
+};
+
+document.querySelector("#show-login").addEventListener("click", () => {
+  showLogin();
+});
+
+const showLogin = () => {
+  document.querySelector("#registration-page").classList.add("hide");
+  document.querySelector("#login-page").classList.remove("hide");
+  document.querySelector("#homepage").classList.add("hide");
+  document.querySelector("#show-login").classList.add("hide");
+  document.querySelector("#show-register").classList.remove("hide");
+};
+
+document.querySelector("#signout").addEventListener("click", () => {
+  signOut();
+});
+
+
+const register = () => {
+  const email = document.querySelector("#registration-email").value;
+  const reemail = document.querySelector("#registration-reemail").value;
+  const password = document.querySelector("#registration-password").value;
+
+  if (email.trim() == "") {
+    Alert.render("❌ Enter E-mail.");
+  } else if (password.trim().length < 6) {
+    Alert.render("❌ Password must be at least 6 characters.");
+  } else if (email != reemail) {
+    Alert.render("❌ emails do not match.");
+  } else {
+    
+	event.preventDefault();
+
+  if (document.getElementById("cpatchaTextBoxSignUp").value == code_signup) {
+   // alert("Valid Captcha")
+   auth
+      .createUserWithEmailAndPassword(email, password)
+	  .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        Alert.render('❌ ' + errorMessage);
+        // ...
+      });
+  }else{
+	  Alert.render('❌ Invalid Captcha. try Again');
+	createCaptchaSignUp();
+	 document.getElementById('cpatchaTextBoxSignUp').value = "";
+  }
+	
+	
+	
+
+
+  }
+};
+
+document.querySelector("#register").addEventListener("click", () => {
+  register();
+});
+
+//register when you hit the enter key
+document
+  .querySelector("#registration-password")
+  .addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      register();
+    }
+  });
+
+
+const login = () => {
+  const email = document.querySelector("#login-email").value;
+  const password = document.querySelector("#login-password").value;
+
+  if (email.trim() == "") {
+    Alert.render("❌ Enter E-mail.");
+  } else if (password.trim() == "") {
+    Alert.render("❌ Enter Password.");
+  } else {
+
+      event.preventDefault();
+
+  if (document.getElementById("cpatchaTextBoxSignIn").value == code_signin) {
+   // alert("Valid Captcha")
+   authenticate(email, password);
+  }else{
+	  Alert.render('❌ Invalid Captcha. try Again');
+	  document.getElementById('cpatchaTextBoxSignIn').value = "";
+    createCaptchaSignIn();
+  }
+	
+	
+	//lsRememberMe()
+	
+  }
+};
+
+
+  
+document.querySelector("#login").addEventListener("click", () => {
+  login();
+});
+
+//sign in when you hit enter
+document
+  .querySelector("#login-password")
+  .addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      login();
+    }
+  });
+
+const authenticate = (email, password) => {
+  const auth = firebase.auth();
+  auth.signInWithEmailAndPassword(email, password);
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      Alert.render('❌ ' + errorMessage);
+    });
+};
+
+const showHomepage = () => {
+  document.querySelector("#registration-page").classList.add("hide");
+  document.querySelector("#login-page").classList.add("hide");
+  document.querySelector("#homepage").classList.remove("hide");
+  document.querySelector("#myLogin").style.display = "none";
+};
+
+const signOut = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(function () {
+      location.reload();
+	 // location.href = 'https://buananetpbun.github.io'
+    })
+    .catch(function (error) {
+      Alert.render("❌ error signing out, check network connection");
+    });
+};
+
+auth.onAuthStateChanged((firebaseUser) => {
+  if (firebaseUser) {
+    showHomepage();
+  }
+});
+
+document
+  .querySelector("#forgot-password")
+  .addEventListener("click", () => {
+    const email = document.querySelector("#login-email").value;
+    if (email.trim() == "") {
+      Alert.render("❌ Enter Your E-mail.");
+    } else {
+      forgotPassword(email);
+    }
+  });
+
+const forgotPassword = (email) => {
+  auth
+    .sendPasswordResetEmail(email)
+    .then(function () {
+      Alert.render("✔️ Send to your e-mail successfully! if you don't see it, please check your mail inbox in spam folder.");
+    })
+    .catch(function (error) {
+      Alert.render("❌ invalid e-mail or bad network connection.");
+    });
+};
+
+
+document.querySelector("#change-pass-button").addEventListener("click", () => {
+  CangePassword();
+});
+
+const CangePassword = () => {
+  const user = firebase.auth().currentUser;
+  const newpassword = document.querySelector("#new-password").value;
+  const renewpassword = document.querySelector("#re-new-password").value;
+
+  if (newpassword.trim() == "") {
+    Alert.render("❌ Enter New Password");
+  } else if (newpassword.trim().length < 6) {
+    Alert.render("❌ Password must be at least 6 characters.");
+  } else if (newpassword != renewpassword) {
+    Alert.render("❌ New Password do not match.");
+  } else {
+    user.updatePassword(newpassword)
+      .then(function () {
+        document.querySelector("#myChangePassword").style.display = "none";
+        Alert.render("✔️ Update New Password successfully! Relogin please wait..");
+        setTimeout(signOut, 10000)
+      })
+      // Update successful.
+
+      .catch((error) => {
+        // An error ocurred
+        // ...
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        Alert.render('❌ ' + errorMessage);
+        // ...
+      });
+
+  }
+};
+
+
+const CangeProfile = () => {
+	const user = firebase.auth().currentUser;
+  const profilename = document.querySelector("#profile-name").value;
+  //const profilephone = document.querySelector("#profile-phone").value;
+  const profileurl = document.querySelector("#profile-url").value;
+
+         user.updateProfile({
+            displayName: profilename,
+            photoURL: profileurl,
+         	//phoneNumber: profilephone,	
+        })
+
+      .then(function () {
+        document.querySelector("#myChangeProfile").style.display = "none";
+        Alert.render("✔️ Update Profile successfully! reload page, please wait..");
+        setTimeout(() => {document.location.reload();}, 5000);
+
+      })
+      // Update successful.
+
+      .catch((error) => {
+        // An error ocurred
+        // ...
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        Alert.render('❌ ' + errorMessage);
+        // ...
+      });
+
+ 
+};
+
+
+const DeleteMember = () => {
+
+
+  Confirm.render2("❓ Are you sure for delete this member account?");
+
+
+};
+
+
+function CustomAlert() {
+  this.render = function (dialog) {
+    var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var dialogoverlay = document.querySelector('#dialogoverlay');
+    var dialogbox = document.querySelector('#dialogbox');
+    dialogoverlay.style.display = "block";
+    dialogoverlay.style.height = winH + "px";
+    dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
+    dialogbox.style.top = "100px";
+    dialogbox.style.display = "block";
+    document.querySelector('#dialogboxhead').innerHTML = "<i>Information!</i>";
+    document.querySelector('#dialogboxbody').innerHTML = dialog;
+    document.querySelector('#dialogboxfoot').innerHTML = '<button style="width:100px" onclick="Alert.ok()">OK</button>';
+  }
+  this.ok = function () {
+    document.querySelector('#dialogbox').style.display = "none";
+    document.querySelector('#dialogoverlay').style.display = "none";
+  }
+}
+var Alert = new CustomAlert();
+
+
+function CustomConfirm() {
+  this.render2 = function (dialog) {
+    var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var dialogoverlay = document.querySelector('#dialogoverlay');
+    var dialogbox = document.querySelector('#dialogbox');
+    dialogoverlay.style.display = "block";
+    dialogoverlay.style.height = winH + "px";
+    dialogbox.style.left = (winW / 2) - (380 * .5) + "px";
+    dialogbox.style.top = "100px";
+    dialogbox.style.display = "block";
+    document.querySelector('#dialogboxhead').innerHTML = "<i>Confirmation!</i>";
+    document.querySelector('#dialogboxbody').innerHTML = dialog;
+    document.querySelector('#dialogboxfoot').innerHTML = '<button style="width:100px" onclick="Confirm.ok()">OK</button><button style="width:100px" onclick="Confirm.cancel()">Cancel</button>';
+  }
+  this.ok = function () {
+    document.querySelector('#dialogbox').style.display = "none";
+    document.querySelector('#dialogoverlay').style.display = "none";
+    const user = firebase.auth().currentUser;
+
+    user.delete().then(() => {
+      // User deleted.
+      Alert.render("✔️ Delete Member Accound successfully! Relogin Please Wait..");
+      setTimeout(signOut, 10000)
+	  
+    }).catch((error) => {
+      // An error ocurred
+      // ...
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      Alert.render('❌ ' + errorMessage);
+    });;
+  }
+  this.cancel = function () {
+    document.querySelector('#dialogbox').style.display = "none";
+    document.querySelector('#dialogoverlay').style.display = "none";
+    return false
+  }
+}
+
+var Confirm = new CustomConfirm();
+
+
