@@ -15,7 +15,7 @@
 	position: fixed;
 	background: #000;
 	border-radius: 5px;
-	width: 530px;
+	width: 380px;
 	z-index: 10;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
@@ -36,7 +36,7 @@
 }
 
 #dialogbox>div>#dialogboxbody {
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 15px;
 	padding: 20px;
 	color: #ccc;
@@ -237,7 +237,7 @@
 	/* Black w/ opacity */
 	text-align: center;
 	color: #fff;
-	font-size: 25pt;
+	font-size: 20pt;
 	font-weight: bold;
 }
 
@@ -251,11 +251,12 @@
 }
 
 .center-screen button {
-	width: 300px !important;
+	width: 250px !important;
 	padding: 10px;
 	margin: 4px;
+	margin-top:10px;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 16px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -268,7 +269,7 @@
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #444;
-	width: 400px;
+	width: 350px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 	font-weight: bold;
 }
