@@ -141,7 +141,50 @@
       position: fixed;
       background: #000;
       border-radius: 5px;
-      width: 380px;
+      width: 350px;
+      z-index: 10;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
+      }
+      #dialogbox>div {
+      border-radius: 5px;
+      margin: 3px;
+      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
+      }
+      #dialogbox>div>#dialogboxhead {
+      background: #111;
+      opacity: 0.5;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px;
+      color: #fff;
+      }
+      #dialogbox>div>#dialogboxbody {
+      font-weight: normal;
+      font-size: 15px;
+      padding: 20px;
+      color: #ccc;
+      }
+      #dialogbox>div>#dialogboxfoot {
+      padding: 10px;
+      text-align: right;
+      }	  
+      /* CUSTOM ALERT */
+      #dialogoverlay {
+      display: none;
+      opacity: .5;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      background: #292929;
+      width: 100%;
+      z-index: 10;
+      }
+      #dialogbox {
+      display: none;
+      position: fixed;
+      background: #000;
+      border-radius: 5px;
+      width: 350px;
       z-index: 10;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
       }
@@ -426,7 +469,7 @@
       margin: auto;
       padding: 20px;
       border: 1px solid #444;
-      width: 400px;
+      width: 350px;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
       font-weight: bold;
       }
@@ -530,7 +573,7 @@
       </div>
     </div>
     <div id="myChangePassword" class="modal-change-password">
-      <div style="width: 400px;" class="modal-content">
+      <div style="width: 350px;" class="modal-content">
         <div class="forms-out">
           <div class="forms-in">
             <h2>SET PASSWORD</h2>
@@ -539,14 +582,14 @@
             <input type="password" id="new-password" placeholder="New Password">
             <label>Confirm New Password <span style="color:#ff6600">*</span></label>
             <input type="password" id="re-new-password" autocomplete="off" placeholder="Confirm New Password">
-            <button style="width:150px !important;margin-bottom:20px" id="change-pass-button">Save</button>
-            <button style="width:150px !important;" onclick="CallModalChangePasswordHide()" >Cancel</button>
+            <button style="width:100px !important;margin-bottom:20px" id="change-pass-button">Save</button>
+            <button style="width:100px !important;" onclick="CallModalChangePasswordHide()" >Cancel</button>
           </div>
         </div>
       </div>
     </div>
     <div id="myChangeProfile" class="modal-change-profile">
-      <div style="width: 400px;" class="modal-content">
+      <div style="width: 350px;" class="modal-content">
         <div class="forms-out">
           <div class="forms-in">
             <h2>EDIT PROFILE</h2>
@@ -555,14 +598,14 @@
             <input id="profile-name" placeholder="your name">
             <label>Your Image URL: <span style="color:#ff6600"></span></label>
             <input id="profile-url" autocomplete="off" placeholder="your image URL">
-            <button style="width:150px !important;margin-bottom:20px" onclick="CangeProfile()">Save</button>
-            <button style="width:150px !important;" onclick="CallModalChangeProfileHide()" >Cancel</button>
+            <button style="width:100px !important;margin-bottom:20px" onclick="CangeProfile()">Save</button>
+            <button style="width:100px !important;" onclick="CallModalChangeProfileHide()" >Cancel</button>
           </div>
         </div>
       </div>
     </div>
     <div id="myLogin" class="modal-login">
-      <div style="width: 380px;" class="modal-content">
+      <div style="width: 350px;" class="modal-content">
         <div class="forms-out">
           <div class="forms-in">
 			  <div class="myButtonGoogle">
@@ -578,7 +621,7 @@
               <input type="email" id="registration-reemail" autocomplete="off" placeholder="Confirm E-Mail" >
               <label>Password <span style="color:#ff6600">*</span><span style="font-weight:normal; font-size:13px"></span></label>
               <input type="password" id="registration-password" placeholder="Password">
-              <span style="float:left; margin-top:8px" id="captcha-signup"></span><input autocomplete="off" style="margin-top:10px;width:180px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignUp">
+              <span style="float:left; margin-top:8px" id="captcha-signup"></span><input autocomplete="off" style="margin-top:10px;width:140px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignUp">
 			  <button style="width:100% !important;" id="register">Sign Up</button><br>
               <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
             <br>
@@ -590,7 +633,7 @@
               <input type="email" id="login-email" placeholder="E-Mail">
               <label>Password</label>
               <input type="password" id="login-password" placeholder="Password">
-			  <span style="float:left; margin-top:8px" id="captcha-signin"></span><input autocomplete="off" style="margin-top:10px;width:180px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignIn">
+			  <span style="float:left; margin-top:8px" id="captcha-signin"></span><input autocomplete="off" style="margin-top:10px;width:140px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignIn">
 			  <button style="width:100% !important;" id="login">Login</button>
               <br>
               <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
