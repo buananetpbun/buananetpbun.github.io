@@ -241,7 +241,7 @@ document.querySelector("#google-sign-in").addEventListener("click", () => {
   // The firebase.auth.AuthCredential type that was used.
  // var credential = error.credential;
   // ...
-});
+//});
 
   //firebase.auth().signInWithPopup(provider).then(res => {}).catch(e => {})
 });
