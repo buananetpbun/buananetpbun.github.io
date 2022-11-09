@@ -1,550 +1,531 @@
-      /* -----------------------------------------------------------------
-      ####################################################################
-      # POFILE FORM BUANANETPBUN.GITHUB.IO
-      # Designer  : Agus Ramadhani / BuanaNET
-      # Github    : https://github.com/buananetpbun
-      # Site      : http://www.o-om.com
-      # Sosmed    : https://fb.me/buananetmikrotik	
-      ####################################################################
-      -------------------------------------------------------------------- */  
-      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-      body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
-      html, body {
-      height: 100%;
-      width:100%;
-      margin-top: 0px;
-      padding:0;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
-      }
-      * {
-      box-sizing: border-box;
-      }
-      h2 {
-      color:#ff6600;
-      float:left;
-      }	  	  
-      h1 {
-      color:#ddd;
-      font-size:22px;
-      margin-bottom:10px;
-      margin-top:10px;
-      }
-      a:link {
-      color: #ff6600;
-      }
-      a:visited {
-      color: #ff6600;
-      }
-      a:hover {
-      color: #ff6600;
-      }
-      a:active {
-      color: #ff6600;
-      }
-      button {
-      color: #fff;
-      background-color: #ff6600;
-      border-color: #ff6600;
-      border:none;
-      padding:8px;
-      margin-right:5px;
-      width:120px;
-      font-size:auto;
-      font-weight:bold;
-      cursor: pointer;
-      border-radius: 5px;
-      color: #fff;
-      }
-      button:hover {
-      background-color: #ccc;
-      color: #111;
-      }
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }  
-      input[type=checkbox]{
-      margin-right:7px; 
-      }
-      input[type=text], select, textarea {
-      width: 100%;
-      padding: 5px;
-      border: 1px solid #bbb;
-      border-radius: 1px;
-      resize: vertical;
-      margin-bottom:12px;
-      font-size:15px !important;
-      border-radius:5px; 
-      }
-      label {
-      padding: 5px 5px 5px 0;
-      display: inline-block;
-      }
-      input[type=submit] {
-      background-color: #ff6600;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 1px;
-      cursor: pointer;
-      float: right;
-      border-radius:5px; 
-      }
-      input[type=submit]:hover {
-      background-color: #45a049;
-      }
+/* -----------------------------------------------------------------
+####################################################################
+# PROFILE FORM BUANANETPBUN.GITHUB.IO
+# Designer  : Agus Ramadhani / BuanaNET
+# Github    : https://github.com/buananetpbun
+# Site      : http://www.o-om.com
+# Sosmed    : https://fb.me/buananetmikrotik	
+####################################################################
+-------------------------------------------------------------------- */  
+*{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
+body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
+body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+html, body {
+height: 100%;
+width:100%;
+margin-top: 0px;
+padding:0;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;     
+}
+* {
+box-sizing: border-box;
+}
+h2 {
+color:#ff6600;
+float:left;
+}	  	  
+h1 {
+color:#ddd;
+font-size:22px;
+margin-bottom:10px;
+margin-top:10px;
+}
+a:link {
+color: #ff6600;
+}
+a:visited {
+color: #ff6600;
+}
+a:hover {
+color: #ff6600;
+}
+a:active {
+color: #ff6600;
+}
+button {
+color: #fff;
+background-color: #ff6600;
+border-color: #ff6600;
+border:none;
+padding:8px;
+margin-right:5px;
+width:120px;
+font-size:auto;
+font-weight:bold;
+cursor: pointer;
+border-radius: 5px;
+color: #fff;
+}
+button:hover {
+background-color: #ccc;
+color: #111;
+}
+.row:after {
+content: "";
+display: table;
+clear: both;
+}  
+input[type=checkbox]{
+margin-right:7px; 
+}
+input[type=text], select, textarea {
+width: 100%;
+padding: 5px;
+border: 1px solid #bbb;
+border-radius: 1px;
+resize: vertical;
+margin-bottom:12px;
+font-size:15px !important;
+border-radius:5px; 
+}
+label {
+padding: 5px 5px 5px 0;
+display: inline-block;
+}
+input[type=submit] {
+background-color: #ff6600;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 1px;
+cursor: pointer;
+float: right;
+border-radius:5px; 
+}
+input[type=submit]:hover {
+background-color: #45a049;
+}
 
-      /* CUSTOM ALERT */
-      #dialogoverlay {
-      display: none;
-      opacity: .5;
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      background: #292929;
-      width: 100%;
-      z-index: 10;
-      }
-      #dialogbox {
-      display: none;
-      position: fixed;
-      background: #000;
-      border-radius: 5px;
-      width: 400px;
-      z-index: 10;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
-      }
-      #dialogbox>div {
-      border-radius: 5px;
-      margin: 3px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
-      }
-      #dialogbox>div>#dialogboxhead {
-      background: #111;
-      opacity: 0.5;
-      font-weight: bold;
-      font-size: 16px;
-      padding: 10px;
-      color: #fff;
-      }
-      #dialogbox>div>#dialogboxbody {
-      font-weight: normal;
-      font-size: 15px;
-      padding: 20px;
-      color: #ccc;
-      }
-      #dialogbox>div>#dialogboxfoot {
-      padding: 10px;
-      text-align: right;
-      }	  
-      /* CUSTOM ALERT */
-      #dialogoverlay {
-      display: none;
-      opacity: .5;
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      background: #292929;
-      width: 100%;
-      z-index: 10;
-      }
-      #dialogbox {
-      display: none;
-      position: fixed;
-      background: #000;
-      border-radius: 5px;
-      width: 400px;
-      z-index: 10;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
-      }
-      #dialogbox>div {
-      border-radius: 5px;
-      margin: 3px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
-      }
-      #dialogbox>div>#dialogboxhead {
-      background: #111;
-      opacity: 0.5;
-      font-weight: bold;
-      font-size: 16px;
-      padding: 10px;
-      color: #fff;
-      }
-      #dialogbox>div>#dialogboxbody {
-      font-weight: normal;
-      font-size: 15px;
-      padding: 20px;
-      color: #ccc;
-      }
-      #dialogbox>div>#dialogboxfoot {
-      padding: 10px;
-      text-align: right;
-      }	  
-      /* The Main Menu */
-      .mymenu {
-      z-index: 4;
-      margin: 0 auto;
-      background-color: #f9f9f9;
-      width: 700px;
-      border-radius: 0 0 5px 5px;
-      border: 2px solid #f9f9f9;
-      font-weight: bold;
-      font-size: 14px;
-      position: relative;
-      }
-      .mymenu ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #f9f9f9;
-      background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
-      margin-right: 10px;
-      }
-      .mymenu li {
-      float: left;
-      }
-      .mymenu li a {
-      display: block;
-      color: #555;
-      text-align: center;
-      padding: 8px 10px;
-      text-decoration: none;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      }
-      .mymenu li a:hover {
-      background-color: #f0f0f0;
-      color: #ff6600;
-      }
-      /* LOGIN Content */
-      .forms-out {
-      margin: 0 auto;
-      padding: 0;
-      font-size: 14px;
-      }
-      .forms-in {
-      width: 100%;
-      margin: 0 auto;
-      color: white;
-      padding: 0;
-      font-size: 14px;
-      }
-      .forms-in div {
-      padding: 0;
-      max-width: 350px;
-      margin: 0 auto;
-      border-radius: 5px;
-      margin-bottom: 15px;
-      }
-      .forms-in h3 {
-      text-align: center;
-      }
-      .forms-in input {
-      border: none;
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      box-sizing: border-box;
-      border-radius: 3px;
-      }
-      .forms-in button {
-      border: none;
-      padding: 7px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      }
-      .forms-in button:hover {
-      opacity: 0.7;
-      }
-      .hide {
-      display: none;
-      }
-      #forgot-password {
-      cursor: pointer;
-      }
-      #forgot-password:hover {
-      opacity: 0.7;
-      }
-      #show-register {
-      cursor: pointer;
-      }
-      #show-register:hover {
-      opacity: 0.7;
-      }
-      #show-login {
-      cursor: pointer;
-      }
-      #show-login:hover {
-      opacity: 0.7;
-      }
-      /* The Modal (background) */
-      .modal {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 10;
-      /* Sit on top */
-      padding-top: 150px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.3);
-      /* Black w/ opacity */
-      }
-      .modal-login {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      padding-top: 150px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.5);
-      /* Black w/ opacity */
-      }
-      .modal-profile {
-      display: none;
-      /* Hidden by default */
-      /* Sit on top */
-      padding-top: 20px;
-      /* Location of the box */
+/* CUSTOM ALERT */
+#dialogoverlay {
+display: none;
+opacity: .5;
+position: fixed;
+top: 0px;
+left: 0px;
+background: #292929;
+width: 100%;
+z-index: 10;
+}
+#dialogbox {
+display: none;
+position: fixed;
+background: #000;
+border-radius: 5px;
+width: 400px;
+z-index: 10;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
+}
+#dialogbox>div {
+border-radius: 5px;
+margin: 3px;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
+}
+#dialogbox>div>#dialogboxhead {
+background: #111;
+opacity: 0.5;
+font-weight: bold;
+font-size: 16px;
+padding: 10px;
+color: #fff;
+}
+#dialogbox>div>#dialogboxbody {
+font-weight: normal;
+font-size: 15px;
+padding: 20px;
+color: #ccc;
+}
+#dialogbox>div>#dialogboxfoot {
+padding: 10px;
+text-align: right;
+}	  
+/* CUSTOM ALERT */
+#dialogoverlay {
+display: none;
+opacity: .5;
+position: fixed;
+top: 0px;
+left: 0px;
+background: #292929;
+width: 100%;
+z-index: 10;
+}
+#dialogbox {
+display: none;
+position: fixed;
+background: #000;
+border-radius: 5px;
+width: 400px;
+z-index: 10;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
+}
+#dialogbox>div {
+border-radius: 5px;
+margin: 3px;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
+}
+#dialogbox>div>#dialogboxhead {
+background: #111;
+opacity: 0.5;
+font-weight: bold;
+font-size: 16px;
+padding: 10px;
+color: #fff;
+}
+#dialogbox>div>#dialogboxbody {
+font-weight: normal;
+font-size: 15px;
+padding: 20px;
+color: #ccc;
+}
+#dialogbox>div>#dialogboxfoot {
+padding: 10px;
+text-align: right;
+}	  
+/* The Main Menu */
+.mymenu {
+z-index: 4;
+margin: 0 auto;
+background-color: #f9f9f9;
+width: 700px;
+border-radius: 0 0 5px 5px;
+border: 2px solid #f9f9f9;
+font-weight: bold;
+font-size: 14px;
+position: relative;
+}
+.mymenu ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #f9f9f9;
+margin-right: 10px;
+}
+.mymenu li {
+float: left;
+}
+.mymenu li a {
+display: block;
+color: #555;
+text-align: center;
+padding: 8px 10px;
+text-decoration: none;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+.mymenu li a:hover {
+background-color: #f0f0f0;
+color: #ff6600;
+}
+/* LOGIN Content */
+.forms-out {
+margin: 0 auto;
+padding: 0;
+font-size: 14px;
+}
+.forms-in {
+width: 100%;
+margin: 0 auto;
+color: white;
+padding: 0;
+font-size: 14px;
+}
+.forms-in div {
+padding: 0;
+max-width: 350px;
+margin: 0 auto;
+border-radius: 5px;
+margin-bottom: 15px;
+}
+.forms-in h3 {
+text-align: center;
+}
+.forms-in input {
+border: none;
+width: 100%;
+margin-bottom: 15px;
+padding: 10px;
+box-sizing: border-box;
+border-radius: 3px;
+}
+.forms-in button {
+border: none;
+padding: 7px 20px;
+border-radius: 4px;
+cursor: pointer;
+font-weight: bold;
+margin-top: 10px;
+margin-bottom: 15px;
+}
+.forms-in button:hover {
+opacity: 0.7;
+}
+.hide {
+display: none;
+}
+#forgot-password {
+cursor: pointer;
+}
+#forgot-password:hover {
+opacity: 0.7;
+}
+#show-register {
+cursor: pointer;
+}
+#show-register:hover {
+opacity: 0.7;
+}
+#show-login {
+cursor: pointer;
+}
+#show-login:hover {
+opacity: 0.7;
+}
+/* The Modal (background) */
+.modal {
+display: none;
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 10;
+/* Sit on top */
+padding-top: 150px;
+/* Location of the box */
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.3);
+/* Black w/ opacity */
+}
+.modal-login {
+display: none;
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 1;
+/* Sit on top */
+padding-top: 150px;
+/* Location of the box */
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.5);
+/* Black w/ opacity */
+}
+.modal-profile {
+display: none;
+/* Hidden by default */
+/* Sit on top */
+padding-top: 20px;
+/* Location of the box */
 
-      }	  
-      .modal-change-profile{
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 5;
-      /* Sit on top */
-      padding-top: 80px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.5);
-      /* Black w/ opacity */
-      }	  
-      .modal-change-password {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 5;
-      /* Sit on top */
-      padding-top: 80px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.5);
-      /* Black w/ opacity */
-      }	  
-      .lock-screen {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      padding-top: 150px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.5);
-      /* Black w/ opacity */
-      text-align: center;
-      color: #fff;
-      font-size: 25pt;
-      font-weight: bold;
-      }
-      .center-screen {
-      position: fixed;
-      /* or absolute */
-      top: 40%;
-      left: 50%;
-      /* bring your own prefixes */
-      transform: translate(-50%, -50%);
-      }
-      .center-screen button{
-      width:300px !important; padding:10px; margin:4px; font-weight:bold;font-size:18px;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      }
-      /* Modal Content */
-      .modal-content {
-      line-height: 1.4;
-      border-radius: 5px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-      color: #ddd;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #444;
-      width: 350px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      font-weight: bold;
-      }
-      .modal-content p {
-      padding: 0;
-      margin: 5px 5px 0 17px;
-      display: list-item;
-      line-height: 2.0;
-      list-style: disc;
-      }
-      .modal-content h2 {
-      color: #ff6600;
-      float: left;
-      }
-      /* The Close Button */
-      .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: -25px;
-      margin-right: -15px;
-      }
-      .close:hover,
-      .close:focus {
-      color: orange;
-      text-decoration: none;
-      cursor: pointer;
-      }
-      /* The Google Button */
-      .myButtonGoogle {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: auto;
-      cursor: pointer;
-      font-weight: normal;
-      float: right;
-      }
-      .myButtonGoogle :hover {
-      opacity: 0.7;
-      }
-      .myButtonGoogle img {
-      width: 32px;
-      padding: 0;
-      margin: 0;
-      }
-      .myButtonGoogle .text {
-      padding: 0;
-      margin: 0;
-      }
+}	  
+.modal-change-profile{
+display: none;
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 5;
+/* Sit on top */
+padding-top: 80px;
+/* Location of the box */
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.5);
+/* Black w/ opacity */
+}	  
+.modal-change-password {
+display: none;
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 5;
+/* Sit on top */
+padding-top: 80px;
+/* Location of the box */
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.5);
+/* Black w/ opacity */
+}	  
+.lock-screen {
+display: none;
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 1;
+/* Sit on top */
+padding-top: 150px;
+/* Location of the box */
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.5);
+/* Black w/ opacity */
+text-align: center;
+color: #fff;
+font-size: 25pt;
+font-weight: bold;
+}
+.center-screen {
+position: fixed;
+/* or absolute */
+top: 40%;
+left: 50%;
+/* bring your own prefixes */
+transform: translate(-50%, -50%);
+}
+.center-screen button{
+width:300px !important; padding:10px; margin:4px; font-weight:bold;font-size:18px;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+/* Modal Content */
+.modal-content {
+line-height: 1.4;
+border-radius: 5px;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+color: #ddd;
+margin: auto;
+padding: 20px;
+border: 1px solid #444;
+width: 350px;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+font-weight: bold;
+}
+.modal-content p {
+padding: 0;
+margin: 5px 5px 0 17px;
+display: list-item;
+line-height: 2.0;
+list-style: disc;
+}
+.modal-content h2 {
+color: #ff6600;
+float: left;
+}
+/* The Close Button */
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 20px;
+font-weight: bold;
+margin-top: -25px;
+margin-right: -15px;
+}
+.close:hover,
+.close:focus {
+color: orange;
+text-decoration: none;
+cursor: pointer;
+}
+/* The Google Button */
+.myButtonGoogle {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: auto;
+cursor: pointer;
+font-weight: normal;
+float: right;
+}
+.myButtonGoogle :hover {
+opacity: 0.7;
+}
+.myButtonGoogle img {
+width: 32px;
+padding: 0;
+margin: 0;
+}
+.myButtonGoogle .text {
+padding: 0;
+margin: 0;
+}
 
-      .avatar img {
-	  float:right;
-      display: relative;
-      width: 130px;
-      height: 130px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      -webkit-border-radius: 99em;
-      -moz-border-radius: 99em;
-      border-radius: 99em;
-      border: 4px solid #ccc;
-      }
+.avatar img {
+float:right;
+display: relative;
+width: 130px;
+height: 130px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+-webkit-border-radius: 99em;
+-moz-border-radius: 99em;
+border-radius: 99em;
+border: 4px solid #ccc;
+}
+
+.mikrotik-logo { float:right; margin-top:5px; margin-right:10px}
 /* -- RESPONSIVE -- */
-@media screen and (max-width: 3000px){
 
-}
-@media screen and (max-width: 1300px){
-}
-@media screen and (max-width: 1024px) {
-
-}
-@media screen and (max-width: 992px) {
-
-}
-@media screen and (max-width:880px){
-
-}
 @media screen and (max-width:768px){
-      .mymenu {
-      width:95% !important;
-      } 
-	  button {
-	margin-bottom:10px !important;	  
-	  }
-	 .modal-content {
-	  width:95% !important;
-	  }
+.mymenu {
+width:95% !important;
+} 
+button {
+margin-bottom:10px !important;	  
 }
-@media screen and (max-width:684px){
-
+.modal-content {
+width:95% !important;
+}
 }
 @media screen and (max-width:600px){
-      .mymenu ul{
-     background: none !important;
-      } 
-	  
-	  .avatar {
-  display: flex;
-  justify-content: center;
+.mymenu ul{
+display: flex;
+justify-content: center;
+} 
+
+.avatar {
+display: flex;
+justify-content: center;
 margin-bottom:20px;
-	  }
+}
+.mikrotik-logo {
+display: flex;
+justify-content: center;  
+width: 100%
+}     
+.mikrotik-logo img{
+float:right;
 
 }
-@media screen and (max-width:480px){
-
-
-}
-@media screen and (max-width:429px){
-
-}
-@media screen and (max-width:320px){
-}
-@media screen and (max-width:240px){
-
-
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
 /* -- 2x -- */
