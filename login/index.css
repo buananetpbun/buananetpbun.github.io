@@ -49,8 +49,8 @@
       border:none;
       padding:8px;
       margin-right:5px;
-      width:150px;
-      font-size:15px;
+      width:120px;
+      font-size:auto;
       font-weight:bold;
       cursor: pointer;
       border-radius: 5px;
@@ -478,12 +478,12 @@
       padding: 0;
       margin: 0;
       }
+
       .avatar img {
-      float: right;
-      display: block;
+	  float:right;
+      display: relative;
       width: 130px;
       height: 130px;
-      margin: 8px 10px 0 0;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -525,6 +525,12 @@
       .mymenu ul{
      background: none !important;
       } 
+	  
+	  .avatar img{
+	      width: 100px;
+      height: 100px;    
+
+	  }
 }
 @media screen and (max-width:480px){
 
