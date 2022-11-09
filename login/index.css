@@ -499,13 +499,13 @@ display: none;
 /* -- RESPONSIVE -- */
 @media screen and (max-width:768px){
 .mymenu {
-width:97% !important;
+width:96% !important;
 } 
 button {
 margin-bottom:10px !important;	  
 }
 .modal-content {
-width:97% !important;
+width:96% !important;
 }
 }
 
