@@ -254,41 +254,44 @@
       background-color: #8c0615;
       border-color: #8c0615;
       }
-      .mymenu {
-      margin:0 auto;
-      background-color: #f9f9f9;
-      width:700px;
-      border-radius:0 0 5px 5px;
-      border: 2px solid #f9f9f9;
-      font-weight:bold;
-      font-size:14px;
-      position:relative;
-      }
-      .mymenu ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #f9f9f9;
-      background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
-      margin-right:10px;
-      }
-      .mymenu li {
-      float: left;
-      }
-      .mymenu li a {
-      display: block;
-      color: #555;
-      text-align: center;
-      padding: 8px 10px;
-      text-decoration: none;
-      margin-top:5px;
-      margin-bottom:5px;
-      }
-      .mymenu li a:hover {
-      background-color: #f0f0f0;
-      color: #ff6600;
-      }	    
+/* The Main Menu */
+.mymenu {
+z-index: 10;
+margin: 0 auto;
+background-color: #f9f9f9;
+width: 700px;
+border-radius: 0 0 5px 5px;
+border: 2px solid #f9f9f9;
+font-weight: bold;
+font-size: 18px;
+position: relative;
+padding-left:10px;
+}
+.mymenu ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #f9f9f9;
+margin-right: 10px;
+background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
+}
+.mymenu li {
+float: left;
+}
+.mymenu li a {
+display: block;
+color: #555;
+text-align: center;
+padding: 8px 10px;
+text-decoration: none;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+.mymenu li a:hover {
+background-color: #f0f0f0;
+color: #ff6600;
+}  
       button {
       color: #fff;
       background-color: #ff6600;
@@ -510,6 +513,11 @@
       text-align: right;
       }	  
 	  
+.show-login-menu{
+width:100%;	
+margin-bottom:10px;
+}	
+	  
 .mikrotik-logo {
 display: none;
 }
@@ -519,6 +527,7 @@ display: none;
 .content {
 width:100% !important;
 padding:8px;
+border-radius: 0px;
 }
 }
 @media screen and (max-width:700px){
@@ -541,7 +550,13 @@ width:100%;
       }	  
 }
 @media screen and (max-width:600px){
-
+.text-join-now {display:none}
+.show-login-menu{
+display: flex;
+justify-content: center;
+width:100%;	
+margin-bottom:10px;
+}	
 
 h1{font-size:30px}
 h3{font-size:20px}
@@ -584,13 +599,13 @@ font-size: 10pt;
         <img src="https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png">
       </div>      
 	  <ul>
-        <li><a href="https://buananetpbun.github.io">☰ HOME</a></li>
+        <li><a href="https://buananetpbun.github.io">HOME</a></li>
         <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
         <li><a href="javascript:callmodal()">DONATE</a></li>
         <li><a target="_blank" href="https://fb.me/buananetmikrotik/">CONTACT</a></li>
       </ul>
-      <div id="show-login-menu">
-        <button style="width:100px !important;  padding:4px; margin:4px; margin-left:10px; margin-bottom:10px;font-weight:bold" onclick="callmodalLogin();showLogin()">Login</button>
+      <div class="show-login-menu" id="show-login-menu">
+        <button style="width:100px !important;  padding:4px; margin:4px; font-weight:bold" onclick="callmodalLogin();showLogin()">Login</button>
         <button style="width:100px !important; padding:4px; margin:4px; font-weight:bold" onclick="javascript:callmodalLogin();showRegistration()">Register</button>
         <span class="text-join-now" style="font-size:13px; font-weight:normal; color:#ff6600; font-weight:bold; margin-left:10px">Only one login to access all my tools, join now, it's free!</span>
       </div>
