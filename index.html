@@ -530,7 +530,8 @@
 } 
 
       @media screen and (max-width:768px){
-      .qris {display:none}
+	        .hide-homepage {display:none}
+     
       h1{font-size:40px}
       .content {
       width:100% !important;
@@ -554,14 +555,20 @@
       }	  
       }
       @media screen and (max-width:600px){
-      .hide-homepage {display:none}
-      .text-join-now {display:none}
+ .text-join-now {display:none}
       .show-login-menu{
       display: flex;
       justify-content: center;
       width:100%;	
       margin-bottom:10px;
       }	
+	  .show-hompage-menu{
+      display: flex;
+      justify-content: center;
+      width:100%;	
+      margin-bottom:10px;
+      }	
+	  
       h1{font-size:30px}
       .gsc-search-box { 
       display:none !important
@@ -612,15 +619,17 @@
         <button style="width:100px !important; padding:6px; margin:4px; font-weight:bold" onclick="javascript:callmodalLogin();showRegistration()">Register</button>
         <span class="text-join-now" style="font-size:13px; font-weight:normal; color:#ff6600; font-weight:bold; margin-left:10px">Only one login to access all my tools, join now, it's free!</span>
       </div>
-      <div id="homepage" class="hide">
+      <div class="show-homepage-menu">
+	  <div id="homepage" class="hide">
         <button style="width:75px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
         <button id="ShowProfile" style="width:115px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px; background-color:#ff6600" onclick="location.href = 'https://buananetpbun.github.io/login'">Member Area</button>
-        <div class="hide-homepage">
+        <span class="hide-homepage">
           <span style="font-weight:normal;font-size:14px">ID: <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
           <span style="font-weight:normal; font-size:14px"> - ACTIVATED: [ <span id="email_Verified"></span> ]</span>
-          <button id="verify" style="display:none;width:170px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px; background-color:red">VERIFY YOUR E-MAIL</button>
-        </div>
+         </span>
+		 <button id="verify" style="width:150px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px; background-color:red">Verify E-Mail</button>
       </div>
+	  </div>
     </div>
     <div class="content">
       <div style="float:left; margin-right:5px; margin-top:10px">
