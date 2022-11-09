@@ -50,7 +50,7 @@ border:none;
 padding:8px;
 margin-right:5px;
 width:120px;
-font-size:auto;
+font-size:13px;
 font-weight:bold;
 cursor: pointer;
 border-radius: 5px;
@@ -201,6 +201,7 @@ padding: 0;
 overflow: hidden;
 background-color: #f9f9f9;
 margin-right: 10px;
+background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
 }
 .mymenu li {
 float: left;
@@ -480,7 +481,7 @@ margin: 0;
 
 .avatar img {
 float:right;
-display: relative;
+display: flex;
 width: 130px;
 height: 130px;
 background-size: cover;
@@ -492,48 +493,31 @@ border-radius: 99em;
 border: 4px solid #ccc;
 }
 
-.mikrotik-logo { float:right; margin-top:5px; margin-right:10px}
 /* -- RESPONSIVE -- */
-
 @media screen and (max-width:768px){
 .mymenu {
-width:95% !important;
+width:97% !important;
 } 
 button {
 margin-bottom:10px !important;	  
 }
 .modal-content {
-width:95% !important;
+width:97% !important;
 }
+}
+@media screen and (max-width:684px){
+
 }
 @media screen and (max-width:600px){
-.mymenu ul{
-display: flex;
-justify-content: center;
-} 
-
 .avatar {
 display: flex;
 justify-content: center;
 margin-bottom:20px;
 }
-.mikrotik-logo {
-display: flex;
-justify-content: center;  
-width: 100%
-}     
-.mikrotik-logo img{
-float:right;
+  .mymenu ul {
+    background: none !important;
+justify-content: center;
+    display: flex;
+} 
 
 }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-/* -- 2x -- */
-}
-/* -- Print -- */
-@media print {
-body, .body-fauxcolumn-outer {
-background: none !important;
-font-size: 10pt;
-}
-}	  
