@@ -517,15 +517,31 @@ display: none;
 /* -- RESPONSIVE -- */
 @media screen and (max-width:1024px){
 .content {
-width:96% !important;
+width:100% !important;
+padding:8px;
 }
 }
 @media screen and (max-width:700px){
 .mymenu {
-width:96% !important;
+width:95% !important;
 } 
+      .logo {
+
+width:100%;
+      }
+      .logo-left {
+justify-content: center;
+display: inline-flex;
+width:100%;
+      }
+      .logo-right {
+justify-content: center;
+display: inline-flex;
+width:100%;
+      }	  
 }
 @media screen and (max-width:600px){
+
 
 h1{font-size:30px}
 h3{font-size:20px}
@@ -598,14 +614,18 @@ font-size: 10pt;
         <div class="gcse-searchbox"></div>
       </div>
       <div style="clear:both;"></div>
-      <div class="logo">	  
-        <a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>
-        <span style="float:right;">
-        <a class="github-button" style="padding-left:5px !important" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+
+      <div class="logo">
+	  	  <div class="logo-right" style="float:right;">
+        <a class="github-button" style="padding-right:5px !important" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
         <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
         <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io/fork" data-show-count="true" data-icon="octicon-repo-forked" aria-label="Fork">Fork</a>  
         <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>		
-        </span>
+       </div>
+        <div class="logo-left">	  
+		<a href="https://buananetpbun.github.io"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>
+        </div>
+
       </div>
       <div style="clear:both;"></div>
       <div style="margin-bottom:-15px; margin-top:-12px">
