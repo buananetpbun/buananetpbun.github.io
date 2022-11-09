@@ -291,7 +291,7 @@ position: fixed;
 /* Stay in place */
 z-index: 1;
 /* Sit on top */
-padding-top: 100px;
+padding-top: 70px;
 /* Location of the box */
 left: 0;
 top: 0;
@@ -313,7 +313,7 @@ position: fixed;
 /* Stay in place */
 z-index: 1;
 /* Sit on top */
-padding-top: 120px;
+padding-top: 70px;
 /* Location of the box */
 left: 0;
 top: 0;
@@ -335,7 +335,7 @@ position: fixed;
 /* Stay in place */
 z-index: 1;
 /* Sit on top */
-padding-top: 120px;
+padding-top: 70px;
 /* Location of the box */
 left: 0;
 top: 0;
@@ -357,7 +357,7 @@ position: fixed;
 /* Stay in place */
 z-index: 1;
 /* Sit on top */
-padding-top: 120px;
+padding-top: 70px;
 /* Location of the box */
 left: 0;
 top: 0;
@@ -379,7 +379,7 @@ position: fixed;
 /* Stay in place */
 z-index: 1;
 /* Sit on top */
-padding-top: 100px;
+padding-top: 70px;
 /* Location of the box */
 left: 0;
 top: 0;
@@ -478,14 +478,17 @@ display: none;
 .mymenu {
 width:96% !important;
 } 
-}
-
-@media screen and (max-width:600px){
 button {
 margin-bottom:10px !important;	  
 }
 .modal-content {
 width:96% !important;
+}
+}
+
+@media screen and (max-width:600px){
+.modal-content {
+margin-top:50px;
 }
 .mikrotik-logo {
 display: flex;
