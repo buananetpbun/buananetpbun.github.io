@@ -204,6 +204,12 @@ const provider = new firebase.auth.GoogleAuthProvider();
 
 
 
+document.querySelector("#google-sign-in").addEventListener("click", () => {
+  
+  firebase.auth().signInWithPopup(provider).then(res => {}).catch(e => {})
+});
+
+
 document.querySelector("#verify").addEventListener("click", () => {
   var actionCodeSettings = {
     // After email is verified, the user will be give the ability to go back
