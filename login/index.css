@@ -495,8 +495,6 @@ border: 4px solid #ccc;
 
 .mikrotik-logo {
 display: none;
-justify-content: center;
-margin-top:15px;	
 }
 /* -- RESPONSIVE -- */
 @media screen and (max-width:768px){
@@ -514,7 +512,8 @@ width:97% !important;
 @media screen and (max-width:600px){
 .mikrotik-logo {
 display: flex;
-
+justify-content: center;
+margin-top:15px;	
 }	
 .avatar {
 display: flex;
