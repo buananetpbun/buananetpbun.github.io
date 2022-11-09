@@ -289,9 +289,9 @@ display: none;
 /* Hidden by default */
 position: fixed;
 /* Stay in place */
-z-index: 10;
+z-index: 1;
 /* Sit on top */
-padding-top: 150px;
+padding-top: 80px;
 /* Location of the box */
 left: 0;
 top: 0;
@@ -303,7 +303,7 @@ overflow: auto;
 /* Enable scroll if needed */
 background-color: rgb(0, 0, 0);
 /* Fallback color */
-background-color: rgba(0, 0, 0, 0.3);
+background-color: rgba(0, 0, 0, 0.6);
 /* Black w/ opacity */
 }
 .modal-login {
@@ -324,7 +324,7 @@ display: none;
 /* Hidden by default */
 position: fixed;
 /* Stay in place */
-z-index: 5;
+z-index: 1;
 /* Sit on top */
 padding-top: 80px;
 /* Location of the box */
@@ -338,7 +338,7 @@ overflow: auto;
 /* Enable scroll if needed */
 background-color: rgb(0, 0, 0);
 /* Fallback color */
-background-color: rgba(0, 0, 0, 0.5);
+background-color: rgba(0, 0, 0, 0.6);
 /* Black w/ opacity */
 }	  
 .modal-change-password {
@@ -346,7 +346,7 @@ display: none;
 /* Hidden by default */
 position: fixed;
 /* Stay in place */
-z-index: 5;
+z-index: 1;
 /* Sit on top */
 padding-top: 80px;
 /* Location of the box */
@@ -360,46 +360,9 @@ overflow: auto;
 /* Enable scroll if needed */
 background-color: rgb(0, 0, 0);
 /* Fallback color */
-background-color: rgba(0, 0, 0, 0.5);
+background-color: rgba(0, 0, 0, 0.6);
 /* Black w/ opacity */
 }	  
-.lock-screen {
-display: none;
-/* Hidden by default */
-position: fixed;
-/* Stay in place */
-z-index: 1;
-/* Sit on top */
-padding-top: 150px;
-/* Location of the box */
-left: 0;
-top: 0;
-width: 100%;
-/* Full width */
-height: 100%;
-/* Full height */
-overflow: auto;
-/* Enable scroll if needed */
-background-color: rgb(0, 0, 0);
-/* Fallback color */
-background-color: rgba(0, 0, 0, 0.5);
-/* Black w/ opacity */
-text-align: center;
-color: #fff;
-font-size: 25pt;
-font-weight: bold;
-}
-.center-screen {
-position: fixed;
-/* or absolute */
-top: 40%;
-left: 50%;
-/* bring your own prefixes */
-transform: translate(-50%, -50%);
-}
-.center-screen button{
-width:300px !important; padding:10px; margin:4px; font-weight:bold;font-size:18px;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
 /* Modal Content */
 .modal-content {
 line-height: 1.4;
