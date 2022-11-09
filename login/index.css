@@ -493,6 +493,11 @@ border-radius: 99em;
 border: 4px solid #ccc;
 }
 
+.mikrotik-logo {
+display: none;
+justify-content: center;
+margin-top:15px;	
+}
 /* -- RESPONSIVE -- */
 @media screen and (max-width:768px){
 .mymenu {
@@ -505,10 +510,12 @@ margin-bottom:10px !important;
 width:97% !important;
 }
 }
-@media screen and (max-width:684px){
 
-}
 @media screen and (max-width:600px){
+.mikrotik-logo {
+display: flex;
+
+}	
 .avatar {
 display: flex;
 justify-content: center;
