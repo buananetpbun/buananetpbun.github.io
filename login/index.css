@@ -193,6 +193,7 @@ border: 2px solid #f9f9f9;
 font-weight: bold;
 font-size: 14px;
 position: relative;
+padding-left:10px;
 }
 .mymenu ul {
 list-style-type: none;
