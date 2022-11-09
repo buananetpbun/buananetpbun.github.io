@@ -526,11 +526,12 @@
      background: none !important;
       } 
 	  
-	  .avatar img{
-	      width: 100px;
-      height: 100px;    
-
+	  .avatar {
+  display: flex;
+  justify-content: center;
+margin-bottom:20px;
 	  }
+
 }
 @media screen and (max-width:480px){
 
