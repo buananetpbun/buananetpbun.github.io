@@ -1,1 +1,564 @@
-var _0x27a8fb=_0x2509;(function(_0x350814,_0x3bd9e9){var _0xf6fb77=_0x2509,_0x1d88f3=_0x350814();while(!![]){try{var _0x1855b3=-parseInt(_0xf6fb77(0xe7))/0x1+parseInt(_0xf6fb77(0x15c))/0x2+-parseInt(_0xf6fb77(0x141))/0x3*(-parseInt(_0xf6fb77(0x106))/0x4)+-parseInt(_0xf6fb77(0x129))/0x5+parseInt(_0xf6fb77(0x139))/0x6*(-parseInt(_0xf6fb77(0x13e))/0x7)+-parseInt(_0xf6fb77(0x146))/0x8+parseInt(_0xf6fb77(0x12d))/0x9;if(_0x1855b3===_0x3bd9e9)break;else _0x1d88f3['push'](_0x1d88f3['shift']());}catch(_0x3664b2){_0x1d88f3['push'](_0x1d88f3['shift']());}}}(_0x2c00,0x27d76),window['onload']=function(){createCaptchaSignIn(),createCaptchaSignUp();});var code_signin;function createCaptchaSignIn(){var _0x4548b5=_0x2509;document[_0x4548b5(0xe2)](_0x4548b5(0x162))[_0x4548b5(0x135)]='';var _0x43f274=_0x4548b5(0x158),_0x41c58a=0x4,_0x55662f=[];for(var _0x41498b=0x0;_0x41498b<_0x41c58a;_0x41498b++){var _0xb42c57=Math['floor'](Math[_0x4548b5(0x133)]()*_0x43f274[_0x4548b5(0x161)]);if(_0x55662f[_0x4548b5(0x102)](_0x43f274[_0xb42c57])==-0x1)_0x55662f['push'](_0x43f274[_0xb42c57]);else _0x41498b--;}var _0x43b7ac=document['createElement']('canvas');_0x43b7ac['id']=_0x4548b5(0x13d),_0x43b7ac[_0x4548b5(0xd6)]=0x96,_0x43b7ac['height']=0x28;var _0x47089a=_0x43b7ac['getContext']('2d');_0x47089a[_0x4548b5(0x138)]=_0x4548b5(0x148);var _0xf499df=_0x47089a[_0x4548b5(0xf2)](0x0,0x0,_0x43b7ac[_0x4548b5(0xd6)],0x0);_0xf499df[_0x4548b5(0xde)]('0','magenta'),_0xf499df['addColorStop'](_0x4548b5(0xd7),'pink'),_0xf499df[_0x4548b5(0xde)]('1.0','red'),_0x47089a[_0x4548b5(0x160)]=_0xf499df,_0x47089a[_0x4548b5(0x105)]=0x2,['round',_0x4548b5(0xeb),_0x4548b5(0xe4)][_0x4548b5(0x10f)]((_0x2f9cca,_0x13f149)=>{var _0x36c727=_0x4548b5;_0x47089a[_0x36c727(0x115)]=_0x2f9cca,_0x47089a['beginPath'](),_0x47089a[_0x36c727(0xf0)](0x0,0x0),_0x47089a[_0x36c727(0x107)](0x8c,0x28),_0x47089a[_0x36c727(0x14f)]();}),_0x47089a[_0x4548b5(0xee)](_0x55662f[_0x4548b5(0x112)](''),0x14,0x23),code_signin=_0x55662f['join'](''),document[_0x4548b5(0xe2)]('captcha-signin')['appendChild'](_0x43b7ac);}var code_signup;function createCaptchaSignUp(){var _0x518fb0=_0x2509;document[_0x518fb0(0xe2)](_0x518fb0(0x125))[_0x518fb0(0x135)]='';var _0x347308=_0x518fb0(0x158),_0x359db9=0x4,_0x14000c=[];for(var _0xd21680=0x0;_0xd21680<_0x359db9;_0xd21680++){var _0x4758f5=Math['floor'](Math[_0x518fb0(0x133)]()*_0x347308[_0x518fb0(0x161)]);if(_0x14000c[_0x518fb0(0x102)](_0x347308[_0x4758f5])==-0x1)_0x14000c[_0x518fb0(0xf5)](_0x347308[_0x4758f5]);else _0xd21680--;}var _0x5c8b25=document[_0x518fb0(0xe6)](_0x518fb0(0x12a));_0x5c8b25['id']='captcha',_0x5c8b25[_0x518fb0(0xd6)]=0x96,_0x5c8b25[_0x518fb0(0x12e)]=0x28;var _0x3b28d5=_0x5c8b25[_0x518fb0(0xf9)]('2d');_0x3b28d5[_0x518fb0(0x138)]=_0x518fb0(0x148);var _0x2424a6=_0x3b28d5['createLinearGradient'](0x0,0x0,_0x5c8b25[_0x518fb0(0xd6)],0x0);_0x2424a6[_0x518fb0(0xde)]('0',_0x518fb0(0xfb)),_0x2424a6[_0x518fb0(0xde)](_0x518fb0(0xd7),_0x518fb0(0xfa)),_0x2424a6[_0x518fb0(0xde)](_0x518fb0(0x10e),'red'),_0x3b28d5['strokeStyle']=_0x2424a6,_0x3b28d5[_0x518fb0(0x105)]=0x2,[_0x518fb0(0x126),_0x518fb0(0xeb),_0x518fb0(0xe4)][_0x518fb0(0x10f)]((_0x1ca149,_0x444b0b)=>{var _0x460465=_0x518fb0;_0x3b28d5[_0x460465(0x115)]=_0x1ca149,_0x3b28d5['beginPath'](),_0x3b28d5[_0x460465(0xf0)](0x0,0x0),_0x3b28d5[_0x460465(0x107)](0x8c,0x28),_0x3b28d5[_0x460465(0x14f)]();}),_0x3b28d5[_0x518fb0(0xee)](_0x14000c[_0x518fb0(0x112)](''),0x14,0x23),code_signup=_0x14000c[_0x518fb0(0x112)](''),document['getElementById'](_0x518fb0(0x125))[_0x518fb0(0x151)](_0x5c8b25);}document['querySelector']('#cpatchaTextBoxSignIn')[_0x27a8fb(0x101)](_0x27a8fb(0x14d),_0x58a3a9=>{var _0x352718=_0x27a8fb;event[_0x352718(0x14c)]===0xd&&(_0x58a3a9[_0x352718(0x14e)](),login());}),document['querySelector']('#cpatchaTextBoxSignUp')[_0x27a8fb(0x101)](_0x27a8fb(0x14d),_0x4942d3=>{var _0xd4f177=_0x27a8fb;event[_0xd4f177(0x14c)]===0xd&&(_0x4942d3[_0xd4f177(0x14e)](),register());});function CustomAlert(){var _0x56d14d=_0x27a8fb;this[_0x56d14d(0xe0)]=function(_0x13cd12){var _0x5ccad3=_0x56d14d,_0x296018=window[_0x5ccad3(0xe9)],_0x119363=window[_0x5ccad3(0xe3)],_0x2e8f64=document[_0x5ccad3(0xf7)]('#dialogoverlay'),_0x3c4bd8=document[_0x5ccad3(0xf7)](_0x5ccad3(0x15a));_0x2e8f64['style'][_0x5ccad3(0xf6)]='block',_0x2e8f64[_0x5ccad3(0x15d)][_0x5ccad3(0x12e)]=_0x119363+'px',_0x3c4bd8[_0x5ccad3(0x15d)]['left']=_0x296018/0x2-0x190*0.5+'px',_0x3c4bd8[_0x5ccad3(0x15d)][_0x5ccad3(0x11f)]=_0x5ccad3(0xe5),_0x3c4bd8[_0x5ccad3(0x15d)]['display']=_0x5ccad3(0xfd),document['querySelector'](_0x5ccad3(0x143))[_0x5ccad3(0x135)]=_0x5ccad3(0x123),document[_0x5ccad3(0xf7)](_0x5ccad3(0x121))[_0x5ccad3(0x135)]=_0x13cd12,document[_0x5ccad3(0xf7)](_0x5ccad3(0xec))[_0x5ccad3(0x135)]=_0x5ccad3(0x154);},this['ok']=function(){var _0x2379e5=_0x56d14d;document[_0x2379e5(0xf7)]('#dialogbox')[_0x2379e5(0x15d)][_0x2379e5(0xf6)]=_0x2379e5(0x153),document[_0x2379e5(0xf7)](_0x2379e5(0x13f))[_0x2379e5(0x15d)][_0x2379e5(0xf6)]='none';};}var Alert=new CustomAlert();document[_0x27a8fb(0xf7)]('#year')['innerHTML']=new Date()[_0x27a8fb(0xd5)]();var modal_click=document[_0x27a8fb(0xf7)](_0x27a8fb(0x145)),span_click=document[_0x27a8fb(0xff)](_0x27a8fb(0x104))[0x0];function _0x2509(_0x223002,_0x9aefe5){var _0x2c0096=_0x2c00();return _0x2509=function(_0x2509dc,_0x327cff){_0x2509dc=_0x2509dc-0xd4;var _0x55e943=_0x2c0096[_0x2509dc];return _0x55e943;},_0x2509(_0x223002,_0x9aefe5);}function callmodal(){var _0x12f52a=_0x27a8fb;modal_click[_0x12f52a(0x15d)]['display']=_0x12f52a(0xfd);}span_click[_0x27a8fb(0xf4)]=function(){var _0x2ef587=_0x27a8fb;modal_click[_0x2ef587(0x15d)]['display']=_0x2ef587(0x153);},window[_0x27a8fb(0xf4)]=function(_0x182284){var _0x38e23d=_0x27a8fb;_0x182284['target']==modal_click&&(modal_click['style'][_0x38e23d(0xf6)]=_0x38e23d(0x153));},document[_0x27a8fb(0xf7)](_0x27a8fb(0x11e))['addEventListener']('contextmenu',_0x3001e9=>{var _0x138e78=_0x27a8fb;_0x3001e9[_0x138e78(0x14e)]();}),document['onkeydown']=function(_0xb10ee9){var _0x2df716=_0x27a8fb;if(event['keyCode']==0x7b)return![];if(_0xb10ee9[_0x2df716(0x156)]&&_0xb10ee9[_0x2df716(0x119)]&&_0xb10ee9[_0x2df716(0x14c)]=='I'['charCodeAt'](0x0))return![];if(_0xb10ee9[_0x2df716(0x156)]&&_0xb10ee9[_0x2df716(0x119)]&&_0xb10ee9[_0x2df716(0x14c)]=='C'['charCodeAt'](0x0))return![];if(_0xb10ee9[_0x2df716(0x156)]&&_0xb10ee9[_0x2df716(0x119)]&&_0xb10ee9['keyCode']=='J'['charCodeAt'](0x0))return![];if(_0xb10ee9[_0x2df716(0x156)]&&_0xb10ee9[_0x2df716(0x14c)]=='U'[_0x2df716(0x14b)](0x0))return![];},document[_0x27a8fb(0xf7)](_0x27a8fb(0x134))['addEventListener'](_0x27a8fb(0x108),_0x4e609b=>{var _0x11be76=_0x27a8fb;_0x4e609b[_0x11be76(0x14e)]();}),document['onkeydown']=function(_0xb3c3c7){var _0x26018d=_0x27a8fb;if(event[_0x26018d(0x14c)]==0x7b)return![];if(_0xb3c3c7[_0x26018d(0x156)]&&_0xb3c3c7['shiftKey']&&_0xb3c3c7['keyCode']=='I'[_0x26018d(0x14b)](0x0))return![];if(_0xb3c3c7[_0x26018d(0x156)]&&_0xb3c3c7[_0x26018d(0x119)]&&_0xb3c3c7[_0x26018d(0x14c)]=='C'[_0x26018d(0x14b)](0x0))return![];if(_0xb3c3c7['ctrlKey']&&_0xb3c3c7['shiftKey']&&_0xb3c3c7[_0x26018d(0x14c)]=='J'[_0x26018d(0x14b)](0x0))return![];if(_0xb3c3c7[_0x26018d(0x156)]&&_0xb3c3c7[_0x26018d(0x14c)]=='U'['charCodeAt'](0x0))return![];},document[_0x27a8fb(0xf7)](_0x27a8fb(0x145))[_0x27a8fb(0x101)](_0x27a8fb(0x108),_0x520e53=>{var _0x8ad9b4=_0x27a8fb;_0x520e53[_0x8ad9b4(0x14e)]();}),document['onkeydown']=function(_0x1f59b8){var _0x281f20=_0x27a8fb;if(event[_0x281f20(0x14c)]==0x7b)return![];if(_0x1f59b8[_0x281f20(0x156)]&&_0x1f59b8[_0x281f20(0x119)]&&_0x1f59b8[_0x281f20(0x14c)]=='I'[_0x281f20(0x14b)](0x0))return![];if(_0x1f59b8[_0x281f20(0x156)]&&_0x1f59b8[_0x281f20(0x119)]&&_0x1f59b8[_0x281f20(0x14c)]=='C'[_0x281f20(0x14b)](0x0))return![];if(_0x1f59b8[_0x281f20(0x156)]&&_0x1f59b8[_0x281f20(0x119)]&&_0x1f59b8[_0x281f20(0x14c)]=='J'[_0x281f20(0x14b)](0x0))return![];if(_0x1f59b8[_0x281f20(0x156)]&&_0x1f59b8[_0x281f20(0x14c)]=='U'[_0x281f20(0x14b)](0x0))return![];},document[_0x27a8fb(0xf7)](_0x27a8fb(0x13c))['addEventListener'](_0x27a8fb(0x108),_0x4015cc=>{var _0x390026=_0x27a8fb;_0x4015cc[_0x390026(0x14e)]();}),document[_0x27a8fb(0xef)]=function(_0x192c13){var _0x563adc=_0x27a8fb;if(event['keyCode']==0x7b)return![];if(_0x192c13[_0x563adc(0x156)]&&_0x192c13[_0x563adc(0x119)]&&_0x192c13[_0x563adc(0x14c)]=='I'[_0x563adc(0x14b)](0x0))return![];if(_0x192c13[_0x563adc(0x156)]&&_0x192c13[_0x563adc(0x119)]&&_0x192c13[_0x563adc(0x14c)]=='C'[_0x563adc(0x14b)](0x0))return![];if(_0x192c13[_0x563adc(0x156)]&&_0x192c13['shiftKey']&&_0x192c13['keyCode']=='J'[_0x563adc(0x14b)](0x0))return![];if(_0x192c13[_0x563adc(0x156)]&&_0x192c13[_0x563adc(0x14c)]=='U'[_0x563adc(0x14b)](0x0))return![];};var firebaseConfig={'apiKey':_0x27a8fb(0x149),'authDomain':_0x27a8fb(0x100),'databaseURL':_0x27a8fb(0x137),'projectId':_0x27a8fb(0x122),'storageBucket':_0x27a8fb(0xf8),'messagingSenderId':'912166778245','appId':_0x27a8fb(0xea),'measurementId':_0x27a8fb(0x150)};firebase[_0x27a8fb(0x15b)](firebaseConfig);const auth=firebase[_0x27a8fb(0x140)](),user=firebase[_0x27a8fb(0x140)]()[_0x27a8fb(0x116)],provider=new firebase[(_0x27a8fb(0x140))][(_0x27a8fb(0x120))]();document[_0x27a8fb(0xf7)](_0x27a8fb(0x117))[_0x27a8fb(0x101)](_0x27a8fb(0x11a),()=>{var _0x2ec1ab=_0x27a8fb;firebase[_0x2ec1ab(0x140)]()[_0x2ec1ab(0x12b)](provider)[_0x2ec1ab(0xf1)](function(_0x1d3c85){var _0x6011d4=_0x2ec1ab,_0x5975d1=_0x1d3c85[_0x6011d4(0xed)]['accessToken'],_0x1c4324=_0x1d3c85[_0x6011d4(0x15f)];})['catch'](function(_0x4af4da){var _0x3a824b=_0x2ec1ab,_0x53faad=_0x4af4da['code'],_0x53f359=_0x4af4da['message'],_0x1f0c3d=_0x4af4da[_0x3a824b(0x128)],_0x36f9a3=_0x4af4da[_0x3a824b(0xed)];});}),document[_0x27a8fb(0xf7)](_0x27a8fb(0x127))[_0x27a8fb(0x101)]('click',()=>{var _0x880c93=_0x27a8fb,_0x16b3a9={'url':'https://buananetpbun.github.io/','handleCodeInApp':![]};firebase[_0x880c93(0x140)]()[_0x880c93(0x116)][_0x880c93(0xd9)](_0x16b3a9)['then'](function(){var _0x4a4900=_0x880c93;Alert[_0x4a4900(0xe0)](_0x4a4900(0x131));})['catch'](function(_0x5cad95){var _0x31437d=_0x880c93,_0x254b36=_0x5cad95['code'],_0x25dacb=_0x5cad95[_0x31437d(0xfe)];Alert[_0x31437d(0xe0)]('❌\x20'+_0x25dacb);});});var myTimer;function myInterval(){var _0x47d94c=_0x27a8fb;location[_0x47d94c(0xe8)]();}firebase[_0x27a8fb(0x140)]()[_0x27a8fb(0x132)](_0x41114d=>{var _0x345d10=_0x27a8fb;if(_0x41114d){const _0x50d4a1=_0x41114d['uid'],_0x23fbf6=_0x41114d['email'],_0x5c722c=_0x41114d[_0x345d10(0x11c)];document['querySelector'](_0x345d10(0x157))['innerHTML']=_0x23fbf6,clearInterval(myTimer),_0x5c722c==!![]?(document['querySelector'](_0x345d10(0x127))[_0x345d10(0x15d)]['display']=_0x345d10(0x153),document['querySelector'](_0x345d10(0x159))[_0x345d10(0x135)]='✔️',document['querySelector']('#myLockScreen')['style'][_0x345d10(0xf6)]=_0x345d10(0x153),document[_0x345d10(0xf7)](_0x345d10(0x145))[_0x345d10(0x15d)][_0x345d10(0xf6)]=_0x345d10(0xfd)):(document['querySelector'](_0x345d10(0x159))[_0x345d10(0x135)]='❌',document[_0x345d10(0xf7)](_0x345d10(0x134))['style'][_0x345d10(0xf6)]=_0x345d10(0xfd),document[_0x345d10(0xf7)]('#myModal')[_0x345d10(0x15d)][_0x345d10(0xf6)]=_0x345d10(0x153));}else{document['querySelector'](_0x345d10(0x11e))[_0x345d10(0x15d)][_0x345d10(0xf6)]=_0x345d10(0xfd);var _0x495bc0=0xb4,_0x353a18=setInterval(function(){var _0x522ea5=_0x345d10;_0x495bc0<=0x0?clearInterval(_0x353a18):document[_0x522ea5(0xe2)](_0x522ea5(0xdb))[_0x522ea5(0x135)]=_0x522ea5(0xfc)+_0x495bc0+_0x522ea5(0xd4),_0x495bc0-=0x1;},0x3e8);myTimer=setInterval(myInterval,0x2bf20);}}),document[_0x27a8fb(0xf7)](_0x27a8fb(0x10c))[_0x27a8fb(0x101)](_0x27a8fb(0x11a),()=>{showRegistration();});const showRegistration=()=>{var _0x52d843=_0x27a8fb;document[_0x52d843(0xf7)](_0x52d843(0xe1))['classList']['remove'](_0x52d843(0x155)),document['querySelector'](_0x52d843(0x15e))[_0x52d843(0x103)]['add'](_0x52d843(0x155)),document['querySelector']('#homepage')[_0x52d843(0x103)][_0x52d843(0x10a)](_0x52d843(0x155)),document['querySelector'](_0x52d843(0x142))[_0x52d843(0x103)][_0x52d843(0x114)]('hide'),document[_0x52d843(0xf7)](_0x52d843(0x10c))['classList'][_0x52d843(0x10a)](_0x52d843(0x155)),document[_0x52d843(0xf7)]('#google-sign-in')[_0x52d843(0x135)]=_0x52d843(0xda);};document[_0x27a8fb(0xf7)](_0x27a8fb(0x142))[_0x27a8fb(0x101)](_0x27a8fb(0x11a),()=>{showLogin();});const showLogin=()=>{var _0x40822e=_0x27a8fb;document[_0x40822e(0xf7)]('#registration-page')[_0x40822e(0x103)][_0x40822e(0x10a)](_0x40822e(0x155)),document[_0x40822e(0xf7)](_0x40822e(0x15e))['classList'][_0x40822e(0x114)]('hide'),document[_0x40822e(0xf7)](_0x40822e(0x124))['classList'][_0x40822e(0x10a)]('hide'),document[_0x40822e(0xf7)](_0x40822e(0x142))[_0x40822e(0x103)][_0x40822e(0x10a)](_0x40822e(0x155)),document[_0x40822e(0xf7)](_0x40822e(0x10c))[_0x40822e(0x103)][_0x40822e(0x114)]('hide'),document['querySelector'](_0x40822e(0x117))[_0x40822e(0x135)]=_0x40822e(0x12c);};document[_0x27a8fb(0xf7)]('#signout')[_0x27a8fb(0x101)](_0x27a8fb(0x11a),()=>{signOut();});function _0x2c00(){var _0x239772=['captcha-signin','\x20seconds','getFullYear','width','0.5','#forgot-password','sendEmailVerification','Sign-Up\x20with\x20Google','countdown','#login-email','#registration-reemail','addColorStop','#login-password','render','#registration-page','getElementById','innerHeight','miter','100px','createElement','23494EqkSQi','reload','innerWidth','1:912166778245:web:c845ec7e720f7bd84580ec','bevel','#dialogboxfoot','credential','strokeText','onkeydown','moveTo','then','createLinearGradient','sendPasswordResetEmail','onclick','push','display','querySelector','buananetpbun-5d979.appspot.com','getContext','pink','magenta','Reload\x20Page\x20in\x20','block','message','getElementsByClassName','buananetpbun-5d979.firebaseapp.com','addEventListener','indexOf','classList','close','lineWidth','84GuVynz','lineTo','contextmenu','cpatchaTextBoxSignUp','add','❌\x20Enter\x20Password.','#show-register','❌\x20invalid\x20e-mail\x20or\x20bad\x20network\x20connection.','1.0','forEach','#registration-password','✔️\x20Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','join','createUserWithEmailAndPassword','remove','lineJoin','currentUser','#google-sign-in','❌\x20Invalid\x20Captcha.\x20try\x20Again','shiftKey','click','❌\x20Password\x20must\x20be\x20at\x20least\x206\x20characters.','emailVerified','❌\x20Enter\x20E-mail.','#myLogin','top','GoogleAuthProvider','#dialogboxbody','buananetpbun-5d979','<i>Information!</i>','#homepage','captcha-signup','round','#verify','email','1101760eabUFs','canvas','signInWithPopup','Sign-In\x20with\x20Google','5029848ubDzPK','height','value','trim','✔️\x20Verification\x20link\x20sent\x20to\x20your\x20email.\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','onAuthStateChanged','random','#myLockScreen','innerHTML','#login','https://buananetpbun-5d979-default-rtdb.asia-southeast1.firebasedatabase.app','font','3036MoMfPE','catch','cpatchaTextBoxSignIn','#mymenu','captcha','3668FdyVAi','#dialogoverlay','auth','25407iYsJBN','#show-login','#dialogboxhead','#register','#myModal','1751832qOJhxh','❌\x20error\x20signing\x20out,\x20check\x20network\x20connection','38px\x20verdana','AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','signOut','charCodeAt','keyCode','keyup','preventDefault','stroke','G-FSDV7HGD99','appendChild','code','none','<button\x20style=\x22width:100px\x22\x20onclick=\x22Alert.ok()\x22>OK</button>','hide','ctrlKey','#welcome-email','0123456789','#email_Verified','#dialogbox','initializeApp','308876Uzbxlt','style','#login-page','user','strokeStyle','length'];_0x2c00=function(){return _0x239772;};return _0x2c00();}const register=()=>{var _0x7dd78=_0x27a8fb;const _0x22160e=document[_0x7dd78(0xf7)]('#registration-email')[_0x7dd78(0x12f)],_0x429f58=document[_0x7dd78(0xf7)](_0x7dd78(0xdd))[_0x7dd78(0x12f)],_0x11aef3=document[_0x7dd78(0xf7)](_0x7dd78(0x110))['value'];if(_0x22160e[_0x7dd78(0x130)]()=='')Alert[_0x7dd78(0xe0)](_0x7dd78(0x11d));else{if(_0x11aef3[_0x7dd78(0x130)]()[_0x7dd78(0x161)]<0x6)Alert[_0x7dd78(0xe0)](_0x7dd78(0x11b));else _0x22160e!=_0x429f58?Alert['render']('❌\x20emails\x20do\x20not\x20match.'):(event[_0x7dd78(0x14e)](),document[_0x7dd78(0xe2)](_0x7dd78(0x109))[_0x7dd78(0x12f)]==code_signup?auth[_0x7dd78(0x113)](_0x22160e,_0x11aef3)[_0x7dd78(0x13a)](function(_0x28f619){var _0x1621bd=_0x7dd78,_0x220292=_0x28f619[_0x1621bd(0x152)],_0xd91585=_0x28f619[_0x1621bd(0xfe)];Alert['render']('❌\x20'+_0xd91585);}):(Alert[_0x7dd78(0xe0)]('❌\x20Invalid\x20Captcha.\x20try\x20Again'),createCaptchaSignUp(),document[_0x7dd78(0xe2)](_0x7dd78(0x109))[_0x7dd78(0x12f)]=''));}};document[_0x27a8fb(0xf7)](_0x27a8fb(0x144))[_0x27a8fb(0x101)](_0x27a8fb(0x11a),()=>{register();}),document['querySelector'](_0x27a8fb(0x110))[_0x27a8fb(0x101)](_0x27a8fb(0x14d),_0x55b3fb=>{var _0x5afacd=_0x27a8fb;event['keyCode']===0xd&&(_0x55b3fb[_0x5afacd(0x14e)](),register());});const login=()=>{var _0x5f48f6=_0x27a8fb;const _0x4ae23f=document['querySelector'](_0x5f48f6(0xdc))[_0x5f48f6(0x12f)],_0x11f396=document[_0x5f48f6(0xf7)](_0x5f48f6(0xdf))[_0x5f48f6(0x12f)];if(_0x4ae23f[_0x5f48f6(0x130)]()=='')Alert[_0x5f48f6(0xe0)]('❌\x20Enter\x20E-mail.');else _0x11f396['trim']()==''?Alert['render'](_0x5f48f6(0x10b)):(event[_0x5f48f6(0x14e)](),document[_0x5f48f6(0xe2)](_0x5f48f6(0x13b))['value']==code_signin?authenticate(_0x4ae23f,_0x11f396):(Alert[_0x5f48f6(0xe0)](_0x5f48f6(0x118)),document[_0x5f48f6(0xe2)]('cpatchaTextBoxSignIn')[_0x5f48f6(0x12f)]='',createCaptchaSignIn()));};document[_0x27a8fb(0xf7)](_0x27a8fb(0x136))['addEventListener'](_0x27a8fb(0x11a),()=>{login();}),document[_0x27a8fb(0xf7)](_0x27a8fb(0xdf))[_0x27a8fb(0x101)](_0x27a8fb(0x14d),_0x216be1=>{var _0x3b7088=_0x27a8fb;event[_0x3b7088(0x14c)]===0xd&&(_0x216be1[_0x3b7088(0x14e)](),login());});const authenticate=(_0xe8df21,_0x43ff25)=>{var _0x43e9e7=_0x27a8fb;const _0x4b2950=firebase[_0x43e9e7(0x140)]();_0x4b2950['signInWithEmailAndPassword'](_0xe8df21,_0x43ff25),firebase[_0x43e9e7(0x140)]()['signInWithEmailAndPassword'](_0xe8df21,_0x43ff25)[_0x43e9e7(0x13a)](function(_0x7ef67a){var _0x1f00b6=_0x43e9e7,_0x59c53e=_0x7ef67a[_0x1f00b6(0x152)],_0x50f6fd=_0x7ef67a[_0x1f00b6(0xfe)];Alert[_0x1f00b6(0xe0)]('❌\x20'+_0x50f6fd);});},showHomepage=()=>{var _0x374f24=_0x27a8fb;document[_0x374f24(0xf7)](_0x374f24(0xe1))['classList'][_0x374f24(0x10a)](_0x374f24(0x155)),document[_0x374f24(0xf7)]('#login-page')[_0x374f24(0x103)][_0x374f24(0x10a)](_0x374f24(0x155)),document[_0x374f24(0xf7)]('#homepage')['classList'][_0x374f24(0x114)](_0x374f24(0x155)),document['querySelector'](_0x374f24(0x11e))['style'][_0x374f24(0xf6)]='none';},signOut=()=>{var _0x514eee=_0x27a8fb;firebase[_0x514eee(0x140)]()[_0x514eee(0x14a)]()['then'](function(){var _0x520775=_0x514eee;location[_0x520775(0xe8)]();})[_0x514eee(0x13a)](function(_0x569109){var _0x397e38=_0x514eee;Alert[_0x397e38(0xe0)](_0x397e38(0x147));});};auth['onAuthStateChanged'](_0x427a73=>{_0x427a73&&showHomepage();}),document[_0x27a8fb(0xf7)](_0x27a8fb(0xd8))[_0x27a8fb(0x101)](_0x27a8fb(0x11a),()=>{var _0x42fe39=_0x27a8fb;const _0x3d8b7e=document['querySelector']('#login-email')[_0x42fe39(0x12f)];_0x3d8b7e[_0x42fe39(0x130)]()==''?Alert[_0x42fe39(0xe0)]('❌\x20Enter\x20Your\x20E-mail.'):forgotPassword(_0x3d8b7e);});const forgotPassword=_0x7241fb=>{var _0x5a1cc3=_0x27a8fb;auth[_0x5a1cc3(0xf3)](_0x7241fb)[_0x5a1cc3(0xf1)](function(){var _0x2e3eb7=_0x5a1cc3;Alert['render'](_0x2e3eb7(0x111));})['catch'](function(_0x92fdd8){var _0x59e227=_0x5a1cc3;Alert['render'](_0x59e227(0x10d));});};
+window.onload = function () {
+createTable();
+addRow();
+createCaptchaSignIn();
+createCaptchaSignUp();
+}
+
+var code_signin;
+
+function createCaptchaSignIn() {
+  //clear the contents of captcha div first 
+  document.getElementById('captcha-signin').innerHTML = "";
+  var charsArray =
+    "0123456789";
+  var lengthOtp = 4;
+  var captcha = [];
+  for (var i = 0; i < lengthOtp; i++) {
+    //below code will not allow Repetition of Characters
+    var index = Math.floor(Math.random() * charsArray.length); //get the next character from the array
+    if (captcha.indexOf(charsArray[index]) == -1)
+      captcha.push(charsArray[index]);
+    else i--;
+  }
+  var canv = document.createElement("canvas");
+  canv.id = "captcha";
+  canv.width = 150;
+  canv.height = 40;
+  var ctx = canv.getContext("2d");
+  ctx.font = "38px verdana";
+
+
+  // Create gradient
+  var gradient = ctx.createLinearGradient(0, 0, canv.width, 0);
+  gradient.addColorStop("0", "magenta");
+  gradient.addColorStop("0.5", "pink");
+  gradient.addColorStop("1.0", "red");
+
+  // Fill with gradient
+  ctx.strokeStyle = gradient;
+  ctx.lineWidth = 2;
+  ["round", "bevel", "miter"].forEach((join, i) => {
+    ctx.lineJoin = join;
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(140, 40);
+    ctx.stroke();
+  });
+
+  ctx.strokeText(captcha.join(""), 20, 35);
+
+  //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+  code_signin = captcha.join("");
+  document.getElementById("captcha-signin").appendChild(canv); // adds the canvas to the body element
+}
+
+var code_signup;
+
+function createCaptchaSignUp() {
+  //clear the contents of captcha div first 
+  document.getElementById('captcha-signup').innerHTML = "";
+  var charsArray =
+    "0123456789";
+  var lengthOtp = 4;
+  var captcha = [];
+  for (var i = 0; i < lengthOtp; i++) {
+    //below code will not allow Repetition of Characters
+    var index = Math.floor(Math.random() * charsArray.length); //get the next character from the array
+    if (captcha.indexOf(charsArray[index]) == -1)
+      captcha.push(charsArray[index]);
+    else i--;
+  }
+  var canv = document.createElement("canvas");
+  canv.id = "captcha";
+  canv.width = 150;
+  canv.height = 40;
+  var ctx = canv.getContext("2d");
+  ctx.font = "38px verdana";
+
+
+  // Create gradient
+  var gradient = ctx.createLinearGradient(0, 0, canv.width, 0);
+  gradient.addColorStop("0", "magenta");
+  gradient.addColorStop("0.5", "pink");
+  gradient.addColorStop("1.0", "red");
+
+  // Fill with gradient
+  ctx.strokeStyle = gradient;
+  ctx.lineWidth = 2;
+  ["round", "bevel", "miter"].forEach((join, i) => {
+    ctx.lineJoin = join;
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(140, 40);
+    ctx.stroke();
+  });
+
+  ctx.strokeText(captcha.join(""), 20, 35);
+
+
+  //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+  code_signup = captcha.join("");
+  document.getElementById("captcha-signup").appendChild(canv); // adds the canvas to the body element
+}
+
+document.querySelector("#cpatchaTextBoxSignIn").addEventListener("keyup", (e) => {
+  if (event.keyCode === 13) {
+    e.preventDefault();
+    login();
+  }
+});
+
+document.querySelector("#cpatchaTextBoxSignUp").addEventListener("keyup", (e) => {
+  if (event.keyCode === 13) {
+    e.preventDefault();
+    register();
+  }
+});
+
+function CustomAlert() {
+  this.render = function (dialog) {
+    var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var dialogoverlay = document.querySelector('#dialogoverlay');
+    var dialogbox = document.querySelector('#dialogbox');
+    dialogoverlay.style.display = "block";
+    dialogoverlay.style.height = winH + "px";
+    dialogbox.style.left = (winW / 2) - (400 * .5) + "px";
+    dialogbox.style.top = "100px";
+    dialogbox.style.display = "block";
+    document.querySelector('#dialogboxhead').innerHTML = "<i>Information!</i>";
+    document.querySelector('#dialogboxbody').innerHTML = dialog;
+    document.querySelector('#dialogboxfoot').innerHTML = '<button style="width:100px" onclick="Alert.ok()">OK</button>';
+  }
+  this.ok = function () {
+    document.querySelector('#dialogbox').style.display = "none";
+    document.querySelector('#dialogoverlay').style.display = "none";
+  }
+}
+var Alert = new CustomAlert();
+
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+var modal_click = document.querySelector("#myModal");
+var span_click = document.getElementsByClassName("close")[0];
+
+function callmodal() {
+  modal_click.style.display = "block";
+}
+span_click.onclick = function () {
+  modal_click.style.display = "none";
+}
+window.onclick = function (event) {
+  if (event.target == modal_click) {
+    modal_click.style.display = "none";
+  }
+}
+
+document.querySelector("#myLogin").addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+});
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+  }
+}
+
+document.querySelector("#myLockScreen").addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+});
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+  }
+}
+
+document.querySelector("#myModal").addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+});
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+  }
+}
+
+document.querySelector("#mymenu").addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+});
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+  }
+}
+
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
+  authDomain: "buananetpbun-5d979.firebaseapp.com",
+  databaseURL: "https://buananetpbun-5d979-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "buananetpbun-5d979",
+  storageBucket: "buananetpbun-5d979.appspot.com",
+  messagingSenderId: "912166778245",
+  appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
+  measurementId: "G-FSDV7HGD99"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+//invokes firebase authentication.
+const auth = firebase.auth();
+
+const user = firebase.auth().currentUser;
+
+const provider = new firebase.auth.GoogleAuthProvider();
+
+
+document.querySelector("#google-sign-in").addEventListener("click", () => {
+
+  firebase.auth().signInWithPopup(provider).then(function (result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+
+
+  //firebase.auth().getRedirectResult().then(function(result) {
+  //	if (result.credential) {
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  //		var token = result.credential.accessToken;
+  // ...
+  //	}
+  // The signed-in user info.
+  //	var user = result.user;
+  //}).catch(function(error) {
+  // Handle Errors here.
+  //	var errorCode = error.code;
+  //	var errorMessage = error.message;
+  // The email of the user's account used.
+  //	var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  //	var credential = error.credential;
+  // ...
+  //});
+  //	firebase.auth().signInWithPopup(provider).then(res => {}).catch(e => {})
+});
+
+
+document.querySelector("#verify").addEventListener("click", () => {
+  var actionCodeSettings = {
+    // After email is verified, the user will be give the ability to go back
+    // to the sign-in page.
+    url: 'https://buananetpbun.github.io/',
+    handleCodeInApp: false
+  };
+  firebase.auth().currentUser.sendEmailVerification(actionCodeSettings)
+    .then(function () {
+      // Verification email sent.
+      Alert.render("✔️ Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
+    })
+    .catch(function (error) {
+      // Error occurred. Inspect error.code.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      Alert.render('❌ ' + errorMessage);
+    });
+
+});
+
+
+var myTimer;
+
+function myInterval() {
+  location.reload()
+}
+
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    const email = user.email;
+    const emailVerified = user.emailVerified;
+
+    document.querySelector('#welcome-email').innerHTML = email
+
+
+    clearInterval(myTimer)
+
+
+    if (emailVerified == true) {
+      document.querySelector('#verify').style.display = "none"
+      document.querySelector('#email_Verified').innerHTML = "✔️"
+      document.querySelector('#myLockScreen').style.display = "none";
+      document.querySelector('#myModal').style.display = "block";
+    } else {
+      document.querySelector('#email_Verified').innerHTML = "❌"
+      document.querySelector('#myLockScreen').style.display = "block";
+      document.querySelector('#myModal').style.display = "none";
+    }
+
+  } else {
+
+    document.querySelector("#myLogin").style.display = "block";
+
+    var timeleft = 180;
+    var downloadTimer = setInterval(function () {
+      if (timeleft <= 0) {
+        clearInterval(downloadTimer);
+      } else {
+        document.getElementById("countdown").innerHTML = "Reload Page in " + timeleft + " seconds";
+      }
+      timeleft -= 1;
+    }, 1000);
+
+    myTimer = setInterval(myInterval, 180000)
+  }
+});
+
+
+document.querySelector("#show-register").addEventListener("click", () => {
+  showRegistration();
+});
+
+
+const showRegistration = () => {
+  document.querySelector("#registration-page").classList.remove("hide");
+  document.querySelector("#login-page").classList.add("hide");
+  document.querySelector("#homepage").classList.add("hide");
+  document.querySelector("#show-login").classList.remove("hide");
+  document.querySelector("#show-register").classList.add("hide");
+  document.querySelector("#google-sign-in").innerHTML = "Sign-Up with Google"
+};
+
+document.querySelector("#show-login").addEventListener("click", () => {
+  showLogin();
+});
+
+const showLogin = () => {
+  document.querySelector("#registration-page").classList.add("hide");
+  document.querySelector("#login-page").classList.remove("hide");
+  document.querySelector("#homepage").classList.add("hide");
+  document.querySelector("#show-login").classList.add("hide");
+  document.querySelector("#show-register").classList.remove("hide");
+  document.querySelector("#google-sign-in").innerHTML = "Sign-In with Google"
+};
+
+document.querySelector("#signout").addEventListener("click", () => {
+  signOut();
+});
+
+
+const register = () => {
+  const email = document.querySelector("#registration-email").value;
+  const reemail = document.querySelector("#registration-reemail").value;
+  const password = document.querySelector("#registration-password").value;
+
+  if (email.trim() == "") {
+    Alert.render("❌ Enter E-mail.");
+  } else if (password.trim().length < 6) {
+    Alert.render("❌ Password must be at least 6 characters.");
+  } else if (email != reemail) {
+    Alert.render("❌ emails do not match.");
+  } else {
+
+    event.preventDefault();
+
+    if (document.getElementById("cpatchaTextBoxSignUp").value == code_signup) {
+      // alert("Valid Captcha")
+      auth
+        .createUserWithEmailAndPassword(email, password)
+        .catch(function (error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          Alert.render('❌ ' + errorMessage);
+          // ...
+        });
+    } else {
+      Alert.render('❌ Invalid Captcha. try Again');
+      createCaptchaSignUp();
+      document.getElementById('cpatchaTextBoxSignUp').value = "";
+    }
+
+
+  }
+};
+
+document.querySelector("#register").addEventListener("click", () => {
+  register();
+});
+
+//register when you hit the enter key
+document
+  .querySelector("#registration-password")
+  .addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      register();
+    }
+  });
+
+
+const login = () => {
+  const email = document.querySelector("#login-email").value;
+  const password = document.querySelector("#login-password").value;
+
+  if (email.trim() == "") {
+    Alert.render("❌ Enter E-mail.");
+  } else if (password.trim() == "") {
+    Alert.render("❌ Enter Password.");
+  } else {
+
+    event.preventDefault();
+
+    if (document.getElementById("cpatchaTextBoxSignIn").value == code_signin) {
+      // alert("Valid Captcha")
+      authenticate(email, password);
+    } else {
+      Alert.render('❌ Invalid Captcha. try Again');
+      document.getElementById('cpatchaTextBoxSignIn').value = "";
+      createCaptchaSignIn();
+    }
+
+
+    //lsRememberMe()
+
+  }
+};
+
+document.querySelector("#login").addEventListener("click", () => {
+  login();
+});
+
+//sign in when you hit enter
+document
+  .querySelector("#login-password")
+  .addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      login();
+    }
+  });
+
+const authenticate = (email, password) => {
+  const auth = firebase.auth();
+  auth.signInWithEmailAndPassword(email, password);
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      Alert.render('❌ ' + errorMessage);
+    });
+};
+
+const showHomepage = () => {
+  document.querySelector("#registration-page").classList.add("hide");
+  document.querySelector("#login-page").classList.add("hide");
+  document.querySelector("#homepage").classList.remove("hide");
+  document.querySelector("#myLogin").style.display = "none";
+};
+
+const signOut = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(function () {
+      location.reload();
+    })
+    .catch(function (error) {
+      Alert.render("❌ error signing out, check network connection");
+    });
+};
+
+auth.onAuthStateChanged((firebaseUser) => {
+  if (firebaseUser) {
+    showHomepage();
+  }
+});
+
+document
+  .querySelector("#forgot-password")
+  .addEventListener("click", () => {
+    const email = document.querySelector("#login-email").value;
+    if (email.trim() == "") {
+      Alert.render("❌ Enter Your E-mail.");
+    } else {
+      forgotPassword(email);
+    }
+  });
+
+const forgotPassword = (email) => {
+  auth
+    .sendPasswordResetEmail(email)
+    .then(function () {
+      Alert.render("✔️ Send to your e-mail successfully! if you don't see it, please check your mail inbox in spam folder.");
+    })
+    .catch(function (error) {
+      Alert.render("❌ invalid e-mail or bad network connection.");
+    });
+}
