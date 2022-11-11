@@ -87,8 +87,9 @@ padding-right:12px;
 }
 
 .mymenu li a:hover {
-	background-color: #f0f0f0;
-	color: #ff6600;
+      background-color: #292929;
+      color: #ff6600;
+      border-radius:5px;
 }
 
 /* LOGIN Content */
