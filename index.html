@@ -895,8 +895,11 @@
       </div>
     </div>
 	<script>
-	// Google Custom Search Placeholder
-document.getElementById("gsc-i-id1").setAttribute("placeholder", "SEARCH")
+window.onload = myCustomPlaceholder;
+
+function myCustomPlaceholder() {
+    document.getElementById("gsc-i-id1").setAttribute("placeholder", "my custom search placeholder")
+}
 
 	</script>
     <script>
