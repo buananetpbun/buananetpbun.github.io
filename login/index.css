@@ -202,7 +202,7 @@ text-align: right;
       overflow: hidden;
       background-color: #f9f9f9;
       margin-right: 10px;
-      background: url("https://user-images.githubusercontent.com/42666125/150687713-5bb23ddf-11a2-476d-a6dc-81e97eec3a77.png") no-repeat right !important;
+      background: url("./img/made-for-mikrotik.png") no-repeat right !important;
       }
       .mymenu li {
       float: left;
