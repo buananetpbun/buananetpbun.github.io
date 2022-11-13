@@ -49,7 +49,7 @@ font-weight:bold;
 .logo a{
 color:#111 !important;
 text-decoration:none !important;
-font-size:30px;
+font-size:24px;
 text-decoration:none;
 }
 .logo-left {
@@ -114,7 +114,7 @@ text-align: center
 }
 @media screen and (max-width: 550px){
 .logo-left a{
-font-size:25px;
+font-size:22px;
 }	
 .logo-left, .logo-right {
 float:none;
