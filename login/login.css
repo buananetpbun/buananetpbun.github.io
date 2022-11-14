@@ -190,7 +190,7 @@ padding-right:12px;
 	/* Enable scroll if needed */
 	background-color: rgb(0, 0, 0);
 	/* Fallback color */
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.3);
 	/* Black w/ opacity */
 }
 
@@ -213,7 +213,7 @@ padding-right:12px;
 	/* Enable scroll if needed */
 	background-color: rgb(0, 0, 0);
 	/* Fallback color */
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.3);
 	/* Black w/ opacity */
 }
 
