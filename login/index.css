@@ -444,7 +444,7 @@ width:96% !important;
 }
 @media screen and (max-width:600px){
 .modal-content {
-margin-top:50px;
+margin-top:40px;
 }
 .mikrotik-logo {
 display: flex;
