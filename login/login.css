@@ -340,3 +340,18 @@ padding-right:12px;
 display: none;
 margin-top:20px;
 }
+
+.avatar img {
+margin-bottom:-13px;
+margin-left:5px;
+margin-right:5px;
+width: 40px;
+height: 40px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+-webkit-border-radius: 99em;
+-moz-border-radius: 99em;
+border-radius: 99em;
+border: 2px solid #292929;
+}

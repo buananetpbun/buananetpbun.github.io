@@ -300,6 +300,21 @@
       .show-homepage-menu{
       margin-bottom:3px;	  
       }
+	.avatar img {
+	margin-bottom:-13px;
+	margin-left:5px;
+	margin-right:5px;
+	width: 40px;
+	height: 40px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-border-radius: 99em;
+	-moz-border-radius: 99em;
+	border-radius: 99em;
+	border: 2px solid #292929;
+	}
+	  
       @media screen and (max-width: 1024px){
       .mikrotik-logo {
       display: none;
@@ -441,6 +456,9 @@
           <button style="width:100px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
 		  <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
           <span class="hide-homepage">
+		  <span class="avatar">
+          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+         </span>
           <span style="font-weight:normal;font-size:13px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
           <span style="font-weight:normal; font-size:13px"> [<span id="email_Verified"></span>]</span>
           </span>
