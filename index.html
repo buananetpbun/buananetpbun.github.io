@@ -558,7 +558,7 @@
       width: 50px; 
       margin-top:-5px !important;
       }  
-      .hide-homepage {display:none}
+      /* -- .hide-homepage {display:none} -- */
       h1{font-size:40px}
       .content {
       width:100% !important;
@@ -633,6 +633,9 @@
       display: flex;
       } 
       }
+	   @media screen and (max-width:600px){
+	  .hide-homepage {display:none}
+	  }
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
       /* -- 2x -- */
       }
