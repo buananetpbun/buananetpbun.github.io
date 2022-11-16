@@ -183,46 +183,46 @@ color: #ccc;
 padding: 10px;
 text-align: right;
 }	  
-      /* The Main Menu */
-      .mymenu {
-		  z-index:5;
-      margin: 0 auto;
-      background-color: #f9f9f9;
-      width: 700px;
-      border-radius: 0 0 5px 5px;
-      border: 2px solid #f9f9f9;
-      font-weight: bold;
-      font-size: 15px;
-      position: relative;
-      padding-left:12px;
-	  padding-right:12px;
-      }
-      .mymenu ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #f9f9f9;
-      margin-right: 10px;
-      background: url("../img/made-for-mikrotik.png") no-repeat right !important;
-      }
-      .mymenu li {
-      float: left;
-      }
-      .mymenu li a {
-      display: block;
-      color: #555;
-      text-align: center;
-      padding: 8px 10px;
-      text-decoration: none;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      }
-      .mymenu li a:hover {
-      background-color: #292929;
-      color: #ff6600;
-      border-radius:5px;
-      }  
+/* The Main Menu */
+.mymenu {
+z-index:5;
+margin: 0 auto;
+background-color: #f9f9f9;
+width: 700px;
+border-radius: 0 0 5px 5px;
+border: 2px solid #f9f9f9;
+font-weight: bold;
+font-size: 15px;
+position: relative;
+padding-left:12px;
+padding-right:12px;
+}
+.mymenu ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #f9f9f9;
+margin-right: 10px;
+background: url("../img/made-for-mikrotik.png") no-repeat right !important;
+}
+.mymenu li {
+float: left;
+}
+.mymenu li a {
+display: block;
+color: #555;
+text-align: center;
+padding: 8px 10px;
+text-decoration: none;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+.mymenu li a:hover {
+background-color: #292929;
+color: #ff6600;
+border-radius:5px;
+}  
 /* LOGIN Content */
 .forms-out {
 margin: 0 auto;
