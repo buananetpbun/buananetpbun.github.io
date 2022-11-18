@@ -187,10 +187,10 @@ text-align: right;
 .mymenu {
 z-index:5;
 margin: 0 auto;
-background-color: #f9f9f9;
+background-color: #ffffff;
 width: 700px;
 border-radius: 0 0 5px 5px;
-border: 2px solid #f9f9f9;
+border: 2px solid #ffffff;
 font-weight: bold;
 font-size: 15px;
 position: relative;
@@ -203,7 +203,7 @@ list-style-type: none;
 margin: 0;
 padding: 0;
 overflow: hidden;
-background-color: #f9f9f9;
+background-color: #ffffff;
 margin-right: 10px;
 background: url("../img/made-for-mikrotik.png") no-repeat right !important;
 }
@@ -212,7 +212,7 @@ float: left;
 }
 .mymenu li a {
 display: block;
-color: #555;
+color: #292929;
 text-align: center;
 padding: 8px 10px;
 text-decoration: none;
@@ -221,7 +221,7 @@ margin-bottom: 5px;
 }
 .mymenu li a:hover {
 background-color: #292929;
-color: #ff6600;
+color: #ffffff;
 border-radius:5px;
 }  
 /* LOGIN Content */
