@@ -20,4 +20,4 @@
 
 © Copyright <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
 
-Made for RouterOS https://mikrotik.com
+Made for MikroTik RouterOS https://mikrotik.com
