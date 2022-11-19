@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/42666125/147416579-20a6475d-3b90-4ead-a442-9deaefc19509.png)
+![image](https://user-images.githubusercontent.com/42666125/202864286-43913603-5fae-4532-a329-36f26c547c5a.png)
 - ⚡ Github Page : https://buananetpbun.github.io
 
 ## :link: <b>You can find me at:</b>
@@ -20,4 +20,4 @@
 
 © Copyright <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
 
-Made for RouterOS https://mikrotik.com
+Made for MikroTik RouterOS https://mikrotik.com
