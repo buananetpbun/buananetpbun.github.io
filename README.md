@@ -1,5 +1,4 @@
-![image](https://user-images.githubusercontent.com/42666125/202864154-58264e0d-4b48-4cae-ad78-030f792cffc5.png)
-
+![image](https://user-images.githubusercontent.com/42666125/202864286-43913603-5fae-4532-a329-36f26c547c5a.png)
 - ⚡ Github Page : https://buananetpbun.github.io
 
 ## :link: <b>You can find me at:</b>
