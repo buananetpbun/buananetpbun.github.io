@@ -28,7 +28,7 @@
       -------------------------------------------------- */  
       *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
       body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-      body { font-size:16px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0;}
+      body { font-size:15px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0;}
       html, body {
       height: 100%;
       width:100%;
@@ -256,6 +256,7 @@
       margin-top:8px;
       border: 1px solid #ccc;
       border-radius: 5px;
+	  font-size:14px;
       }
       table, tr, td {
       border: none;
@@ -415,20 +416,18 @@
                   # Load Balancing Method: <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">ECMP (Equal Cost Multi Path)</span><br>
                   ################################################<br>
                   </span><br>
-                  <b>/ip firewall nat</b>
-                  <br>	<span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"
-                  <br>
-                  </span>	<span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"
-                  <br>
-                  </span>	<span id="wan3-nat" style="display:none">add chain=srcnat out-interface="<span id="wan3-nat-text"></span>" action=masquerade comment="LB By BNT"
-                  <br>
-                  </span>	<span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB By BNT"
-                  <br>
-                  </span>	<span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB By BNT"
-                  <br>
-                  </span>	<span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB By BNT"
-                  <br>
-                  </span>
+				  <b>/ip firewall address-list</b><br>
+				  add list=LOCAL-IP address=10.0.0.0/8 comment="LB By BNT"<br>
+				  add list=LOCAL-IP address=172.16.0.0/12 comment="LB By BNT"<br>
+				  add list=LOCAL-IP address=192.168.0.0/16 comment="LB By BNT"<br>
+                  <b>/ip firewall nat</b><br>
+				  add action=redirect chain=dstnat dst-port=53,5353 protocol=udp src-address-list=LOCAL-IP to-ports=53 comment="LB By BNT"<br>
+                  <span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+				  <span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+				  <span id="wan3-nat" style="display:none">add chain=srcnat out-interface="<span id="wan3-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+				  <span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+				  <span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+				  <span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
                   <span id="show-hide-routing-table" style="display:none">
                   <b>/routing table</b> <br>
                   <span id="wan1-routing-table">add name="<span id="wan1-routing-table-name"></span>" fib comment="LB By BNT"<br></span>
@@ -457,8 +456,13 @@
                   <span id="wan4-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan4-route-text"></span>" <span id="wan4-routing-option">routing-mark</span>="<span id="wan4-route-text-r"></span>" comment="LB By BNT"<br></span>
                   <span id="wan5-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan5-route-text"></span>" <span id="wan5-routing-option">routing-mark</span>="<span id="wan5-route-text-r"></span>" comment="LB By BNT"<br></span>
                   <span id="wan6-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan6-route-text"></span>" <span id="wan6-routing-option">routing-mark</span>="<span id="wan6-route-text-r"></span>" comment="LB By BNT"<br></span>
-                  <b>/ip firewall mangle</b>
-                  <br>	<span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
+                  <b>/ip firewall mangle</b><br>
+				  add action=accept chain=prerouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+				  add action=accept chain=postrouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+				  add action=accept chain=forward dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+				  add action=accept chain=input dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+				  add action=accept chain=output dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+				  <span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
                   <br>
                   </span>	<span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
                   <br>
