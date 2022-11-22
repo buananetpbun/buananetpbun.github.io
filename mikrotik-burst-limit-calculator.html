@@ -78,7 +78,7 @@
       float:right;
       width:450px;
       height:480px;
-      padding: 10px;
+      padding: 15px;
       border-top:1px solid #bbb; 
       border-bottom:1px solid #bbb; 
       border-right:1px solid #bbb; 
@@ -89,7 +89,7 @@
       float:left;
       width:210px;
       height:480px;
-      padding: 10px;
+      padding: 15px;  
       background-color:#ddd;
       border-left:1px solid #bbb; 
       border-top:1px solid #bbb; 
@@ -100,7 +100,7 @@
       float:left;
       width:210px;
       height:480px;
-      padding: 10px;
+      padding: 15px;
       background-color:#ddd;
       border-top:1px solid #bbb; 
       border-bottom:1px solid #bbb;
@@ -210,7 +210,7 @@
       border-radius: 5px;
       }
       label {
-      padding: 5px 5px 5px 0;
+      padding: 10px 5px 5px 0;
       display: inline-block;
       }
       input[type=submit] {
@@ -458,7 +458,7 @@
       </div>
       <div class="sidebar">
         <div style="float:left; width:100%;">
-          <label><b>UPLOAD </b></label><br>
+          <b>UPLOAD</b><br>
           <label>Max Limit (K/M)</label><br>
           <input onkeydown="upperCaseF(this)" type="text" id="up-max-limit" style='color: green' placeholder="512K" value="512K" onkeyup="myFunction()">
         </div>
@@ -470,26 +470,35 @@
           <label>Burst Duration (second)</label><br>
           <input onkeydown="upperCaseF(this)" type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
         </div>
-        <div style="margin-top:10px;font-size:14px;">
-        <b>Burst Formula:</b><br>
-        <div style='color: #555; margin-bottom:3px'>------------------------------</div>
-        <span style='color: Crimson'>BD</span> = ( <span style='color: #191970'>BH</span> * <span style='color: DarkViolet'>BT</span> ) / <span style='color: #01A3DF'>BL</span><br>
-        <div style='color: #555'>------------------------------</div>
-        <span style='color: Crimson'>BD</span> = Burst Duration<br>
-        <span style='color: #191970'>BH</span> = Burst Threshold<br>
-        <span style='color: DarkViolet'>BT</span> &nbsp;= Burst Time<br>
-        <span style='color: #01A3DF'>BL</span> &nbsp;= Burst Limit<br>
-        <div style="margin-top:15px">
-		<span style='color: #555; font-size:11px'>Burst Threshold = Max Limit * 3/4</span><br>
-		<span style='color: #555; font-size:11px'>Limit At = Max Limit * 1/8</span><br>
+        <div style="margin-top:10px; font-size:14px">
+          <b>Upload Burst Result:</b>
+          <div style="display:none">
+		  <div style="clear:both; margin-top:5px"></div>
+          <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
+          </div>
+		  <div style='background-color:#fff;font-size:14px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green;padding:5px'>
+            <span style='color: green;' id="new-burst-up">512K</span> to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span> second<br>
+          </div>
+        </div>
+		
+        <div style="margin-top:40px;font-size:12px; font-weight:700;position:absolute">
+        <b>Burst Limit Formula:</b><br>
+        <div style='color: #555; margin-bottom:3px'>-------------------------------------------------------------------------------</div>
+        <span style='color: Crimson'>Burst Duration</span> = ( <span style='color: #191970'>Burst Threshold</span> x <span style='color: DarkViolet'>Burst Time</span> ) / <span style='color: #01A3DF'>Burst Limit</span><br>
+        <div style='color: #555'>-------------------------------------------------------------------------------</div>
+        
+		<div style="margin-top:5px">
+		<span style='color: #555; font-size:11px'>Burst Threshold = Max Limit x 3/4</span><br>
+		<span style='color: #555; font-size:11px'>Limit At = Max Limit x 1/8</span><br>
 		<span style='color: #555; font-size:11px'>K = Kbps  /  M = Mbps</span><br>
         <span style='color: #555; font-size:11px'>Convert 1000Kbps = 1Mbps</span><br>		
+		</div>  
 		</div>
-        </div>
       </div>
       <div class="sidebar2">
         <div style="float:left; width:100%;">
-          <label><b>DOWNLOAD</b></label><br>
+          <b>DOWNLOAD</b><br>
           <label>Max Limit (K/M)</label><br>
           <input onkeydown="upperCaseF(this)" type="text" id="down-max-limit" value="1M" style='color: green' placeholder="1M" onkeyup="myFunction()" >
         </div>
@@ -503,22 +512,16 @@
           <input onkeydown="upperCaseF(this)" type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
         </div>
         <div style="margin-top:10px; font-size:14px">
-          <b>Upload Burst Result:</b>
-          <div style="clear:both; margin-top:5px"></div>
-          <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
-          <div style='background-color:#fff;font-size:13px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green;padding:5px'>
-            Burst = <span style='color: green;' id="new-burst-up">512K</span> to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span>s<br>
-          </div>
-          <br><br>
           <b>Download Burst Result:</b>
-          <div style="clear:both; margin-top:5px"></div>
+          <div style="display:none">
           <span style='color: Crimson;'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: Crimson'>6</span> second<br>
-          <div style='background-color:#fff;font-size:13px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green; padding:5px'>
-            Burst = <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span>s<br>
+          </div>
+		  <div style='background-color:#fff;font-size:14px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green; padding:5px'>
+            <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span> second<br>
           </div>
         </div>
+
       </div>
       <div class="content">
         <span style="margin-left:2px;font-size:15px"><b>COPY PASTE BURST RESULT TO WINBOX</b></span>
