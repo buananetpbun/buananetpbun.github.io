@@ -76,7 +76,7 @@
       }     
       .content{
       float:right;
-      width:450px;
+      width:50%;
       height:480px;
       padding: 15px;
       border-top:1px solid #bbb; 
@@ -87,7 +87,7 @@
       }
       .sidebar{
       float:left;
-      width:210px;
+      width:25%;
       height:480px;
       padding: 15px;  
       background-color:#ddd;
@@ -98,7 +98,7 @@
       }
       .sidebar2{
       float:left;
-      width:210px;
+      width:25%;
       height:480px;
       padding: 15px;
       background-color:#ddd;
@@ -477,22 +477,20 @@
           <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
           </div>
-		  <div style='background-color:#fff;font-size:14px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green;padding:5px'>
+		  <div style='background-color:#fff;font-size:13px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green;padding:5px'>
             <span style='color: green;' id="new-burst-up">512K</span> to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span> second<br>
           </div>
         </div>
 		
-        <div style="margin-top:40px;font-size:12px; font-weight:700;position:absolute">
-        <b>Burst Limit Formula:</b><br>
+        <div style="margin-top:45px;font-size:12px; font-weight:700;position:absolute">
+        <span style="font-size:15px"><b>Burst Limit Formula:</b></span><br>
         <div style='color: #555; margin-bottom:3px'>-------------------------------------------------------------------------------</div>
-        <span style='color: Crimson'>Burst Duration</span> = ( <span style='color: #191970'>Burst Threshold</span> x <span style='color: DarkViolet'>Burst Time</span> ) / <span style='color: #01A3DF'>Burst Limit</span><br>
+        <span style='color: Crimson'>Burst Duration</span> = ( <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> ) / <span style='color: #01A3DF'>Burst Limit</span><br>
         <div style='color: #555'>-------------------------------------------------------------------------------</div>
         
-		<div style="margin-top:5px">
-		<span style='color: #555; font-size:11px'>Burst Threshold = Max Limit x 3/4</span><br>
-		<span style='color: #555; font-size:11px'>Limit At = Max Limit x 1/8</span><br>
-		<span style='color: #555; font-size:11px'>K = Kbps  /  M = Mbps</span><br>
-        <span style='color: #555; font-size:11px'>Convert 1000Kbps = 1Mbps</span><br>		
+		<div style="margin-top:5px; font-weight:normal">
+		<span style='color: #555; font-size:11px'>Burst Threshold = Max Limit * 3/4</span><br>
+		<span style='color: #555; font-size:11px'>Limit At = Max Limit * 1/8</span><br>
 		</div>  
 		</div>
       </div>
@@ -517,8 +515,8 @@
           <span style='color: Crimson;'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: Crimson'>6</span> second<br>
           </div>
-		  <div style='background-color:#fff;font-size:14px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green; padding:5px'>
-            <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span> second<br>
+		  <div style='background-color:#fff;font-size:13px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green; padding:5px'>
+           <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span> second<br>
           </div>
         </div>
 
