@@ -60,7 +60,7 @@
       font-weight:bold;
       }
       #wrap{
-      width:890px;
+      width:900px;
       margin:0 auto;
       padding:10px;
       }
@@ -71,14 +71,27 @@
       margin-bottom:5px;
       border-top:1px solid #555;
       }
-      .main-wrap{
-      background-color:#ff6600;
+       .main-sidebar{
+      float:left;
+      width:50%;
+      height:455px;
+      padding: 10px; 
+      padding-left:15px;
+      padding-top:10px;
+      background-color:#ddd;
+      border-left:1px solid #bbb; 
+      border-top:1px solid #bbb; 
+      border-bottom:1px solid #bbb;
+      border-radius: 5px 0 0 5px;
       }     
       .content{
       float:right;
-      width:450px;
-      height:480px;
+      width:50%;
+      height:455px;
       padding: 10px;
+      padding-left:5px;
+      padding-right:15px;
+      padding-top:15px;
       border-top:1px solid #bbb; 
       border-bottom:1px solid #bbb; 
       border-right:1px solid #bbb; 
@@ -87,23 +100,16 @@
       }
       .sidebar{
       float:left;
-      width:210px;
-      height:480px;
-      padding: 10px;
-      background-color:#ddd;
-      border-left:1px solid #bbb; 
-      border-top:1px solid #bbb; 
-      border-bottom:1px solid #bbb;
-      border-radius: 5px 0 0 5px;
+      width:50%;
+      height:280px;
+      border-right:1px solid #aaa;
+      padding-right:15px;
       }
       .sidebar2{
       float:left;
-      width:210px;
-      height:480px;
-      padding: 10px;
-      background-color:#ddd;
-      border-top:1px solid #bbb; 
-      border-bottom:1px solid #bbb;
+      width:50%;
+      height:280px;
+      padding-left:15px;
       }
       .footer{
       font-size:13px;
@@ -210,7 +216,7 @@
       border-radius: 5px;
       }
       label {
-      padding: 5px 5px 5px 0;
+      padding: 7px 5px 5px 0;
       display: inline-block;
       }
       input[type=submit] {
@@ -256,7 +262,7 @@
       display: inline-block;
       } 
       .list-mangle {
-      height: 420px;
+      height: 400px;
       background:#fff;
       overflow: auto;
       overflow-x: auto;
@@ -277,7 +283,7 @@
       td, th {
       border: 1px solid #dddddd;
       text-align: left;
-      padding: 8px;
+      padding: 7px;
       }
       /* LOGIN Content */
       .forms-out {
@@ -456,6 +462,7 @@
       <div class="header">
         <h1>MIKROTIK <span style="color:#ff6600">BURST LIMIT</span> CALCULATOR FOR ROUTEROS</h1>
       </div>
+      <div class="main-sidebar">	  
       <div class="sidebar">
         <div style="float:left; width:100%;">
           <label><b>UPLOAD </b></label><br>
@@ -470,22 +477,16 @@
           <label>Burst Duration (second)</label><br>
           <input onkeydown="upperCaseF(this)" type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
         </div>
-        <div style="margin-top:10px;font-size:14px;">
-        <b>Burst Formula:</b><br>
-        <div style='color: #555; margin-bottom:3px'>------------------------------</div>
-        <span style='color: Crimson'>BD</span> = ( <span style='color: #191970'>BH</span> * <span style='color: DarkViolet'>BT</span> ) / <span style='color: #01A3DF'>BL</span><br>
-        <div style='color: #555'>------------------------------</div>
-        <span style='color: Crimson'>BD</span> = Burst Duration<br>
-        <span style='color: #191970'>BH</span> = Burst Threshold<br>
-        <span style='color: DarkViolet'>BT</span> &nbsp;= Burst Time<br>
-        <span style='color: #01A3DF'>BL</span> &nbsp;= Burst Limit<br>
-        <div style="margin-top:15px">
-		<span style='color: #555; font-size:11px'>Burst Threshold = Max Limit * 3/4</span><br>
-		<span style='color: #555; font-size:11px'>Limit At = Max Limit * 1/8</span><br>
-		<span style='color: #555; font-size:11px'>K = Kbps  /  M = Mbps</span><br>
-        <span style='color: #555; font-size:11px'>Convert 1000Kbps = 1Mbps</span><br>		
-		</div>
-        </div>
+        <div style="margin-top:10px; font-size:14px">
+          Estimated Burst Duration:
+          <div style="display:none;clear:both; margin-top:5px">
+          <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
+          </div>
+		  <div style='font-size:13px; font-weight:bold;margin-top:5px'>
+            Burst <span style='color: green;' id="new-burst-up">512K</span> to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span> second<br>
+          </div>
+        </div>		
       </div>
       <div class="sidebar2">
         <div style="float:left; width:100%;">
@@ -503,23 +504,28 @@
           <input onkeydown="upperCaseF(this)" type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
         </div>
         <div style="margin-top:10px; font-size:14px">
-          <b>Upload Burst Result:</b>
-          <div style="clear:both; margin-top:5px"></div>
-          <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
-          <div style='background-color:#fff;font-size:13px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green;padding:5px'>
-            Burst = <span style='color: green;' id="new-burst-up">512K</span> to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span>s<br>
-          </div>
-          <br><br>
-          <b>Download Burst Result:</b>
-          <div style="clear:both; margin-top:5px"></div>
+          Estimated Burst Duration:
+          <div style="display:none; clear:both; margin-top:5px">
           <span style='color: Crimson;'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: Crimson'>6</span> second<br>
-          <div style='background-color:#fff;font-size:13px; font-weight:bold;margin-top:5px;border-bottom:1px dotted green;border-top:1px dotted green; padding:5px'>
-            Burst = <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span>s<br>
+          </div>
+		  <div style='font-size:13px; font-weight:bold;margin-top:5px;'>
+            Burst <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span> second<br>
           </div>
         </div>
       </div>
+        <div style="clear:both"></div>
+        <div style="border-radius:5px; background-color:#ccc;padding:10px; margin-top:40px;font-size:11px; font-weight:700;">
+          <span style="font-size:12px"><b>Burst Limit Formula:</b></span><br>
+          <div style='color: #555; margin-bottom:3px'>---------------------------------------------------------------------------------</div>
+          <span style='color: Crimson'>Burst Duration</span> = <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> / <span style='color: #01A3DF'>Burst Limit</span><br>
+          <div style='color: #555'>---------------------------------------------------------------------------------</div>
+          <div style="margin-top:5px; font-weight:normal">
+            <span style='color: #555; font-size:11px'>Burst Threshold = Max Limit * 3/4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='text-align:right;color: #555; font-size:11px'>K = Kbps  /  M = Mbps</span><br>
+            <span style='color: #555; font-size:11px'>Limit At = Max Limit * 1/2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color: #555; font-size:11px'>Convert 1000Kbps = 1Mbps</span><br>
+          </div>
+        </div>	  
+	  </div>
       <div class="content">
         <span style="margin-left:2px;font-size:15px"><b>COPY PASTE BURST RESULT TO WINBOX</b></span>
         <div class="list-mangle" style="margin-bottom:10px">
@@ -557,8 +563,8 @@
                 <td style="background-color: #ddd;font-weight:bold">Download</td>
               </tr>
               <th colspan="2" style="background-color: #eee; font-weight:normal">Limit At</th>
-              <td id="result-up-limit-at" style='font-weight:bold;color: Chocolate' >64K</td>
-              <td id="result-down-limit-at" style='font-weight:bold;color: Chocolate'>125K</td>
+              <td id="result-up-limit-at" style='font-weight:bold;color: Chocolate' >256K</td>
+              <td id="result-down-limit-at" style='font-weight:bold;color: Chocolate'>500K</td>
               </tr> 
               <th colspan="2" style="background-color: #eee; font-weight:normal">Priority</th>
               <td style='font-weight:bold;color: DarkCyan'>8</td>
@@ -574,7 +580,7 @@
               </tr>
             </thead>
             <tr id="result" style="font-size:15px;font-weight:bold">
-              <td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1M</span> <span id="rate-up-burst-limit" style='color: #01A3DF'>1M</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2M</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8/8</span> <span id="rate-up-limit-at" style='color: Chocolate' >64K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>125K</span></td>
+              <td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1M</span> <span id="rate-up-burst-limit" style='color: #01A3DF'>1M</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2M</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8/8</span> <span id="rate-up-limit-at" style='color: Chocolate' >256K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>500K</span></td>
 			</tr>
           </table>
 	            <button style="width:120px;margin-top:5px; font-size:13px !important" type="button" onclick="selectElementContents(document.getElementById('result'))">Copy Rate Limit</button>	
@@ -658,7 +664,169 @@
     <div id="dialogoverlay"></div><div id="dialogbox"><div><div id="dialogboxhead"></div><div id="dialogboxbody"></div><div id="dialogboxfoot"></div></div></div> 
     <script src="./login/login.js"></script>
     <script>
-	function _0x241c(_0x4f8e9d,_0x3ce6a9){var _0x43c2c7=_0x43c2();return _0x241c=function(_0x241c0b,_0x46f6a1){_0x241c0b=_0x241c0b-0x1e1;var _0x4e6ab6=_0x43c2c7[_0x241c0b];return _0x4e6ab6;},_0x241c(_0x4f8e9d,_0x3ce6a9);}(function(_0x918b9b,_0x468d2e){var _0x3c0c9d=_0x241c,_0x2b7b40=_0x918b9b();while(!![]){try{var _0x3997e8=-parseInt(_0x3c0c9d(0x20c))/0x1*(-parseInt(_0x3c0c9d(0x1f7))/0x2)+parseInt(_0x3c0c9d(0x1f2))/0x3*(-parseInt(_0x3c0c9d(0x206))/0x4)+-parseInt(_0x3c0c9d(0x1f9))/0x5+parseInt(_0x3c0c9d(0x1ef))/0x6+parseInt(_0x3c0c9d(0x21a))/0x7+parseInt(_0x3c0c9d(0x207))/0x8+-parseInt(_0x3c0c9d(0x200))/0x9*(parseInt(_0x3c0c9d(0x1ec))/0xa);if(_0x3997e8===_0x468d2e)break;else _0x2b7b40['push'](_0x2b7b40['shift']());}catch(_0x11f6e8){_0x2b7b40['push'](_0x2b7b40['shift']());}}}(_0x43c2,0x1a936));function upperCaseF(_0x3bbb5d){setTimeout(function(){var _0x300839=_0x241c;_0x3bbb5d['value']=_0x3bbb5d[_0x300839(0x20e)][_0x300839(0x210)]();},0x1);}function myFunction(){var _0x5cf574=_0x241c,_0x21f849=document[_0x5cf574(0x20b)](_0x5cf574(0x1ff))['value'],_0x6cf89a=_0x21f849[_0x5cf574(0x1e5)](/[a-zA-Z]/),_0x15196e=_0x21f849[_0x5cf574(0x1e6)](/[^0-9]/g,''),_0x126e1f=document[_0x5cf574(0x20b)](_0x5cf574(0x201))[_0x5cf574(0x20e)],_0x53e3d4=_0x126e1f[_0x5cf574(0x1e5)](/[a-zA-Z]/),_0x4a2f4a=_0x126e1f[_0x5cf574(0x1e6)](/[^0-9]/g,''),_0x1cd592=document[_0x5cf574(0x20b)](_0x5cf574(0x216))[_0x5cf574(0x20e)],_0x120574=_0x1cd592[_0x5cf574(0x1e5)](/[a-zA-Z]/),_0x25a486=_0x1cd592[_0x5cf574(0x1e6)](/[^0-9]/g,''),_0x1989d4=document[_0x5cf574(0x20b)]('down-speed-bonus')[_0x5cf574(0x20e)],_0x2c575d=_0x1989d4['match'](/[a-zA-Z]/),_0x4566c7=_0x1989d4[_0x5cf574(0x1e6)](/[^0-9]/g,''),_0x5d33a7=parseInt(document[_0x5cf574(0x20b)](_0x5cf574(0x212))[_0x5cf574(0x20e)]),_0x5d0b5b=parseInt(document[_0x5cf574(0x20b)](_0x5cf574(0x202))['value']);if(_0x6cf89a=='M')var _0x3d6974=parseInt(_0x15196e*0x3e8);else var _0x3d6974=parseInt(_0x15196e);if(_0x53e3d4=='M')var _0x2fbb5e=parseInt(_0x4a2f4a*0x3e8);else var _0x2fbb5e=parseInt(_0x4a2f4a);if(_0x120574=='M')var _0x4dc99a=parseInt(_0x25a486*0x3e8);else var _0x4dc99a=parseInt(_0x25a486);if(_0x2c575d=='M')var _0x17f0b3=parseInt(_0x4566c7*0x3e8);else var _0x17f0b3=parseInt(_0x4566c7);var _0x52e9c3='https://',_0x25316e='buananet',_0x480644='pbun',_0x45b5b8=_0x5cf574(0x1f4),_0x194a82='io',_0x64ff3f=_0x52e9c3+_0x25316e+_0x480644+'.'+_0x45b5b8+'.'+_0x194a82;window['location'][_0x5cf574(0x1e3)]!==_0x64ff3f+'/mikrotik-burst-limit-calculator.html'&&location[_0x5cf574(0x1e6)](_0x64ff3f+'/mikrotik-burst-limit-calculator.html');var _0x190d0a=Math[_0x5cf574(0x209)](_0x5d33a7*_0x4dc99a/(_0x3d6974*(0x3/0x4))),_0x2ae845=Math['ceil'](_0x5d0b5b*_0x17f0b3/(_0x2fbb5e*(0x3/0x4))),_0x517401=Math[_0x5cf574(0x209)](_0x3d6974*(0x3/0x4)),_0x8fe582=Math[_0x5cf574(0x209)](_0x2fbb5e*(0x3/0x4)),_0x241592=Math[_0x5cf574(0x209)](_0x3d6974*(0x1/0x8)),_0x133eb9=Math[_0x5cf574(0x209)](_0x2fbb5e*(0x1/0x8)),_0x594f3e=Math[_0x5cf574(0x209)](_0x517401*(_0x5d33a7*_0x4dc99a/_0x517401)/_0x4dc99a),_0x2b757c=Math[_0x5cf574(0x209)](_0x8fe582*(_0x5d0b5b*_0x17f0b3/_0x8fe582)/_0x17f0b3);document[_0x5cf574(0x20b)](_0x5cf574(0x20d))[_0x5cf574(0x21e)]=_0x21f849,document[_0x5cf574(0x20b)](_0x5cf574(0x1f1))[_0x5cf574(0x21e)]=_0x126e1f,document[_0x5cf574(0x20b)]('result-up-burst-limit')['innerHTML']=_0x1cd592,document[_0x5cf574(0x20b)](_0x5cf574(0x21f))['innerHTML']=_0x1989d4,document[_0x5cf574(0x20b)]('result-up-burst-threshold')[_0x5cf574(0x21e)]=_0x517401+'K',document[_0x5cf574(0x20b)](_0x5cf574(0x1fa))['innerHTML']=_0x8fe582+'K',document[_0x5cf574(0x20b)]('result-up-burst-time')[_0x5cf574(0x21e)]=_0x190d0a,document[_0x5cf574(0x20b)]('result-down-burst-time')[_0x5cf574(0x21e)]=_0x2ae845,document[_0x5cf574(0x20b)](_0x5cf574(0x20a))[_0x5cf574(0x21e)]=_0x241592+'K',document[_0x5cf574(0x20b)]('result-down-limit-at')[_0x5cf574(0x21e)]=_0x133eb9+'K',document[_0x5cf574(0x20b)]('rate-up-max-limit')[_0x5cf574(0x21e)]=_0x21f849,document[_0x5cf574(0x20b)](_0x5cf574(0x1f6))['innerHTML']=_0x126e1f,document[_0x5cf574(0x20b)](_0x5cf574(0x1e4))['innerHTML']=_0x1cd592,document[_0x5cf574(0x20b)](_0x5cf574(0x1ee))[_0x5cf574(0x21e)]=_0x1989d4,document['getElementById'](_0x5cf574(0x1f3))[_0x5cf574(0x21e)]=_0x517401+'K',document[_0x5cf574(0x20b)](_0x5cf574(0x1fd))[_0x5cf574(0x21e)]=_0x8fe582+'K',document['getElementById'](_0x5cf574(0x1e8))[_0x5cf574(0x21e)]=_0x190d0a,document[_0x5cf574(0x20b)](_0x5cf574(0x1f8))[_0x5cf574(0x21e)]=_0x2ae845,document[_0x5cf574(0x20b)](_0x5cf574(0x205))[_0x5cf574(0x21e)]=_0x241592+'K',document['getElementById'](_0x5cf574(0x21c))[_0x5cf574(0x21e)]=_0x133eb9+'K',document[_0x5cf574(0x20b)](_0x5cf574(0x214))[_0x5cf574(0x21e)]=_0x517401+'K',document[_0x5cf574(0x20b)](_0x5cf574(0x203))[_0x5cf574(0x21e)]=_0x1cd592,document[_0x5cf574(0x20b)](_0x5cf574(0x1e7))['innerHTML']=_0x190d0a+'s',document[_0x5cf574(0x20b)](_0x5cf574(0x21b))[_0x5cf574(0x21e)]=_0x594f3e,document[_0x5cf574(0x20b)](_0x5cf574(0x20f))['innerHTML']=_0x1cd592,document['getElementById']('for-up-burst-duration2')['innerHTML']=_0x594f3e,document[_0x5cf574(0x20b)](_0x5cf574(0x1ea))[_0x5cf574(0x21e)]=_0x21f849,document[_0x5cf574(0x20b)]('for-down-burst-threshold')[_0x5cf574(0x21e)]=_0x8fe582+'K',document[_0x5cf574(0x20b)](_0x5cf574(0x1fc))['innerHTML']=_0x1989d4,document['getElementById'](_0x5cf574(0x1e9))['innerHTML']=_0x2ae845+'s',document[_0x5cf574(0x20b)](_0x5cf574(0x204))[_0x5cf574(0x21e)]=_0x2b757c,document[_0x5cf574(0x20b)](_0x5cf574(0x218))[_0x5cf574(0x21e)]=_0x1989d4,document[_0x5cf574(0x20b)](_0x5cf574(0x1e1))['innerHTML']=_0x2b757c,document[_0x5cf574(0x20b)](_0x5cf574(0x217))[_0x5cf574(0x21e)]=_0x126e1f,_0x4dc99a==0x0&&(document[_0x5cf574(0x20b)](_0x5cf574(0x1e4))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)]('rate-up-burst-threshold')[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x1f5))['innerHTML']='0',document[_0x5cf574(0x20b)]('result-up-burst-threshold')[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x203))['innerHTML']='0',document['getElementById'](_0x5cf574(0x214))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x203))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x20f))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x21b))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x1e2))[_0x5cf574(0x21e)]='0'),_0x17f0b3==0x0&&(document['getElementById']('rate-down-burst-limit')[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x1fd))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)]('result-down-burst-limit')['innerHTML']='0',document[_0x5cf574(0x20b)](_0x5cf574(0x1fa))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x1fc))[_0x5cf574(0x21e)]='0',document['getElementById'](_0x5cf574(0x215))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x1fc))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)]('for-down-burst-limit2')[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x204))[_0x5cf574(0x21e)]='0',document[_0x5cf574(0x20b)](_0x5cf574(0x1e1))[_0x5cf574(0x21e)]='0');}function _0x43c2(){var _0x1cc6b1=['up-interval-bonus','body','for-up-burst-threshold','for-down-burst-threshold','up-speed-bonus','new-burst-down','for-down-burst-limit2','moveToElementText','421183gUBlyF','for-up-burst-duration','rate-down-limit-at','createRange','innerHTML','result-down-burst-limit','for-down-burst-duration2','for-up-burst-duration2','href','rate-up-burst-limit','match','replace','for-up-burst-time','rate-up-burst-time','for-down-burst-time','new-burst-up','addRange','10pLnQEI','selectNodeContents','rate-down-burst-limit','218946sUivAe','createTextRange','result-down-max-limit','5745LFuXUE','rate-up-burst-threshold','github','result-up-burst-limit','rate-down-max-limit','2fSqCSx','rate-down-burst-time','671015FYLden','result-down-burst-threshold','execCommand','for-down-burst-limit','rate-down-burst-threshold','removeAllRanges','up-max-limit','1642239DyrEIO','down-max-limit','down-interval-bonus','for-up-burst-limit','for-down-burst-duration','rate-up-limit-at','44vgFZSp','1526688aFYFoI','getSelection','ceil','result-up-limit-at','getElementById','159097wTWaQh','result-up-max-limit','value','for-up-burst-limit2','toUpperCase','copy'];_0x43c2=function(){return _0x1cc6b1;};return _0x43c2();}function selectElementContents(_0x3c6d28){var _0x2bc0ce=_0x241c,_0x425785=document[_0x2bc0ce(0x213)],_0x2b0103,_0x57e564;if(document['createRange']&&window[_0x2bc0ce(0x208)]){_0x2b0103=document[_0x2bc0ce(0x21d)](),_0x57e564=window['getSelection'](),_0x57e564[_0x2bc0ce(0x1fe)]();try{_0x2b0103[_0x2bc0ce(0x1ed)](_0x3c6d28),_0x57e564[_0x2bc0ce(0x1eb)](_0x2b0103);}catch(_0x3ed9fe){_0x2b0103['selectNode'](_0x3c6d28),_0x57e564[_0x2bc0ce(0x1eb)](_0x2b0103);}}else _0x425785[_0x2bc0ce(0x1f0)]&&(_0x2b0103=_0x425785['createTextRange'](),_0x2b0103[_0x2bc0ce(0x219)](_0x3c6d28),_0x2b0103['select']());document[_0x2bc0ce(0x1fb)](_0x2bc0ce(0x211));}	
+	function upperCaseF(a){
+			setTimeout(function(){
+				a.value = a.value.toUpperCase();
+			}, 1);
+		}
+	 function myFunction(){	
+	 
+		var UpMaxLimit = document.getElementById("up-max-limit").value;
+		var FindCarUpMaxLimit = UpMaxLimit.match(/[a-zA-Z]/);
+        var FindNumUpMaxLimit = UpMaxLimit.replace(/[^0-9]/g, '');
+	
+		var DownMaxLimit = document.getElementById("down-max-limit").value;
+		var FindCardownMaxLimit = DownMaxLimit.match(/[a-zA-Z]/);
+        var FindNumDownMaxLimit = DownMaxLimit.replace(/[^0-9]/g, '');
+				
+		var CallResultUpBurstLimit = document.getElementById("up-speed-bonus").value;
+		var FindCarUpBurstLimit = CallResultUpBurstLimit.match(/[a-zA-Z]/);
+        var FindNumUpBurstLimit = CallResultUpBurstLimit.replace(/[^0-9]/g, '');
+		
+		var CallResultDownBurstLimit = document.getElementById("down-speed-bonus").value;
+		var FindCarDownBurstLimit = CallResultDownBurstLimit.match(/[a-zA-Z]/);
+        var FindNumDownBurstLimit = CallResultDownBurstLimit.replace(/[^0-9]/g, '');
+		
+		var UpIntervalBonus = parseInt(document.getElementById("up-interval-bonus").value);
+		var DownIntervalBonus = parseInt(document.getElementById("down-interval-bonus").value);
+				
+		if (FindCarUpMaxLimit == "M") {
+		var ResultUpMaxLimit = parseInt(FindNumUpMaxLimit*1000);
+		} else {
+		var ResultUpMaxLimit = parseInt(FindNumUpMaxLimit);
+		}
+		
+		if (FindCardownMaxLimit == "M") {
+		var ResultDownMaxLimit = parseInt(FindNumDownMaxLimit*1000);
+		} else {
+		var ResultDownMaxLimit = parseInt(FindNumDownMaxLimit);
+		}
+		
+		if (FindCarUpBurstLimit == "M") {
+		var ResultUpBurstLimit = parseInt(FindNumUpBurstLimit*1000);
+		} else {
+		var ResultUpBurstLimit = parseInt(FindNumUpBurstLimit);
+		}
+		
+		if (FindCarDownBurstLimit == "M") {
+		var ResultDownBurstLimit = parseInt(FindNumDownBurstLimit*1000);
+		} else {
+		var ResultDownBurstLimit = parseInt(FindNumDownBurstLimit);
+		}
+		
+//	var host1 = "https://";
+//	var host2 = "buananet";
+//	var host3 = "pbun";
+//	var host4 = "github";
+//	var host5 = "io";
+//	var host6 = host1 + host2 + host3 + "." + host4 + "." + host5
+//	if (window.location.href !== host6 + "/mikrotik-burst-limit-calculator.html") {
+//	location.replace(host6 + "/mikrotik-burst-limit-calculator.html");	
+//}
+
+		var UpBurstTime = Math.ceil(((UpIntervalBonus*ResultUpBurstLimit)/(ResultUpMaxLimit*(3/4))));
+		var DownBurstTime = Math.ceil(((DownIntervalBonus*ResultDownBurstLimit)/(ResultDownMaxLimit*(3/4))));
+		
+		var UpBurstThreshold = Math.ceil((ResultUpMaxLimit*(3/4)));
+		var DownBurstThreshold = Math.ceil((ResultDownMaxLimit*(3/4)))
+		
+		var UpLimitAt = Math.ceil((ResultUpMaxLimit*(1/2)));
+		var DownLimitAt = Math.ceil((ResultDownMaxLimit*(1/2)));
+		
+		var UpBurstDuration = Math.ceil(((UpBurstThreshold * ((UpIntervalBonus * ResultUpBurstLimit) / UpBurstThreshold )) / ResultUpBurstLimit));
+		var DownBurstDuration = Math.ceil(((DownBurstThreshold * ((DownIntervalBonus * ResultDownBurstLimit) / DownBurstThreshold)) / ResultDownBurstLimit));
+		
+		
+		document.getElementById("result-up-max-limit").innerHTML = UpMaxLimit;
+        document.getElementById("result-down-max-limit").innerHTML = DownMaxLimit;
+
+        document.getElementById("result-up-burst-limit").innerHTML = CallResultUpBurstLimit;
+        document.getElementById("result-down-burst-limit").innerHTML = CallResultDownBurstLimit;
+			
+		document.getElementById("result-up-burst-threshold").innerHTML = UpBurstThreshold  + "K";
+        document.getElementById("result-down-burst-threshold").innerHTML = DownBurstThreshold + "K";
+		
+		document.getElementById("result-up-burst-time").innerHTML = UpBurstTime;
+        document.getElementById("result-down-burst-time").innerHTML = DownBurstTime;
+		
+		document.getElementById("result-up-limit-at").innerHTML = UpLimitAt  + "K";
+        document.getElementById("result-down-limit-at").innerHTML = DownLimitAt  + "K";
+		
+		document.getElementById("rate-up-max-limit").innerHTML = UpMaxLimit;
+		document.getElementById("rate-down-max-limit").innerHTML = DownMaxLimit;
+		document.getElementById("rate-up-burst-limit").innerHTML = CallResultUpBurstLimit  ;
+		document.getElementById("rate-down-burst-limit").innerHTML = CallResultDownBurstLimit  ;
+		document.getElementById("rate-up-burst-threshold").innerHTML = UpBurstThreshold + "K";
+		document.getElementById("rate-down-burst-threshold").innerHTML = DownBurstThreshold + "K";
+		document.getElementById("rate-up-burst-time").innerHTML = UpBurstTime;
+		document.getElementById("rate-down-burst-time").innerHTML = DownBurstTime;
+		document.getElementById("rate-up-limit-at").innerHTML = UpLimitAt + "K";
+		document.getElementById("rate-down-limit-at").innerHTML = DownLimitAt + "K";
+		
+		document.getElementById("for-up-burst-threshold").innerHTML = UpBurstThreshold + "K";
+		document.getElementById("for-up-burst-limit").innerHTML = CallResultUpBurstLimit  ;
+		document.getElementById("for-up-burst-time").innerHTML = UpBurstTime + "s";
+		document.getElementById("for-up-burst-duration").innerHTML = UpBurstDuration;
+		document.getElementById("for-up-burst-limit2").innerHTML = CallResultUpBurstLimit  ;
+		document.getElementById("for-up-burst-duration2").innerHTML = UpBurstDuration;
+		document.getElementById("new-burst-up").innerHTML = UpMaxLimit;
+		
+		document.getElementById("for-down-burst-threshold").innerHTML = DownBurstThreshold + "K";
+		document.getElementById("for-down-burst-limit").innerHTML = CallResultDownBurstLimit  ;
+		document.getElementById("for-down-burst-time").innerHTML = DownBurstTime + "s";
+		document.getElementById("for-down-burst-duration").innerHTML = DownBurstDuration;
+		document.getElementById("for-down-burst-limit2").innerHTML = CallResultDownBurstLimit  ;
+		document.getElementById("for-down-burst-duration2").innerHTML = DownBurstDuration;
+		document.getElementById("new-burst-down").innerHTML = DownMaxLimit;
+		
+		if (ResultUpBurstLimit == 0) {
+		document.getElementById("rate-up-burst-limit").innerHTML = "0";
+		document.getElementById("rate-up-burst-threshold").innerHTML = "0";
+		document.getElementById("result-up-burst-limit").innerHTML = "0";
+		document.getElementById("result-up-burst-threshold").innerHTML = "0";
+		document.getElementById("for-up-burst-limit").innerHTML = "0";
+		document.getElementById("for-up-burst-threshold").innerHTML = "0";
+		document.getElementById("for-up-burst-limit").innerHTML = "0";
+		document.getElementById("for-up-burst-limit2").innerHTML = "0";
+		document.getElementById("for-up-burst-duration").innerHTML = "0";
+		document.getElementById("for-up-burst-duration2").innerHTML = "0";
+		}
+		
+		if (ResultDownBurstLimit == 0) {
+        document.getElementById("rate-down-burst-limit").innerHTML = "0";
+		document.getElementById("rate-down-burst-threshold").innerHTML = "0";
+		document.getElementById("result-down-burst-limit").innerHTML = "0";
+		document.getElementById("result-down-burst-threshold").innerHTML = "0";
+		document.getElementById("for-down-burst-limit").innerHTML = "0";
+		document.getElementById("for-down-burst-threshold").innerHTML = "0";
+		document.getElementById("for-down-burst-limit").innerHTML = "0";
+		document.getElementById("for-down-burst-limit2").innerHTML = "0";
+		document.getElementById("for-down-burst-duration").innerHTML = "0";
+		document.getElementById("for-down-burst-duration2").innerHTML = "0";
+
+		}
+		
+	}	
+	   function selectElementContents(el) {
+				var body = document.body, range, sel;
+				if (document.createRange && window.getSelection) {
+					range = document.createRange();
+					sel = window.getSelection();
+					sel.removeAllRanges();
+					try {
+						 range.selectNodeContents(el);
+						 sel.addRange(range);
+							 } catch (e) {
+									 range.selectNode(el);
+									 sel.addRange(range);
+							 }
+							 } else if (body.createTextRange) {
+								 range = body.createTextRange();
+								 range.moveToElementText(el);
+								 range.select();
+							 }
+				 document.execCommand("copy"); 
+			}		
     </script>
   </body>
 </html>
