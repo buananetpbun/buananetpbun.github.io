@@ -329,24 +329,24 @@
         <div style="padding-top:10px;float:left; width:100%;">
           <label><b>PCQ QUEUE SIZE</b></label><br>
           <label>Total Client (Sub Queue)</label><br>
-          <input type="text" id="total-client" style='color: Tomato' placeholder="40" value="40" >
+          <input type="text" id="total-client" style='color: Tomato' placeholder="40" value="40" onkeypress="return event.charCode != 32">
         </div>
         <div style="float:left; width:100%;">
           <label>Queue Size (Limit)</label><br>
-          <input type="text" id="queue-size" style='color: Chocolate; margin-bottom:30px' placeholder="50" value="50" >
+          <input type="text" id="queue-size" style='color: Chocolate; margin-bottom:30px' placeholder="50" value="50" onkeypress="return event.charCode != 32">
         </div>
         <label><b>PCQ BURST RATE</b></label><br>
         <div style="float:left; width:100%;">
           <label>Rate (K/M)</label><br>
-          <input onkeydown="upperCaseF(this)" type="text" id="max-rate" style='color: green' placeholder="512K" value="512K" >
+          <input onkeydown="upperCaseF(this)" type="text" id="max-rate" style='color: green' placeholder="512K" value="512K" onkeypress="return event.charCode != 32">
         </div>
         <div style="float:left; width:100%;">
           <label>Burst Rate (K/M)</label><br>
-          <input onkeydown="upperCaseF(this)" type="text" id="burst-rate" style='color: #01A3DF' value="1M" placeholder="1M"  >
+          <input onkeydown="upperCaseF(this)" type="text" id="burst-rate" style='color: #01A3DF' value="1M" placeholder="1M"  onkeypress="return event.charCode != 32">
         </div>
         <div style="float:left; width:100%;padding-bottom:15px;">
           <label>Burst Duration (second)</label><br>
-          <input type="text" id="interval-bonus" style='color: Crimson' value="6" placeholder="6" >
+          <input type="text" id="interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeypress="return event.charCode != 32">
         </div>
         <button style="margin-bottom:25px;margin-bottom:10px" id="copyscript" type="button" onclick="myFunction()">CALCULATE</button>
         <span style='color: #555; font-size:12px'>K = Kbps  /  M = Mbps</span><br>
