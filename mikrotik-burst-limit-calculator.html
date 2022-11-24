@@ -478,7 +478,7 @@
           <input onkeydown="upperCaseF(this)" type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
         </div>
         <div style="margin-top:10px; font-size:14px">
-          Estimated Burst Duration:
+          Estimated Longest Burst Time:
           <div style="display:none;clear:both; margin-top:5px">
           <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
@@ -504,7 +504,7 @@
           <input onkeydown="upperCaseF(this)" type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
         </div>
         <div style="margin-top:10px; font-size:14px">
-          Estimated Burst Duration:
+          Estimated Longest Burst Time:
           <div style="display:none; clear:both; margin-top:5px">
           <span style='color: Crimson;'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: Crimson'>6</span> second<br>
@@ -516,9 +516,9 @@
       </div>
         <div style="clear:both"></div>
         <div style="border-radius:5px; background-color:#ccc;padding:10px; margin-top:40px;font-size:12px; font-weight:700;">
-          <span style="font-size:12px"><b>Burst Duration Formula:</b></span><br>
+          <span style="font-size:12px"><b>Longest Burst Time Formula:</b></span><br>
           <div style='color: #555; margin-bottom:3px'>------------------------------------------------------------------------------</div>
-          <span style='color: Crimson'>Burst Duration</span> = <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> / <span style='color: #01A3DF'>Burst Limit</span><br>
+          <span style='color: Crimson'>Longest Burst Time</span> = <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> / <span style='color: #01A3DF'>Burst Limit</span><br>
           <div style='color: #555'>------------------------------------------------------------------------------</div>
           <div style="margin-top:5px; font-weight:normal">
             <span style='color: #555; font-size:11px'>Burst Threshold = Max Limit * 3/4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='text-align:right;color: #555; font-size:11px'>K = Kbps  /  M = Mbps</span><br>
