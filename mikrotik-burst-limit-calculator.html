@@ -28,13 +28,13 @@
       -------------------------------------------------- */  
       *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
       body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-      body { font-size:15px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:0px;}
+      body { font-size:14px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; margin:0px;}
       html, body {
       height: 100%;
       width:100%;
       margin-top: 0px;
       padding:0;
-      line-height: 1.2;
+      line-height: normal;
       background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  color:#333;
       }
       * {
@@ -50,14 +50,6 @@
       .logo a{
       color:#ddd !important;
       text-decoration:none !important;
-      }
-      .Menu{
-      width:100%;
-      border-bottom:1px solid #ccc;
-      height:100%;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-      font-weight:bold;
       }
       #wrap{
       width:950px;
@@ -147,42 +139,7 @@
       width:auto;
       padding-bottom:13px;
       }
-      .menu1 {
-      width:360px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#4CAF50;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu1 a:link {
-      text-decoration:none;
-      color:white;
-      }
-      .menu1 a:visited{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 {
-      width:300px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#bbb;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu2 a:link{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 a:visited{
-      text-decoration:none;
-      color:white;
-      }
+
       button {
       color: #fff;
       background-color: #ff6600;
@@ -191,7 +148,7 @@
       padding:8px;
       width:100%;
       font-weight:bold;
-      font-size:15px !important;
+      font-size:14px !important;
       cursor: pointer;
       border-radius: 5px;
       color: #fff;
@@ -213,7 +170,7 @@
       resize: vertical;
       font-weight:bold;
       margin-bottom:5px;
-      font-size:15px !important;
+      font-size:14px !important;
       border-radius: 5px;
       }
       label {
@@ -232,36 +189,12 @@
       input[type=submit]:hover {
       background-color: #45a049;
       }
-      .col-25 {
-      float: left;
-      width: 25%;
-      margin-top: 6px;
-      }
-      .col-75 {
-      float: left;
-      width: 75%;
-      margin-top: 6px;
-      }
       /* Clear floats after the columns */
       .row:after {
       content: "";
       display: table;
       clear: both;
       }
-      .list-game {
-      height: 200px;
-      background:white;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: 100%;
-      margin-top:2px;
-      padding: 3px;
-      border: 1px solid rgba(0,0,0,0.25);
-      }
-      .list-game label {
-      padding: 0;
-      display: inline-block;
-      } 
       .list-mangle {
       height: 408px;
       background:#fff;
@@ -287,145 +220,6 @@
       text-align: left;
       padding: 8px;
       }
-      /* LOGIN Content */
-      .forms-out {
-      margin: 0 auto;
-      padding: 0;
-      font-size:14px;
-      }
-      .forms-in {
-      width: 100%;
-      margin: 0 auto;
-      color: white;
-      padding: 0;
-      font-size:14px;
-      }
-      .forms-in div {
-      padding: 0;
-      max-width: 350px;
-      margin: 0 auto;      
-      border-radius: 5px;
-      margin-bottom: 15px;
-      }
-      .forms-in h3 {
-      text-align: center;
-      }
-      .forms-in input {
-      border: none;
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      box-sizing: border-box;
-      border-radius: 3px;
-      }
-      .forms-in button {
-      border: none;
-      padding: 7px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top:10px;
-      margin-bottom:15px;
-      }
-      .forms-in button:hover {
-      opacity: 0.7;
-      }
-      .hide {
-      display: none;
-      }
-      #forgot-password {
-      cursor: pointer;
-      }
-      #forgot-password:hover {
-      opacity: 0.7;
-      }
-      #show-register {
-      cursor: pointer;
-      }
-      #show-register:hover {
-      opacity: 0.7;
-      }
-      #show-login {
-      cursor: pointer;
-      }
-      #show-login:hover {
-      opacity: 0.7;
-      }
-      /* The Modal (background) */
-      .modal {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 2; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
-      }
-      .modal-login {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 3; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
-      }
-      .lock-screen {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
-      }	  
-      /* Modal Content */
-      .modal-content {
-      line-height:1.4;
-      border-radius: 5px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-      color:#ddd;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #444;
-      width: 400px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      font-weight:bold;
-      }
-      .modal-content p {
-      padding:0;
-      margin:5px 5px 0 17px;
-      display:list-item;
-      line-height:2.0;
-      list-style: disc;
-      }
-      /* The Close Button */
-      .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 30px;
-      font-weight: bold;
-      margin-top:-20px;
-      margin-right:-10px;
-      }
-      .close:hover,
-      .close:focus {
-      color: orange;
-      text-decoration: none;
-      cursor: pointer;
-      } 
     </style>
     <link rel="stylesheet" href="./login/login.css">
   </head>
