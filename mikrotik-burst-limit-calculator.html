@@ -60,7 +60,7 @@
       font-weight:bold;
       }
       #wrap{
-      width:900px;
+      width:950px;
       margin:0 auto;
       padding:10px;
 	  font-size:15px;
@@ -480,13 +480,13 @@
           <input onkeydown="upperCaseF(this)" type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
         </div>
         <div style="margin-top:10px; font-size:14px">
-          Estimated Actual Burst Time:
+          Duration Actual Burst Time:
           <div style="display:none;clear:both; margin-top:5px">
           <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
           </div>
 		  <div style='font-size:14px; font-weight:bold;margin-top:5px'>
-            <span style='color: green;' id="new-burst-up">512K</span> to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span> second<br>
+            <span style='color: green;' id="new-burst-up">512K</span> to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span> seconds<br>
           </div>
         </div>		
       </div>
@@ -505,18 +505,18 @@
           <input onkeydown="upperCaseF(this)" type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeyup="myFunction()">
         </div>
         <div style="margin-top:10px; font-size:14px">
-          Estimated Actual Burst Time:
+          Duration Actual Burst Time:
           <div style="display:none; clear:both; margin-top:5px">
           <span style='color: Crimson;'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: Crimson'>6</span> second<br>
           </div>
 		  <div style='font-size:14px; font-weight:bold;margin-top:5px;'>
-            <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span> second<br>
+            <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span> seconds<br>
           </div>
         </div>
       </div>
         <div style="clear:both"></div>
-        <div style="border-radius:5px; background-color:#ccc;padding:10px; margin-top:30px;font-size:12px; font-weight:700;">
+        <div style="border-radius:5px; background-color:#ccc;padding:10px; margin-top:35px;font-size:12px; font-weight:700;">
           <span style="font-size:12px"><b>Actual Burst Time Formula:</b></span><br>
           <div style='color: #555; margin-bottom:3px'>------------------------------------------------------------------------------</div>
           <span style='color: Crimson'>Actual Burst Time</span> = <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> / <span style='color: #01A3DF'>Burst Limit</span><br>
@@ -584,7 +584,7 @@
               <td><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1M</span> <span id="rate-up-burst-limit" style='color: #01A3DF'>1M</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2M</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >256K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>500K</span></td>
 			</tr>
           </table>
-	            <button style="width:120px;margin-top:5px; font-size:13px !important" type="button" onclick="selectElementContents(document.getElementById('result'))">Copy Rate Limit</button>	
+	            <button style="width:140px;margin-top:5px; font-size:13px !important" type="button" onclick="selectElementContents(document.getElementById('result'))">Copy Rate Limit</button>	
           </table>
         </div>
       </div>
