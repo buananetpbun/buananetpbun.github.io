@@ -34,7 +34,7 @@
       width:100%;
       margin-top: 0px;
       padding:0;
-      line-height: normal;
+      line-height: 1.2;
       background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  color:#333;
       }
       * {
@@ -55,7 +55,7 @@
       width:950px;
       margin:0 auto;
       padding:10px;
-	  font-size:15px;
+	  font-size:14px;
       }
       .header{
       height:auto; 
@@ -134,12 +134,6 @@
       a:active {
       color: #ff6600;
       }
-      .menu {
-      clear:both;
-      width:auto;
-      padding-bottom:13px;
-      }
-
       button {
       color: #fff;
       background-color: #ff6600;
@@ -174,7 +168,7 @@
       border-radius: 5px;
       }
       label {
-      padding: 7px 5px 5px 0;
+      padding: 10px 5px 5px 0;
       display: inline-block;
       }
       input[type=submit] {
@@ -265,7 +259,7 @@
           <label>Max Limit (K/M)</label><br>
           <input onkeydown="upperCaseF(this)" type="text" id="up-max-limit" style='color: green' placeholder="512K" value="512K" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
         </div>
-        <div style="float:left; width:100%;border-bottom:1px solid #999; padding-bottom:10px">
+        <div style="float:left; width:100%;border-bottom:1px solid #999; padding-bottom:13px">
           <label>Burst Limit (K/M)</label><br>
           <input onkeydown="upperCaseF(this)" type="text" id="up-speed-bonus" style='color: #01A3DF' value="1M" placeholder="1M" onkeypress="return event.charCode != 32" onkeyup="myFunction()" >
         </div>
@@ -290,7 +284,7 @@
           <label>Max Limit (K/M)</label><br>
           <input onkeydown="upperCaseF(this)" type="text" id="down-max-limit" value="1M" style='color: green' placeholder="1M" onkeypress="return event.charCode != 32" onkeyup="myFunction()" >
         </div>
-        <div style="float:left; width:100%; border-bottom:1px solid #999; padding-bottom:10px">
+        <div style="float:left; width:100%; border-bottom:1px solid #999; padding-bottom:13px">
           <label>Burst Limit (K/M)</label><br>
           <input onkeydown="upperCaseF(this)" type="text" id="down-speed-bonus" style='color: #01A3DF' value="2M" placeholder="2M" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
         </div>
@@ -310,7 +304,7 @@
         </div>
       </div>
         <div style="clear:both"></div>
-        <div style="border-radius:5px; background-color:#ccc;padding:10px; margin-top:35px;font-size:12px; font-weight:700;">
+        <div style="border-radius:5px; background-color:#ccc;padding:10px; margin-top:32px;font-size:12px; font-weight:700;">
           <span style="font-size:12px"><b>Actual Burst Time Formula:</b></span><br>
           <div style='color: #555; margin-bottom:3px'>------------------------------------------------------------------------------</div>
           <span style='color: Crimson'>Actual Burst Time</span> = <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> / <span style='color: #01A3DF'>Burst Limit</span><br>
@@ -322,7 +316,7 @@
         </div>	  
 	  </div>
       <div class="content">
-        <span style="margin-left:2px;font-size:15px"><b>COPY PASTE BURST RESULT TO WINBOX</b></span>
+        <span style="margin-left:2px;font-size:14px"><b>COPY PASTE BURST RESULT TO WINBOX</b></span>
         <div class="list-mangle" style="margin-bottom:10px">
           <table style="font-weight:normal">
             <thead>
@@ -374,12 +368,12 @@
                 <td><b>Rate Limit for <span style="color:red">HOTSPOT</span> and <span style="color:red">PPPOE</span></b></td>
               </tr>
             </thead>
-            <tr id="result" style="font-size:15px;font-weight:bold;">
+            <tr id="result" style="font-size:14px;font-weight:bold;">
               <td><div style="text-align:center"><span id="rate-up-max-limit" style='color: DarkGreen'>512K</span>/<span id="rate-down-max-limit" style='color: DarkGreen'>1M</span> <span id="rate-up-burst-limit" style='color: #01A3DF'>1M</span>/<span id="rate-down-burst-limit" style='color: #01A3DF'>2M</span> <span id="rate-up-burst-threshold" style='color: #191970'>384K</span>/<span id="rate-down-burst-threshold" style='color: #191970'>750K</span> <span id="rate-up-burst-time" style='color: DarkViolet'>16</span>/<span id="rate-down-burst-time" style='color: DarkViolet'>16</span> <span style="color:DarkCyan">8</span> <span id="rate-up-limit-at" style='color: Chocolate' >256K</span>/<span id="rate-down-limit-at" style='color: Chocolate'>500K</span></div>
 			  </td>
 			</tr>
           </table>
-	            <div style="text-align:center"><button style="width:140px;margin-top:8px; padding:5px; font-size:13px !important" type="button" onclick="selectElementContents(document.getElementById('result'))">Copy Rate Limit</button>
+	            <div style="text-align:center"><button style="width:140px;margin-top:8px; padding:7px; font-size:13px !important" type="button" onclick="selectElementContents(document.getElementById('result'))">Copy Rate Limit</button>
 				</div>	
           </table>
         </div>
