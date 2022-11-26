@@ -19,7 +19,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="https://buananetpbun.github.io/qr-code/printThis.js" type="text/javascript"></script>
     <script src="https://buananetpbun.github.io/qr-code/easy.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+ <link rel="stylesheet" href="./login/login.css">	
     <style>
+
       /* -----------------------------------------------------------------
       ####################################################################
       # MIKROTIK FREE HOTSPOT AND WI-FI QR CODE GENERATOR
@@ -53,19 +55,11 @@
       color:#ddd !important;
       text-decoration:none !important;
       }
-      .Menu{
-      width:100%;
-      border-bottom:1px solid #ccc;
-      height:100%;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-      font-size:14px;
-      font-weight:bold;
-      }
+
       #wrap{
-      width:735px;
+      max-width:735px;
       margin:0 auto;
-      padding:10px;
+      padding:5px;
       }
       .header{
       height:auto; 
@@ -129,47 +123,6 @@
       a:active {
       color: #ff6600;
       }
-      .menu {
-      clear:both;
-      width:auto;
-      padding-bottom:13px;
-      }
-      .menu1 {
-      width:360px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#4CAF50;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu1 a:link {
-      text-decoration:none;
-      color:white;
-      }
-      .menu1 a:visited{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 {
-      width:300px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#bbb;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu2 a:link{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 a:visited{
-      text-decoration:none;
-      color:white;
-      }
       button {
       color: #fff;
       background-color: #ff6600;
@@ -223,37 +176,6 @@
       input[type=submit]:hover {
       background-color: #45a049;
       }
-      .col-25 {
-      float: left;
-      width: 25%;
-      margin-top: 6px;
-      }
-      .col-75 {
-      float: left;
-      width: 75%;
-      margin-top: 6px;
-      }
-      /* Clear floats after the columns */
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }
-      .list-game {
-      height: 200px;
-      background:white;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: 100%;
-      margin-top:2px;
-      padding: 3px;
-      border: 1px solid rgba(0,0,0,0.25);
-      border-radius:5px;  
-      }
-      .list-game label {
-      padding: 0;
-      display: inline-block;
-      } 
       .view-template {
       height: 605px;
       width: 428px;
@@ -262,23 +184,6 @@
       margin-bottom:8px;
       border-radius:4px;
       background:#fff
-      }
-      table, tr, td {
-      border: none;
-      }
-      /* The Modal (background) */
-      .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 150px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
       }
       .qrcode {
       padding-top:185px;
@@ -298,8 +203,45 @@
       padding:0px;
       margin:0px;
       }
+      @media screen and (max-width:768px) {
+     
+	  .list-mangle{height:400px;}
+      .main-wrap{display:block}
+      .sidebar,.content{border-radius:5px;display:block;width:100%}
+      .sidebar{height:auto;margin-bottom:5px}
+      .header h1{max-width:100%;justify-content:center}
+      .logo-left a{margin-top:10px!important;font-size:25x}
+      .logo-left img{height:40px;width:50px;margin-top:-5px!important}
+      h1{font-size:21px;text-align:center}
+      .mymenu{width:98%!important}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%}
+      .logo-right{justify-content:center;width:100%;display:flex}
+      .footer{font-size:13px;padding-left:5px;padding-right:5px}
+      #input-kota{width:100%!important}
+      .reg-area{margin:0!important}
+          .content{overflow: scroll; 
+      }
+      @media screen and (max-width:600px) {
+      h1{font-size:19px}
+      .logo-left a{margin-top:10px!important;font-size:20px}
+      .logo-left img{height:auto;width:40px;margin-top:-5px!important}
+      .sidebar{padding:10px}
+      .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
+      }
+      @media screen and (max-width:500px) {
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      .avatar{display:none}
+      }
+      @media screen and (max-width:350px) {
+      .hide-homepage{display:none}
+      }	  
+    
     </style>
-    <link rel="stylesheet" href="./login/login.css">
+   
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
@@ -307,27 +249,44 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
     <div id="mymenu" class="mymenu">
+      <div class="mikrotik-logo" >
+        <img alt="mikrotik" src="./img/made-for-mikrotik.png">
+      </div>
       <ul>
         <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
         <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
         <li><a href="javascript:callmodal()">DONATE</a></li>
-        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
       </ul>
-      <div id="homepage" class="hide">
-        <button style="width:100px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
-		<button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
-        <span class="avatar">
+      <div class="show-homepage-menu">
+        <div id="homepage" class="hide">
+          <button style="width:90px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+          <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+          <span class="hide-homepage">
+          <span class="avatar">
           <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
-         </span>		
-        <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-        <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
-        
+          </span>		
+          <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+          <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
+          </span>
+        </div>
       </div>
     </div>
     <div id="wrap">
-      <div class="logo">	  
-        <a href="https://buananetpbun.github.io/mikrotik-qr-code-generator.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  <img style="float:right; padding-top:10px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+      <div class="logo">
+        <div class="logo-right" style="float:right;">
+          <div style="float:right">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+          </div>
+          <div style="float:right; margin-right:5px; margin-top:1px">
+            <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+          </div>
+        </div>
+        <div class="logo-left" style="float:left;"> 
+          <a href="https://buananetpbun.github.io/mikrotik-qr-code-generator.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  
+        </div>
       </div>
+      <div style="clear:both"></div>
       <div class="header">
         <h1>MIKROTIK FREE HOTSPOT WI-FI <span style="color:#ff6600">QR</span> CODE GENERATOR</h1>
       </div>
