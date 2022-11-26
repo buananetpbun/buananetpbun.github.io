@@ -16,6 +16,7 @@
     <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">
     <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
     <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <link rel="stylesheet" href="./login/login.css">	
     <style>
       /* -----------------------------------------------
       ##################################################
@@ -34,7 +35,7 @@
       width:100%;
       margin-top: 0px;
       padding:0;
-      line-height: 1.2;
+      line-height: normal;
       background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  
       }
       * {
@@ -52,18 +53,10 @@
       color:#ddd !important;
       text-decoration:none !important;
       }
-      .Menu{
-      width:100%;
-      border-bottom:1px solid #ccc;
-      height:100%;
-      padding-bottom: 15px;
-      margin-bottom: 10px;
-      font-weight:bold;
-      }
       #wrap{
-      width:700px;
+      max-width:900px;
       margin:0 auto;
-      padding:10px;
+      padding:5px;
       }
       .header{
       height:auto; 
@@ -87,8 +80,8 @@
       }
       .sidebar{
       float:left;
-      width:680px;
-      height:710px;
+      width:100%;
+      height:auto;
       padding: 10px;
       background-color:#ddd;
       border:1px solid #bbb; 
@@ -124,47 +117,6 @@
       }
       a:active {
       color: #ff6600;
-      }
-      .menu {
-      clear:both;
-      width:auto;
-      padding-bottom:13px;
-      }
-      .menu1 {
-      width:360px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#4CAF50;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu1 a:link {
-      text-decoration:none;
-      color:white;
-      }
-      .menu1 a:visited{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 {
-      width:300px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#bbb;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu2 a:link{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 a:visited{
-      text-decoration:none;
-      color:white;
       }
       button {
       color: #fff;
@@ -231,26 +183,12 @@
       display: table;
       clear: both;
       }
-      .list-game {
-      height: 200px;
-      background:white;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: 100%;
-      margin-top:2px;
-      padding: 3px;
-      border: 1px solid rgba(0,0,0,0.25);
-      }
-      .list-game label {
-      padding: 0;
-      display: inline-block;
-      } 
       .list-mangle {
-      height: 640px;
+      height: auto;
       background:#fff;
       overflow: auto;
       overflow-x: auto;
-      width: 660px;
+      width: 100%;
       padding: 4px;
       margin-top:8px;
       border: 1px solid #ccc;
@@ -269,8 +207,39 @@
       text-align: left;
       padding: 8px;
       }
+      @media screen and (max-width:768px) {
+      .header h1{max-width:100%;justify-content:center}
+      .logo-left a{margin-top:10px!important;font-size:25x}
+      .logo-left img{height:40px;width:50px;margin-top:-5px!important}
+      h1{font-size:21px;text-align:center}
+      .mymenu{width:98%!important}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%}
+      .logo-right{justify-content:center;width:100%;display:flex}
+      .footer{font-size:13px}
+      #input-kota{width:100%!important}
+      .reg-area{margin:0!important}
+      }
+      @media screen and (max-width:600px) {
+      h1{font-size:19px}
+      .logo-left a{margin-top:10px!important;font-size:20px}
+      .logo-left img{height:auto;width:40px;margin-top:-5px!important}
+      .sidebar{padding:10px}
+      #wrap{padding:5px}
+      .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
+      }
+      @media screen and (max-width:500px) {
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      .avatar{display:none}
+      }
+      @media screen and (max-width:350px) {
+      .hide-homepage{display:none}
+      }	  
     </style>
-    <link rel="stylesheet" href="./login/login.css">
+
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
@@ -278,33 +247,44 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
     <div id="mymenu" class="mymenu">
+      <div class="mikrotik-logo" >
+        <img alt="mikrotik" src="./img/made-for-mikrotik.png">
+      </div>
       <ul>
         <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
         <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
         <li><a href="javascript:callmodal()">DONATE</a></li>
-        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
       </ul>
-      <div id="homepage" class="hide">
-        <button style="width:100px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
-		<button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
-        <span class="avatar">
+      <div class="show-homepage-menu">
+        <div id="homepage" class="hide">
+          <button style="width:90px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+          <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+          <span class="hide-homepage">
+          <span class="avatar">
           <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
-         </span>		
-        <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-        <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
-        
+          </span>		
+          <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+          <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
+          </span>
+        </div>
       </div>
     </div>
     <div id="wrap">
       <div class="logo">
-        <a href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html"><img style="float:left; margin-top:-10px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
-        <div style="float:right">
-          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+        <div class="logo-right" style="float:right;">
+          <div style="float:right">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+          </div>
+          <div style="float:right; margin-right:5px; margin-top:1px">
+            <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+          </div>
         </div>
-        <div style="float:right; margin-right:5px; margin-top:3px">
-          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        <div class="logo-left" style="float:left;"> 
+          <a href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  
         </div>
       </div>
+      <div style="clear:both"></div>
       <div class="header">
         <h1>MIKROTIK <span style="color:#ff6600">DNS over HTTPS (DoH)</span> SERVER GENERATOR</h1>
       </div>
