@@ -130,10 +130,10 @@
       background-color: #ff6600;
       border-color: #ff6600;
       border:none;
-      padding:6px;
-      width:137px;
+      padding:8px;
+      width:130px;
       font-weight:bold;
-      font-size:15px !important;
+      font-size:14px !important;
       cursor: pointer;
       border-radius: 5px;
       color: #fff;
@@ -149,7 +149,7 @@
       border-radius: 1px;
       resize: vertical;
       margin-bottom:5px;
-      font-size:15px !important;
+      font-size:14px;
       border-radius: 5px;
       }
       label {
@@ -185,6 +185,9 @@
       display: none;
       }
       @media screen and (max-width:768px){
+      .header h1{max-width:100%;
+      justify-content: center;
+      }  
       .logo-left a{
       margin-top:10px !important;
       font-size:25x;
@@ -194,7 +197,10 @@
       width: 50px; 
       margin-top:-5px !important;
       }  
-      h1{font-size:22px;  justify-content: center;}
+      h1{
+      font-size:21px;  
+      text-align: center;
+      }
       .mymenu {
       width:100% !important;
       } 
@@ -211,7 +217,10 @@
       width: 100%; 
       display: flex;            
       }
-      .footer {margin-bottom:20px}
+      .footer {
+      font-size:13px;
+      margin-bottom:20px
+      }
       #input-kota {width:100% !important;}     
       .reg-area {
       margin:0 !important;
@@ -220,9 +229,9 @@
       .logo-left a{
       margin-top:10px !important;
       font-size:20px;
-      }          
+      }       
       .logo-left img{
-      height: 30px;
+      height: auto;
       width: 40px; 
       margin-top:-5px !important;
       }         
@@ -254,7 +263,7 @@
       }   
       }
       @media screen and (max-width:500px){
-      .hide-homepage {display:none}
+      .avatar {display:none}
       }
     </style>
   </head>
@@ -275,9 +284,8 @@
       </ul>
       <div class="show-homepage-menu">
         <div id="homepage" class="hide">
-          <button style="width:100px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+          <button style="width:90px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
           <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
-          <span class="hide-homepage">
           <span class="avatar">
           <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
           </span>		
@@ -285,7 +293,6 @@
           <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
         </div>
       </div>
-    </div>
     </div>
     <div id="wrap">
       <div class="logo">
