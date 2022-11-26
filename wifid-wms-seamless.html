@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="./login/login.css">	
     <style>
 
+
       /* ------------------------------------------------------------------------------
       #################################################################################
       # Wifi.id WMS and Seamless Auto Login Script Generator By BuanaNETPBun.Github.io!
@@ -64,8 +65,9 @@
       text-decoration:none !important;
       }
       #wrap{
-      max-width:1024px;
+      max-width:1080px;
       margin:0 auto;
+      padding:5px  
       }
       .header{
       height:auto; 
@@ -79,7 +81,7 @@
       }     
       .content{
       float:right;
-      width:70%;
+      width:80%;
       padding: 10px;
       border-top:1px solid #ccc;
       border-bottom:1px solid #ccc;
@@ -92,15 +94,16 @@
       .sidebar{
       float:left;
       width:30%;
+
       Padding-top:8px;
       padding-left: 10px;
       Padding-right:10px;
-      Padding-bottom:20px;
+      Padding-bottom:10px;
       background-color:#eee;
       border:1px solid #ccc; 
       height: auto;
       border-radius: 5px 0 0 5px ;
-        font-size:14px
+        font-size:15px
       }
       .footer{
       padding-top:15px;
@@ -131,58 +134,18 @@
       a:active {
       color: #ff6600;
       }
-      .menu {
-      margin-bottom:13px;
-      clear:both;
-      width:auto;
-      }
-      .menu1 {
-      width:300px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#ff6600;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu1 a:link {
-      text-decoration:none;
-      color:white;
-      }
-      .menu1 a:visited{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 {
-      width:360px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#ff6600;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu2 a:link{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 a:visited{
-      text-decoration:none;
-      color:white;
-      }
       button {
       color: #fff;
       background-color: #ff6600;
       border-color: #ff6600;
       border:none;
       padding:8px;
-      width:135px;
+      width:110px;
       font-size:14px;
       font-weight:bold;
       cursor: pointer;
       border-radius: 5px; 
+        margin-bottom:5px;
       }
       button:hover {
       background-color: #ccc;
@@ -202,11 +165,11 @@
       border: 1px solid #ccc;
       border-radius: 1px;
       resize: vertical;
-      font-size:16px !important;
+      font-size:14px !important;
       border-radius: 5px;
       }
       label {
-      padding: 5px 5px 5px 5px;
+      padding: 8px 5px 5px 5px;
       display: inline-block;
       }
       input[type=submit] {
@@ -221,39 +184,9 @@
       input[type=submit]:hover {
       background-color: #45a049;
       }
-      .col-25 {
-      float: left;
-      width: 25%;
-      margin-top: 6px;
-      }
-      .col-75 {
-      float: left;
-      width: 75%;
-      margin-top: 6px;
-      }
-      /* Clear floats after the columns */
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }
-      .list-game {
-      height: 200px;
-      background:white;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: 100%;
-      margin-top:2px;
-      padding: 3px;
-      border: 1px solid rgba(0,0,0,0.25);
-      border-radius: 5px; 
-      }
-      .list-game label {
-      padding: 0;
-      display: inline-block;
-      } 
+
       .list-mangle {
-      height: 527px;
+      height: 530px;
       background:#fff;
       overflow: scroll;
       width: 100%;
@@ -261,9 +194,6 @@
       margin-top:8px;
       border: 1px solid #ccc;
       border-radius: 5px; 
-      }
-      table, tr, td {
-      border: none;
       }
       @media screen and (max-width:768px) 	  {
       .main-wrap{   display: block      }  
@@ -282,6 +212,7 @@
       .reg-area{margin:0!important}
       }
       @media screen and (max-width:600px) {
+        #wrap {padding:0}
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
@@ -299,6 +230,7 @@
       @media screen and (max-width:350px) {
       .hide-homepage{display:none}
       }  
+    
     </style>
     
   </head>
@@ -510,9 +442,6 @@
         </div>
       </div>
       <div class="footer">
-        <div style="float:right">
-          © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
-        </div>
         <span style="color:#ff6600">
         <b># TUTORIAL</b></span><br>
         1.Pertama seting dulu wlan anda agar konek ke SSID pada WMS atau Seamless<br>
@@ -521,6 +450,9 @@
         "View Page Source" untuk melihat data "makeid"<br>
         3.Klik Generate, lalu copy paste langsung di terminal<br>
         4.Coba ping ke 1.1.1.1 atau 8.8.8.8 jika reply berarti anda sudah berhasil<br>
+        <div style="margin-top:20px">
+          © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+        </div>		
       </div>
     </div>
       <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen"><div id="center-screen" class="center-screen">Great! One Step Again <br>For Activate Your Member<br><button id="verify">VERIFY YOUR E-MAIL NOW</button></div></div>
