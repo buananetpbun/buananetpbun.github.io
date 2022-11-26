@@ -360,3 +360,7 @@ border: 2px solid #292929;
 #homepage{
 margin-bottom:3px;	  
 }
+
+#ShowProfile{
+display:none;
+	}
