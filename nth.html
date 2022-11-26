@@ -404,13 +404,13 @@
                   add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT"<br>
                   add address=10.0.0.0/8 list=LOCAL-IP comment="LB By BNT"<br>
                   <b>/ip firewall nat</b><br>
-				  add action=redirect chain=dstnat dst-port=53,5353 protocol=udp src-address-list=LOCAL-IP to-ports=53 comment="LB By BNT"<br>
                   <span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
                   <span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
                   <span id="wan3-nat" style="display:none">add chain=srcnat out-interface="<span id="wan3-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
                   <span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
                   <span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
                   <span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+				  add action=redirect chain=dstnat dst-port=53,5353 protocol=udp src-address-list=LOCAL-IP to-ports=53 comment="LB By BNT"<br>
                   <span id="show-hide-routing-table" style="display:none">
                   <b>/routing table</b> <br>
                   <span id="wan1-routing-table">add name="<span id="wan1-routing-table-name"></span>" fib comment="LB By BNT"<br></span>

@@ -289,7 +289,7 @@
     </div>
     <div id="wrap">
       <div class="logo">
-        <a href="https://buananetpbun.github.io/ecmp.html"><img style="float:left; margin-top:-5px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
+        <a href="https://buananetpbun.github.io/ecmp.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a> 
         <div style="float:right">
           <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
         </div>
@@ -421,13 +421,13 @@
 				  add list=LOCAL-IP address=172.16.0.0/12 comment="LB By BNT"<br>
 				  add list=LOCAL-IP address=192.168.0.0/16 comment="LB By BNT"<br>
                   <b>/ip firewall nat</b><br>
-				  add action=redirect chain=dstnat dst-port=53,5353 protocol=udp src-address-list=LOCAL-IP to-ports=53 comment="LB By BNT"<br>
                   <span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
 				  <span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
 				  <span id="wan3-nat" style="display:none">add chain=srcnat out-interface="<span id="wan3-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
 				  <span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
 				  <span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
 				  <span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
+				  add action=redirect chain=dstnat dst-port=53,5353 protocol=udp src-address-list=LOCAL-IP to-ports=53 comment="LB By BNT"<br>
                   <span id="show-hide-routing-table" style="display:none">
                   <b>/routing table</b> <br>
                   <span id="wan1-routing-table">add name="<span id="wan1-routing-table-name"></span>" fib comment="LB By BNT"<br></span>
