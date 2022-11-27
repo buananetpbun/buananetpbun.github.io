@@ -35,7 +35,7 @@
       h2{color:#f60}
       .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
-      #wrap{max-width:840px;margin:0 auto;padding:10px}
+      #wrap{max-width:840px;margin:0 auto;padding:0 5px 0 5px}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:5px;border-top:1px solid #555}
       .content{float:right;width:100%;padding:10px;border-top:1px solid #bbb;background:#ddd;border-radius:5px 5px 5px 5px}
       .sidebar{max-width:100%;padding:20px;background-color:#ddd;border-bottom:0 solid #bbb;border-radius:5px 5px 5px 5px;font-size:14px}
@@ -57,7 +57,8 @@
       .list-output-content{height:250px;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:10px;margin-top:10px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
       #input-kota{max-width:100%}
       .mikrotik-logo{display:none}
-      @media screen and (max-width:768px) {
+      @media screen and (max-width:700px) {
+	  .list-output-content{height:auto}
       .header h1{max-width:100%;justify-content:center; border-top:0 !important}
 	  .header {border:none}
       .logo-left a{margin-top:10px!important;font-size:23px}
@@ -77,7 +78,6 @@
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
       .sidebar{padding:10px}
-      #wrap{padding:5px}
       .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
       .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
       .mymenu{padding-left:0;padding-right:0}
@@ -97,6 +97,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>   
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div id="wrap">
     <div id="mymenu" class="mymenu">
       <div class="mikrotik-logo" >
         <img alt="mikrotik" src="./img/made-for-mikrotik.png">
@@ -121,7 +122,6 @@
         </div>
       </div>
     </div>
-    <div id="wrap">
       <div class="logo">
         <div class="logo-right" style="float:right;">
           <div style="float:right">
