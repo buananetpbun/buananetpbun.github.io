@@ -68,7 +68,7 @@
       .logo-left a{margin-top:10px!important;font-size:23px}
       .logo-left img{height:40px;width:50px;margin-top:-5px!important}
       h1{font-size:21px;text-align:center}
-      .mymenu{width:98%!important}
+      .mymenu{width:100%!important}
       .logo{width:100%}
       .logo-left{justify-content:center;display:flex;width:100%}
       .logo-right{justify-content:center;width:100%;display:flex}
@@ -142,14 +142,12 @@
       </div>
       <div class="main-wrap">
         <div class="sidebar">
-		
-
-            <label>Parent Name Queue</label>
-            <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
-            <label>Target Local IP / Interface</label>
-            <input type="text" id="input-ip-parent" value="192.168.88.0/24" placeholder="192.168.88.0/24 or ether1">
-            <div style="display:flex">
-			<div style="float:left; width:100%;">
+          <label>Parent Name Queue</label>
+          <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
+          <label>Target Local IP / Interface</label>
+          <input type="text" id="input-ip-parent" value="192.168.88.0/24" placeholder="192.168.88.0/24 or ether1">
+          <div style="display:flex">
+            <div style="float:left; width:100%;">
               <label>Up Total (K/M)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
             </div>
@@ -157,73 +155,72 @@
               <label>Down Total (K/M)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
             </div>
-		  </div>
+          </div>
           <div style="margin-top:10px;margin-bottom:10px;border-bottom:1px solid #bbb;padding-bottom:5px">Sub Parent Queue / Child Queue</div>
           <div style="display:flex">
-		  <div style="float:left;width:100%">
-            <label>Client Name Queue</label>
-            <input type="text" id="input-client" value="Client-" placeholder="Client-">
+            <div style="float:left;width:100%">
+              <label>Client Name Queue</label>
+              <input type="text" id="input-client" value="Client-" placeholder="Client-">
+            </div>
+            <div style="float:left;width:100%;margin-left:10px;">
+              <label>Client Identity</label>
+              <input type="text" id="input-client-initial" value="1" placeholder="1">
+            </div>
           </div>
-          <div style="float:left;width:100%;margin-left:10px;">
-            <label>Client Identity</label>
-            <input type="text" id="input-client-initial" value="1" placeholder="1">
-          </div>
-		  </div>
-		  <div style="display:flex">
-          <div style="float:left; width:100%;">
-            <label>Start IP Client</label>
-            <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
-          </div>
-          <div style="float:left; width:100%;margin-left:10px;">
-            <label>End IP Client</label>
-            <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
-          </div>
-		  </div>
-		  
           <div style="display:flex">
-          <div style="float:left; width:100%;">
-            <label>Up Client (K/M)</label>
-            <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
+            <div style="float:left; width:100%;">
+              <label>Start IP Client</label>
+              <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
+            </div>
+            <div style="float:left; width:100%;margin-left:10px;">
+              <label>End IP Client</label>
+              <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
+            </div>
           </div>
-          <div style="float:left; width:100%;margin-left:10px;">
-            <label>Down Client (K/M)</label>
-            <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
+          <div style="display:flex">
+            <div style="float:left; width:100%;">
+              <label>Up Client (K/M)</label>
+              <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
+            </div>
+            <div style="float:left; width:100%;margin-left:10px;">
+              <label>Down Client (K/M)</label>
+              <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
+            </div>
           </div>
-		  </div>
-		  <div style="display:flex">
-          <div style="float:left; width:100%;">
-            <label>Bucket Size Up</label>
-            <select id="size-list-up">
-              <option value="0.1">0.1 (default)</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
+          <div style="display:flex">
+            <div style="float:left; width:100%;">
+              <label>Bucket Size Up</label>
+              <select id="size-list-up">
+                <option value="0.1">0.1 (default)</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div style="float:left; width:100%;margin-left:10px">
+              <label>Bucket Size Down</label>
+              <select id="size-list-down">
+                <option value="0.1">0.1 (default)</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
           </div>
-          <div style="float:left; width:100%;margin-left:10px">
-            <label>Bucket Size Down</label>
-            <select id="size-list-down">
-              <option value="0.1">0.1 (default)</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-		  </div>
           <div style="clear: both;"></div>
           <div style="margin-bottom:10px;font-size:14px; font-weight:normal;padding-top:10px">
             <span style="color:#ff6600;">BANDWITH WITH TOKEN BUCKET CALCULATION</span><br>
@@ -237,7 +234,7 @@
             Bucket Capacity = <span style="color:#ff6600" id="bucket-capacity-down">0</span><br>
             Burst <span style="color:#ff6600" id="bucket-size-down">0 Mbps</span><br>
           </div>
-		  <div style="clear:both"></div>
+          <div style="clear:both"></div>
           <button style="margin-top:10px;" type="button" onclick="myFunctionInput()">Generate</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All</button> 
           <br>
         </div>
