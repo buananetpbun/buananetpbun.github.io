@@ -15,8 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://buananetpbun.github.io/queue-tree-generator-shared.html">
     <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="stylesheet" href="./login/login.css">	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
     <style>
       /* --------------------------------------------
       ####################################################################
@@ -55,7 +54,7 @@
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .row:after{content:"";display:table;clear:both}
-      .list-output-content{height:525px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
+      .list-output-content{height:535px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
       .list-output-content{height:auto}
@@ -92,7 +91,7 @@
       .hide-homepage{display:none}
       }
     </style>
-
+    <link rel="stylesheet" href="./login/login.css">
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
@@ -139,57 +138,66 @@
       </div>
       <div style="clear:both"></div>
       <div class="header">
-        <h1><span style="color:#ff6600">QUEUE TREE</span> SCRIPT GENERATOR MIKROTIK + <span style="color:#ff6600">BANDWIDTH SHARED (UPTO)</span></h1>
+        <h1><span style="color:#ff6600">QUEUE TREE</span> SCRIPT GENERATOR MIKROTIK + <span style="color:#ff6600">BANDWIDTH SHARED (UPTO)</span> - FOR IP SUBNET /24 ONLY</h1>
       </div>
       <div class="main-wrap">
-		<div class="sidebar">
-          <label>Parent Name Queue</label>
-          <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
-          <label>Target Local IP / Interface</label>
-          <input type="text" id="input-ip-parent" value="192.168.88.0/24" placeholder="192.168.88.0/24 or ether1">
-          <div style="display:flex">
-            <div style="float:left; width:100%;">
+        <div class="sidebar">
+            <label>Parent Name Queue</label>
+            <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
+			<div style="display:flex">
+			<div style="width:100%;">
+              <label>Sub Queue Upload</label>
+              <input type="text" id="input-up-sub-parent" value="Upload" placeholder="Upload">
+            </div>
+            <div style="width:100%;margin-left:10px">
+              <label>Sub Queue Download</label>
+              <input type="text" id="input-down-sub-parent" value="Download" placeholder="Download">
+            </div>
+			</div>
+			<div style="display:flex">
+            <div style="width:100%;">
               <label>Upload Max-Limit</label>
               <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
             </div>
-            <div style="float:left; width:100%;margin-left:10px">
+            <div style="width:100%;margin-left:10px">
               <label>Download Max-Limit</label>
               <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
             </div>
-          </div>
+</div>
+
           <div style="margin-top:10px;margin-bottom:10px;border-bottom:1px solid #bbb">Sub Parent Queue / Child Queue</div>
           <div style="display:flex">
-            <div style="float:left;width:100%;">
-              <label>Client Name Queue</label>
-              <input type="text" id="input-client" value="Client-" placeholder="Client-">
-            </div>
-            <div style="float:left;width:100%;margin-left:10px;">
-              <label>Client Identity</label>
-              <input type="text" id="input-client-initial" value="1" placeholder="1">
-            </div>
+		  <div style="width:100%;">
+            <label>Client Name Queue</label>
+            <input type="text" id="input-client" value="Client-" placeholder="Client-">
           </div>
-          <div style="display:flex">
-            <div style="float:left; width:100%;">
-              <label>Start IP Client</label>
-              <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
-            </div>
-            <div style="float:left; width:100%;margin-left:10px;">
-              <label>End IP Client</label>
-              <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
-            </div>
+          <div style="width:100%;margin-left:10px;">
+            <label>Client Identity</label>
+            <input type="text" id="input-client-initial" value="1" placeholder="1">
           </div>
-          <div style="display:flex">
-            <div style="float:left; width:100%;">
-              <label>Upload Max-Limit</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
-            </div>
-            <div style="float:left; width:100%;margin-left:10px;">
-              <label>Download Max-Limit</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
-            </div>
+		  </div>
+		  <div style="display:flex">
+          <div style="width:100%;">
+            <label>Start IP Client</label>
+            <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
           </div>
+          <div style="width:100%;margin-left:10px;">
+            <label>End IP Client</label>
+            <input type="text" id="input-end-ip-client" value="192.168.88.20" placeholder="192.168.88.20">
+          </div>
+		  </div>
+		  <div style="display:flex">
+          <div style="float:left; width:100%;">
+            <label>Upload Max-Limit</label>
+            <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
+          </div>
+          <div style="width:100%;margin-left:10px;">
+            <label>Download Max-Limit</label>
+            <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
+          </div>
+		  </div>
           <div style="display:flex">
-            <div style="float:left; width:100%;">
+            <div style="width:100%;">
               <label>Upload Limit-At</label>
               <input onkeydown="upperCaseF(this)" type="text" id="input-limit-up" value="0" placeholder="0">
             </div>
@@ -198,10 +206,11 @@
               <input onkeydown="upperCaseF(this)" type="text" id="input-limit-down" value="0" placeholder="0">
             </div>
           </div>
-          <input type="checkbox" id="auto-shared"><label for="auto-shared" style="padding-left:0px">Auto Set For Bandwidth Shared (UP-TO)</label>
-          <div style="clear:both"></div>
-          <button style="margin-top:10px;" type="button" onclick="myFunctionInput()">Generate</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All</button> 
-        </div>       
+            <input type="checkbox" id="auto-shared"><label for="auto-shared" style="padding-left:0px">Auto Set For Bandwidth Shared (UP-TO)</label>
+            <div style="clear: both;"></div>
+          <button style="margin-top:20px;" type="button" onclick="myFunctionInput()">Generate</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All</button> 
+          <div style="clear: both;"></div>
+        </div>
         <div class="content">
           <span style="margin-left:2px">Script Generator Result</span>
           <div class="list-output-content">
@@ -217,7 +226,7 @@
             </div>
           </div>
           <br>
-          <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:600;margin-left:10px">Copy-Paste to Terminal.</b></span>
+          <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
         </div>
       </div>
       <div class="footer">
