@@ -34,7 +34,7 @@
       *{box-sizing:border-box}
       .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
-      #wrap{max-width:900px;margin:0 auto;padding-left:5px;padding-right:5px}
+      #wrap{max-width:1024px;margin:0 auto;padding-left:5px;padding-right:5px}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{display:flex}
       .content{flex:1;width:60%;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
@@ -46,7 +46,7 @@
       a:visited{color:#f60}
       a:hover{color:#f60}
       a:active{color:#f60}
-      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:120px;font-size:15px;font-weight:700;cursor:pointer;border-radius:5px;color:#fff}
+      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:120px;font-size:14px;font-weight:700;cursor:pointer;border-radius:5px;color:#fff}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
@@ -73,9 +73,6 @@
       .logo-left{justify-content:center;display:flex;width:100%}
       .logo-right{justify-content:center;width:100%;display:flex}
       .footer{font-size:13px;padding-left:5px;padding-right:5px}
-      #input-kota{width:100%!important}
-      .reg-area{margin:0!important}
-      }
       @media screen and (max-width:600px) {
       button{margin-bottom:5px}
       h1{font-size:19px}
@@ -145,60 +142,57 @@
       </div>
       <div class="main-wrap">
         <div class="sidebar">
-          <div style="margin-bottom:10px; height:190px">
+		
+
             <label>Parent Name Queue</label>
-            <div style="clear: both;"></div>
             <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
             <label>Target Local IP / Interface</label>
-            <div style="clear: both;"></div>
             <input type="text" id="input-ip-parent" value="192.168.88.0/24" placeholder="192.168.88.0/24 or ether1">
-            <div style="clear: both;"></div>
-            <div style="float:left; width:48%;">
+            <div style="display:flex">
+			<div style="float:left; width:100%;">
               <label>Up Total (K/M)</label>
-              <div style="clear: both;"></div>
               <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
             </div>
-            <div style="float:left; width:48%;margin-left:10px">
+            <div style="float:left; width:100%;margin-left:10px">
               <label>Down Total (K/M)</label>
-              <div style="clear: both;"></div>
               <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
             </div>
-          </div>
-          <div style="clear: both;"></div>
+		  </div>
           <div style="margin-top:10px;margin-bottom:10px;border-bottom:1px solid #bbb;padding-bottom:5px">Sub Parent Queue / Child Queue</div>
-          <div style="float:left;width:48%">
+          <div style="display:flex">
+		  <div style="float:left;width:100%">
             <label>Client Name Queue</label>
-            <div style="clear: both;"></div>
             <input type="text" id="input-client" value="Client-" placeholder="Client-">
           </div>
-          <div style="float:left;width:48%;margin-left:10px;">
+          <div style="float:left;width:100%;margin-left:10px;">
             <label>Client Identity</label>
             <input type="text" id="input-client-initial" value="1" placeholder="1">
           </div>
-          <div style="float:left; width:48%;">
+		  </div>
+		  <div style="display:flex">
+          <div style="float:left; width:100%;">
             <label>Start IP Client</label>
-            <div style="clear: both;"></div>
             <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
           </div>
-          <div style="float:left; width:48%;margin-left:10px;">
+          <div style="float:left; width:100%;margin-left:10px;">
             <label>End IP Client</label>
-            <div style="clear: both;"></div>
             <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
           </div>
-          <div style="clear: both;"></div>
-          <div style="float:left; width:48%;">
+		  </div>
+		  
+          <div style="display:flex">
+          <div style="float:left; width:100%;">
             <label>Up Client (K/M)</label>
-            <div style="clear: both;"></div>
             <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
           </div>
-          <div style="float:left; width:48%;margin-left:10px;">
+          <div style="float:left; width:100%;margin-left:10px;">
             <label>Down Client (K/M)</label>
-            <div style="clear: both;"></div>
             <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
           </div>
-          <div style="float:left; width:48%;">
+		  </div>
+		  <div style="display:flex">
+          <div style="float:left; width:100%;">
             <label>Bucket Size Up</label>
-            <div style="clear: both;"></div>
             <select id="size-list-up">
               <option value="0.1">0.1 (default)</option>
               <option value="1">1</option>
@@ -213,9 +207,8 @@
               <option value="10">10</option>
             </select>
           </div>
-          <div style="float:left; width:48%;margin-left:10px">
+          <div style="float:left; width:100%;margin-left:10px">
             <label>Bucket Size Down</label>
-            <div style="clear: both;"></div>
             <select id="size-list-down">
               <option value="0.1">0.1 (default)</option>
               <option value="1">1</option>
@@ -230,8 +223,9 @@
               <option value="10">10</option>
             </select>
           </div>
+		  </div>
           <div style="clear: both;"></div>
-          <div style="margin-bottom:10px;font-size:14px; font-weight:600;padding-top:10px">
+          <div style="margin-bottom:10px;font-size:14px; font-weight:normal;padding-top:10px">
             <span style="color:#ff6600;">BANDWITH WITH TOKEN BUCKET CALCULATION</span><br>
             Bucket Capacity (BC) = bucket-size * max-limit<br>
             Time = BC / (Parent Max-limit - Token Rate)
@@ -254,7 +248,7 @@
               #############################################################<br>
               # Simple Queue Script Generator For Mikrotik Plus Token Bucket<br>
               # Date/Time: <span id="tanggalwaktu"></span><br>
-              # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
+              # Created by: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
               #############################################################<br><br>
               </span>
               <div id="list-output"></div>
