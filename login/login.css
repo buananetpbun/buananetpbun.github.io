@@ -49,6 +49,7 @@ text-align: right;
 
 /* The Main Menu */
 .mymenu {
+color:#292929 !important; 	
 z-index: 4;
 margin: 0 auto;
 background-color: #ffffff;
