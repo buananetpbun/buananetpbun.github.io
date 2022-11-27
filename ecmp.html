@@ -37,8 +37,8 @@
       #wrap{max-width:1024px;margin:0 auto;padding:5px;color:#ddd}
       .header{height:auto;width:100%;margin-top:0;margin-bottom:12px;border-top:1px solid #555}
       .main-wrap{display:flex}
-      .content{float:right;width:70%;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;height:auto;color:#333;border-radius:0 5px 5px 0}
-      .sidebar{float:left;width:30%;background-color:#ddd;border:1px solid #bbb;height:auto;color:#333;border-radius:5px 0 0 5px;padding:10px 10px 20px}
+      .content{float:right;width:60%;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;height:auto;color:#333;border-radius:0 5px 5px 0}
+      .sidebar{float:left;width:40%;background-color:#ddd;border:1px solid #bbb;height:auto;color:#333;border-radius:5px 0 0 5px;padding:10px 10px 20px}
       .footer{font-size:13px;padding-top:15px;padding-bottom:15px;clear:both;width:auto}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}
@@ -51,7 +51,7 @@
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;margin-top:10px;font-size:15px!important;border-radius:5px}
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
-      .list-output-content{height:562px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
+      .list-output-content{height:542px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
       .mikrotik-logo{display:none}
       @media screen and (max-width:768px) {
       .list-output-content{height:400px}
@@ -142,20 +142,20 @@
         <div class="sidebar">
           <div style="display:flex">
             <div style="float:left; width:100%;">
-              <label>Your ISP Line</label><br>
+              <label>Your Line WAN ISP</label><br>
               <select style="margin-top:10px; width:100%" id="wan-list" onchange="myFunctionOuput()">
-                <option value="line2">2 Line ISP</option>
-                <option value="line3">3 Line ISP</option>
-                <option value="line4">4 Line ISP</option>
-                <option value="line5">5 Line ISP</option>
-                <option value="line6">6 Line ISP</option>
+                <option value="line2">2 Line WAN ISP</option>
+                <option value="line3">3 Line WAN ISP</option>
+                <option value="line4">4 Line WAN ISP</option>
+                <option value="line5">5 Line WAN ISP</option>
+                <option value="line6">6 Line WAN ISP</option>
               </select>
             </div>
             <div style="float:left; width:100%; margin-left:10px">
-              <label>ROS Version</label>
+              <label>RouterOS Version</label>
               <select style="margin-top:10px; width:100%" id="ros-list" onchange="myFunctionOuput()">
-                <option value="ros6">ROS v6.xx</option>
-                <option value="ros7">ROS v7.xx</option>
+                <option value="ros6">RouterOS v6.xx</option>
+                <option value="ros7">RouterOS v7.xx</option>
               </select>
             </div>
           </div>
