@@ -34,7 +34,7 @@
       *{box-sizing:border-box}
       .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
-      #wrap{max-width:1024px;margin:0 auto;padding-left:5px;padding-right:5px}
+      #wrap{max-width:1024px;margin:0 auto;padding:0 5px 0 5px}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{display:flex}
       .content{flex:1;width:60%;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
@@ -46,7 +46,7 @@
       a:visited{color:#f60}
       a:hover{color:#f60}
       a:active{color:#f60}
-      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:120px;font-size:14px;font-weight:700;cursor:pointer;border-radius:5px;color:#fff}
+      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:110px;font-size:14px;font-weight:700;cursor:pointer;border-radius:5px;color:#fff}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
@@ -57,9 +57,8 @@
       .row:after{content:"";display:table;clear:both}
       .list-output-content{height:525px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
       .mikrotik-logo{display:none}
-      @media screen and (max-width:768px) {
-      .list-game{height:250px}
-      .list-output-content{height:300px}
+      @media screen and (max-width:700px) {
+      .list-output-content{height:auto}
       .main-wrap{display:block}
       .sidebar,.content{border-radius:5px;display:block;width:100%}
       .sidebar{height:auto;margin-bottom:5px}
@@ -73,8 +72,6 @@
       .logo-left{justify-content:center;display:flex;width:100%}
       .logo-right{justify-content:center;width:100%;display:flex}
       .footer{font-size:13px;padding-left:5px;padding-right:5px}
-      #input-kota{width:100%!important}
-      .reg-area{margin:0!important}
       }
       @media screen and (max-width:600px) {
       button{margin-bottom:5px}

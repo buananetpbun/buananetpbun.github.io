@@ -34,7 +34,7 @@
       *{box-sizing:border-box}
       .logo{margin-top:10px;margin-bottom:5px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
-      #wrap{max-width:1024px;margin:0 auto;padding:5px;color:#ddd}
+      #wrap{max-width:900px;margin:0 auto;color:#ddd; padding:0 5px 5px 0}
       .header{height:auto;width:100%;margin-top:0;margin-bottom:12px;border-top:1px solid #555}
       .main-wrap{display:flex}
       .content{float:right;width:60%;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;height:auto;color:#333;border-radius:0 5px 5px 0}
@@ -51,10 +51,10 @@
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;margin-top:10px;font-size:15px!important;border-radius:5px}
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
-      .list-output-content{height:542px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
+      .list-output-content{height:563px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
       .mikrotik-logo{display:none}
-      @media screen and (max-width:768px) {
-      .list-output-content{height:400px}
+      @media screen and (max-width:700px) {
+      .list-output-content{height:auto}
       .main-wrap{display:block}
       .sidebar,.content{border-radius:5px;display:block;width:100%}
       .sidebar{height:auto;margin-bottom:5px}
@@ -63,13 +63,11 @@
       .logo-left a{margin-top:10px!important;font-size:23px}
       .logo-left img{height:40px;width:50px;margin-top:-5px!important}
       h1{font-size:21px;text-align:center}
-      .mymenu{width:98%!important}
+      .mymenu{width:100%!important}
       .logo{width:100%}
       .logo-left{justify-content:center;display:flex;width:100%}
       .logo-right{justify-content:center;width:100%;display:flex}
       .footer{font-size:13px;padding-left:5px;padding-right:5px}
-      #input-kota{width:100%!important}
-      .reg-area{margin:0!important}
       }
       @media screen and (max-width:600px) {
       button{margin-bottom:5px}
@@ -96,7 +94,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>  
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-    <div id="mymenu" class="mymenu">
+    <div id="wrap"> 
+ <div id="mymenu" class="mymenu">
       <div class="mikrotik-logo" >
         <img alt="mikrotik" src="./img/made-for-mikrotik.png">
       </div>
@@ -120,7 +119,6 @@
         </div>
       </div>
     </div>
-    <div id="wrap">
       <div class="logo">
         <div class="logo-right" style="float:right;">
           <div style="float:right">
