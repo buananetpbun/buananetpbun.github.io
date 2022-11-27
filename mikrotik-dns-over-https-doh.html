@@ -56,14 +56,15 @@
       .col-25{float:left;width:25%;margin-top:6px}
       .col-75{float:left;width:75%;margin-top:6px}
       .row:after{content:"";display:table;clear:both}
-      .list-mangle{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
+      .list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
       table,tr,td{border:none}
       table{font-family:arial,sans-serif;border-collapse:collapse;width:100%}
       td,th{border:1px solid #ddd;text-align:left;padding:8px}
+	  .mikrotik-logo {display:none}
       @media screen and (max-width:768px) {
       .header h1{max-width:100%;justify-content:center}
       .header{border:none}
-      .logo-left a{margin-top:10px!important;font-size:25px}
+      .logo-left a{margin-top:10px!important;font-size:23px}
       .logo-left img{height:40px;width:50px;margin-top:-5px!important}
       h1{font-size:21px;text-align:center}
       .mymenu{width:98%!important}
@@ -75,6 +76,7 @@
       .reg-area{margin:0!important}
       }
       @media screen and (max-width:600px) {
+	  button{margin-bottom:5px;}
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
@@ -200,7 +202,7 @@
           <option value="53">360 Secure DNS - 101.226.4.6</option>
           <option value="54">114DNS - 114.114.114.114 - Not Support DoH</option>
         </select>
-        <div class="list-mangle" style="margin-bottom:10px">
+        <div class="list-output-content" style="margin-bottom:10px">
           <table style="font-weight:normal">
             <tr style="background-color:#eee;font-weight:normal">
               <th colspan="2" style="background-color: #fff;">Protocol</th>

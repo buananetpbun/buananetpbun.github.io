@@ -56,14 +56,15 @@
       label{padding:8px 5px 5px;display:inline-block}
       input[type=submit]{background-color:#f60;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
-      .list-mangle{height:345px;background:#fff;overflow:scroll;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
-      @media screen and (max-width:768px) {
+      .list-output-content{height:345px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
+      .mikrotik-logo {display:none}      
+	  @media screen and (max-width:768px) {
       .main-wrap{display:block}
       .sidebar,.content{border-radius:5px;display:block;width:100%}
       .sidebar{height:auto;margin-bottom:5px}
       .header h1{max-width:100%;justify-content:center}
 	  .header {border:none}	  
-      .logo-left a{margin-top:10px!important;font-size:25px}
+      .logo-left a{margin-top:10px!important;font-size:23px}
       .logo-left img{height:40px;width:50px;margin-top:-5px!important}
       h1{font-size:21px;text-align:center}
       .mymenu{width:98%!important}
@@ -75,6 +76,7 @@
       .reg-area{margin:0!important}
       }
       @media screen and (max-width:600px) {
+	  button{margin-bottom:5px;}
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
@@ -175,10 +177,8 @@
         </div>
         <div class="content">
           <span style="margin-left:2px">Script Generator Results</span>
-          <div class="list-mangle">
-            <table id="showScript" style="padding:5px;">
-              <tr>
-                <td>
+          <div class="list-output-content">
+            <div id="showScript"">
                   <span style="color:#ff6600;">
                   ###################################################################<br>
                   # VPN Tunnel All Traffic Script Generator By BuanaNETPBun.Github.io<br>
@@ -195,9 +195,7 @@
                   add gateway="<span id="vpn-name-text3" style="color:#ff6600; font-weight:bold">VPN-TUNNEL</span>" distance=1 comment="<span id="vpn-name-text6">VPN-TUNNEL-BY-BNT</span>"<br>
                   <span id="ip-gateway-text">
                   add dst-address="<span id="vpn-ip-text2" style="color:#ff6600; font-weight:bold" >x.x.x.x.x</span>" distance=1 gateway="<span id="ip-gateway-game" style="color:#ff6600; font-weight:bold">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-TUNNEL-BY-BNT</span>"</span><br>
-                </td>
-              </tr>
-            </table>
+            </div>
           </div>
           <br>
           <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:600;margin-left:10px">Copy-Paste Script to Terminal!</span>

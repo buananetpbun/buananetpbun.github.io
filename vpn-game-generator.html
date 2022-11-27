@@ -59,16 +59,17 @@
       .row:after{content:"";display:table;clear:both}
       .list-game{height:200px;background:#fff;overflow:scroll;overflow-x:hidden;width:100%;margin-top:2px;padding:3px;border:1px solid rgba(0,0,0,0.25);border-radius:5px}
       .list-game label{padding:0;display:inline-block}
-      .list-mangle{border-radius:5px;height:600px;background:#fff;overflow:scroll;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc}
+      .list-output-content{border-radius:5px;height:600px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc}
       table,tr,td{border:none}
+      .mikrotik-logo {display:none}	  
       @media screen and (max-width:768px) {
-	  .list-mangle{height:300px}
+	  .list-output-content{height:300px}
       .main-wrap{display:block}
       .sidebar,.content{border-radius:5px;display:block;width:100%}
       .sidebar{height:auto;margin-bottom:5px}
       .header h1{max-width:100%;justify-content:center}
 	  .header {border:none}	  
-      .logo-left a{margin-top:10px!important;font-size:25px}
+      .logo-left a{margin-top:10px!important;font-size:23px}
       .logo-left img{height:40px;width:50px;margin-top:-5px!important}
       h1{font-size:21px;text-align:center}
       .mymenu{width:98%!important}
@@ -80,6 +81,7 @@
       .reg-area{margin:0!important}
       }
       @media screen and (max-width:600px) {
+	  button{margin-bottom:5px;}
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
@@ -493,10 +495,8 @@
       </div>
       <div class="content">
         <span style="margin-left:2px">Script Generator Results</span>
-        <div class="list-mangle">
-          <table id="showScript" style="padding:5px;">
-            <tr>
-              <td>
+        <div class="list-output-content">
+          <div id="showScript">
                 <span style="color:#ff6600;">
                 ######################################################<br>
                 # Vpn Game Script Generator By BuanaNETPBun.Github.io<br>
@@ -617,9 +617,7 @@
                 <span id="WorldofTanksPC" style="display:none"><span style="color:#ff6600"># World of Tanks - PC</span><br>add action=mark-routing chain=prerouting comment="World of Tanks - PC" dst-port=20000-25000,8081,8088,32801,3280 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=12000-29999,32801-32825, 5060,5062,3478,3479,20014 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
                 <span id="WorldofWarcraftPC" style="display:none"><span style="color:#ff6600"># World of Warcraft - PC</span><br>add action=mark-routing chain=prerouting comment="World of Warcraft - PC" dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=3724,1119,6012 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
                 <span id="XshotIndonesiaPC" style="display:none"><span style="color:#ff6600"># Xshot Indonesia - PC</span><br>add action=mark-routing chain=prerouting comment="Xshot Indonesia - PC" dst-port=7320-7350 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=7800-7850,30000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
-              </td>
-            </tr>
-          </table>
+          </div>
         </div>
         <br>
         <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:600;margin-left:10px;font-size:14px">Copy-Paste Script to Terminal.</b></span>
