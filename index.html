@@ -30,673 +30,155 @@
       # Sosmed    : https://fb.me/buananetmikrotik/	
       ################################################
       ----------------------------------------------- */  
-      body {
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-      font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-      font-size: 15px;
-      line-height:normal;    
-      word-wrap: break-word;
-      margin:0;
-      padding:0;
-      color:#292929;
-      }
-      h1{
-      font-size:52px;
-      color:#292929;
-      font-weight: 600;
-      line-height: 1.3; 
-      margin:0;
-      }
-      h2{
-      font-weight:600; font-size:18px; 
-      color:#292929;
-      border-bottom:1px solid #ccc; 
-      margin-bottom:6px; 
-      padding-bottom:3px;
-      }
-      h3, h4, h5, h6{
-      font-weight:normal; 
-      font-size:17px; 
-      color:#292929; 
-      margin-bottom:10px; 
-      padding-bottom:10px;
-      }
-      pre {
-      white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
-      white-space: -pre-wrap; /* Opera */
-      white-space: -o-pre-wrap; /* Opera */
-      white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
-      word-wrap: break-word; /* IE 5.5+ */
-      }
+      body{background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:15px;line-height:normal;word-wrap:break-word;margin:0;padding:0;color:#292929}
+      h1{font-size:52px;color:#292929;font-weight:600;line-height:1.3;margin:0}
+      h2{font-weight:600;font-size:18px;color:#292929;border-bottom:1px solid #ccc;margin-bottom:6px;padding-bottom:3px}
+      h3,h4,h5,h6{font-weight:400;font-size:17px;color:#292929;margin-bottom:10px;padding-bottom:10px}
+      pre{white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:pre-wrap;word-wrap:break-word}
       b{font-size:15px}
-      p {
-      padding:0;
-      margin:4px 0 0 17px;
-      display:list-item;
-      list-style: disc;
-      }
-      .logo {
-      color: #ddd;
-      text-decoration:none;
-      font-size:25px;
-      font-weight:bold; 
-      border-radius: 5px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-      color:#ddd;
-      margin-bottom:15px;
-      margin-top:10px;
-      padding:25px;
-      clear:both;
-      }	
-      .logo a{
-      color:#ddd !important;
-      font-size:25px; 
-      }
-      * {
-      box-sizing: border-box;
-      }
-      .content {
-      max-width:900px;
-      min-width:200px;
-      margin:0 auto;
-      margin-top:20px;
-      margin-bottom:30px; 
-      padding: 30px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      background:#ffffff;
-      line-height: 1.7  
-      }
-      /* unvisited link */
-      a:link {
-      color: #ff6600;
-      text-decoration:none;
-      font-weight:bold;
-      }
-      /* visited link */
-      a:visited {
-      color: #ff6600;
-      text-decoration:none;
-      }
-      /* mouse over link */
-      a:hover {
-      color: red;
-      }
-      .resp-sharing-button__link,
-      .resp-sharing-button__icon {
-      display: inline-block
-      }
-      .resp-sharing-button__link {
-      text-decoration: none;
-      color: #ddd;
-      margin: 0.5em;
-      font-size:15px;
-      }
-      .resp-sharing-button {
-      border-radius: 5px;
-      transition: 25ms ease-out;
-      padding: 0.5em 0.75em;
-      }
-      .resp-sharing-button__icon svg {
-      width: 1em;
-      height: 1em;
-      margin-right: 0.4em;
-      vertical-align: top
-      }
-      .resp-sharing-button--small svg {
-      margin: 0;
-      vertical-align: middle
-      }
-      /* Non solid icons get a stroke */
-      .resp-sharing-button__icon {
-      stroke: #ddd;
-      fill: none
-      }
-      /* Solid icons get a fill */
-      .resp-sharing-button__icon--solid,
-      .resp-sharing-button__icon--solidcircle {
-      fill: #ddd;
-      stroke: none
-      }
-      .resp-sharing-button--twitter {
-      background-color: #55acee
-      }
-      .resp-sharing-button--twitter:hover {
-      background-color: #2795e9
-      }
-      .resp-sharing-button--pinterest {
-      background-color: #bd081c
-      }
-      .resp-sharing-button--pinterest:hover {
-      background-color: #8c0615
-      }
-      .resp-sharing-button--facebook {
-      background-color: #3b5998
-      }
-      .resp-sharing-button--facebook:hover {
-      background-color: #2d4373
-      }
-      .resp-sharing-button--tumblr {
-      background-color: #35465C
-      }
-      .resp-sharing-button--tumblr:hover {
-      background-color: #222d3c
-      }
-      .resp-sharing-button--reddit {
-      background-color: #5f99cf
-      }
-      .resp-sharing-button--reddit:hover {
-      background-color: #3a80c1
-      }
-      .resp-sharing-button--google {
-      background-color: #dd4b39
-      }
-      .resp-sharing-button--google:hover {
-      background-color: #c23321
-      }
-      .resp-sharing-button--linkedin {
-      background-color: #0077b5
-      }
-      .resp-sharing-button--linkedin:hover {
-      background-color: #046293
-      }
-      .resp-sharing-button--email {
-      background-color: #777
-      }
-      .resp-sharing-button--email:hover {
-      background-color: #5e5e5e
-      }
-      .resp-sharing-button--xing {
-      background-color: #1a7576
-      }
-      .resp-sharing-button--xing:hover {
-      background-color: #114c4c
-      }
-      .resp-sharing-button--whatsapp {
-      background-color: #25D366
-      }
-      .resp-sharing-button--whatsapp:hover {
-      background-color: #1da851
-      }
-      .resp-sharing-button--hackernews {
-      background-color: #ff6600
-      }
-      .resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
-      .resp-sharing-button--vk {
-      background-color: #507299
-      }
-      .resp-sharing-button--vk:hover {
-      background-color: #43648c
-      }
-      .resp-sharing-button--facebook {
-      background-color: #3b5998;
-      border-color: #3b5998;
-      }
-      .resp-sharing-button--facebook:hover,
-      .resp-sharing-button--facebook:active {
-      background-color: #2d4373;
-      border-color: #2d4373;
-      }
-      .resp-sharing-button--twitter {
-      background-color: #55acee;
-      border-color: #55acee;
-      }
-      .resp-sharing-button--twitter:hover,
-      .resp-sharing-button--twitter:active {
-      background-color: #2795e9;
-      border-color: #2795e9; 
-      }
-      .resp-sharing-button--tumblr {
-      background-color: #35465C;
-      border-color: #35465C;
-      }
-      .resp-sharing-button--tumblr:hover,
-      .resp-sharing-button--tumblr:active {
-      background-color: #222d3c;
-      border-color: #222d3c;
-      }
-      .resp-sharing-button--email {
-      background-color: #777777;
-      border-color: #777777;
-      }
-      .resp-sharing-button--email:hover,
-      .resp-sharing-button--email:active {
-      background-color: #5e5e5e;
-      border-color: #5e5e5e;
-      }
-      .resp-sharing-button--pinterest {
-      background-color: #bd081c;
-      border-color: #bd081c;
-      }
-      .resp-sharing-button--pinterest:hover,
-      .resp-sharing-button--pinterest:active {
-      background-color: #8c0615;
-      border-color: #8c0615;
-      }
-      /* The Main Menu */
-      .mymenu {
-      margin: 0 auto;
-      background-color: #ffffff;
-      width: 700px;
-      border-radius: 0 0 5px 5px;
-      border: 2px solid #ffffff;
-      font-weight: bold;
-      font-size: 15px;
-      position: relative;
-      padding-left:10px;
-      padding-right:10px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      }
-      .mymenu ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #ffffff;
-      margin-right: 10px;
-      background: url("./img/made-for-mikrotik.png") no-repeat right !important;
-      }
-      .mymenu li {
-      float: left;
-      }
-      .mymenu li a {
-      display: block;
-      color: #292929;
-      text-align: center;
-      padding: 8px 10px;
-      text-decoration: none;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      }
-      .mymenu li a:hover {
-      background-color: #292929;
-      color: #ffffff;
-      border-radius:5px;
-      }  
-      button {
-      color: #fff;
-      background-color: #ff6600;
-      border-color: #ff6600;
-      border:none;
-      padding:8px;
-      width:135px;
-      font-size:15px;
-      font-weight:bold;
-      cursor: pointer;
-      border-radius: 5px; 
-      }
-      button:hover {
-      background-color: #ccc;
-      color: #292929;
-      }
-      /* LOGIN Content */
-      .forms-out {
-      margin: 0 auto;
-      padding: 0;
-      font-size:14px;
-      }
-      .forms-in {
-      width: 100%;
-      margin: 0 auto;
-      color: white;
-      padding: 0;
-      font-size:14px;
-      }
-      .forms-in div {
-      padding: 0;
-      max-width: 350px;
-      margin: 0 auto;      
-      border-radius: 5px;
-      margin-bottom: 15px;
-      }
-      .forms-in h3 {
-      text-align: center;
-      }
-      .forms-in input {
-      border: none;
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      box-sizing: border-box;
-      border-radius: 3px;
-      }
-      .forms-in button {
-      border: none;
-      padding: 7px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top:10px;
-      margin-bottom:15px;
-      }
-      .forms-in button:hover {
-      opacity: 0.7;
-      }
-      .hide {
-      display: none;
-      }
-      #forgot-password {
-      cursor: pointer;
-      }
-      #forgot-password:hover {
-      opacity: 0.7;
-      }
-      #show-register {
-      cursor: pointer;
-      }
-      #show-register:hover {
-      opacity: 0.7;
-      }
-      #show-login {
-      cursor: pointer;
-      }
-      #show-login:hover {
-      opacity: 0.7;
-      }
-      /* The Modal (background) */
-      .modal {
-      display: block; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 170px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-      }
-      .modal-login {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 170px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-      }
-      /* Modal Content */
-      .modal-content {
-      line-height:1.4;
-      border-radius: 5px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
-      color:#ddd;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #444;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      font-weight:bold;
-      font-size:14px 
-      }
-      .modal-content p {
-      padding:0;
-      margin:5px 5px 0 17px;
-      display:list-item;
-      line-height:2.0;
-      list-style: disc;
-      }
-      .modal-content h2 {
-      color:#ff6600;
-      float:left;
-      padding:0;
-      margin:0;
-      }	  	
-      /* The Close Button */
-      .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: -25px;
-      margin-right: -15px;
-      }
-      .close:hover,
-      .close:focus {
-      color: orange;
-      text-decoration: none;
-      cursor: pointer;
-      } 
-      .myButtonGoogle {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width:auto;
-      cursor: pointer;
-      font-weight:normal;
-      float:right;
-      }
-      .myButtonGoogle :hover {
-      opacity: 0.7;
-      }
-      .myButtonGoogle img {
-      width: 32px;
-      padding:0;
-      margin:0;
-      }
-      .myButtonGoogle .text {
-      padding:0;
-      margin:0;
-      }    	  
-      .gsib_a{height:30px; padding-left:10px !important; }
-      .gsc-input input{font-size:14px; color:#333; background:#fff !important; }
-      .gsc-input-box {border-radius:5px; height:34px;background:#fff !important;margin-right: -6px !important; line-height:normal !important}
-      .gsc-search-button-v2 {border-radius:5px !important; height:34px !important;}
-      .gsc-control-cse {background:#ffffff !important;border:none !important; clear: both;}
-      div#container_notlike, div#container_like {
-      display: none;
-      }
-      /* CUSTOM ALERT */
-      #dialogoverlay {
-      display: none;
-      opacity: .5;
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      background: #292929; 
-      width: 100%;
-      z-index: 10;
-      }
-      #dialogbox {
-      display: none;
-      position: fixed;
-      background: #292929;
-      border-radius: 5px;
-      width: 400px;
-      z-index: 10;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);	
-      }
-      #dialogbox>div {
-      border-radius: 5px;
-      margin: 3px;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
-      }
-      #dialogbox>div>#dialogboxhead {
-      background: #292929;
-      opacity: 0.5;
-      font-weight: bold;
-      font-size: 15px;
-      padding: 10px;
-      color: #fff;
-      }
-      #dialogbox>div>#dialogboxbody {
-      font-weight: normal;
-      font-size: 15px;
-      padding: 20px;
-      color: #ccc;
-      }
-      #dialogbox>div>#dialogboxfoot {
-      padding: 10px;
-      text-align: right;
-      }	  
-      .show-login-menu{
-      width:100%;	
-      margin-bottom:10px;
-      }	
-      .mikrotik-logo {
-      display: none;
-      }
-      .column {
-      float: left;
-      width: 50%;
-      }
-      .column a{
-      font-weight:600;
-      }	  	  
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }
-      .member-only{
-      cursor: help;
-      margin-left:5px;
-      height:13px;
-      width:12px;
-      }
-      .footer {
-      margin-top:20px; 
-      text-align:center; 
-      font-size:13px;}
-      .show-homepage-menu{
-      margin-bottom:3px;	  
-      }
-      .avatar img {
-      margin-bottom:-13px;
-      margin-left:5px;
-      margin-right:5px;
-      width: 40px;
-      height: 40px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      -webkit-border-radius: 99em;
-      -moz-border-radius: 99em;
-      border-radius: 99em;
-      border: 2px solid #292929;
-      }
-      .terminal {
-      margin-bottom:15px;
-      width:100%; 
-      }
-      .terminal img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      }
-      /* -- RESPONSIVE -- */
-      @media screen and (max-width:1024px){
+      p{padding:0;margin:4px 0 0 17px;display:list-item;list-style:disc}
+      .logo{color:#ddd;text-decoration:none;font-size:25px;font-weight:700;border-radius:5px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;color:#ddd;margin-bottom:15px;margin-top:10px;padding:25px;clear:both}
+      .logo a{color:#ddd!important;font-size:25px}
+      *{box-sizing:border-box}
+      #wrap{max-width:900px;margin:0 auto;padding:0 5px}
+      .content{max-width:100%;margin:0 auto;margin-top:20px;margin-bottom:30px;padding:30px;border-radius:5px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19);background:#fff;line-height:1.7}
+      a:link{color:#f60;text-decoration:none;font-weight:700}
+      a:visited{color:#f60;text-decoration:none}
+      a:hover{color:red}
+      .resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}
+      .resp-sharing-button__link{text-decoration:none;color:#ddd;margin:.5em;font-size:15px}
+      .resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}
+      .resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}
+      .resp-sharing-button--small svg{margin:0;vertical-align:middle}
+      .resp-sharing-button__icon{stroke:#ddd;fill:none}
+      .resp-sharing-button__icon--solid,.resp-sharing-button__icon--solidcircle{fill:#ddd;stroke:none}
+      .resp-sharing-button--twitter{background-color:#55acee}
+      .resp-sharing-button--twitter:hover{background-color:#2795e9}
+      .resp-sharing-button--pinterest{background-color:#bd081c}
+      .resp-sharing-button--pinterest:hover{background-color:#8c0615}
+      .resp-sharing-button--facebook{background-color:#3b5998}
+      .resp-sharing-button--facebook:hover{background-color:#2d4373}
+      .resp-sharing-button--tumblr{background-color:#35465C}
+      .resp-sharing-button--tumblr:hover{background-color:#222d3c}
+      .resp-sharing-button--reddit{background-color:#5f99cf}
+      .resp-sharing-button--reddit:hover{background-color:#3a80c1}
+      .resp-sharing-button--google{background-color:#dd4b39}
+      .resp-sharing-button--google:hover{background-color:#c23321}
+      .resp-sharing-button--linkedin{background-color:#0077b5}
+      .resp-sharing-button--linkedin:hover{background-color:#046293}
+      .resp-sharing-button--email{background-color:#777}
+      .resp-sharing-button--email:hover{background-color:#5e5e5e}
+      .resp-sharing-button--xing{background-color:#1a7576}
+      .resp-sharing-button--xing:hover{background-color:#114c4c}
+      .resp-sharing-button--whatsapp{background-color:#25D366}
+      .resp-sharing-button--whatsapp:hover{background-color:#1da851}
+      .resp-sharing-button--hackernews{background-color:#f60}
+      .resp-sharing-button--hackernews:hover,.resp-sharing-button--hackernews:focus{background-color:#FB6200}
+      .resp-sharing-button--vk{background-color:#507299}
+      .resp-sharing-button--vk:hover{background-color:#43648c}
+      .resp-sharing-button--facebook{background-color:#3b5998;border-color:#3b5998}
+      .resp-sharing-button--facebook:hover,.resp-sharing-button--facebook:active{background-color:#2d4373;border-color:#2d4373}
+      .resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}
+      .resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}
+      .resp-sharing-button--tumblr{background-color:#35465C;border-color:#35465C}
+      .resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}
+      .resp-sharing-button--email{background-color:#777;border-color:#777}
+      .resp-sharing-button--email:hover,.resp-sharing-button--email:active{background-color:#5e5e5e;border-color:#5e5e5e}
+      .resp-sharing-button--pinterest{background-color:#bd081c;border-color:#bd081c}
+      .resp-sharing-button--pinterest:hover,.resp-sharing-button--pinterest:active{background-color:#8c0615;border-color:#8c0615}
+      .mymenu{margin:0 auto;background-color:#fff;width:700px;border-radius:0 0 5px 5px;border:2px solid #fff;font-weight:700;font-size:15px;position:relative;padding-left:10px;padding-right:10px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19)}
+      .mymenu ul{list-style-type:none;margin:0;padding:0;overflow:hidden;background-color:#fff;margin-right:10px;background:url(./img/made-for-mikrotik.png) no-repeat right!important}
+      .mymenu li{float:left}
+      .mymenu li a{display:block;color:#292929;text-align:center;padding:8px 10px;text-decoration:none;margin-top:5px;margin-bottom:5px}
+      .mymenu li a:hover{background-color:#292929;color:#fff;border-radius:5px}
+      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:135px;font-size:15px;font-weight:700;cursor:pointer;border-radius:5px}
+      button:hover{background-color:#ccc;color:#292929}
+      .forms-out{margin:0 auto;padding:0;font-size:14px}
+      .forms-in{width:100%;margin:0 auto;color:#fff;padding:0;font-size:14px}
+      .forms-in div{padding:0;max-width:350px;margin:0 auto;border-radius:5px;margin-bottom:15px}
+      .forms-in h3{text-align:center}
+      .forms-in input{border:none;width:100%;margin-bottom:15px;padding:10px;box-sizing:border-box;border-radius:3px}
+      .forms-in button{border:none;padding:7px 20px;border-radius:4px;cursor:pointer;font-weight:700;margin-top:10px;margin-bottom:15px}
+      .forms-in button:hover{opacity:.7}
+      .hide{display:none}
+      #forgot-password{cursor:pointer}
+      #forgot-password:hover{opacity:.7}
+      #show-register{cursor:pointer}
+      #show-register:hover{opacity:.7}
+      #show-login{cursor:pointer}
+      #show-login:hover{opacity:.7}
+      .modal{display:block;position:fixed;z-index:1;padding-top:170px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,0.6)}
+      .modal-login{display:none;position:fixed;z-index:1;padding-top:170px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,0.6)}
+      .modal-content{line-height:1.4;border-radius:5px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;color:#ddd;margin:auto;padding:20px;border:1px solid #444;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19);font-weight:700;font-size:14px}
+      .modal-content p{padding:0;margin:5px 5px 0 17px;display:list-item;line-height:2;list-style:disc}
+      .modal-content h2{color:#f60;float:left;padding:0;margin:0}
+      .close{color:#aaa;float:right;font-size:20px;font-weight:700;margin-top:-25px;margin-right:-15px}
+      .close:hover,.close:focus{color:orange;text-decoration:none;cursor:pointer}
+      .myButtonGoogle{display:flex;justify-content:space-between;align-items:center;width:auto;cursor:pointer;font-weight:400;float:right}
+      .myButtonGoogle :hover{opacity:.7}
+      .myButtonGoogle img{width:32px;padding:0;margin:0}
+      .myButtonGoogle .text{padding:0;margin:0}
+      .gsib_a{height:30px;padding-left:10px!important}
+      .gsc-input input{font-size:14px;color:#333;background:#fff!important}
+      .gsc-input-box{border-radius:5px;height:34px;background:#fff!important;margin-right:-6px!important;line-height:normal!important}
+      .gsc-search-button-v2{border-radius:5px!important;height:34px!important}
+      .gsc-control-cse{background:#fff!important;border:none!important;clear:both}
+      div#container_notlike,div#container_like{display:none}
+      #dialogoverlay{display:none;opacity:.5;position:fixed;top:0;left:0;background:#292929;width:100%;z-index:10}
+      #dialogbox{display:none;position:fixed;background:#292929;border-radius:5px;width:400px;z-index:10;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19)}
+      #dialogbox>div{border-radius:5px;margin:3px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      #dialogbox>div>#dialogboxhead{background:#292929;opacity:.5;font-weight:700;font-size:15px;padding:10px;color:#fff}
+      #dialogbox>div>#dialogboxbody{font-weight:400;font-size:15px;padding:20px;color:#ccc}
+      #dialogbox>div>#dialogboxfoot{padding:10px;text-align:right}
+      .show-login-menu{width:100%;margin-bottom:10px}
+      .mikrotik-logo{display:none}
+      .column{float:left;width:50%}
+      .column a{font-weight:600}
+      .row:after{content:"";display:table;clear:both}
+      .member-only{cursor:help;margin-left:5px;height:13px;width:12px}
+      .footer{margin-top:20px;text-align:center;font-size:13px}
+      .show-homepage-menu{margin-bottom:3px}
+      .avatar img{margin-bottom:-13px;margin-left:5px;margin-right:5px;width:40px;height:40px;background-size:cover;background-repeat:no-repeat;background-position:center center;-webkit-border-radius:99em;-moz-border-radius:99em;border-radius:99em;border:2px solid #292929}
+      .terminal{margin-bottom:15px;width:100%}
+      .terminal img{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
+      @media screen and (max-width:1024px) {
       h1{font-size:45px}
-      .logo-left a{
-      font-size:21px;
-      } 
-      } 
-      @media screen and (max-width:768px){
-      .logo-left a{
-      margin-top:5px !important;
-      font-size:20px;
-      }          
-      .logo-left img{
-      height: 40px;
-      width: 50px; 
-      margin-top:-5px !important;
-      }  
-      /* -- .hide-homepage {display:none} -- */
+      .logo-left a{font-size:21px}
+      }
+      @media screen and (max-width:768px) {
+      .logo-left a{margin-top:5px!important;font-size:20px}
+      .logo-left img{height:40px;width:50px;margin-top:-5px!important}
       h1{font-size:40px}
-      .content {
-      width:100% !important;
-      padding:15px;
+      .content{width:100%!important;padding:15px}
+      .mymenu{width:100%!important}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%}
+      .logo-right{text-align:center;width:100%}
+      .footer{margin-bottom:20px}
       }
-      .mymenu {
-      width:100% !important;
-      } 
-      .logo {
-      width:100%;
+      @media screen and (max-width:700px) {
+      .disclaimer{margin-top:15px}
+      h1{font-size:35px}
       }
-      .logo-left {
-      justify-content: center;
-      display: flex;
-      width:100%;
-      }
-      .logo-right {
-      text-align: center;
-      width: 100%; 
-      }
-      .footer {margin-bottom:20px}
-      }
-      @media screen and (max-width:700px){
-      .disclaimer {
-      margin-top:15px;
-      }
-      h1{
-      font-size: 35px;
-      }
-      }	  
-      @media screen and (max-width:600px){
-      .content, .mymenu {border-radius: 0}
-      .logo-left a{
-      padding-top:5px !important;
-      font-size:18px;
-      }          
-      .logo-left img{
-      height: 40px;
-      width: 50px; 
-      margin-top:-8px !important;
-      margin-right: 5px !important;
-      }         
-      .column {
-      float: left;
-      width: 100%;
-      }
-      .text-join-now {display:none}
-      .show-login-menu{
-      display: flex;
-      justify-content: center;
-      width:100%;	
-      margin-bottom:10px;
-      }	
-      .show-homepage-menu{
-      display: flex;
-      justify-content: center;
-      width:100%;	
-      }	
+      @media screen and (max-width:600px) {
+      .content,.mymenu{border-radius:0}
+      .logo-left a{padding-top:5px!important;font-size:18px}
+      .logo-left img{height:40px;width:50px;margin-top:-8px!important;margin-right:5px!important}
+      .column{float:left;width:100%}
+      .text-join-now{display:none}
+      .show-login-menu{display:flex;justify-content:center;width:100%;margin-bottom:10px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
       h1{font-size:30px}
-      .gsc-search-box { 
-      display:none !important
+      .gsc-search-box{display:none!important}
+      .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
-      .mikrotik-logo {
-      display: flex;
-      justify-content: center;
-      margin-top:15px;	
-      }	
-      .mymenu {
-      padding-left:0px;
-      padding-right:0px;
-      } 
-      .mymenu ul {
-      background: none !important;
-      justify-content: center;
-      display: flex;
-      } 
+      @media screen and (max-width:500px) {
+      .hide-homepage{display:none}
       }
-      @media screen and (max-width:500px){
-      .hide-homepage {display:none}
-      }
-      @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-      /* -- 2x -- */
-      }
-      /* -- Print -- */
       @media print {
-      body, .body-fauxcolumn-outer {
-      background: none !important;
-      font-size: 10pt;
-      }
+      body,.body-fauxcolumn-outer{background:none!important;font-size:10pt}
       }
     </style>
   </head>
@@ -705,311 +187,313 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>  
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-    <div id="mymenu" class="mymenu">
-      <div class="mikrotik-logo" >
-        <img alt="mikrotik" src="./img/made-for-mikrotik.png">
-      </div>
-      <ul>
-        <li><a href="https://buananetpbun.github.io">HOME</a></li>
-        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-        <li><a href="javascript:callmodal()">DONATE</a></li>
-        <li><a target="_blank" href="https://fb.me/buananetmikrotik/">CONTACT</a></li>
-      </ul>
-      <div class="show-login-menu" id="show-login-menu">
-        <button style="width:100px !important;  padding:6px; margin:4px; font-weight:bold;font-size:14px; margin-left:12px !important" onclick="callmodalLogin();showLogin()">Login</button>
-        <button style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px" onclick="javascript:callmodalLogin();showRegistration()">Sign Up</button>
-        <span class="text-join-now" style="font-size:14px; color:#ff6600; font-weight:bold; margin-left:5px">Get your member now, it's free.</span>
-      </div>
-      <div class="show-homepage-menu">
-        <div id="homepage" class="hide">
-          <button style="width:100px !important; padding:6px; margin:4px; margin-left:12px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
-          <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
-          <span class="hide-homepage">
-          <span class="avatar">
-          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
-          </span>
-          <span style="font-weight:normal;font-size:13px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-          <span style="font-weight:normal; font-size:13px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
-          </span>
-          <button id="verify" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px; background-color:red">Verify E-Mail</button>
+    <div id="wrap">
+      <div id="mymenu" class="mymenu">
+        <div class="mikrotik-logo" >
+          <img alt="mikrotik" src="./img/made-for-mikrotik.png">
+        </div>
+        <ul>
+          <li><a href="https://buananetpbun.github.io">HOME</a></li>
+          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+          <li><a href="javascript:callmodal()">DONATE</a></li>
+          <li><a target="_blank" href="https://fb.me/buananetmikrotik/">CONTACT</a></li>
+        </ul>
+        <div class="show-login-menu" id="show-login-menu">
+          <button style="width:100px !important;  padding:6px; margin:4px; font-weight:bold;font-size:14px; margin-left:12px !important" onclick="callmodalLogin();showLogin()">Login</button>
+          <button style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px" onclick="javascript:callmodalLogin();showRegistration()">Sign Up</button>
+          <span class="text-join-now" style="font-size:14px; color:#ff6600; font-weight:bold; margin-left:5px">Get your member now, it's free.</span>
+        </div>
+        <div class="show-homepage-menu">
+          <div id="homepage" class="hide">
+            <button style="width:100px !important; padding:6px; margin:4px; margin-left:12px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+            <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+            <span class="hide-homepage">
+            <span class="avatar">
+            <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+            </span>
+            <span style="font-weight:normal;font-size:13px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+            <span style="font-weight:normal; font-size:13px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
+            </span>
+            <button id="verify" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px; background-color:red">Verify E-Mail</button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="content">
-      <div class="terminal">    
-        <img src="./img/terminal.png" alt="MikroTik Terminal">
-      </div>
-      <div style="float:left; margin-right:5px; margin-top:8px; ">
-        <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-      </div>
-      <div style="float:left;margin-top:8px">    
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
-      </div>
-      <script async src="https://cse.google.com/cse.js?cx=751bf7c3dc13f7e72"></script>
-      <div style="float:right;width:300px;">
-        <div class="gcse-searchbox"></div>
-      </div>
-      <div style="clear:both;"></div>
-      <div class="logo">
-        <div class="logo-right" style="float:right;"> 
-          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
-          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
-          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>		
+      <div class="content">
+        <div class="terminal">    
+          <img src="./img/terminal.png" alt="MikroTik Terminal">
         </div>
-        <div class="logo-left">	  
-          <a href="https://buananetpbun.github.io"><img alt="buananetpbun.github.io" style="float:left; margin-top:-10px;margin-right:10px" height="60" width="70" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>
+        <div style="float:left; margin-right:5px; margin-top:8px; ">
+          <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
         </div>
-      </div>
-      <div style="clear:both;"></div>
-      <div style="margin-bottom:-15px; margin-top:-12px">
-        <div class="gcse-searchresults"></div>
-      </div>
-      <h1>MikroTik Router<i>OS</i> Script and Tools</h1>
-      <h2>// MIKROTIK <span style="color:#ff6600">[</span> SCRIPT <span style="color:#ff6600">]</span> ROUTEROS DATABASE</h2>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">MikroTik RouterOS Script DataBase</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <div style="float:left;margin-top:8px">    
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
         </div>
-        <div class="column">
-          <p><a target="_blank"  href="https://router-os.github.io/">MikroTik RouterOS Search Script</a></p>
+        <script async src="https://cse.google.com/cse.js?cx=751bf7c3dc13f7e72"></script>
+        <div style="float:right;width:300px;">
+          <div class="gcse-searchbox"></div>
         </div>
-      </div>
-      <h2>// MIKROTIK ROUTEROS SCRIPT GENERATOR</h2>
-      <span style="font-size:16px;font-weight:bold;">☰ ROUTE <span style="color:#ff6600">//</span> MANGLE <span style="color:#ff6600">//</span> NAT</span>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Recursive Gateway</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/static-routing-games.html">Games Static Routing</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/policy-based-routing-website.html">Website Static Routing</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <div style="clear:both;"></div>
+        <div class="logo">
+          <div class="logo-right" style="float:right;"> 
+            <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+            <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+            <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>		
+          </div>
+          <div class="logo-left">	  
+            <a href="https://buananetpbun.github.io"><img alt="buananetpbun.github.io" style="float:left; margin-top:-10px;margin-right:10px" height="60" width="70" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>
+          </div>
         </div>
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-port-forward-generator.html">Port Forwarding</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-port-static-routing.html">Port TCP/UDP Static Routing</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">All Traffic to VPN Tunnel</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote Access Public IP</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Games</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <div style="clear:both;"></div>
+        <div style="margin-bottom:-15px; margin-top:-12px">
+          <div class="gcse-searchresults"></div>
         </div>
-      </div>
-      <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold; ">☰ SIMPLE QUEUE <span style="color:#ff6600">//</span> QUEUE TREE <span style="color:#ff6600">//</span> QUEUE TYPE</span></div>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">PCQ Burst Rate + Queue Size Calculator</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue + Tocken Bucket</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <h1>MikroTik Router<i>OS</i> Script and Tools</h1>
+        <h2>// MIKROTIK <span style="color:#ff6600">[</span> SCRIPT <span style="color:#ff6600">]</span> ROUTEROS DATABASE</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">MikroTik RouterOS Script DataBase</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://router-os.github.io/">MikroTik RouterOS Search Script</a></p>
+          </div>
         </div>
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue + Bandwidth Shared Up-To</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree + Bandwidth Shared Up-To</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ for Queue Tree or Queue Simple</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <h2>// MIKROTIK ROUTEROS SCRIPT GENERATOR</h2>
+        <span style="font-size:16px;font-weight:bold;">☰ ROUTE <span style="color:#ff6600">//</span> MANGLE <span style="color:#ff6600">//</span> NAT</span>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Recursive Gateway</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/static-routing-games.html">Games Static Routing</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/policy-based-routing-website.html">Website Static Routing</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-port-forward-generator.html">Port Forwarding</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-port-static-routing.html">Port TCP/UDP Static Routing</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">All Traffic to VPN Tunnel</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote Access Public IP</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Games</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
         </div>
-      </div>
-      <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold">☰ HOTSPOT <span style="color:#ff6600">//</span> PPPOE</span></div>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-qr-code-generator.html">Free Hotspot Wi-Fi QR Code</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-sharing-hotspot.html">Block Sharing Hotspot with Change TTL</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-hotspot-wizard.html">Easy Hotspot Wizard</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold; ">☰ SIMPLE QUEUE <span style="color:#ff6600">//</span> QUEUE TREE <span style="color:#ff6600">//</span> QUEUE TYPE</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">PCQ Burst Rate + Queue Size Calculator</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue + Tocken Bucket</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue + Bandwidth Shared Up-To</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree + Bandwidth Shared Up-To</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ for Queue Tree or Queue Simple</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
         </div>
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Username Password Hotspot Creator</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Bandwidth Share Up-To for Hotspot</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Expired Notification Hotspot + PPPoE</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold">☰ HOTSPOT <span style="color:#ff6600">//</span> PPPOE</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-qr-code-generator.html">Free Hotspot Wi-Fi QR Code</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-sharing-hotspot.html">Block Sharing Hotspot with Change TTL</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-hotspot-wizard.html">Easy Hotspot Wizard</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Username Password Hotspot Creator</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Bandwidth Share Up-To for Hotspot</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Expired Notification Hotspot + PPPoE</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
         </div>
-      </div>
-      <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold">☰ DNS <span style="color:#ff6600">//</span> NETWATCH <span style="color:#ff6600">//</span> INTERFACE</span></div>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">DNS over HTTPS (DoH) Servers</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-netwatch-monitoring.html">Netwatch to Telegram, Whatsapp, E-mail</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold">☰ DNS <span style="color:#ff6600">//</span> NETWATCH <span style="color:#ff6600">//</span> INTERFACE</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">DNS over HTTPS (DoH) Servers</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-netwatch-monitoring.html">Netwatch to Telegram, Whatsapp, E-mail</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-bonding-interface.html">Bonding Interface / Link Aggregation</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
         </div>
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-bonding-interface.html">Bonding Interface / Link Aggregation</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold">☰ PROTECTION <span style="color:#ff6600">//</span> BACKUP</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-hide-my-router-from-isp.html">MikroTik Ninja: Hide Routerboard from ISP</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/advanced-mikrotik-protection.html">Advanced MikroTik Router-OS Protection</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-backup-to-mail.html">Auto Backup to E-Mail</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking with ICMP + Packet Size</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Block Websites Generator</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
         </div>
-      </div>
-      <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold">☰ PROTECTION <span style="color:#ff6600">//</span> BACKUP</span></div>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-hide-my-router-from-isp.html">MikroTik Ninja: Hide Routerboard from ISP</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/advanced-mikrotik-protection.html">Advanced MikroTik Router-OS Protection</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-backup-to-mail.html">Auto Backup to E-Mail</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold">☰ ROUTER-OS OTHER TOOLS</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">Load Balancing PCC Calculation</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mirkotik-indonesia-timezone.html">Indonesia Time Zone NTP/SNTP Client</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+          </div>
         </div>
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking with ICMP + Packet Size</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Block Websites Generator</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <h2>// MIKROTIK TOOLS AND LOGO DESIGNS</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://mt.lv/winbox64">Winbox-64 (64bit)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mt.lv/winbox">Winbox-32 (32bit)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">The Dude</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">Netinstall</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mt.lv/btest">Bandwidth Test</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://i.mt.lv/files/exe/MT_Syslog.exe">MT Syslog Daemon</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download/TrafficCounter.zip">MT Traffic Counter</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/supout">Supout.rif viewer (need login)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/branding">Branding maker (need login)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://designs.mikrotik.com/">MikroTik Logo, Walpaper, T-Shirt</a></p>
+          </div>
         </div>
-      </div>
-      <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:bold">☰ ROUTER-OS OTHER TOOLS</span></div>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">Load Balancing PCC Calculation</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
-          <p><a target="_blank"  href="https://buananetpbun.github.io/mirkotik-indonesia-timezone.html">Indonesia Time Zone NTP/SNTP Client</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <h2>// MIKROTIK MOBILE TOOLS</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://apps.apple.com/id/app/mikrotik/id1323064830?l=id">MikroTik Winbox iPhone</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.tikapp&hl=in">MikroTik Winbox Android</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.mikrotikhome">MikroTik HOME</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.bt5">MikroTik Beacon Manager</a></p>
+          </div>
         </div>
-        <div class="column">
-          <p><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login</a><img class="member-only" title="Free for member only" src="./img/user.png"></p>
+        <h2>// MIKROTIK ROUTEROS SOFTWARE DOWNLOAD</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">Mikrotik RouterOS Download Official</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="http://www.routeros.co.id">Routeros.co.id (Indonesia Server)</a></p>
+          </div>
         </div>
-      </div>
-      <h2>// MIKROTIK TOOLS AND LOGO DESIGNS</h2>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="https://mt.lv/winbox64">Winbox-64 (64bit)</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mt.lv/winbox">Winbox-32 (32bit)</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">The Dude</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">Netinstall</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mt.lv/btest">Bandwidth Test</a></p>
+        <h2>// MIKROTIK WIRELESS TOOLS</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/test_tower.php">Antenna Height Calculation</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://shop.duxtel.com.au/article_info.php?articles_id=53">MikroTik Link Planner</a> </p>
+            <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/getfile.php?nf=wireless_abg.zip">Wireless MiniPCI A/B/G</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/calculator">Wireless link calculator (need login)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/distributorLockpack">Lockpack creator (need login)</a></p>
+          </div>
         </div>
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="https://i.mt.lv/files/exe/MT_Syslog.exe">MT Syslog Daemon</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download/TrafficCounter.zip">MT Traffic Counter</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/supout">Supout.rif viewer (need login)</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/branding">Branding maker (need login)</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://designs.mikrotik.com/">MikroTik Logo, Walpaper, T-Shirt</a></p>
+        <h2>// MIKROTIK TOOLS CALCULATOR AND MONITOR</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://www.mikrotik.id/artikel_lihat.php?id=215">Traffic Monitor with Cacti linux</a></p>
+            <p><a target="_blank" rel="nofollow"  href="http://www.routerboard.co.id/">RouterBoard Comparison Table</a></p>
+            <p><a target="_blank" rel="nofollow"  href="http://www.irouteros.com/duibi/duibi.php">MikroTik Product Comparison</a></p>
+            <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/test_proxy.php">RAM Proxy MikroTik Calculator</a></p>
+            <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/getfile.php?nf=neighbour.zip">Neighbour Viewer dan Mac Telnet</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/getfile.php?nf=trafr.tgz">Trafr Sniffer linux</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://forum.mikrotik.com/viewtopic.php?t=77193">ATTIX5 Traffic Monitor</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://k3dt.eu/supout-reader/">Supout.rif Reader (Unofficial)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.mkesolutions.net/pdf/routeros-cheat-sheet-v1.1.pdf">PDF RouterOS Console Cheat Sheet</a></p>
+          </div>
         </div>
-      </div>
-      <h2>// MIKROTIK MOBILE TOOLS</h2>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="https://apps.apple.com/id/app/mikrotik/id1323064830?l=id">MikroTik Winbox iPhone</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.tikapp&hl=in">MikroTik Winbox Android</a></p>
+        <h2>// MIKROTIK BILLING OR RADIUS HOTSPOT PPPOE </h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://freeradius.org">FREERADIUS</a></p>
+            <p><a target="_blank" rel="nofollow"  href="http://dmasoftlab.com">DMA Radius Manager</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://billingku.net">Billingku</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://laksa19.github.io/">Mikhmon Billing Hotspot</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://sarang.web.id">Billing Hotspot Sarang-Net</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://topsetting.com">MIXRadius</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://rlradius.id/">RL-Radius</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href=" https://sourceforge.net/projects/the-userman">TheUserman</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://github.com/ibnux/phpmixbill">PHPMixBill</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://github.com/aviantorichad/MIKROSTATOR">MIKROSTATOR</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikbotam.net">MIKBOTAM</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.radboox.com/">RadbooX</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.daloradius.com/">Daloradius</a></p>
+          </div>
         </div>
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.mikrotikhome">MikroTik HOME</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.bt5">MikroTik Beacon Manager</a></p>
+        <h2>// OTHER MIKROTIK BATCH TOOLS</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://github.com/buananetpbun/FREE-DNS-PING-TEST-DOS-BATCH">Batch: DNS Ping Test</a></p>
+            <p><a target="_blank"  href="https://github.com/buananetpbun/mikrotik-port-scanner">Batch: Winbox Port Scanner</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://github.com/buananetpbun/MIKROTIK-AUTO-BACKUP-FROM-BATCH">Batch: RouterOS Auto Backup</a></p>
+            <p><a target="_blank"  href="https://github.com/buananetpbun/Restore-Winbox-Sessions-to-Default">Batch: Restore Winbox Session</a></p>
+          </div>
         </div>
-      </div>
-      <h2>// MIKROTIK ROUTEROS SOFTWARE DOWNLOAD</h2>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">Mikrotik RouterOS Download Official</a></p>
+        <br>
+        <div style="line-height:normal !important; text-align:center; font-size:15px">
+          Share this tool with your friends<br>
+          <!-- Sharingbutton Facebook -->
+          <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html" target="_blank" rel="noopener" aria-label="">
+            <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+              <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm3.6 11.5h-2.1v7h-3v-7h-2v-2h2V8.34c0-1.1.35-2.82 2.65-2.82h2.35v2.3h-1.4c-.25 0-.6.13-.6.66V9.5h2.34l-.24 2z"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <!-- Sharingbutton Twitter -->
+          <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE&amp;url=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html" target="_blank" rel="noopener" aria-label="">
+            <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+              <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm5.26 9.38v.34c0 3.48-2.64 7.5-7.48 7.5-1.48 0-2.87-.44-4.03-1.2 1.37.17 2.77-.2 3.9-1.08-1.16-.02-2.13-.78-2.46-1.83.38.1.8.07 1.17-.03-1.2-.24-2.1-1.3-2.1-2.58v-.05c.35.2.75.32 1.18.33-.7-.47-1.17-1.28-1.17-2.2 0-.47.13-.92.36-1.3C7.94 8.85 9.88 9.9 12.06 10c-.04-.2-.06-.4-.06-.6 0-1.46 1.18-2.63 2.63-2.63.76 0 1.44.3 1.92.82.6-.12 1.95-.27 1.95-.27-.35.53-.72 1.66-1.24 2.04z"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <!-- Sharingbutton Tumblr -->
+          <a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE&amp;caption=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE&amp;content=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html&amp;canonicalUrl=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html&amp;shareSource=tumblr_share_button" target="_blank" rel="noopener" aria-label="">
+            <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+              <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+                <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                  <path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12s12-5.383,12-12S18.617,0,12,0z M15.492,17.616C11.401,19.544,9.5,17,9.5,14.031 V9.5h-2V8.142c0.549-0.178,1.236-0.435,1.627-0.768c0.393-0.334,0.707-0.733,0.943-1.2c0.238-0.467,0.401-0.954,0.49-1.675H12.5v3h2 v2h-2v3.719c0,2.468,1.484,2.692,2.992,1.701V17.616z"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <!-- Sharingbutton E-Mail -->
+          <a class="resp-sharing-button__link" href="mailto:?subject=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE&amp;body=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html" target="_self" rel="noopener" aria-label="">
+            <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+              <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm8 16c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v8z"/>
+                  <path d="M17.9 8.18c-.2-.2-.5-.24-.72-.07L12 12.38 6.82 8.1c-.22-.16-.53-.13-.7.08s-.15.53.06.7l3.62 2.97-3.57 2.23c-.23.14-.3.45-.15.7.1.14.25.22.42.22.1 0 .18-.02.27-.08l3.85-2.4 1.06.87c.1.04.2.1.32.1s.23-.06.32-.1l1.06-.9 3.86 2.4c.08.06.17.1.26.1.17 0 .33-.1.42-.25.15-.24.08-.55-.15-.7l-3.57-2.22 3.62-2.96c.2-.2.24-.5.07-.72z"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <!-- Sharingbutton Pinterest -->
+          <a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html&amp;media=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html&amp;description=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE" target="_blank" rel="noopener" aria-label="">
+            <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small">
+              <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm1.4 15.56c-1 0-1.94-.53-2.25-1.14l-.65 2.52c-.4 1.45-1.57 2.9-1.66 3-.06.1-.2.07-.22-.04-.02-.2-.32-2 .03-3.5l1.18-5s-.3-.6-.3-1.46c0-1.36.8-2.37 1.78-2.37.85 0 1.25.62 1.25 1.37 0 .85-.53 2.1-.8 3.27-.24.98.48 1.78 1.44 1.78 1.73 0 2.9-2.24 2.9-4.9 0-2-1.35-3.5-3.82-3.5-2.8 0-4.53 2.07-4.53 4.4 0 .5.1.9.25 1.23l-1.5.82c-.36-.64-.54-1.43-.54-2.28 0-2.6 2.2-5.74 6.57-5.74 3.5 0 5.82 2.54 5.82 5.27 0 3.6-2 6.3-4.96 6.3z"/>
+                </svg>
+              </div>
+            </div>
+          </a>
         </div>
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="http://www.routeros.co.id">Routeros.co.id (Indonesia Server)</a></p>
-        </div>
-      </div>
-      <h2>// MIKROTIK WIRELESS TOOLS</h2>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/test_tower.php">Antenna Height Calculation</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://shop.duxtel.com.au/article_info.php?articles_id=53">MikroTik Link Planner</a> </p>
-          <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/getfile.php?nf=wireless_abg.zip">Wireless MiniPCI A/B/G</a></p>
-        </div>
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/calculator">Wireless link calculator (need login)</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/distributorLockpack">Lockpack creator (need login)</a></p>
-        </div>
-      </div>
-      <h2>// MIKROTIK TOOLS CALCULATOR AND MONITOR</h2>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="https://www.mikrotik.id/artikel_lihat.php?id=215">Traffic Monitor with Cacti linux</a></p>
-          <p><a target="_blank" rel="nofollow"  href="http://www.routerboard.co.id/">RouterBoard Comparison Table</a></p>
-          <p><a target="_blank" rel="nofollow"  href="http://www.irouteros.com/duibi/duibi.php">MikroTik Product Comparison</a></p>
-          <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/test_proxy.php">RAM Proxy MikroTik Calculator</a></p>
-          <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/getfile.php?nf=neighbour.zip">Neighbour Viewer dan Mac Telnet</a></p>
-        </div>
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="http://www.mikrotik.co.id/getfile.php?nf=trafr.tgz">Trafr Sniffer linux</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://forum.mikrotik.com/viewtopic.php?t=77193">ATTIX5 Traffic Monitor</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://k3dt.eu/supout-reader/">Supout.rif Reader (Unofficial)</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://www.mkesolutions.net/pdf/routeros-cheat-sheet-v1.1.pdf">PDF RouterOS Console Cheat Sheet</a></p>
-        </div>
-      </div>
-      <h2>// MIKROTIK BILLING OR RADIUS HOTSPOT PPPOE </h2>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href="https://freeradius.org">FREERADIUS</a></p>
-          <p><a target="_blank" rel="nofollow"  href="http://dmasoftlab.com">DMA Radius Manager</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://billingku.net">Billingku</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://laksa19.github.io/">Mikhmon Billing Hotspot</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://sarang.web.id">Billing Hotspot Sarang-Net</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://topsetting.com">MIXRadius</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://rlradius.id/">RL-Radius</a></p>
-        </div>
-        <div class="column">
-          <p><a target="_blank" rel="nofollow"  href=" https://sourceforge.net/projects/the-userman">TheUserman</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://github.com/ibnux/phpmixbill">PHPMixBill</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://github.com/aviantorichad/MIKROSTATOR">MIKROSTATOR</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://mikbotam.net">MIKBOTAM</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://www.radboox.com/">RadbooX</a></p>
-          <p><a target="_blank" rel="nofollow"  href="https://www.daloradius.com/">Daloradius</a></p>
-        </div>
-      </div>
-      <h2>// OTHER MIKROTIK BATCH TOOLS</h2>
-      <div class="row">
-        <div class="column">
-          <p><a target="_blank"  href="https://github.com/buananetpbun/FREE-DNS-PING-TEST-DOS-BATCH">Batch: DNS Ping Test</a></p>
-          <p><a target="_blank"  href="https://github.com/buananetpbun/mikrotik-port-scanner">Batch: Winbox Port Scanner</a></p>
-        </div>
-        <div class="column">
-          <p><a target="_blank"  href="https://github.com/buananetpbun/MIKROTIK-AUTO-BACKUP-FROM-BATCH">Batch: RouterOS Auto Backup</a></p>
-          <p><a target="_blank"  href="https://github.com/buananetpbun/Restore-Winbox-Sessions-to-Default">Batch: Restore Winbox Session</a></p>
-        </div>
-      </div>
-      <br>
-      <div style="line-height:normal !important; text-align:center; font-size:15px">
-        Share this tool with your friends<br>
-        <!-- Sharingbutton Facebook -->
-        <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html" target="_blank" rel="noopener" aria-label="">
-          <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
-            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm3.6 11.5h-2.1v7h-3v-7h-2v-2h2V8.34c0-1.1.35-2.82 2.65-2.82h2.35v2.3h-1.4c-.25 0-.6.13-.6.66V9.5h2.34l-.24 2z"/>
-              </svg>
+        <div class="footer">
+          <div class="disclaimer">
+            <div style="font-size:13px;margin-bottom:20px; color:#666; text-align:left"><span style="font-weight:700; font-size:14px; padding-left:6px; padding-right:6px; border-left:6px solid #555; border-right:6px solid #555; color:red;margin-right:5px ">DISCLAIMER</span> <span style="text-decoration:underline; font-size:12px;margin-right:5px "><i>Update: (November, 2022)</i></span> 
+              We are not responsible for any error, failure, damage or your router being locked due to intentional or accidental factors. We work independently, not under the auspices of the MikroTik Company, all problems that occur with your router are your own problems and you must accept all the risks. if you <i><u>Agree</u></i> please continue.
             </div>
           </div>
-        </a>
-        <!-- Sharingbutton Twitter -->
-        <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE&amp;url=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html" target="_blank" rel="noopener" aria-label="">
-          <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
-            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm5.26 9.38v.34c0 3.48-2.64 7.5-7.48 7.5-1.48 0-2.87-.44-4.03-1.2 1.37.17 2.77-.2 3.9-1.08-1.16-.02-2.13-.78-2.46-1.83.38.1.8.07 1.17-.03-1.2-.24-2.1-1.3-2.1-2.58v-.05c.35.2.75.32 1.18.33-.7-.47-1.17-1.28-1.17-2.2 0-.47.13-.92.36-1.3C7.94 8.85 9.88 9.9 12.06 10c-.04-.2-.06-.4-.06-.6 0-1.46 1.18-2.63 2.63-2.63.76 0 1.44.3 1.92.82.6-.12 1.95-.27 1.95-.27-.35.53-.72 1.66-1.24 2.04z"/>
-              </svg>
-            </div>
-          </div>
-        </a>
-        <!-- Sharingbutton Tumblr -->
-        <a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE&amp;caption=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE&amp;content=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html&amp;canonicalUrl=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html&amp;shareSource=tumblr_share_button" target="_blank" rel="noopener" aria-label="">
-          <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
-            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
-              <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-                <path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12s12-5.383,12-12S18.617,0,12,0z M15.492,17.616C11.401,19.544,9.5,17,9.5,14.031 V9.5h-2V8.142c0.549-0.178,1.236-0.435,1.627-0.768c0.393-0.334,0.707-0.733,0.943-1.2c0.238-0.467,0.401-0.954,0.49-1.675H12.5v3h2 v2h-2v3.719c0,2.468,1.484,2.692,2.992,1.701V17.616z"/>
-              </svg>
-            </div>
-          </div>
-        </a>
-        <!-- Sharingbutton E-Mail -->
-        <a class="resp-sharing-button__link" href="mailto:?subject=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE&amp;body=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html" target="_self" rel="noopener" aria-label="">
-          <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm8 16c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v8z"/>
-                <path d="M17.9 8.18c-.2-.2-.5-.24-.72-.07L12 12.38 6.82 8.1c-.22-.16-.53-.13-.7.08s-.15.53.06.7l3.62 2.97-3.57 2.23c-.23.14-.3.45-.15.7.1.14.25.22.42.22.1 0 .18-.02.27-.08l3.85-2.4 1.06.87c.1.04.2.1.32.1s.23-.06.32-.1l1.06-.9 3.86 2.4c.08.06.17.1.26.1.17 0 .33-.1.42-.25.15-.24.08-.55-.15-.7l-3.57-2.22 3.62-2.96c.2-.2.24-.5.07-.72z"/>
-              </svg>
-            </div>
-          </div>
-        </a>
-        <!-- Sharingbutton Pinterest -->
-        <a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html&amp;media=https%3A%2F%2Fbuananetpbun.github.io%2Findex.html&amp;description=MIKROTIK%20TOOLS%20By%20BUANANET%20SECURE" target="_blank" rel="noopener" aria-label="">
-          <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small">
-            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm1.4 15.56c-1 0-1.94-.53-2.25-1.14l-.65 2.52c-.4 1.45-1.57 2.9-1.66 3-.06.1-.2.07-.22-.04-.02-.2-.32-2 .03-3.5l1.18-5s-.3-.6-.3-1.46c0-1.36.8-2.37 1.78-2.37.85 0 1.25.62 1.25 1.37 0 .85-.53 2.1-.8 3.27-.24.98.48 1.78 1.44 1.78 1.73 0 2.9-2.24 2.9-4.9 0-2-1.35-3.5-3.82-3.5-2.8 0-4.53 2.07-4.53 4.4 0 .5.1.9.25 1.23l-1.5.82c-.36-.64-.54-1.43-.54-2.28 0-2.6 2.2-5.74 6.57-5.74 3.5 0 5.82 2.54 5.82 5.27 0 3.6-2 6.3-4.96 6.3z"/>
-              </svg>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="footer">
-        <div class="disclaimer">
-          <div style="font-size:13px;margin-bottom:20px; color:#666; text-align:left"><span style="font-weight:700; font-size:14px; padding-left:6px; padding-right:6px; border-left:6px solid #555; border-right:6px solid #555; color:red;margin-right:5px ">DISCLAIMER</span> <span style="text-decoration:underline; font-size:12px;margin-right:5px "><i>Update: (November, 2022)</i></span> 
-            We are not responsible for any error, failure, damage or your router being locked due to intentional or accidental factors. We work independently, not under the auspices of the MikroTik Company, all problems that occur with your router are your own problems and you must accept all the risks. if you <i><u>Agree</u></i> please continue.
-          </div>
+          © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io">buananetpbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - Project by <a href="https://www.facebook.com/buananet.pbun">BuanaNet.Pbun</a> 
         </div>
-        © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io">buananetpbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> - Project by <a href="https://www.facebook.com/buananet.pbun">BuanaNet.Pbun</a> 
       </div>
     </div>
     <div id="myLogin" class="modal-login">

@@ -34,7 +34,7 @@
       *{box-sizing:border-box}
       .logo{margin-top:10px;margin-bottom:5px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
-      #wrap{max-width:700px;margin:0 auto;padding:5px}
+      #wrap{max-width:800px;margin:0 auto;padding:0 5px 0 5px}
       .header{height:auto;width:100%;margin-top:0;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{background-color:#f60}
       .content{float:left;width:600px;height:480px;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd}
@@ -72,8 +72,6 @@
       .logo-left{justify-content:center;display:flex;width:100%}
       .logo-right{justify-content:center;width:100%;display:flex}
       .footer{font-size:13px}
-      #input-kota{width:100%!important}
-      .reg-area{margin:0!important}
       }
       @media screen and (max-width:600px) {
 	  button{margin-bottom:5px;}
@@ -81,7 +79,6 @@
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
       .sidebar{padding:10px}
-      #wrap{padding:5px}
       .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
       .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
       .mymenu{padding-left:0;padding-right:0}
@@ -101,7 +98,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script> 
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-    <div id="mymenu" class="mymenu">
+     <div id="wrap">
+ <div id="mymenu" class="mymenu">
       <div class="mikrotik-logo" >
         <img alt="mikrotik" src="./img/made-for-mikrotik.png">
       </div>
@@ -125,7 +123,6 @@
         </div>
       </div>
     </div>
-    <div id="wrap">
       <div class="logo">
         <div class="logo-right" style="float:right;">
           <div style="float:right">
