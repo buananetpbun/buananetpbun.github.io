@@ -16,6 +16,7 @@
     <meta property="og:url" content="https://buananetpbun.github.io/port-knocking-icmp.html">
     <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <link rel="stylesheet" href="./login/login.css">	
     <style>
       /* --------------------------------------------------------
       ###########################################################
@@ -34,25 +35,17 @@
       width:100%;
       margin-top: 0px;
       padding:0;
-      font-size:16px;
+      font-size:14px;
       color:#333;
       background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;            
       }
       * {
       box-sizing: border-box;
       }
-      .Menu{
-      width:100%;
-      border-bottom:1px solid #ccc;
-      height:100%;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-      font-weight:bold;
-      }
       #wrap{
-      width:1120px;
+      max-width:900px;
       margin:0 auto;
-      padding:10px;
+      padding:0 5px 0 5px;
       }
       .logo {
       margin-top:10px;
@@ -77,8 +70,7 @@
       }     
       .content{
       flex:1;
-      float:right;
-      width:800px;
+      width:70%;
       padding: 10px;
       border-top:1px solid #bbb;
       border-bottom:1px solid #bbb;
@@ -88,8 +80,7 @@
       border-radius: 0 5px 5px 0;
       }
       .sidebar{
-      float:left;
-      width:300px;
+      width:30%;
       padding: 10px;
       background-color:#ddd;
       border:1px solid #bbb; 
@@ -100,6 +91,7 @@
       .footer{
       font-size:13px;
       padding-top:15px;
+	  padding-bottom:15px;
       clear:both;
       width:auto;
       color:#ddd;
@@ -126,47 +118,6 @@
       a:active {
       color: #ff6600;
       }
-      .menu {
-      clear:both;
-      width:auto;
-      padding-bottom:13px;
-      }
-      .menu1 {
-      width:360px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#4CAF50;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu1 a:link {
-      text-decoration:none;
-      color:white;
-      }
-      .menu1 a:visited{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 {
-      width:300px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#bbb;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu2 a:link{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 a:visited{
-      text-decoration:none;
-      color:white;
-      }
       button {
       color: #fff;
       background-color: #ff6600;
@@ -190,11 +141,14 @@
       border-color: #ff6600;
       border:none;
       padding:7px;
-      width:200px;
-      font-size:16px !important;
+      width:190px;
+      font-size:13px !important;
       font-weight:bold;
       cursor: pointer;
       border-radius: 5px; 
+	  display:inline-block;
+	  margin-left:20px;
+	  margin-top:15px;
       }	
       .d-link:hover {
       background-color: #ccc;
@@ -245,87 +199,104 @@
       input[type=submit]:hover {
       background-color: #45a049;
       }
-      .col-25 {
-      float: left;
-      width: 25%;
-      margin-top: 6px;
-      }
-      .col-75 {
-      float: left;
-      width: 75%;
-      margin-top: 6px;
-      }
-      /* Clear floats after the columns */
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }
-      .list-game {
-      height: 200px;
-      background:white;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: 100%;
-      margin-top:2px;
-      padding: 3px;
-      border: 1px solid rgba(0,0,0,0.25);
-      border-radius:5px;
-      }
-      .list-game label {
-      padding: 0;
-      display: inline-block;
-      } 
+
       .list-output-content {
-      height: 380px;
+      height: 260px;
       background:#fff;
       overflow: auto;
       overflow-x: auto;
       width: 100%;
-      padding: 4px;
+      padding: 10px;
       margin-top:8px;
       border: 1px solid #ccc;
       border-radius:5px; 
       }
-      table, tr, td {
-      border: none;
+	  .column{float:left;width:50%}
+	  .row:after{content:"";display:table;clear:both}
+      .mikrotik-logo{display:none}
+      @media screen and (max-width:700px) {
+      .list-output-content{height:auto}
+      .main-wrap{display:block}
+      .sidebar,.content{border-radius:5px;display:block;width:100%}
+      .sidebar{height:auto;margin-bottom:5px}
+      .header h1{max-width:100%;justify-content:center}
+      .header{border:none}
+      .logo-left a{margin-top:10px!important;font-size:23px}
+      .logo-left img{height:40px;width:50px;margin-top:-5px!important}
+      h1{font-size:21px;text-align:center}
+      .mymenu{width:100%!important}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%}
+      .logo-right{justify-content:center;width:100%;display:flex}
+      .footer{font-size:13px;padding-left:5px;padding-right:5px}
+      }
+      @media screen and (max-width:600px) {
+	  .d-link {margin-left:0;}	  
+      button{margin-bottom:5px}
+      h1{font-size:19px}
+      .logo-left a{margin-top:10px!important;font-size:20px}
+      .logo-left img{height:auto;width:40px;margin-top:-5px!important}
+      .sidebar{padding:10px; height:420px; overflow:hidden}
+      .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
+      }
+      @media screen and (max-width:500px) {
+	  .column{float:left;width:100%}	  
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      .avatar{display:none}
+      }
+      @media screen and (max-width:350px) {
+      .hide-homepage{display:none}
       }
     </style>
-    <link rel="stylesheet" href="./login/login.css">
+
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>  
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-    <div id="mymenu" class="mymenu">
-      <ul>
-        <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
-        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-        <li><a href="javascript:callmodal()">DONATE</a></li>
-        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
-      </ul>
-      <div id="homepage" class="hide">
-        <button style="width:100px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
-		<button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
-        <span class="avatar">
-          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
-         </span>		
-        <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-        <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
-        
-      </div>
-    </div>
     <div id="wrap">
-      <div class="logo">
-        <a href="https://buananetpbun.github.io/port-knocking-icmp.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>
-        <div style="float:right">
-          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+      <div id="mymenu" class="mymenu">
+        <div class="mikrotik-logo" >
+          <img alt="mikrotik" src="./img/made-for-mikrotik.png">
         </div>
-        <div style="float:right; margin-right:5px; margin-top:1px">
-          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        <ul>
+          <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
+          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+          <li><a href="javascript:callmodal()">DONATE</a></li>
+          <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        </ul>
+        <div class="show-homepage-menu">
+          <div id="homepage" class="hide">
+            <button style="width:90px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+            <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+            <span class="hide-homepage">
+            <span class="avatar">
+            <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+            </span>		
+            <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+            <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
+            </span>
+          </div>
         </div>
       </div>
+      <div class="logo">
+        <div class="logo-right" style="float:right;">
+          <div style="float:right">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+          </div>
+          <div style="float:right; margin-right:5px; margin-top:1px">
+            <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+          </div>
+        </div>
+        <div class="logo-left" style="float:left;"> 
+          <a href="https://buananetpbun.github.io/port-knocking-icmp.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  
+        </div>
+      </div>
+      <div style="clear:both"></div>
       <div class="header">
         <h1>MIKROTIK <span style="color:#ff6600">PORT KNOCKING</span> GENERATOR WITH <span style="color:#ff6600">ICMP + PACKET SIZE</span></h1>
       </div>
@@ -347,33 +318,27 @@
           <input type="text" id="port-services" placeholder="8291,21,22,23,80,443" value="8291,21,22,23,80,443" onkeyup="myFunction()">
           <label style="padding-left:0px">Default Port Services:</label>
           <br>
-          -> <span style='color:#ff6600'>8728</span> (api)<br>
-          -> <span style='color:#ff6600'>8729</span> (api-ssl)<br>
-          -> <span style='color:#ff6600'>21</span> (ftp<br>
-          -> <span style='color:#ff6600'>22</span> (ssh)<br>
-          -> <span style='color:#ff6600'>23</span> (telnet)<br>
-          -> <span style='color:#ff6600'>8291</span> (winbox)<br>
-          -> <span style='color:#ff6600'>80</span> (www)<br>
-          -> <span style='color:#ff6600'>443</span> (www-ssl)<br>
-          -> <span style='color:#ff6600'>3128</span> (web proxy)<br>
+		   <div class="row">
+          <div class="column">
+          <span style='color:#ff6600'>8728</span> (api)<br>
+          <span style='color:#ff6600'>8729</span> (api-ssl)<br>
+          <span style='color:#ff6600'>21</span> (ftp)<br>
+          <span style='color:#ff6600'>22</span> (ssh)<br>
+          <span style='color:#ff6600'>23</span> (telnet)<br>
+		  </div>
+		  <div class="column">
+          <span style='color:#ff6600'>8291</span> (winbox)<br>
+          <span style='color:#ff6600'>80</span> (www)<br>
+          <span style='color:#ff6600'>443</span> (www-ssl)<br>
+          <span style='color:#ff6600'>3128</span> (web proxy)<br>
+		  </div>
+		  </div>
         </div>
         <div class="content">
           <div style="margin-left:2px; margin-top:5px">Script Generator Result</div>
           <div class="list-output-content">
-            <div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px">
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              <!-- MIKROTIK SCRIPT DB3 -->
-              <ins class="adsbygoogle"
-                style="display:inline-block;width:728px;height:90px"
-                data-ad-client="ca-pub-9740800920365268"
-                data-ad-slot="4637807296"></ins>
-              <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-              </script> 
-            </div>
-            <table id="showScript" style="padding:5px; ;">
-              <tr>
-                <td> <span style="color:#ff6600;">
+            <div id="showScript">
+ <span style="color:#ff6600;">
                   ###############################################################<br>
                   # Mikrotik Port Knocking Generator with Icmp + Packet Size<br>
                   # Date/Time: <span id="tanggalwaktu"></span><br>
@@ -385,14 +350,12 @@
                   <span>add action=add-src-to-address-list address-list="port-knocking-second" address-list-timeout="<span style="color:#ff6600; font-weight:bold" id="timeout-access-second-list">00:00:00</span>" chain=input packet-size="<span style="color:#ff6600; font-weight:bold" id="second-key-list">0</span>" protocol=icmp src-address-list="port-knocking-first"</span><br>
                   <span>add action=accept chain=input dst-port="<span style='color:#ff6600; font-weight:bold' id="port-services-list">0</span>" protocol=tcp src-address-list="port-knocking-second"</span><br>
                   <span>add action=drop chain=input dst-port="<span style='color:#ff6600; font-weight:bold' id="port-services-list2">0</span>" protocol=tcp src-address-list="!port-knocking-second"</span>
-                </td>
-              </tr>
-            </table>
+            </div>
           </div>
           <br>
           Copy-Paste Firewall Script into the Terminal!
           <br><br>
-          <span style='color:#ff6600; font-weight:bold'>Unique Packet Size For Key Knocking: </span><span style="font-size:16px; font-weight:bold" id="packet-size-result1"></span> <span style='color:#ff6600; font-weight:bold'>and </span> <span style="font-size:16px; font-weight:bold" id="packet-size-result2"></span>  <span style="margin-left:20px" class="d-link"><a class="download" href="#" download="My-Knocking.bat">Download My-Knocking.bat</a></span><br><br>
+          <span style='color:#ff6600; font-weight:bold'>Unique Packet Size For Key Knocking: </span><span style="font-size:14px; font-weight:bold" id="packet-size-result1"></span> <span style='color:#ff6600; font-weight:bold'>and </span> <span style="font-size:14px; font-weight:bold" id="packet-size-result2"></span>  <span class="d-link"><a class="download" href="#" download="My-Knocking.bat">Download My-Knocking.bat</a></span><br><br>
           <b>Example Manually Open Key Ping in CMD Windows:</b><br>
           First Key Knock -> <span style='color:green;'>ping -l <span id='packet-size-win1'></span> (IP Adrress)</span><br>
           Second Key Knock -> <span style='color:green;'>ping -l <span id='packet-size-win2'></span> (IP Adrress)</span><br><br>
@@ -402,13 +365,11 @@
         </div>
       </div>
       <div class="footer">
-        <div style="margin-top:9px;float:right">
-          © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>
-        </div>
-        <div style="width:500px">
           <span style="color:red; font-weight:bold; font-size:20px;">Disclaimer!</span> We are not responsible for errors or damage or your router is
           locked due to deliberate or accidental factors, you should ask for help from a friend who understands trying it.   
-        </div>
+        <div style="margin-top:15px;">
+          © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>
+        </div>		
       </div>
     </div>
       <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen"><div id="center-screen" class="center-screen">Great! One Step Again <br>For Activate Your Member<br><button id="verify">VERIFY YOUR E-MAIL NOW</button></div></div>
