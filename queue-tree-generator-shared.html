@@ -15,7 +15,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://buananetpbun.github.io/queue-tree-generator-shared.html">
     <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
-    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <link rel="stylesheet" href="./login/login.css">	
     <style>
       /* --------------------------------------------
       ####################################################################
@@ -26,376 +27,185 @@
       # Sosmed    : https://fb.me/buananetmikrotik
       ####################################################################
       ----------------------------------------------- */  
-      *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-      body { font-size:15px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
-      html, body {
-      height: 100%;
-      width:100%;
-      margin-top: 0px;
-      padding:0;
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;  
+      *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
+      body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
+      body{font-size:15px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
+      html,body{height:100%;width:100%;margin-top:0;padding:0;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      *{box-sizing:border-box}
+      .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
+      .logo a{color:#ddd!important;text-decoration:none!important}
+      #wrap{max-width:1024px;margin:0 auto;padding:0 5px 0 5px}
+      .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
+      .main-wrap{display:flex}
+      .content{flex:1;width:60%;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
+      .sidebar{width:40%;background-color:#ddd;border:1px solid #bbb;height:auto;border-radius:5px 0 0 5px;padding:8px 10px 20px}
+      .footer{font-size:13px;padding-top:15px;padding-bottom:15px;text-align:center;clear:both;width:auto;color:#ddd}
+      h2{color:#f60}
+      h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}
+      a:link{color:#f60}
+      a:visited{color:#f60}
+      a:hover{color:#f60}
+      a:active{color:#f60}
+      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:110px;font-size:14px;font-weight:700;cursor:pointer;border-radius:5px;color:#fff}
+      button:hover{background-color:#ccc;color:#111}
+      .row:after{content:"";display:table;clear:both}
+      input[type=checkbox]{margin-right:7px}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;margin-bottom:12px;font-size:14px!important;border-radius:5px}
+      label{padding:5px 5px 5px 0;display:inline-block}
+      input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
+      input[type=submit]:hover{background-color:#45a049}
+      .row:after{content:"";display:table;clear:both}
+      .list-output-content{height:525px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
+      .mikrotik-logo{display:none}
+      @media screen and (max-width:700px) {
+      .list-output-content{height:auto}
+      .main-wrap{display:block}
+      .sidebar,.content{border-radius:5px;display:block;width:100%}
+      .sidebar{height:auto;margin-bottom:5px}
+      .header h1{max-width:100%;justify-content:center}
+      .header{border:none}
+      .logo-left a{margin-top:10px!important;font-size:23px}
+      .logo-left img{height:40px;width:50px;margin-top:-5px!important}
+      h1{font-size:21px;text-align:center}
+      .mymenu{width:100%!important}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%}
+      .logo-right{justify-content:center;width:100%;display:flex}
+      .footer{font-size:13px;padding-left:5px;padding-right:5px}
       }
-      * {
-      box-sizing: border-box;
+      @media screen and (max-width:600px) {
+      button{margin-bottom:5px}
+      h1{font-size:19px}
+      .logo-left a{margin-top:10px!important;font-size:20px}
+      .logo-left img{height:auto;width:40px;margin-top:-5px!important}
+      .sidebar{padding:10px}
+      .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
-      .logo {
-      margin-top:10px; 
-      color: #ddd;
-      text-decoration:none;
-      font-size:25px;
-      font-weight:bold; 
-      }	
-      .logo a{
-      color:#ddd !important;
-      text-decoration:none !important;
+      @media screen and (max-width:500px) {
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      .avatar{display:none}
       }
-      .Menu{
-      width:100%;
-      border-bottom:1px solid #ccc;
-      height:100%;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-      font-size:14px;
-      font-weight:bold;
-      }
-      #wrap{
-      width:1220px;
-      margin:0 auto;
-      padding:10px;
-      }
-      .header{
-      height:auto; 
-      width:100%;
-      margin-top:5px;
-      margin-bottom:10px;
-      border-top:1px solid #555;
-      }
-      .main-wrap{
-      display: flex;
-      }   
-      .content{
-      flex:1;
-      float:right;
-      width:800px;
-      padding: 10px;
-      border-top:1px solid #bbb;
-      border-bottom:1px solid #bbb;
-      border-right:1px solid #bbb;
-      background:#ddd;
-      border-radius:0 5px 5px 0;
-      }
-      .sidebar{
-      float:left;
-      width:400px;
-      Padding-top:8px;
-      padding-left: 10px;
-      Padding-right:10px;
-      Padding-bottom:20px;
-      background-color:#ddd;
-      border:1px solid #bbb; 
-      height:auto;
-      border-radius:5px 0 0 5px;
-      }
-      .footer{
-      font-size:13px;
-      padding-top:10px;
-      padding-bottom:15px;
-      text-align:center;
-      clear:both;
-      width:auto;
-      color:#ddd
-      }
-      h2 {
-      color:#ff6600;;
-      }		  
-      h1 {
-      color:#ddd;
-      font-size:22px;
-      margin-bottom:10px;
-      margin-top:10px;
-      }
-      a:link {
-      color: #ff6600;
-      }
-      a:visited {
-      color: #ff6600;
-      }
-      a:hover {
-      color: #ff6600;
-      }
-      a:active {
-      color: #ff6600;
-      }
-      .menu {
-      clear:both;
-      width:auto;
-      padding-bottom:13px;
-      }
-      .menu1 {
-      width:360px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#4CAF50;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu1 a:link {
-      text-decoration:none;
-      color:white;
-      }
-      .menu1 a:visited{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 {
-      width:300px;
-      margin-bottom:1px;
-      font-weight:bold;
-      background-color:#bbb;
-      padding:6px;
-      color:white;
-      display: inline-block;
-      margin:0;
-      }
-      .menu2 a:link{
-      text-decoration:none;
-      color:white;
-      }
-      .menu2 a:visited{
-      text-decoration:none;
-      color:white;
-      }
-      button {
-      color: #fff;
-      background-color: #ff6600;
-      border-color: #ff6600;
-      border:none;
-      padding:8px;
-      width:178px;
-      font-size:15px;
-      font-weight:bold;
-      cursor: pointer;
-      border-radius: 5px;
-      color: #fff;
-      }
-      button:hover {
-      background-color: #ccc;
-      color: #111;
-      }
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }  
-      input[type=checkbox]{
-      margin-right:7px; 
-      }
-      input[type=text], select, textarea {
-      width: 100%;
-      padding: 5px;
-      border: 1px solid #bbb;
-      border-radius: 1px;
-      resize: vertical;
-      margin-bottom:12px;
-      font-size:16px !important;
-      border-radius:5px; 
-      }
-      label {
-      padding: 5px 5px 5px 0;
-      display: inline-block;
-      }
-      input[type=submit] {
-      background-color: #ff6600;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 1px;
-      cursor: pointer;
-      float: right;
-      }
-      input[type=submit]:hover {
-      background-color: #45a049;
-      }
-      .col-25 {
-      float: left;
-      width: 25%;
-      margin-top: 6px;
-      }
-      .col-75 {
-      float: left;
-      width: 75%;
-      margin-top: 6px;
-      }
-      /* Clear floats after the columns */
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }
-      .list-game {
-      height: 200px;
-      background:white;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: 100%;
-      margin-top:2px;
-      padding: 3px;
-      border: 1px solid rgba(0,0,0,0.25);
-      border-radius:5px;
-      }
-      .list-game label {
-      padding: 0;
-      display: inline-block;
-      } 
-      .list-output-content {
-      height: 557px;
-      background:#fff;
-      overflow: scroll;
-      width: 100%;
-      padding: 4px;
-      margin-top:8px;
-      border: 1px solid #ccc;
-      border-radius:5px;
-      }
-      table, tr, td {
-      border: none;
+      @media screen and (max-width:350px) {
+      .hide-homepage{display:none}
       }
     </style>
-    <link rel="stylesheet" href="./login/login.css">
+
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>  
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-    <div id="mymenu" class="mymenu">
-      <ul>
-        <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
-        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-        <li><a href="javascript:callmodal()">DONATE</a></li>
-        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
-      </ul>
-      <div id="homepage" class="hide">
-        <button style="width:100px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
-		<button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
-        <span class="avatar">
-          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
-         </span>		
-        <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-        <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
-        
-      </div>
-    </div>
     <div id="wrap">
-      <div class="logo">
-        <a href="https://buananetpbun.github.io/queue-tree-generator-shared.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>
-        <div style="float:right">
-          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+      <div id="mymenu" class="mymenu">
+        <div class="mikrotik-logo" >
+          <img alt="mikrotik" src="./img/made-for-mikrotik.png">
         </div>
-        <div style="float:right; margin-right:5px; margin-top:1px">
-          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        <ul>
+          <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
+          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+          <li><a href="javascript:callmodal()">DONATE</a></li>
+          <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        </ul>
+        <div class="show-homepage-menu">
+          <div id="homepage" class="hide">
+            <button style="width:90px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+            <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+            <span class="hide-homepage">
+            <span class="avatar">
+            <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+            </span>		
+            <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+            <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
+            </span>
+          </div>
         </div>
       </div>
+      <div class="logo">
+        <div class="logo-right" style="float:right;">
+          <div style="float:right">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+          </div>
+          <div style="float:right; margin-right:5px; margin-top:1px">
+            <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+          </div>
+        </div>
+        <div class="logo-left" style="float:left;"> 
+          <a href="https://buananetpbun.github.io/queue-tree-generator-shared.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  
+        </div>
+      </div>
+      <div style="clear:both"></div>
       <div class="header">
-        <h1><span style="color:#ff6600">QUEUE TREE</span> SCRIPT GENERATOR MIKROTIK + <span style="color:#ff6600">BANDWIDTH SHARED (UPTO)</span> - FOR IP SUBNET /24 ONLY</h1>
+        <h1><span style="color:#ff6600">QUEUE TREE</span> SCRIPT GENERATOR MIKROTIK + <span style="color:#ff6600">BANDWIDTH SHARED (UPTO)</span></h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
-          <div style="margin-bottom:10px; height:190px">
-            <label>Parent Name Queue</label>
-            <div style="clear: both;"></div>
-            <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
-            <div style="float:left; width:180px;">
-              <label>Sub Queue Upload</label>
-              <div style="clear: both;"></div>
-              <input type="text" id="input-up-sub-parent" value="Upload" placeholder="Upload">
-            </div>
-            <div style="float:left; width:180px;margin-left:10px">
-              <label>Sub Queue Download</label>
-              <div style="clear: both;"></div>
-              <input type="text" id="input-down-sub-parent" value="Download" placeholder="Download">
-            </div>
-            <div style="float:left; width:180px;">
+		<div class="sidebar">
+          <label>Parent Name Queue</label>
+          <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
+          <label>Target Local IP / Interface</label>
+          <input type="text" id="input-ip-parent" value="192.168.88.0/24" placeholder="192.168.88.0/24 or ether1">
+          <div style="display:flex">
+            <div style="float:left; width:100%;">
               <label>Upload Max-Limit</label>
-              <div style="clear: both;"></div>
               <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
             </div>
-            <div style="float:left; width:180px;margin-left:10px">
+            <div style="float:left; width:100%;margin-left:10px">
               <label>Download Max-Limit</label>
-              <div style="clear: both;"></div>
               <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
             </div>
           </div>
-          <div style="clear: both;"></div>
           <div style="margin-top:10px;margin-bottom:10px;border-bottom:1px solid #bbb">Sub Parent Queue / Child Queue</div>
-          <div style="float:left;width:180px;">
-            <label>Client Name Queue</label>
-            <div style="clear: both;"></div>
-            <input type="text" id="input-client" value="Client-" placeholder="Client-">
+          <div style="display:flex">
+            <div style="float:left;width:100%;">
+              <label>Client Name Queue</label>
+              <input type="text" id="input-client" value="Client-" placeholder="Client-">
+            </div>
+            <div style="float:left;width:100%;margin-left:10px;">
+              <label>Client Identity</label>
+              <input type="text" id="input-client-initial" value="1" placeholder="1">
+            </div>
           </div>
-          <div style="float:left;width:180px;margin-left:10px;">
-            <label>Client Identity</label>
-            <input type="text" id="input-client-initial" value="1" placeholder="1">
+          <div style="display:flex">
+            <div style="float:left; width:100%;">
+              <label>Start IP Client</label>
+              <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
+            </div>
+            <div style="float:left; width:100%;margin-left:10px;">
+              <label>End IP Client</label>
+              <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
+            </div>
           </div>
-          <div style="float:left; width:180px;">
-            <label>Start IP Client</label>
-            <div style="clear: both;"></div>
-            <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
+          <div style="display:flex">
+            <div style="float:left; width:100%;">
+              <label>Upload Max-Limit</label>
+              <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
+            </div>
+            <div style="float:left; width:100%;margin-left:10px;">
+              <label>Download Max-Limit</label>
+              <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
+            </div>
           </div>
-          <div style="float:left; width:180px;margin-left:10px;">
-            <label>End IP Client</label>
-            <div style="clear: both;"></div>
-            <input type="text" id="input-end-ip-client" value="192.168.88.20" placeholder="192.168.88.20">
-          </div>
-          <div style="float:left; width:180px;">
-            <label>Upload Max-Limit</label>
-            <div style="clear: both;"></div>
-            <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
-          </div>
-          <div style="float:left; width:180px;margin-left:10px;">
-            <label>Download Max-Limit</label>
-            <div style="clear: both;"></div>
-            <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
-          </div>
-          <div style="margin-bottom:10px; height:220px">
-            <div style="float:left; width:180px;">
+          <div style="display:flex">
+            <div style="float:left; width:100%;">
               <label>Upload Limit-At</label>
-              <div style="clear: both;"></div>
               <input onkeydown="upperCaseF(this)" type="text" id="input-limit-up" value="0" placeholder="0">
             </div>
-            <div style="float:left; width:180px;margin-left:10px;">
+            <div style="float:left; width:100%;margin-left:10px;">
               <label>Download Limit-At</label>
-              <div style="clear: both;"></div>
               <input onkeydown="upperCaseF(this)" type="text" id="input-limit-down" value="0" placeholder="0">
             </div>
           </div>
-          <div style="margin-top:20px;margin-bottom:0px">
-            <input type="checkbox" id="auto-shared"><label for="auto-shared" style="padding-left:0px">Auto Set For Bandwidth Shared (UP-TO)</label>
-            <div style="clear: both;"></div>
-          </div>
-          <button style="margin-top:20px;" type="button" onclick="myFunctionInput()">Generate Script</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All Script</button> 
-          <div style="clear: both;"></div>
-        </div>
+          <input type="checkbox" id="auto-shared"><label for="auto-shared" style="padding-left:0px">Auto Set For Bandwidth Shared (UP-TO)</label>
+          <div style="clear:both"></div>
+          <button style="margin-top:10px;" type="button" onclick="myFunctionInput()">Generate</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All</button> 
+        </div>       
         <div class="content">
           <span style="margin-left:2px">Script Generator Result</span>
           <div class="list-output-content">
-            <div style="width:100%; height:90px; margin-top:10px; margin-left:10px; margin-bottom:5px;">
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              <!-- MIKROTIK SCRIPT DB3 -->
-              <ins class="adsbygoogle"
-                style="display:inline-block;width:728px;height:90px"
-                data-ad-client="ca-pub-9740800920365268"
-                data-ad-slot="4637807296"></ins>
-              <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-              </script> 
-            </div>
-            <table id="showScript" style="padding:5px; white-space: nowrap;">
-              <tr>
-                <td>
+            <div id="showScript">
                   <span style="color:#ff6600;">
                   ####################################################################<br>
                   # Queue Tree Script Generator For Mikrotik + Bandwidth Shared (UpTo)<br>
@@ -404,9 +214,7 @@
                   ####################################################################<br><br>
                   </span>
                   <div id="list-output"></div>
-                </td>
-              </tr>
-            </table>
+            </div>
           </div>
           <br>
           <button style="margin-top:-5px" id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px"><b>Copy-Paste the Script into the Terminal!</b></span>
