@@ -239,9 +239,9 @@
               ################################################<br>
               </span><br>
               <b>/ip firewall address-list</b><br>
-              add list=LOCAL-IP address=10.0.0.0/8 comment="LB By BNT"<br>
-              add list=LOCAL-IP address=172.16.0.0/12 comment="LB By BNT"<br>
-              add list=LOCAL-IP address=192.168.0.0/16 comment="LB By BNT"<br>
+              add address=192.168.0.0/16 list=LOCAL-IP comment="LB By BNT"<br>
+              add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT"<br>
+              add address=10.0.0.0/8 list=LOCAL-IP comment="LB By BNT"<br>
               <b>/ip firewall nat</b><br>
               <span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
               <span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
