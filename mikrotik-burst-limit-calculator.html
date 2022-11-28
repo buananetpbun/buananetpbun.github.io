@@ -38,7 +38,7 @@
       .main-wrap{display:flex}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:5px;border-top:1px solid #555}
       .main-sidebar{float:left;width:50%;height:490px;padding:10px;padding-left:15px;padding-top:10px;background-color:#ddd;border-left:1px solid #bbb;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-radius:5px 0 0 5px}
-      .content{float:right;width:50%;height:490px;padding:10px;padding-left:5px;padding-right:15px;padding-top:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
+      .content{float:right;width:50%;height:490px;padding:10px;padding-left:5px;padding-right:15px;padding-top:20px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
       .sidebar{float:left;width:50%;height:auto;border-right:1px solid #aaa;padding-right:15px}
       .sidebar2{float:left;width:50%;height:auto;padding-left:15px}
       .footer{font-size:13px;padding-top:10px;padding-bottom:15px;text-align:center;clear:both;width:auto;color:#ddd}
@@ -47,8 +47,7 @@
       a:link{color:#f60}
       a:visited{color:#f60}
       a:hover{color:#f60}
-      a:active{color:#f60}
-      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:100%;font-weight:700;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff;margin-top:5px;margin-bottom:5px}
+      a:active{color:#f60}      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:100%;font-weight:700;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff;margin-top:5px;margin-bottom:5px}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;font-weight:700;margin-bottom:5px;font-size:14px!important;border-radius:5px}
@@ -56,7 +55,7 @@
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .row:after{content:"";display:table;clear:both}
-      .list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
+      .list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:4px;border:1px solid #ccc;border-radius:5px}
       table,tr,td{border:none}
       table{border-collapse:collapse;width:100%;font-size:14px;height:auto}
       td,th{border:1px solid #ddd;text-align:left;padding:8px}
@@ -155,8 +154,10 @@
       <div class="main-wrap">
         <div class="main-sidebar">
           <div class="sidebar">
-            <div style="width:100%;">
+            <div style="width:100%;border-bottom:1px solid #999">
               <label><b>UPLOAD </b></label>
+			 </div> 
+			 <div style="width:100%;">
               <label>Max Limit (K/M)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="up-max-limit" style='color: green' placeholder="512K" value="512K" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
             </div>
@@ -180,8 +181,10 @@
             </div>
           </div>
           <div class="sidebar2">
-            <div style="width:100%;">
+            <div style="width:100%;border-bottom:1px solid #999">
               <label><b>DOWNLOAD</b></label>
+			  </div>
+			 <div style="width:100%;"> 
               <label>Max Limit (K/M)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="down-max-limit" value="1M" style='color: green' placeholder="1M" onkeypress="return event.charCode != 32" onkeyup="myFunction()" >
             </div>
