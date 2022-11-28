@@ -27,7 +27,82 @@
       # Sosmed    : https://fb.me/buananetmikrotik
       ##################################################
       -------------------------------------------------- */  
-      *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}body{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;margin:0}html,body{height:100%;width:100%;margin-top:0;padding:0;line-height:normal;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;color:#333}*{box-sizing:border-box}.logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}.logo a{color:#ddd!important;text-decoration:none!important}#wrap{max-width:900px;margin:0 auto;padding:0 5px}.main-wrap{display:flex}.header{height:auto;width:100%;margin-top:5px;margin-bottom:5px;border-top:1px solid #555}.main-sidebar{float:left;width:50%;height:490px;padding:10px;padding-left:15px;padding-top:10px;background-color:#ddd;border-left:1px solid #bbb;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-radius:5px 0 0 5px}.content{float:right;width:50%;height:490px;padding:10px;padding-left:5px;padding-right:15px;padding-top:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}.sidebar{float:left;width:50%;height:auto;border-right:1px solid #aaa;padding-right:15px}.sidebar2{float:left;width:50%;height:auto;padding-left:15px}.footer{font-size:13px;padding-top:10px;padding-bottom:15px;text-align:center;clear:both;width:auto;color:#ddd}h2{color:#f60}h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}a:link{color:#f60}a:visited{color:#f60}a:hover{color:#f60}a:active{color:#f60}button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:100%;font-weight:700;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff;margin-top:5px;margin-bottom:5px}button:hover{background-color:#ccc;color:#111}.row:after{content:"";display:table;clear:both}input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;font-weight:700;margin-bottom:5px;font-size:14px!important;border-radius:5px}label{padding:10px 5px 5px 0;display:inline-block}input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}input[type=submit]:hover{background-color:#45a049}.row:after{content:"";display:table;clear:both}.list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}table,tr,td{border:none}table{border-collapse:collapse;width:100%;font-size:14px;height:auto}td,th{border:1px solid #ddd;text-align:left;padding:8px}.formula{margin-top:30px}.mikrotik-logo{display:none}@media screen and (max-width:1024px){.main-sidebar,.content{height:auto}}@media screen and (max-width:700px){.formula{margin:10px;margin-top:20px}.list-output-content{height:auto}.main-wrap{display:block}.main-sidebar,.content{border-radius:5px;display:block;width:100%;height:auto;padding:0}.main-sidebar{height:auto;margin-bottom:5px}.sidebar,.sidebar2,.content{padding:10px}.header h1{max-width:100%;justify-content:center}.header{border:none}.logo-left a{margin-top:10px!important;font-size:23px}.logo-left img{height:40px;width:50px;margin-top:-5px!important}h1{font-size:21px;text-align:center}.mymenu{width:100%!important}.logo{width:100%}.logo-left{justify-content:center;display:flex;width:100%}.logo-right{justify-content:center;width:100%;display:flex}.footer{font-size:13px;padding-left:5px;padding-right:5px}}@media screen and (max-width:600px){button{margin-bottom:5px}h1{font-size:19px}.logo-left a{margin-top:10px!important;font-size:20px}.logo-left img{height:auto;width:40px;margin-top:-5px!important}.sidebar{padding:10px}.mikrotik-logo{display:flex;justify-content:center;margin-top:15px}.show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}.mymenu{padding-left:0;padding-right:0}.mymenu ul{background:none!important;justify-content:center;display:flex}}@media screen and (max-width:500px){.formula{display:none}.main-sidebar{padding-bottom:15px}.show-homepage-menu{display:flex;justify-content:center;width:100%}.avatar{display:none}}@media screen and (max-width:350px){.hide-homepage{display:none}}
+      *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
+      body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
+      body{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;margin:0}
+      html,body{height:100%;width:100%;margin-top:0;padding:0;line-height:normal;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;color:#333}
+      *{box-sizing:border-box}
+      .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
+      .logo a{color:#ddd!important;text-decoration:none!important}
+      #wrap{max-width:900px;margin:0 auto;padding:0 5px}
+      .main-wrap{display:flex}
+      .header{height:auto;width:100%;margin-top:5px;margin-bottom:5px;border-top:1px solid #555}
+      .main-sidebar{float:left;width:50%;height:490px;padding:10px;padding-left:15px;padding-top:10px;background-color:#ddd;border-left:1px solid #bbb;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-radius:5px 0 0 5px}
+      .content{float:right;width:50%;height:490px;padding:10px;padding-left:5px;padding-right:15px;padding-top:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
+      .sidebar{float:left;width:50%;height:auto;border-right:1px solid #aaa;padding-right:15px}
+      .sidebar2{float:left;width:50%;height:auto;padding-left:15px}
+      .footer{font-size:13px;padding-top:10px;padding-bottom:15px;text-align:center;clear:both;width:auto;color:#ddd}
+      h2{color:#f60}
+      h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}
+      a:link{color:#f60}
+      a:visited{color:#f60}
+      a:hover{color:#f60}
+      a:active{color:#f60}
+      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:100%;font-weight:700;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff;margin-top:5px;margin-bottom:5px}
+      button:hover{background-color:#ccc;color:#111}
+      .row:after{content:"";display:table;clear:both}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;font-weight:700;margin-bottom:5px;font-size:14px!important;border-radius:5px}
+      label{padding:10px 5px 5px 0;display:inline-block;width:100%}
+      input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
+      input[type=submit]:hover{background-color:#45a049}
+      .row:after{content:"";display:table;clear:both}
+      .list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
+      table,tr,td{border:none}
+      table{border-collapse:collapse;width:100%;font-size:14px;height:auto}
+      td,th{border:1px solid #ddd;text-align:left;padding:8px}
+      .formula{margin-top:30px}
+      .mikrotik-logo{display:none}
+      @media screen and (max-width:1024px) {
+      .main-sidebar,.content{height:auto}
+      }
+      @media screen and (max-width:700px) {
+      .formula{margin:10px;margin-top:20px}
+      .list-output-content{height:auto}
+      .main-wrap{display:block}
+      .main-sidebar,.content{border-radius:5px;display:block;width:100%;height:auto;padding:0}
+      .main-sidebar{height:auto;margin-bottom:5px}
+      .sidebar,.sidebar2,.content{padding:10px}
+      .header h1{max-width:100%;justify-content:center}
+      .header{border:none}
+      .logo-left a{margin-top:10px!important;font-size:23px}
+      .logo-left img{height:40px;width:50px;margin-top:-5px!important}
+      h1{font-size:21px;text-align:center}
+      .mymenu{width:100%!important}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%}
+      .logo-right{justify-content:center;width:100%;display:flex}
+      .footer{font-size:13px;padding-left:5px;padding-right:5px}
+      }
+      @media screen and (max-width:600px) {
+      button{margin-bottom:5px}
+      h1{font-size:19px}
+      .logo-left a{margin-top:10px!important;font-size:20px}
+      .logo-left img{height:auto;width:40px;margin-top:-5px!important}
+      .sidebar{padding:10px}
+      .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
+      }
+      @media screen and (max-width:500px) {
+      .formula{display:none}
+      .main-sidebar{padding-bottom:15px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      .avatar{display:none}
+      }
+      @media screen and (max-width:350px) {
+      .hide-homepage{display:none}
+      } 
     </style>
   </head>
   <body>
@@ -80,17 +155,17 @@
       <div class="main-wrap">
         <div class="main-sidebar">
           <div class="sidebar">
-            <div style=" width:100%;">
-              <label><b>UPLOAD </b></label><br>
-              <label>Max Limit (K/M)</label><br>
+            <div style="width:100%;">
+              <label><b>UPLOAD </b></label>
+              <label>Max Limit (K/M)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="up-max-limit" style='color: green' placeholder="512K" value="512K" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
             </div>
             <div style="width:100%;border-bottom:1px solid #999; padding-bottom:13px">
-              <label>Burst Limit (K/M)</label><br>
+              <label>Burst Limit (K/M)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="up-speed-bonus" style='color: #01A3DF' value="1M" placeholder="1M" onkeypress="return event.charCode != 32" onkeyup="myFunction()" >
             </div>
-            <div style="width:100%;padding-bottom:10px;margin-top:4px">
-              <label>Actual Burst Time (s)</label><br>
+            <div style="width:100%;margin-bottom:10px;margin-top:4px">
+              <label>Actual Burst Time (s)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
             </div>
             <div style="margin-top:10px; font-size:14px">
@@ -105,13 +180,13 @@
             </div>
           </div>
           <div class="sidebar2">
-            <div style=" width:100%;">
-              <label><b>DOWNLOAD</b></label><br>
-              <label>Max Limit (K/M)</label><br>
+            <div style="width:100%;">
+              <label><b>DOWNLOAD</b></label>
+              <label>Max Limit (K/M)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="down-max-limit" value="1M" style='color: green' placeholder="1M" onkeypress="return event.charCode != 32" onkeyup="myFunction()" >
             </div>
             <div style="width:100%; border-bottom:1px solid #999; padding-bottom:13px">
-              <label>Burst Limit (K/M)</label><br>
+              <label>Burst Limit (K/M)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="down-speed-bonus" style='color: #01A3DF' value="2M" placeholder="2M" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
             </div>
             <div style="width:100%;margin-bottom:10px; margin-top:4px">
@@ -192,8 +267,8 @@
             <br>
             <table id="mytable" style="font-weight:normal">
               <thead>
-                <tr style="background-color: #ddd; " >
-                  <td><b>Rate Limit for <span style="color:red">HOTSPOT</span> and <span style="color:red">PPPOE</span></b></td>
+                <tr style="background-color: #ddd;" >
+                  <td style="background-color: #ddd; text-align:center"><b>Rate Limit for <span style="color:red">HOTSPOT</span> and <span style="color:red">PPPOE</span></b></td>
                 </tr>
               </thead>
               <tr id="result" style="font-size:14px;font-weight:700;">
