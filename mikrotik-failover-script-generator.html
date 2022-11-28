@@ -29,7 +29,7 @@
       ----------------------------------------------- */  
       *{-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
       body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-      body { font-size:15px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
+      body { font-size:14px; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin:0px;}
       html, body {
       height: 100%;
       width:100%;
@@ -178,7 +178,7 @@
       border-radius:5px;
       }
       .mikrotik-logo {display:none}	  
-      @media screen and (max-width:700px) {
+      @media screen and (max-width:800px) {
       .list-output-content{height:auto;}
       .main-wrap{display:block}
       .sidebar,.content{border-radius:5px;display:block;width:100%}
@@ -195,20 +195,25 @@
       .footer{font-size:13px;padding-left:5px;padding-right:5px}
       }
       @media screen and (max-width:600px) {
-	  label {display:none}
+
 	  button{margin-bottom:5px;}
+	  
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
-      .sidebar{padding:10px}
+      .sidebar{padding:10px; font-size:12px}
       .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
       .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
       .mymenu{padding-left:0;padding-right:0}
       .mymenu ul{background:none!important;justify-content:center;display:flex}
+	  
       }
       @media screen and (max-width:500px) {
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
+	   .sidebar{ font-size:12px}
+	   input[type=text], select, textarea {font-size:13px !important}
+	   body, html {font-size:12px}
       }
       @media screen and (max-width:350px) {
       .hide-homepage{display:none}
