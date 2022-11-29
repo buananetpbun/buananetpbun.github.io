@@ -29,7 +29,7 @@
       --------------------------------------------------------------- */  
       *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
       body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
-      body{font-size:15px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
+      body{color:#292929;font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
       html,body{height:100%;width:100%;margin-top:0;padding:0;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
       *{box-sizing:border-box}
       .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
@@ -38,7 +38,7 @@
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{display:flex}
       .content{float:right;width:65%;padding:15px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-right:1px solid #ccc;background:#eee;height:auto;border-radius:0 5px 5px 0}
-      .sidebar{float:left;width:35%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;padding:15px}
+      .sidebar{float:left;width:35%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;padding:15px; font-size:14px}
       .footer{padding-top:15px;padding-bottom:15px;clear:both;width:auto;font-size:13px;color:#ddd}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:5px;margin-top:10px}
@@ -51,14 +51,14 @@
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px}
-      label{padding:5px;display:inline-block}
+      label{padding:5px;display:inline-block; font-weight:600}
       input[type=submit]{background-color:#f60;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .col-25{float:left;width:25%;margin-top:6px}
       .col-75{float:left;width:75%;margin-top:6px}
       .row:after{content:"";display:table;clear:both}
       .list-game{height:200px;background:#fff;overflow:scroll;overflow-x:hidden;width:100%;margin-top:2px;padding:3px;border:1px solid rgba(0,0,0,0.25);border-radius:5px}
-      .list-game label{padding:0;display:inline-block}
+      .list-game label{padding:0;display:inline-block; font-weight:normal}
       .list-output-content{border-radius:5px;height:600px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;white-space:nowrap}
       table,tr,td{border:none}
       .mikrotik-logo {display:none}	  
@@ -90,7 +90,6 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
-	  .sidebar, .content{padding:5px}	  
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -148,7 +147,7 @@
     </div>
     <div class="main-wrap">
       <div class="sidebar">
-        <label>Select VPN Connection</label>
+        <label>VPN Connection</label>
         <div style="clear: both;"></div>
         <div style="clear: both;"></div>
         <select onchange="myFunction()" id="vpn-list">
@@ -156,7 +155,7 @@
           <option value="l2tp">L2TP - Layer Two Tunneling Protocol</option>
         </select>
         <div style="clear: both;"></div>
-        <label>Create VPN Name on Interface</label>
+        <label>VPN Name on Interface</label>
         <div style="clear: both;"></div>
         <input type="text" id="vpn-name" value="VPN-GAME" placeholder="VPN-GAME">
         <div style="clear: both;"></div>
@@ -493,7 +492,7 @@
         <br>
       </div>
       <div class="content">
-        <span style="margin-left:2px">Script Generator Results</span>
+        <span style="margin-left:2px;font-weight:600">Script Generator Results</span>
         <div class="list-output-content">
           <div id="showScript">
                 <span style="color:#ff6600;">
@@ -504,17 +503,17 @@
                 # VPN Type -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
                 ######################################################<br>
                 </span>
-                <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
+                <span style="font-weight:bold">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
                 add connect-to="<span id="vpn-ip-text">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1">VPN-GAME</span>" user="<span id="vpn-username-text">******</span>" password="<span id="vpn-password-text">******</span>" comment="<span id="vpn-name-text4">VPN-GAME</span>"<br>
-                <span style="color:black;font-weight:bold">/ip firewall nat</span><br>
+                <span style="font-weight:bold">/ip firewall nat</span><br>
                 add chain=srcnat out-interface="<span id="vpn-name-text2">VPN-GAME</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-GAME</span>"<br>
-                <span style="color:black;font-weight:bold">/ip route</span><br>
+                <span style="font-weight:bold">/ip route</span><br>
                 add gateway="<span id="vpn-name-text3">VPN-GAME</span>" routing-mark=vpn-routing-game comment="<span id="vpn-name-text6">VPN-GAME</span>"<br>
                 <span id="ip-gateway-text" style="display:none">
-                <span style="color:black;font-weight:bold">/ip route</span><br>
+                <span style="font-weight:bold">/ip route</span><br>
                 add dst-address="<span id="vpn-ip-text2">x.x.x.x.x</span>" gateway="<span id="ip-gateway-game">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-GAME</span>"
                 </span>
-                <span style="color:black;font-weight:bold">/ip firewall mangle</span>
+                <span style="font-weight:bold">/ip firewall mangle</span>
                 <!-- MOBILE GAMES -->
                 <span id="ArenaOfValorMobile" style="display:none"><span style="color:#ff6600"># Arena Of Valor - Mobile</span><br>add action=mark-routing chain=prerouting comment="Arena Of Valor - Mobile" dst-port=10001-10094 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=10080,17000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
                 <span id="BooyaCapsaSusunMobile" style="display:none"><span style="color:#ff6600"># Booya Capsa Susun - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Capsa Susun - Mobile" dst-port=7090-7100 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>

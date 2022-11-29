@@ -30,8 +30,8 @@
       --------------------------------------------------------------------------------*/  
       *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
       body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
-      body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
-      html,body{height:100%;width:100%;margin-top:0;padding:0;font-size:15px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      body{color:#292929;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
+      html,body{height:100%;width:100%;margin-top:0;padding:0;font-size:14px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
       *{box-sizing:border-box}
       .Menu{width:100%;border-bottom:1px solid #ccc;height:100%;padding-bottom:15px;margin-bottom:20px;font-size:14px;font-weight:700}
       .logo{margin-top:15px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
@@ -40,7 +40,7 @@
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{display:flex}
       .content{float:right;width:66%;padding:15px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-right:1px solid #ccc;background:#eee;height:auto;border-radius:0 5px 5px 0;font-size:14px}
-      .sidebar{float:left;width:34%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;font-size:15px;padding:15px}
+      .sidebar{float:left;width:34%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;font-size:14px;padding:15px}
       .footer{padding-top:15px;padding-bottom:20px;clear:both;width:auto;font-size:13px;color:#ddd}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:5px;margin-top:10px}
@@ -49,11 +49,11 @@
       a:hover{color:#f60}
       a:active{color:#f60}
       button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:100px;font-size:14px;font-weight:700;cursor:pointer;border-radius:5px;margin-bottom:5px}
-      button:hover{background-color:#ccc;color:#111}
+      button:hover{background-color:#ccc;color:#292929}
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px}
-      label{padding:8px 5px 5px;display:inline-block}
+      label{padding:8px 5px 5px;display:inline-block;font-weight:600; font-size:14px;}
       input[type=submit]{background-color:#f60;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .list-output-content{height:340px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;}
@@ -86,7 +86,6 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
-	  .sidebar, .content{padding:5px}
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -176,7 +175,7 @@
           <br>
         </div>
         <div class="content">
-          <span style="margin-left:2px">Script Generator Results</span>
+          <span style="margin-left:2px;font-weight:600">Script Generator Results</span>
           <div class="list-output-content">
             <div id="showScript"">
                   <span style="color:#ff6600;">
@@ -187,11 +186,11 @@
                   # VPN Type -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
                   ###################################################################<br>
                   </span>
-                  <span style="color:black;font-weight:bold">/interface <span id="vpn-list-text" style="color:#ff6600; font-weight:bold" >pptp</span>-client</span><br>
+                  <span style="font-weight:bold">/interface <span id="vpn-list-text" style="color:#ff6600; font-weight:bold" >pptp</span>-client</span><br>
                   add connect-to="<span id="vpn-ip-text" style="color:#ff6600; font-weight:bold">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1" style="color:#ff6600; font-weight:bold">VPN-TUNNEL</span>" user="<span id="vpn-username-text" style="color:#ff6600; font-weight:bold" >xxxxxx</span>" password="<span id="vpn-password-text" style="color:#ff6600; font-weight:bold">xxxxxx</span>" comment="<span id="vpn-name-text4">VPN-TUNNEL-BY-BNT</span>"<br>
-                  <span style="color:black;font-weight:bold">/ip firewall nat</span><br>
+                  <span style="font-weight:bold">/ip firewall nat</span><br>
                   add chain=srcnat out-interface="<span id="vpn-name-text2" style="color:#ff6600; font-weight:bold">VPN-TUNNEL</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-TUNNEL-BY-BNT</span>"<br>
-                  <span style="color:black;font-weight:bold">/ip route</span><br>
+                  <span style="font-weight:bold">/ip route</span><br>
                   add gateway="<span id="vpn-name-text3" style="color:#ff6600; font-weight:bold">VPN-TUNNEL</span>" distance=1 comment="<span id="vpn-name-text6">VPN-TUNNEL-BY-BNT</span>"<br>
                   <span id="ip-gateway-text">
                   add dst-address="<span id="vpn-ip-text2" style="color:#ff6600; font-weight:bold" >x.x.x.x.x</span>" distance=1 gateway="<span id="ip-gateway-game" style="color:#ff6600; font-weight:bold">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-TUNNEL-BY-BNT</span>"</span><br>

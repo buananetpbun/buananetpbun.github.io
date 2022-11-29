@@ -29,7 +29,7 @@
       -------------------------------------------------- */  
       *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
       body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
-      body{font-size:15px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
+      body{color:#292929;font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
       html,body{height:100%;width:100%;margin-top:0;padding:0;line-height:normal;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
       *{box-sizing:border-box}
       .logo{margin-top:10px;margin-bottom:5px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
@@ -40,19 +40,19 @@
       .content{float:right;width:60%;padding:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;height:auto;color:#333;border-radius:0 5px 5px 0}
       .sidebar{float:left;width:40%;background-color:#ddd;border:1px solid #bbb;height:auto;color:#333;border-radius:5px 0 0 5px;padding:15px}
       .footer{font-size:13px;padding-top:15px;padding-bottom:15px;clear:both;width:auto}
-	  label {font-weight:600; font-size:15px;}	  
+	  label {font-weight:500; font-size:14px;}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}
       a:link{color:#f60}
       a:visited{color:#f60}
       a:hover{color:#f60}
-      a:active{color:#f60}      button{margin-top:15px;color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:120px;font-size:14px;font-weight:700;display:inline-block;cursor:pointer;border-radius:5px;color:#fff}
+      a:active{color:#f60}      button{margin-top:10px;color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:120px;font-size:14px;font-weight:700;display:inline-block;cursor:pointer;border-radius:5px;color:#fff}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;margin-top:10px;font-size:15px!important;border-radius:5px}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;margin-top:10px;font-size:14px!important;border-radius:5px}
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
-      .list-output-content{height:542px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
+      .list-output-content{height:570px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
       .list-output-content{height:auto}
@@ -75,14 +75,12 @@
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
-      .sidebar{padding:10px}
       .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
       .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
       .mymenu{padding-left:0;padding-right:0}
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
-	  .sidebar, .content{padding:5px}
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -140,7 +138,7 @@
       </div>
       <div class="main-wrap">
         <div class="sidebar">
-          <div style="display:flex">
+          <div style="display:flex;">
             <div style="float:left; width:100%;">
               <label>Your Line WAN ISP</label><br>
               <select style="margin-top:10px; width:100%" id="wan-list" onchange="myFunctionOuput()">
@@ -163,7 +161,7 @@
           <div style="color:#ff6600; border:1px solid #bbb; padding:7px;margin-top:0px;margin-bottom:10px">Please Change Your WAN Interface Name With Your Router Condition, Example: ether1 or E1-WAN or e1-indihome or pppoe-out1
           </div>
           <div style="clear:both"></div>
-          <div style="display:flex">
+          <div style="display:flex; border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:100%;">
               <label>WAN ISP-1</label>
               <input type="text" id="wan1-isp" placeholder="Ex: ether1">
@@ -173,7 +171,7 @@
               <input type="text" id="wan1-isp-ip" placeholder="Ex: 192.168.1.1">
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex; border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:100%;">
               <label>WAN ISP-2</label>
               <input type="text" id="wan2-isp" placeholder="Ex: ether2">
@@ -183,7 +181,7 @@
               <input type="text" id="wan2-isp-ip" placeholder="Ex: 192.168.2.1">
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex; border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:100%;">
               <label>WAN ISP-3</label>
               <input type="text" id="wan3-isp" placeholder="Ex: ether3" disabled>
@@ -193,7 +191,7 @@
               <input type="text" id="wan3-isp-ip" placeholder="Ex: 192.168.3.1" disabled >
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex; border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:100%;">
               <label>WAN ISP-4</label>
               <input type="text" id="wan4-isp" placeholder="Ex: ether4" disabled>
@@ -203,7 +201,7 @@
               <input type="text" id="wan4-isp-ip" placeholder="Ex: 192.168.4.1" disabled >
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex; border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:100%;">
               <label>WAN ISP-5</label>
               <input type="text" id="wan5-isp" placeholder="Ex: ether5" disabled>
@@ -213,7 +211,7 @@
               <input type="text" id="wan5-isp-ip" placeholder="Ex: 192.168.5.1" disabled >
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex; border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:100%;">
               <label>WAN ISP-6</label>
               <input type="text" id="wan6-isp" placeholder="Ex: ether6" disabled>
@@ -227,7 +225,7 @@
           <button type="button" onclick="location.reload()">Clear All</button>
         </div>
         <div class="content">
-          <span style="margin-left:2px; font-weight:600">Script Generator Result</span>
+          <span style="margin-left:2px; font-weight:500">Script Generator Result</span>
           <div class="list-output-content">
             <div id="showScript">
               <span style="color:#ff6600;">
