@@ -29,12 +29,12 @@
       -------------------------------------------------------------------- */  
       *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
       body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
-      body{font-size:15px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
+      body{color:#292929;font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
       html,body{height:100%;width:100%;margin-top:0;padding:0;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
       *{box-sizing:border-box}
       .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
-      #wrap{max-width:1024px;margin:0 auto;padding:0 5px 0 5px}
+      #wrap{max-width:900px;margin:0 auto;padding:0 5px 0 5px}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{display:flex}
       .content{flex:1;width:60%;padding:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
@@ -50,12 +50,12 @@
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;margin-bottom:12px;font-size:14px!important;border-radius:5px}
-      label{padding:5px 5px 5px 0;display:inline-block}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;margin-bottom:12px;font-size:14px!important;border-radius:5px;margin-bottom:10px}
+      label{padding-bottom:5px;display:inline-block;font-weight:500}
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .row:after{content:"";display:table;clear:both}
-      .list-output-content{height:525px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
+      .list-output-content{height:475px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
       .list-output-content{height:auto}
@@ -157,7 +157,7 @@
               <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
             </div>
           </div>
-          <div style="margin-top:10px;margin-bottom:10px;border-bottom:1px solid #bbb">Sub Parent Queue / Child Queue</div>
+          <div style="margin-top:10px;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #bbb;font-weight:500; color:#f60">Sub Parent Queue / Child Queue</div>
           <div style="display:flex">
             <div style="float:left;width:100%;">
               <label>Client Name Queue</label>
@@ -203,7 +203,7 @@
           <button style="margin-top:10px;" type="button" onclick="myFunctionInput()">Generate</button> <button style="margin-left:10px" type="button" onclick="location.reload()">Clear All</button> 
         </div>
         <div class="content">
-          <span style="margin-left:2px">Script Generator Result</span>
+          <span style="margin-left:2px;font-weight:500">Script Generator Result</span>
           <div class="list-output-content">
             <div id="showScript">
               <span style="color:#ff6600;">
