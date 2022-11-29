@@ -58,8 +58,8 @@
       button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:100%;font-weight:700;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff}
       button:hover{background-color:#ccc;color:#292929}
       .row:after{content:"";display:table;clear:both}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;font-weight:700;margin-bottom:5px;font-size:14px!important;border-radius:5px}
-      label{padding:5px 5px 5px 0;display:inline-block}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;font-weight:500;margin-bottom:5px;font-size:14px!important;border-radius:5px}
+      label{padding:5px 5px 5px 0;display:inline-block;font-weight:500}
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right;border-radius:5px}
       input[type=submit]:hover{background-color:#45a049}
       .col-25{float:left;width:25%;margin-top:6px}
@@ -181,16 +181,16 @@
         </div>
         <br>
         <button style="margin-bottom:25px" id="copyscript" type="button" onclick="myFunction()">CALCULATE</button>
-        <span style="margin-top:20px; text-align:center">
-        <b>PCC Load Balancing Is Not Like The Mathematical Formula <span style="color:red">20+10 = 30</span> <br>But Like <br> <span style="color:green">20+10 = 20+10</span> <br>Or Like<br> <span style="color:green">20+10 = 10+10+10</span></b>
+        <span style="margin-top:20px; text-align:center;font-weight:normal !important">
+        PCC Load Balancing Is Not Like The Mathematical Formula, like <span style="color:red">20+10 = 30</span> <br>But Like <br> <span style="color:green">20+10 = 20+10</span> <br>Or Like<br> <span style="color:green">20+10 = 10+10+10</span>
         </span>
       </div>
       <div class="content">
         <span style="margin-left:2px"><b>LB PCC CALCULATION RESULT</b></span>
-        <div class="list-output-content" style="margin-bottom:10px">
-          <table style="font-weight:bold">
+        <div class="list-output-content">
+          <table style="font-weight:500">
             <thead>
-              <tr style="background-color: #eee;font-weight:bold">
+              <tr style="background-color: #eee;font-weight:normal">
                 <th>WAN Identity</th>
                 <th>WAN Speed (Mbps)</th>
                 <th>Best Ratio (Mbps)</th>
@@ -211,16 +211,16 @@
                 <td><span id="result-wan2-tot-ratio">1</span></td>
               </tr>
               <tr>
-                <th colspan="2" style="background-color: #eee; font-weight:bold">Total Calculate</th>
+                <th colspan="2" style="background-color: #eee; font-weight:500">Total Calculate</th>
                 <td id="result-tot1-join-ratio">10+10 = 10+10</td>
                 <td id="result-tot2-join-ratio">2</td>
               </tr>
             </tbody>
           </table>
           <br>
-          <table id="mytable" style="font-weight:bold">
+          <table id="mytable" style="font-weight:500">
             <thead>
-              <tr style="background-color: #eee; font-weight:bold" >
+              <tr style="background-color: #eee; font-weight:500" >
                 <td>Marking Connection</td>
                 <td>Denominator / Remainder</td>
                 <td>Ratio In (Mbps)</td>
@@ -229,7 +229,7 @@
             <tbody id="mytbody">
             </tbody>
             <tr>
-              <th colspan="2" style="background-color: #eee; font-weight:bold">Possible Speed Balance</th>
+              <th colspan="2" style="background-color: #eee; font-weight:500">Possible Speed Balance</th>
               <td id="result-tot-mbps"><b></b></td>
             </tr>
           </table>
