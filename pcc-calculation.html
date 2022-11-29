@@ -35,11 +35,12 @@
       .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
       .Menu{width:100%;border-bottom:1px solid #ccc;height:100%;padding-bottom:15px;margin-bottom:20px;font-weight:700}
-      #wrap{max-width:850px;margin:0 auto;padding:0 5px 0 5px}
+      #wrap{max-width:780px;margin:0 auto;padding:0 5px 0 5px}
+	  .main-wrap{display:flex}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:12px;border-top:1px solid #555}
       .main-wrap{background-color:#f60}
-      .content{float:right;width:70%;height:450px;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
-      .sidebar{float:left;width:30%;height:450px;padding:10px;background-color:#ddd;border:1px solid #bbb;border-radius:5px 0 0 5px;font-size:14px}
+      .content{float:right;width:70%;height:auto;padding:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
+      .sidebar{float:left;width:30%;height:auto;padding:15px;background-color:#ddd;border:1px solid #bbb;border-radius:5px 0 0 5px;font-size:14px}
       .footer{font-size:13px;padding-top:10px;padding-bottom:15px;text-align:center;clear:both;width:auto;color:#ddd}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}
@@ -66,13 +67,14 @@
       .row:after{content:"";display:table;clear:both}
       .list-game{height:200px;background:#fff;overflow:scroll;overflow-x:hidden;width:100%;margin-top:2px;padding:3px;border:1px solid rgba(0,0,0,0.25);border-radius:5px}
       .list-game label{padding:0;display:inline-block}
-      .list-output-content{height:400px;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
+      .list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
       table,tr,td{border:none}
       table{border-collapse:collapse;width:100%;font-size:14px}
       td,th{border:1px solid #ddd;text-align:left;padding:8px}
 	  button{margin-bottom:5px;}
       @media screen and (max-width:700px) {
-      .sidebar,.content{border-radius:5px;display:block;width:100%}
+	  .main-wrap{display:block}
+      .sidebar,.content{border-radius:5px;display:block;width:100%; padding:10px}
       .sidebar{height:200px;margin-bottom:5px}
       .header h1{max-width:100%;justify-content:center}
 	  .header {border:none}	  
@@ -96,6 +98,7 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
+	  .sidebar, .content{padding:5px}	  
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -151,6 +154,7 @@
       <div class="header">
         <h1>LOAD BALANCING PER CONNECTION CLASSIFIER <span style="color:#ff6600">( LB PCC )</span> CALCULATION</h1>
       </div>
+	  <div class="main-wrap">
       <div class="sidebar">
         <div style="float:left; width:100%;">
           <label><b>WAN-1 Down Speed</b></label><br>
@@ -231,6 +235,7 @@
           </table>
         </div>
       </div>
+	  </div>
       <div class="footer">
         <div style=" text-align:center">
           © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
