@@ -49,10 +49,10 @@
       a:active{color:#f60}      button{margin-top:10px;color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:120px;font-size:14px;font-weight:700;display:inline-block;cursor:pointer;border-radius:5px;color:#fff}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;margin-top:10px;font-size:14px!important;border-radius:5px}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;margin-top:5px;font-size:14px!important;border-radius:5px}
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
-      .list-output-content{height:570px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
+      .list-output-content{height:530px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
       .list-output-content{height:auto}
@@ -141,7 +141,7 @@
           <div style="display:flex">
             <div style="float:left; width:100%;">
               <label>Your Line WAN ISP</label><br>
-              <select style="margin-top:10px; width:100%" id="wan-list" onchange="myFunctionOuput()">
+              <select style="margin-top:5px; width:100%" id="wan-list" onchange="myFunctionOuput()">
                 <option value="line2">2 Line WAN ISP</option>
                 <option value="line3">3 Line WAN ISP</option>
                 <option value="line4">4 Line WAN ISP</option>
@@ -151,7 +151,7 @@
             </div>
             <div style="float:left; width:100%; margin-left:10px">
               <label>RouterOS Version</label>
-              <select style="margin-top:10px; width:100%" id="ros-list" onchange="myFunctionOuput()">
+              <select style="margin-top:5px; width:100%" id="ros-list" onchange="myFunctionOuput()">
                 <option value="ros6">RouterOS v6.xx</option>
                 <option value="ros7">RouterOS v7.xx</option>
               </select>
@@ -161,7 +161,7 @@
           <div style="color:#ff6600; border:1px solid #bbb;padding:7px;margin-top:0px;margin-bottom:10px">Please Change Your WAN Interface Name With Your Router Condition, Example: ether1 or E1-WAN or e1-indihome or pppoe-out1
           </div>
           <div style="clear:both"></div>
-          <div style="display:flex; border-bottom:1px solid #bbb; margin-bottom:7px;">
+          <div style="display:flex; border-bottom:1px solid #bbb; margin-bottom:5px;">
             <div style="width:100%;">
               <label>WAN ISP-1</label>
               <input type="text" id="wan1-isp" placeholder="Ex: ether1">
@@ -171,7 +171,7 @@
               <input type="text" id="wan1-isp-ip" placeholder="Ex: 192.168.1.1">
             </div>
           </div>
-          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:5px;">
             <div style="width:100%;">
               <label>WAN ISP-2</label>
               <input type="text" id="wan2-isp" placeholder="Ex: ether2">
@@ -181,7 +181,7 @@
               <input type="text" id="wan2-isp-ip" placeholder="Ex: 192.168.2.1">
             </div>
           </div>
-          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:5px;">
             <div style="width:100%;">
               <label>WAN ISP-3</label>
               <input type="text" id="wan3-isp" placeholder="Ex: ether3" disabled>
@@ -201,7 +201,7 @@
               <input type="text" id="wan4-isp-ip" placeholder="Ex: 192.168.4.1" disabled >
             </div>
           </div>
-          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:5px;">
             <div style="width:100%;">
               <label>WAN ISP-5</label>
               <input type="text" id="wan5-isp" placeholder="Ex: ether5" disabled>
@@ -211,7 +211,7 @@
               <input type="text" id="wan5-isp-ip" placeholder="Ex: 192.168.5.1" disabled >
             </div>
           </div>
-          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:5px">
             <div style="width:100%;">
               <label>WAN ISP-6</label>
               <input type="text" id="wan6-isp" placeholder="Ex: ether6" disabled>
@@ -313,8 +313,8 @@
         /ip firewall mangle remove [find comment="LB By BNT"]<br>
         /ip firewall address-list remove [find comment="LB By BNT"]<br> 
         /routing table remove [find comment="LB By BNT"]
-        <div style="margin-top:15px;">
-          © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+        <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555; text-align:center">
+          © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>
         </div>
       </div>
     </div>

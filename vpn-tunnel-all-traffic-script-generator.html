@@ -52,11 +52,11 @@
       button:hover{background-color:#ccc;color:#292929}
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px}
-      label{padding:8px 5px 5px;display:inline-block;font-weight:600; font-size:14px;}
-      input[type=submit]{background-color:#f60;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px;margin-bottom:10px}
+      label{padding-bottom:5px;display:inline-block;font-weight:500; font-size:14px;}
+      input[type=submit]{background-color:#f60;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right;}
       input[type=submit]:hover{background-color:#45a049}
-      .list-output-content{height:340px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px;}
+      .list-output-content{height:340px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;}
       .mikrotik-logo {display:none}      
 	  @media screen and (max-width:700px) {
 	  .list-output-content{height:auto}	  
@@ -134,7 +134,7 @@
           </div>
         </div>
         <div class="logo-left" style="float:left;"> 
-          <a href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  
+          <a href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html"><img alt="logo" style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  
         </div>
       </div>
       <div style="clear:both"></div>
@@ -169,19 +169,18 @@
           <div style="clear:both"></div>
           <label style="padding-left:0px">Target IP Gateway Your ISP</label>
           <input type="text" id="ip-gateway-input" placeholder="example:192.168.2.1">
-          <br><br>
-          <button style="margin-right:2px" type="button" onclick="myFunction()">Generate</button> 
+          <button style="margin-right:2px; margin-top:10px" type="button" onclick="myFunction()">Generate</button> 
           <button type="button" onclick="location.reload()">Clear All</button> 
-          <br>
+          
         </div>
         <div class="content">
-          <span style="margin-left:2px;font-weight:600">Script Generator Results</span>
+          <span style="margin-left:2px;font-weight:500">Script Generator Results</span>
           <div class="list-output-content">
-            <div id="showScript"">
+            <div id="showScript">
                   <span style="color:#ff6600;">
                   ###################################################################<br>
                   # VPN Tunnel All Traffic Script Generator By BuanaNETPBun.Github.io<br>
-                  # Date/Time: <span id="tanggalwaktu"></span><br>
+                  # Date/Time: <span id="tanggalwaktu"></span>
                   # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
                   # VPN Type -> <span id="vpn-list-text-info" style="font-weight:bold;text-transform: uppercase">PPTP</span><br>
                   ###################################################################<br>
@@ -197,7 +196,7 @@
             </div>
           </div>
           <br>
-          <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:600;margin-left:10px">Copy-Paste Script to Terminal!</span>
+          <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:400;margin-left:10px">copy-paste script to terminal.</span>
         </div>
       </div>
       <div class="footer">
@@ -207,7 +206,7 @@
         /interface l2tp-client remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
         /ip route remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
         /ip firewall nat remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
-        <div style="margin-top:15px">
+        <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555; text-align:center">
           © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>
         </div>
       </div>
