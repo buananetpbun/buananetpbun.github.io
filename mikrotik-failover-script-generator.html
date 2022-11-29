@@ -35,25 +35,25 @@
       ul{list-style-type:square}
       .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
-      #wrap{max-width:1024px;margin:0 auto;padding:0 5px}
+      #wrap{max-width:980px;margin:0 auto;padding:0 5px}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{display:flex}
       .content{flex:1;float:right;width:55%;padding:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;height:auto;border-radius:0 5px 5px 0}
       .sidebar{float:left;width:45%;background-color:#ddd;border:1px solid #bbb;height:auto;border-radius:5px 0 0 5px;padding:15px}
-      label{padding:5px 0 0;display:inline-block}
+      label{padding-bottom:5px;display:inline-block;font-weight:400}
       .footer{font-size:13px;padding-top:10px;padding-bottom:15px;clear:both;width:auto;color:#ddd}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}
       a:link{color:#f60}
       a:visited{color:#f60}
       a:hover{color:#f60}
-      a:active{color:#f60}      button{margin-top:14px;color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:130px;font-size:15px;font-weight:700;display:inline-block;cursor:pointer;border-radius:5px;color:#fff}
+      a:active{color:#f60}      button{margin-top:14px;color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:130px;font-size:14px;font-weight:700;display:inline-block;cursor:pointer;border-radius:5px;color:#fff}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;margin-top:10px;font-size:16px!important;border-radius:5px}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;font-size:14px!important;border-radius:5px; }
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
-      .list-output-content{height:495px;background:#fff;overflow:scroll;width:100%;padding:4px;margin-top:8px;margin-bottom:5px;border:1px solid #bbb;border-radius:5px}
+      .list-output-content{height:472px;background:#fff;overflow:scroll;width:100%;padding:4px;margin-top:5px;margin-bottom:5px;border:1px solid #bbb;border-radius:5px}
       .mikrotik-logo{display:none}
       @media screen and (max-width:800px) {
       .list-output-content{height:auto}
@@ -144,10 +144,10 @@
       </div>
       <div class="main-wrap">
         <div class="sidebar">
-          <div style="display:flex">
+          <div style="display:flex;border-bottom:2px solid #bbb; margin-bottom:10px;padding-bottom:5px">
             <div style="width:50%;margin-right:5px">
               <label>Select Your Failover Method</label>
-              <select style="margin-top:10px" id="wan-list-method" onchange="myFunctionShowHide(); myFunction()">
+              <select id="wan-list-method" onchange="myFunctionShowHide(); myFunction()">
                 <option value="fail-over-method1">Failover - Check Gateway</option>
                 <option value="fail-over-method2">Failover - Recursive Gateway</option>
                 <option value="fail-over-method3">Failover - Netwatch Script</option>
@@ -155,7 +155,7 @@
             </div>
             <div style="width:50%;">
               <label>Select Number Your ISP Line</label>
-              <select style="margin-top:10px" id="wan-list" onchange="myFunctionShowHide(); myFunction()">
+              <select id="wan-list" onchange="myFunctionShowHide(); myFunction()">
                 <option value="line-2">2 Line ISP</option>
                 <option value="line-3">3 Line ISP</option>
                 <option value="line-4">4 Line ISP</option>
@@ -164,7 +164,7 @@
               </select>
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:25%;margin-right:5px">
               <label>Identity ISP-1</label>
               <input type="text" id="id-wan1-isp-input" value="ISP-1" placeholder="ISP-1">
@@ -182,7 +182,7 @@
               <input type="text" id="wan1-public-ip-input" value="4.2.2.1" placeholder="4.2.2.1" disabled>
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:25%;margin-right:5px">
               <label>Identity ISP-2</label>
               <input type="text" id="id-wan2-isp-input" value="ISP-2" placeholder="ISP-2">
@@ -200,7 +200,7 @@
               <input type="text" id="wan2-public-ip-input" value="4.2.2.2" placeholder="4.2.2.2" disabled>
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:25%;margin-right:5px">
               <label>Identity ISP-3</label>
               <input type="text" id="id-wan3-isp-input" value="ISP-3" placeholder="ISP-3" disabled>
@@ -218,7 +218,7 @@
               <input type="text" id="wan3-public-ip-input" value="4.2.2.3" placeholder="4.2.2.3" disabled>
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:25%;margin-right:5px">
               <label>Identity ISP-4</label>
               <input type="text" id="id-wan4-isp-input" value="ISP-4" placeholder="ISP-4" disabled>
@@ -236,7 +236,7 @@
               <input type="text" id="wan4-public-ip-input" value="4.2.2.4" placeholder="4.2.2.4" disabled>
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:25%;margin-right:5px">
               <label>Identity ISP-5</label>
               <input type="text" id="id-wan5-isp-input" value="ISP-5" placeholder="ISP-5" disabled>
@@ -254,7 +254,7 @@
               <input type="text" id="wan5-public-ip-input" value="4.2.2.5" placeholder="4.2.2.5" disabled>
             </div>
           </div>
-          <div style="display:flex">
+          <div style="display:flex;border-bottom:1px solid #bbb; margin-bottom:7px;">
             <div style="width:25%;margin-right:5px">
               <label>Identity ISP-6</label>
               <input type="text" id="id-wan6-isp-input" value="ISP-6" placeholder="ISP-6" disabled>
