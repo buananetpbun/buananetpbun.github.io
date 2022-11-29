@@ -50,8 +50,8 @@
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px}
-      label{padding:5px;display:inline-block;font-weight:600}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px; margin-bottom:10px}
+      label{padding-bottom:5px;display:inline-block;font-weight:500}
       input[type=submit]{background-color:#f60;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .col-25{float:left;width:25%;margin-top:6px}
@@ -59,7 +59,7 @@
       .row:after{content:"";display:table;clear:both}
       .list-game{height:352px;background:#fff;overflow:scroll;overflow-x:hidden;width:100%;margin-top:2px;padding:3px;border:1px solid rgba(0,0,0,0.25);border-radius:5px}
       .list-game label{padding:0;display:inline-block;font-weight:normal}
-      .list-output-content{border-radius:5px;height:520px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;white-space:nowrap}
+      .list-output-content{border-radius:5px;height:528px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;white-space:nowrap}
       table,tr,td{border:none}
       .mikrotik-logo {display:none}	  
       @media screen and (max-width:700px) {
@@ -157,7 +157,7 @@
             <label>Gateway to WAN or ISP Game</label>
             <input type="text" id="ip-gateway-input" placeholder="example:192.168.2.1"><br>
           </div>
-          <label>Select Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
+          <label>Select Mangle Games</label> <input style="margin-bottom:2px" type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
           <div class="list-game">
             <table id="myTable" style="font-size:14px">
               <!-- MOBILE GAMES -->
@@ -498,10 +498,10 @@
           <br>
         </div>
         <div class="content">
-          <span style="margin-left:2px;font-weight:600">Script Generator Result</span>
+          <span style="margin-left:2px;font-weight:500">Script Generator Result</span>
           <div class="list-output-content">
             <div id="showScript">
-                  <span style="color:#ff6600;font-weight:bold">
+                  <span style="color:#ff6600;font-weight:500">
                   ##############################################################<br>
                   # Static Routing Games Script Generator By BuanaNETPBun.Github.io<br>
                   # Date/Time: <span id="tanggalwaktu"></span><br>
@@ -516,15 +516,15 @@
                   <b>/routing table</b><br>
                   add name=routing-game fib comment=ROUTING-GAME-BY-BNT<br>
                   </span>	
-                  <span style="color:black;font-weight:bold">/ip route</span><br>
+                  <span style="font-weight:500">/ip route</span><br>
                   add gateway=<span id="gateway-input">x.x.x.x</span> <span id="routing-option">routing-mark</span>=routing-game comment=<span>ROUTING-GAME-BY-BNT</span><br>
-                  <span style="color:black;font-weight:bold">/ip firewall mangle</span><br>
+                  <span style="font-weight:500">/ip firewall mangle</span><br>
                   add action=mark-routing chain=prerouting connection-mark=conn-game new-routing-mark=routing-game passthrough=no src-address-list=LOCAL-IP comment=ROUTING-GAME-BY-BNT place-before=*0<br>
                   add action=mark-connection chain=prerouting dst-address-list=List-IP-Games new-connection-mark=conn-game passthrough=yes comment=ROUTING-GAME-BY-BNT place-before=*0<br>
-                  <span style="color:green;font-weight:bold">##############################################################<br>
+                  <span style="color:green;font-weight:500">##############################################################<br>
                   # If you want to add a game script only, you can ignore the script above<br>
                   ##############################################################<br></span>
-                  <span style="color:black;font-weight:bold">/ip firewall raw</span><br>
+                  <span style="font-weight:500">/ip firewall raw</span><br>
                   <!-- MOBILE GAMES -->
                   <span id="ArenaOfValorMobile" style="display:none"><span style="color:#ff6600"># Arena Of Valor - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Arena Of Valor - Mobile" dst-address-list=!LOCAL-IP dst-port=10001-10094  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=10101-10201,10080-10110,17000-18000 protocol=udp</span>
                   <span id="AmongUsMobile" style="display:none"><span style="color:#ff6600"># Among Us - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Among Us - Mobile" dst-address-list=!LOCAL-IP dst-port=27015-27030,27036-27037  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=4380,27000-27031,27036 protocol=udp</span>
@@ -651,7 +651,7 @@
         /ip firewall address-list remove [find list="List-IP-Games"]<br>
         /ip firewall address-list remove [find comment="ROUTING-GAME-BY-BNT"]<br>
         /routing table remove [find comment="ROUTING-GAME-BY-BNT"]
-        <div style="margin-top:15px">
+        <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555; text-align:center">
           © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>
         </div>
       </div>
