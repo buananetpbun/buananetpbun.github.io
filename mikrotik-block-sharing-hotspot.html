@@ -37,8 +37,8 @@
       #wrap{max-width:900px;margin:0 auto;padding:0 5px}
       .header{height:auto;width:100%;margin-top:0;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{background-color:#f60}
-      .content{width:100%;height:480px;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd}
-      .sidebar{width:100%;height:auto;padding:10px;background-color:#ccc;border:2px solid #ccc;border-radius:5px;margin-top:5px}
+      .content{width:100%;height:480px;padding:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd}
+      .sidebar{width:100%;height:auto;padding:15px;background-color:#ccc;border:2px solid #ccc;border-radius:5px;margin-top:5px}
       .sidebar img{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
       .footer{font-size:13px;padding-top:10px;padding-bottom:15px;text-align:center;clear:both;width:auto;color:#ddd}
       h2{color:#f60}
@@ -64,7 +64,7 @@
       @media screen and (max-width:700px) {
       .list-output-content{height:auto;min-height:300px}
       .main-wrap{display:block}
-      .sidebar,.content{border-radius:5px;display:block;width:100%}
+      .sidebar,.content{border-radius:5px;display:block;width:100%;padding:10px}
       .sidebar{height:auto;margin-bottom:5px}
       .header h1{max-width:100%;justify-content:center}
       .header{border:none}
@@ -89,6 +89,7 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
+      .sidebar,.content{padding:5px}		  
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -149,7 +150,7 @@
           <div style="clear:both"></div>
           <img style="display: block;  margin-left: auto;  margin-right: auto;" src="https://user-images.githubusercontent.com/42666125/166714686-a2e1928e-7411-4119-a7b4-8cb41b4fbec5.png" alt="anti tethering mikrotik">
         </div>
-        <div class="list-output-content" style="margin-bottom:10px">
+        <div class="list-output-content">
           <div id="cont">
           </div>
           <table id="mytable" style="margin-top:5px; font-weight:normal;white-space: nowrap;">
