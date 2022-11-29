@@ -30,15 +30,15 @@
       *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
       body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
       body{color:#292929;font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
-      html,body{height:100%;width:100%;margin-top:0;padding:0;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      html,body{color:#292929;height:100%;width:100%;margin-top:0;padding:0;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
       *{box-sizing:border-box}
       .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
       .logo a{color:#ddd!important;text-decoration:none!important}
-      #wrap{max-width:900px;margin:0 auto;padding:0 5px 0 5px}
+      #wrap{color:#292929 !important; max-width:950px;margin:0 auto;padding:0 5px 0 5px}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{display:flex}
       .content{float:right;width:65%;padding:15px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-right:1px solid #ccc;background:#eee;height:auto;border-radius:0 5px 5px 0}
-      .sidebar{float:left;width:35%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;padding:15px; font-size:14px}
+      .sidebar{float:left;width:35%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;padding:15px}
       .footer{padding-top:15px;padding-bottom:15px;clear:both;width:auto;font-size:13px;color:#ddd}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:5px;margin-top:10px}
@@ -50,22 +50,22 @@
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px}
-      label{padding:5px;display:inline-block; font-weight:600}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px; margin-bottom:10px}
+      label{padding-bottom:5px;display:inline-block; font-weight:600; font-size:14px}
       input[type=submit]{background-color:#f60;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .col-25{float:left;width:25%;margin-top:6px}
       .col-75{float:left;width:75%;margin-top:6px}
       .row:after{content:"";display:table;clear:both}
       .list-game{height:200px;background:#fff;overflow:scroll;overflow-x:hidden;width:100%;margin-top:2px;padding:3px;border:1px solid rgba(0,0,0,0.25);border-radius:5px}
-      .list-game label{padding:0;display:inline-block; font-weight:normal}
-      .list-output-content{border-radius:5px;height:600px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;white-space:nowrap}
+      .list-game label{padding:0;display:inline-block; font-weight:normal; font-size:14px}
+      .list-output-content{border-radius:5px;height:605px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;white-space:nowrap}
       table,tr,td{border:none}
       .mikrotik-logo {display:none}	  
       @media screen and (max-width:700px) {
 	  .list-output-content{height:auto}
       .main-wrap{display:block}
-      .sidebar,.content{border-radius:5px;display:block;width:100%;padding:10px}
+      .sidebar,.content{border-radius:5px;display:block;width:100%; padding:10px}
       .sidebar{height:auto;margin-bottom:5px}
       .header h1{max-width:100%;justify-content:center}
 	  .header {border:none}	  
@@ -138,7 +138,7 @@
         </div>
       </div>
       <div class="logo-left" style="float:left;"> 
-        <a href="https://buananetpbun.github.io/vpn-game-generator.html"><img style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  
+        <a href="https://buananetpbun.github.io/vpn-game-generator.html"><img alt="logo" style="float:left; margin-top:-6px;margin-right:10px" height="40" width="50" src="./img/mylogo.png"><span style="color:#ff6600 !important">BuanaNETPBun</span>.Github.io</a>  
       </div>
     </div>
     <div style="clear:both"></div>
@@ -170,12 +170,10 @@
         <label>VPN Password</label>
         <div style="clear: both;"></div>
         <input type="text" id="vpn-password" placeholder="password">
-        <div style="margin-top:10px;margin-bottom:10px">
           <input onchange="myFunction()" type="checkbox" id="ip-gateway-check"><label for="ip-gateway-check" style="padding-left:0px">IP Gateway ISP Game (optional)</label>
           <input disabled type="text" id="ip-gateway-input" placeholder="example:192.168.2.1">
           <div style="clear: both;"></div>
-        </div>
-        <label>Select Mangle Games</label> <input type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
+        <label>Select Mangle Games</label> <input style="margin-bottom:2px" type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
         <div class="list-game">
           <table id="myTable">
             <!-- MOBILE GAMES -->
@@ -618,7 +616,7 @@
           </div>
         </div>
         <br>
-        <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:600;margin-left:10px;font-size:14px">Copy-Paste Script to Terminal.</b></span>
+        <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:600;margin-left:10px;font-size:14px">Copy-Paste Script to Terminal.</span>
       </div>
     </div>
     <div class="footer">
@@ -633,6 +631,7 @@
         © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>
       </div>
     </div>
+	</div>
     <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen">
       <div id="center-screen" class="center-screen">Great! One Step Again <br>For Activate Your Member<br><button id="verify">VERIFY YOUR E-MAIL NOW</button></div>
     </div>
