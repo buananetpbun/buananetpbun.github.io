@@ -178,7 +178,7 @@
           <table id="myTable">
             <!-- MOBILE GAMES -->
             <tr>
-              <td><label style="font-weight:500;color:#ff6600;padding-left:5px">MOBILE GAMES</label></td>
+              <td><label style="font-weight:600;color:#ff6600;padding-left:5px">MOBILE GAMES</label></td>
             </tr>
             <tr>
               <td><input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor - Mobile</label></td>
@@ -245,7 +245,7 @@
             </tr>
             <!-- WEB GAMES -->   
             <tr>
-              <td><label style="font-weight:500;color:#ff6600;padding-left:5px">WEB GAMES</label></td>
+              <td><label style="font-weight:600;color:#ff6600;padding-left:5px">WEB GAMES</label></td>
             </tr>
             <tr>
               <td><input type="checkbox" id="BallPool-WebGames"><label for="BallPool-WebGames">8 Ball Pool - WebGames</label></td>
@@ -285,7 +285,7 @@
             </tr>
             <!-- DEKSTOP / PC GAMES -->    
             <tr>
-              <td><label style="font-weight:500;color:#ff6600;padding-left:5px">DEKSTOP / PC GAMES</label></td>
+              <td><label style="font-weight:600;color:#ff6600;padding-left:5px">DEKSTOP / PC GAMES</label></td>
             </tr>
             <tr>
               <td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PC</label></td>
@@ -498,20 +498,20 @@
                 # Vpn Game Script Generator By BuanaNETPBun.Github.io<br>
                 # Date/Time: <span id="tanggalwaktu"></span><br>
                 # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
-                # VPN Type -> <span id="vpn-list-text-info" style="font-weight:500;text-transform: uppercase">PPTP</span><br>
+                # VPN Type -> <span id="vpn-list-text-info" style="font-weight:600;text-transform: uppercase">PPTP</span><br>
                 ######################################################<br>
                 </span>
-                <span style="font-weight:500">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
+                <span style="font-weight:600">/interface <span id="vpn-list-text">pptp</span>-client</span><br>
                 add connect-to="<span id="vpn-ip-text">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1">VPN-GAME</span>" user="<span id="vpn-username-text">******</span>" password="<span id="vpn-password-text">******</span>" comment="<span id="vpn-name-text4">VPN-GAME</span>"<br>
-                <span style="font-weight:500">/ip firewall nat</span><br>
+                <span style="font-weight:600">/ip firewall nat</span><br>
                 add chain=srcnat out-interface="<span id="vpn-name-text2">VPN-GAME</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-GAME</span>"<br>
-                <span style="font-weight:500">/ip route</span><br>
+                <span style="font-weight:600">/ip route</span><br>
                 add gateway="<span id="vpn-name-text3">VPN-GAME</span>" routing-mark=vpn-routing-game comment="<span id="vpn-name-text6">VPN-GAME</span>"<br>
                 <span id="ip-gateway-text" style="display:none">
-                <span style="font-weight:500">/ip route</span><br>
+                <span style="font-weight:600">/ip route</span><br>
                 add dst-address="<span id="vpn-ip-text2">x.x.x.x.x</span>" gateway="<span id="ip-gateway-game">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-GAME</span>"
                 </span>
-                <span style="font-weight:500">/ip firewall mangle</span>
+                <span style="font-weight:600">/ip firewall mangle</span>
                 <!-- MOBILE GAMES -->
                 <span id="ArenaOfValorMobile" style="display:none"><span style="color:#ff6600"># Arena Of Valor - Mobile</span><br>add action=mark-routing chain=prerouting comment="Arena Of Valor - Mobile" dst-port=10001-10094 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp<br>add action=mark-routing chain=prerouting dst-port=10080,17000 new-routing-mark=vpn-routing-game passthrough=no protocol=udp</span>
                 <span id="BooyaCapsaSusunMobile" style="display:none"><span style="color:#ff6600"># Booya Capsa Susun - Mobile</span><br>add action=mark-routing chain=prerouting comment="Booya Capsa Susun - Mobile" dst-port=7090-7100 new-routing-mark=vpn-routing-game passthrough=no protocol=tcp</span>
