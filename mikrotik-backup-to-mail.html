@@ -45,15 +45,15 @@
       a:link{color:#f60}
       a:visited{color:#f60}
       a:hover{color:#f60}
-      a:active{color:#f60}      button{align-self:flex-end;color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;margin-right:5px;width:150px;font-size:14px;font-weight:700;cursor:pointer;border-radius:5px;color:#fff}
+      a:active{color:#f60}      button{align-self:flex-end;color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;margin-right:5px;width:150px;font-size:14px;font-weight:700;cursor:pointer;border-radius:5px;color:#fff}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=checkbox]{margin-right:7px}
-      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;margin-bottom:12px;font-size:15px!important;border-radius:5px}
-      label{padding:5px 5px 5px 0;display:inline-block}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;margin-bottom:12px;font-size:14px!important;border-radius:5px}
+      label{padding-bottom:5px;display:inline-block; font-weight:500}
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right;border-radius:5px}
       input[type=submit]:hover{background-color:#45a049}
-      .list-output-content{height:513px;background:#fff;overflow:scroll;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
+      .list-output-content{height:452px;background:#fff;overflow:scroll;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
       .list-output-content{height:auto}
@@ -159,13 +159,13 @@
           </div>
           <div style="width:100%">
             <label>E-Mail User</label>
-            <input style='margin-top:5px' type="text" id="input-mail-user" value="backup.mikrotik.ros@gmail.com" placeholder="backup.mikrotik.ros@gmail.com">
+            <input type="text" id="input-mail-user" value="backup.mikrotik.ros@gmail.com" placeholder="backup.mikrotik.ros@gmail.com">
           </div>
           <div style="width:100%">
             <label>E-Mail Password</label>
-            <input style='margin-top:5px' type="text" id="input-mail-password" value="rhcylubiwfhxycee" placeholder="rhcylubiwfhxycee">
+            <input type="text" id="input-mail-password" value="rhcylubiwfhxycee" placeholder="rhcylubiwfhxycee">
           </div>
-          <div style="width:100%;margin-top:10px; margin-bottom:10px; border-top:5px solid #999"></div>
+          <div style="width:100%;margin-top:10px; margin-bottom:15px; border-top:5px solid #bbb"></div>
           <div style="width:100%">
             <label>Backup File Option</label>
             <select id="input-file-option" onchange="myFunctionInput()">
@@ -183,7 +183,7 @@
           </div>
           <div style="width:100%">
             <label>Send Backup File To Your E-Mail</label>
-            <input style='margin-top:5px' type="text" id="input-to-mail" value="" placeholder="your-mail@mail.com">
+            <input type="text" id="input-to-mail" value="" placeholder="your-mail@mail.com">
           </div>
           <div style="width:100%">
             <label>Router Description / E-Mail Title</label>
@@ -191,13 +191,13 @@
           </div>
           <div style="width:100%">
             <label >Scheduler Sending E-Mail</label><br><span style='color:#ff6600;font-size:13px'>d (day) : 1d, 3d, 7d, 14d, 20d, 30d</span>
-            <input style='margin-top:5px' type="text" id="input-scheduler" value="7d" placeholder="7d">
+            <input type="text" id="input-scheduler" value="7d" placeholder="7d">
           </div>
           <button id="disabled-button" style="margin-top:10px;" type="button" onclick="myFunctionInput()">Generate</button>
           <div style="clear: both;"></div>
         </div>
         <div class="content">
-          <span style="margin-left:2px; margin-top:10px">
+          <span style="margin-left:2px; margin-top:10px;font-weight:500">
           <b><span style="color:red"><i>Attention!</i></span> </b><span style="font-size:13px">We do not send your MikroTik backup file to our E-Mail, but you can use our E-Mail server to send the file to your E-Mail. if you don't like it you can use your own E-Mail server.</span>
           <br><br>
           Copy-Paste the Script to the Terminal</span>
