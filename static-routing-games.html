@@ -37,8 +37,8 @@
       #wrap{max-width:970px;margin:0 auto;padding:0 5px 0 5px}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{display:flex}
-      .content{float:right;width:65%;padding:10px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-right:1px solid #ccc;background:#eee;height:auto;border-radius:0 5px 5px 0}
-      .sidebar{float:left;width:35%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;padding:8px 10px 20px}
+      .content{float:right;width:65%;padding:15px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-right:1px solid #ccc;background:#eee;height:auto;border-radius:0 5px 5px 0}
+      .sidebar{float:left;width:35%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;padding:15px}
       .footer{padding-top:15px;padding-bottom:15px;clear:both;width:auto;font-size:13px;color:#ddd}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:5px;margin-top:10px}
@@ -65,7 +65,7 @@
       @media screen and (max-width:700px) {
       .list-output-content{height:auto;}
       .main-wrap{display:block}
-      .sidebar,.content{border-radius:5px;display:block;width:100%}
+      .sidebar,.content{border-radius:5px;display:block;width:100%; padding:10px}
       .sidebar{height:auto;margin-bottom:5px}
       .header h1{max-width:100%;justify-content:center}
 	  .header {border:none}	  
@@ -90,6 +90,7 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
+	  .sidebar, .content{padding:5px}	  
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
