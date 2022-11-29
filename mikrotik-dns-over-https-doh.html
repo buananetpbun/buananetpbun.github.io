@@ -37,8 +37,8 @@
       #wrap{max-width:750px;margin:0 auto;padding:0 5px 0 5px}
       .header{height:auto;width:100%;margin-top:0;margin-bottom:10px;border-top:1px solid #555}
       .main-wrap{background-color:#f60}
-      .content{float:left;width:600px;height:480px;padding:10px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd}
-      .sidebar{float:left;width:100%;height:auto;padding:10px;background-color:#ddd;border:1px solid #bbb;border-radius:5px;margin-top:5px}
+      .content{float:left;width:600px;height:480px;padding:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd}
+      .sidebar{float:left;width:100%;height:auto;padding:15px;background-color:#ddd;border:1px solid #bbb;border-radius:5px;margin-top:5px}
       .footer{font-size:13px;padding-top:10px;padding-bottom:15px;text-align:center;clear:both;width:auto;color:#ddd}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}
@@ -61,7 +61,8 @@
       table{font-family:arial,sans-serif;border-collapse:collapse;width:100%}
       td,th{border:1px solid #ddd;text-align:left;padding:8px}
 	  .mikrotik-logo {display:none}
-      @media screen and (max-width:768px) {
+      @media screen and (max-width:700px) {
+	  .sidebar, .content{padding:10px}	
       .header h1{max-width:100%;justify-content:center}
       .header{border:none}
       .logo-left a{margin-top:10px!important;font-size:23px}
@@ -85,6 +86,7 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
+	  .sidebar, .content{padding:5px}		  
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -199,7 +201,7 @@
           <option value="53">360 Secure DNS - 101.226.4.6</option>
           <option value="54">114DNS - 114.114.114.114 - Not Support DoH</option>
         </select>
-        <div class="list-output-content" style="margin-bottom:10px">
+        <div class="list-output-content">
           <table style="font-weight:normal">
             <tr style="background-color:#eee;font-weight:normal">
               <th colspan="2" style="background-color: #fff;">Protocol</th>
