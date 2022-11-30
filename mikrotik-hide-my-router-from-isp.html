@@ -47,7 +47,7 @@
       a:link{color:#f60}
       a:visited{color:#f60}
       a:hover{color:#f60}
-      a:active{color:#f60}      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:6px;width:130px;font-weight:700;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff;margin-bottom:5px}
+      a:active{color:#f60}      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:130px;font-weight:bold;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff;margin-bottom:5px; margin-right:5px}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;margin-bottom:5px;font-size:14px!important;border-radius:5px}
@@ -57,7 +57,7 @@
       .column{float:left;width:50%}
       .row:after{content:"";display:table;clear:both}
       .list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:10px;margin-top:10px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
-      .class-input{display:flex}
+      .class-input{display:flex;}
       .mac-input input,.mac-button button{display:inline-block;-webkit-appearance:none}
 	  .mikrotik-logo{display:none}
       @media screen and (max-width:768px) {
@@ -73,7 +73,7 @@
       .footer{font-size:13px}
       }
       @media screen and (max-width:600px) {
-      .class-input{float:left;width:100%!important;display:block}
+      .class-input{width:100% !important;display:block; margin-bottom:10px}
       .column{float:left;width:100%}
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
@@ -147,18 +147,18 @@
           <img style="margin-top:20px; margin-bottom:20px" src="./img/hide-info.png" alt="Italian Trulli">
         </div>
         <div class="class-input">
-          <div style="width:auto;margin-right:15px">
+          <div style="width:100%;margin-right:15px">
             <label><b>Interface (ether) to ISP</b></label><br>
             <input type="text" id="input-interface" value="" placeholder="ether1">
           </div>
-          <div style="width:auto;margin-right:15px;">
+          <div style="width:100%;margin-right:15px;">
             <label><b>Change Router Identity</b></label><br>
             <input type="text" id="input-identity" value="" placeholder="My Desktop PC">
           </div>
-          <div style="width:auto;">
+          <div style="width:100%;">
             <label><b>Change Router Mac Address</b></label><br>
             <span class="mac-input">
-            <input style="width:220px;" type="text" id="input-mac-address" value="" placeholder="52:E2:4F:28:8B:9F">
+            <input type="text" id="input-mac-address" value="" placeholder="52:E2:4F:28:8B:9F">
             </span>
             <span class="mac-button">
             <button  style="width:120px" type="button" onclick="genMAC()">Random MAC</button>
@@ -166,7 +166,6 @@
           </div>
         </div>
         <div style="clear:both"></div>
-        <div style="margin-top:15px">
           <label><b>More Hide Protection from Internet (WAN) Scanning</b></label><br>
           <div class="row">
             <div class="column">
@@ -196,7 +195,6 @@
               <label for="mikrotik-ipcloud">Block IP Cloud</label><br>
             </div>
           </div>
-        </div>
         <div style="margin-top:25px"></div>
         <button style="margin-top:-5px" type="button" onclick="myFunction()">Generate</button> 
         <button style="margin-top:-5px" type="button" onclick="selectElementContents(document.getElementById('list-output-r1'))">Copy Script</button> 
