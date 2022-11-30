@@ -59,8 +59,10 @@
       input[type=submit]:hover{background-color:#45a049}
       .list-output-content{height:300px;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
       .list-output-content2{height:auto;background-color:#f60;overflow:auto;overflow-x:auto;width:100%;padding:20px;margin-top:8px;border:2px solid #fff;color:#fff;font-family:montserrat,sans-serif;border-radius:5px}
+	  .input-msg-body {height:325px}
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
+	  .input-msg-body {height:120px}
       .list-output-content{height:auto}
 	  .list-output-content2{height:auto}
       .main-wrap{display:block}
@@ -89,6 +91,7 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
+	  .input-msg-body {height:120px}
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -154,7 +157,7 @@
           <input type="text" id="proxy-port" placeholder="8082" value="8082">
           <label><b>Expired Message</b><br><span style='color:#ff6600'>Can Use HMTL Tag</span> </label>
           <input type="text"  id="input-msg-title" placeholder="EXPIRED!" value="EXPIRED!">
-          <textarea  name="data" id="input-msg-body" style="height:325px">DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. PLEASE MAKE PAYMENT OF THE BILL THROUGH THE ACCOUNT WE PROVIDE. IN ORDER FOR THE INTERNET SERVICE TO REMAIN ACTIVE, IT IS REQUESTED TO MAKE A PAYMENT BEFORE THE DUE DATE OF EACH MONTH.</textarea>
+          <textarea  name="data" id="input-msg-body" class="input-msg-body">DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. PLEASE MAKE PAYMENT OF THE BILL THROUGH THE ACCOUNT WE PROVIDE. IN ORDER FOR THE INTERNET SERVICE TO REMAIN ACTIVE, IT IS REQUESTED TO MAKE A PAYMENT BEFORE THE DUE DATE OF EACH MONTH.</textarea>
           <input type="text"  id="input-msg-contact" placeholder="Contact Owner: +62 813-2222-3333" value="Contact Owner: +62 813-2222-3333">
         </div>
         <div class="content">
