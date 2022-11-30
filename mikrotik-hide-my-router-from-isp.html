@@ -85,7 +85,7 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
-	  .column{float:left;width:100%}
+
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -143,7 +143,8 @@
       </div>
       <div class="sidebar">
         <div style="margin-top:10px;">
-          <span style="color:red; font-weight:bold; font-size:15px;">Disclaimer!</span> We are not responsible for errors or damage or your router is locked due to deliberate or accidental factors, you should ask for help from a friend who understands trying it.
+                      <div style="font-size:13px;margin-bottom:20px; color:#666; justify-content:center"><span style="font-weight:700; font-size:14px; padding-left:6px; padding-right:6px; border-left:6px solid #555; border-right:6px solid #555; color:red;margin-right:5px ">DISCLAIMER</span> We are not responsible for any error, failure, damage or your router being locked due to intentional or accidental factors. all problems that occur with your router are your own problems and you must accept all the risks. if you <i><u>Agree</u></i> please continue.
+            </div>
           <div style="clear:both"></div>
           <img style="margin-top:20px; margin-bottom:20px" src="./img/hide-info.png" alt="Italian Trulli">
         </div>
@@ -179,18 +180,16 @@
               <label for="mikrotik-mac-server">Mac Server</label><br>
               <input type="checkbox" id="mikrotik-traceroute" >
               <label for="mikrotik-traceroute">Traceroute</label><br>
-            </div>
-            <div class="column">
               <input type="checkbox" id="mikrotik-rommon" >
               <label for="mikrotik-rommon">RoMON</label><br>
               <input type="checkbox" id="mikrotik-dns" >
-              <label for="mikrotik-dns">Open DNS</label><br>			
+              <label for="mikrotik-dns">Open DNS</label><br>
+            </div>
+            <div class="column">			  
               <input type="checkbox" id="mikrotik-proxy" >
               <label for="mikrotik-proxy">Open PROXY</label><br>
               <input type="checkbox" id="mikrotik-btest" >
-              <label for="mikrotik-btest">BTest</label><br>
-            </div>
-            <div class="column">			  
+              <label for="mikrotik-btest">BTest</label><br>		  
               <input type="checkbox" id="mikrotik-snmp" >
               <label for="mikrotik-snmp">SNMP</label><br>			
               <input type="checkbox" id="mikrotik-thedude" >
