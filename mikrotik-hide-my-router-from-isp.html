@@ -48,7 +48,7 @@
       a:visited{color:#f60}
       a:hover{color:#f60}
       a:active{color:#f60}      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:130px;font-weight:bold;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff;margin-bottom:5px; margin-right:5px}
-      button:hover{background-color:#ccc;color:#111}
+      button:hover{background-color:#ccc;color:#292929}
       .row:after{content:"";display:table;clear:both}
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;margin-bottom:5px;font-size:14px!important;border-radius:5px}
       label{padding:5px 5px 5px 0;display:inline-block}
@@ -73,8 +73,8 @@
       .footer{font-size:13px}
       }
       @media screen and (max-width:600px) {
+	  .column{float:left;width:50%}
       .class-input{width:100% !important;display:block; margin-bottom:10px}
-      .column{float:left;width:100%}
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
       .logo-left img{height:auto;width:40px;margin-top:-5px!important}
@@ -85,6 +85,7 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
+	  .column{float:left;width:100%}
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -171,31 +172,31 @@
 		  <div class="row">
             <div class="column">
               <input type="checkbox" id="mikrotik-winbox" >
-              <label for="mikrotik-winbox">Block Winbox Scan</label><br>
+              <label for="mikrotik-winbox">Winbox Scan</label><br>
               <input type="checkbox" id="mikrotik-discovery" >
-              <label for="mikrotik-discovery">Block Neighbor Discovery</label><br>
+              <label for="mikrotik-discovery">Neighbor Discovery</label><br>
               <input type="checkbox" id="mikrotik-mac-server" >
-              <label for="mikrotik-mac-server">Block Mac Server</label><br>
+              <label for="mikrotik-mac-server">Mac Server</label><br>
               <input type="checkbox" id="mikrotik-traceroute" >
-              <label for="mikrotik-traceroute">Block Traceroute</label><br>
+              <label for="mikrotik-traceroute">Traceroute</label><br>
             </div>
             <div class="column">
               <input type="checkbox" id="mikrotik-rommon" >
-              <label for="mikrotik-rommon">Block RoMON</label><br>
+              <label for="mikrotik-rommon">RoMON</label><br>
               <input type="checkbox" id="mikrotik-dns" >
-              <label for="mikrotik-dns">Block Open DNS</label><br>			
+              <label for="mikrotik-dns">Open DNS</label><br>			
               <input type="checkbox" id="mikrotik-proxy" >
-              <label for="mikrotik-proxy">Block Open PROXY</label><br>
+              <label for="mikrotik-proxy">Open PROXY</label><br>
               <input type="checkbox" id="mikrotik-btest" >
-              <label for="mikrotik-btest">Block BTest</label><br>
+              <label for="mikrotik-btest">BTest</label><br>
             </div>
             <div class="column">			  
               <input type="checkbox" id="mikrotik-snmp" >
-              <label for="mikrotik-snmp">Block SNMP</label><br>			
+              <label for="mikrotik-snmp">SNMP</label><br>			
               <input type="checkbox" id="mikrotik-thedude" >
-              <label for="mikrotik-thedude">Block The Dude</label><br>
+              <label for="mikrotik-thedude">The Dude</label><br>
               <input type="checkbox" id="mikrotik-ipcloud" >
-              <label for="mikrotik-ipcloud">Block IP Cloud</label><br>
+              <label for="mikrotik-ipcloud">IP Cloud</label><br>
             </div>
           </div>
 		  <div style="border-bottom:1px solid #bbb; margin-top:2px;"></div>
