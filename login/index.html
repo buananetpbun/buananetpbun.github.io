@@ -17,34 +17,42 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-    <div id="mymenu" class="mymenu">
-      <div class="mikrotik-logo" >
-        <img src="../img/made-for-mikrotik.png">
-      </div>
-      <ul>
-        <li><a href="https://buananetpbun.github.io">HOME</a></li>
-        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-        <li><a href="javascript:callmodal()">DONATE</a></li>
-        <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
-      </ul>
-    </div>
-    <div id="myProfile" class="modal-profile">
-      <div id="homepage" style="width: 700px;" class="modal-content">
-        <div class="avatar">
-          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+    <div id="wrap">
+      <div id="mymenu" class="mymenu">
+        <div class="mikrotik-logo" >
+          <img src="../img/made-for-mikrotik.png">
         </div>
-        <span style="font-weight:bold; font-size:20px; color:#fff"><span id="profile-email" style="color:#fff"></span></span>
-        <br><br>
-        <span style="font-weight:bold; font-size:14px">E-MAIL AUTH <span style="margin-left:42px;margin-right:6px">:</span> <span id="email_Verified"></span></span> <button id="verify" style="width:100px !important; padding:5px; margin-left:5px; font-weight:bold;font-size:14px; background-color:red">Verify E-Mail</button><br><br>
-        <span style="font-weight:bold;font-size:14px">E-MAIL IDENTIFIER <span style="margin-left:10px; margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span><br><br>
-        <span style="font-weight:bold; font-size:14px">USER UID <span style="margin-left:70px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="user-id"></span></span><br><br>
-        <span style="font-weight:bold; font-size:14px">YOUR NAME <span style="margin-left:48px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="your-name"></span></span>
-        <br><br><br>
-        <button  id="back-home" onclick="history.back()">⬅ Back</button>
-        <button  id="edit-user" onclick="CallModalChangeProfileShow()">Edit Profile</button>
-        <button  onclick="CallModalChangePasswordShow()">Set Password</button>
-        <button  id="delete-user" onclick="DeleteMember()">Delete Account</button>
-        <button  id="signout">Logout</button>
+        <ul>
+          <li><a href="https://buananetpbun.github.io">HOME</a></li>
+          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+          <li><a href="javascript:callmodal()">DONATE</a></li>
+          <li><a target="_blank" href="https://fb.me/buananetmikrotik">CONTACT</a></li>
+        </ul>
+      </div>
+      <div id="myProfile" class="modal-profile">
+        <div id="homepage" style="width: 700px;" class="modal-content">
+          <div class="avatar">
+            <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+          </div>
+          <span style="font-weight:bold; font-size:20px; color:#fff"><span id="profile-email" style="color:#fff"></span></span>
+          <br><br>
+          <span style="font-weight:bold; font-size:14px">E-MAIL AUTH <span style="margin-left:42px;margin-right:6px">:</span> <span id="email_Verified"></span></span> <button id="verify" style="width:100px !important; padding:5px; margin-left:5px; font-weight:bold;font-size:14px; background-color:red">Verify E-Mail</button><br><br>
+          <span style="font-weight:bold;font-size:14px">E-MAIL IDENTIFIER <span style="margin-left:10px; margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span><br><br>
+          <span style="font-weight:bold; font-size:14px">USER UID <span style="margin-left:70px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="user-id"></span></span><br><br>
+          <span style="font-weight:bold; font-size:14px">YOUR NAME <span style="margin-left:48px;margin-right:6px">:</span> <span style="color:#ff6600;font-weight:bold;" id="your-name"></span></span>
+          <br><br><br>
+          <button  id="back-home" onclick="history.back()">⬅ Back</button>
+          <button  id="edit-user" onclick="CallModalChangeProfileShow()">Edit Profile</button>
+          <button  onclick="CallModalChangePasswordShow()">Set Password</button>
+          <button  id="delete-user" onclick="DeleteMember()">Delete Account</button>
+          <button  id="signout">Logout</button>
+          <div style="margin-top:30px; padding-top:10px;width:100%;color:#888; border-top:1px solid #555;font-weight:normal;font-size:12px">
+            © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>
+          </div>
+          <div style="margin-top:1px; color:#666; font-size:11px;font-weight:normal">
+            Project by Agus Ramadhani - Pangkalan Bun, Indonesia 74112</a>
+          </div>
+        </div>
       </div>
     </div>
     <div id="myChangePassword" class="modal-change-password">

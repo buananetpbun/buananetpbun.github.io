@@ -40,7 +40,7 @@
       .content{float:right;width:60%;padding:15px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;height:auto;color:#333;border-radius:0 5px 5px 0}
       .sidebar{float:left;width:40%;background-color:#ddd;border:1px solid #bbb;height:auto;color:#333;border-radius:5px 0 0 5px;padding:15px}
       .footer{font-size:13px;padding-top:15px;padding-bottom:15px;clear:both;width:auto}
-	  label {font-weight:600; font-size:14px;}
+      label {font-weight:600; font-size:14px;}
       h2{color:#f60}
       h1{color:#ddd;font-size:22px;margin-bottom:10px;margin-top:10px}
       a:link{color:#f60}
@@ -94,31 +94,31 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>  
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
-    <div id="wrap"> 
- <div id="mymenu" class="mymenu">
-      <div class="mikrotik-logo" >
-        <img alt="mikrotik" src="./img/made-for-mikrotik.png">
-      </div>
-      <ul>
-        <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
-        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-        <li><a href="javascript:callmodal()">DONATE</a></li>
-        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
-      </ul>
-      <div class="show-homepage-menu">
-        <div id="homepage" class="hide">
-          <button style="width:90px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
-          <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
-          <span class="hide-homepage">
-          <span class="avatar">
-          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
-          </span>		
-          <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-          <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
-          </span>
+    <div id="wrap">
+      <div id="mymenu" class="mymenu">
+        <div class="mikrotik-logo" >
+          <img alt="mikrotik" src="./img/made-for-mikrotik.png">
+        </div>
+        <ul>
+          <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
+          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+          <li><a href="javascript:callmodal()">DONATE</a></li>
+          <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        </ul>
+        <div class="show-homepage-menu">
+          <div id="homepage" class="hide">
+            <button style="width:90px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+            <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+            <span class="hide-homepage">
+            <span class="avatar">
+            <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+            </span>		
+            <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+            <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
       <div class="logo">
         <div class="logo-right" style="float:right;">
           <div style="float:right; margin-right:5px;">
@@ -151,7 +151,7 @@
             </div>
             <div style="float:left; width:100%; margin-left:10px">
               <label>RouterOS Version</label>
-              <select style="margin-top:5px; width:100%" id="ros-list" onchange="myFunctionOuput()">	
+              <select style="margin-top:5px; width:100%" id="ros-list" onchange="myFunctionOuput()">
                 <option value="ros6">RouterOS v6.xx</option>
                 <option value="ros7">RouterOS v7.xx</option>
               </select>
@@ -313,8 +313,11 @@
         /ip firewall mangle remove [find comment="LB By BNT"]<br>
         /ip firewall address-list remove [find comment="LB By BNT"]<br> 
         /routing table remove [find comment="LB By BNT"]
-        <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555;">
+        <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555; width:100%">
           © Copyright 2020-<span id="year">2022</span> <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a>
+        </div>
+        <div style="margin-top:1px; color:#888; font-size:11px">
+          buananetpbun.github.io project by Agus Ramadhani - Pangkalan Bun, Indonesia 74112</a>
         </div>
       </div>
     </div>
