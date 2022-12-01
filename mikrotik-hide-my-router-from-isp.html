@@ -58,7 +58,7 @@
       .row:after{content:"";display:table;clear:both}
       .list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:10px;margin-top:10px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
       .class-input{display:flex;}
-	  .mikrotik-logo{display:none}
+      .mikrotik-logo{display:none}
       @media screen and (max-width:768px) {
       .header h1{max-width:100%;justify-content:center;border-top:0!important}
       .header{border:none}
@@ -72,7 +72,7 @@
       .footer{font-size:13px}
       }
       @media screen and (max-width:600px) {
-	  .column{float:left;width:50%}
+      .column{float:left;width:50%}
       .class-input{width:100% !important;display:block; margin-bottom:10px}
       h1{font-size:19px}
       .logo-left a{margin-top:10px!important;font-size:20px}
@@ -84,7 +84,6 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
-
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -141,12 +140,9 @@
         <h1><span style="color:#ff6600 !important">MIKROTIK NINJA</span>: HIDE ROUTERBOARD INFO FROM ISP / WAN SCANNING</h1>
       </div>
       <div class="sidebar">
-        <div style="margin-top:10px;">
-                      <div style="font-size:13px;margin-bottom:20px; color:#666; justify-content:center"><span style="font-weight:700; font-size:14px; padding-left:6px; padding-right:6px; border-left:6px solid #555; border-right:6px solid #555; color:red;margin-right:5px ">DISCLAIMER</span> We are not responsible for any error, failure, damage or your router being locked due to intentional or accidental factors. all problems that occur with your router are your own problems and you must accept all the risks. if you <i><u>Agree</u></i> please continue.
-            </div>
-          <div style="clear:both"></div>
-          <img style="margin-top:27px; margin-bottom:20px" src="./img/hide-info.png" alt="Italian Trulli">
-        </div>
+        <span style="font-weight:700; font-size:14px; padding-left:6px; padding-right:6px; border-left:6px solid #555; border-right:6px solid #555; color:red;margin-right:5px ">DISCLAIMER</span> We are not responsible for any error, failure, damage or your router being locked due to intentional or accidental factors. all problems that occur with your router are your own problems and you must accept all the risks. if you <i><u>Agree</u></i> please continue.
+        <div style="clear:both"></div>
+        <img style="margin-top:10px; margin-bottom:10px" src="./img/hide-info.png" alt="Italian Trulli">
         <div class="class-input">
           <div style="width:100%;margin-right:10px">
             <label><b>Interface (ether) to ISP</b></label><br>
@@ -160,42 +156,42 @@
             <label><b>Change Router Mac Address</b></label><br>
             <span style="display:flex">
             <input style="width:100%;margin-right:2px" type="text" id="input-mac-address" value="" placeholder="52:E2:4F:28:8B:9F">
-			<button style="width:100px" type="button" onclick="genMAC()">Random</button>
+            <button style="width:100px" type="button" onclick="genMAC()">Random</button>
             </span>
           </div>
         </div>
         <div style="margin-top:10px;clear:both"></div>
-          <label><b>More Hidden Protections from Internet (WAN) Scanning</b></label><br>
-          <div style="border-bottom:1px solid #bbb; margin-top:2px;  margin-bottom:5px"></div>
-		  <div class="row">
-            <div class="column">
-              <input type="checkbox" id="mikrotik-winbox" >
-              <label for="mikrotik-winbox">Block Winbox Scan</label><br>
-              <input type="checkbox" id="mikrotik-discovery" >
-              <label for="mikrotik-discovery">Block Neighbor Disc.</label><br>
-              <input type="checkbox" id="mikrotik-mac-server" >
-              <label for="mikrotik-mac-server">Block Mac Server</label><br>
-              <input type="checkbox" id="mikrotik-traceroute" >
-              <label for="mikrotik-traceroute">Block Traceroute</label><br>
-              <input type="checkbox" id="mikrotik-rommon" >
-              <label for="mikrotik-rommon">Block RoMON</label><br>
-              <input type="checkbox" id="mikrotik-dns" >
-              <label for="mikrotik-dns">Block Open DNS</label><br>
-            </div>
-            <div class="column">			  
-              <input type="checkbox" id="mikrotik-proxy" >
-              <label for="mikrotik-proxy">Block Open PROXY</label><br>
-              <input type="checkbox" id="mikrotik-btest" >
-              <label for="mikrotik-btest">Block BTest</label><br>		  
-              <input type="checkbox" id="mikrotik-snmp" >
-              <label for="mikrotik-snmp">Block SNMP</label><br>			
-              <input type="checkbox" id="mikrotik-thedude" >
-              <label for="mikrotik-thedude">Block The Dude</label><br>
-              <input type="checkbox" id="mikrotik-ipcloud" >
-              <label for="mikrotik-ipcloud">Block IP Cloud</label><br>
-            </div>
+        <label><b>More Hidden Protections from Internet (WAN) Scanning</b></label><br>
+        <div style="border-bottom:1px solid #bbb; margin-top:2px;  margin-bottom:5px"></div>
+        <div class="row">
+          <div class="column">
+            <input type="checkbox" id="mikrotik-winbox" >
+            <label for="mikrotik-winbox">Block Winbox Scan</label><br>
+            <input type="checkbox" id="mikrotik-discovery" >
+            <label for="mikrotik-discovery">Block Neighbor Disc.</label><br>
+            <input type="checkbox" id="mikrotik-mac-server" >
+            <label for="mikrotik-mac-server">Block Mac Server</label><br>
+            <input type="checkbox" id="mikrotik-traceroute" >
+            <label for="mikrotik-traceroute">Block Traceroute</label><br>
+            <input type="checkbox" id="mikrotik-rommon" >
+            <label for="mikrotik-rommon">Block RoMON</label><br>
+            <input type="checkbox" id="mikrotik-dns" >
+            <label for="mikrotik-dns">Block Open DNS</label><br>
           </div>
-		  <div style="border-bottom:1px solid #bbb; margin-top:2px;"></div>
+          <div class="column">			  
+            <input type="checkbox" id="mikrotik-proxy" >
+            <label for="mikrotik-proxy">Block Open PROXY</label><br>
+            <input type="checkbox" id="mikrotik-btest" >
+            <label for="mikrotik-btest">Block BTest</label><br>		  
+            <input type="checkbox" id="mikrotik-snmp" >
+            <label for="mikrotik-snmp">Block SNMP</label><br>			
+            <input type="checkbox" id="mikrotik-thedude" >
+            <label for="mikrotik-thedude">Block The Dude</label><br>
+            <input type="checkbox" id="mikrotik-ipcloud" >
+            <label for="mikrotik-ipcloud">Block IP Cloud</label><br>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid #bbb; margin-top:2px;"></div>
         <div style="margin-top:25px"></div>
         <button style="margin-top:-5px" type="button" onclick="myFunction()">Generate</button> 
         <button style="margin-top:-5px" type="button" onclick="selectElementContents(document.getElementById('list-output-r1'))">Copy Script</button> 
@@ -281,8 +277,8 @@
         © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
         <div style="margin-top:1px; color:#888; font-size:11px">
           This project by Agus Ramadhani - PangkalanBun, Kalteng - Indonesia</a>
-        </div>			
-      </div>  
+        </div>
+      </div>
     </div>
     <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen">
       <div id="center-screen" class="center-screen">Great! One Step Again <br>For Activate Your Member<br><button id="verify">VERIFY YOUR E-MAIL NOW</button></div>
