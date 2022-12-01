@@ -58,7 +58,6 @@
       .row:after{content:"";display:table;clear:both}
       .list-output-content{height:auto;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:10px;margin-top:10px;border:1px solid #ccc;border-radius:5px;white-space:nowrap}
       .class-input{display:flex;}
-      .mac-input input,.mac-button button{display:inline-block;-webkit-appearance:none}
 	  .mikrotik-logo{display:none}
       @media screen and (max-width:768px) {
       .header h1{max-width:100%;justify-content:center;border-top:0!important}
@@ -146,24 +145,22 @@
                       <div style="font-size:13px;margin-bottom:20px; color:#666; justify-content:center"><span style="font-weight:700; font-size:14px; padding-left:6px; padding-right:6px; border-left:6px solid #555; border-right:6px solid #555; color:red;margin-right:5px ">DISCLAIMER</span> We are not responsible for any error, failure, damage or your router being locked due to intentional or accidental factors. all problems that occur with your router are your own problems and you must accept all the risks. if you <i><u>Agree</u></i> please continue.
             </div>
           <div style="clear:both"></div>
-          <img style="margin-top:20px; margin-bottom:20px" src="./img/hide-info.png" alt="Italian Trulli">
+          <img style="margin-top:27px; margin-bottom:20px" src="./img/hide-info.png" alt="Italian Trulli">
         </div>
         <div class="class-input">
-          <div style="width:100%;margin-right:15px">
+          <div style="width:100%;margin-right:10px">
             <label><b>Interface (ether) to ISP</b></label><br>
             <input type="text" id="input-interface" value="" placeholder="ether1">
           </div>
-          <div style="width:100%;margin-right:15px;">
+          <div style="width:100%;margin-right:10px;">
             <label><b>Change Router Identity</b></label><br>
             <input type="text" id="input-identity" value="" placeholder="My Desktop PC">
           </div>
           <div style="width:100%;">
             <label><b>Change Router Mac Address</b></label><br>
-            <span class="mac-input">
-            <input type="text" id="input-mac-address" value="" placeholder="52:E2:4F:28:8B:9F">
-            </span>
-            <span class="mac-button">
-            <button  style="width:120px" type="button" onclick="genMAC()">Random MAC</button>
+            <span style="display:flex">
+            <input style="width:100%;margin-right:2px" type="text" id="input-mac-address" value="" placeholder="52:E2:4F:28:8B:9F">
+			<button style="width:120px" type="button" onclick="genMAC()">Random</button>
             </span>
           </div>
         </div>
