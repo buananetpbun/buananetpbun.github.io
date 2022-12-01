@@ -37,8 +37,8 @@
       #wrap{max-width:900px;margin:0 auto;padding:0 5px}
       .main-wrap{display:flex}
       .header{height:auto;width:100%;margin-top:5px;margin-bottom:5px;border-top:1px solid #555}
-      .main-sidebar{float:left;width:50%;height:475px;padding:10px;padding-left:15px;padding-top:10px;background-color:#ddd;border-left:1px solid #bbb;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-radius:5px 0 0 5px}
-      .content{float:right;width:50%;height:475px;padding:10px;padding-left:5px;padding-right:15px;padding-top:20px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
+      .main-sidebar{float:left;width:50%;height:auto;padding:10px;padding-left:15px;padding-top:10px;background-color:#ddd;border-left:1px solid #bbb;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-radius:5px 0 0 5px}
+      .content{float:right;width:50%;height:auto;padding:10px;padding-left:5px;padding-right:15px;padding-top:20px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-right:1px solid #bbb;background:#ddd;border-radius:0 5px 5px 0}
       .sidebar{float:left;width:50%;height:auto;border-right:1px solid #aaa;padding-right:15px}
       .sidebar2{float:left;width:50%;height:auto;padding-left:15px}
       .footer{font-size:13px;padding-top:10px;padding-bottom:15px;text-align:left;clear:both;width:auto;color:#ddd}
@@ -59,7 +59,7 @@
       table,tr,td{border:none}
       table{border-collapse:collapse;width:100%;font-size:14px;height:auto}
       td,th{border:1px solid #ddd;text-align:left;padding:7px}
-      .formula{margin-top:30px}
+      .formula{margin-top:20px}
       .mikrotik-logo{display:none}
       @media screen and (max-width:1024px) {
       .main-sidebar,.content{height:auto}
@@ -169,14 +169,13 @@
               <label>Actual Burst Time (s)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
             </div>
-            <div style="margin-top:10px; font-size:14px">
-               Burst Time Duration:
-              <div style="display:none;clear:both; margin-top:5px">
-                <span style='color: Crimson'>BD</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-up-burst-duration" style='color: Crimson'>6</span> second<br>
+            <div style="margin-top:15px; font-size:12px; border:1px solid orange; background-color:#F5D76E; padding:5px;font-weight:600; border-radius:5px">
+               <span style="font-weight:bold">Actual Burst Time Duration:</span>
+              <div style="clear:both; margin-top:5px">
+                <span style='color: Crimson'>ABT</span> = ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span> = <span id="for-up-burst-duration" style='color: Crimson'>6</span>s<br>
               </div>
-              <div style='font-size:13px; font-weight:bold;margin-top:5px'>
-                <span style='color: green;' id="new-burst-up">512K</span> to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> in <span id="for-up-burst-duration2" style='color: Crimson'>6</span> seconds<br>
+              <div style='font-size:12px; font-weight:bold;margin-top:5px'>
+                <span style='color: green;' id="new-burst-up">512K</span> up to <span id="for-up-burst-limit2" style='color: #01A3DF'>1M</span> for <span id="for-up-burst-duration2" style='color: Crimson'>6</span> seconds<br>
               </div>
             </div>
           </div>
@@ -196,23 +195,22 @@
               <label>Actual Burst Time (s)</label><br>
               <input onkeydown="upperCaseF(this)" type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
             </div>
-            <div style="margin-top:10px; font-size:14px">
-               Burst Time Duration:
-              <div style="display:none; clear:both; margin-top:5px">
-                <span style='color: Crimson;'>BD</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="for-down-burst-duration" style='color: Crimson'>6</span> second<br>
+            <div style="margin-top:15px; font-size:12px; border:1px solid orange; background-color:#F5D76E; padding:5px;font-weight:600; border-radius:5px">
+              <span style="font-weight:bold">Actual Burst Time Duration:</span>
+              <div style="clear:both; margin-top:5px">
+                <span style='color: Crimson;'>ABT</span> = ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span> = <span id="for-down-burst-duration" style='color: Crimson'>6</span>s<br>
               </div>
-              <div style='font-size:13px; font-weight:bold;margin-top:5px;'>
-                <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> in <span id="for-down-burst-duration2" style='color: Crimson'>6</span> seconds<br>
+              <div style='font-size:12px; font-weight:bold;margin-top:5px;'>
+                <span style='color:green;' id="new-burst-down">1M</span> up to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> for <span id="for-down-burst-duration2" style='color: Crimson'>6</span> seconds<br>
               </div>
             </div>
           </div>
           <div style="clear:both"></div>
           <div class="formula">
-            <div style="border-radius:5px; background-color:#ccc;padding:10px; font-size:12px; font-weight:700;">
-              <span style="font-size:12px"><b>Actual Burst Time Formula:</b></span><br>
+            <div style="border-radius:5px; background-color:#ccc;padding:7px; font-size:12px; font-weight:600;">
+              <span style="font-size:12px"><b>Actual Burst Time ( ABT ) Formula:</b></span><br>
               <div style='color: #555; margin-bottom:3px'>---------------------------------------------------------------------</div>
-              <span style='color: Crimson'>Actual Burst Time</span> = <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> / <span style='color: #01A3DF'>Burst Limit</span><br>
+              <span style='color: Crimson'>Actual Burst Time</span> = ( <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> ) / <span style='color: #01A3DF'>Burst Limit</span><br>
               <div style='color: #555'>---------------------------------------------------------------------</div>
               <div style="margin-top:5px; font-weight:normal">
                 <span style='color: #555; font-size:11px'>Burst Threshold = Max Limit * 3/4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='text-align:right;color: #555; font-size:11px'>K = Kbps  /  M = Mbps</span><br>
