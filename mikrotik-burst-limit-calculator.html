@@ -170,7 +170,7 @@
               <label>Actual Burst Time (s)</label>
               <input onkeydown="upperCaseF(this)" type="text" id="up-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
             </div>
-            <div style="margin-top:14px; font-size:12px; border:1px solid orange; background-color:#F5D76E; padding:5px;font-weight:600; border-radius:5px">
+            <div style="margin-top:14px; font-size:12px; border:1px solid orange; background-color:#F5D76E; padding:5px;font-weight:bold; border-radius:5px">
                <span style="font-weight:bold">Actual Burst Time Duration:</span>
               <div style="clear:both; margin-top:5px">
                 ( <span id="for-up-burst-threshold" style='color: #191970'>384K</span> * <span id="for-up-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-up-burst-limit" style='color: #01A3DF'>1M</span> = <span id="for-up-burst-duration" style='color: Crimson'>6</span>s<br>
@@ -196,19 +196,19 @@
               <label>Actual Burst Time (s)</label><br>
               <input onkeydown="upperCaseF(this)" type="text" id="down-interval-bonus" style='color: Crimson' value="6" placeholder="6" onkeypress="return event.charCode != 32" onkeyup="myFunction()">
             </div>
-            <div style="margin-top:14px; font-size:12px; border:1px solid orange; background-color:#F5D76E; padding:5px;font-weight:600; border-radius:5px">
-              <span style="font-weight:bold">Actual Burst Time Duration:</span>
+            <div style="margin-top:14px; font-size:12px; border:1px solid orange; background-color:#F5D76E; padding:5px;font-weight:bold; border-radius:5px">
+              Actual Burst Time Duration:
               <div style="clear:both; margin-top:5px">
                 ( <span id="for-down-burst-threshold" style='color: #191970'>750K</span> * <span id="for-down-burst-time" style='color: DarkViolet'>16s</span> ) / <span id="for-down-burst-limit" style='color: #01A3DF'>2M</span> = <span id="for-down-burst-duration" style='color: Crimson'>6</span>s<br>
               </div>
-              <div style='font-size:12px; font-weight:bold;margin-top:5px;'>
+              <div style='font-size:12px; margin-top:5px;'>
                 <span style='color:green;' id="new-burst-down">1M</span> to <span id="for-down-burst-limit2" style='color: #01A3DF'>2M</span> for <span id="for-down-burst-duration2" style='color: Crimson'>6</span> seconds<br>
               </div>
             </div>
           </div>
           <div style="clear:both"></div>
           <div class="formula">
-            <div style="border-radius:5px; background-color:#ccc;padding:10px; font-size:11px; font-weight:600;">
+            <div style="border-radius:5px; background-color:#ccc;padding:10px; font-size:11px; font-weight:bold;">
               <span style="font-size:11px"><b>Actual Burst Time Formula:</b></span><br>
               <div style='color: #555; margin-bottom:3px'>----------------------------------------------------------------------------------</div>
               <span style='color: Crimson'>Actual Burst Time</span> = ( <span style='color: #191970'>Burst Threshold</span> * <span style='color: DarkViolet'>Burst Time</span> ) / <span style='color: #01A3DF'>Burst Limit</span><br>
@@ -221,14 +221,16 @@
           </div>
         </div>
         <div class="content">
-          <div style="margin-left:2px;font-size:14px; font-weight:700;text-align:left">BURST RESULT FOR <span style="color:#ff6600">SIMPLE QUEUE</span> OR <span style="color:#ff6600">QUEUE TREE</span></div>
           <div class="list-output-content" style="margin-bottom:10px">
             <table style="font-weight:normal">
               <thead>
+			      <tr style="background-color: #ddd;" >
+                  <th colspan="4" style="background-color: #ddd; text-align:left"><b>BURST LIMIT FOR <span style="color:#ff6600">QUEUE SIMPLE</span> OR <span style="color:#ff6600">QUEUE TREE</span></b></th>
+                </tr>
                 <tr style="background-color: #eee;font-weight:normal">
                   <th colspan="2" style="background-color: #fff;">TAB GENERAL</th>
-                  <th style="background-color: #ddd;" >UPLOAD</th>
-                  <th style="background-color: #ddd;">DOWNLOAD</th>
+                  <th style="background-color: #eee;" >UPLOAD</th>
+                  <th style="background-color: #eee;">DOWNLOAD</th>
                 </tr>
               </thead>
               <tbody>
@@ -253,8 +255,8 @@
                 </tr>
                 <tr>
                   <th colspan="2" style="background-color: #fff; font-weight:bold">TAB ADVANCED</th>
-                  <td style="background-color: #ddd;font-weight:bold">UPLOAD</td>
-                  <td style="background-color: #ddd;font-weight:bold">DOWNLOAD</td>
+                  <td style="background-color: #eee;font-weight:bold">UPLOAD</td>
+                  <td style="background-color: #eee;font-weight:bold">DOWNLOAD</td>
                 </tr>
                 <th colspan="2" style="background-color: #eee; font-weight:normal">Limit At</th>
                 <td id="result-up-limit-at" style='font-weight:bold;color: #A01803' >256K</td>
