@@ -56,13 +56,14 @@ input[type=submit]:hover{background-color:#45a049}
 .modal-content{line-height:1.4;border-radius:5px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;color:#ddd;margin:auto;padding:20px;border:1px solid #444;width:350px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19);font-weight:700}
 .modal-content p{padding:0;margin:5px 5px 0 17px;display:list-item;line-height:2;list-style:disc}
 .modal-content h2{color:#f60;float:left}
+.modal-content-profile{line-height:1.4;border-radius:5px;background:#fff;color:#292929;margin:auto;padding:20px;border:1px solid #444;width:350px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19);font-weight:700}
 .close{color:#aaa;float:right;font-size:20px;font-weight:700;margin-top:-25px;margin-right:-15px}
 .close:hover,.close:focus{color:orange;text-decoration:none;cursor:pointer}
 .myButtonGoogle{display:flex;justify-content:space-between;align-items:center;width:auto;cursor:pointer;font-weight:400;float:right}
 .myButtonGoogle :hover{opacity:.7}
 .myButtonGoogle img{width:32px;padding:0;margin:0}
 .myButtonGoogle .text{padding:0;margin:0}
-.avatar img{float:right;display:flex;width:130px;height:130px;background-size:cover;background-repeat:no-repeat;background-position:center center;-webkit-border-radius:99em;-moz-border-radius:99em;border-radius:99em;border:4px solid #999}
+.avatar img{float:right;display:flex;width:130px;height:130px;background-size:cover;background-repeat:no-repeat;background-position:center center;-webkit-border-radius:99em;-moz-border-radius:99em;border-radius:99em;border:4px solid #292929}
 .mikrotik-logo{display:none}
 @media screen and (max-width:700px) {
 .mymenu{width:98.5%!important}
