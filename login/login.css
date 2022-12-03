@@ -368,7 +368,7 @@ display:none;
 	}
 	
 .tooltip{position:relative;display:inline-block; font-size:13px}
-.tooltip .tooltiptext{visibility:hidden;width:200px;background-color:#555;color:#fff;text-align:center;border-radius:6px;padding:10px;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:30px;opacity:0.9;transition:opacity .3s}
+.tooltip .tooltiptext{visibility:hidden;width:200px;background-color:#555;color:#fff;text-align:center;border-radius:6px;padding:10px;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:15px;opacity:0.9;transition:opacity .3s}
 .tooltiptext2{visibility:hidden;width:150px;background-color:#555;color:#fff;text-align:center;border-radius:6px;padding:10px;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:-60px;opacity:0.9;transition:opacity .3s}
 .tooltip .tooltiptext::after{content:"";position:absolute;top:100%;left:50%;margin-left:-50px;border-width:5px;border-style:solid;border-color:#555 transparent transparent}
 .tooltip .tooltiptext2::after{content:"";position:absolute;top:100%;left:50%;margin-left:-20px;border-width:5px;border-style:solid;border-color:#555 transparent transparent}
