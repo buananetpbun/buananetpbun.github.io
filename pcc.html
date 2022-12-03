@@ -53,7 +53,6 @@
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .list-output-content{height:593px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
-      .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
       .list-output-content{height:auto}
       .main-wrap{display:block}
@@ -160,11 +159,15 @@
           <div style="display:flex">
             <div style="width:100%;">
               <label>Local Options</label>
-              <select disabled style="margin-top:5px; width:100%" id="local-list" onchange="LocalAddressOption()">
+               <span style="font-weight:normal; font-size:14px">
+			   <span class="tooltip"><span class="tooltiptext2">Under Construction !!</span><span style="color:green; font-size:18px;cursor:help">🛈</span></span>
+			   
+			   <select disabled style="margin-top:5px; width:100%" id="local-list" onchange="LocalAddressOption()">
                 <option value="local-list1">Address List</option>
                 <option value="local-list2">In. Interface</option>
                 <option value="local-list3">In. Interface List</option>
               </select>
+			  
             </div>
             <div style="width:100%;margin-left:10px;">
               <label>Interface Name</label>
