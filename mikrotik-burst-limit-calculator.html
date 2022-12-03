@@ -62,10 +62,6 @@
       td,th{border:1px solid #ddd;text-align:left;padding:7px}
       .formula{margin-top:26px}
       .mikrotik-logo{display:none}
-      .tooltip{position:relative;display:inline-block}
-      .tooltip .tooltiptext{visibility:hidden;width:120px;background-color:#555;color:#fff;text-align:center;border-radius:6px;padding:10px;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:-60px;opacity:0;transition:opacity .3s}
-      .tooltip .tooltiptext::after{content:"";position:absolute;top:100%;left:50%;margin-left:-5px;border-width:5px;border-style:solid;border-color:#555 transparent transparent}
-      .tooltip:hover .tooltiptext{visibility:visible;opacity:1}
       @media screen and (max-width:1024px) {
       .main-sidebar,.content{height:auto}
       }
@@ -134,7 +130,7 @@
             <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
             </span>		
             <span style="font-weight:normal;font-size:14px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-            <span style="font-weight:normal; font-size:14px"> [<span id="email_Verified" title="E-mail verified status" style="cursor: help;"></span>]</span>
+            <span style="font-weight:normal; font-size:14px"> [<span class="tooltip"><span class="tooltiptext2">E-mail verified status</span><span id="email_Verified" style="cursor:help"></span></span>]</span>
             </span>
           </div>
         </div>
@@ -168,7 +164,7 @@
             </div>
             <div style="width:100%;">
               <label>Burst Limit (K/M)</label>
-              <div class="tooltip"><span class="tooltiptext">Burst Limit must be more than Max Limit</span><input onkeydown="upperCaseF(this)" type="text" id="up-speed-bonus" style='color: #01A3DF;' value="1M" placeholder="1M" onkeypress="return event.charCode != 32" onkeyup="myFunction()" ></div>
+              <span class="tooltip"><span class="tooltiptext">Burst Limit must be more than Max Limit</span><input onkeydown="upperCaseF(this)" type="text" id="up-speed-bonus" style='color: #01A3DF;' value="1M" placeholder="1M" onkeypress="return event.charCode != 32" onkeyup="myFunction()" ></span>
             </div>
             <div style="width:100%;margin-bottom:10px;margin-top:1px">
               <label>Actual Burst Time (s)</label>
@@ -194,7 +190,7 @@
             </div>
             <div style="width:100%; ">
               <label>Burst Limit (K/M)</label>
-              <div class="tooltip"><span class="tooltiptext">Burst Limit must be more than Max Limit</span><input onkeydown="upperCaseF(this)" type="text" id="down-speed-bonus" style='color: #01A3DF' value="2M" placeholder="2M" onkeypress="return event.charCode != 32" onkeyup="myFunction()"></div>
+              <span class="tooltip"><span class="tooltiptext">Burst Limit must be more than Max Limit</span><input onkeydown="upperCaseF(this)" type="text" id="down-speed-bonus" style='color: #01A3DF' value="2M" placeholder="2M" onkeypress="return event.charCode != 32" onkeyup="myFunction()"></span>
             </div>
             <div style="width:100%;margin-bottom:10px; margin-top:1px">
               <label>Actual Burst Time (s)</label><br>
