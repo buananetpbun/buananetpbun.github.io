@@ -52,7 +52,7 @@
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;margin-bottom:10px;margin-top:5px;font-size:14px!important;border-radius:5px}
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
-      .list-output-content{height:527px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
+      .list-output-content{height:593px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;font-size:14px;white-space:nowrap}
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
       .list-output-content{height:auto}
@@ -157,6 +157,20 @@
               </select>
             </div>
           </div>
+          <div style="display:flex">
+            <div style="width:100%;">
+              <label>Local Options</label>
+              <select style="margin-top:5px; width:100%" id="local-list" onchange="LocalAddressOption()">
+                <option value="local-list1">Address List</option>
+                <option value="local-list2">In. Interface</option>
+                <option value="local-list3">In. Interface List</option>
+              </select>
+            </div>
+            <div style="width:100%;margin-left:10px;">
+              <label>Interface Name</label>
+              <input disabled type="text" id="interface-name" placeholder="LOCAL-IP">
+            </div>
+          </div>		  
           <div style="clear:both"></div>
           <div style="color:#ff6600; border:1px solid #bbb; padding:7px;margin-top:0px;margin-bottom:10px">Please change your WAN interface name with your router condition, Example: ether1 or E1-WAN or e1-indihome or pppoe-out1
           </div>
@@ -271,33 +285,33 @@
               <span id="wan5-route-failover" style="display:none">add check-gateway=ping distance=5 gateway="<span id="wan5-route-failover-text"></span>" comment="LB By BNT"<br></span>
               <span id="wan6-route-failover" style="display:none">add check-gateway=ping distance=6 gateway="<span id="wan6-route-failover-text"></span>" comment="LB By BNT"<br></span>
               <b>/ip firewall mangle</b><br>
-              add action=accept chain=prerouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
-              add action=accept chain=input dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
-              add action=accept chain=output dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
-              <span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan4-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan4-mangle-input-text"></span>" new-connection-mark="<span id="wan4-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan5-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan5-mangle-input-text"></span>" new-connection-mark="<span id="wan5-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan6-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan6-mangle-input-text"></span>" new-connection-mark="<span id="wan6-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan1-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan1-mangle-output-text"></span>" new-routing-mark="<span id="wan1-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan2-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan2-mangle-output-text"></span>" new-routing-mark="<span id="wan2-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan3-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan3-mangle-output-text"></span>" new-routing-mark="<span id="wan3-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan4-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan4-mangle-output-text"></span>" new-routing-mark="<span id="wan4-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan5-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan5-mangle-output-text"></span>" new-routing-mark="<span id="wan5-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan6-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan6-mangle-output-text"></span>" new-routing-mark="<span id="wan6-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
-              <span id="wan1-mangle-pcc">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP dst-address-type=!local new-connection-mark="<span id="wan1-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan1-mangle-pcc-both"><span style='color:#ff6600; font-weight:bold'>2/0</span></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan2-mangle-pcc">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP dst-address-type=!local  new-connection-mark="<span id="wan2-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan2-mangle-pcc-both"><span style='color:#ff6600; font-weight:bold'>2/1</span></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan3-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP dst-address-type=!local new-connection-mark="<span id="wan3-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan3-mangle-pcc-both"></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan4-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP dst-address-type=!local  new-connection-mark="<span id="wan4-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan4-mangle-pcc-both"></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan5-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP  dst-address-type=!local  new-connection-mark="<span id="wan5-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan5-mangle-pcc-both"></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan6-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP  dst-address-type=!local  new-connection-mark="<span id="wan6-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan6-mangle-pcc-both"></span> src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan1-mangle-pre">add action=mark-routing chain=prerouting connection-mark="<span id="wan1-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan1-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan2-mangle-pre">add action=mark-routing chain=prerouting connection-mark="<span id="wan2-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan2-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan3-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan3-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan3-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan4-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan4-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan4-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan5-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan5-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan5-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span>
-              <span id="wan6-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan6-mangle-pre-text"></span>" dst-address-list=!LOCAL-IP new-routing-mark="<span id="wan6-mangle-pre-text-r"></span>" passthrough=yes src-address-list=LOCAL-IP comment="LB By BNT"<br></span> 
+				add action=accept chain=prerouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+				add action=accept chain=input dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+				add action=accept chain=output dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+                  <span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan4-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan4-mangle-input-text"></span>" new-connection-mark="<span id="wan4-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan5-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan5-mangle-input-text"></span>" new-connection-mark="<span id="wan5-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan6-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan6-mangle-input-text"></span>" new-connection-mark="<span id="wan6-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan1-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan1-mangle-output-text"></span>" new-routing-mark="<span id="wan1-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan2-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan2-mangle-output-text"></span>" new-routing-mark="<span id="wan2-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan3-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan3-mangle-output-text"></span>" new-routing-mark="<span id="wan3-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan4-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan4-mangle-output-text"></span>" new-routing-mark="<span id="wan4-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan5-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan5-mangle-output-text"></span>" new-routing-mark="<span id="wan5-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan6-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan6-mangle-output-text"></span>" new-routing-mark="<span id="wan6-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"<br></span>
+                  <span id="wan1-mangle-pcc">add action=mark-connection chain=prerouting dst-address-type=!local new-connection-mark="<span id="wan1-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan1-mangle-pcc-both"><span style='color:#ff6600; font-weight:bold'>2/0</span></span> <span id="local-network1">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan2-mangle-pcc">add action=mark-connection chain=prerouting dst-address-type=!local  new-connection-mark="<span id="wan2-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan2-mangle-pcc-both"><span style='color:#ff6600; font-weight:bold'>2/1</span></span> <span id="local-network2">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan3-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-type=!local new-connection-mark="<span id="wan3-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan3-mangle-pcc-both"></span> <span id="local-network3">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan4-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting dst-address-type=!local  new-connection-mark="<span id="wan4-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan4-mangle-pcc-both"></span> <span id="local-network4">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan5-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting  dst-address-type=!local  new-connection-mark="<span id="wan5-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan5-mangle-pcc-both"></span> <span id="local-network5">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan6-mangle-pcc" style="display:none">add action=mark-connection chain=prerouting  dst-address-type=!local  new-connection-mark="<span id="wan6-mangle-pcc-text"></span>" passthrough=yes per-connection-classifier=both-addresses-and-ports:<span id="wan6-mangle-pcc-both"></span> <span id="local-network6">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan1-mangle-pre">add action=mark-routing chain=prerouting connection-mark="<span id="wan1-mangle-pre-text"></span>" new-routing-mark="<span id="wan1-mangle-pre-text-r"></span>" passthrough=yes <span id="local-network7">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan2-mangle-pre">add action=mark-routing chain=prerouting connection-mark="<span id="wan2-mangle-pre-text"></span>" new-routing-mark="<span id="wan2-mangle-pre-text-r"></span>" passthrough=yes <span id="local-network8">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan3-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan3-mangle-pre-text"></span>" new-routing-mark="<span id="wan3-mangle-pre-text-r"></span>" passthrough=yes <span id="local-network9">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan4-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan4-mangle-pre-text"></span>" new-routing-mark="<span id="wan4-mangle-pre-text-r"></span>" passthrough=yes <span id="local-network10">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan5-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan5-mangle-pre-text"></span>" new-routing-mark="<span id="wan5-mangle-pre-text-r"></span>" passthrough=yes <span id="local-network11">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span>
+                  <span id="wan6-mangle-pre" style="display:none">add action=mark-routing chain=prerouting connection-mark="<span id="wan6-mangle-pre-text"></span>" new-routing-mark="<span id="wan6-mangle-pre-text-r"></span>" passthrough=yes <span id="local-network12">dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP</span> comment="LB By BNT"<br></span> 
             </div>
           </div>
           <br>
@@ -398,7 +412,485 @@
     </div>
     <script src="./login/login.js"></script>		
     <script>
-      var _0x3713be=_0x1fd7;function _0x2bde(){var _0x3f281b=['wan6-routing-table-name','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>6/1<span>','wan4-mangle-pcc-both','href','5680632TfLdta','wan3-mangle-output-text-r','wan5-mangle-pcc-both','wan6-mangle-pre-text','wan5-routing-table-name','wan5-route-failover','wan4-nat','wan5-mangle-pre','wan1-mangle-pre-text-r','disabled','<span>','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-','line4','selectNodeContents','wan4-mangle-output-text','https://','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>3/0<span>','wan2-mangle-output-text','495546WUcLPu','wan4-routing-option','wan1-mangle-input-text-r','wan1-mangle-output-text-r','focus','wan5-mangle-output-text-r','wan1-isp','wan3-isp','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>5/2<span>','github','28BYNQkh','wan4-mangle-input-text','wan6-routing-table','wan6-route-text-r','innerHTML','837784GprUyH','wan6-route-failover','wan4-route-text','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>4/0<span>','wan6-route','wan5-routing-table','addRange','wan6-mangle-pcc-both','ros6','wan6-mangle-output-text-r','wan6-nat-text','wan3-mangle-output-text','/pcc.html','wan3-isp-ip','value','tanggalwaktu','wan6-isp-ip','44696LJVKTl','selectNode','wan3-mangle-output','wan1-mangle-pcc-text','wan6-mangle-pre-text-r','wan2-mangle-pcc-both','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>2/1<span>','copy','wan3-mangle-pre-text','wan2-mangle-pre-text','routing-mark','wan5-mangle-pcc','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>6/0<span>','wan6-mangle-pcc','line6','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>6/3<span>','828GXjnmw','wan4-routing-table-name','wan1-mangle-pre-text','wan5-route-text','wan4-mangle-pcc','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>','style','wan4-mangle-pre','wan6-mangle-output-text','wan3-routing-option','wan3-mangle-pcc-both','wan4-route-text-r','wan4-mangle-output-text-r','wan-list','show-hide-routing-table','match','137614zCcIJR','wan4-route','wan2-routing-option','wan4-mangle-pre-text-r','wan6-mangle-input','Perhatian!\x20Validasi\x20IP\x20Address\x20Salah!\x20Silahkan\x20Cek\x20Kembali','wan6-mangle-input-text-r','createTextRange','getSelection','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>3/2<span>','wan6-isp','wan5-isp-ip','wan5-isp','wan3-route-failover-text','wan4-isp-ip','wan3-mangle-pcc','getElementById','wan5-mangle-pre-text','moveToElementText','wan6-mangle-output','wan3-mangle-pre','none','wan6-route-failover-text','wan2-mangle-pcc-text','gateway','wan2-mangle-pre-text-r','wan5-route-text-r','wan3-mangle-input-text-r','wan1-mangle-pcc-both','wan6-routing-option','wan4-mangle-output','wan3-routing-table','wan1-route-text','wan5-route','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>3/1<span>','wan3-routing-table-name','wan3-mangle-input','wan4-mangle-input-text-r','40FzjJro','wan5-nat-text','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>4/1<span>','3846202bHyfaS','display','buananet','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>5/0<span>','line5','wan5-nat','block','wan6-nat','wan3-route','subnet','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>5/3<span>','wan2-routing-table-name','wan4-isp','26828500VIjDOk','wan4-mangle-input','wan1-routing-option','wan5-mangle-output','wan1-isp-ip','line3','wan1-route-failover-text','body','wan5-mangle-output-text','wan2-isp','wan1-route-text-r','wan3-route-failover','<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>to-','wan6-route-text','wan4-routing-table','wan3-mangle-pre-text-r','wan1-mangle-input-text','wan5-mangle-input','routing-table','wan1-routing-table-name','wan4-route-failover','wan6-mangle-pre','wan2-route-failover-text','wan3-nat','wan1-mangle-output-text','wan5-routing-option'];_0x2bde=function(){return _0x3f281b;};return _0x2bde();}function _0x1fd7(_0x7c7101,_0x2da09d){var _0x2bde1b=_0x2bde();return _0x1fd7=function(_0x1fd7dc,_0x1e36e8){_0x1fd7dc=_0x1fd7dc-0x17e;var _0x453bc1=_0x2bde1b[_0x1fd7dc];return _0x453bc1;},_0x1fd7(_0x7c7101,_0x2da09d);}(function(_0x5bf426,_0x5a52db){var _0x40ffad=_0x1fd7,_0xde2695=_0x5bf426();while(!![]){try{var _0x553332=parseInt(_0x40ffad(0x1e7))/0x1+parseInt(_0x40ffad(0x210))/0x2+-parseInt(_0x40ffad(0x195))/0x3+parseInt(_0x40ffad(0x1b6))/0x4*(-parseInt(_0x40ffad(0x20d))/0x5)+-parseInt(_0x40ffad(0x1a7))/0x6*(-parseInt(_0x40ffad(0x1b1))/0x7)+parseInt(_0x40ffad(0x1c7))/0x8*(-parseInt(_0x40ffad(0x1d7))/0x9)+parseInt(_0x40ffad(0x21d))/0xa;if(_0x553332===_0x5a52db)break;else _0xde2695['push'](_0xde2695['shift']());}catch(_0x107c24){_0xde2695['push'](_0xde2695['shift']());}}}(_0x2bde,0xf1e5d));var dt=new Date();document[_0x3713be(0x1f7)](_0x3713be(0x1c5))[_0x3713be(0x1b5)]=dt['toLocaleString']();function myFunctionInput(){var _0x1a24e8=_0x3713be,_0x19c09e=document['getElementById'](_0x1a24e8(0x1ad))['value'],_0x5b91de=document[_0x1a24e8(0x1f7)](_0x1a24e8(0x221))[_0x1a24e8(0x1c4)];document[_0x1a24e8(0x1f7)]('wan1-nat-text')['innerHTML']=_0x1a24e8(0x1dc)+_0x19c09e+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x207))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x5b91de+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x181))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x19c09e+'<span>',document['getElementById'](_0x1a24e8(0x187))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x19c09e+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1a9))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-'+_0x19c09e+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x18f))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-'+_0x19c09e+'<span>',document['getElementById'](_0x1a24e8(0x1aa))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>to-'+_0x19c09e+_0x1a24e8(0x19f),document['getElementById'](_0x1a24e8(0x1ca))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-'+_0x19c09e+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1d9))['innerHTML']=_0x1a24e8(0x1a0)+_0x19c09e+_0x1a24e8(0x19f),document['getElementById'](_0x1a24e8(0x19d))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>to-'+_0x19c09e+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x223))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x5b91de+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x18a))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x19c09e+_0x1a24e8(0x19f);var _0x1b54bf=document[_0x1a24e8(0x1f7)](_0x1a24e8(0x180))[_0x1a24e8(0x1c4)],_0x3707e2=document[_0x1a24e8(0x1f7)]('wan2-isp-ip')[_0x1a24e8(0x1c4)];document[_0x1a24e8(0x1f7)]('wan2-nat-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x1b54bf+'<span>',document['getElementById']('wan2-route-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x3707e2+'<span>',document[_0x1a24e8(0x1f7)]('wan2-route-text-r')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x1b54bf+_0x1a24e8(0x19f),document['getElementById']('wan2-mangle-input-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x1b54bf+_0x1a24e8(0x19f),document['getElementById']('wan2-mangle-input-text-r')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x1b54bf+_0x1a24e8(0x19f),document['getElementById'](_0x1a24e8(0x1a6))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x1b54bf+_0x1a24e8(0x19f),document['getElementById']('wan2-mangle-output-text-r')[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>to-'+_0x1b54bf+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1fe))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x1b54bf+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1d0))['innerHTML']=_0x1a24e8(0x1a0)+_0x1b54bf+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x200))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x1b54bf+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x18d))['innerHTML']=_0x1a24e8(0x1dc)+_0x3707e2+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x21b))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x1b54bf+_0x1a24e8(0x19f);var _0x59e5a0=document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1ae))[_0x1a24e8(0x1c4)],_0x51411f=document[_0x1a24e8(0x1f7)]('wan3-isp-ip')['value'];document[_0x1a24e8(0x1f7)]('wan3-nat-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x59e5a0+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan3-route-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x51411f+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan3-route-text-r')['innerHTML']=_0x1a24e8(0x183)+_0x59e5a0+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan3-mangle-input-text')['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>'+_0x59e5a0+'<span>',document['getElementById'](_0x1a24e8(0x202))['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-'+_0x59e5a0+'<span>',document['getElementById'](_0x1a24e8(0x1c1))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-'+_0x59e5a0+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x196))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x59e5a0+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan3-mangle-pcc-text')[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-'+_0x59e5a0+'<span>',document['getElementById'](_0x1a24e8(0x1cf))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x59e5a0+'<span>',document['getElementById'](_0x1a24e8(0x186))['innerHTML']=_0x1a24e8(0x183)+_0x59e5a0+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1f4))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x51411f+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x20a))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x59e5a0+_0x1a24e8(0x19f);var _0x6df5d8=document[_0x1a24e8(0x1f7)](_0x1a24e8(0x21c))['value'],_0x3da24f=document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1f5))[_0x1a24e8(0x1c4)];document[_0x1a24e8(0x1f7)]('wan4-nat-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x6df5d8+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1b8))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>'+_0x3da24f+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1e2))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x6df5d8+'<span>',document['getElementById'](_0x1a24e8(0x1b2))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x6df5d8+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x20c))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x6df5d8+'<span>',document['getElementById'](_0x1a24e8(0x1a3))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x6df5d8+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1e3))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>to-'+_0x6df5d8+_0x1a24e8(0x19f),document['getElementById']('wan4-mangle-pcc-text')['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-'+_0x6df5d8+'<span>',document['getElementById']('wan4-mangle-pre-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x6df5d8+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1ea))['innerHTML']=_0x1a24e8(0x183)+_0x6df5d8+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan4-route-failover-text')['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>'+_0x3da24f+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1d8))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x6df5d8+_0x1a24e8(0x19f);var _0x5674b9=document[_0x1a24e8(0x1f7)]('wan5-isp')[_0x1a24e8(0x1c4)],_0x18dd3f=document['getElementById'](_0x1a24e8(0x1f2))[_0x1a24e8(0x1c4)];document['getElementById'](_0x1a24e8(0x20e))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x5674b9+'<span>',document['getElementById'](_0x1a24e8(0x1da))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>'+_0x18dd3f+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x201))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x5674b9+'<span>',document[_0x1a24e8(0x1f7)]('wan5-mangle-input-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x5674b9+'<span>',document[_0x1a24e8(0x1f7)]('wan5-mangle-input-text-r')['innerHTML']=_0x1a24e8(0x1a0)+_0x5674b9+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x17f))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x5674b9+'<span>',document['getElementById'](_0x1a24e8(0x1ac))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x5674b9+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan5-mangle-pcc-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x5674b9+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1f8))['innerHTML']=_0x1a24e8(0x1a0)+_0x5674b9+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan5-mangle-pre-text-r')['innerHTML']=_0x1a24e8(0x183)+_0x5674b9+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan5-route-failover-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x18dd3f+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x199))['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>to-'+_0x5674b9+_0x1a24e8(0x19f);var _0x38fb66=document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1f1))[_0x1a24e8(0x1c4)],_0x4d7d49=document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1c6))[_0x1a24e8(0x1c4)];document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1c0))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x38fb66+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x184))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x4d7d49+_0x1a24e8(0x19f),document['getElementById'](_0x1a24e8(0x1b4))['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>to-'+_0x38fb66+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)]('wan6-mangle-input-text')[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1dc)+_0x38fb66+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1ed))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x38fb66+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1df))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x38fb66+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1bf))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x38fb66+'<span>',document[_0x1a24e8(0x1f7)]('wan6-mangle-pcc-text')['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>cm-'+_0x38fb66+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x198))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x1a0)+_0x38fb66+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1cb))['innerHTML']=_0x1a24e8(0x183)+_0x38fb66+_0x1a24e8(0x19f),document[_0x1a24e8(0x1f7)](_0x1a24e8(0x1fd))[_0x1a24e8(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>'+_0x4d7d49+'<span>',document[_0x1a24e8(0x1f7)](_0x1a24e8(0x191))[_0x1a24e8(0x1b5)]=_0x1a24e8(0x183)+_0x38fb66+_0x1a24e8(0x19f);var _0x53b217=_0x1a24e8(0x1a4),_0x5e6332=_0x1a24e8(0x212),_0x317bd6='pbun',_0x2062e5=_0x1a24e8(0x1b0),_0x8a23b2='io',_0x51ee96=_0x53b217+_0x5e6332+_0x317bd6+'.'+_0x2062e5+'.'+_0x8a23b2;window['location'][_0x1a24e8(0x194)]!==_0x51ee96+_0x1a24e8(0x1c2)&&location['replace'](_0x51ee96+_0x1a24e8(0x1c2));}function myFunctionOuput(){var _0x2f5008=_0x3713be;document['getElementById']('ros-list')['value']==_0x2f5008(0x1be)?(document['getElementById']('show-hide-routing-table')[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x21f))['innerHTML']=_0x2f5008(0x1d1),document[_0x2f5008(0x1f7)](_0x2f5008(0x1e9))['innerHTML']=_0x2f5008(0x1d1),document['getElementById'](_0x2f5008(0x1e0))['innerHTML']=_0x2f5008(0x1d1),document[_0x2f5008(0x1f7)](_0x2f5008(0x1a8))[_0x2f5008(0x1b5)]='routing-mark',document[_0x2f5008(0x1f7)](_0x2f5008(0x190))[_0x2f5008(0x1b5)]=_0x2f5008(0x1d1),document['getElementById']('wan6-routing-option')[_0x2f5008(0x1b5)]='routing-mark'):(document[_0x2f5008(0x1f7)](_0x2f5008(0x1e5))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x21f))[_0x2f5008(0x1b5)]=_0x2f5008(0x189),document[_0x2f5008(0x1f7)](_0x2f5008(0x1e9))[_0x2f5008(0x1b5)]='routing-table',document[_0x2f5008(0x1f7)]('wan3-routing-option')[_0x2f5008(0x1b5)]='routing-table',document['getElementById'](_0x2f5008(0x1a8))[_0x2f5008(0x1b5)]=_0x2f5008(0x189),document[_0x2f5008(0x1f7)]('wan5-routing-option')[_0x2f5008(0x1b5)]=_0x2f5008(0x189),document[_0x2f5008(0x1f7)](_0x2f5008(0x204))['innerHTML']=_0x2f5008(0x189));if(document['getElementById'](_0x2f5008(0x1e4))[_0x2f5008(0x1c4)]=='line2'){document[_0x2f5008(0x1f7)](_0x2f5008(0x203))['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>2/0<span>',document[_0x2f5008(0x1f7)](_0x2f5008(0x1cc))[_0x2f5008(0x1b5)]=_0x2f5008(0x1cd);;document[_0x2f5008(0x1f7)](_0x2f5008(0x1ae))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1c3))['disabled']=!![],document['getElementById'](_0x2f5008(0x18e))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document['getElementById'](_0x2f5008(0x218))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan3-mangle-input')['style']['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1c9))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none',document['getElementById']('wan3-mangle-pcc')[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1fb))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document['getElementById']('wan3-mangle-pre')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x182))['style']['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x206))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document['getElementById']('wan4-isp')[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1f5))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)]('wan4-nat')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document['getElementById'](_0x2f5008(0x1e8))['style'][_0x2f5008(0x211)]='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x21e))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan4-mangle-output')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none',document[_0x2f5008(0x1f7)]('wan4-mangle-pcc')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1de))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x18b))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan4-routing-table')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1f3))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)]('wan5-isp-ip')[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x215))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x208))[_0x2f5008(0x1dd)]['display']='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x188))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document['getElementById']('wan5-mangle-output')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1d2))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none',document['getElementById'](_0x2f5008(0x19c))['style']['display']='none',document['getElementById']('wan5-route-failover')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1bb))['style'][_0x2f5008(0x211)]='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x1f1))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1c6))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x217))['style']['display']='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x1ba))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document['getElementById'](_0x2f5008(0x1eb))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document['getElementById']('wan6-mangle-output')[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1d4))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x18c))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1b7))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1b3))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none';}document[_0x2f5008(0x1f7)](_0x2f5008(0x1e4))[_0x2f5008(0x1c4)]==_0x2f5008(0x222)&&(document[_0x2f5008(0x1f7)](_0x2f5008(0x203))['innerHTML']=_0x2f5008(0x1a5),document[_0x2f5008(0x1f7)](_0x2f5008(0x1cc))[_0x2f5008(0x1b5)]=_0x2f5008(0x209),document['getElementById']('wan3-mangle-pcc-both')[_0x2f5008(0x1b5)]=_0x2f5008(0x1f0),document[_0x2f5008(0x1f7)](_0x2f5008(0x1ae))['disabled']=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1c3))[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)]('wan3-nat')[_0x2f5008(0x1dd)]['display']='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x218))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan3-mangle-input')['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1c9))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1f6))['style'][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)]('wan3-mangle-pre')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan3-route-failover')[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x216),document['getElementById']('wan3-routing-table')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x21c))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1f5))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x19b))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan4-route')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x21e))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x205))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1db))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan4-mangle-pre')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x18b))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x185))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan5-isp')[_0x2f5008(0x19e)]=!![],document['getElementById']('wan5-isp-ip')[_0x2f5008(0x19e)]=!![],document['getElementById'](_0x2f5008(0x215))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x208))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document['getElementById']('wan5-mangle-input')[_0x2f5008(0x1dd)]['display']='none',document['getElementById'](_0x2f5008(0x220))[_0x2f5008(0x1dd)]['display']='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x1d2))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x19c))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x19a))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x1bb))['style']['display']='none',document['getElementById'](_0x2f5008(0x1f1))[_0x2f5008(0x19e)]=!![],document['getElementById'](_0x2f5008(0x1c6))[_0x2f5008(0x19e)]=!![],document['getElementById'](_0x2f5008(0x217))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1ba))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan6-mangle-input')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1fa))['style']['display']=_0x2f5008(0x1fc),document['getElementById']('wan6-mangle-pcc')['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan6-mangle-pre')[_0x2f5008(0x1dd)]['display']='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x1b7))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan6-routing-table')['style']['display']='none'),document[_0x2f5008(0x1f7)](_0x2f5008(0x1e4))[_0x2f5008(0x1c4)]==_0x2f5008(0x1a1)&&(document[_0x2f5008(0x1f7)](_0x2f5008(0x203))[_0x2f5008(0x1b5)]=_0x2f5008(0x1b9),document[_0x2f5008(0x1f7)]('wan2-mangle-pcc-both')[_0x2f5008(0x1b5)]=_0x2f5008(0x20f),document[_0x2f5008(0x1f7)](_0x2f5008(0x1e1))[_0x2f5008(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>4/2<span>',document[_0x2f5008(0x1f7)](_0x2f5008(0x193))[_0x2f5008(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>4/3<span>',document[_0x2f5008(0x1f7)]('wan3-isp')[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1c3))[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x18e))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x218))['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x20b))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x1c9))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x1f6))['style'][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x1fb))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x182))['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan3-routing-table')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x21c))[_0x2f5008(0x19e)]=![],document['getElementById'](_0x2f5008(0x1f5))[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x19b))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)]('wan4-route')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan4-mangle-input')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById']('wan4-mangle-output')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x1db))['style'][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)]('wan4-mangle-pre')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x18b))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x185))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan5-isp')[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1f2))['disabled']=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x215))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x208))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x188))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x220))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x1d2))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x19c))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan5-route-failover')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1bb))['style']['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1f1))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1c6))[_0x2f5008(0x19e)]=!![],document['getElementById'](_0x2f5008(0x217))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x1ba))['style']['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1eb))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1fa))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1d4))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x18c))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan6-route-failover')[_0x2f5008(0x1dd)]['display']='none',document[_0x2f5008(0x1f7)]('wan6-routing-table')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none'),document[_0x2f5008(0x1f7)](_0x2f5008(0x1e4))[_0x2f5008(0x1c4)]==_0x2f5008(0x214)&&(document[_0x2f5008(0x1f7)]('wan1-mangle-pcc-both')[_0x2f5008(0x1b5)]=_0x2f5008(0x213),document[_0x2f5008(0x1f7)](_0x2f5008(0x1cc))[_0x2f5008(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>5/1<span>',document[_0x2f5008(0x1f7)](_0x2f5008(0x1e1))[_0x2f5008(0x1b5)]=_0x2f5008(0x1af),document[_0x2f5008(0x1f7)](_0x2f5008(0x193))['innerHTML']=_0x2f5008(0x21a),document[_0x2f5008(0x1f7)](_0x2f5008(0x197))[_0x2f5008(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>5/4<span>',document[_0x2f5008(0x1f7)](_0x2f5008(0x1ae))[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1c3))[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x18e))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x218))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x20b))['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1c9))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1f6))['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1fb))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x182))['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x206))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x21c))[_0x2f5008(0x19e)]=![],document['getElementById'](_0x2f5008(0x1f5))[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1f5))[_0x2f5008(0x19e)]=![],document['getElementById'](_0x2f5008(0x19b))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1e8))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan4-mangle-input')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x205))['style']['display']=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan4-mangle-pcc')['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1de))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x18b))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x185))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById']('wan5-isp')[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1f2))[_0x2f5008(0x19e)]=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x215))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x208))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x188))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan5-mangle-output')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1d2))['style'][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x19c))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)]('wan5-route-failover')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x1bb))['style']['display']='block',document[_0x2f5008(0x1f7)]('wan6-isp')[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)](_0x2f5008(0x1c6))[_0x2f5008(0x19e)]=!![],document[_0x2f5008(0x1f7)]('wan6-nat')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)]('wan6-route')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='none',document[_0x2f5008(0x1f7)](_0x2f5008(0x1eb))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document['getElementById'](_0x2f5008(0x1fa))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1d4))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x18c))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1b7))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc),document[_0x2f5008(0x1f7)](_0x2f5008(0x1b3))['style'][_0x2f5008(0x211)]=_0x2f5008(0x1fc)),document[_0x2f5008(0x1f7)](_0x2f5008(0x1e4))[_0x2f5008(0x1c4)]==_0x2f5008(0x1d5)&&(document[_0x2f5008(0x1f7)](_0x2f5008(0x203))[_0x2f5008(0x1b5)]=_0x2f5008(0x1d3),document[_0x2f5008(0x1f7)]('wan2-mangle-pcc-both')[_0x2f5008(0x1b5)]=_0x2f5008(0x192),document['getElementById']('wan3-mangle-pcc-both')[_0x2f5008(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>6/2<span>',document['getElementById'](_0x2f5008(0x193))[_0x2f5008(0x1b5)]=_0x2f5008(0x1d6),document['getElementById'](_0x2f5008(0x197))[_0x2f5008(0x1b5)]='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>6/4<span>',document[_0x2f5008(0x1f7)](_0x2f5008(0x1bd))['innerHTML']='<span\x20style=\x27color:#ff6600;\x20font-weight:bold\x27>6/5<span>',document['getElementById'](_0x2f5008(0x1ae))[_0x2f5008(0x19e)]=![],document['getElementById']('wan3-isp-ip')['disabled']=![],document[_0x2f5008(0x1f7)](_0x2f5008(0x18e))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x218))['style'][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x20b))['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1c9))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x216),document['getElementById']('wan3-mangle-pcc')[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1fb))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x182))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById']('wan3-routing-table')['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x21c))[_0x2f5008(0x19e)]=![],document['getElementById'](_0x2f5008(0x1f5))['disabled']=![],document['getElementById'](_0x2f5008(0x19b))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1e8))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x21e))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document['getElementById'](_0x2f5008(0x205))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x1db))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1de))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x18b))['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan4-routing-table')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1f3))['disabled']=![],document[_0x2f5008(0x1f7)]('wan5-isp-ip')['disabled']=![],document['getElementById']('wan5-nat')['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x208))['style']['display']=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x188))[_0x2f5008(0x1dd)]['display']=_0x2f5008(0x216),document[_0x2f5008(0x1f7)]('wan5-mangle-output')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x1d2))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x19c))[_0x2f5008(0x1dd)]['display']='block',document['getElementById']('wan5-route-failover')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById']('wan5-routing-table')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1f1))[_0x2f5008(0x19e)]=![],document['getElementById'](_0x2f5008(0x1c6))[_0x2f5008(0x19e)]=![],document['getElementById'](_0x2f5008(0x217))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById']('wan6-route')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1eb))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document[_0x2f5008(0x1f7)](_0x2f5008(0x1fa))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById']('wan6-mangle-pcc')[_0x2f5008(0x1dd)][_0x2f5008(0x211)]='block',document[_0x2f5008(0x1f7)](_0x2f5008(0x18c))['style'][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x1b7))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216),document['getElementById'](_0x2f5008(0x1b3))[_0x2f5008(0x1dd)][_0x2f5008(0x211)]=_0x2f5008(0x216));}function selectElementContents(_0x463118){var _0x3612ae=_0x3713be,_0x509c4b=document[_0x3612ae(0x17e)],_0x611d0a,_0x2a76a0;if(document['createRange']&&window[_0x3612ae(0x1ef)]){_0x611d0a=document['createRange'](),_0x2a76a0=window[_0x3612ae(0x1ef)](),_0x2a76a0['removeAllRanges']();try{_0x611d0a[_0x3612ae(0x1a2)](_0x463118),_0x2a76a0[_0x3612ae(0x1bc)](_0x611d0a);}catch(_0x2aa23c){_0x611d0a[_0x3612ae(0x1c8)](_0x463118),_0x2a76a0[_0x3612ae(0x1bc)](_0x611d0a);}}else _0x509c4b[_0x3612ae(0x1ee)]&&(_0x611d0a=_0x509c4b[_0x3612ae(0x1ee)](),_0x611d0a[_0x3612ae(0x1f9)](_0x463118),_0x611d0a['select']());document['execCommand'](_0x3612ae(0x1ce));}function ValidateIPaddressOnChange(_0x29b714,_0x597e6e){var _0x96f443=_0x3713be,_0x41f29f=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,_0x59d91f='';switch(_0x597e6e){case'ipaddress':_0x59d91f='IP\x20Address';break;case _0x96f443(0x1ff):_0x59d91f='gateway';break;case'dns':_0x59d91f='DNS';break;case _0x96f443(0x219):_0x59d91f='subnet\x20mask';break;}!_0x29b714[_0x96f443(0x1c4)][_0x96f443(0x1e6)](_0x41f29f)&&(_0x29b714[_0x96f443(0x1ab)](),alert(_0x96f443(0x1ec)));}
+		var dt = new Date();
+        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+		
+		
+
+		function myFunctionInput(){
+			var wan1isp = document.getElementById("wan1-isp").value;
+			var wan1ispip = document.getElementById("wan1-isp-ip").value;
+			document.getElementById("wan1-nat-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan1isp + "<span>";
+			document.getElementById("wan1-route-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan1ispip + "<span>";
+			document.getElementById("wan1-route-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-input-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-input-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-output-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-output-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-pcc-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-pre-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan1isp + "<span>";
+			document.getElementById("wan1-mangle-pre-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan1isp + "<span>";
+			document.getElementById("wan1-route-failover-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan1ispip + "<span>";
+			document.getElementById("wan1-routing-table-name").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan1isp + "<span>";
+			
+			
+			var wan2isp = document.getElementById("wan2-isp").value;
+			var wan2ispip = document.getElementById("wan2-isp-ip").value;
+			document.getElementById("wan2-nat-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan2isp + "<span>";
+			document.getElementById("wan2-route-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan2ispip + "<span>";
+			document.getElementById("wan2-route-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-input-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-input-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-output-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-output-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-pcc-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-pre-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan2isp + "<span>";
+			document.getElementById("wan2-mangle-pre-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan2isp + "<span>";
+			document.getElementById("wan2-route-failover-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan2ispip + "<span>";
+			document.getElementById("wan2-routing-table-name").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan2isp + "<span>";
+
+			var wan3isp = document.getElementById("wan3-isp").value;
+			var wan3ispip = document.getElementById("wan3-isp-ip").value;
+			document.getElementById("wan3-nat-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan3isp + "<span>";
+			document.getElementById("wan3-route-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan3ispip + "<span>";
+			document.getElementById("wan3-route-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-input-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-input-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-output-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-output-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-pcc-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-pre-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan3isp + "<span>";
+			document.getElementById("wan3-mangle-pre-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan3isp + "<span>";
+			document.getElementById("wan3-route-failover-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan3ispip + "<span>";
+			document.getElementById("wan3-routing-table-name").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan3isp + "<span>";
+			
+			var wan4isp = document.getElementById("wan4-isp").value;
+			var wan4ispip = document.getElementById("wan4-isp-ip").value;
+			document.getElementById("wan4-nat-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan4isp + "<span>";
+			document.getElementById("wan4-route-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan4ispip + "<span>";
+			document.getElementById("wan4-route-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-input-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-input-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-output-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-output-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-pcc-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-pre-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan4isp + "<span>";
+			document.getElementById("wan4-mangle-pre-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan4isp + "<span>";
+			document.getElementById("wan4-route-failover-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan4ispip + "<span>";
+			document.getElementById("wan4-routing-table-name").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan4isp + "<span>";
+
+			var wan5isp = document.getElementById("wan5-isp").value;
+			var wan5ispip = document.getElementById("wan5-isp-ip").value;
+			document.getElementById("wan5-nat-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan5isp + "<span>";
+			document.getElementById("wan5-route-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan5ispip + "<span>";
+			document.getElementById("wan5-route-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-input-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-input-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-output-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-output-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-pcc-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-pre-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan5isp + "<span>";
+			document.getElementById("wan5-mangle-pre-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan5isp + "<span>";
+			document.getElementById("wan5-route-failover-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan5ispip + "<span>";
+			document.getElementById("wan5-routing-table-name").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan5isp + "<span>";
+
+			var wan6isp = document.getElementById("wan6-isp").value;
+			var wan6ispip = document.getElementById("wan6-isp-ip").value;
+			document.getElementById("wan6-nat-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan6isp + "<span>";
+			document.getElementById("wan6-route-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan6ispip + "<span>";
+			document.getElementById("wan6-route-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-input-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-input-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-output-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-output-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-pcc-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-pre-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>cm-" + wan6isp + "<span>";
+			document.getElementById("wan6-mangle-pre-text-r").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan6isp + "<span>";
+			document.getElementById("wan6-route-failover-text").innerHTML = "<span style='color:#ff6600; font-weight:bold'>" + wan6ispip + "<span>";
+			document.getElementById("wan6-routing-table-name").innerHTML = "<span style='color:#ff6600; font-weight:bold'>to-" + wan6isp + "<span>";
+			
+			//var host1 = "https://";
+			//var host2 = "buananet";
+			//var host3 = "pbun";
+			//var host4 = "github";
+			//var host5 = "io";
+			//var host6 = host1 + host2 + host3 + "." + host4 + "." + host5
+			//if (window.location.href !== host6 + "/pcc.html") {
+			//location.replace(host6 + "/pcc.html");
+			//}
+			
+	   var interface_name = document.getElementById('interface-name').value
+
+		if (document.getElementById('local-list').value == "local-list1"){
+		document.getElementById("local-network1").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network2").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network3").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network4").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network5").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network6").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network7").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network8").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network9").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network10").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network11").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		document.getElementById("local-network12").innerHTML = "dst-address-list=<span style='color:#ff6600; font-weight:bold'>!LOCAL-IP</span> src-address-list=<span style='color:#ff6600; font-weight:bold'>LOCAL-IP</span>";
+		} 
+		if (document.getElementById('local-list').value == "local-list2"){
+		document.getElementById("local-network1").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network2").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network3").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network4").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network5").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network6").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network7").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network8").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network9").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network10").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network11").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network12").innerHTML = "in-interface=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		}
+		if (document.getElementById('local-list').value == "local-list3"){
+		document.getElementById("local-network1").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network2").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network3").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network4").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network5").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network6").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network7").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network8").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network9").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network10").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network11").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		document.getElementById("local-network12").innerHTML = "in-interface-list=" +  "<span style='color:#ff6600; font-weight:bold'>" + interface_name + "</span"
+		}
+		
+		}
+
+		function myFunctionOuput() {
+		
+	
+		if (document.getElementById('ros-list').value == "ros6"){
+		document.getElementById("show-hide-routing-table").style.display = "none"; 
+		document.getElementById("wan1-routing-option").innerHTML = "routing-mark";
+		document.getElementById("wan2-routing-option").innerHTML = "routing-mark";
+		document.getElementById("wan3-routing-option").innerHTML = "routing-mark";
+		document.getElementById("wan4-routing-option").innerHTML = "routing-mark";
+		document.getElementById("wan5-routing-option").innerHTML = "routing-mark";
+		document.getElementById("wan6-routing-option").innerHTML = "routing-mark";
+		} else {
+		document.getElementById("show-hide-routing-table").style.display = "block"; 
+		document.getElementById("wan1-routing-option").innerHTML = "routing-table";
+		document.getElementById("wan2-routing-option").innerHTML = "routing-table";
+		document.getElementById("wan3-routing-option").innerHTML = "routing-table";
+		document.getElementById("wan4-routing-option").innerHTML = "routing-table";
+		document.getElementById("wan5-routing-option").innerHTML = "routing-table";
+		document.getElementById("wan6-routing-option").innerHTML = "routing-table";
+		}
+		
+			if (document.getElementById('wan-list').value == "line2"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>2/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>2/1<span>";;
+
+				document.getElementById("wan3-isp").disabled = true;
+				document.getElementById("wan3-isp-ip").disabled = true;
+				document.getElementById("wan3-nat").style.display = "none";
+				document.getElementById("wan3-route").style.display = "none";
+				document.getElementById("wan3-mangle-input").style.display = "none";
+				document.getElementById("wan3-mangle-output").style.display = "none";
+				document.getElementById("wan3-mangle-pcc").style.display = "none";
+				document.getElementById("wan3-mangle-pre").style.display = "none";
+				document.getElementById("wan3-mangle-pre").style.display = "none";
+				document.getElementById("wan3-route-failover").style.display = "none";
+				document.getElementById("wan3-routing-table").style.display = "none";
+					
+				document.getElementById("wan4-isp").disabled = true;
+				document.getElementById("wan4-isp-ip").disabled = true;
+				document.getElementById("wan4-nat").style.display = "none";
+				document.getElementById("wan4-route").style.display = "none";
+				document.getElementById("wan4-mangle-input").style.display = "none";
+				document.getElementById("wan4-mangle-output").style.display = "none";
+				document.getElementById("wan4-mangle-pcc").style.display = "none";
+				document.getElementById("wan4-mangle-pre").style.display = "none";
+				document.getElementById("wan4-route-failover").style.display = "none";
+				document.getElementById("wan4-routing-table").style.display = "none";
+				
+				document.getElementById("wan5-isp").disabled = true;
+				document.getElementById("wan5-isp-ip").disabled = true;
+				document.getElementById("wan5-nat").style.display = "none";
+				document.getElementById("wan5-route").style.display = "none";
+				document.getElementById("wan5-mangle-input").style.display = "none";
+				document.getElementById("wan5-mangle-output").style.display = "none";
+				document.getElementById("wan5-mangle-pcc").style.display = "none";
+				document.getElementById("wan5-mangle-pre").style.display = "none";
+				document.getElementById("wan5-route-failover").style.display = "none";
+				document.getElementById("wan5-routing-table").style.display = "none";
+				
+				document.getElementById("wan6-isp").disabled = true;
+				document.getElementById("wan6-isp-ip").disabled = true;
+				document.getElementById("wan6-nat").style.display = "none";
+				document.getElementById("wan6-route").style.display = "none";
+				document.getElementById("wan6-mangle-input").style.display = "none";
+				document.getElementById("wan6-mangle-output").style.display = "none";
+				document.getElementById("wan6-mangle-pcc").style.display = "none";
+				document.getElementById("wan6-mangle-pre").style.display = "none";
+				document.getElementById("wan6-route-failover").style.display = "none";
+				document.getElementById("wan6-routing-table").style.display = "none";
+			}
+			
+			if (document.getElementById('wan-list').value == "line3"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>3/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>3/1<span>";
+				document.getElementById("wan3-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>3/2<span>";
+
+				document.getElementById('wan3-isp').disabled = false;
+				document.getElementById("wan3-isp-ip").disabled = false;
+				document.getElementById("wan3-nat").style.display = "block";
+				document.getElementById("wan3-route").style.display = "block";
+				document.getElementById("wan3-mangle-input").style.display = "block";
+				document.getElementById("wan3-mangle-output").style.display = "block";
+				document.getElementById("wan3-mangle-pcc").style.display = "block";
+				document.getElementById("wan3-mangle-pre").style.display = "block";
+				document.getElementById("wan3-route-failover").style.display = "block";
+				document.getElementById("wan3-routing-table").style.display = "block";
+		
+				document.getElementById("wan4-isp").disabled = true;
+				document.getElementById("wan4-isp-ip").disabled = true;
+				document.getElementById("wan4-nat").style.display = "none";
+				document.getElementById("wan4-route").style.display = "none";
+				document.getElementById("wan4-mangle-input").style.display = "none";
+				document.getElementById("wan4-mangle-output").style.display = "none";
+				document.getElementById("wan4-mangle-pcc").style.display = "none";
+				document.getElementById("wan4-mangle-pre").style.display = "none";
+				document.getElementById("wan4-route-failover").style.display = "none";
+				document.getElementById("wan4-routing-table").style.display = "none";
+				
+				document.getElementById("wan5-isp").disabled = true;
+				document.getElementById("wan5-isp-ip").disabled = true;
+				document.getElementById("wan5-nat").style.display = "none";
+				document.getElementById("wan5-route").style.display = "none";
+				document.getElementById("wan5-mangle-input").style.display = "none";
+				document.getElementById("wan5-mangle-output").style.display = "none";
+				document.getElementById("wan5-mangle-pcc").style.display = "none";
+				document.getElementById("wan5-mangle-pre").style.display = "none";
+				document.getElementById("wan5-route-failover").style.display = "none";
+				document.getElementById("wan5-routing-table").style.display = "none";
+				
+				document.getElementById("wan6-isp").disabled = true;
+				document.getElementById("wan6-isp-ip").disabled = true;
+				document.getElementById("wan6-nat").style.display = "none";
+				document.getElementById("wan6-route").style.display = "none";
+				document.getElementById("wan6-mangle-input").style.display = "none";
+				document.getElementById("wan6-mangle-output").style.display = "none";
+				document.getElementById("wan6-mangle-pcc").style.display = "none";
+				document.getElementById("wan6-mangle-pre").style.display = "none";
+				document.getElementById("wan6-route-failover").style.display = "none";
+				document.getElementById("wan6-routing-table").style.display = "none";
+			}
+			
+			if (document.getElementById('wan-list').value == "line4"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>4/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>4/1<span>";
+				document.getElementById("wan3-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>4/2<span>";
+				document.getElementById("wan4-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>4/3<span>";
+
+				document.getElementById("wan3-isp").disabled = false;
+				document.getElementById("wan3-isp-ip").disabled = false;
+				document.getElementById("wan3-nat").style.display = "block";
+				document.getElementById("wan3-route").style.display = "block";
+				document.getElementById("wan3-mangle-input").style.display = "block";
+				document.getElementById("wan3-mangle-output").style.display = "block";
+				document.getElementById("wan3-mangle-pcc").style.display = "block";
+				document.getElementById("wan3-mangle-pre").style.display = "block";
+				document.getElementById("wan3-route-failover").style.display = "block";
+				document.getElementById("wan3-routing-table").style.display = "block";
+				
+				document.getElementById("wan4-isp").disabled = false;
+				document.getElementById("wan4-isp-ip").disabled = false;
+				document.getElementById("wan4-nat").style.display = "block";
+				document.getElementById("wan4-route").style.display = "block";
+				document.getElementById("wan4-mangle-input").style.display = "block";
+				document.getElementById("wan4-mangle-output").style.display = "block";
+				document.getElementById("wan4-mangle-pcc").style.display = "block";
+				document.getElementById("wan4-mangle-pre").style.display = "block";
+				document.getElementById("wan4-route-failover").style.display = "block";
+				document.getElementById("wan4-routing-table").style.display = "block";
+				
+				document.getElementById("wan5-isp").disabled = true;
+				document.getElementById("wan5-isp-ip").disabled = true;
+				document.getElementById("wan5-nat").style.display = "none";
+				document.getElementById("wan5-route").style.display = "none";
+				document.getElementById("wan5-mangle-input").style.display = "none";
+				document.getElementById("wan5-mangle-output").style.display = "none";
+				document.getElementById("wan5-mangle-pcc").style.display = "none";
+				document.getElementById("wan5-mangle-pre").style.display = "none";
+				document.getElementById("wan5-route-failover").style.display = "none";
+				document.getElementById("wan5-routing-table").style.display = "none";
+				
+				document.getElementById("wan6-isp").disabled = true;
+				document.getElementById("wan6-isp-ip").disabled = true;
+				document.getElementById("wan6-nat").style.display = "none";
+				document.getElementById("wan6-route").style.display = "none";
+				document.getElementById("wan6-mangle-input").style.display = "none";
+				document.getElementById("wan6-mangle-output").style.display = "none";
+				document.getElementById("wan6-mangle-pcc").style.display = "none";
+				document.getElementById("wan6-mangle-pre").style.display = "none";
+				document.getElementById("wan6-route-failover").style.display = "none";
+				document.getElementById("wan6-routing-table").style.display = "none";
+			}
+			
+			if (document.getElementById('wan-list').value == "line5"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>5/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>5/1<span>";
+				document.getElementById("wan3-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>5/2<span>";
+				document.getElementById("wan4-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>5/3<span>";
+				document.getElementById("wan5-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>5/4<span>";
+
+				document.getElementById("wan3-isp").disabled = false;
+				document.getElementById("wan3-isp-ip").disabled = false;
+				document.getElementById("wan3-nat").style.display = "block";
+				document.getElementById("wan3-route").style.display = "block";
+				document.getElementById("wan3-mangle-input").style.display = "block";
+				document.getElementById("wan3-mangle-output").style.display = "block";
+				document.getElementById("wan3-mangle-pcc").style.display = "block";
+				document.getElementById("wan3-mangle-pre").style.display = "block";
+				document.getElementById("wan3-route-failover").style.display = "block";
+				document.getElementById("wan3-routing-table").style.display = "block";
+				
+				document.getElementById("wan4-isp").disabled = false;
+				document.getElementById("wan4-isp-ip").disabled = false;
+				document.getElementById("wan4-isp-ip").disabled = false;
+				document.getElementById("wan4-nat").style.display = "block";
+				document.getElementById("wan4-route").style.display = "block";
+				document.getElementById("wan4-mangle-input").style.display = "block";
+				document.getElementById("wan4-mangle-output").style.display = "block";
+				document.getElementById("wan4-mangle-pcc").style.display = "block";
+				document.getElementById("wan4-mangle-pre").style.display = "block";
+				document.getElementById("wan4-route-failover").style.display = "block";
+				document.getElementById("wan4-routing-table").style.display = "block";
+				
+				document.getElementById("wan5-isp").disabled = false;
+				document.getElementById("wan5-isp-ip").disabled = false;
+				document.getElementById("wan5-nat").style.display = "block";
+				document.getElementById("wan5-route").style.display = "block";
+				document.getElementById("wan5-mangle-input").style.display = "block";
+				document.getElementById("wan5-mangle-output").style.display = "block";
+				document.getElementById("wan5-mangle-pcc").style.display = "block";
+				document.getElementById("wan5-mangle-pre").style.display = "block";
+				document.getElementById("wan5-route-failover").style.display = "block";
+				document.getElementById("wan5-routing-table").style.display = "block";
+				
+				document.getElementById("wan6-isp").disabled = true;
+				document.getElementById("wan6-isp-ip").disabled = true;
+				document.getElementById("wan6-nat").style.display = "none";
+				document.getElementById("wan6-route").style.display = "none";
+				document.getElementById("wan6-mangle-input").style.display = "none";
+				document.getElementById("wan6-mangle-output").style.display = "none";
+				document.getElementById("wan6-mangle-pcc").style.display = "none";
+				document.getElementById("wan6-mangle-pre").style.display = "none";
+				document.getElementById("wan6-route-failover").style.display = "none";
+				document.getElementById("wan6-routing-table").style.display = "none";
+			}
+
+			if (document.getElementById('wan-list').value == "line6"){
+
+				document.getElementById("wan1-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>6/0<span>";
+				document.getElementById("wan2-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>6/1<span>";
+				document.getElementById("wan3-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>6/2<span>";
+				document.getElementById("wan4-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>6/3<span>";
+				document.getElementById("wan5-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>6/4<span>";
+				document.getElementById("wan6-mangle-pcc-both").innerHTML = "<span style='color:#ff6600; font-weight:bold'>6/5<span>";
+
+				document.getElementById("wan3-isp").disabled = false;
+				document.getElementById("wan3-isp-ip").disabled = false;
+				document.getElementById("wan3-nat").style.display = "block";
+				document.getElementById("wan3-route").style.display = "block";
+				document.getElementById("wan3-mangle-input").style.display = "block";
+				document.getElementById("wan3-mangle-output").style.display = "block";
+				document.getElementById("wan3-mangle-pcc").style.display = "block";
+				document.getElementById("wan3-mangle-pre").style.display = "block";
+				document.getElementById("wan3-route-failover").style.display = "block";
+				document.getElementById("wan3-routing-table").style.display = "block";
+				
+				document.getElementById("wan4-isp").disabled = false;
+				document.getElementById("wan4-isp-ip").disabled = false;
+				document.getElementById("wan4-nat").style.display = "block";
+				document.getElementById("wan4-route").style.display = "block";
+				document.getElementById("wan4-mangle-input").style.display = "block";
+				document.getElementById("wan4-mangle-output").style.display = "block";
+				document.getElementById("wan4-mangle-pcc").style.display = "block";
+				document.getElementById("wan4-mangle-pre").style.display = "block";
+				document.getElementById("wan4-route-failover").style.display = "block";
+				document.getElementById("wan4-routing-table").style.display = "block";
+				
+				document.getElementById("wan5-isp").disabled = false;
+				document.getElementById("wan5-isp-ip").disabled = false;
+				document.getElementById("wan5-nat").style.display = "block";
+				document.getElementById("wan5-route").style.display = "block";
+				document.getElementById("wan5-mangle-input").style.display = "block";
+				document.getElementById("wan5-mangle-output").style.display = "block";
+				document.getElementById("wan5-mangle-pcc").style.display = "block";
+				document.getElementById("wan5-mangle-pre").style.display = "block";
+				document.getElementById("wan5-route-failover").style.display = "block";
+				document.getElementById("wan5-routing-table").style.display = "block";
+				
+				document.getElementById("wan6-isp").disabled = false;
+				document.getElementById("wan6-isp-ip").disabled = false;
+				document.getElementById("wan6-nat").style.display = "block";
+				document.getElementById("wan6-route").style.display = "block";
+				document.getElementById("wan6-mangle-input").style.display = "block";
+				document.getElementById("wan6-mangle-output").style.display = "block";
+				document.getElementById("wan6-mangle-pcc").style.display = "block";
+				document.getElementById("wan6-mangle-pre").style.display = "block";
+				document.getElementById("wan6-route-failover").style.display = "block";
+				document.getElementById("wan6-routing-table").style.display = "block";
+			}
+		
+		}
+		
+		function LocalAddressOption() {
+		if (document.getElementById('local-list').value == "local-list1"){
+		  document.getElementById('interface-name').disabled = true;
+		  document.getElementById('interface-name').value = "";
+		  document.getElementById('interface-name').placeholder = "LOCAL-IP";
+		} 
+		if (document.getElementById('local-list').value == "local-list2"){
+		  document.getElementById('interface-name').disabled = false;
+		  document.getElementById('interface-name').value = "";
+		   document.getElementById('interface-name').placeholder = "ex: ether5 or bridge1";
+		}
+		if (document.getElementById('local-list').value == "local-list3"){
+		  document.getElementById('interface-name').disabled = false;
+		  document.getElementById('interface-name').value = "";
+		  document.getElementById('interface-name').placeholder = "ex: LAN or LOCAL";
+		}
+		}
+		
+		 function selectElementContents(el) {
+            var body = document.body, range, sel;
+            if (document.createRange && window.getSelection) {
+                range = document.createRange();
+                sel = window.getSelection();
+                sel.removeAllRanges();
+                try {
+                     range.selectNodeContents(el);
+                     sel.addRange(range);
+                         } catch (e) {
+                                 range.selectNode(el);
+                                 sel.addRange(range);
+                         }
+                         } else if (body.createTextRange) {
+                             range = body.createTextRange();
+                             range.moveToElementText(el);
+                             range.select();
+                         }
+             document.execCommand("copy"); 
+        }
+		
+		               
     </script>  
   </body>
 </html>
