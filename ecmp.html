@@ -237,9 +237,11 @@
               ###############################################################<br>
               </span>
               <b>/ip firewall address-list</b><br>
-              add address=192.168.0.0/16 list=LOCAL-IP comment="LB By BNT"<br>
-              add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT"<br>
-              add address=10.0.0.0/8 list=LOCAL-IP comment="LB By BNT"<br>
+              add action=accept chain=prerouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+              add action=accept chain=postrouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+              add action=accept chain=forward dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+              add action=accept chain=input dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
+              add action=accept chain=output dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>	
               <b>/ip firewall nat</b><br>
               <span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
               <span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
