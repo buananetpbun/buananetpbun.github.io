@@ -83,6 +83,7 @@
       .gsc-input-box{border-radius:5px;height:34px;background:#fff!important;margin-right:-6px!important;line-height:normal!important}
       .gsc-search-button-v2{border-radius:5px!important;height:34px!important}
       .gsc-control-cse{background:#fff!important;border:none!important;clear:both}
+	  .google-search, .gcse-searchbox {float:right;width:250px;}
       div#container_notlike,div#container_like{display:none}
       #dialogoverlay{display:none;opacity:.5;position:fixed;top:0;left:0;background:#292929;width:100%;z-index:10}
       #dialogbox{display:none;position:fixed;background:#292929;border-radius:5px;width:400px;z-index:10;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19)}
@@ -141,7 +142,8 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
-      .gsc-search-box{display:none!important}	  
+	  .google-search, .gcse-searchbox{margin-top:7px;width:100% !important}	  
+      .google-search, .gcse-searchbox{width:100% !important}	  
       h1{font-size:25px}
       h2{font-size:17px}
       .hide-homepage{display:none}
@@ -199,7 +201,7 @@
           <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
         </div>
         <script async src="https://cse.google.com/cse.js?cx=751bf7c3dc13f7e72"></script>
-        <div style="float:right;width:250px;">
+        <div class="google-search">
           <div class="gcse-searchbox"></div>
         </div>
         <div style="clear:both;"></div>
