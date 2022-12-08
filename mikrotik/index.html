@@ -28,401 +28,94 @@
       # facebook  : https://fb.me/buananet.pbun	
       #################################################
       ----------------------------------------------- */  
-      * {-webkit-transition: all .3s ease-in;-moz-transition: all .3s ease-in;-ms-transition: all .3s ease-in;transition: all .3s ease-in;}
-      body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td, tr, table{margin:0; padding:0}
-      body {
-      -ms-text-size-adjust: 100%;
-      -webkit-text-size-adjust: 100%;
-      color: #24292e;
-      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-      font-size: 16px;
-      word-wrap: break-word; 
-      background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat ;
+      *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
+      body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;word-wrap:break-word;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      pre{white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:pre-wrap;word-wrap:break-word}
+      *{box-sizing:border-box}
+      p{display:list-item;list-style:square;padding:3px 0;margin:0 0 0 22px;color:#999}
+      .logo{border-bottom:0 solid #ccc;margin-bottom:20px;margin-top:15px;color:#ddd;font-size:30px;font-weight:700}
+      .logo a{color:#ddd!important;text-decoration:none!important;font-size:25px;text-decoration:none}
+      .logo-left{float:left}
+      .logo-right{float:right;margin-bottom:5px}
+      #wrap{max-width:1180px;min-width:200px;margin:0 auto}
+      .header{border-radius:5px 5px 0 0;margin-top:24px;padding:10px;padding-top:10px;padding-bottom:5px;display:block;color:#fff;background:url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) repeat right;border-top:2px solid #555;border-left:2px solid #555;border-right:2px solid #555;border-bottom:2px solid #555;clear:both}
+      .header a{color:#f60!important;text-decoration:none!important}
+      .header-left{float:left;width:400px;padding-bottom:5px}
+      .header-right{float:right;margin-top:0;border-radius:5px}
+      .content{float:right;width:64%;padding:0;border-right:2px solid #555;border-bottom:2px solid #555;background:#fff;height:750px;border-radius:0 0 5px 0}
+      .sidebar{overflow:hidden;float:left;width:36%;padding:10px;background-color:#ddd;border-left:2px solid #555;border-right:0 solid #555;border-bottom:2px solid #555;height:750px;border-radius:0 0 0 5px}
+      .footer{font-size:14px;padding:10px;color:#ddd;margin-top:20px;margin-bottom:20px;width:auto;text-align:left;font-size:14px;clear:both}
+      .footer a{color:#f60!important}
+      h1{color:#fff;font-size:20px;margin-top:-2px}
+      h2{color:#f60;font-size:20px}
+      .active1,.linkPress:hover,p{color:#f60!important}
+      a:link{color:#333;text-decoration:none}
+      a:visited{color:#333;text-decoration:none}
+      a:hover{color:#333}
+      a:active{color:#333}
+      button{color:#fff;background-color:#f60;border-color:#f60;border-radius:5px;border:none;margin-top:0;padding:5px;width:60px;font-size:15px;font-weight:700;cursor:pointer}
+      button:hover{background-color:#ccc;color:#111}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:0;resize:vertical;font-size:16px!important;border-radius:5px}
+      label{padding:5px 5px 5px 0;display:inline-block}
+      input[type=submit]{background-color:#4CAF50;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
+      input[type=submit]:hover{background-color:#45a049}
+      .row:after{content:"";display:table;clear:both}
+      .list-script{border-radius:0;height:655px;background:#fff;overflow:scroll;overflow-x:hidden;width:100%;margin-top:3px;padding:0;border:1px solid #ccc}
+      .list-script label{padding:0;display:inline-block}
+      .list-output-content{height:737px;background:#fff;width:100%;padding-left:8px;padding-right:10px;margin:0;border:0 solid #ccc}
+      .mytable{overflow-x:hidden;height:218px;margin:0;border:0 solid #ccc}
+      table{border-collapse:collapse;width:100%}
+      tr{width:100%;border:1px solid #f0f0f0;background:#f5f5f5}
+      tr:nth-child(even){background:#fff;width:100%}
+      .bookmark-font{font-size:15px;text-align:center}
+      iframe{width:100%;height:520px;border:0}
+      .welcome{width:100%;height:520px;padding:10px}
+      .welcome a{color:#f60!important}
+      .backtotop{background:#bbb;text-align:center;width:100%;border-radius:0 0 4px 4px;height:27px;color:#111}
+      .backtotop a{font-size:12px;padding:5px;color:#111;font-weight:700;width:100%;text-transform:uppercase;background:#bbb}
+      .backtotop a:hover{color:#f60}
+      .show-homepage-menu{margin-bottom:3px}
+      @media screen and (max-width: 1024px) {
+      .mikrotik-logo{display:none}
       }
-      pre {
-      white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
-      white-space: -pre-wrap; /* Opera */
-      white-space: -o-pre-wrap; /* Opera */
-      white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
-      word-wrap: break-word; /* IE 5.5+ */
-      }
-      * {
-      box-sizing: border-box;
-      }
-      p {
-      display:list-item;
-      list-style: square;
-      padding:3px 0 3px 0;
-      margin:0 0 0 22px;
-      color:#999
-      }
-      .logo {
-      border-bottom:0px solid #ccc;
-      margin-bottom:20px;
-      margin-top:15px;
-      color: #ddd;
-      font-size:30px;
-      font-weight:bold; 
-      }	
-      .logo a{
-      color:#ddd !important;
-      text-decoration:none !important;
-      font-size:25px;
-      text-decoration:none;
-      }
-      .logo-left {
-      float:left;
-      }
-      .logo-right {
-      float:right;
-	  margin-bottom:5px;
-      }
-      #wrap{
-      max-width:1180px;
-      min-width:200px;
-      margin:0 auto;
-      }
-      .header{
-      border-radius: 5px 5px 0 0;
-	  margin-top:24px;
-      padding:10px;
-      padding-top:10px;
-      padding-bottom:5px;
-      display:block;
-      color:#fff;
-      background: url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) repeat right  ;
-      border-top:2px solid #555;
-      border-left:2px solid #555;
-      border-right:2px solid #555;
-      border-bottom:2px solid #555;  
-      clear:both;
-      }
-      .header a{
-      color:#ff6600 !important;
-      text-decoration:none !important;
-      }
-      .header-left {
-      float:left;
-      width:400px;
-      padding-bottom:5px;
-      }
-      .header-right {
-      float:right;
-      margin-top:0px;
-      border-radius: 5px;  
-      }
-      .content{
-      float:right;
-      width:64%;
-      padding: 0px;
-      border-right:2px solid #555;
-      border-bottom:2px solid #555; 
-      background:#fff;
-      height: 750px;
-      border-radius: 0 0 5px 0;
-      }
-      .sidebar{
-      overflow:hidden;
-      float:left;
-      width:36%;
-      padding: 10px;
-      background-color:#ddd;
-      border-left:2px solid #555; 
-      border-right:0px solid #555;  
-      border-bottom:2px solid #555;   
-      height: 750px;
-      border-radius: 0 0 0 5px;  
-      }
-      .footer{
-      font-size:14px;
-      padding:10px;
-      color:#ddd;
-      margin-top:20px;
-      margin-bottom:20px;  
-      width:auto;
-      text-align:left;
-      font-size:14px;
-      clear: both
-      }
-      .footer a{
-      color:#ff6600 !important;
-      }
-      h1 {
-      color:#fff;
-      font-size:20px;
-      margin-top:-2px;
-      }
-      h2 {
-      color:#ff6600;
-      font-size:20px;
-      }
-      .active1, .linkPress:hover, p{
-      color:#ff6600 !important;
-      }
-      a:link {
-      color: #333;
-      text-decoration:none
-      }
-      a:visited {
-      color: #333;
-      text-decoration:none
-      }
-      a:hover {
-      color: #333;
-      }
-      a:active {
-      color: #333;
-      }
-      button {
-      color: #fff;
-      background-color: #ff6600;
-      border-color: #ff6600;
-      border-radius: 5px;
-      border:none;
-      margin-top:0px;
-      padding:5px;
-      width:60px;
-      font-size:15px;
-      font-weight:bold;
-      cursor: pointer;
-      }
-      button:hover {
-      background-color: #ccc;
-      color: #111;
-      }	  
-      input[type=text], select, textarea {
-      width: 100%;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 0px;
-      resize: vertical;
-      font-size:16px !important;
-      border-radius:5px;
-      }
-      label {
-      padding: 5px 5px 5px 0;
-      display: inline-block;
-      }
-      input[type=submit] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 13px 20px;
-      border: none;
-      border-radius: 1px;
-      cursor: pointer;
-      float: right;
-      }
-      input[type=submit]:hover {
-      background-color: #45a049;
-      }
-      /* Clear floats after the columns */
-      .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      }
-      .list-game {
-      border-radius:0;
-      height:655px;
-      background:white;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: 100%;
-      margin-top:3px;
-      padding: 0px;
-      border: 1px solid #ccc;
-      }
-      .list-game label {
-      padding: 0;
-      display: inline-block;
-      } 
-      .list-output-content {
-      height: 737px;
-      background:#fff;
-      width: 100%;
-      padding-left: 8px;
-      padding-right: 10px;
-      margin:0;
-      border: 0px solid #ccc;
-      }
-      .mytable { overflow-x:hidden;
-      height:218px;
-      margin:0;
-      border: 0px solid #ccc;
-      }
-      table {
-      border-collapse:collapse;
-      width: 100%;
-      }
-      tr{
-      width:100%;
-      border: 1px solid #f0f0f0;
-      background: #f5f5f5;
-      }
-      tr:nth-child(even) {
-      background: #fff;
-      width:100%;
-      }
-      .bookmark-font {font-size:15px; 
-      text-align:center
-      }  
-      iframe {
-      width:100%;
-      height:520px;
-      border:0 
-      }
-      .welcome {
-      width:100%;
-      height:520px;
-      padding:10px;
-      }
-      .welcome a{
-      color:#ff6600 !important;
-      }
-      .backtotop {
-      background:#bbb;
-      text-align:center;
-      width: 100%;
-      border-radius:0 0 4px 4px;
-      height:27px;
-      color: #111;
-      }
-      .backtotop a {
-      font-size:12px; 
-      padding:5px;
-      color:#111;
-      font-weight: bold;
-      width: 100%;
-      text-transform: uppercase;
-      background:#bbb;
-      }
-      .backtotop a:hover {
-      color:#ff6600;
-      } 
-      .show-homepage-menu{
-      margin-bottom:3px;	  
-      }
-      @media screen and (max-width: 1024px){
-      .mikrotik-logo {
-      display: none;
-      }	  
-      }
-      @media screen and (max-width: 800px){
-      .bookmark-font {font-size:25px; text-align:center}
-      body {margin:0px;}
+      @media screen and (max-width: 800px) {
+      .bookmark-font{font-size:25px;text-align:center}
+      body{margin:0}
       .footer{border:0;color:#ddd}
-      .logo{
-      margin-left:10px;
-      margin-right:10px;
+      .logo{margin-left:10px;margin-right:10px}
+      .header{border:none;background:none;margin-top:0}
+      .header h1{font-size:18px}
+      .logo-left{margin-top:-4px;margin-bottom:8px}
+      .logo a{margin-left:10px;margin-right:10px;font-size:22px;color:#ddd!important}
+      #wrap{padding:0;margin:0;width:100%;height:100%}
+      .sidebar{border:0!important;width:100%;height:100%;overflow:hidden}
+      .list-script{width:100%;height:100%;overflow:hidden;border:none}
+      .list-output-content{height:100%;border:none}
+      .content,.welcome,.list-output-content{display:none}
+      .mymenu{width:100%!important}
+      button{margin-top:5px}
+      .header{height:auto}
+      .header-right{float:right;margin-top:-8px;margin-bottom:15px}
       }
-      .header{border:none; background:none; margin-top:0px}
-      .header h1 {font-size:18px}
-      .logo-left{
-      margin-top:-4px;
-      margin-bottom:8px;
-      }	  
-      .logo a{
-      margin-left:10px;
-      margin-right:10px;
-      font-size:22px;
-      color:#ddd !important;
-      } 
-      #wrap{
-      padding:0;
-      margin:0;
-      width:100%;
-      height:100%;
+      @media screen and (max-width: 700px) {
+      .logo-left a{font-size:23px}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
+      .mikrotik-logo{display:flex;justify-content:center}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%;margin-top:15px}
+      .logo-right{text-align:center;width:100%}
+      .header-left{text-align:center;margin-bottom:10px;margin-top:10px}
+      .header-right{text-align:center;margin-bottom:20px}
+      .header-left,.header-right{float:none;display:block;width:auto}
       }
-      .sidebar {
-      border:0 !important; 
-      width:100%;
-      height:100%;
-      overflow: hidden;
+      @media screen and (max-width:500px) {
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      .avatar{display:none}
       }
-      .list-game {
-      width:100%;
-      height:100%;
-      overflow: hidden; 
-      border:none;   
+      @media screen and (max-width:350px) {
+      .hide-homepage{display:none}
       }
-      .list-output-content {
-      height:100%;  
-      border:none;   
-      }
-      .content, .welcome, .list-output-content {
-      display:none;
-      }     
-      .mymenu {
-      width:100% !important;
-      }        
-      button {
-      margin-top:5px;
-      }  
-      .header{
-      height:auto; 
-      }   
-      .header-right {
-      float:right;
-      margin-top:-8px;
-      margin-bottom:15px;
-      }	  
-      }
-      @media screen and (max-width: 700px){
-      .logo-left a{
-      font-size:23px;
-      }	
-      .mymenu {
-      padding-left:0px;
-      padding-right:0px;
-      } 
-      .mymenu ul {
-      background: none !important;
-      justify-content: center;
-      display: flex;
-      } 	  
-      .mikrotik-logo {
-      display: flex;
-      justify-content: center;
-      }	  
-      .logo {
-      width:100%;
-      }
-      .logo-left {
-      justify-content: center;
-      display: flex;
-      width:100%;
-      margin-top:15px;
-      }
-      .logo-right {
-      text-align: center;
-      width: 100%; 
-      }	  
-      .header-left {
-      text-align: center;
-      margin-bottom:10px;
-      margin-top:10px;
-      } 
-      .header-right {
-      text-align: center;
-      margin-bottom:20px;
-      } 	  
-      .header-left, .header-right {
-      float:none;
-      display:block;
-      width:auto;
-      }	  
-      }
-      @media screen and (max-width:500px){
-      .show-homepage-menu{
-      display: flex;
-      justify-content: center;
-      width:100%;
-      }	  
-      .avatar {display:none}
-      }	  
-      @media screen and (max-width:350px){
-      .hide-homepage {display:none}
-      }	   
     </style>
   </head>
   <body>
@@ -449,7 +142,7 @@
           <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
           </span>
           <span style="font-weight:normal;font-size:13px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
-            <span style="font-weight:normal; font-size:14px"> [<span class="tooltip"><span class="tooltiptext2">E-mail verified status</span><span id="email_Verified" style="cursor:help"></span></span>]</span>
+          <span style="font-weight:normal; font-size:14px"> [<span class="tooltip"><span class="tooltiptext2">E-mail verified status</span><span id="email_Verified" style="cursor:help"></span></span>]</span>
           </span>
         </div>
       </div>
@@ -475,7 +168,7 @@
       </div>
       <div class="sidebar">
         <input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="search script.." style="width:100%;margin-bottom:7px;font-size: 16px"> 
-        <div class="list-game">
+        <div class="list-script">
           <div class="bookmark-font">
             <span style="padding-left:5px;padding-top:5px;font-weight:bold; text-align:center;">
             <a href="#A"><span style="color:#ff6600">A</span></a>
@@ -1957,7 +1650,7 @@
             </tr>
             <tr>
               <td>
-                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/vidio-domain-list.html" onclick="getcontent(this); return truefalseFunction(x);">Vidio.com Domain List</a></p>			  
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/vidio-domain-list.html" onclick="getcontent(this); return truefalseFunction(x);">Vidio.com Domain List</a></p>
                 <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Virus-and-Malware-Port-Blocking.html" onclick="getcontent(this); return truefalseFunction(x);">Virus and Malware Port Blocking</a></p>
               </td>
             </tr>
@@ -2061,7 +1754,7 @@ Send Your Mikrotik RouterOS Script For Contribution -> <a href="https://docs.goo
         © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
         <div style="margin-top:1px; color:#888; font-size:11px">
           Project by <a target="_blank" href="https://github.com/buananetpbun">Agus Ramadhani</a> site <a target="_blank" href="https://www.o-om.com/">o-om.com</a> P.Bun 74112, INDONESIA
-        </div>	 		
+        </div>
       </div>
     </div>
     <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen">
