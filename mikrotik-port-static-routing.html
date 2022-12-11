@@ -152,7 +152,7 @@
         <div style="display:flex">
           <div style="width:50%;margin-right:10px">
             <label>Routing Option</label> 
-            <select onchange="myFunction()" id="dns-list">
+            <select onchange="submit()" id="dns-list">
               <option value="01">Only Port Mangle Routing</option>
               <option value="02">Port To IP Routing Use RAW</option>
               <option value="03">Port To IP Routing Use Filter</option>
@@ -160,7 +160,7 @@
           </div>
           <div style="width:50%;" >
             <label>RouterOS Version</label>  <br>
-            <select onchange="myFunction()" id="ros-list">
+            <select onchange="submit()" id="ros-list">
               <option value="ros6">RouterOS v6.xx</option>
               <option value="ros7">RuoterOS v7.xx</option>
             </select>
