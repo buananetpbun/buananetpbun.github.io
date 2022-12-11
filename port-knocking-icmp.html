@@ -62,6 +62,7 @@
       .list-output-content{height:260px;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:10px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
       .column{float:left;width:50%}
       .row:after{content:"";display:table;clear:both}
+ 	  .d-link {visibility:hidden} 	  	  
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
       .list-output-content{height:auto}
@@ -202,7 +203,7 @@
           <br>
           Copy-Paste Firewall Script into the Terminal!
           <br><br>
-          <span style='color:#ff6600; font-weight:bold'>Unique Packet Size For Key Knocking: </span><span style="font-size:14px; font-weight:bold" id="packet-size-result1"></span> <span style='color:#ff6600; font-weight:bold'>and </span> <span style="font-size:14px; font-weight:bold" id="packet-size-result2"></span>  <span class="d-link"><a class="download" href="#" download="My-Knocking.bat">Download My-Knocking.bat</a></span><br><br>
+          <span style='color:#ff6600; font-weight:bold'>Unique Packet Size For Key Knocking: </span><span style="font-size:14px; font-weight:bold" id="packet-size-result1"></span> <span style='color:#ff6600; font-weight:bold'>and </span> <span style="font-size:14px; font-weight:bold" id="packet-size-result2"></span>  <span id="d-link" class="d-link"><a class="download" href="#" download="My-Knocking.bat">Download My-Knocking.bat</a></span><br><br>
           <b>Example Manually Open Key Ping in CMD Windows:</b><br>
           First Key Knock -> <span style='color:green;'>ping -l <span id='packet-size-win1'></span> (IP Adrress)</span><br>
           Second Key Knock -> <span style='color:green;'>ping -l <span id='packet-size-win2'></span> (IP Adrress)</span><br><br>
