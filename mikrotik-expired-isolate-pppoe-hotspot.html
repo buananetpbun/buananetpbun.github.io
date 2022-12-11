@@ -172,20 +172,20 @@
                   </span>	
                   <b>/ip proxy set enabled=yes port=<span style="color:#ff6600; font-weight:bold" id="result-set-port-proxy">8082</span> max-cache-size=none</b><br>
                   <b>/ip proxy access </b><br>
-                  add action=allow dst-port=<span style="color:#ff6600; font-weight:bold" id="result-proxy-port">8082</span> src-address=<span style="color:#ff6600; font-weight:bold" id="result-proxy-ip">10.20.20.0/24</span> comment="EXPIRED By BNT"<br>
-                  add action=deny local-port=<span style="color:#ff6600; font-weight:bold" id="result-proxy-port2">8082</span> comment="EXPIRED By BNT"<br>
+                  add action=allow dst-port=<span style="color:#ff6600; font-weight:bold" id="result-proxy-port">8082</span> src-address=<span style="color:#ff6600; font-weight:bold" id="result-proxy-ip">10.20.20.0/24</span> comment="Expired by buananetpbun.github.io"<br>
+                  add action=deny local-port=<span style="color:#ff6600; font-weight:bold" id="result-proxy-port2">8082</span> comment="Expired by buananetpbun.github.io"<br>
                   <b>/ip address</b><br>
-                  add address=<span style="color:#ff6600; font-weight:bold" id="result-ip-address">10.20.20.1/24</span> interface=<span style="color:#ff6600; font-weight:bold" id="result-interface">bridge1</span> comment="EXPIRED By BNT"<br>
+                  add address=<span style="color:#ff6600; font-weight:bold" id="result-ip-address">10.20.20.1/24</span> interface=<span style="color:#ff6600; font-weight:bold" id="result-interface">bridge1</span> comment="Expired by buananetpbun.github.io"<br>
                   <b>/ip firewall address-list</b><br>
-                  add list=EXPIRED  address=<span style="color:#ff6600; font-weight:bold" id="result-address-list">10.20.20.0/24</span> comment="EXPIRED By BNT"<br>
+                  add list=EXPIRED  address=<span style="color:#ff6600; font-weight:bold" id="result-address-list">10.20.20.0/24</span> comment="Expired by buananetpbun.github.io"<br>
                   <b>/ip pool</b><br>
-                  add name=EXPIRED  ranges=<span style="color:#ff6600; font-weight:bold" id="result-ip-pool">10.20.20.2-10.20.20.254</span> comment="EXPIRED By BNT"<br>
+                  add name=EXPIRED  ranges=<span style="color:#ff6600; font-weight:bold" id="result-ip-pool">10.20.20.2-10.20.20.254</span> comment="Expired by buananetpbun.github.io"<br>
                   <b>/ip firewall filter</b><br>
-                  add chain=forward src-address-list=EXPIRED action=drop comment="EXPIRED By BNT" disabled=yes<br>
+                  add chain=forward src-address-list=EXPIRED action=drop comment="Expired by buananetpbun.github.io" disabled=yes<br>
                   <b>/ip firewall nat</b><br>
-                  add chain=dstnat src-address-list=EXPIRED  protocol=tcp dst-port=80,443 action=redirect to-ports=<span style="color:#ff6600; font-weight:bold" id="result-nat-port">8082</span> comment="EXPIRED By BNT"<br>
+                  add chain=dstnat src-address-list=EXPIRED  protocol=tcp dst-port=80,443 action=redirect to-ports=<span style="color:#ff6600; font-weight:bold" id="result-nat-port">8082</span> comment="Expired by buananetpbun.github.io"<br>
                   <b>/ppp profile</b><br>
-                  add comment="EXPIRED By BNT" local-address=<span style="color:#ff6600; font-weight:bold" id="result-ppp-profile">10.20.20.1</span> name=EXPIRED on-down=":local username \$\"user\";\r\
+                  add comment="Expired by buananetpbun.github.io" local-address=<span style="color:#ff6600; font-weight:bold" id="result-ppp-profile">10.20.20.1</span> name=EXPIRED on-down=":local username \$\"user\";\r\
                   \n/ip proxy access remove [find comment=\"ppp-\$username\"];\r\
                   \n/ip firewall address-list remove [find comment=\"ppp-\$username\"];" on-up=":local username \$\"user\";\r\
                   \n:local address \$\"remote-address\";\r\
@@ -201,7 +201,7 @@
                   \n/ip proxy access remove [find comment=\"hs-\$username\"]\r\
                   \n/ip firewall address-list remove [find comment=\"hs-\$username\"];" shared-users=100<br>
                   <b>/ip hotspot walled-garden ip</b><br>
-                  add action=accept disabled=no !dst-address !dst-address-list dst-port=<span style="color:#ff6600; font-weight:bold" id="result-wallet-garden-port">8082</span> protocol=tcp !src-address !src-address-list comment="EXPIRED By BNT"<br>
+                  add action=accept disabled=no !dst-address !dst-address-list dst-port=<span style="color:#ff6600; font-weight:bold" id="result-wallet-garden-port">8082</span> protocol=tcp !src-address !src-address-list comment="Expired by buananetpbun.github.io"<br>
             </div>
           </div>
           <br>
@@ -229,15 +229,15 @@
         <div style="margin-top:20px;">
           <span style="color:#ff6600; font-weight:bold"># This Script for remove all Script from this Generator:</span><br>
           /ip proxy set enabled=no port=8080 max-cache-size=none <br>
-          /ip pool remove [find comment="EXPIRED By BNT"]<br>
-          /ip firewall nat remove [find comment="EXPIRED By BNT"]<br>
-          /ip firewall filter remove [find comment="EXPIRED By BNT"]<br>
-          /ip firewall address-list remove [find comment="EXPIRED By BNT"]<br>
-          /ppp profile remove [find comment="EXPIRED By BNT"]<br>
-          /ip proxy access remove [find comment="EXPIRED By BNT"]<br>
-          /ip hotspot walled-garden ip remove [find comment="EXPIRED By BNT"]<br>
+          /ip pool remove [find comment="Expired by buananetpbun.github.io"]<br>
+          /ip firewall nat remove [find comment="Expired by buananetpbun.github.io"]<br>
+          /ip firewall filter remove [find comment="Expired by buananetpbun.github.io"]<br>
+          /ip firewall address-list remove [find comment="Expired by buananetpbun.github.io"]<br>
+          /ppp profile remove [find comment="Expired by buananetpbun.github.io"]<br>
+          /ip proxy access remove [find comment="Expired by buananetpbun.github.io"]<br>
+          /ip hotspot walled-garden ip remove [find comment="Expired by buananetpbun.github.io"]<br>
           /ip hotspot user profile remove [find name ="EXPIRED"]<br>
-          /ip address remove [find comment="EXPIRED By BNT"]<br>
+          /ip address remove [find comment="Expired by buananetpbun.github.io"]<br>
         </div>
         <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555;">
           © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
