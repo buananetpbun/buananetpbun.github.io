@@ -161,10 +161,10 @@
             </span>
             <div id="list-output">
               <b>/ip firewall mangle</b><br>
-              add action=mark-connection chain=input in-interface="<span id="interface-isp" style="color:#ff6600">ether1-ISP</span>" new-connection-mark=public-ip passthrough=yes comment="Public IP Generate from buananetpbun.github.io"<br>
-              add action=mark-routing chain=output connection-mark=public-ip new-routing-mark=public-ip passthrough=no comment="Public IP Generate from buananetpbun.github.io"<br>
+              add action=mark-connection chain=input in-interface="<span id="interface-isp" style="color:#ff6600">ether1-ISP</span>" new-connection-mark=public-ip passthrough=yes comment="Public IP by buananetpbun.github.io"<br>
+              add action=mark-routing chain=output connection-mark=public-ip new-routing-mark=public-ip passthrough=no comment="Public IP by buananetpbun.github.io"<br>
               <b>/ip route</b><br>
-              add check-gateway=ping gateway="<span id="ip-gateway" style="color:#ff6600">192.168.10.1</span>" routing-mark=public-ip comment="Public IP Generate from buananetpbun.github.io"<br>
+              add check-gateway=ping gateway="<span id="ip-gateway" style="color:#ff6600">192.168.10.1</span>" routing-mark=public-ip comment="Public IP by buananetpbun.github.io"<br>
             </div>
           </div>
         </div>
