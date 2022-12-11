@@ -509,18 +509,18 @@
                   ##############################################################<br>
                   </span>
                   <b>/ip firewall address-list</b><br>
-                  add list=LOCAL-IP address=10.0.0.0/8 comment=ROUTING-GAME-BY-BNT<br>
-                  add list=LOCAL-IP address=172.16.0.0/12 comment=ROUTING-GAME-BY-BNT<br>
-                  add list=LOCAL-IP address=192.168.0.0/16 comment=ROUTING-GAME-BY-BNT<br>
+                  add list=LOCAL-IP address=10.0.0.0/8 comment="Routing Games by buananetpbun.github.io"<br>
+                  add list=LOCAL-IP address=172.16.0.0/12 comment="Routing Games by buananetpbun.github.io"<br>
+                  add list=LOCAL-IP address=192.168.0.0/16 comment="Routing Games by buananetpbun.github.io"<br>
                   <span id="show-hide-routing-table" style="display:none">
                   <b>/routing table</b><br>
-                  add name=routing-game fib comment=ROUTING-GAME-BY-BNT<br>
+                  add name=routing-game fib comment="Routing Games by buananetpbun.github.io"<br>
                   </span>	
                   <span style="font-weight:600">/ip route</span><br>
-                  add gateway=<span id="gateway-input">x.x.x.x</span> <span id="routing-option">routing-mark</span>=routing-game comment=<span>ROUTING-GAME-BY-BNT</span><br>
+                  add gateway=<span id="gateway-input">x.x.x.x</span> <span id="routing-option">routing-mark</span>=routing-game comment="Routing Games by buananetpbun.github.io"<br>
                   <span style="font-weight:600">/ip firewall mangle</span><br>
-                  add action=mark-routing chain=prerouting connection-mark=conn-game new-routing-mark=routing-game passthrough=no src-address-list=LOCAL-IP comment=ROUTING-GAME-BY-BNT place-before=*0<br>
-                  add action=mark-connection chain=prerouting dst-address-list=List-IP-Games new-connection-mark=conn-game passthrough=yes comment=ROUTING-GAME-BY-BNT place-before=*0<br>
+                  add action=mark-routing chain=prerouting connection-mark=conn-game new-routing-mark=routing-game passthrough=no src-address-list=LOCAL-IP comment="Routing Games by buananetpbun.github.io" place-before=*0<br>
+                  add action=mark-connection chain=prerouting dst-address-list=List-IP-Games new-connection-mark=conn-game passthrough=yes comment="Routing Games by buananetpbun.github.io" place-before=*0<br>
                   <span style="color:green;font-weight:600">##############################################################<br>
                   # If you want to add a game script only, you can ignore the script above<br>
                   ##############################################################<br></span>
@@ -645,12 +645,12 @@
       </div>
       <div class="footer">
         <span style="color:#ff6600"><b># This Script for remove all Script from this Generator:</b></span><br>
-        /ip route remove [find comment="ROUTING-GAME-BY-BNT"]<br>
-        /ip firewall mangle remove [find comment="ROUTING-GAME-BY-BNT"]<br>
+        /ip route remove [find comment="Routing Games by buananetpbun.github.io"<br>
+        /ip firewall mangle remove [find comment="Routing Games by buananetpbun.github.io"<br>
         /ip firewall raw remove [find address-list="List-IP-Games"]<br>
         /ip firewall address-list remove [find list="List-IP-Games"]<br>
-        /ip firewall address-list remove [find comment="ROUTING-GAME-BY-BNT"]<br>
-        /routing table remove [find comment="ROUTING-GAME-BY-BNT"]
+        /ip firewall address-list remove [find comment="Routing Games by buananetpbun.github.io"<br>
+        /routing table remove [find comment="Routing Games by buananetpbun.github.io"
         <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555;">
           © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
         </div>
