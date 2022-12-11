@@ -207,14 +207,14 @@
                   # Wifi.id Type -> <span id="wifiid-list-text-info" style="font-weight:600;text-transform: uppercase">WMS WIFI.ID</span><br>
                   #####################################################################<br>
                   </span>
-                  <span style="font-weight:600">/interface wireless</span> set [ find default-name=wlan1] name=wlan1 comment="WIFI.ID BY BNT"<br>
-                  <span style="font-weight:600">/interface wireless</span> set [ find default-name=wlan2] name=wlan2 comment="WIFI.ID BY BNT"<br>
-                  <span style="font-weight:600">/ip firewall nat</span> add chain=srcnat out-interface="<span id="interfaceid-wms-x-0" style="color:#ff6600; font-weight:600"></span>" action=masquerade comment="WIFI.ID BY BNT"<br>
+                  <span style="font-weight:600">/interface wireless</span> set [ find default-name=wlan1] name=wlan1 comment="WiFi.id Generator by buananetpbun.github.io"<br>
+                  <span style="font-weight:600">/interface wireless</span> set [ find default-name=wlan2] name=wlan2 comment="WiFi.id Generator by buananetpbun.github.io"<br>
+                  <span style="font-weight:600">/ip firewall nat</span> add chain=srcnat out-interface="<span id="interfaceid-wms-x-0" style="color:#ff6600; font-weight:600"></span>" action=masquerade comment="WiFi.id Generator by buananetpbun.github.io"<br>
                   <span id="seamless-show" style="display:none">
                   <span style="font-weight:600">/ip dhcp-client</span><br>
-                  add default-route-distance=1 comment="WIFI.ID BY BNT" disabled=no interface="<span id="interfaceid-seamless-x" style="color:#ff6600; font-weight:600">wlan1</span>" <br>
+                  add default-route-distance=1 comment="WiFi.id Generator by buananetpbun.github.io" disabled=no interface="<span id="interfaceid-seamless-x" style="color:#ff6600; font-weight:600">wlan1</span>" <br>
                   <span style="font-weight:600">/interface wireless security-profiles</span><br>
-                  add comment="WIFI.ID BY BNT" authentication-types=wpa-eap,wpa2-eap eap-methods=peap mode=dynamic-keys \
+                  add comment="WiFi.id Generator by buananetpbun.github.io" authentication-types=wpa-eap,wpa2-eap eap-methods=peap mode=dynamic-keys \
                   mschapv2-password="<span id="password-seamless-x" style="color:#ff6600; font-weight:600"></span>" mschapv2-username="<span id="username-seamless-x1" style="color:#ff6600; font-weight:600"></span>" radius-mac-accounting=yes radius-mac-authentication=yes \
                   supplicant-identity="<span id="username-seamless-x2" style="color:#ff6600; font-weight:600"></span>" name="Seamless.wifi.id" tls-mode=dont-verify-certificate<br>
                   <span style="font-weight:600">/interface wireless</span><br>
@@ -222,7 +222,7 @@
                   </span>
                   <span id="wms-show">
                   <span style="font-weight:600">/ip dhcp-client</span><br>
-                  add default-route-distance=1 disabled=no interface="<span id="interfaceid-wms-x-4" style="color:#ff6600; font-weight:600">wlan1</span>" comment="WIFI.ID BY BNT" script=":local rma\
+                  add default-route-distance=1 disabled=no interface="<span id="interfaceid-wms-x-4" style="color:#ff6600; font-weight:600">wlan1</span>" comment="WiFi.id Generator by buananetpbun.github.io" script=":local rma\
                   rk \"<span style="color:#ff6600; font-weight:600">check-wms-</span><span id="interfaceid-wms-x-1" style="color:#ff6600; font-weight:600"></span>\";\r\
                   \n:local count [/ip route print count-only where comment=\$rmark];\r\
                   \n:if (\$count = 0) do={\r\
@@ -235,7 +235,7 @@
                   \n /ip route set \$test gateway=\$\"gateway-address\";\r\
                   \n}}}"<br>
                   <span style="font-weight:600">/system script</span><br>
-                  add dont-require-permissions=no name="WMS-AUTO-LOGIN" comment="WIFI.ID BY BNT" policy=\
+                  add dont-require-permissions=no name="WMS-AUTO-LOGIN" comment="WiFi.id Generator by buananetpbun.github.io" policy=\
                   ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":\<br>
                   <span id="wms-username-show">
                   local USERNAME \"<span id="username-wms-x" style="color:#ff6600; font-weight:600"></span>.<span id="username-makeid-randomnumber-wms-x" style="color:#ff6600; font-weight:600"></span><span id="username-makeid-wms-x" style="color:#ff6600; font-weight:600"></span>\";\r\
@@ -266,7 +266,7 @@
                   NAME&password=\$PASSWWORD&redirect=\$REDIRECT&wlan=\$WLANID\";\r\
                   \n"<br>
                   <span style="font-weight:600">/system scheduler</span><br>					
-                  add comment="WIFI.ID By BNT" interval=1m name=WMS-AUTO-LOGIN on-event="if ([/i\
+                  add comment="WiFi.id Generator by buananetpbun.github.io" interval=1m name=WMS-AUTO-LOGIN on-event="if ([/i\
                   p route get [/ip route find comment=\"<span style="color:#ff6600; font-weight:600">check-wms-</span><span id="interfaceid-wms-x-3" style="color:#ff6600; font-weight:600"></span>\"] active]=no) do={\
                   \r\
                   \n:local INTNAME [/interface wireless get [ find default-name=\"<span id="interfaceid-wms-x-2" style="color:#ff6600; font-weight:600"></span>\"] n\
