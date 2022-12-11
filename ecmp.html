@@ -247,7 +247,6 @@
               <span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
               <span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
               <span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
-              add action=redirect chain=dstnat dst-port=53,5353 protocol=udp src-address-list=LOCAL-IP to-ports=53 comment="LB ECMP by buananetpbun.github.io"<br>
               <span id="show-hide-routing-table" style="display:none">
               <b>/routing table</b> <br>
               <span id="wan1-routing-table">add name="<span id="wan1-routing-table-name"></span>" fib comment="LB ECMP by buananetpbun.github.io"<br></span>
