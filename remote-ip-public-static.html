@@ -139,13 +139,20 @@
       <div class="sidebar">
         <div style="display:flex">
           <div style="width:100%;">
-            <label>Interface WAN ISP</label><br>
+            <label>Interface ISP</label><br>
             <input type="text" id="input-interface-isp" value="ether1-ISP" placeholder="ether1-ISP">
           </div>
           <div style="width:100%;margin-left:10px">
-            <label>IP Gateway WAN ISP</label><br>
+            <label>IP Gateway ISP</label><br>
             <input type="text" id="input-ip-gateway" value="192.168.10.1" placeholder="192.168.10.1">
           </div>
+            <div style="width:100%;margin-left:10px">
+              <label>ROS Version</label>
+              <select id="ros-list" onchange="myFunctionOuput()">
+                <option value="ros6">RouterOS v6.xx</option>
+                <option value="ros7">RouterOS v7.xx</option>
+              </select>
+            </div>		  
         </div>
       </div>
       <div class="content">
