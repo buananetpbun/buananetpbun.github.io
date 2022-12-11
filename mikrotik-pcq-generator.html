@@ -220,18 +220,18 @@
                 add kind=pcq name="<span id="queue-type-name-down" style="color:#ff6600;">PCQ-Down</span>" pcq-classifier=dst-address pcq-rate="<span id="queue-type-rate-down" style="color:#ff6600;">2M</span>"<br>
                 <span style="display:none" id="hide-show-queue-simple">
                 <b>/queue simple</b><br>
-                add comment="Script Generator By BuanaNET Secure!" name="<span id="queue-simple-gb-1" style="color:#ff6600;">GLOBAL-CONNECTION</span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
+                add name="<span id="queue-simple-gb-1" style="color:#ff6600;">GLOBAL-CONNECTION</span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8" comment="PCQ Generator by buananetpbun.github.io"<br>
                 add max-limit="<span style="color:#ff6600;"><span id="queue-simple-max-1a">10M</span>/<span id="queue-simple-max-1b">10M</span></span>" name="<span id="queue-simple-name-1" style="color:#ff6600;">Upload-Client</span>" packet-marks="upload-client"  parent="<span id="queue-simple-gb-2" style="color:#ff6600;">GLOBAL-CONNECTION</span>" queue="<span style="color:#ff6600;"><span id="queue-simple-pcq-1">PCQ-Up</span>/default-small</span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
                 add max-limit="<span style="color:#ff6600;"><span id="queue-simple-max-2a">50M</span>/<span id="queue-simple-max-2b">50M</span></span>" name="<span id="queue-simple-name-2" style="color:#ff6600;">Download-Client</span>" packet-marks="download-client" parent="<span id="queue-simple-gb-3" style="color:#ff6600;">GLOBAL-CONNECTION</span>" queue="<span style="color:#ff6600;">default-small/<span id="queue-simple-pcq-2">PCQ-Down</span></span>" target="192.168.0.0/16,172.16.0.0/12,10.0.0.0/8"<br>
                 </span>
                 <span id="hide-show-queue-tree">
                 <b>/queue tree</b><br>
-                add comment="Script Generator By BuanaNET Secure!" name="<span id="queue-tree-gb-1" style="color:#ff6600;">GLOBAL-CONNECTION</span>" parent=global<br>
+                add name="<span id="queue-tree-gb-1" style="color:#ff6600;">GLOBAL-CONNECTION</span>" parent=global comment="PCQ Generator by buananetpbun.github.io"<br>
                 add max-limit="<span id="queue-tree-max-1" style="color:#ff6600;">10M</span>" name="<span id="queue-tree-name-1" style="color:#ff6600;">Upload-Client</span>" packet-mark="upload-client" parent="<span id="queue-tree-gb-2" style="color:#ff6600;">GLOBAL-CONNECTION</span>" queue="<span id="queue-tree-pcq-1" style="color:#ff6600;">PCQ-Up</span>"<br>
                 add max-limit="<span id="queue-tree-max-2" style="color:#ff6600;">50M</span>" name="<span id="queue-tree-name-2" style="color:#ff6600;">Download-Client</span>" packet-mark="download-client" parent="<span id="queue-tree-gb-3" style="color:#ff6600;">GLOBAL-CONNECTION</span>" queue="<span id="queue-tree-pcq-2" style="color:#ff6600;">PCQ-Down</span>"<br>
                 </span>
                 <b>/ip firewall mangle</b><br>
-                add comment="Script Generator By BuanaNET Secure!" action=mark-connection chain=forward new-connection-mark="global-conn" passthrough=yes src-address-list=LOCAL-IP<br>
+                add action=mark-connection chain=forward new-connection-mark="global-conn" passthrough=yes src-address-list=LOCAL-IP comment="PCQ Generator by buananetpbun.github.io"<br>
                 add action=mark-packet chain=forward connection-mark="global-conn" src-address-list=LOCAL-IP new-packet-mark="upload-client" passthrough=no<br>
                 add action=mark-packet chain=forward connection-mark="global-conn" dst-address-list=LOCAL-IP new-packet-mark="download-client" passthrough=no<br>
                 <b>/ip firewall address-list</b><br>
