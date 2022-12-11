@@ -237,74 +237,74 @@
               ###############################################################<br>
               </span>
               <b>/ip firewall address-list</b><br>
-              add address=192.168.0.0/16 list=LOCAL-IP comment="LB By BNT"<br>
-              add address=172.16.0.0/12 list=LOCAL-IP comment="LB By BNT"<br>
-              add address=10.0.0.0/8 list=LOCAL-IP comment="LB By BNT"<br>
+              add address=192.168.0.0/16 list=LOCAL-IP comment="LB ECMP by buananetpbun.github.io"<br>
+              add address=172.16.0.0/12 list=LOCAL-IP comment="LB ECMP by buananetpbun.github.io"<br>
+              add address=10.0.0.0/8 list=LOCAL-IP comment="LB ECMP by buananetpbun.github.io"<br>
               <b>/ip firewall nat</b><br>
-              <span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
-              <span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
-              <span id="wan3-nat" style="display:none">add chain=srcnat out-interface="<span id="wan3-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
-              <span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
-              <span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
-              <span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB By BNT"<br></span>
-              add action=redirect chain=dstnat dst-port=53,5353 protocol=udp src-address-list=LOCAL-IP to-ports=53 comment="LB By BNT"<br>
+              <span id="wan1-nat">add chain=srcnat out-interface="<span id="wan1-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan2-nat">add chain=srcnat out-interface="<span id="wan2-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan3-nat" style="display:none">add chain=srcnat out-interface="<span id="wan3-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan4-nat" style="display:none">add chain=srcnat out-interface="<span id="wan4-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan5-nat" style="display:none">add chain=srcnat out-interface="<span id="wan5-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan6-nat" style="display:none">add chain=srcnat out-interface="<span id="wan6-nat-text"></span>" action=masquerade comment="LB ECMP by buananetpbun.github.io"<br></span>
+              add action=redirect chain=dstnat dst-port=53,5353 protocol=udp src-address-list=LOCAL-IP to-ports=53 comment="LB ECMP by buananetpbun.github.io"<br>
               <span id="show-hide-routing-table" style="display:none">
               <b>/routing table</b> <br>
-              <span id="wan1-routing-table">add name="<span id="wan1-routing-table-name"></span>" fib comment="LB By BNT"<br></span>
-              <span id="wan2-routing-table">add name="<span id="wan2-routing-table-name"></span>" fib comment="LB By BNT"<br></span>
-              <span id="wan3-routing-table" style="display:none">add name="<span id="wan3-routing-table-name"></span>" fib comment="LB By BNT"<br></span>
-              <span id="wan4-routing-table" style="display:none">add name="<span id="wan4-routing-table-name"></span>" fib comment="LB By BNT"<br></span>
-              <span id="wan5-routing-table" style="display:none">add name="<span id="wan5-routing-table-name"></span>" fib comment="LB By BNT"<br></span>
-              <span id="wan6-routing-table" style="display:none">add name="<span id="wan6-routing-table-name"></span>" fib comment="LB By BNT"<br></span>
+              <span id="wan1-routing-table">add name="<span id="wan1-routing-table-name"></span>" fib comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan2-routing-table">add name="<span id="wan2-routing-table-name"></span>" fib comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan3-routing-table" style="display:none">add name="<span id="wan3-routing-table-name"></span>" fib comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan4-routing-table" style="display:none">add name="<span id="wan4-routing-table-name"></span>" fib comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan5-routing-table" style="display:none">add name="<span id="wan5-routing-table-name"></span>" fib comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan6-routing-table" style="display:none">add name="<span id="wan6-routing-table-name"></span>" fib comment="LB ECMP by buananetpbun.github.io"<br></span>
               </span>
               <b>/ip route</b><br>
               <span id="show-hide-routing-v6" style="">
-              <span id="ecmp-route">add check-gateway=ping distance=1 gateway="<span id="wan1-ecmp-route-text"></span>,<span id="wan2-ecmp-route-text"></span>,<span id="wan3-ecmp-route-text"></span>,<span id="wan4-ecmp-route-text"></span>,<span id="wan5-ecmp-route-text"></span>,<span id="wan6-ecmp-route-text"></span>" comment="LB By BNT"<br>
+              <span id="ecmp-route">add check-gateway=ping distance=1 gateway="<span id="wan1-ecmp-route-text"></span>,<span id="wan2-ecmp-route-text"></span>,<span id="wan3-ecmp-route-text"></span>,<span id="wan4-ecmp-route-text"></span>,<span id="wan5-ecmp-route-text"></span>,<span id="wan6-ecmp-route-text"></span>" comment="LB ECMP by buananetpbun.github.io"<br>
               </span>
               </span>
               <span id="show-hide-routing-v7" style="display:none">
-              <span id="wan1-routing-v7">add check-gateway=ping distance=1 gateway="<span id="wan1-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB By BNT"<br></span>
-              <span id="wan2-routing-v7">add check-gateway=ping distance=1 gateway="<span id="wan2-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB By BNT"<br></span>
-              <span id="wan3-routing-v7" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan3-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB By BNT"<br></span>
-              <span id="wan4-routing-v7" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan4-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB By BNT"<br></span>
-              <span id="wan5-routing-v7" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan5-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB By BNT"<br></span>
-              <span id="wan6-routing-v7" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan6-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB By BNT"<br></span>
+              <span id="wan1-routing-v7">add check-gateway=ping distance=1 gateway="<span id="wan1-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan2-routing-v7">add check-gateway=ping distance=1 gateway="<span id="wan2-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan3-routing-v7" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan3-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan4-routing-v7" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan4-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan5-routing-v7" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan5-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan6-routing-v7" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan6-ecmp-gw-name"></span>" routing-table="<span style='color:#ff6600; font-weight:bold'>main</span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
               </span>
-              <span id="wan1-route">add check-gateway=ping distance=1 gateway="<span id="wan1-route-text"></span>" <span id="wan1-routing-option">routing-mark</span>="<span id="wan1-route-text-r"></span>" comment="LB By BNT"<br></span>
-              <span id="wan2-route">add check-gateway=ping distance=1 gateway="<span id="wan2-route-text"></span>" <span id="wan2-routing-option">routing-mark</span>="<span id="wan2-route-text-r"></span>" comment="LB By BNT"<br></span>
-              <span id="wan3-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan3-route-text"></span>" <span id="wan3-routing-option">routing-mark</span>="<span id="wan3-route-text-r"></span>" comment="LB By BNT"<br></span>
-              <span id="wan4-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan4-route-text"></span>" <span id="wan4-routing-option">routing-mark</span>="<span id="wan4-route-text-r"></span>" comment="LB By BNT"<br></span>
-              <span id="wan5-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan5-route-text"></span>" <span id="wan5-routing-option">routing-mark</span>="<span id="wan5-route-text-r"></span>" comment="LB By BNT"<br></span>
-              <span id="wan6-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan6-route-text"></span>" <span id="wan6-routing-option">routing-mark</span>="<span id="wan6-route-text-r"></span>" comment="LB By BNT"<br></span>
+              <span id="wan1-route">add check-gateway=ping distance=1 gateway="<span id="wan1-route-text"></span>" <span id="wan1-routing-option">routing-mark</span>="<span id="wan1-route-text-r"></span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan2-route">add check-gateway=ping distance=1 gateway="<span id="wan2-route-text"></span>" <span id="wan2-routing-option">routing-mark</span>="<span id="wan2-route-text-r"></span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan3-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan3-route-text"></span>" <span id="wan3-routing-option">routing-mark</span>="<span id="wan3-route-text-r"></span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan4-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan4-route-text"></span>" <span id="wan4-routing-option">routing-mark</span>="<span id="wan4-route-text-r"></span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan5-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan5-route-text"></span>" <span id="wan5-routing-option">routing-mark</span>="<span id="wan5-route-text-r"></span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
+              <span id="wan6-route" style="display:none">add check-gateway=ping distance=1 gateway="<span id="wan6-route-text"></span>" <span id="wan6-routing-option">routing-mark</span>="<span id="wan6-route-text-r"></span>" comment="LB ECMP by buananetpbun.github.io"<br></span>
               <b>/ip firewall mangle</b><br>
-              add action=accept chain=prerouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
-              add action=accept chain=postrouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
-              add action=accept chain=forward dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
-              add action=accept chain=input dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
-              add action=accept chain=output dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB By BNT"<br>
-              <span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
+              add action=accept chain=prerouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB ECMP by buananetpbun.github.io"<br>
+              add action=accept chain=postrouting dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB ECMP by buananetpbun.github.io"<br>
+              add action=accept chain=forward dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB ECMP by buananetpbun.github.io"<br>
+              add action=accept chain=input dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB ECMP by buananetpbun.github.io"<br>
+              add action=accept chain=output dst-address-list=LOCAL-IP src-address-list=LOCAL-IP comment="LB ECMP by buananetpbun.github.io"<br>
+              <span id="wan1-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan1-mangle-input-text"></span>" new-connection-mark="<span id="wan1-mangle-input-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan2-mangle-input">add action=mark-connection chain=input in-interface="<span id="wan2-mangle-input-text"></span>" new-connection-mark="<span id="wan2-mangle-input-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan3-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan3-mangle-input-text"></span>" new-connection-mark="<span id="wan3-mangle-input-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan4-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan4-mangle-input-text"></span>" new-connection-mark="<span id="wan4-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan4-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan4-mangle-input-text"></span>" new-connection-mark="<span id="wan4-mangle-input-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan5-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan5-mangle-input-text"></span>" new-connection-mark="<span id="wan5-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan5-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan5-mangle-input-text"></span>" new-connection-mark="<span id="wan5-mangle-input-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan6-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan6-mangle-input-text"></span>" new-connection-mark="<span id="wan6-mangle-input-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan6-mangle-input" style="display:none">add action=mark-connection chain=input in-interface="<span id="wan6-mangle-input-text"></span>" new-connection-mark="<span id="wan6-mangle-input-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan1-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan1-mangle-output-text"></span>" new-routing-mark="<span id="wan1-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan1-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan1-mangle-output-text"></span>" new-routing-mark="<span id="wan1-mangle-output-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan2-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan2-mangle-output-text"></span>" new-routing-mark="<span id="wan2-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan2-mangle-output">add action=mark-routing chain=output connection-mark="<span id="wan2-mangle-output-text"></span>" new-routing-mark="<span id="wan2-mangle-output-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan3-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan3-mangle-output-text"></span>" new-routing-mark="<span id="wan3-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan3-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan3-mangle-output-text"></span>" new-routing-mark="<span id="wan3-mangle-output-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan4-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan4-mangle-output-text"></span>" new-routing-mark="<span id="wan4-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan4-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan4-mangle-output-text"></span>" new-routing-mark="<span id="wan4-mangle-output-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan5-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan5-mangle-output-text"></span>" new-routing-mark="<span id="wan5-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan5-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan5-mangle-output-text"></span>" new-routing-mark="<span id="wan5-mangle-output-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
-              </span>	<span id="wan6-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan6-mangle-output-text"></span>" new-routing-mark="<span id="wan6-mangle-output-text-r"></span>" passthrough=yes comment="LB By BNT"
+              </span>	<span id="wan6-mangle-output" style="display:none">add action=mark-routing chain=output connection-mark="<span id="wan6-mangle-output-text"></span>" new-routing-mark="<span id="wan6-mangle-output-text-r"></span>" passthrough=yes comment="LB ECMP by buananetpbun.github.io"
               <br>
               </span>
             </div>
@@ -315,10 +315,10 @@
       </div>
       <div class="footer">
         <span style="color:#ff6600"><b># This script for remove all script from this Generator</b></span>
-        <br>/ip firewall nat remove [find comment="LB By BNT"]
-        <br>/ip route remove [find comment="LB By BNT"]
-        <br>/ip firewall mangle remove [find comment="LB By BNT"]
-        <br>/routing table remove [find comment="LB By BNT"]
+        <br>/ip firewall nat remove [find comment="LB ECMP by buananetpbun.github.io"]
+        <br>/ip route remove [find comment="LB ECMP by buananetpbun.github.io"]
+        <br>/ip firewall mangle remove [find comment="LB ECMP by buananetpbun.github.io"]
+        <br>/routing table remove [find comment="LB ECMP by buananetpbun.github.io"]
         <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555;">
           © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
         </div>
