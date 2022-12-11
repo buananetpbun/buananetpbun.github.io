@@ -205,22 +205,22 @@
             # Created By: BuanaNETPBun.Github.io<br>
             ###############################################################<br>
             </span>
-            /interface list add name=<span style="color:#ff6600">WAN-PROTECT</span><br>
-            /interface list member add interface="<span style="color:#ff6600" id="out-interface2"></span>" list=<span style="color:#ff6600">WAN-PROTECT</span><br>
+            /interface list add name=<span style="color:#ff6600">WAN-PROTECT</span> comment="<span style="color:#ff6600;">MikroTik Ninja by buananetpbun.github.io</span>"<br>
+            /interface list member add interface="<span style="color:#ff6600" id="out-interface2"></span>" list=<span style="color:#ff6600">WAN-PROTECT</span> comment="<span style="color:#ff6600;">MikroTik Ninja by buananetpbun.github.io</span>"<br>
             <span id="show-2" style="display:none">
             <span style="color:green">## Block Winbox Scan</span><br>
-            /ip firewall filter add action=drop chain=input dst-port=21,22,23,8291,80,443,8728,8729 comment="Block Winbox Scan" in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp<br> 
+            /ip firewall filter add action=drop chain=input dst-port=21,22,23,8291,80,443,8728,8729 comment="Block Winbox Scan - by buananetpbun.github.io" in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp<br> 
             /ip firewall filter add action=drop chain=input dst-port=21,22,23,8291,80,443,8728,8729 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=udp<br>
             </span>
             <span id="show-3" style="display:none">
             <span style="color:green">## Block Neighbor Discovery</span><br>
-            /ip firewall filter add action=drop chain=input comment="Block Neighbor Discovery" in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=5678 protocol=tcp<br>
+            /ip firewall filter add action=drop chain=input comment="Block Neighbor Discovery - by buananetpbun.github.io" in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=5678 protocol=tcp<br>
             /ip firewall filter add action=drop chain=input in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=5678 protocol=udp<br>
             /ip neighbor discovery-settings set discover-interface-list=!<span style="color:#ff6600">WAN-PROTECT</span><br>
             </span>
             <span id="show-4" style="display:none">
             <span style="color:green">## Block MAC Address</span><br>
-            /ip firewall filter add action=drop chain=input comment="Block MAC Address" in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=20561 protocol=tcp<br>
+            /ip firewall filter add action=drop chain=input comment="Block MAC Address - by buananetpbun.github.io" in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=20561 protocol=tcp<br>
             /ip firewall filter add action=drop chain=input in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=20561 protocol=udp<br>
             /tool mac-server mac-winbox set allowed-interface-list=<span style="color:#ff6600">none</span><br>
             /tool mac-server set allowed-interface-list=<span style="color:#ff6600">none</span><br>
@@ -228,39 +228,39 @@
             </span>
             <span id="show-5" style="display:none">
             <span style="color:green">## Block Traceroute</span><br>
-            /ip firewall filter add action=drop chain=input comment="Block Traceroute" in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=33434-33534 protocol=tcp<br>
+            /ip firewall filter add action=drop chain=input comment="Block Traceroute - by buananetpbun.github.io" in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=33434-33534 protocol=tcp<br>
             /ip firewall filter add action=drop chain=input in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> dst-port=33434-33534 protocol=udp<br>
             </span>
             <span id="show-6" style="display:none">
             <span style="color:green">## Block RoMON</span><br>
-            /tool romon port add disabled=no forbid=yes comment="Block RoMON" interface="<span style="color:#ff6600" id="out-interface3"></span>"
+            /tool romon port add disabled=no forbid=yes comment="Block RoMON - by buananetpbun.github.io" interface="<span style="color:#ff6600" id="out-interface3"></span>"
             </span>
             <span id="show-7" style="display:none">
             <span style="color:green">## Block DNS Poisoning</span><br>
-            /ip firewall filter add chain=input dst-port=53 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp action=drop comment="Block Open Recursive DNS"<br>
+            /ip firewall filter add chain=input dst-port=53 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp action=drop comment="Block Open Recursive DNS - by buananetpbun.github.io"<br>
             /ip firewall filter add chain=input dst-port=53 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=udp action=drop
             </span>
             <span id="show-8" style="display:none">
             <span style="color:green">## Block Open PROXY</span><br>
             /ip proxy set enabled=no<br>
-            /ip firewall filter add action=drop chain=input dst-port=3128,8080 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp comment="Block Open PROXY"<br>
+            /ip firewall filter add action=drop chain=input dst-port=3128,8080 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp comment="Block Open PROXY - by buananetpbun.github.io"<br>
             /ip firewall filter add action=drop chain=input dst-port=3128,8080 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=udp<br>
             </span>
             <span id="show-9" style="display:none">
             <span style="color:green">## Block BTest Server</span><br>
             /tool bandwidth-server set enabled=no authenticate=yes<br> 
-            /ip firewall filter add action=drop chain=input dst-port=2000 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp comment="Block BTest Server"<br>  
+            /ip firewall filter add action=drop chain=input dst-port=2000 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp comment="Block BTest Server - by buananetpbun.github.io"<br>  
             /ip firewall filter add action=drop chain=input dst-port=2000 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=udp<br> 
             </span>
             <span id="show-10" style="display:none">
             <span style="color:green">## Block SNMP</span><br>
             /snmp set enabled=no<br>
-            /ip firewall filter add action=drop chain=input dst-port=161,162 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp comment="Block SNMP"<br>
+            /ip firewall filter add action=drop chain=input dst-port=161,162 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp comment="Block SNMP - by buananetpbun.github.io"<br>
             /ip firewall filter add action=drop chain=input dst-port=161,162 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=udp<br>
             </span>
             <span id="show-11" style="display:none">
             <span style="color:green">## Block The Dude</span><br>
-            /ip firewall filter add action=drop chain=input dst-port=2210,2211 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp comment="Block The Dude"<br>
+            /ip firewall filter add action=drop chain=input dst-port=2210,2211 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=tcp comment="Block The Dude - by buananetpbun.github.io"<br>
             /ip firewall filter add action=drop chain=input dst-port=2210,2211 in-interface-list=<span style="color:#ff6600">WAN-PROTECT</span> protocol=udp<br>
             </span>
             <span id="show-12" style="display:none">
