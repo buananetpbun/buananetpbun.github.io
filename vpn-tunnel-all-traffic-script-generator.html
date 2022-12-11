@@ -186,13 +186,13 @@
                   ###################################################################<br>
                   </span>
                   <span style="font-weight:600">/interface <span id="vpn-list-text" style="color:#ff6600; font-weight:600" >pptp</span>-client</span><br>
-                  add connect-to="<span id="vpn-ip-text" style="color:#ff6600; font-weight:600">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1" style="color:#ff6600; font-weight:600">VPN-TUNNEL</span>" user="<span id="vpn-username-text" style="color:#ff6600; font-weight:600" >xxxxxx</span>" password="<span id="vpn-password-text" style="color:#ff6600; font-weight:600">xxxxxx</span>" comment="<span id="vpn-name-text4">VPN-TUNNEL-BY-BNT</span>"<br>
+                  add connect-to="<span id="vpn-ip-text" style="color:#ff6600; font-weight:600">x.x.x.x</span>" disabled=no name="<span id="vpn-name-text1" style="color:#ff6600; font-weight:600">VPN-TUNNEL</span>" user="<span id="vpn-username-text" style="color:#ff6600; font-weight:600" >xxxxxx</span>" password="<span id="vpn-password-text" style="color:#ff6600; font-weight:600">xxxxxx</span>" comment="<span id="vpn-name-text4">VPN Tunnel by buananetpbun.github.io</span>"<br>
                   <span style="font-weight:600">/ip firewall nat</span><br>
-                  add chain=srcnat out-interface="<span id="vpn-name-text2" style="color:#ff6600; font-weight:600">VPN-TUNNEL</span>" action=masquerade comment="<span id="vpn-name-text5">VPN-TUNNEL-BY-BNT</span>"<br>
+                  add chain=srcnat out-interface="<span id="vpn-name-text2" style="color:#ff6600; font-weight:600">VPN-TUNNEL</span>" action=masquerade comment="<span id="vpn-name-text5">VPN Tunnel by buananetpbun.github.io</span>"<br>
                   <span style="font-weight:600">/ip route</span><br>
-                  add gateway="<span id="vpn-name-text3" style="color:#ff6600; font-weight:600">VPN-TUNNEL</span>" distance=1 comment="<span id="vpn-name-text6">VPN-TUNNEL-BY-BNT</span>"<br>
+                  add gateway="<span id="vpn-name-text3" style="color:#ff6600; font-weight:600">VPN-TUNNEL</span>" distance=1 comment="<span id="vpn-name-text6">VPN Tunnel by buananetpbun.github.io</span>"<br>
                   <span id="ip-gateway-text">
-                  add dst-address="<span id="vpn-ip-text2" style="color:#ff6600; font-weight:600" >x.x.x.x.x</span>" distance=1 gateway="<span id="ip-gateway-game" style="color:#ff6600; font-weight:600">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN-TUNNEL-BY-BNT</span>"</span><br>
+                  add dst-address="<span id="vpn-ip-text2" style="color:#ff6600; font-weight:600" >x.x.x.x.x</span>" distance=1 gateway="<span id="ip-gateway-game" style="color:#ff6600; font-weight:600">x.x.x.x.x</span>" comment="<span id="vpn-name-text7">VPN Tunnel by buananetpbun.github.io</span>"</span><br>
             </div>
           </div>
           <br>
@@ -202,10 +202,10 @@
       <div class="footer">
         <span style="color:#ff6600">
         <b># This Script for remove all Script from this Generator</b></span><br>
-        /interface pptp-client remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
-        /interface l2tp-client remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
-        /ip route remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
-        /ip firewall nat remove [find comment="VPN-TUNNEL-BY-BNT"]<br>
+        /interface pptp-client remove [find comment="VPN Tunnel by buananetpbun.github.io"]<br>
+        /interface l2tp-client remove [find comment="VPN Tunnel by buananetpbun.github.io"]<br>
+        /ip route remove [find comment="VPN Tunnel by buananetpbun.github.io"]<br>
+        /ip firewall nat remove [find comment="VPN Tunnel by buananetpbun.github.io"]<br>
         <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555;">
           © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
         </div>
