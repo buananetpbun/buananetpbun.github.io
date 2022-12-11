@@ -161,10 +161,10 @@
             </span>
             <div id="list-output">
               <b>/ip firewall mangle</b><br>
-              add action=mark-connection chain=input in-interface="<span id="interface-isp" style="color:#ff6600">ether1-ISP</span>" new-connection-mark=ip-public passthrough=yes<br>
-              add action=mark-routing chain=output connection-mark=ip-public new-routing-mark=ip-public passthrough=no<br>
+              add action=mark-connection chain=input in-interface="<span id="interface-isp" style="color:#ff6600">ether1-ISP</span>" new-connection-mark=public-ip passthrough=yes<br>
+              add action=mark-routing chain=output connection-mark=public-ip new-routing-mark=public-ip passthrough=no<br>
               <b>/ip route</b><br>
-              add check-gateway=ping gateway="<span id="ip-gateway" style="color:#ff6600">192.168.10.1</span>" routing-mark=ip-public<br>
+              add check-gateway=ping gateway="<span id="ip-gateway" style="color:#ff6600">192.168.10.1</span>" routing-mark=public-ip<br>
             </div>
           </div>
         </div>
