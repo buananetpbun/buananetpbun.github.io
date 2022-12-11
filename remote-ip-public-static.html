@@ -45,8 +45,7 @@
       a:link{color:#f60}
       a:visited{color:#f60}
       a:hover{color:#f60}
-      a:active{color:#f60}
-      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:137px;font-weight:700;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff}
+      a:active{color:#f60}      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:120px;font-weight:700;font-size:14px!important;cursor:pointer;border-radius:5px;color:#fff; margin-right:5px}
       button:hover{background-color:#ccc;color:#111}
       .row:after{content:"";display:table;clear:both}
       input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #bbb;border-radius:1px;resize:vertical;margin-bottom:5px;font-size:14px!important;border-radius:5px}
@@ -141,16 +140,16 @@
         <div style="display:flex">
           <div style="width:100%;">
             <label>Interface WAN ISP</label><br>
-            <input type="text" id="input-interface-isp" value="ether1-ISP" placeholder="ether1-ISP" onkeyup="myFunction()" >
+            <input type="text" id="input-interface-isp" value="ether1-ISP" placeholder="ether1-ISP">
           </div>
           <div style="width:100%;margin-left:10px">
             <label>IP Gateway WAN ISP</label><br>
-            <input type="text" id="input-ip-gateway" value="192.168.10.1" placeholder="192.168.10.1" onkeyup="myFunction()">
+            <input type="text" id="input-ip-gateway" value="192.168.10.1" placeholder="192.168.10.1">
           </div>
         </div>
       </div>
       <div class="content">
-        <span style="margin-left:2px;font-weight:600">Script Generator Result</span>
+        <span style="margin-left:2px;font-weight:600">Copy-Paste to Terminal.</span>
         <div class="list-output-content">
           <div id="showScript">
             <span style="color:#ff6600;">
@@ -170,8 +169,8 @@
           </div>
         </div>
         <br>
-        <button style="margin-top:-5px" id="copyscript" type="button" onclick="myFunction();selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:normal;margin-left:10px;font-size:14px"><b>Copy-Paste to Terminal.
-        </b></span>  
+		<button type="button" onclick="myFunction()">Generate</button>
+        <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button>
       </div>
       <div class="footer">
         © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
