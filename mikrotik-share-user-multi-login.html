@@ -207,9 +207,9 @@
                 <b>/ip hotspot user profile</b><br>
                 add address-list="<span id="profile-address-list" style="color:#ff6600"></span>" name="<span id="profile-name" style="color:#ff6600;"></span>" shared-users="<span id="profile-shared-user" style="color:#ff6600"></span>" rate-limit="<span id="profile-rate-limit" style="color:#ff6600;"></span>"  parent-queue="<span id="profile-parent" style="color:#ff6600;"></span>" insert-queue-before="bottom" comment="Bandwidth Share by buananetpbun.github.io"<br>
                 <b>/ip hotspot user</b><br>
-                add name="<span id="hotspot-username" style="color:#ff6600;"></span>" password="<span id="hotspot-password" style="color:#ff6600;"></span>" profile="<span id="hotspot-profile-name" style="color:#ff6600;"></span>" comment="<span id="hotspot-comment" style="color:#ff6600;"></span>"<br>
+                add name="<span id="hotspot-username" style="color:#ff6600;"></span>" password="<span id="hotspot-password" style="color:#ff6600;"></span>" profile="<span id="hotspot-profile-name" style="color:#ff6600;"></span>" comment="<span id="hotspot-comment" style="color:#ff6600;"></span> - Bandwidth Share by buananetpbun.github.io"<br>
                 <b>/ip firewall mangle</b><br>
-                add action=mark-packet chain=forward src-address-list="<span id="mangle-upload-src" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-src" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-up" style="color:#ff6600;"></span>"<br>
+                add action=mark-packet chain=forward src-address-list="<span id="mangle-upload-src" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-src" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-up" style="color:#ff6600;"></span> - Bandwidth Share by buananetpbun.github.io"<br>
                 add action=mark-packet chain=forward dst-address-list="<span id="mangle-download-dst" style="color:#ff6600;"></span>" new-packet-mark="<span id="mangle-packet-dst" style="color:#ff6600;"></span>" passthrough=no comment="<span id="mangle-comment-down" style="color:#ff6600;"></span>"<br>
               </div>
             </div>
