@@ -149,11 +149,11 @@
           <div style="display:flex">
             <div style="float:left; width:100%;">
               <label>Up Total (K/M)</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
             </div>
             <div style="float:left; width:100%;margin-left:10px">
               <label>Down Total (K/M)</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
             </div>
           </div>
           <div style="margin-top:10px;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #bbb;font-weight:600; color:#f60">Sub Parent Queue / Child Queue</div>
@@ -180,11 +180,11 @@
           <div style="display:flex">
             <div style="float:left; width:100%;">
               <label>Up Client (K/M)</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
             </div>
             <div style="float:left; width:100%;margin-left:10px;">
               <label>Down Client (K/M)</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
             </div>
           </div>
           <div style="display:flex">
