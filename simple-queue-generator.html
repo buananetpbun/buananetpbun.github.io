@@ -164,17 +164,17 @@
             </div>
             <div style="float:left;width:100%;margin-left:10px;">
               <label>Client Identity</label>
-              <input type="text" id="input-client-initial" value="1" placeholder="1">
+              <input onkeypress="return event.charCode != 32" type="text" id="input-client-initial" value="1" placeholder="numeric only">
             </div>
           </div>
           <div style="display:flex">
             <div style="float:left; width:100%;">
               <label>Start IP Client</label>
-              <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
+              <input onkeypress="return event.charCode != 32" type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
             </div>
             <div style="float:left; width:100%;margin-left:10px;">
               <label>End IP Client</label>
-              <input type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
+              <input onkeypress="return event.charCode != 32" type="text" id="input-end-ip-client" value="192.168.88.35" placeholder="192.168.88.35">
             </div>
           </div>
           <div style="display:flex">
