@@ -142,12 +142,12 @@
         <div class="sidebar">
           <div style="width:100%">
             <label>E-Mail Server</label>
-            <input type="text" id="input-mail-server" value="74.125.200.109" placeholder="74.125.200.109">
+            <input onkeypress="return event.charCode != 32" type="text" id="input-mail-server" value="74.125.200.109" placeholder="74.125.200.109">
           </div>
           <div style="display:flex">
             <div style="width:50%; margin-right:15px">
               <label>E-Mail Port</label>
-              <input type="text" id="input-mail-port" value="587" placeholder="587">
+              <input onkeypress="return event.charCode != 32" type="text" id="input-mail-port" value="587" placeholder="587">
             </div>
             <div style="width:50%">
               <label>RouterOS Version</label>
@@ -159,11 +159,11 @@
           </div>
           <div style="width:100%">
             <label>E-Mail User</label>
-            <input type="text" id="input-mail-user" value="backup.mikrotik.ros@gmail.com" placeholder="backup.mikrotik.ros@gmail.com">
+            <input onkeypress="return event.charCode != 32" type="text" id="input-mail-user" value="backup.mikrotik.ros@gmail.com" placeholder="backup.mikrotik.ros@gmail.com">
           </div>
           <div style="width:100%">
             <label>E-Mail Password</label>
-            <input type="text" id="input-mail-password" value="rhcylubiwfhxycee" placeholder="rhcylubiwfhxycee">
+            <input onkeypress="return event.charCode != 32" type="text" id="input-mail-password" value="rhcylubiwfhxycee" placeholder="rhcylubiwfhxycee">
           </div>
           <div style="width:100%;margin-top:10px; margin-bottom:15px; border-top:5px solid #bbb"></div>
           <div style="width:100%">
@@ -183,7 +183,7 @@
           </div>
           <div style="width:100%">
             <label>Send Backup File To Your E-Mail</label>
-            <input type="text" id="input-to-mail" value="" placeholder="your-mail@mail.com">
+            <input onkeypress="return event.charCode != 32" type="text" id="input-to-mail" value="" placeholder="your-mail@mail.com">
           </div>
           <div style="width:100%">
             <label>Router Description / E-Mail Title</label>
@@ -191,7 +191,7 @@
           </div>
           <div style="width:100%">
             <label >Scheduler Sending E-Mail</label><br><span style='color:#ff6600;font-size:13px'>d (day) : 1d, 3d, 7d, 14d, 20d, 30d</span>
-            <input type="text" id="input-scheduler" value="7d" placeholder="7d">
+            <input onkeypress="return event.charCode != 32" type="text" id="input-scheduler" value="7d" placeholder="7d">
           </div>
           <button id="disabled-button" style="margin-top:10px;" type="button" onclick="myFunctionInput()">Generate</button>
           <div style="clear: both;"></div>
