@@ -152,18 +152,18 @@
         <div class="sidebar">
           <label>First Icmp Packet Size <br>range: 50-65535<br><span style='color:#ff6600'>example: 100</span></label>
           <br>
-          <input type="text" id="packet-size-key-first" placeholder="100" value="" onkeyup="myFunction()">
+          <input onkeypress="return event.charCode != 32" type="text" id="packet-size-key-first" placeholder="100" value="" onkeyup="myFunction()">
           <br>
           <label>Second Icmp Packet Size <br>range: 50-65535
           <br><span style='color:#ff6600'>example: 200</span></label>
           <br>
-          <input type="text" id="packet-size-key-second" placeholder="200" value="" onkeyup="myFunction()">
+          <input onkeypress="return event.charCode != 32" type="text" id="packet-size-key-second" placeholder="200" value="" onkeyup="myFunction()">
           <br>
           <label>On Login Time Duration<br><span style='color:#ff6600'>example: 00:30:00 (30 minute)</span><br><span style='color:#ff6600'>example: 00:00:00 (unlimited)</span></label>
           <br>
-          <input type="text" id="timeout-access" placeholder="00:30:00" value="00:00:00" onkeyup="myFunction()">
+          <input onkeypress="return event.charCode != 32" type="text" id="timeout-access" placeholder="00:30:00" value="00:00:00" onkeyup="myFunction()">
           <label>Port Service To Protected</label>
-          <input type="text" id="port-services" placeholder="8291,21,22,23,80,443" value="21,22,23" onkeyup="myFunction()">
+          <input onkeypress="return event.charCode != 32" type="text" id="port-services" placeholder="8291,21,22,23,80,443" value="21,22,23" onkeyup="myFunction()">
           <label style="padding-left:0px">Default Port Services:</label>
           <br>
           <div class="row">
