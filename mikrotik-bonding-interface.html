@@ -160,7 +160,7 @@
           <input type="text" id="input-r1-name" value="bonding" placeholder="bonding" onkeyup="myFunction()">
           <div style="padding-top:10px"></div>
           <label><b>Bonding IP Address</b></label><br>
-          <input type="text" id="input-r1-ip" value="192.168.50.1/24" placeholder="192.168.50.1/24" onkeyup="myFunction()" >
+          <input onkeypress="return event.charCode != 32" type="text" id="input-r1-ip" value="192.168.50.1/24" placeholder="192.168.50.1/24" onkeyup="myFunction()" >
           <div style="padding-top:10px"></div>
           <label><b>Bonding Slaves</b></label><br>
           <div class="chech-mikortik-a">
@@ -217,7 +217,7 @@
           <input type="text" id="input-r2-name" value="bonding" placeholder="bonding" onkeyup="myFunction()">
           <div style="padding-top:10px"></div>
           <label><b>Bonding IP Address</b></label><br>
-          <input type="text" id="input-r2-ip" value="192.168.50.2/24" placeholder="192.168.50.2/24" onkeyup="myFunction()">
+          <input onkeypress="return event.charCode != 32" type="text" id="input-r2-ip" value="192.168.50.2/24" placeholder="192.168.50.2/24" onkeyup="myFunction()">
           <div style="padding-top:10px"></div>
           <label><b>Bonding Slaves</b></label><br>
           <div class="chech-mikortik-b">
