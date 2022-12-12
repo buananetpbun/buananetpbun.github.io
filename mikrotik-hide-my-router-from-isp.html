@@ -157,7 +157,7 @@
           <div style="width:100%;">
             <label><b>Change Router Mac Address</b></label><br>
             <span style="display:flex">
-            <input style="width:100%;margin-right:2px" type="text" id="input-mac-address" value="" placeholder="52:E2:4F:28:8B:9F">
+            <input onkeypress="return event.charCode != 32" style="width:100%;margin-right:2px" type="text" id="input-mac-address" value="" placeholder="52:E2:4F:28:8B:9F">
             <button style="width:100px;padding:5px;" type="button" onclick="genMAC()">Random</button>
             </span>
           </div>
