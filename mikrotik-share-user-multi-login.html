@@ -156,7 +156,7 @@
           </div>
           <div style=" width:100%;">
             <label>Target IP Address - <span style="color:green; font-size:12px">Match With Your Hotspot IP Address</span></label><br>
-            <input type="text" id="input-ip-address" value="10.5.50.0/24" placeholder="10.5.50.0/24">
+            <input onkeypress="return event.charCode != 32" type="text" id="input-ip-address" value="10.5.50.0/24" placeholder="10.5.50.0/24">
           </div>
           <span style="color:#ff6600;"><b>HOTSPOT PROFILE</b><br></span>
           <div style=" width:100%;">
@@ -166,7 +166,7 @@
           <div style="display:flex">
             <div style=" width:100%;">
               <label>Shared User</label><br>
-              <input type="text" id="input-shared-user" value="5" placeholder="5">
+              <input maxlength="3" onkeypress="return event.charCode != 32" type="text" id="input-shared-user" value="5" placeholder="5">
             </div>
             <div style=" width:100%;margin-left:10px;">
               <label>Rate Limit (up/down)</label><br>
