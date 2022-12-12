@@ -151,9 +151,9 @@
           <label><b>Ether Name (for Hotspot only)</b><br> <span style='color:#ff6600'>ex: bridge1 or ether2 or E2-WLAN</span></label>
           <input type="text" id="interface-name" placeholder="ex: bridge1 or ether2 or E2-LOCAL" value="bridge1">
           <label><b>IP Address For Expired</b><br> <span style='color:#ff6600'>(IP Subnet /24 only)</span></label>
-          <input type="text" id="ip-address" placeholder="10.20.20.1/24" value="10.20.20.1/24">
+          <input onkeypress="return event.charCode != 32" type="text" id="ip-address" placeholder="10.20.20.1/24" value="10.20.20.1/24">
           <label><b>Proxy Port (Redirect)</b><br> <span style='color:#ff6600'>Don't use 3128 or 8080</span></label>
-          <input type="text" id="proxy-port" placeholder="8082" value="8082">
+          <input onkeypress="return event.charCode != 32" type="text" id="proxy-port" placeholder="8082" value="8082">
           <label><b>Expired Message</b><br><span style='color:#ff6600'>Can Use HMTL Tag</span> </label>
           <input type="text"  id="input-msg-title" placeholder="EXPIRED!" value="EXPIRED!">
           <textarea  name="data" id="input-msg-body" class="input-msg-body">DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. PLEASE MAKE PAYMENT OF THE BILL THROUGH THE ACCOUNT WE PROVIDE. IN ORDER FOR THE INTERNET SERVICE TO REMAIN ACTIVE, IT IS REQUESTED TO MAKE A PAYMENT BEFORE THE DUE DATE OF EACH MONTH.</textarea>
