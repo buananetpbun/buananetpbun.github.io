@@ -160,11 +160,11 @@
           <div style="display:flex">
             <div style="width:100%;">
               <label>Upload Max-Limit</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="5M" placeholder="5M">
             </div>
             <div style="width:100%;margin-left:10px">
               <label>Download Max-Limit</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="10M" placeholder="10M">
             </div>
           </div>
           <div style="margin-top:10px;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #bbb;font-weight:600; color:#f60">Sub Parent Queue / Child Queue</div>
@@ -175,37 +175,37 @@
             </div>
             <div style="width:100%;margin-left:10px;">
               <label>Client Identity</label>
-              <input type="text" id="input-client-initial" value="1" placeholder="1">
+              <input onkeypress="return event.charCode != 32" type="text" id="input-client-initial" value="1" placeholder="numeric only">
             </div>
           </div>
           <div style="display:flex">
             <div style="width:100%;">
               <label>Start IP Client</label>
-              <input type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
+              <input onkeypress="return event.charCode != 32" type="text" id="input-start-ip-client" value="192.168.88.10" placeholder="192.168.88.10">
             </div>
             <div style="width:100%;margin-left:10px;">
               <label>End IP Client</label>
-              <input type="text" id="input-end-ip-client" value="192.168.88.20" placeholder="192.168.88.20">
+              <input onkeypress="return event.charCode != 32" type="text" id="input-end-ip-client" value="192.168.88.20" placeholder="192.168.88.20">
             </div>
           </div>
           <div style="display:flex">
             <div style="float:left; width:100%;">
               <label>Upload Max-Limit</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-up-client" value="512K" placeholder="512K">
             </div>
             <div style="width:100%;margin-left:10px;">
               <label>Download Max-Limit</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-down-client" value="1M" placeholder="1M">
             </div>
           </div>
           <div style="display:flex">
             <div style="width:100%;">
               <label>Upload Limit-At</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-limit-up" value="0" placeholder="0">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-limit-up" value="0" placeholder="0">
             </div>
             <div style="float:left; width:100%;margin-left:10px;">
               <label>Download Limit-At</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-limit-down" value="0" placeholder="0">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-limit-down" value="0" placeholder="0">
             </div>
           </div>
           <input type="checkbox" id="auto-shared"><label for="auto-shared" style="padding-left:0px">Auto Set For Bandwidth Shared (UP-TO)</label>
