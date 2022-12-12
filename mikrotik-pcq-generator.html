@@ -167,11 +167,11 @@
           <div style="display:flex">
             <div style="width:50%; margin-right:10px">
               <label>Upload Max-Limit</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="10M" placeholder="10M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-up-parent" value="10M" placeholder="10M">
             </div>
             <div style="width:50%;">
               <label>Download Max-Limit</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="50M" placeholder="50M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="input-down-parent" value="50M" placeholder="50M">
             </div>
           </div>
           <div style="width:100%">
@@ -190,11 +190,11 @@
           <div style="display:flex">
             <div style="width:50%;margin-right:10px">
               <label>PCQ Up Limit / Client</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="pcq-up-rate-limit" value="1M" placeholder="1M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="pcq-up-rate-limit" value="1M" placeholder="1M">
             </div>
             <div style="width:50%">
               <label>PCQ Down Limit / Client</label>
-              <input onkeydown="upperCaseF(this)" type="text" id="pcq-down-rate-limit" value="2M" placeholder="2M">
+              <input onkeypress="return event.charCode != 32" onkeydown="upperCaseF(this)" type="text" id="pcq-down-rate-limit" value="2M" placeholder="2M">
             </div>
           </div>
           <div style="width:100%; margin-bottom:10px;margin-top:0px;">
