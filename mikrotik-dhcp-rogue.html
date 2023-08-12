@@ -10,10 +10,10 @@
     <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="DHCP Alert: DHCP Rogue / Discover Unknown DHCP Server By BuanaNET-Pbun">
     <meta property="og:description" content="DHCP Alert: DHCP Rogue / Discover Unknown DHCP Server By BuanaNET-Pbun">
-    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/165315596-eaf62f4b-1c14-44b2-beaf-9b4bb050fa35.png">
+    <meta property="og:image" content="https://github-production-user-asset-6210df.s3.amazonaws.com/42666125/260237408-b4d3e2cd-ef01-41d7-9711-d6b370d2ec25.png">
     <meta property="og:image:alt" content="DHCP Alert: DHCP Rogue / Discover Unknown DHCP Server By BuanaNET-Pbun">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-hide-my-router-from-isp.html">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-dhcp-rogue.html">
     <script data-ad-client="ca-pub-9740800920365268" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
     <script async defer src="https://buttons.github.io/buttons.js"></script>  
     <link rel="stylesheet" href="./login/login.css">
@@ -132,7 +132,7 @@
           </div>
         </div>
         <div class="logo-left" style="float:left;"> 
-                    <a href="https://buananetpbun.github.io/pcc.html"><img alt="buananetpbun" style="float:left; margin-top:0px;margin-right:5px" width='35' src="./img/mylogo.png"><span style='color:#ff6600 !important'>Buananetpbun</span>.Github.io</a>    
+          <a href="https://buananetpbun.github.io/pcc.html"><img alt="buananetpbun" style="float:left; margin-top:0px;margin-right:5px" width='35' src="./img/mylogo.png"><span style='color:#ff6600 !important'>Buananetpbun</span>.Github.io</a>    
         </div>
       </div>
       <div style="clear:both"></div>
@@ -140,8 +140,7 @@
         <h1><span style="color:#ff6600 !important">DHCP ALERT</span>: DHCP ROGUE / DISCOVER UNKNOWN DHCP SERVER</h1>
       </div>
       <div class="sidebar">
-
-		<div style="clear:both"></div>
+        <div style="clear:both"></div>
         <img style="margin-top:0px; margin-bottom:10px" src="https://github-production-user-asset-6210df.s3.amazonaws.com/42666125/259610102-7319e70d-5d1f-493d-b832-4454d7f4aa84.png" alt="Italian Trulli">
         <div class="class-input">
           <div style="width:100%;margin-right:10px">
@@ -164,9 +163,9 @@
             <label><b>Sending Options</b></label> 
             <select onchange="submit()" id="option-list">
               <option value="01">Telegram</option>
-			 <option value="02">E-Mail</option>			  
+              <option value="02">E-Mail</option>
               <option value="03">SMS</option>
-              <option value="04">Log Message</option>			  
+              <option value="04">Log Message</option>
             </select>
           </div>
           <div id="telegram" style="width:50%;margin-right:10px">
@@ -197,14 +196,14 @@
             <label><b>Send to your Email</b></label> 
             <input  type="text" id="bot-email" placeholder="your-mail@gmail.com" value="">
           </div>
-		  <div id="routeros" style="width:50%; display:none">
-          <label><b>ROS Version</b></label>
-          <select style="margin-right:10px" onchange="myFunction()" id="ros-list">
-            <option value="ros6">ROS v6.xx</option>
-            <option value="ros7">ROS v7.xx</option>
-          </select>
+          <div id="routeros" style="width:50%; display:none">
+            <label><b>ROS Version</b></label>
+            <select style="margin-right:10px" onchange="myFunction()" id="ros-list">
+              <option value="ros6">ROS v6.xx</option>
+              <option value="ros7">ROS v7.xx</option>
+            </select>
+          </div>
         </div>
-        </div>	
         <div style="margin-top:10px;clear:both"></div>
         <div style="border-bottom:1px solid #bbb; margin-top:2px;"></div>
         <div style="margin-top:25px"></div>
@@ -218,27 +217,22 @@
             # Created By: BuanaNETPBun.Github.io<br>
             ###############################################################<br>
             </span>
-
-<div id="result-telegram"> 
-/ip dhcp-server alert add alert-timeout="<span style="color:#ff6600" id="alert-timeout1"></span>" valid-server="<span style="color:#ff6600" id="valid-server1"></span>" interface="<span style="color:#ff6600" id="interface1"></span>" on-alert=":local DeviceName [/system identity get name];\r\ \n/tool fetch url=\"https://api.telegram.org/bot<span style="color:#ff6600" id="result-bot-id"></span>/sendMessage\\\?chat_id=<span style="color:#ff6600" id="result-chat-id"></span>&text=\E2\9D\8C UNKNOWN DHCP SERVER FOUND !!  %0AROUTER: \$DeviceName %0AINTERFACE: \$interface %0AMAC ROGUE: \$\"mac-address\" %0AIP LOCATION: \$address\" keep-result=no" disabled=no
-</div>
-
-<div id="result-email" style="display:none;"> 
-/ip dhcp-server alert add alert-timeout="<span style="color:#ff6600" id="alert-timeout2"></span>" valid-server="<span style="color:#ff6600" id="valid-server2"></span>" interface="<span style="color:#ff6600" id="interface2">bridge</span>" on-alert=":local DeviceName [/system identity get name];\r\ \n/tool e-mail send to=\"<span style="color:#ff6600" id="result-your-email">your-mail@gmail.com</span>\" from=\"\$DeviceName Monitoring\" subject=\"\$DeviceName \E2\9D\8C UNKNOWN DHCP SERVER FOUND !!\" body=\"\E2\9D\8C UNKNOWN DHCP SERVER FOUND !!  \\nROUTER: \$DeviceName \\nINTERFACE: \$interface \\nMAC ROGUE: \$\"mac-address\" \\nIP LOCATION: \$address\" <span style="color:#ff6600" id="ros-version">start-tls=yes</span>" disabled=no
-</div>
-
-<div id="result-sms" style="display:none;"> 
-/ip dhcp-server alert add alert-timeout="<span style="color:#ff6600" id="alert-timeout3"></span>" valid-server="<span style="color:#ff6600" id="valid-server3"></span>" interface="<span style="color:#ff6600" id="interface3">bridge</span>" on-alert=":local DeviceName [/system identity get name];\r\ \ntool sms send message=\"UNKNOWN DHCP SERVER FOUND !! ROUTER: \$DeviceName INTERFACE: \$interface MAC ROGUE: \$\"mac-address\" IP LOCATION: \$address\" phone-number=\"<span style="color:#ff6600" id="result-phone">08132829xxxx</span>\" port=\"<span style="color:#ff6600" id="result-usb"></span>\"" disabled=no
-</div>
-
-<div id="result-log-message" style="display:none;"> 			
- /ip dhcp-server alert add alert-timeout="<span style="color:#ff6600" id="alert-timeout4"></span>" valid-server="<span style="color:#ff6600" id="valid-server4"></span>" interface=<span style="color:#ff6600" id="interface4">bridge</span> on-alert=":local DeviceName [/system identity get name];\r\ \n:log warning \"## UNKNOWN DHCP SERVER FOUND !! ## \\nROUTER -> \$DeviceName \\nINTERFACE -> \$interface \\nMAC ROGUE -> \$\"mac-address\" \\nIP LOCATION -> \$address\"" disabled=no
-</div>
-
+            <div id="result-telegram"> 
+              /ip dhcp-server alert add alert-timeout="<span style="color:#ff6600" id="alert-timeout1"></span>" valid-server="<span style="color:#ff6600" id="valid-server1"></span>" interface="<span style="color:#ff6600" id="interface1"></span>" on-alert=":local DeviceName [/system identity get name];\r\ \n/tool fetch url=\"https://api.telegram.org/bot<span style="color:#ff6600" id="result-bot-id"></span>/sendMessage\\\?chat_id=<span style="color:#ff6600" id="result-chat-id"></span>&text=\E2\9D\8C UNKNOWN DHCP SERVER FOUND !!  %0AROUTER: \$DeviceName %0AINTERFACE: \$interface %0AMAC ROGUE: \$\"mac-address\" %0AIP LOCATION: \$address\" keep-result=no" disabled=no
+            </div>
+            <div id="result-email" style="display:none;"> 
+              /ip dhcp-server alert add alert-timeout="<span style="color:#ff6600" id="alert-timeout2"></span>" valid-server="<span style="color:#ff6600" id="valid-server2"></span>" interface="<span style="color:#ff6600" id="interface2">bridge</span>" on-alert=":local DeviceName [/system identity get name];\r\ \n/tool e-mail send to=\"<span style="color:#ff6600" id="result-your-email">your-mail@gmail.com</span>\" from=\"\$DeviceName Monitoring\" subject=\"\$DeviceName \E2\9D\8C UNKNOWN DHCP SERVER FOUND !!\" body=\"\E2\9D\8C UNKNOWN DHCP SERVER FOUND !!  \\nROUTER: \$DeviceName \\nINTERFACE: \$interface \\nMAC ROGUE: \$\"mac-address\" \\nIP LOCATION: \$address\" <span style="color:#ff6600" id="ros-version">start-tls=yes</span>" disabled=no
+            </div>
+            <div id="result-sms" style="display:none;"> 
+              /ip dhcp-server alert add alert-timeout="<span style="color:#ff6600" id="alert-timeout3"></span>" valid-server="<span style="color:#ff6600" id="valid-server3"></span>" interface="<span style="color:#ff6600" id="interface3">bridge</span>" on-alert=":local DeviceName [/system identity get name];\r\ \ntool sms send message=\"UNKNOWN DHCP SERVER FOUND !! ROUTER: \$DeviceName INTERFACE: \$interface MAC ROGUE: \$\"mac-address\" IP LOCATION: \$address\" phone-number=\"<span style="color:#ff6600" id="result-phone">08132829xxxx</span>\" port=\"<span style="color:#ff6600" id="result-usb"></span>\"" disabled=no
+            </div>
+            <div id="result-log-message" style="display:none;"> 			
+              /ip dhcp-server alert add alert-timeout="<span style="color:#ff6600" id="alert-timeout4"></span>" valid-server="<span style="color:#ff6600" id="valid-server4"></span>" interface=<span style="color:#ff6600" id="interface4">bridge</span> on-alert=":local DeviceName [/system identity get name];\r\ \n:log warning \"## UNKNOWN DHCP SERVER FOUND !! ## \\nROUTER -> \$DeviceName \\nINTERFACE -> \$interface \\nMAC ROGUE -> \$\"mac-address\" \\nIP LOCATION -> \$address\"" disabled=no
+            </div>
           </div>
         </div>
       </div>
-       <div class="footer">
+      <div class="footer">
         <div style="margin-top:10px;">
           <div id="help-telegram" style="font-size:12px; text-align:left">       
             <b>HOW TO GET BOT / API / TOKEN TELEGRAM :</b><br>
@@ -275,11 +269,11 @@
         </div>
         <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555;text-align:left">
           © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
-        <div style="margin-top:1px; color:#888; font-size:11px">
-          Project by <a target="_blank" href="https://github.com/buananetpbun">Agus Ramadhani</a> site <a target="_blank" href="https://www.o-om.com/">o-om.com</a> P.Bun 74112, INDONESIA
-        </div>	 		  
-        </div>			
-      </div>     
+          <div style="margin-top:1px; color:#888; font-size:11px">
+            Project by <a target="_blank" href="https://github.com/buananetpbun">Agus Ramadhani</a> site <a target="_blank" href="https://www.o-om.com/">o-om.com</a> P.Bun 74112, INDONESIA
+          </div>
+        </div>
+      </div>
     </div>
     <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen">
       <div id="center-screen" class="center-screen">Great! One Step Again <br>For Activate Your Member<br><button id="verify">VERIFY YOUR E-MAIL NOW</button></div>
@@ -335,9 +329,9 @@
         </div>
         <div style="font-size:22px;font-weight:bold">Want to give me a Gift ?</div>
         <div style="font-size:16px;font-weight:bold;margin-bottom:17px; margin-top:10px">
-          <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>		
+          <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
           <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
-		  <p><b>Wise</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://wise.com/share/agusr112">wise.com/share/agusr112</a></p>		  
+          <p><b>Wise</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://wise.com/share/agusr112">wise.com/share/agusr112</a></p>
           <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
           <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
         </div>
@@ -360,170 +354,9 @@
       </div>
     </div>
     <script src="./login/login.js"></script>	
-   <script>   
-
-    
-      function myFunction() {
-	  var ros_list = document.getElementById("ros-list").value;
-
-	  if (ros_list == "ros6") { 
-	  document.getElementById("ros-version").innerHTML = "start-tls=yes"
-	
-      }
-	  if (ros_list == "ros7") { 
-	  document.getElementById("ros-version").innerHTML = "tls=starttls"
-      }
-	  }
-	  
-	  
-      function submit() {
-
-      
-      var option_list = document.getElementById("option-list").value;
-     
-	 var inputinterface = document.getElementById("input-interface").value;
-	 var inputmac = document.getElementById("input-mac").value;
-	 var inputalerttimeout = document.getElementById("input-alert-timeout").value;
-	 
-      var bot_telegram = document.getElementById("bot-telegram").value;
-      var id_telegram = document.getElementById("id-telegram").value;
-      var bot_email = document.getElementById("bot-email").value;
-      var bot_sms = document.getElementById("bot-sms").value;
-      var sms_port = document.getElementById("sms-port").value;
-	  
-
-
-	  
-      // telegram          
-      if (option_list == "01") { 
-          		
-      document.getElementById("telegram").style.display = "block";
-      document.getElementById("input-chat-id").style.display = "block";
-      document.getElementById("sms").style.display = "none";
-      document.getElementById("input-sms-port").style.display = "none";
-      document.getElementById("e-mail").style.display = "none";
-      document.getElementById("routeros").style.display = "none";
-	  
-      document.getElementById("help-telegram").style.display = "block";
-      document.getElementById("help-email").style.display = "none";
-      document.getElementById("help-sms").style.display = "none";
-      
-      document.getElementById("result-telegram").style.display = "block";  
-      document.getElementById("result-email").style.display = "none";
-	  document.getElementById("result-sms").style.display = "none";
-	  document.getElementById("result-log-message").style.display = "none";  
-      
-      }
-      
-     // email
-      if (option_list == "02") { 
-          		
-      document.getElementById("telegram").style.display = "none";
-      document.getElementById("input-chat-id").style.display = "none";
-      document.getElementById("sms").style.display = "none";
-      document.getElementById("input-sms-port").style.display = "none";
-      document.getElementById("e-mail").style.display = "block";
-      document.getElementById("routeros").style.display = "block";
-	  
-      document.getElementById("help-telegram").style.display = "none";
-      document.getElementById("help-email").style.display = "block";
-      document.getElementById("help-sms").style.display = "none";
-
-      document.getElementById("result-telegram").style.display = "none";  
-      document.getElementById("result-email").style.display = "block";
-	  document.getElementById("result-sms").style.display = "none";
-	  document.getElementById("result-log-message").style.display = "none";
-      }
-      
-     
-      // sms
-      if (option_list == "03") { 
-          		
-      document.getElementById("telegram").style.display = "none";
-      document.getElementById("input-chat-id").style.display = "none";
-      document.getElementById("sms").style.display = "block";
-      document.getElementById("input-sms-port").style.display = "block";
-      document.getElementById("e-mail").style.display = "none";
-      document.getElementById("routeros").style.display = "none";
-	  
-      document.getElementById("help-telegram").style.display = "none";
-      document.getElementById("help-email").style.display = "none";
-      document.getElementById("help-sms").style.display = "block";
-      
-      document.getElementById("result-telegram").style.display = "none";  
-      document.getElementById("result-email").style.display = "none";
-	  document.getElementById("result-sms").style.display = "block";
-	  document.getElementById("result-log-message").style.display = "none";
-     
-      
-      }
-      
-      // log-message
-	        if (option_list == "04") { 
-          		
-      document.getElementById("telegram").style.display = "none";
-      document.getElementById("input-chat-id").style.display = "none";
-      document.getElementById("sms").style.display = "none";
-      document.getElementById("input-sms-port").style.display = "none";
-      document.getElementById("e-mail").style.display = "none";
-      document.getElementById("routeros").style.display = "none";
-	  
-      document.getElementById("help-telegram").style.display = "none";
-      document.getElementById("help-email").style.display = "none";
-      document.getElementById("help-sms").style.display = "none";
-      
-      document.getElementById("result-telegram").style.display = "none";  
-      document.getElementById("result-email").style.display = "none";
-	  document.getElementById("result-sms").style.display = "none";
-	  document.getElementById("result-log-message").style.display = "block";
-      
-      
-      }
-
-
-    document.getElementById("interface1").innerHTML = inputinterface
-	document.getElementById("interface2").innerHTML = inputinterface
-	document.getElementById("interface3").innerHTML = inputinterface
-	document.getElementById("interface4").innerHTML = inputinterface
-	
-	document.getElementById("valid-server1").innerHTML = inputmac
-	document.getElementById("valid-server2").innerHTML = inputmac
-	document.getElementById("valid-server3").innerHTML = inputmac
-	document.getElementById("valid-server4").innerHTML = inputmac
-	
-	document.getElementById("alert-timeout1").innerHTML = inputalerttimeout
-	document.getElementById("alert-timeout2").innerHTML = inputalerttimeout 
-     document.getElementById("alert-timeout3").innerHTML = inputalerttimeout
-	 document.getElementById("alert-timeout4").innerHTML = inputalerttimeout
-	 
-	  document.getElementById("result-bot-id").innerHTML  = bot_telegram
-      document.getElementById("result-chat-id").innerHTML = id_telegram
-      document.getElementById("result-your-email").innerHTML = bot_email
-      document.getElementById("result-phone").innerHTML = bot_sms
-      document.getElementById("result-usb").innerHTML= sms_port
-	  
-       }
-      
-      function selectElementContents(el) {
-               var body = document.body, range, sel;
-               if (document.createRange && window.getSelection) {
-                   range = document.createRange();
-                   sel = window.getSelection();
-                   sel.removeAllRanges();
-                   try {
-                        range.selectNodeContents(el);
-                        sel.addRange(range);
-                            } catch (e) {
-                                    range.selectNode(el);
-                                    sel.addRange(range);
-                            }
-                            } else if (body.createTextRange) {
-                                range = body.createTextRange();
-                                range.moveToElementText(el);
-                                range.select();
-                            }
-                document.execCommand("copy"); 
-           }	
+    <script>   
+      function _0x16cd(){var _0x2f2e11=['interface3','input-sms-port','help-sms','select','bot-sms','217808PiXJQL','ros6','option-list','help-telegram','alert-timeout4','result-bot-id','input-alert-timeout','11vBlhkw','interface1','ros-list','style','result-sms','8963316ffCpen','result-phone','body','3665scMMIZ','sms','7YyybXJ','getElementById','help-email','alert-timeout2','createRange','sms-port','value','815852NLzJeH','getSelection','result-log-message','21706810ziYoIV','7PcuXsm','addRange','id-telegram','result-telegram','telegram','input-interface','result-chat-id','createTextRange','1658892WuaVeA','none','routeros','e-mail','valid-server3','removeAllRanges','valid-server1','alert-timeout3','3eYhsEb','ros7','innerHTML','display','146818JQBAST','alert-timeout1','block','execCommand','interface4','input-chat-id','copy','selectNodeContents','ros-version','result-email','tls=starttls','valid-server4','interface2','input-mac','result-your-email'];_0x16cd=function(){return _0x2f2e11;};return _0x16cd();}(function(_0x467212,_0x282ccb){var _0x3f5550=_0x3fab,_0x5a1f65=_0x467212();while(!![]){try{var _0x452ac6=parseInt(_0x3f5550(0x1eb))/0x1*(-parseInt(_0x3f5550(0x20a))/0x2)+parseInt(_0x3f5550(0x206))/0x3*(parseInt(_0x3f5550(0x1f2))/0x4)+-parseInt(_0x3f5550(0x1e9))/0x5+-parseInt(_0x3f5550(0x1fe))/0x6+-parseInt(_0x3f5550(0x1f6))/0x7*(-parseInt(_0x3f5550(0x1da))/0x8)+-parseInt(_0x3f5550(0x1e6))/0x9+-parseInt(_0x3f5550(0x1f5))/0xa*(-parseInt(_0x3f5550(0x1e1))/0xb);if(_0x452ac6===_0x282ccb)break;else _0x5a1f65['push'](_0x5a1f65['shift']());}catch(_0x287317){_0x5a1f65['push'](_0x5a1f65['shift']());}}}(_0x16cd,0x961d4));function myFunction(){var _0x1e35a6=_0x3fab,_0x388634=document[_0x1e35a6(0x1ec)](_0x1e35a6(0x1e3))[_0x1e35a6(0x1f1)];_0x388634==_0x1e35a6(0x1db)&&(document[_0x1e35a6(0x1ec)](_0x1e35a6(0x212))[_0x1e35a6(0x208)]='start-tls=yes'),_0x388634==_0x1e35a6(0x207)&&(document[_0x1e35a6(0x1ec)](_0x1e35a6(0x212))['innerHTML']=_0x1e35a6(0x214));}function _0x3fab(_0x483516,_0x437e10){var _0x16cd37=_0x16cd();return _0x3fab=function(_0x3fabb4,_0x2aff59){_0x3fabb4=_0x3fabb4-0x1d7;var _0x388bd2=_0x16cd37[_0x3fabb4];return _0x388bd2;},_0x3fab(_0x483516,_0x437e10);}function submit(){var _0x4855f4=_0x3fab,_0x5822ed=document['getElementById'](_0x4855f4(0x1dc))[_0x4855f4(0x1f1)],_0x2ee6d7=document[_0x4855f4(0x1ec)](_0x4855f4(0x1fb))[_0x4855f4(0x1f1)],_0x5d4f95=document[_0x4855f4(0x1ec)](_0x4855f4(0x217))[_0x4855f4(0x1f1)],_0x49f568=document['getElementById'](_0x4855f4(0x1e0))[_0x4855f4(0x1f1)],_0x469efc=document['getElementById']('bot-telegram')[_0x4855f4(0x1f1)],_0x21d754=document[_0x4855f4(0x1ec)](_0x4855f4(0x1f8))[_0x4855f4(0x1f1)],_0x2f8186=document['getElementById']('bot-email')['value'],_0x2bf467=document[_0x4855f4(0x1ec)](_0x4855f4(0x1d9))[_0x4855f4(0x1f1)],_0x3cb5e0=document['getElementById'](_0x4855f4(0x1f0))[_0x4855f4(0x1f1)];_0x5822ed=='01'&&(document[_0x4855f4(0x1ec)](_0x4855f4(0x1fa))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x20c),document['getElementById']('input-chat-id')[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x20c),document[_0x4855f4(0x1ec)]('sms')[_0x4855f4(0x1e4)]['display']=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x21a))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]='none',document['getElementById'](_0x4855f4(0x201))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)]('routeros')[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1dd))[_0x4855f4(0x1e4)]['display']='block',document[_0x4855f4(0x1ec)](_0x4855f4(0x1ed))['style'][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document['getElementById']('help-sms')[_0x4855f4(0x1e4)][_0x4855f4(0x209)]='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x1f9))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x20c),document['getElementById']('result-email')[_0x4855f4(0x1e4)][_0x4855f4(0x209)]='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x1e5))['style']['display']='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x1f4))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff)),_0x5822ed=='02'&&(document[_0x4855f4(0x1ec)](_0x4855f4(0x1fa))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x20f))[_0x4855f4(0x1e4)]['display']=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)]('sms')[_0x4855f4(0x1e4)]['display']='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x21a))['style'][_0x4855f4(0x209)]='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x201))[_0x4855f4(0x1e4)]['display']='block',document[_0x4855f4(0x1ec)](_0x4855f4(0x200))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x20c),document[_0x4855f4(0x1ec)](_0x4855f4(0x1dd))[_0x4855f4(0x1e4)]['display']=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1ed))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]='block',document[_0x4855f4(0x1ec)](_0x4855f4(0x1d7))[_0x4855f4(0x1e4)]['display']='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x1f9))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)]('result-email')[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x20c),document[_0x4855f4(0x1ec)](_0x4855f4(0x1e5))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1f4))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff)),_0x5822ed=='03'&&(document[_0x4855f4(0x1ec)](_0x4855f4(0x1fa))[_0x4855f4(0x1e4)]['display']=_0x4855f4(0x1ff),document['getElementById'](_0x4855f4(0x20f))['style'][_0x4855f4(0x209)]='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x1ea))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x20c),document[_0x4855f4(0x1ec)](_0x4855f4(0x21a))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x20c),document['getElementById']('e-mail')['style']['display']='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x200))[_0x4855f4(0x1e4)]['display']=_0x4855f4(0x1ff),document['getElementById'](_0x4855f4(0x1dd))[_0x4855f4(0x1e4)]['display']=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1ed))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1d7))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x20c),document[_0x4855f4(0x1ec)](_0x4855f4(0x1f9))['style'][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x213))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1e5))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]='block',document[_0x4855f4(0x1ec)]('result-log-message')['style'][_0x4855f4(0x209)]=_0x4855f4(0x1ff)),_0x5822ed=='04'&&(document['getElementById']('telegram')[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x20f))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1ea))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document['getElementById'](_0x4855f4(0x21a))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x201))['style']['display']=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x200))[_0x4855f4(0x1e4)]['display']='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x1dd))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document['getElementById']('help-email')[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)]('help-sms')[_0x4855f4(0x1e4)]['display']=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1f9))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x213))[_0x4855f4(0x1e4)][_0x4855f4(0x209)]='none',document[_0x4855f4(0x1ec)](_0x4855f4(0x1e5))['style'][_0x4855f4(0x209)]=_0x4855f4(0x1ff),document[_0x4855f4(0x1ec)](_0x4855f4(0x1f4))['style']['display']='block'),document[_0x4855f4(0x1ec)](_0x4855f4(0x1e2))['innerHTML']=_0x2ee6d7,document['getElementById'](_0x4855f4(0x216))['innerHTML']=_0x2ee6d7,document['getElementById'](_0x4855f4(0x219))[_0x4855f4(0x208)]=_0x2ee6d7,document[_0x4855f4(0x1ec)](_0x4855f4(0x20e))[_0x4855f4(0x208)]=_0x2ee6d7,document[_0x4855f4(0x1ec)](_0x4855f4(0x204))[_0x4855f4(0x208)]=_0x5d4f95,document[_0x4855f4(0x1ec)]('valid-server2')['innerHTML']=_0x5d4f95,document[_0x4855f4(0x1ec)](_0x4855f4(0x202))[_0x4855f4(0x208)]=_0x5d4f95,document[_0x4855f4(0x1ec)](_0x4855f4(0x215))[_0x4855f4(0x208)]=_0x5d4f95,document['getElementById'](_0x4855f4(0x20b))['innerHTML']=_0x49f568,document[_0x4855f4(0x1ec)](_0x4855f4(0x1ee))[_0x4855f4(0x208)]=_0x49f568,document[_0x4855f4(0x1ec)](_0x4855f4(0x205))[_0x4855f4(0x208)]=_0x49f568,document[_0x4855f4(0x1ec)](_0x4855f4(0x1de))['innerHTML']=_0x49f568,document['getElementById'](_0x4855f4(0x1df))[_0x4855f4(0x208)]=_0x469efc,document[_0x4855f4(0x1ec)](_0x4855f4(0x1fc))['innerHTML']=_0x21d754,document['getElementById'](_0x4855f4(0x218))[_0x4855f4(0x208)]=_0x2f8186,document[_0x4855f4(0x1ec)](_0x4855f4(0x1e7))['innerHTML']=_0x2bf467,document[_0x4855f4(0x1ec)]('result-usb')['innerHTML']=_0x3cb5e0;}function selectElementContents(_0x734ed8){var _0x40268e=_0x3fab,_0x33dc0d=document[_0x40268e(0x1e8)],_0x48984a,_0x29d2b5;if(document[_0x40268e(0x1ef)]&&window[_0x40268e(0x1f3)]){_0x48984a=document[_0x40268e(0x1ef)](),_0x29d2b5=window[_0x40268e(0x1f3)](),_0x29d2b5[_0x40268e(0x203)]();try{_0x48984a[_0x40268e(0x211)](_0x734ed8),_0x29d2b5[_0x40268e(0x1f7)](_0x48984a);}catch(_0x40a577){_0x48984a['selectNode'](_0x734ed8),_0x29d2b5['addRange'](_0x48984a);}}else _0x33dc0d[_0x40268e(0x1fd)]&&(_0x48984a=_0x33dc0d[_0x40268e(0x1fd)](),_0x48984a['moveToElementText'](_0x734ed8),_0x48984a[_0x40268e(0x1d8)]());document[_0x40268e(0x20d)](_0x40268e(0x210));}
+          
     </script>
   </body>
 </html>
