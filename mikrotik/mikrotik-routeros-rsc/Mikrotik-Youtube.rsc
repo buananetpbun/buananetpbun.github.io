@@ -1,14 +1,14 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com 
+##########################
 /ip firewall raw
-rem [find comment="Youtube - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - buananetpbun.github.io" content=.youtube. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - buananetpbun.github.io" content=.googlevideo. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - buananetpbun.github.io" content=.youtu. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - buananetpbun.github.io" content=.ytimg. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - buananetpbun.github.io" content=yt3.ggpht.com dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - buananetpbun.github.io" content=youtubei.googleapis.com dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Youtube - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - Buananet.com" content=.youtube. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - Buananet.com" content=.googlevideo. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - Buananet.com" content=.youtu. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - Buananet.com" content=.ytimg. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - Buananet.com" content=yt3.ggpht.com dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Youtube address-list-timeout=1d chain=prerouting comment="Youtube - Buananet.com" content=youtubei.googleapis.com dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Youtube"]

@@ -1,11 +1,11 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+#########################
+# Created By Buananet.com
+#########################
 /ip firewall raw
 rem [find comment="Twitter - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Twitter address-list-timeout=1d chain=prerouting comment="Twitter - buananetpbun.github.io" content=.twitter. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Twitter address-list-timeout=1d chain=prerouting comment="Twitter - buananetpbun.github.io" content=twitter-alternate. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Twitter address-list-timeout=1d chain=prerouting comment="Twitter - buananetpbun.github.io" content=.twimg. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Twitter address-list-timeout=1d chain=prerouting comment="Twitter - Buananet.com" content=.twitter. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Twitter address-list-timeout=1d chain=prerouting comment="Twitter - Buananet.com" content=twitter-alternate. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Twitter address-list-timeout=1d chain=prerouting comment="Twitter - Buananet.com" content=.twimg. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Twitter"]

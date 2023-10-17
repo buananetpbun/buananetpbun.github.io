@@ -1,9 +1,9 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com 
+##########################
 /ip firewall raw
-rem [find comment="Bukalapak - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Bukalapak address-list-timeout=1d chain=prerouting comment="Bukalapak - buananetpbun.github.io" content=.bukalapak. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Bukalapak - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Bukalapak address-list-timeout=1d chain=prerouting comment="Bukalapak - Buananet.com" content=.bukalapak. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Bukalapak"]

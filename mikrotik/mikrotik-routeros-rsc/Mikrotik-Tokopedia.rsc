@@ -1,9 +1,9 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+#########################
+# Created By Buananet.com
+#########################
 /ip firewall raw
-rem [find comment="Tokopedia - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Tokopedia address-list-timeout=1d chain=prerouting comment="Tokopedia - buananetpbun.github.io" content=.tokopedia. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Tokopedia - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Tokopedia address-list-timeout=1d chain=prerouting comment="Tokopedia - Buananet.com" content=.tokopedia. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Tokopedia"]

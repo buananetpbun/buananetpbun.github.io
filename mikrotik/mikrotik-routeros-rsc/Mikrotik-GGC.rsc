@@ -1,6 +1,6 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com 
+##########################
 /ip firewall address-list
 rem [find list="Mikrotik-GGC"]
 add comment=SDI	address=43.240.231.0/24 list=Mikrotik-GGC

@@ -1,6 +1,6 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com 
+##########################
 /ip firewall address-list
 rem [find list="Mikrotik-Google"]
 add address=74.125.0.0/16 list=Mikrotik-Google

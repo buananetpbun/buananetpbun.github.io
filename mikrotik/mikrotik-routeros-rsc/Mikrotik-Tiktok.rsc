@@ -1,13 +1,13 @@
 #####################################
-# Created By BuanaNETPBun.Github.io 
+# Created By Buananet.com
 #####################################
 /ip firewall raw
-rem [find comment="Tiktok - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - buananetpbun.github.io" content=.tiktok. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - buananetpbun.github.io" content=.tiktoktv. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - buananetpbun.github.io" content=.e.tiktok. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - buananetpbun.github.io" content=.tiktokcdn. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - buananetpbun.github.io" content=.musical. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Tiktok - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - Buananet.com" content=.tiktok. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - Buananet.com" content=.tiktoktv. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - Buananet.com" content=.e.tiktok. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - Buananet.com" content=.tiktokcdn. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Tiktok address-list-timeout=1d chain=prerouting comment="Tiktok - Buananet.com" content=.musical. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Tiktok"]
