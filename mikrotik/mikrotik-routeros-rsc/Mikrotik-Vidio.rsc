@@ -1,9 +1,9 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com
+##########################
 /ip firewall raw
-rem [find comment="Vidio - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Vidio address-list-timeout=1d chain=prerouting comment="Vidio - buananetpbun.github.io" content=.vidio. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Vidio - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Vidio address-list-timeout=1d chain=prerouting comment="Vidio - Buananet.com" content=.vidio. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Vidio"]
