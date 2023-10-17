@@ -1,9 +1,9 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com 
+##########################
 /ip firewall raw
-rem [find comment="Iflix - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Iflix address-list-timeout=1d chain=prerouting comment="Iflix - buananetpbun.github.io" content=.iflix. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Iflix - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Iflix address-list-timeout=1d chain=prerouting comment="Iflix - Buananet.com" content=.iflix. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Iflix"]
