@@ -1,6 +1,6 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com
+##########################
 /ip firewall address-list
 rem [find list="Mikrotik-Meta"]
 add address=31.13.24.0/21 list=Mikrotik-Meta
