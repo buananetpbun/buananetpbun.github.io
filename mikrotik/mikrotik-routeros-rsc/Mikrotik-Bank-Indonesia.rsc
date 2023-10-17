@@ -1,6 +1,6 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com
+##########################
 /ip firewall address-list
 rem [find list="Mikrotik-Bank-Indonesia"]
 add list=Mikrotik-Bank-Indonesia address=www.bri.co.id
