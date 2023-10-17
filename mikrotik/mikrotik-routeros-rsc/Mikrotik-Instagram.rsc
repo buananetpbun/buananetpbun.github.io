@@ -1,10 +1,10 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com
+##########################
 /ip firewall raw
-rem [find comment="Instagram - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Instagram address-list-timeout=1d chain=prerouting comment="Instagram - buananetpbun.github.io" content=.instagram. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Instagram address-list-timeout=1d chain=prerouting comment="Instagram - buananetpbun.github.io" content=.ig.me dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Instagram - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Instagram address-list-timeout=1d chain=prerouting comment="Instagram - Buananet.com" content=.instagram. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Instagram address-list-timeout=1d chain=prerouting comment="Instagram - Buananet.com" content=.ig.me dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Instagram"]
