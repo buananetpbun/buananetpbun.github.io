@@ -1,15 +1,15 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com 
+##########################
 /ip firewall raw
-rem [find comment="Facebook - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - buananetpbun.github.io" content=.m.me dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - buananetpbun.github.io" content=.fb.me dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - buananetpbun.github.io" content=.msngr. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - buananetpbun.github.io" content=.facebook. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - buananetpbun.github.io" content=.messenger. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - buananetpbun.github.io" content=.fbcdn. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - buananetpbun.github.io" content=.fbsbx. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Facebook - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - Buananet.com" content=.m.me dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - Buananet.com" content=.fb.me dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - Buananet.com" content=.msngr. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - Buananet.com" content=.facebook. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - Buananet.com" content=.messenger. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - Buananet.com" content=.fbcdn. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Facebook address-list-timeout=1d chain=prerouting comment="Facebook - Buananet.com" content=.fbsbx. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Facebook"]
