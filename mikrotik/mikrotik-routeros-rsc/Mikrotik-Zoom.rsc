@@ -1,13 +1,13 @@
 #####################################
-# Created By BuanaNETPBun.Github.io 
+# Created By Buananet.com 
 #####################################
 /ip firewall raw
-rem [find comment="Zoom - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - buananetpbun.github.io" content=.zoom. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - buananetpbun.github.io" content=.zoomus. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - buananetpbun.github.io" content=.meetzoom. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - buananetpbun.github.io" protocol=tcp dst-port=3478,3479,5090,5091,8801-8810 dst-address-list=Mikrotik-Zoom src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - buananetpbun.github.io" protocol=udp dst-port=3478,3479,5090,5091,8801-8810 dst-address-list=Mikrotik-Zoom src-address-list=LOCAL-IP
+rem [find comment="Zoom - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - Buananet.com" content=.zoom. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - Buananet.com" content=.zoomus. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - Buananet.com" content=.meetzoom. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - Buananet.com" protocol=tcp dst-port=3478,3479,5090,5091,8801-8810 dst-address-list=Mikrotik-Zoom src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-Zoom address-list-timeout=1d chain=prerouting comment="Zoom - Buananet.com" protocol=udp dst-port=3478,3479,5090,5091,8801-8810 dst-address-list=Mikrotik-Zoom src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Zoom"]
