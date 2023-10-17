@@ -1,10 +1,10 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com
+##########################
 /ip firewall raw
 rem [find comment="WhatsApp - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-WhatsApp address-list-timeout=1d chain=prerouting comment="WhatsApp - buananetpbun.github.io" content=wa.me dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
-add action=add-dst-to-address-list address-list=Mikrotik-WhatsApp address-list-timeout=1d chain=prerouting comment="WhatsApp - buananetpbun.github.io" content=.whatsapp. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-WhatsApp address-list-timeout=1d chain=prerouting comment="WhatsApp - Buananet.com" content=wa.me dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-WhatsApp address-list-timeout=1d chain=prerouting comment="WhatsApp - Buananet.com" content=.whatsapp. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-WhatsApp"]
