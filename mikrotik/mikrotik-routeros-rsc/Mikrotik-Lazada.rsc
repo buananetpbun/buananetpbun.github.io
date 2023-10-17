@@ -1,9 +1,9 @@
-#####################################
-# Created By BuanaNETPBun.Github.io 
-#####################################
+##########################
+# Created By Buananet.com
+##########################
 /ip firewall raw
-rem [find comment="Lazada - buananetpbun.github.io"]
-add action=add-dst-to-address-list address-list=Mikrotik-Lazada address-list-timeout=1d chain=prerouting comment="Lazada - buananetpbun.github.io" content=.lazada. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+rem [find comment="Lazada - Buananet.com"]
+add action=add-dst-to-address-list address-list=Mikrotik-Lazada address-list-timeout=1d chain=prerouting comment="Lazada - Buananet.com" content=.lazada. dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
 
 /ip firewall address-list
 rem [find list="Mikrotik-Lazada"]
