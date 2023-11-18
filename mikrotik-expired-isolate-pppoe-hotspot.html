@@ -3,8 +3,8 @@
   <head>
     <meta charset='utf-8' >
     <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' >
-    <title>Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator - BuanaNETPBun.Github.io</title>
-    <meta content='Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator - BuanaNETPBun.Github.io' name='description' >
+    <title>Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator - Buananet.com</title>
+    <meta content='Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator - Buananet.com' name='description' >
     <meta content='expired, isolation, pppoe, proxy, generator, mikrotik, router, winbox, termimal, rsc, script, hotspot, wireless' name='keywords' >
     <meta content='index, follow, noodp' name='robots' >
     <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
@@ -14,7 +14,6 @@
     <meta property="og:image:alt" content="Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator By BuanaNET-Pbun">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">
-    
     <script async defer src="https://buttons.github.io/buttons.js"></script> 
     <link rel="stylesheet" href="./login/login.css">
     <style>
@@ -46,7 +45,8 @@
       a:visited{color:#f60}
       a:hover{color:#f60}
       a:active{color:#f60}      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:100px;font-size:14px!important;font-weight:700;cursor:pointer;border-radius:5px;color:#fff;margin-bottom:5px}
-      button:hover{background-color:#ccc;color:#111}      .d-link{color:#fff;background-color:#111;border-color:#f60;border:none;padding:6px;width:auto;font-size:14px!important;font-weight:700;cursor:pointer;border-radius:5px;float:right;margin-bottom:15px}
+      button:hover{background-color:#ccc;color:#111}      
+	  .d-link{visibility:hidden;color:#fff;background-color:#111;border-color:#f60;border:none;padding:6px; padding-left:10px;padding-right:10px;width:auto;font-size:14px!important;font-weight:700;cursor:pointer;border-radius:5px;float:right;margin-bottom:15px}
       .d-link:hover{background-color:#ccc;color:#111}
       .d-link a:link{color:#f60;text-decoration:underline}
       .d-link a:visited{color:#f60;text-decoration:none}
@@ -58,12 +58,12 @@
       input[type=submit]{background-color:#f60;color:#fff;padding:12px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
       input[type=submit]:hover{background-color:#45a049}
       .list-output-content{height:300px;background:#fff;overflow:auto;overflow-x:auto;width:100%;padding:4px;margin-top:8px;border:1px solid #ccc;border-radius:5px}
-      .list-output-content2{height:auto;background-color:#f60;overflow:auto;overflow-x:auto;width:100%;padding:20px;margin-top:8px;border:2px solid #fff;color:#fff;font-family:montserrat,sans-serif;border-radius:5px}
-	  .input-msg-body {height:325px}
+      .list-output-content2{height:auto;background-image: linear-gradient(to bottom right, red, orange);overflow:auto;overflow-x:auto;width:100%;padding:20px;margin-top:8px;border:2px solid #fff;color:#fff;font-family:montserrat,sans-serif;border-radius:5px}
+      .input-msg-body {height:200px}
       .mikrotik-logo{display:none}
       @media screen and (max-width:700px) {
-	  .input-msg-body {height:120px}
-	  .list-output-content2{height:auto}
+      .input-msg-body {height:120px}
+      .list-output-content2{height:auto}
       .main-wrap{display:block}
       .sidebar,.content{border-radius:5px;display:block;width:100%;padding:10px}
       .sidebar{height:auto;margin-bottom:5px}
@@ -90,7 +90,7 @@
       .mymenu ul{background:none!important;justify-content:center;display:flex}
       }
       @media screen and (max-width:500px) {
-	  .input-msg-body {height:120px}
+      .input-msg-body {height:120px}
       .show-homepage-menu{display:flex;justify-content:center;width:100%}
       .avatar{display:none}
       }
@@ -101,7 +101,8 @@
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> 
     <div id="wrap">
@@ -110,10 +111,10 @@
           <img alt="mikrotik" src="./img/made-for-mikrotik.png">
         </div>
         <ul>
-          <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
-          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
-          <li><a href="javascript:callmodal()">DONATE</a></li>
-          <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+        <li><a href="https://buananetpbun.github.io/">HOME</a></li>
+		<li><a href="https://buananetpbun.github.io/updates.html">UPDATES</a></li>
+        <li><a href="https://buananetpbun.github.io/docs.html">DOCS</a></li>
+        <li><a href="https://buananetpbun.github.io/contact.html">CONTACT</a></li>
         </ul>
         <div class="show-homepage-menu">
           <div id="homepage" class="hide">
@@ -123,7 +124,7 @@
             <span class="avatar">
             <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
             </span>		
-            <span style="font-weight:normal;font-size:14px"><a href="https://buananetpbun.github.io/login"><img style="vertical-align:middle" width="20" src="./img/gear.png"><span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></a></span>
+            <span style="font-weight:normal;font-size:14px"><a href="https://buananetpbun.github.io/login/"><img alt="account" style="vertical-align:middle" width="20" src="./img/gear.png"><span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></a></span>
             <span style="font-weight:normal; font-size:14px"> [<span class="tooltip"><span class="tooltiptext2">E-mail verified status</span><span id="email_Verified" style="cursor:help"></span></span>]</span>
             </span>
           </div>
@@ -132,88 +133,98 @@
       <div class="logo">
         <div class="logo-right" style="float:right;">
           <div style="float:right; margin-right:5px;">
-            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+			<a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a>
           </div>
           <div style="float:right; margin-right:5px; margin-top:1px">
             <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
           </div>
         </div>
         <div class="logo-left" style="float:left;"> 
-          <a href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html"><img alt="buananetpbun" style="float:left; margin-top:0px;margin-right:5px" width='35' src="./img/mylogo.png"><span style='color:#ff6600 !important'>Buananetpbun</span>.Github.io</a>  
+          <a href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html"><img alt="buananetpbun" style="float:left; margin-top:0px;margin-right:5px" width='35' src="./img/mylogo.png"><span style='color:#ff6600 !important'>BUANANET</span>.COM</a>  
         </div>
       </div>
       <div style="clear:both"></div>
       <div class="header">
-        <h1>MIKROTIK ALL-IN-ONE <span style="color:#ff6600">NOTIFICATION EXPIRED FOR HOTSPOT, PPPOE AND STATIC IP</span></h1>
+        <h1>NOTIFICATION EXPIRED FOR<span style="color:#ff6600"> HOTSPOT, PPPOE AND STATIC IP</span> WITH PROXY</h1>
       </div>
       <div class="main-wrap">
         <div class="sidebar">
-          <label><b>Ether Name (for Hotspot only)</b><br> <span style='color:#ff6600'>ex: bridge1 or ether2 or E2-WLAN</span></label>
-          <input type="text" id="interface-name" placeholder="ex: bridge1 or ether2 or E2-LOCAL" value="bridge1">
-          <label><b>IP Address For Expired</b><br> <span style='color:#ff6600'>(IP Subnet /24 only)</span></label>
-          <input onkeypress="return event.charCode != 32" type="text" id="ip-address" placeholder="10.20.20.1/24" value="10.20.20.1/24">
+          <label><b>RouterOS Version</b></label>
+          <select style="margin-top:3px; width:100%" id="ros-list" onchange="myFunction()">
+            <option value="ros6">RouterOS v6.xx</option>
+            <option value="ros7">RouterOS v7.xx</option>
+          </select>
+          <label><b>WAN IP Address (IP Gateway)</b><br> <span style='color:#ff6600'>ex: 192.168.1.1 (use main gateway)</span></label>
+          <input onkeypress="return event.charCode != 32" type="text" id="ip-address" placeholder="ex: 192.168.1.1" value="192.168.1.1">
           <label><b>Proxy Port (Redirect)</b><br> <span style='color:#ff6600'>Don't use 3128 or 8080</span></label>
           <input onkeypress="return event.charCode != 32" type="text" id="proxy-port" placeholder="8082" value="8082">
           <label><b>Expired Message</b><br><span style='color:#ff6600'>Can Use HMTL Tag</span> </label>
-          <input type="text"  id="input-msg-title" placeholder="EXPIRED!" value="EXPIRED!">
-          <textarea  name="data" id="input-msg-body" class="input-msg-body">DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. PLEASE MAKE PAYMENT OF THE BILL THROUGH THE ACCOUNT WE PROVIDE. IN ORDER FOR THE INTERNET SERVICE TO REMAIN ACTIVE, IT IS REQUESTED TO MAKE A PAYMENT BEFORE THE DUE DATE OF EACH MONTH.</textarea>
-          <input type="text"  id="input-msg-contact" placeholder="Contact Owner: +62 813-2222-3333" value="Contact Owner: +62 813-2222-3333">
+          <input type="text" id="input-msg-title" placeholder="EXPIRE!" value="EXPIRE!">
+          <textarea  name="data" id="input-msg-body" class="input-msg-body">DEAR CUSTOMERS, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY TERMINATED. PLEASE MAKE BILL PAYMENTS THROUGH THE ACCOUNT WE PROVIDE. IN ORDER TO REMAIN INTERNET SERVICE ACTIVE, YOU ARE REQUESTED TO MAKE PAYMENT BEFORE THE DATE OF EVERY MONTH<br>Contact Admin: +62813-2222-3333</textarea>
+          <div style="display:flex;">
+            <div style="width:100%;">
+              <label><b>Title Color</b></label><input type="text" id="set-title-color" placeholder="white" value="white">
+            </div>
+            <div style="width:100%;margin-left:10px">
+              <label><b>Content Color</b></label><input type="text" id="set-text-color" placeholder="black" value="black">
+            </div>
+          </div>
+          <div style="width:100%;">
+            <label><b>Background Image</b></label><input type="text" id="set-background-color" placeholder="linear-gradient(to bottom right, red, orange)" value="linear-gradient(to bottom right, red, orange)">
+          </div>
         </div>
         <div class="content">
           <div style="margin-left:2px; margin-top:5px; font-weight:bold">Copy-Paste the Script to your Terminal!</div>
           <div class="list-output-content">
             <div id="showScript" style="padding:5px; white-space: nowrap;">
-                 <span style="color:#ff6600;">
-                  ###############################################################<br>
-                  # Mikrotik Notification Expired For Hotspot, PPPoE and Static-IP Generator<br>
-                  # Date/Time: <span id="tanggalwaktu"></span><br>
-                  # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
-                  ###############################################################<br>
-                  </span>	
-                  <b>/ip proxy set enabled=yes port=<span style="color:#ff6600; font-weight:bold" id="result-set-port-proxy">8082</span> max-cache-size=none</b><br>
-                  <b>/ip proxy access </b><br>
-                  add action=allow dst-port=<span style="color:#ff6600; font-weight:bold" id="result-proxy-port">8082</span> src-address=<span style="color:#ff6600; font-weight:bold" id="result-proxy-ip">10.20.20.0/24</span> comment="Expired by buananetpbun.github.io"<br>
-                  add action=deny local-port=<span style="color:#ff6600; font-weight:bold" id="result-proxy-port2">8082</span> comment="Expired by buananetpbun.github.io"<br>
-                  <b>/ip address</b><br>
-                  add address=<span style="color:#ff6600; font-weight:bold" id="result-ip-address">10.20.20.1/24</span> interface=<span style="color:#ff6600; font-weight:bold" id="result-interface">bridge1</span> comment="Expired by buananetpbun.github.io"<br>
-                  <b>/ip firewall address-list</b><br>
-                  add list=EXPIRED  address=<span style="color:#ff6600; font-weight:bold" id="result-address-list">10.20.20.0/24</span> comment="Expired by buananetpbun.github.io"<br>
-                  <b>/ip pool</b><br>
-                  add name=EXPIRED  ranges=<span style="color:#ff6600; font-weight:bold" id="result-ip-pool">10.20.20.2-10.20.20.254</span> comment="Expired by buananetpbun.github.io"<br>
-                  <b>/ip firewall filter</b><br>
-                  add chain=forward src-address-list=EXPIRED action=drop comment="Expired by buananetpbun.github.io" disabled=yes<br>
-                  <b>/ip firewall nat</b><br>
-                  add chain=dstnat src-address-list=EXPIRED  protocol=tcp dst-port=80,443 action=redirect to-ports=<span style="color:#ff6600; font-weight:bold" id="result-nat-port">8082</span> comment="Expired by buananetpbun.github.io"<br>
-                  <b>/ppp profile</b><br>
-                  add comment="Expired by buananetpbun.github.io" local-address=<span style="color:#ff6600; font-weight:bold" id="result-ppp-profile">10.20.20.1</span> name=EXPIRED on-down=":local username \$\"user\";\r\
-                  \n/ip proxy access remove [find comment=\"ppp-\$username\"];\r\
-                  \n/ip firewall address-list remove [find comment=\"ppp-\$username\"];" on-up=":local username \$\"user\";\r\
-                  \n:local address \$\"remote-address\";\r\
-                  \n/ip proxy access add action=deny src-address=\$address comment=\"ppp-\$username\";\r\
-                  \n/ip firewall address-list add list=EXPIRED address=\$address comment=\"ppp-\$username\"" remote-address=EXPIRED
-                  <br>
-                  <b>/ip hotspot user profile</b><br>
-                  add add-mac-cookie=no address-pool=EXPIRED !mac-cookie-timeout name=EXPIRED on-login=":local username \$\"user\";\r\
-                  \n:local ipaddress \$\"address\";\r\
-                  \n/ip proxy access add action=deny src-address=\$ipaddress comment=\"hs-\$username\";\r\
-                  \n/ip firewall address-list add list=EXPIRED address=\$address comment=\"hs-\$username\"" on-logout=":local username \$user;\r\
-                  \n/ip hotspot cookie remove [find user=\$username]\r\
-                  \n/ip proxy access remove [find comment=\"hs-\$username\"]\r\
-                  \n/ip firewall address-list remove [find comment=\"hs-\$username\"];" shared-users=100<br>
-                  <b>/ip hotspot walled-garden ip</b><br>
-                  add action=accept disabled=no !dst-address !dst-address-list dst-port=<span style="color:#ff6600; font-weight:bold" id="result-wallet-garden-port">8082</span> protocol=tcp !src-address !src-address-list comment="Expired by buananetpbun.github.io"<br>
+              <span style="color:#ff6600;">
+              ###############################################################<br>
+              # NOTIFICATION EXPIRED FOR HOTSPOT, PPPOE AND STATIC IP WITH PROXY<br>
+              # Date/Time: <span id="tanggalwaktu"></span><br>
+              # Created By: buananet.com - fb.me/buananet.pbun<br>
+              ###############################################################<br>
+              </span>	
+              <b>/ip proxy set enabled=yes max-cache-size=none port=<span style="color:#ff6600; font-weight:bold" id="result-set-port-proxy">8082</span></b><br>
+              <b>/ip proxy access </b><br>
+              add action=allow dst-port=<span style="color:#ff6600; font-weight:bold" id="result-proxy-port">8082</span> comment="Expired by buananet.com"<br>
+              add action=<span style="color:#ff6600; font-weight:bold" id="result-action">deny</span> <span id="result-redirect">redirect-to=192.168.1.1:8082</span> comment="Expired by buananet.com" dst-port=80				  
+              <br>
+              <b>/ip firewall address-list</b><br>
+              add list=EXPIRED address=<span style="color:#ff6600; font-weight:bold">0.0.0.0</span> comment="Expired by buananet.com"<br>
+              <b>/ip firewall filter</b><br>
+              /ip firewall filter add action=drop chain=forward comment="Expired by buananet.com" dst-port=!80,<span style="color:#ff6600; font-weight:bold" id="result-filter-port">8082</span> protocol=tcp src-address-list=EXPIRED<br>
+              /ip firewall filter add action=drop chain=forward comment="Expired by buananet.com" dst-port=!53,5353 protocol=udp src-address-list=EXPIRED
+              <br>                
+              <b>/ip firewall nat</b><br>
+              add chain=dstnat src-address-list=EXPIRED  protocol=tcp action=redirect to-ports=<span style="color:#ff6600; font-weight:bold" id="result-nat-port">8082</span> comment="Expired by buananet.com"<br>
+              <b>/ppp profile</b><br>
+              add address-list=EXPIRED comment="Expired by buananet.com" name=EXPIRED on-down=":local username \$\"user\";\r\
+              \n/ip proxy access remove [find comment=\"ppp-\$username\"];\r\
+              \n/ip firewall address-list remove [find comment=\"ppp-\$username\"];" on-up=":local username \$\"user\";\r\
+              \n:local address \$\"remote-address\";\r\
+              \n/ip proxy access add action=deny src-address=\$address comment=\"ppp-\$username\";\r\
+              \n/ip firewall address-list add list=EXPIRED address=\$address comment=\"ppp-\$username\""
+              <br>
+              <b>/ip hotspot user profile</b><br>
+              add add-mac-cookie=no address-list=EXPIRED !mac-cookie-timeout name=EXPIRED on-login=":local username \$\"user\";\r\
+              \n:local ipaddress \$\"address\";\r\
+              \n/ip proxy access add action=deny src-address=\$ipaddress comment=\"hs-\$username\";\r\
+              \n/ip firewall address-list add list=EXPIRED address=\$address comment=\"hs-\$username\"" on-logout=":local username \$user;\r\
+              \n/ip hotspot cookie remove [find user=\$username]\r\
+              \n/ip proxy access remove [find comment=\"hs-\$username\"]\r\
+              \n/ip firewall address-list remove [find comment=\"hs-\$username\"];" shared-users=50<br>
             </div>
           </div>
           <br>
           <button style="margin-right:5px;" type="button" onclick="myFunction()">Generate</button>
           <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button>
-          <span class="d-link"><a class="download" href="#" download="error.html">error.html</a></span><br>
-          <div class="list-output-content2">
+          <span id="d-link" class="d-link"><a class="download" href="#" download="error.html"> Download error.html</a></span><br>
+          <div class="list-output-content2" id="list-output-content2">
             <div style="text-align:center">
-              <span id="msg-title" style="color:#fff; font-weight:bold; font-size:70px;">EXPIRED!</span><br>
-              <span id="msg-body" style="color:#fff; font-weight:bold; font-size:15px;line-height:2.0">
-              DEAR CUSTOMER, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY ISOLATED. PLEASE MAKE PAYMENT OF THE BILL THROUGH THE ACCOUNT WE PROVIDE. IN ORDER FOR THE INTERNET SERVICE TO REMAIN ACTIVE, IT IS REQUESTED TO MAKE A PAYMENT BEFORE THE DUE DATE OF EACH MONTH.</span><br><br>
-              <span id="msg-contact" style="color:#fff; font-weight:bold; font-size:15px;;line-height:2.0">Contact Owner: +62 813-2222-3333</span><br>
+              <span id="msg-title" style="color:white; font-weight:bold; font-size:60px;">EXPIRE!</span><br>
+              <span id="msg-body" style="color:black; font-weight:bold; font-size:15px;line-height:2.0">
+              DEAR CUSTOMERS, WE INFORM YOU THAT YOUR INTERNET SERVICE IS CURRENTLY TERMINATED. PLEASE MAKE BILL PAYMENTS THROUGH THE ACCOUNT WE PROVIDE. IN ORDER TO REMAIN INTERNET SERVICE ACTIVE, YOU ARE REQUESTED TO MAKE PAYMENT BEFORE THE DATE OF EVERY MONTH<br>Contact Admin: +62813-2222-3333
+              </span>
             </div>
           </div>
         </div>
@@ -222,35 +233,39 @@
         <div style="margin-top:10px;">
           <span style="color:#ff6600; font-weight:bold">Tutorial How-To:</span><br>
           1. Download error.html and upload to winbox at "File" to webproxy Folder "webproxy/error.html"<br>
-          2. For Enable isolation just set your Profile to "EXPIRED" at Hotspot or PPPoE on Winbox, Don't use<br>
+          2. For Enable expire page just set your Profile to "EXPIRED" at Hotspot or PPPoE on Winbox, Don't use<br>
           Expired for Hotspot Voucher, you can use only for Hotspot monthly.<br>
-          3. You can set manual isolation for Static-IP, just input user IP at Firewall -> Address Lists -> EXPIRED<br>
+          3. You can set manual expire page for Static-IP, just input user IP at Firewall -> Address Lists -> EXPIRED<br>
         </div>
         <div style="margin-top:20px;">
           <span style="color:#ff6600; font-weight:bold"># This Script for remove all Script from this Generator:</span><br>
           /ip proxy set enabled=no port=8080 max-cache-size=none <br>
-          /ip pool remove [find comment="Expired by buananetpbun.github.io"]<br>
-          /ip firewall nat remove [find comment="Expired by buananetpbun.github.io"]<br>
-          /ip firewall filter remove [find comment="Expired by buananetpbun.github.io"]<br>
-          /ip firewall address-list remove [find comment="Expired by buananetpbun.github.io"]<br>
-          /ppp profile remove [find comment="Expired by buananetpbun.github.io"]<br>
-          /ip proxy access remove [find comment="Expired by buananetpbun.github.io"]<br>
-          /ip hotspot walled-garden ip remove [find comment="Expired by buananetpbun.github.io"]<br>
+          /ip firewall nat remove [find comment="Expired by buananet.com"]<br>
+          /ip firewall filter remove [find comment="Expired by buananet.com"]<br>
+          /ip firewall address-list remove [find comment="Expired by buananet.com"]<br>
+          /ppp profile remove [find comment="Expired by buananet.com"]<br>
+          /ip proxy access remove [find comment="Expired by buananet.com"]<br>
           /ip hotspot user profile remove [find name ="EXPIRED"]<br>
-          /ip address remove [find comment="Expired by buananetpbun.github.io"]<br>
+          /ip address remove [find comment="Expired by buananet.com"]<br>
         </div>
         <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555;">
-          © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+          © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">BUANANET.COM</a> - All Rights Reserved.
         </div>
-        <div style="margin-top:1px; color:#888; font-size:11px">
-          Project by <a target="_blank" href="https://github.com/buananetpbun">Agus Ramadhani</a> site <a target="_blank" href="https://www.o-om.com/">o-om.com</a> P.Bun 74112, INDONESIA
-        </div>	 		
       </div>
     </div>
     <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen">
-      <div id="center-screen" class="center-screen"><div style="font-size:20px; background-color:#333; padding:20px; border-radius:10px">Please Activate Your Email.<br><button id="verify">VERIFY YOUR E-MAIL NOW</button><div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown2"></div></div></div>
-      <div id="center-screen2" class="center-screen"><div style="font-size:20px;background-color:#333; padding:20px; border-radius:10px">GET FULL ACCESS<br>PLEASE SUBSCRIBE<br><button id="not-subscribe">SUBSCRIBE NOW</button><div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown3">Already Subscribed? Please Reload Page or Press F5</div></div>
-	  </div>	  
+      <div id="center-screen" class="center-screen">
+        <div style="font-size:20px; background-color:#333; padding:20px; border-radius:10px">
+          Please Activate Your Email.<br><button id="verify">VERIFY YOUR E-MAIL NOW</button>
+          <div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown2"></div>
+        </div>
+      </div>
+      <div id="center-screen2" class="center-screen">
+        <div style="font-size:20px;background-color:#333; padding:20px; border-radius:10px">
+          GET FULL ACCESS<br>PLEASE SUBSCRIBE<br><button id="not-subscribe">SUBSCRIBE NOW</button>
+          <div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown3"></div>
+        </div>
+      </div>
     </div>
     <div oncontextmenu="return false;" id="myLogin" class="modal-login">
       <div class="modal-content">
@@ -303,9 +318,9 @@
         </div>
         <div style="font-size:22px;font-weight:bold">Want to give me a Gift ?</div>
         <div style="font-size:16px;font-weight:bold;margin-bottom:17px; margin-top:10px">
-          <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>		
+          <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
           <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
-		  <p><b>Wise</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://wise.com/share/agusr112">wise.com/share/agusr112</a></p>		  
+          <p><b>Wise</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://wise.com/share/agusr112">wise.com/share/agusr112</a></p>
           <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
           <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
         </div>
@@ -328,7 +343,5 @@
       </div>
     </div>
 	
-    <script src="./login/login.js"></script>		
-
   </body>
 </html>
