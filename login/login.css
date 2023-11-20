@@ -221,7 +221,7 @@ background-color: rgba(0, 0, 0, 0.6);
 }
 
 .lock-screen {
-display: none;
+
 /* Hidden by default */
 position: fixed;
 /* Stay in place */
