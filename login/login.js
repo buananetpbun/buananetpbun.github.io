@@ -1,1 +1,190 @@
-var _0x17414f=_0x4ef4;(function(_0x461cc4,_0x4dd7a1){var _0x5ed011=_0x4ef4,_0x5f44e8=_0x461cc4();while(!![]){try{var _0x17d94c=parseInt(_0x5ed011(0x11b))/0x1+-parseInt(_0x5ed011(0xfb))/0x2+-parseInt(_0x5ed011(0xd4))/0x3*(parseInt(_0x5ed011(0xa0))/0x4)+parseInt(_0x5ed011(0xe3))/0x5+-parseInt(_0x5ed011(0xa6))/0x6*(parseInt(_0x5ed011(0xec))/0x7)+-parseInt(_0x5ed011(0xac))/0x8*(-parseInt(_0x5ed011(0xf1))/0x9)+parseInt(_0x5ed011(0x117))/0xa;if(_0x17d94c===_0x4dd7a1)break;else _0x5f44e8['push'](_0x5f44e8['shift']());}catch(_0x45e184){_0x5f44e8['push'](_0x5f44e8['shift']());}}}(_0x4e52,0xd022e),window[_0x17414f(0xba)]=function(){createCaptchaSignIn(),createCaptchaSignUp();});function _0x4e52(){var _0x529f63=['getContext','contextmenu','left','❌\x20Invalid\x20Captcha.\x20try\x20Again','addColorStop','strokeStyle','user','#show-register','#homepage','❌\x20Password\x20must\x20be\x20at\x20least\x206\x20characters.','✔️\x20Verification\x20link\x20sent\x20to\x20your\x20email.\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','beginPath','17595090WAdLCx','src','#registration-password','random','449250uNkHzX','addEventListener','length','keyCode','message','cpatchaTextBoxSignIn','1:912166778245:web:c845ec7e720f7bd84580ec','#verify','onclick','click','bevel','round','countdown2','captcha-signup','credential','forEach','height','#registration-email','#login-page','<button\x20style=\x22width:100px\x22\x20onclick=\x22Alert.ok()\x22>OK</button>','pink','https://buananet.com/login/','sendPasswordResetEmail','indexOf','onkeydown','https://buananet.com/','4ZBaGNC','querySelector','add','getElementsByClassName','code','0123456789','12ulYzrN','#dialogboxhead','magenta','emailVerified','reload','✔️\x20Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','1838064yIGzgS','#myLockScreen','https://buananetpbun-5d979-default-rtdb.asia-southeast1.firebasedatabase.app','❌\x20Enter\x20Password.','font','#myLogin','createLinearGradient','stroke','charCodeAt','accessToken','createUserWithEmailAndPassword','block','top','appendChild','onload','Reload\x20Page\x20in\x20','captcha-signin','sendEmailVerification','style','Sign-Up\x20with\x20Google','❌\x20error\x20signing\x20out,\x20check\x20network\x20connection','Sign-In\x20with\x20Google','createElement','#myavatar','preventDefault','#dialogbox','0.5','classList','width','floor','remove','email','#registration-page','value','#forgot-password','#not-subscribe','lineTo','countdown3','lineJoin','shiftKey','3816426OqZWEQ','cpatchaTextBoxSignUp','38px\x20verdana','strokeText','onAuthStateChanged','push','uid','miter','none','lineWidth','innerHeight','1.0','#show-login','target','❌\x20emails\x20do\x20not\x20match.','1047315wknYeG','then','initializeApp','innerHTML','100px','#login-email','#mymenu','render','canvas','4466658BKSkJi','#cpatchaTextBoxSignIn','currentUser','\x20seconds','#login-password','45vqPgXE','#register','keyup','photoURL','signInWithEmailAndPassword','#center-screen2','trim','auth','G-FSDV7HGD99','join','332312mQzXtg','❌\x20Enter\x20E-mail.','moveTo','#email_Verified','#dialogboxfoot','display','hide','href','❌\x20invalid\x20e-mail\x20or\x20bad\x20network\x20connection.','ctrlKey','#google-sign-in','#myModal','catch','red','#signout','getElementById'];_0x4e52=function(){return _0x529f63;};return _0x4e52();}var code_signin;function _0x4ef4(_0x2aa071,_0x50dd62){var _0x4e52f2=_0x4e52();return _0x4ef4=function(_0x4ef4b5,_0x35789a){_0x4ef4b5=_0x4ef4b5-0x90;var _0x44d05e=_0x4e52f2[_0x4ef4b5];return _0x44d05e;},_0x4ef4(_0x2aa071,_0x50dd62);}function createCaptchaSignIn(){var _0x41dad5=_0x17414f;document['getElementById'](_0x41dad5(0xbc))[_0x41dad5(0xe6)]='';var _0x4537bc=_0x41dad5(0xa5),_0x2732ab=0x4,_0x53ee3b=[];for(var _0x36c3dd=0x0;_0x36c3dd<_0x2732ab;_0x36c3dd++){var _0x5958c6=Math[_0x41dad5(0xc9)](Math[_0x41dad5(0x11a)]()*_0x4537bc[_0x41dad5(0x11d)]);if(_0x53ee3b[_0x41dad5(0x9d)](_0x4537bc[_0x5958c6])==-0x1)_0x53ee3b[_0x41dad5(0xd9)](_0x4537bc[_0x5958c6]);else _0x36c3dd--;}var _0xde39e6=document[_0x41dad5(0xc2)](_0x41dad5(0xeb));_0xde39e6['id']='captcha',_0xde39e6['width']=0x96,_0xde39e6[_0x41dad5(0x96)]=0x28;var _0x5c8253=_0xde39e6['getContext']('2d');_0x5c8253[_0x41dad5(0xb0)]=_0x41dad5(0xd6);var _0x16018b=_0x5c8253[_0x41dad5(0xb2)](0x0,0x0,_0xde39e6[_0x41dad5(0xc8)],0x0);_0x16018b['addColorStop']('0','magenta'),_0x16018b['addColorStop']('0.5','pink'),_0x16018b['addColorStop'](_0x41dad5(0xdf),_0x41dad5(0x108)),_0x5c8253['strokeStyle']=_0x16018b,_0x5c8253[_0x41dad5(0xdd)]=0x2,[_0x41dad5(0x91),_0x41dad5(0x90),_0x41dad5(0xdb)]['forEach']((_0x2465a8,_0x2674e6)=>{var _0x897766=_0x41dad5;_0x5c8253[_0x897766(0xd2)]=_0x2465a8,_0x5c8253[_0x897766(0x116)](),_0x5c8253[_0x897766(0xfd)](0x0,0x0),_0x5c8253[_0x897766(0xd0)](0x8c,0x28),_0x5c8253[_0x897766(0xb3)]();}),_0x5c8253['strokeText'](_0x53ee3b[_0x41dad5(0xfa)](''),0x14,0x23),code_signin=_0x53ee3b['join'](''),document[_0x41dad5(0x10a)](_0x41dad5(0xbc))['appendChild'](_0xde39e6);}var code_signup;function createCaptchaSignUp(){var _0xe2885d=_0x17414f;document[_0xe2885d(0x10a)](_0xe2885d(0x93))[_0xe2885d(0xe6)]='';var _0x5deec0=_0xe2885d(0xa5),_0x3f4df9=0x4,_0x32043c=[];for(var _0x42e0e9=0x0;_0x42e0e9<_0x3f4df9;_0x42e0e9++){var _0x27c649=Math['floor'](Math[_0xe2885d(0x11a)]()*_0x5deec0['length']);if(_0x32043c[_0xe2885d(0x9d)](_0x5deec0[_0x27c649])==-0x1)_0x32043c[_0xe2885d(0xd9)](_0x5deec0[_0x27c649]);else _0x42e0e9--;}var _0x53ee15=document[_0xe2885d(0xc2)]('canvas');_0x53ee15['id']='captcha',_0x53ee15['width']=0x96,_0x53ee15[_0xe2885d(0x96)]=0x28;var _0x501472=_0x53ee15[_0xe2885d(0x10b)]('2d');_0x501472[_0xe2885d(0xb0)]='38px\x20verdana';var _0x529780=_0x501472[_0xe2885d(0xb2)](0x0,0x0,_0x53ee15[_0xe2885d(0xc8)],0x0);_0x529780[_0xe2885d(0x10f)]('0',_0xe2885d(0xa8)),_0x529780['addColorStop'](_0xe2885d(0xc6),_0xe2885d(0x9a)),_0x529780[_0xe2885d(0x10f)](_0xe2885d(0xdf),'red'),_0x501472[_0xe2885d(0x110)]=_0x529780,_0x501472[_0xe2885d(0xdd)]=0x2,['round','bevel',_0xe2885d(0xdb)][_0xe2885d(0x95)]((_0x507f92,_0x465d60)=>{var _0x96acf9=_0xe2885d;_0x501472[_0x96acf9(0xd2)]=_0x507f92,_0x501472[_0x96acf9(0x116)](),_0x501472[_0x96acf9(0xfd)](0x0,0x0),_0x501472[_0x96acf9(0xd0)](0x8c,0x28),_0x501472[_0x96acf9(0xb3)]();}),_0x501472[_0xe2885d(0xd7)](_0x32043c[_0xe2885d(0xfa)](''),0x14,0x23),code_signup=_0x32043c[_0xe2885d(0xfa)](''),document[_0xe2885d(0x10a)]('captcha-signup')[_0xe2885d(0xb9)](_0x53ee15);}document[_0x17414f(0xa1)](_0x17414f(0xed))[_0x17414f(0x11c)](_0x17414f(0xf3),_0x24adf4=>{var _0x11e328=_0x17414f;event['keyCode']===0xd&&(_0x24adf4[_0x11e328(0xc4)](),login());}),document[_0x17414f(0xa1)]('#cpatchaTextBoxSignUp')[_0x17414f(0x11c)](_0x17414f(0xf3),_0x5dfba9=>{var _0x15e5c4=_0x17414f;event[_0x15e5c4(0x11e)]===0xd&&(_0x5dfba9[_0x15e5c4(0xc4)](),register());});function CustomAlert(){var _0xb4ef39=_0x17414f;this[_0xb4ef39(0xea)]=function(_0x552f62){var _0x3a17a8=_0xb4ef39,_0x52e942=window['innerWidth'],_0x21b70c=window[_0x3a17a8(0xde)],_0x1e20f0=document[_0x3a17a8(0xa1)]('#dialogoverlay'),_0x41980b=document['querySelector']('#dialogbox');_0x1e20f0[_0x3a17a8(0xbe)]['display']=_0x3a17a8(0xb7),_0x1e20f0['style']['height']=_0x21b70c+'px',_0x41980b['style'][_0x3a17a8(0x10d)]=_0x52e942/0x2-0x190*0.5+'px',_0x41980b['style'][_0x3a17a8(0xb8)]=_0x3a17a8(0xe7),_0x41980b[_0x3a17a8(0xbe)][_0x3a17a8(0x100)]=_0x3a17a8(0xb7),document['querySelector'](_0x3a17a8(0xa7))[_0x3a17a8(0xe6)]='<i>Information!</i>',document['querySelector']('#dialogboxbody')[_0x3a17a8(0xe6)]=_0x552f62,document['querySelector'](_0x3a17a8(0xff))['innerHTML']=_0x3a17a8(0x99);},this['ok']=function(){var _0x5d0423=_0xb4ef39;document[_0x5d0423(0xa1)](_0x5d0423(0xc5))[_0x5d0423(0xbe)][_0x5d0423(0x100)]='none',document[_0x5d0423(0xa1)]('#dialogoverlay')[_0x5d0423(0xbe)][_0x5d0423(0x100)]=_0x5d0423(0xdc);};}var Alert=new CustomAlert();document['querySelector']('#year')[_0x17414f(0xe6)]=new Date()['getFullYear']();var modal_click=document[_0x17414f(0xa1)](_0x17414f(0x106)),span_click=document[_0x17414f(0xa3)]('close')[0x0];function callmodal(){var _0x4cf47c=_0x17414f;modal_click[_0x4cf47c(0xbe)][_0x4cf47c(0x100)]='block';}span_click['onclick']=function(){var _0x43b91e=_0x17414f;modal_click[_0x43b91e(0xbe)][_0x43b91e(0x100)]=_0x43b91e(0xdc);},window[_0x17414f(0x123)]=function(_0x5ba071){var _0x1872bd=_0x17414f;_0x5ba071[_0x1872bd(0xe1)]==modal_click&&(modal_click[_0x1872bd(0xbe)][_0x1872bd(0x100)]='none');},document[_0x17414f(0xa1)](_0x17414f(0xb1))[_0x17414f(0x11c)](_0x17414f(0x10c),_0x76d349=>{var _0x4698c2=_0x17414f;_0x76d349[_0x4698c2(0xc4)]();}),document[_0x17414f(0x9e)]=function(_0x507290){var _0x5a89b1=_0x17414f;if(event['keyCode']==0x7b)return![];if(_0x507290[_0x5a89b1(0x104)]&&_0x507290['shiftKey']&&_0x507290[_0x5a89b1(0x11e)]=='I'[_0x5a89b1(0xb4)](0x0))return![];if(_0x507290[_0x5a89b1(0x104)]&&_0x507290[_0x5a89b1(0xd3)]&&_0x507290['keyCode']=='C'[_0x5a89b1(0xb4)](0x0))return![];if(_0x507290[_0x5a89b1(0x104)]&&_0x507290[_0x5a89b1(0xd3)]&&_0x507290[_0x5a89b1(0x11e)]=='J'[_0x5a89b1(0xb4)](0x0))return![];if(_0x507290[_0x5a89b1(0x104)]&&_0x507290[_0x5a89b1(0x11e)]=='U'['charCodeAt'](0x0))return![];},document[_0x17414f(0xa1)](_0x17414f(0xad))['addEventListener'](_0x17414f(0x10c),_0xcb972e=>{var _0x365827=_0x17414f;_0xcb972e[_0x365827(0xc4)]();}),document['onkeydown']=function(_0x324b1a){var _0x46a676=_0x17414f;if(event[_0x46a676(0x11e)]==0x7b)return![];if(_0x324b1a[_0x46a676(0x104)]&&_0x324b1a[_0x46a676(0xd3)]&&_0x324b1a['keyCode']=='I'['charCodeAt'](0x0))return![];if(_0x324b1a[_0x46a676(0x104)]&&_0x324b1a[_0x46a676(0xd3)]&&_0x324b1a['keyCode']=='C'[_0x46a676(0xb4)](0x0))return![];if(_0x324b1a[_0x46a676(0x104)]&&_0x324b1a['shiftKey']&&_0x324b1a[_0x46a676(0x11e)]=='J'[_0x46a676(0xb4)](0x0))return![];if(_0x324b1a['ctrlKey']&&_0x324b1a['keyCode']=='U'['charCodeAt'](0x0))return![];},document[_0x17414f(0xa1)](_0x17414f(0x106))[_0x17414f(0x11c)](_0x17414f(0x10c),_0x16fcb0=>{var _0x59777d=_0x17414f;_0x16fcb0[_0x59777d(0xc4)]();}),document[_0x17414f(0x9e)]=function(_0x1cea14){var _0x56151c=_0x17414f;if(event[_0x56151c(0x11e)]==0x7b)return![];if(_0x1cea14[_0x56151c(0x104)]&&_0x1cea14[_0x56151c(0xd3)]&&_0x1cea14['keyCode']=='I'[_0x56151c(0xb4)](0x0))return![];if(_0x1cea14[_0x56151c(0x104)]&&_0x1cea14[_0x56151c(0xd3)]&&_0x1cea14[_0x56151c(0x11e)]=='C'[_0x56151c(0xb4)](0x0))return![];if(_0x1cea14[_0x56151c(0x104)]&&_0x1cea14[_0x56151c(0xd3)]&&_0x1cea14['keyCode']=='J'[_0x56151c(0xb4)](0x0))return![];if(_0x1cea14['ctrlKey']&&_0x1cea14['keyCode']=='U'[_0x56151c(0xb4)](0x0))return![];},document['querySelector'](_0x17414f(0xe9))[_0x17414f(0x11c)]('contextmenu',_0x1f763f=>{var _0x160055=_0x17414f;_0x1f763f[_0x160055(0xc4)]();}),document[_0x17414f(0x9e)]=function(_0x377cec){var _0x51cf30=_0x17414f;if(event[_0x51cf30(0x11e)]==0x7b)return![];if(_0x377cec['ctrlKey']&&_0x377cec[_0x51cf30(0xd3)]&&_0x377cec[_0x51cf30(0x11e)]=='I'[_0x51cf30(0xb4)](0x0))return![];if(_0x377cec[_0x51cf30(0x104)]&&_0x377cec[_0x51cf30(0xd3)]&&_0x377cec[_0x51cf30(0x11e)]=='C'[_0x51cf30(0xb4)](0x0))return![];if(_0x377cec[_0x51cf30(0x104)]&&_0x377cec[_0x51cf30(0xd3)]&&_0x377cec[_0x51cf30(0x11e)]=='J'['charCodeAt'](0x0))return![];if(_0x377cec['ctrlKey']&&_0x377cec[_0x51cf30(0x11e)]=='U'[_0x51cf30(0xb4)](0x0))return![];};var firebaseConfig={'apiKey':'AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','authDomain':'buananetpbun-5d979.firebaseapp.com','databaseURL':_0x17414f(0xae),'projectId':'buananetpbun-5d979','storageBucket':'buananetpbun-5d979.appspot.com','messagingSenderId':'912166778245','appId':_0x17414f(0x121),'measurementId':_0x17414f(0xf9)};firebase[_0x17414f(0xe5)](firebaseConfig);const auth=firebase['auth'](),user=firebase[_0x17414f(0xf8)]()[_0x17414f(0xee)],provider=new firebase['auth']['GoogleAuthProvider']();document[_0x17414f(0xa1)](_0x17414f(0x105))['addEventListener'](_0x17414f(0x124),()=>{var _0x5c6b8d=_0x17414f;firebase[_0x5c6b8d(0xf8)]()['signInWithPopup'](provider)[_0x5c6b8d(0xe4)](function(_0x50efb4){var _0x39c441=_0x5c6b8d,_0x5d0bfc=_0x50efb4[_0x39c441(0x94)][_0x39c441(0xb5)],_0xc30ac=_0x50efb4[_0x39c441(0x111)];})['catch'](function(_0x567419){var _0x3e2155=_0x5c6b8d,_0xabbeef=_0x567419[_0x3e2155(0xa4)],_0xeef569=_0x567419['message'],_0x2fbbf9=_0x567419[_0x3e2155(0xcb)],_0x32aae4=_0x567419['credential'];});}),document[_0x17414f(0xa1)](_0x17414f(0x122))[_0x17414f(0x11c)](_0x17414f(0x124),()=>{var _0x3f36db=_0x17414f,_0x2f3eee={'url':_0x3f36db(0x9b),'handleCodeInApp':![]};firebase[_0x3f36db(0xf8)]()['currentUser'][_0x3f36db(0xbd)](_0x2f3eee)[_0x3f36db(0xe4)](function(){var _0x1c89e3=_0x3f36db;Alert[_0x1c89e3(0xea)](_0x1c89e3(0x115));})[_0x3f36db(0x107)](function(_0x5be0bc){var _0x10a395=_0x3f36db,_0x4b681c=_0x5be0bc['code'],_0x5b3119=_0x5be0bc['message'];Alert[_0x10a395(0xea)]('❌\x20'+_0x5b3119);});}),document['querySelector'](_0x17414f(0xcf))['addEventListener'](_0x17414f(0x124),()=>{var _0x12d9d4=_0x17414f;window['location'][_0x12d9d4(0x102)]=_0x12d9d4(0x9b);});var myTimer;function myInterval(){var _0x3f6aeb=_0x17414f;location[_0x3f6aeb(0xaa)]();}firebase['auth']()[_0x17414f(0xd8)](_0x1425e5=>{var _0xc485e1=_0x17414f;if(_0x1425e5){const _0x195785=_0x1425e5[_0xc485e1(0xda)],_0x23a4d0=_0x1425e5[_0xc485e1(0xcb)],_0x24a095=_0x1425e5[_0xc485e1(0xa9)];var _0x3e4706=membership_info();document[_0xc485e1(0xa1)]('#welcome-email')[_0xc485e1(0xe6)]=_0x23a4d0,document[_0xc485e1(0xa1)](_0xc485e1(0xc3))['src']=firebase[_0xc485e1(0xf8)]()['currentUser'][_0xc485e1(0xf4)];firebase['auth']()[_0xc485e1(0xee)]['photoURL']==null&&(document['querySelector']('#myavatar')[_0xc485e1(0x118)]='https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png');clearInterval(myTimer);if(_0x24a095==!![]){document[_0xc485e1(0xa1)]('#myLockScreen')[_0xc485e1(0xbe)][_0xc485e1(0x100)]='block',document[_0xc485e1(0xa1)](_0xc485e1(0xf6))[_0xc485e1(0xbe)]['display']=_0xc485e1(0xb7);var _0x24f677=0xf,_0x58c0fb=setInterval(function(){var _0x891ddd=_0xc485e1;_0x24f677<=0x0?clearInterval(_0x58c0fb):document['getElementById'](_0x891ddd(0xd1))['innerHTML']=_0x891ddd(0xbb)+_0x24f677+_0x891ddd(0xef),_0x24f677-=0x1;},0x3e8);myTimer=setInterval(myInterval,0x3a98);}else{document[_0xc485e1(0xa1)](_0xc485e1(0xfe))['innerHTML']='❌',document[_0xc485e1(0xa1)]('#myLockScreen')[_0xc485e1(0xbe)]['display']=_0xc485e1(0xb7),document[_0xc485e1(0xa1)](_0xc485e1(0xf6))[_0xc485e1(0xbe)][_0xc485e1(0x100)]='none';var _0x24f677=0xf,_0x58c0fb=setInterval(function(){var _0x57e205=_0xc485e1;_0x24f677<=0x0?clearInterval(_0x58c0fb):document[_0x57e205(0x10a)](_0x57e205(0x92))[_0x57e205(0xe6)]=_0x57e205(0xbb)+_0x24f677+_0x57e205(0xef),_0x24f677-=0x1;},0x3e8);myTimer=setInterval(myInterval,0x3a98);}}else{document[_0xc485e1(0xa1)](_0xc485e1(0xad))['style'][_0xc485e1(0x100)]=_0xc485e1(0xb7),document['querySelector']('#center-screen2')['style'][_0xc485e1(0x100)]='block';var _0x24f677=0xf,_0x58c0fb=setInterval(function(){var _0xfba666=_0xc485e1;_0x24f677<=0x0?clearInterval(_0x58c0fb):document['getElementById']('countdown3')[_0xfba666(0xe6)]=_0xfba666(0xbb)+_0x24f677+_0xfba666(0xef),_0x24f677-=0x1;},0x3e8);myTimer=setInterval(myInterval,0x3a98);}}),document['querySelector'](_0x17414f(0x112))[_0x17414f(0x11c)]('click',()=>{showRegistration();});const showRegistration=()=>{var _0x3f7076=_0x17414f;document[_0x3f7076(0xa1)](_0x3f7076(0xcc))['classList'][_0x3f7076(0xca)](_0x3f7076(0x101)),document[_0x3f7076(0xa1)]('#login-page')[_0x3f7076(0xc7)][_0x3f7076(0xa2)]('hide'),document['querySelector'](_0x3f7076(0x113))[_0x3f7076(0xc7)][_0x3f7076(0xa2)]('hide'),document['querySelector']('#show-login')[_0x3f7076(0xc7)][_0x3f7076(0xca)]('hide'),document[_0x3f7076(0xa1)]('#show-register')[_0x3f7076(0xc7)][_0x3f7076(0xa2)](_0x3f7076(0x101)),document['querySelector'](_0x3f7076(0x105))['innerHTML']=_0x3f7076(0xbf);};document[_0x17414f(0xa1)](_0x17414f(0xe0))[_0x17414f(0x11c)](_0x17414f(0x124),()=>{showLogin();});const showLogin=()=>{var _0x557c1e=_0x17414f;document[_0x557c1e(0xa1)]('#registration-page')[_0x557c1e(0xc7)]['add'](_0x557c1e(0x101)),document[_0x557c1e(0xa1)](_0x557c1e(0x98))['classList']['remove'](_0x557c1e(0x101)),document[_0x557c1e(0xa1)]('#homepage')[_0x557c1e(0xc7)][_0x557c1e(0xa2)]('hide'),document[_0x557c1e(0xa1)](_0x557c1e(0xe0))['classList']['add'](_0x557c1e(0x101)),document['querySelector']('#show-register')['classList'][_0x557c1e(0xca)](_0x557c1e(0x101)),document[_0x557c1e(0xa1)](_0x557c1e(0x105))['innerHTML']=_0x557c1e(0xc1);};document[_0x17414f(0xa1)](_0x17414f(0x109))[_0x17414f(0x11c)]('click',()=>{signOut();});const register=()=>{var _0x43e539=_0x17414f;const _0x45c3bd=document[_0x43e539(0xa1)](_0x43e539(0x97))[_0x43e539(0xcd)],_0x5894f3=document['querySelector']('#registration-reemail')['value'],_0xd104c9=document[_0x43e539(0xa1)](_0x43e539(0x119))['value'];if(_0x45c3bd[_0x43e539(0xf7)]()=='')Alert[_0x43e539(0xea)](_0x43e539(0xfc));else{if(_0xd104c9[_0x43e539(0xf7)]()['length']<0x6)Alert[_0x43e539(0xea)](_0x43e539(0x114));else _0x45c3bd!=_0x5894f3?Alert[_0x43e539(0xea)](_0x43e539(0xe2)):(event[_0x43e539(0xc4)](),document[_0x43e539(0x10a)]('cpatchaTextBoxSignUp')[_0x43e539(0xcd)]==code_signup?auth[_0x43e539(0xb6)](_0x45c3bd,_0xd104c9)['catch'](function(_0x1841a9){var _0x1fe190=_0x43e539,_0x458eae=_0x1841a9[_0x1fe190(0xa4)],_0x1c2814=_0x1841a9[_0x1fe190(0x11f)];Alert[_0x1fe190(0xea)]('❌\x20'+_0x1c2814);}):(Alert[_0x43e539(0xea)](_0x43e539(0x10e)),createCaptchaSignUp(),document['getElementById'](_0x43e539(0xd5))['value']=''));}};document[_0x17414f(0xa1)](_0x17414f(0xf2))[_0x17414f(0x11c)]('click',()=>{register();}),document['querySelector']('#registration-password')[_0x17414f(0x11c)](_0x17414f(0xf3),_0x4506dc=>{var _0x293205=_0x17414f;event[_0x293205(0x11e)]===0xd&&(_0x4506dc[_0x293205(0xc4)](),register());});const login=()=>{var _0x5a06a1=_0x17414f;const _0x2f8dd2=document[_0x5a06a1(0xa1)](_0x5a06a1(0xe8))[_0x5a06a1(0xcd)],_0x4517c0=document['querySelector'](_0x5a06a1(0xf0))['value'];if(_0x2f8dd2[_0x5a06a1(0xf7)]()=='')Alert['render'](_0x5a06a1(0xfc));else _0x4517c0['trim']()==''?Alert[_0x5a06a1(0xea)](_0x5a06a1(0xaf)):(event[_0x5a06a1(0xc4)](),document[_0x5a06a1(0x10a)](_0x5a06a1(0x120))[_0x5a06a1(0xcd)]==code_signin?authenticate(_0x2f8dd2,_0x4517c0):(Alert[_0x5a06a1(0xea)](_0x5a06a1(0x10e)),document[_0x5a06a1(0x10a)](_0x5a06a1(0x120))['value']='',createCaptchaSignIn()));};document['querySelector']('#login')['addEventListener'](_0x17414f(0x124),()=>{login();}),document[_0x17414f(0xa1)](_0x17414f(0xf0))[_0x17414f(0x11c)]('keyup',_0x8720ab=>{var _0x490f28=_0x17414f;event['keyCode']===0xd&&(_0x8720ab[_0x490f28(0xc4)](),login());});const authenticate=(_0x320e4f,_0x2a40e8)=>{var _0x56d661=_0x17414f;const _0x102c3=firebase[_0x56d661(0xf8)]();_0x102c3[_0x56d661(0xf5)](_0x320e4f,_0x2a40e8),firebase[_0x56d661(0xf8)]()[_0x56d661(0xf5)](_0x320e4f,_0x2a40e8)[_0x56d661(0x107)](function(_0x3babab){var _0x446c5f=_0x3babab['code'],_0x3b9659=_0x3babab['message'];Alert['render']('❌\x20'+_0x3b9659);});},showHomepage=()=>{var _0x19b6a1=_0x17414f;document['querySelector'](_0x19b6a1(0xcc))['classList'][_0x19b6a1(0xa2)](_0x19b6a1(0x101)),document[_0x19b6a1(0xa1)]('#login-page')['classList'][_0x19b6a1(0xa2)](_0x19b6a1(0x101)),document[_0x19b6a1(0xa1)](_0x19b6a1(0x113))['classList'][_0x19b6a1(0xca)](_0x19b6a1(0x101)),document[_0x19b6a1(0xa1)]('#myLogin')[_0x19b6a1(0xbe)][_0x19b6a1(0x100)]=_0x19b6a1(0xdc);},signOut=()=>{var _0x2ff251=_0x17414f;firebase[_0x2ff251(0xf8)]()['signOut']()[_0x2ff251(0xe4)](function(){var _0x1761cf=_0x2ff251;location['href']=_0x1761cf(0x9f);})['catch'](function(_0x55bc2a){var _0x33a0d4=_0x2ff251;Alert['render'](_0x33a0d4(0xc0));});};auth['onAuthStateChanged'](_0x4d0912=>{_0x4d0912&&showHomepage();}),document['querySelector'](_0x17414f(0xce))[_0x17414f(0x11c)]('click',()=>{var _0x1226ec=_0x17414f;const _0x5ef1f4=document['querySelector'](_0x1226ec(0xe8))['value'];_0x5ef1f4['trim']()==''?Alert[_0x1226ec(0xea)]('❌\x20Enter\x20Your\x20E-mail.'):forgotPassword(_0x5ef1f4);});const forgotPassword=_0x2f6b80=>{var _0x5bfaea=_0x17414f;auth[_0x5bfaea(0x9c)](_0x2f6b80)['then'](function(){var _0x4e2bd7=_0x5bfaea;Alert['render'](_0x4e2bd7(0xab));})[_0x5bfaea(0x107)](function(_0x5a827c){var _0x4bec15=_0x5bfaea;Alert[_0x4bec15(0xea)](_0x4bec15(0x103));});};
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+	apiKey: "AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns",
+	authDomain: "buananetpbun-5d979.firebaseapp.com",
+	databaseURL: "https://buananetpbun-5d979-default-rtdb.asia-southeast1.firebasedatabase.app",
+	projectId: "buananetpbun-5d979",
+	storageBucket: "buananetpbun-5d979.appspot.com",
+	messagingSenderId: "912166778245",
+	appId: "1:912166778245:web:c845ec7e720f7bd84580ec",
+	measurementId: "G-FSDV7HGD99"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+//invokes firebase authentication.
+const auth = firebase.auth();
+const user = firebase.auth().currentUser;
+
+// call API admin.buananet.com
+const api_endpoint = 'https://admin.buananet.com/api';
+
+firebase.auth().onAuthStateChanged((user) => {
+	if (user) {
+		localStorage.setItem('user_mail', firebase.auth().currentUser.email)
+	} else {
+		localStorage.removeItem('user_mail')
+	}
+});
+
+function membership_info() {
+	$.ajax({
+		url: api_endpoint + '/membership/user-membership',
+		method: "POST",
+		data: {
+			'user': localStorage.getItem('user_mail'),
+		},
+		beforeSend: function() {},
+		success: function(response) {
+			localStorage.setItem('membership_info', JSON.stringify(response.data))
+		},
+		error: function(response) {
+			localStorage.removeItem('membership_info')
+		}
+	});
+	if (localStorage.getItem('membership_info')) {
+		let data = localStorage.getItem('membership_info')
+		return JSON.parse(data)
+	} else {
+		return null
+	}
+}
+
+document.querySelector("#verify").addEventListener("click", () => {
+	var actionCodeSettings = {
+		// After email is verified, the user will be give the ability to go back
+		// to the sign-in page.
+		url: 'https://buananet.com/login/',
+		handleCodeInApp: false
+	};
+
+	firebase.auth().currentUser.sendEmailVerification(actionCodeSettings).then(function() {
+		// Verification email sent.
+		Alert.render("✔️ Verification link sent to your email. if you don't see it, please check your mail inbox in spam folder.")
+	}).catch(function(error) {
+		// Error occurred. Inspect error.code.
+		var errorCode = error.code;
+		var errorMessage = error.message;
+		Alert.render('❌ ' + errorMessage);
+	});
+});
+
+document.querySelector("#not-subscribe").addEventListener("click", () => {
+	window.location.href = 'https://buananet.com/login/';
+});
+
+var myTimer;
+
+function myInterval() {
+	location.reload()
+}
+
+firebase.auth().onAuthStateChanged((user) => {
+	if (user) {
+		// User is signed in, see docs for a list of available properties
+		// https://firebase.google.com/docs/reference/js/firebase.User
+		const uid = user.uid;
+		const email = user.email;
+		const emailVerified = user.emailVerified;
+		var member = membership_info()
+		document.querySelector('#welcome-email').innerHTML = email
+		document.querySelector('#myavatar').src = firebase.auth().currentUser.photoURL;
+		if (firebase.auth().currentUser.photoURL == null) {
+			document.querySelector('#myavatar').src = "https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png";
+		}
+		clearInterval(myTimer)
+		if (emailVerified == true) {
+			// EMAIL TERVERIFIKASI DI FIREBASE 
+			//document.querySelector('#center-screen1').style.display = "none"
+			document.querySelector('#email_Verified').innerHTML = "✔️"
+			// TAMPILKAN HALAMAN POPUP PEMBAYARAN
+			if (member == null || member.status != 'active') {
+				document.querySelector('#myLockScreen').style.display = "block";
+				document.querySelector('#center-screen2').style.display = "block"
+			}
+		} else {
+			// EMAIL TIDAK TERVERIFIKASI DI FIREBASE, TAMPILKAN HALAMAN VERIFIKASI
+			document.querySelector('#email_Verified').innerHTML = "❌"
+			document.querySelector('#myLockScreen').style.display = "block";
+			document.querySelector('#center-screen2').style.display = "none"
+			//document.querySelector('#center-screen1').style.display = "block"
+		}
+	} else {
+		// USER BELUM LOGIN DI FIREBASE, TAMPILKAN HALAMAN LOGIN
+		document.querySelector('#myLockScreen').style.display = "block";
+		document.querySelector('#center-screen2').style.display = "block"
+		//document.querySelector('#center-screen1').style.display = "none"
+	}
+});
+
+document.querySelector("#signout").addEventListener("click", () => {
+	signOut();
+});
+
+const showHomepage = () => {
+	document.querySelector("#homepage").classList.remove("hide");
+};
+
+const signOut = () => {
+	firebase.auth().signOut().then(function() {
+		// location.reload();
+		location.href = 'https://buananet.com/'
+	}).catch(function(error) {
+		Alert.render("❌ error signing out, check network connection");
+	});
+};
+
+auth.onAuthStateChanged((firebaseUser) => {
+	if (firebaseUser) {
+		showHomepage();
+	}
+});
+
+document.querySelector("#myLockScreen").addEventListener('contextmenu', (e) => {
+	e.preventDefault();
+});
+
+document.querySelector("#mymenu").addEventListener('contextmenu', (e) => {
+	e.preventDefault();
+});
+
+document.onkeydown = function(e) {
+	if (event.keyCode == 123) {
+		return false;
+	}
+	if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+		return false;
+	}
+	if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+		return false;
+	}
+	if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+		return false;
+	}
+	if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+		return false;
+	}
+}
+
+function CustomAlert() {
+	this.render = function(dialog) {
+		var winW = window.innerWidth;
+		var winH = window.innerHeight;
+		var dialogoverlay = document.querySelector('#dialogoverlay');
+		var dialogbox = document.querySelector('#dialogbox');
+		dialogoverlay.style.display = "block";
+		dialogoverlay.style.height = winH + "px";
+		dialogbox.style.left = (winW / 2) - (400 * .5) + "px";
+		dialogbox.style.top = "100px";
+		dialogbox.style.display = "block";
+		document.querySelector('#dialogboxhead').innerHTML = "<i>Information!</i>";
+		document.querySelector('#dialogboxbody').innerHTML = dialog;
+		document.querySelector('#dialogboxfoot').innerHTML = '<button style="width:100px" onclick="Alert.ok()">OK</button>';
+	}
+	this.ok = function() {
+		document.querySelector('#dialogbox').style.display = "none";
+		document.querySelector('#dialogoverlay').style.display = "none";
+	}
+}
+var Alert = new CustomAlert();
