@@ -96,7 +96,7 @@ firebase.auth().onAuthStateChanged((user) => {
 		clearInterval(myTimer)
 		if (emailVerified == true) {
 			// EMAIL TERVERIFIKASI DI FIREBASE 
-			document.querySelector('#center-screen1').style.display = "none"
+			//document.querySelector('#center-screen1').style.display = "none"
 			document.querySelector('#email_Verified').innerHTML = "✔️"
 			// TAMPILKAN HALAMAN POPUP PEMBAYARAN
 			if (member == null || member.status != 'active') {
@@ -119,7 +119,7 @@ firebase.auth().onAuthStateChanged((user) => {
 			document.querySelector('#email_Verified').innerHTML = "❌"
 			document.querySelector('#myLockScreen').style.display = "block";
 			document.querySelector('#center-screen2').style.display = "none"
-			document.querySelector('#center-screen1').style.display = "block"
+			//document.querySelector('#center-screen1').style.display = "block"
 			var timeleft = 60;
 			var downloadTimer = setInterval(function() {
 				if (timeleft <= 0) {
@@ -135,7 +135,7 @@ firebase.auth().onAuthStateChanged((user) => {
 		// USER BELUM LOGIN DI FIREBASE, TAMPILKAN HALAMAN LOGIN
 		document.querySelector('#myLockScreen').style.display = "block";
 		document.querySelector('#center-screen2').style.display = "block"
-		document.querySelector('#center-screen1').style.display = "none"
+		//document.querySelector('#center-screen1').style.display = "none"
 		var timeleft = 60;
 		var downloadTimer = setInterval(function() {
 			if (timeleft <= 0) {
