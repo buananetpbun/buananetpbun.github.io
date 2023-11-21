@@ -55,7 +55,7 @@ document.querySelector("#verify").addEventListener("click", () => {
 	var actionCodeSettings = {
 		// After email is verified, the user will be give the ability to go back
 		// to the sign-in page.
-		url: 'https://buananet.com/login/',
+		url: 'https://buananet.com/',
 		handleCodeInApp: false
 	};
 
@@ -71,7 +71,7 @@ document.querySelector("#verify").addEventListener("click", () => {
 });
 
 document.querySelector("#not-subscribe").addEventListener("click", () => {
-	window.location.href = 'https://buananet.com/login/';
+	window.location.href = 'https://buananet.com/';
 });
 
 var myTimer;
