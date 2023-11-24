@@ -139,7 +139,7 @@
       <div class="header">
         <h1><span style="color:#ff6600 !important">DHCP ALERT</span>: DHCP ROGUE / DISCOVER UNKNOWN DHCP SERVER</h1>
       </div>
-      <div class="sidebar">
+      <div id="sidebar_" class="sidebar">
         <div style="clear:both"></div>
         <img style="margin-top:0px; margin-bottom:10px" src="https://github-production-user-asset-6210df.s3.amazonaws.com/42666125/259610102-7319e70d-5d1f-493d-b832-4454d7f4aa84.png" alt="Italian Trulli">
         <div class="class-input">
@@ -358,6 +358,15 @@
     </div>
 
     <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+document.getElementById("list-output-r1").innerHTML = "Please Login and Subscribe ..";
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>
 
   </body>
 </html>

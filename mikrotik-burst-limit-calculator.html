@@ -152,7 +152,7 @@
         <h1>MIKROTIK <span style="color:#ff6600">BURST LIMIT</span> CALCULATOR FOR ROUTER-OS</h1>
       </div>
       <div class="main-wrap">
-        <div class="main-sidebar">
+        <div id="main-sidebar_"class="main-sidebar">
           <div class="sidebar">
             <div style="width:100%;border-bottom:1px solid #bbb">
               <label><b>TARGET UPLOAD</b></label>
@@ -179,7 +179,7 @@
               </div>
             </div>
           </div>
-          <div class="sidebar2">
+          <div id="sidebar2_"class="sidebar2">
             <div style="width:100%;border-bottom:1px solid #bbb">
               <label><b>TARGET DOWNLOAD</b></label>
             </div>
@@ -376,7 +376,17 @@
       </div>
     </div>
 
-    <script src="./login/login.js"></script>
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+
+			let div_disable = document.getElementById('main-sidebar_');
+			elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+			for(i = 0; i < elements_disable.length; i++) {
+				elements_disable[i].setAttribute('disabled', true);
+			}
+			
+</script></script>
 		
   </body>
 </html>

@@ -147,7 +147,7 @@
       <div class="header">
         <h1>MIKROTIK: SEND NETWATCH MONITORING TO <span style="color:#ff6600 !important">TELEGRAM</span> :: <span style="color:#ff6600 !important">WHATSAPP</span> :: <span style="color:#ff6600 !important">SMS</span> :: <span style="color:#ff6600 !important">E-MAIL</span></h1>
       </div>
-      <div class="sidebar">
+      <div id="sidebar_" class="sidebar">
         <div style="display:flex">
           <div style="width:50%; margin-right:10px">
             <label>Sending Options</label> 
@@ -344,7 +344,15 @@
       </div>
     </div>
 	
-    <script src="./login/login.js"></script>			
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>		
 
 		
   </body>

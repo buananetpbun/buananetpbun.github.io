@@ -139,7 +139,7 @@
       <div class="header">
         <h1><span style="color:#ff6600 !important">MIKROTIK NINJA</span> : HIDE ROUTERBOARD INFO FROM ISP / WAN SCANNING</h1>
       </div>
-      <div class="sidebar">
+      <div id="sidebar_" class="sidebar">
             <div style="font-size:13px;margin:10px; color:#292929; text-align:left"><span style="font-weight:700; font-size:14px; padding-left:6px; padding-right:6px; border-left:6px solid #555; border-right:6px solid #555; color:red;margin-right:5px ">DISCLAIMER</span>
             We are not responsible for any error, failure, damage or your router being locked due to intentional or accidental factors. Our Tool works independently, not under the auspices of the MikroTik Company, all problems that occur on your router are your own responsibility and you must be prepared to accept all the risks. If you "Agree", please continue.
           </div>
@@ -364,6 +364,16 @@
     </div>
 	
     <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+		document.getElementById("list-output-r1").innerHTML = "Please Login and Subscribe ..";
+		
+			let div_disable = document.getElementById('sidebar_');
+			elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+			for(i = 0; i < elements_disable.length; i++) {
+				elements_disable[i].setAttribute('disabled', true);
+			}
+</script>
 
 	  	
   </body>

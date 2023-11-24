@@ -155,7 +155,7 @@
         <h1>LOAD BALANCING PCC <span style="color:#ff6600">{ LB PCC } </span> CALCULATION</h1>
       </div>
 	  <div class="main-wrap">
-      <div class="sidebar">
+      <div id="sidebar_" class="sidebar">
         <div style="float:left; width:100%;">
           <label><b>WAN-1 Speed</b></label><br>
           <select id="wan-list1">
@@ -326,7 +326,15 @@ PCC Load Balancing is not like a mathematical formula, not like <span style="col
       </div>
     </div>
 
-    <script src="./login/login.js"></script>		
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>	
 
   </body>
 </html>

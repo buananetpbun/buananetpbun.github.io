@@ -143,7 +143,7 @@
         <h1><span style="color:#ff6600">WIFI.ID WMS</span> AND <span style="color:#ff6600">SEAMLESS</span> AUTO LOGIN SCRIPT GENERATOR FOR MIKROTIK</h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <label>Select Wifi.id Mode</label>
           <div style="clear: both;"></div>
           <div style="clear: both;"></div>
@@ -388,7 +388,16 @@
       </div>
     </div>
 		
-    <script src="./login/login.js"></script>
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+document.getElementById("showScript").innerHTML = "Please Login and Subscribe ..";
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script></script>
 
   </body>
 </html>

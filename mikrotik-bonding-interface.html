@@ -146,7 +146,7 @@
       <div class="header">
         <h1>MIKROTIK <span style="color:#ff6600">BONDING INTERFACE</span> / <span style="color:#ff6600">LINK AGGREGATION</span> MODE <span style="color:#ff6600">BALANCE-RR</span></h1>
       </div>
-      <div class="sidebar">
+      <div id="sidebar_" class="sidebar">
         <div style="padding:20px; text-align:center">
           Bonding is a technology that allows the aggregation of more than one ethernet interface and combine them into one virtual link so that we will get greater bandwidth throughput. as an example your router ether1 only support 100Mbps, you can bonding with ether2 and finaly you can get more speed to 200Mbps.
         </div>
@@ -354,5 +354,16 @@
       </div>
     </div>	
     <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+		document.getElementById("list-output-r1").innerHTML = "Please Login and Subscribe ..";
+		document.getElementById("list-output-r2").innerHTML = "Please Login and Subscribe ..";
+		
+			let div_disable = document.getElementById('sidebar_');
+			elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+			for(i = 0; i < elements_disable.length; i++) {
+				elements_disable[i].setAttribute('disabled', true);
+			}
+</script>
   </body>
 </html>

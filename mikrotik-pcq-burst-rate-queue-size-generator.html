@@ -142,7 +142,7 @@
         <h1>MIKROTIK <span style="color:#ff6600">PCQ BURST RATE + QUEUE SIZE</span> CALCULATOR</h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <div style="width:100%;border-bottom:1px solid #bbb;margin-bottom:10px">
             <label><b>PCQ QUEUE SIZE</b></label>
 			</div>
@@ -320,6 +320,14 @@
     </div>
 	
     <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>
 
   </body>
 </html>

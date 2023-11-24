@@ -147,7 +147,7 @@
         <h1>MIKROTIK FREE HOTSPOT WI-FI <span style="color:#ff6600">QR CODE</span> TEMPLATE CREATOR</h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <div style="margin-bottom:10px; height:auto">
             <label>Wireless Router Options</label>
             <select id="input-wifi-option" onchange="myFunctionInput()">
@@ -284,7 +284,15 @@
       </div>
     </div>
 		
-    <script src="./login/login.js"></script>		
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>	
 
 		
   </body>

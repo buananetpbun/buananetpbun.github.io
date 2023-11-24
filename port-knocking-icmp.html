@@ -149,7 +149,7 @@
         <h1>MIKROTIK <span style="color:#ff6600">PORT KNOCKING</span> USE <span style="color:#ff6600">ICMP + PACKET SIZE</span> GENERATOR</h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <label>First Icmp Packet Size <br>range: 50-65535<br><span style='color:#ff6600'>example: 100</span></label>
           <br>
           <input onkeypress="return event.charCode != 32" type="text" id="packet-size-key-first" placeholder="100" value="" onkeyup="myFunction()">
@@ -306,7 +306,16 @@
       </div>
     </div>
 	
-    <script src="./login/login.js"></script>		
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+document.getElementById("showScript").innerHTML = "Please Login and Subscribe ..";
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>	
 
 		
   </body>

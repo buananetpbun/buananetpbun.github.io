@@ -146,7 +146,7 @@
         <h1>STATIC ROUTING VPN GAME SCRIPT GENERATOR <span style="color:#ff6600">- IP ADDRESS GAME ROUTING METHOD</span></h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <label>VPN Connection</label><br>
           <select onchange="myFunction()" id="vpn-list">			  
             <option value="pptp">PPTP - Point to Point Tunneling Protocol</option>
@@ -718,6 +718,15 @@
     </div>
 	
     <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+document.getElementById("showScript").innerHTML = "Please Login and Subscribe ..";
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>
 
 		
   </body>

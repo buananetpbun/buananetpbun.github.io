@@ -139,7 +139,7 @@
         <h1>MIKROTIK AUTO BACKUP TO <span style='color:#ff6600;'>E-MAIL</span> GENERATOR</h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <div style="width:100%">
             <label>E-Mail Server</label>
             <input onkeypress="return event.charCode != 32" type="text" id="input-mail-server" value="74.125.200.109" placeholder="74.125.200.109">
@@ -353,5 +353,14 @@ You will be redirected to the new domain buananet.com</div></div>
       </div>
     </div>
     <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+document.getElementById("showScript").innerHTML = "Please Login and Subscribe ..";
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>
   </body>
 </html>

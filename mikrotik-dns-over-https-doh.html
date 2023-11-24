@@ -141,7 +141,7 @@
       <div class="header">
         <h1>MIKROTIK <span style="color:#ff6600">DNS over HTTPS (DoH)</span> SERVER GENERATOR</h1>
       </div>
-      <div class="sidebar">
+      <div id="sidebar_" class="sidebar">
         <select style="font-size:15px" id="dns-list" onchange="myFunction()">
           <option value="00">AdGuard DNS - 94.140.14.14</option>
           <option value="07">Cloudflare DNS - 1.1.1.1</option>
@@ -349,7 +349,15 @@
       </div>
     </div>
 			
-    <script src="./login/login.js"></script>		
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>	
 
   </body>
 </html>

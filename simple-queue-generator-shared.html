@@ -142,7 +142,7 @@
         <h1><span style="color:#ff6600">SIMPLE QUEUE</span> SCRIPT GENERATOR MIKROTIK + <span style="color:#ff6600">BANDWIDTH SHARED (UPTO)</span></h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <label>Parent Name Queue</label>
           <input type="text" id="input-parent" value="Global-Connection" placeholder="Global-Connection">
           <label>Target Local IP / Interface</label>
@@ -308,7 +308,16 @@
       </div>
     </div>
 
-    <script src="./login/login.js"></script>		
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+document.getElementById("showScript").innerHTML = "Please Login and Subscribe ..";
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>	
 
 		
   </body>

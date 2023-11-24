@@ -148,7 +148,7 @@
         <h1>NOTIFICATION EXPIRED FOR<span style="color:#ff6600"> HOTSPOT, PPPOE AND STATIC IP</span> WITH PROXY</h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <label><b>RouterOS Version</b></label>
           <select style="margin-top:3px; width:100%" id="ros-list" onchange="myFunction()">
             <option value="ros6">RouterOS v6.xx</option>
@@ -343,5 +343,14 @@
       </div>
     </div>
 	  <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+document.getElementById("showScript").innerHTML = "Please Login and Subscribe ..";
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>
   </body>
 </html>

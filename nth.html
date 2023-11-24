@@ -137,7 +137,7 @@
         <h1>MIKROTIK <span style="color:#ff6600">LB NTH</span> / <span style="color:#ff6600">LOAD BALANCING NTH</span> SCRIPT GENERATOR FOR ROUTEROS</h1>
       </div>
       <div class="main-wrap">
-        <div class="sidebar">
+        <div id="sidebar_" class="sidebar">
           <div style="display:flex;">
             <div style="float:left; width:100%;">
               <label>Your Line WAN ISP</label><br>
@@ -415,7 +415,16 @@
       </div>
     </div>
 		
-    <script src="./login/login.js"></script>		
+    <script src="./login/login.js"></script>	
+<script>
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+document.getElementById("showScript").innerHTML = "Please Login and Subscribe ..";
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+</script>	
 
 		
   </body>
