@@ -207,7 +207,10 @@
           /file remove "<span style="color:#ff6600">Mikrotik-<span id='remove2'>Youtube</span>.rsc</span>"<br>		  
           /ip firewall filter add action=drop chain=forward disabled=no dst-address-list="<span style="color:#ff6600">Mikrotik-<span id="add-list1">Youtube</span></span>" comment="<span style="color:#ff6600">Block <span id="comment1">Youtube</span> - buananetpbun.github.io</span>" <br>
           /ip firewall raw add action=drop chain=forward disabled=no dst-address-list="<span style="color:#ff6600">Mikrotik-<span id="add-list2">Youtube</span></span>" comment="<span style="color:#ff6600">Block <span id="comment2">Youtube</span> - buananetpbun.github.io</span>" <br> 
-        </div>
+          /ip firewall address-list add address=<span style="color:#ff6600">192.168.0.0/16</span> list=<span style="color:#ff6600">LOCAL-IP</span> comment="<span style="color:#ff6600">LOCAL IP - buananet.com</span>"<br>
+          /ip firewall address-list add address=<span style="color:#ff6600">172.16.0.0/12</span> list=<span style="color:#ff6600">LOCAL-IP</span> comment="<span style="color:#ff6600">LOCAL IP - buananet.com</span>"<br>
+          /ip firewall address-list add address=<span style="color:#ff6600">10.0.0.0/8</span> list=<span style="color:#ff6600">LOCAL-IP</span> comment="<span style="color:#ff6600">LOCAL IP - buananet.com</span>"<br>        
+		</div>
       </div>
       <div class="footer">
         <div style="float:right;margin-top:8px">    
