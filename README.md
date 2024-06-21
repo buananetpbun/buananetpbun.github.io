@@ -17,10 +17,10 @@ For more Premium access to these tools, you can visit Buananet.com.
 - ⚡ Premium site : https://buananet.com
 - ⚡ Made for MikroTik RouterOS https://mikrotik.com
 
-![image](https://github.com/buananetpbun/buananetpbun.github.io/assets/42666125/dad0936f-5eb1-4f4f-b8e3-e31ca3ef2377)
+![image](https://github.com/buananetpbun/buananetpbun.github.io/assets/42666125/e14ac5c1-4438-4766-808b-9de42218ee81)
 
-Term and Condition
 
+## <b>Term and Condition</b><br>
 buananetpbun.github.io is open code in html form, but not for javascript because we have encrypted it and it is not completely open to be republished in general because buananetpbun.github.io has changed to a paid site at buananet.com, you are welcome to learn about it but may not imitate the appearance, redistribute it for free and resell it without the owner's permission.
 
 
