@@ -1,4 +1,5 @@
 User-agent: *
+301 from http://buananetpbun.github.io to http://buananet.com
 allow: /
 allow: /mikrotik/
 disallow: /mikrotik/welcome.html
