@@ -15,10 +15,5 @@
 - :link: Buy me a coffe https://www.buymeacoffee.com/bntpbun
 - :link: Bitcoin to [ <b>bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</b> ]
 
-## <b>License</b><br>
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)
-
 © Copyright <a href="https://buananetpbun.github.io/">BuanaNETPbun.github.io</a> is proudly powered by <a href="https://pages.github.com/">GitHub Pages</a> <br>
-
 Made for MikroTik RouterOS https://mikrotik.com
