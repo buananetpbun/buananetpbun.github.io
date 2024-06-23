@@ -16,8 +16,6 @@ For more Premium access to these tools, you can visit Buananet.com.
 - ⚡ Github Page : https://buananetpbun.github.io
 - ⚡ Premium site : https://buananet.com
 
-![image](https://github.com/buananetpbun/buananetpbun.github.io/assets/42666125/e14ac5c1-4438-4766-808b-9de42218ee81)
-
 ## <b>Term and Condition</b><br>
 Buananetpbun.github.io is open code in the form of CSS and HTML, but not for Javascript (js) because it has been encrypted and is not yet fully open for public republishing because buananetpbun.github.io has turned into a paid site at buananet.com, You may study the Source Code privately but are not permitted to redistribute it for free or resell it without the owner's permission.
 
