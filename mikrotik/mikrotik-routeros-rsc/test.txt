@@ -1,4 +1,0 @@
-0.0.0.0 contoh1.com
-0.0.0.0 eu1.example.com
-0.0.0.0 ex.com
-0.0.0.0 com.example.com
