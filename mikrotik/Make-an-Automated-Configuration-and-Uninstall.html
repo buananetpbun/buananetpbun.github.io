@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make an Automated Configuration and Uninstall - Mikrotik Script RouterOS</title>
+<meta content='Make an Automated Configuration and Uninstall - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+<h1>Make an Automated Configuration and Uninstall - Mikrotik Script RouterOS</h1>
+<pre>The Explanation
+This exercise will attempt to explain how one can create an automated script to administrate a large deployment base. By consolidating on a homogeneous configuration it becomes easier to enact changes to your routers without having to manually configure every router. This also makes it easy to restore a router to it's default configuration by flipping the 'deconf' bit and running the uninstall script. Once that is finished you can flip the 'deconf' bit again to reinstall the router's base configuration.
+
+I have found this to be especially helpful when developing new installations, allowing me to tinker with the settings and if I mess up reset the router without having to reboot.
+
+--Canniscam 23:23, 13 November 2008 (EET)
+
+The Breakdown
+Variables: To :global or not to :global
+:global - Global variables should be used sparingly, the most prevalent use for a :global declarations is to pass information between scripts. The :global variables are persistent in memory between script executions. Since the MikroTik lacks the ability to pass command line arguments at run time, you can use :global variables to replicate this functionality.
+
+-- Remember to Clean Up After Yourself: Make sure you :set a :global variable to null once you no longer need the data, otherwise you might be in for a surprise later in your script.
+
+:local -- Local variables are scope specific, which is to say that they only have meaning inside of the current statement, and will not persist in memory between script executions, nor will they persist between routines. Some statements in the MikroTik scripting language can support local variable creation on the fly. (i.e. :foreach, :while, :for, etc.) We will look at this in depth later on in this article so just keep it in mind for now.
+
+When building your own configuration skeleton you need to decide on which settings you want to store as variable or dynamic information. Some common variables might include Host-Name, IP Address, SNMP Community Info. Study the snippet below and look at what types of variables have been declared, and how they have been initialized. Take note that most of the variables in this script have been set as :local declarations, try to understand why.
+
+Heads Up! This script has be programmed to self destruct... Just kidding, but in a way it is also true, as mentioned in the title and the first section this script can be configured to either install a base configuration or uninstall a base configuration. All that magic starts on Line 2 as a :local variable. I treat this as more of an argument than a reusable variable. Since this is a common variable in most of my scripts I take extra care to set it as a :local variable in order to not disrupt my other scripts. There are several instances where this could be used as a global variable, and I have used it that way in the past to several uninstall scripts together, and executing a single script that launches all the rest. (i.e., Firewall-Uninstall, HotSpot-Uninstall, Proxy-Uninstall)
+
+<code class="routeros">#~ "Uninstall Flag (Default = no )"
+:local deconf no
+#~#
+
+#~ "Start of Main Sub"
+:if ($deconf = no) do={
+Time is Money: I like to know how long it takes for scripts to execute, so I always include this as the first part of my script body, I go ahead and close it then fill in the rest of the script between the {}'s of this statement. In the case of this skeleton configuration I use the command twice in the same file, once to count how long it took to parse the install script, and once to count how long the uninstall takes. This number includes artificial inflation caused by :delay statements.
+
+#~ "Calculate Script Execution Time"
+:put ("System Configuration Script Executed in " . [:time {
+#~#
+Script Run Time Variables The variables listed here can be changed freely if you understand what they are doing. I have attempted to include clear and concise comments for each variable to make it easier to understand. You may ask why I decided to break the LAN IP address up into separate octets when it would be more efficient to use one string variable of type :toip. I decided against the single string declaration because in my network the octets of the IP help us identify an IP enabled device in our network. I separated them to allow this script to work for multiple sites while keeping changes to a minimum. (i.e., 172.16.16.1 and 172.16.17.1 reside at different sites.)
+
+By the way, the ip's of the innocent have been changed to protect the guilty.
+
+#########################################################
+## An Automated Installation and Uninstall Script      ##
+## This Script Prepared by: Casey Annis                 ##
+##                                                     ##
+## Wednesday, October 22nd, 2008                        ##
+#########################################################
+
+#~ These variables can be edited to make the script functional in your network
+
+#########################################################
+## System Configuration Variables - To Help Automate   ##
+## Network Setup                                       ##
+#########################################################
+
+#########################################################
+## Delcare The System Type:                            ##
+## (i.e., RB500revA, RB433, RB433AH, etc.)             ##
+## If you are running RoS on a non RouterBoard product ##
+## you can change 'OTHER' to a custom string.          ##    
+#########################################################
+:local systemTYPE " " 
+:if ([/system router get routerboard] = yes) do {
+        :set systemTYPE ("RB" . [/system router get model])} else {
+        :set systemTYPE "OTHER"
+        }
+
+
+## Installed Location / Part of RADIO-NAME (i.e., 5th_and_Baum.)
+:local installedLOCATION "5th_and_Baum"
+## System Site Indentifier can be used to specify a site ID (i.e., 5SBA) ##
+:local siteID "5SBA"
+
+## LAN IPv4 Subnet First Octet 
+:local firstOctet "172"
+
+## LAN IPv4 Subnet Second Octet 
+:local secondOctet "16"
+
+## LAN IPv4 IP Third Octet
+:local thirdOctet "16"
+
+## LAN IPv4 Subnet IP Suffix (ie Router Host Address 172.16.2.<fourthOctet>)
+:local fourthOctet "1"
+
+## LAN IPv4 Subnet in CIDR Notation (Default is 24, but may vary)
+:local ipLANsubnet "24"
+
+## Your Company Name
+:local companyNAME "MikroTik"
+
+## SNMP Community String ##
+:local snmpname "PUBLIC"
+
+## Primary DNS Server Ip Address ##
+:local pridns "4.2.2.2"
+
+## Secondary DNS Server Ip Address ##
+:local secdns "4.2.2.3"
+#~#
+Radio Configuration is for the Bird®'s
+The following code shows how you can automate radio card detection and configure your WLAN interfaces without having to touch the router. The reason I mention Bird® Meters in the section title is to remind you that blindly selecting channels in your wireless deployment can lead to many, many, many headaches. Always perform an RF Site Survey before you deploy any equipment, it will save you time and frustration.
+
+You may notice sections in this script where I have variables listed for other chip sets and card frequencies, this portion of the script is not yet finished and may or may not get added to this article. However if you would like to experiment please feel free to do so. You will most likely need an understanding of multidimensional arrays to finish this section of the script, if you would rather just fill in the appropriate variables with an array of supported channels you can do so and then edit each variable that is referenced during the 'wlanACONF' routine. I don't usually bridge everything together, but for the sake of brevity I will do so in this example.
+
+Start Setting Up Our Interfaces
+
+#~  Start Configuring Interfaces!
+##########################################################
+## Start Configuring Interfaces on The Router           ##
+## AUTOMATED PROCESS 					##
+##########################################################
+
+# Feel Free to Change this to arp=enabled
+/ interface bridge 
+add name="bridge1" arp=proxy-arp comment="" disabled=no 
+This Ain't A Bridge to No Where!
+
+Start assigning some ports to the bridge, note we kept the default name, no time to be creative just make it functional. Right?
+
+/ interface bridge port 
+add interface=ether2 bridge=bridge1 comment="" \
+    disabled=no 
+add interface=ether1 bridge=bridge1 comment="" \
+    disabled=no 
+Hooray :for Loops
+
+In this section we perform some logic to detect all the wireless cards installed in the system, and then assign some basic configuration information.
+
+## Start Configuring Wireless Interfaces.
+:local wlanACONF 0
+:foreach i in=[/interface wireless find] do { 
+    
+    :put ("Array Len: " . [:len $i])
+    :if ([:len $i] < 2) do {/ interface wireless 
+        :set wlanACONF 1
+        set wlan1 radio-name=("Remote Station - " . $siteID . "- " . $installedLOCATION . " ") \
+            mode=ap-bridge ssid="Mikrotik-1" area="" frequency=5180 band=5ghz \
+            disabled=no default-authentication=yes antenna-mode=ant-b
+		/interface bridge port
+          add interface=$i bridge=bridge1
+    } else={
+              :put ("Configuring: " . ([/interface wireless get $i name]))
+              :put ("Freq Selected: " . [:pick $freq58array $wlanACONF])
+              :put ("Radio Name: " .  " AP  - " . $siteID . " - " . $installedLOCATION . " ")
+              /interface wireless 
+                  set $i radio-name=("AP  - " . $siteID . " - " . $installedLOCATION . " ") \
+                  mode=ap-bridge ssid=("Mikrotik-" . ($wlanACONF +1) . "") area="" frequency=[:pick $freq58array ($wlanACONF)] band=5ghz \
+                  disabled=no wds-mode=dynamic wds-default-bridge=bridge1 default-authentication=yes \
+                  antenna-mode=ant-b
+               :put "Debug: No Error Here"
+              /interface bridge port 
+                  add interface=$i bridge=bridge1
+              :set wlanACONF ($wlanACONF +1) 
+                   
+          }
+}
+
+#~#
+/Say Goodbye to /system reset
+I really, really dislike /system reset, not only does it force the router to reboot, it also makes me wonder if I really did make that backup/export file=blah. So I have started writing an uninstall method into all of my configuration scripts. This allows you to customize the level of destructiveness. For instance you could remove all settings except the settings of a radio card and it's corresponding IP address. Maybe you are agoraphobic and really want maintain your router without having to experience that panic of backup jitters. Whatever the case may be, the best option is to come design your own uninstall script that will become part of your consolidated configuration base. This script contains an example of an uninstall script that can be expanded upon or customized to do what ever you require.
+
+Challenge: Study the MikroTik RoS Scripting Guide and learn how to add an audible warning element to this uninstall script, execute the audible warning for each of the last 5 seconds, and make each warning more noticeable than the last.
+
+It's always nice to get a big flashy warning before you do anything stupid, all facets of life should come with signs like this.
+
+//WARNING///WARNING///WARNING///WARNING///WARNING///WARNING///WARNING//
+//                                                                   //
+//                          DANGEROUS:                               //
+//            SYSTEM DECONFIGURATION VARIABLE HAS BEEN SET           //
+//                                                                   //
+//WARNING///WARNING///WARNING///WARNING///WARNING///WARNING///WARNING//
+ 
+          YOU HAVE TEN (10) SECONDS TO CANCEL THIS OPERATION  
+                    STRIKE 'Ctrl+C' TO ABORT
+It's The Final Countdown Take note of the :time statement, it just keeps coming back!
+
+Challenge: Take a moment and read through the uninstall script, once you have a grasp of the script attempt to write a routine that will remove all users from the HotSpot or other server which uses a Secret list. DO NOT RUN THIS EXERCISE ON YOUR PRODUCTION ROUTER
+
+#~ "Start The Uninstall Script"
+:put ("Deconfiguration Script Executed in " . [:time {
+:for i from=1 to=100 step=1 do={
+:put " " }
+:put ("//WARNING///WARNING///WARNING///WARNING///WARNING///WARNING///WARNING//")
+:put ("//                                                                   //")
+:put ("//                          DANGEROUS:                               //")
+:put ("//            SYSTEM DECONFIGURATION VARIABLE HAS BEEN SET           //")
+:put ("//                                                                   //")
+:put ("//WARNING///WARNING///WARNING///WARNING///WARNING///WARNING///WARNING//")
+:put (" ")
+:put ("          YOU HAVE TEN (10) SECONDS TO CANCEL THIS OPERATION           ")
+:for i from=1 to=40 step=1 do={
+:put " " }
+:delay 5
+:put ("Countdown:")
+:put ("5....")
+:delay 1
+:put ("4...")
+:delay 1
+:put ("3..")
+:delay 1
+:put ("2.")
+:delay 1
+:put ("1")
+:delay 1
+:put ("Initiating Configuration Wipe")
+:delay 1
+
+##### Reset System Scheduler Settings #####
+:put ("##### Resetting System Scheduler Settings #####")
+:local schedARRAY [/system scheduler find]
+:put ("Deconf: " . [:len $schedARRAY] . " scheduled events found.")
+:if ([:len $schedARRAY] != 0) do={
+    :foreach i in=($schedARRAY) do={
+        :put ("Deconf: Now Removing " . [/system scheduler get $i name] . ".") 
+            /system scheduler
+           remove $i
+           }
+  }
+
+##### Deconf: Stripping Identifiers and SysNotes #####
+:put "##### Deconf: Removing System Identity. #####"
+/system identity set name=MikroTik
+:put "##### Deconf: Clearing SysNote. #####"
+/system note set note="..." show-at-login="no"
+
+##### Deconf: Resetting Wireless Cards to Defaults #####
+:put ("##### Resetting Wireless Cards to Defaults #####")
+:local wlanARRAY [/interface wireless find]
+:put ("Deconf: " . [:len $wlanARRAY] . " wireless modules found")
+:foreach wlanRESET in=($wlanARRAY) do={
+    :put ("Deconf: Resetting " . [/interface wireless get $wlanRESET name] . ".")
+    /interface wireless reset-configuration $wlanRESET
+    :delay 1
+}
+
+
+##### Deconf:  Stripping IP Address #######
+:local ipARRAY [/ip address find]
+:put ("Deconf: " . [:len $ipARRAY] . " IP addresses found.")
+:foreach ipADDY in=($ipARRAY) do={
+    :put ("Deconf: Removing IP Addresses - Removing " . [/ip address get $ipADDY address] . " from " . [/ip address get $ipADDY interface] . ".")
+    :log warning ("Deconf: Removing IP Addresses - Removing " . [/ip address get $ipADDY address] . " from " . [/ip address get $ipADDY interface] . ".")
+    /ip address
+    remove $ipADDY
+    :delay 1
+    }
+
+###### Deconf: Stripping Routes ######
+###### Deconf: Stripping Routes ######
+:local routeARRAY [/ip route find]
+:put "###### Uninstall Routes ######"
+:put ("Deconf: " . [:len $routeARRAY] . " routes found.")
+
+
+:local routeFILL ""
+:foreach ipROUTE in=($routeARRAY) do={
+    :if ([/ip route get $ipROUTE gateway] != "") do={
+        :set routeFILL ("gateway: " . [/ip route get $ipROUTE gateway] . ".") } else={
+        :set routeFILL ("pref-src: " . [/ip route get $ipROUTE pref-src] . ".") } 
+    :put ("Deconf: Removing Route - DST-Address " . [/ip route get $ipROUTE dst-address] . " with " . $routeFILL )
+    :log warning ("Deconf: Removing Route - DST-Address " . [/ip route get $ipROUTE dst-address] . " with " . $routeFILL  .  ".")
+    /ip route
+    remove $ipROUTE
+:delay 1
+    }
+     
+
+##### Deconf:  Uninstall Bridge Ports ########
+:put ("##### Uninstall Bride Ports #####")
+:local brpARRAY [/interface bridge port find]
+:put ("Deconf: " . [:len $brpARRAY] . " bridge ports found.")
+:if ([:len $brpARRAY] != 0) do={
+    :foreach bRp in=($brpARRAY) do={
+        :put ("Deconf: Uninstall Bride Ports - Removing " . [/interface bridge port get $bRp interface] . ".")
+        :log warning ("Deconf: Uninstall Bride Ports - Removing " . [/interface bridge port get $bRp interface]  . ".")
+        /interface bridge port
+        disable $bRp
+        :delay 1
+        remove $bRp
+        :delay 1
+    }
+}
+
+####### Deconf:  Uninstall Bridge ########
+:put ("##### Deconf: Uninstall Bridge Interfaces #####")
+:local bridgeARRAY [/interface bridge find]
+:put ("Deconf: " . [:len $bridgeARRAY] . " bridge interfaces found.")
+:if (:len $bridgeARRAY != 0) do={
+    :foreach i in=($bridgeARRAY) do={
+        :put ("Deconf: Debug - Value of 'i'" . $i . "'.")
+        :put ("Deconf: Uninstall Bridge - Removing " . [/interface bridge get $i name] . ".")
+        :log warning ("Deconf: Uninstall Bridge - Removing " . [/interface bridge get $i name] . ".")
+        /interface bridge remove $i
+    }
+}
+    
+###### Deconf: Reset DNS Servers & Static Entries #####
+:put ("##### Deconf: Reset DNS Servers to Defaults. #####")
+/ip dns set primary-dns="0.0.0.0" secondary-dns="0.0.0.0"
+:delay 1
+:put ("##### Deconf: Remove all Static DNS Entries. #####")
+:local staticDNSarray [/ip dns static find]
+:put ("Deconf: " . [:len $staticDNSarray] . " static entries found.")
+:if ([:len $staticDNSarray] != 0) do={
+    :put ("Deconf: Removing The Following Entries:")
+    :put ("_______________________________________________________________")
+    :put ("| FQDN                   | Address           | TTL             |")
+    :put ("---------------------------------------------------------------")
+    :foreach i in=($staticDNSarray) do={
+        :put ([/ip dns static get $i name] . "        " . [/ip dns static get $i address] . "        " . [/ip dns static get $i ttl])
+        /ip dns static 
+        remove $i
+        :delay 1
+    }
+}
+##### Reset NTP Client #####
+:put ("##### Resetting NTP Client #####")
+/ system ntp client 
+set enabled=no mode=broadcast primary-ntp=0.0.0.0 secondary-ntp=0.0.0.0 
+
+}] . " seconds.")
+#~# "End of Uninstall Script"
+}
+#~# "End of Main Sub"
+
+The Complete Script
+This script can be copied as is into a clean install with one (1) or more radios, in fact it will react badly if you try to install it in a router with out at least one card. However the process to make it bullet proof in this regard is rather simple.
+
+Your challenge is this, after studying the script try to figure out where to add the logic that will make this script work with or without radio cards.
+
+#~ "Uninstall Flag (Default = no )"
+:local deconf no
+#~#
+
+#~ "Start of Main Sub"
+:if ($deconf = no) do={
+
+#~ "Calculate Script Runtime"
+:put ("System Configuration Script Executed in " . [:time {
+#~#
+
+#########################################################
+## An Automated Installation and Uninstall Script      ##
+## This Script Prepared by: Casey Annis                 ##
+##                                                     ##
+## Wednesday, October 22nd, 2008                        ##
+#########################################################
+
+#~ These variables can be edited to make the script functional in your network
+
+#########################################################
+## System Configuration Variables - To Help Automate   ##
+## Network Setup                                       ##
+#########################################################
+
+#########################################################
+## Delcare The System Type:                            ##
+## (i.e., RB500revA, RB433, RB433AH, etc.)             ##
+## If you are running RoS on a non RouterBoard product ##
+## you can change 'OTHER' to a custom string.          ##    
+#########################################################
+:local systemTYPE " " 
+:if ([/system router get routerboard] = yes) do {
+        :set systemTYPE ("RB" . [/system router get model])} else {
+        :set systemTYPE "OTHER"
+        }
+
+
+## Installed Location / Part of RADIO-NAME (i.e., 5th_and_Baum.)
+:local installedLOCATION "5th_and_Baum"
+## System Site Indentifier can be used to specify a site ID (i.e., 5SBA) ##
+:local siteID "5SBA"
+
+## LAN IPv4 Subnet First Octet 
+:local firstOctet "172"
+
+## LAN IPv4 Subnet Second Octet 
+:local secondOctet "16"
+
+## LAN IPv4 IP Third Octet
+:local thirdOctet "16"
+
+## LAN IPv4 Subnet IP Suffix (ie Router Host Address 172.16.2.<fourthOctet>)
+:local fourthOctet "1"
+
+## LAN IPv4 Subnet in CIDR Notation (Deafault is 24, but may vary)
+:local ipLANsubnet "24"
+
+## Your Company Name
+:local companyNAME "MikroTik"
+
+## SNMP Community String ##
+:local snmpname "PUBLIC"
+
+## Primary DNS Server Ip Address ##
+:local pridns "4.2.2.2"
+
+## Secondary DNS Server Ip Address ##
+:local secdns "4.2.2.3"
+#~#
+#########################################################
+## END OF System Configuration Variables Setup         ## 
+## DO NOT EDIT BELOW THIS LINE                         ##
+#########################################################
+## Local Subnet IP Prefix ##
+:local ipprefix ( $firstOctet . "." . $secondOctet . "." . $thirdOctet . ".")
+
+
+
+##########################################################
+## Configure Frequency Arrays for All Supported Bands   ##
+## This is for Speculation, I'm Still writing this       ##
+## section.                                             ## 
+#########################################################
+#~ Sub wlanCHIPsetDETECT  -- This section is still under dev.
+#:local chipSET58 (:toarray "xxxx,xxxx,xxxx,xxxx,xxxx,xxxx")
+#:local chipSET24
+#:local chipSET700
+#:local chipSET900
+#:local chipSETWiMAX
+#:local freqARRAY [:toarray $freqMODEstring]
+#~#
+
+#~ Radio Card Frequency Arrays
+## Freq Array: 5Ghz Standard Band##
+:global freq58string "5180,5200,5220,5240,5260,5280,5300,5320,5745,5765,5785,5805,5825"
+:local freq58array [:toarray $freq58string]
+## Freq Array: 700Mhz ##
+##:global freq700string " "
+## :global freq700array " "
+
+## Freq Array: 900Mhz ##
+## :global freq900string " "
+
+## Freq Array: 4.9Ghz ##
+## :global freq49string " "
+
+## Freq Array: WiMAX ##
+## :global freqWIMAXstring " "
+#~#
+
+#~ Start Building The System Identity String (a.k.a., Serial Number)
+##########################################################
+## This section of the script will set some identifying ##
+## information for this unit. This will not affect      ##
+## configuration but will help identify the unit for    ##
+## warranty purposes.                                   ## 
+##########################################################
+
+
+## Build Router Identity String                        ##
+## We use the MAC Address of the 1st Ethernet port to  ##
+## specify our serials                                 ##
+###### While loop to strip :'s from mac address
+:local stripCOUNT 0
+:local E1macADDRESS [/interface ethernet get ether1 mac-address]
+:local macLEN [:len $E1macADDRESS]
+:local snBUILDstring ""
+:global serialNUMBER ""
+:local i 0
+:while ($stripCOUNT != $macLEN) do {
+      :if ($stripCOUNT = ($i +2)) do {
+          :set stripCOUNT ($stripCOUNT +1)
+          :set i ($i +3)} else {
+          :set snBUILDstring  [:pick $E1macADDRESS $stripCOUNT]
+          :set stripCOUNT ($stripCOUNT +1)
+          :set serialNUMBER ($serialNUMBER . $snBUILDstring)
+  }
+  }
+:local ident ("S/N: " . $serialNUMBER . "")
+:put ("Asset S/N Found: " . $serialNUMBER . "")
+
+#~# 
+
+#~  Start Configuring Interfaces!
+##########################################################
+## Start Configuring Interfaces on The Router           ##
+## AUTOMATED PROCESS 								    ##
+##########################################################
+
+/ interface bridge 
+add name="bridge1" arp=proxy-arp comment="" disabled=no 
+
+/ interface bridge port 
+add interface=ether2 bridge=bridge1 comment="" \
+    disabled=no 
+add interface=ether1 bridge=bridge1 comment="" \
+    disabled=no 
+
+
+:local wlanACONF 0
+:foreach i in=[/interface wireless find] do { 
+    
+    :put ("Array Len: " . [:len $i])
+    :if ([:len $i] < 2) do {/ interface wireless 
+        :set wlanACONF 1
+        set wlan1 radio-name=("Remote Station - " . $siteID . "- " . $installedLOCATION . " ") \
+            mode=ap-bridge ssid="Mikrotik-" area="" frequency=5180 band=5ghz \
+            disabled=no default-authentication=yes antenna-mode=ant-b
+		/interface bridge port
+          add interface=$i bridge=bridge1
+    } else={
+              :put ("Configuring: " . ([/interface wireless get $i name]))
+              :put ("Freq Selected: " . [:pick $freq58array $wlanACONF])
+              :put ("Radio Name: " .  " AP  - " . $siteID . " - " . $installedLOCATION . " ")
+              /interface wireless 
+                  set $i radio-name=("AP  - " . $siteID . " - " . $installedLOCATION . " ") \
+                  mode=ap-bridge ssid=("Mikrotik-" . ($wlanACONF +1) . "") area="" frequency=[:pick $freq58array ($wlanACONF)] band=5ghz \
+                  disabled=no wds-mode=dynamic wds-default-bridge=bridge1 default-authentication=yes \
+                  antenna-mode=ant-b
+               :put "Debug: No Error Here"
+              /interface bridge port 
+                  add interface=$i bridge=bridge1
+              :set wlanACONF ($wlanACONF +1) 
+                   
+          }
+}
+#~#
+
+#~ Start DNS Configuration 
+######################################################
+## Change the DNS Server Entries so they match The  ##
+## servers provided by the bandwidth agency.        ##
+######################################################
+/ ip dns 
+set primary-dns=$pridns secondary-dns=$secdns \
+    allow-remote-requests=yes cache-size=2048KiB cache-max-ttl=1w 
+/ ip dns static 
+add name="site.router.local" address=172.16.16.1 ttl=1d 
+
+#~#
+
+#~ IP Address Configuration
+#######################################################
+## This portion of the script will configure ip      ##
+## addresses based on the variables populated at the ##
+## start of the script.                              ##
+#######################################################
+
+/ip address
+add address=10.10.10.1/24 interface=ether3 comment="Onsite Service Port Adress" disabled=no 
+
+#######################################################
+##           Bridge IP Address                       ##
+##                                                   ##
+##   This will be set dynamically by the script      ##
+#######################################################
+
+add address=($ipprefix . $fourthOctet . "/" . $ipLANsubnet) \
+    interface=bridge1 comment="Local LAN IP Address - Added by Config Script" disabled=no 
+
+/ ip route 
+add dst-address=0.0.0.0/0 gateway=($ipprefix . "1") comment="Default Route - Added by Config Script"
+#~#
+
+#~ Some General Router Settings / Housekeeping
+/ system identity 
+set name=$ident
+
+/ system ntp client 
+set enabled=yes mode=broadcast primary-ntp=132.163.4.102 
+
+## Airport Router System Note ##
+:local confTIME ([/system clock get date] . " @ " . [/system clock get time])
+:local sysnote ($companyNAME .  "-" . "Site: " . $siteID . " - " . " Model: " . $systemTYPE . " ---- This System Configured on: " . $confTIME . "" )
+/ system note 
+set show-at-login=yes note=$sysnote 
+#~#
+
+#~ "Wrapup and Give some Feedback"
+    :put ("")    
+:put ("Initial Configuration Complete") 
+}] . " seconds.") } else={
+#~#
+
+#~# "End of Main Config Script"
+
+#~ "Start The Uninstall Script"
+:put ("Deconfiguration Script Executed in " . [:time {
+:for i from=1 to=100 step=1 do={
+:put " " }
+:put ("//WARNING///WARNING///WARNING///WARNING///WARNING///WARNING///WARNING//")
+:put ("//                                                                   //")
+:put ("//                          DANGEROUS:                               //")
+:put ("//            SYSTEM DECONFIGURATION VARIABLE HAS BEEN SET           //")
+:put ("//                                                                   //")
+:put ("//WARNING///WARNING///WARNING///WARNING///WARNING///WARNING///WARNING//")
+:put (" ")
+:put ("          YOU HAVE TEN (10) SECONDS TO CANCEL THIS OPERATION           ")
+:for i from=1 to=40 step=1 do={
+:put " " }
+:delay 5
+:put ("Countdown:")
+:put ("5....")
+:delay 1
+:put ("4...")
+:delay 1
+:put ("3..")
+:delay 1
+:put ("2.")
+:delay 1
+:put ("1")
+:delay 1
+:put ("Initiating Configuration Wipe")
+:delay 1
+
+##### Reset System Scheduler Settings #####
+:put ("##### Resetting System Scheduler Settings #####")
+:local schedARRAY [/system scheduler find]
+:put ("Deconf: " . [:len $schedARRAY] . " scheduled events found.")
+:if ([:len $schedARRAY] != 0) do={
+    :foreach i in=($schedARRAY) do={
+        :put ("Deconf: Now Removing " . [/system scheduler get $i name] . ".") 
+            /system scheduler
+           remove $i
+           }
+  }
+
+##### Deconf: Stripping Identifiers and SysNotes #####
+:put "##### Deconf: Removing System Identity. #####"
+/system identity set name=MikroTik
+:put "##### Deconf: Clearing SysNote. #####"
+/system note set note="..." show-at-login="no"
+
+##### Deconf: Resetting Wireless Cards to Defaults #####
+:put ("##### Resetting Wireless Cards to Defaults #####")
+:local wlanARRAY [/interface wireless find]
+:put ("Deconf: " . [:len $wlanARRAY] . " wireless modules found")
+:foreach wlanRESET in=($wlanARRAY) do={
+    :put ("Deconf: Resetting " . [/interface wireless get $wlanRESET name] . ".")
+    /interface wireless reset-configuration $wlanRESET
+    :delay 1
+}
+
+
+##### Deconf:  Stripping IP Address #######
+:local ipARRAY [/ip address find]
+:put ("Deconf: " . [:len $ipARRAY] . " IP addresses found.")
+:foreach ipADDY in=($ipARRAY) do={
+    :put ("Deconf: Removing IP Addresses - Removing " . [/ip address get $ipADDY address] . " from " . [/ip address get $ipADDY interface] . ".")
+    :log warning ("Deconf: Removing IP Addresses - Removing " . [/ip address get $ipADDY address] . " from " . [/ip address get $ipADDY interface] . ".")
+    /ip address
+    remove $ipADDY
+    :delay 1
+    }
+
+###### Deconf: Stripping Routes ######
+###### Deconf: Stripping Routes ######
+:local routeARRAY [/ip route find]
+:put "###### Uninstall Routes ######"
+:put ("Deconf: " . [:len $routeARRAY] . " routes found.")
+
+
+:local routeFILL ""
+:foreach ipROUTE in=($routeARRAY) do={
+    :if ([/ip route get $ipROUTE gateway] != "") do={
+        :set routeFILL ("gateway: " . [/ip route get $ipROUTE gateway] . ".") } else={
+        :set routeFILL ("pref-src: " . [/ip route get $ipROUTE pref-src] . ".") } 
+    :put ("Deconf: Removing Route - DST-Address " . [/ip route get $ipROUTE dst-address] . " with " . $routeFILL )
+    :log warning ("Deconf: Removing Route - DST-Address " . [/ip route get $ipROUTE dst-address] . " with " . $routeFILL  .  ".")
+    /ip route
+    remove $ipROUTE
+:delay 1
+    }
+     
+
+##### Deconf:  Uninstall Bridge Ports ########
+:put ("##### Uninstall Bride Ports #####")
+:local brpARRAY [/interface bridge port find]
+:put ("Deconf: " . [:len $brpARRAY] . " bridge ports found.")
+:if ([:len $brpARRAY] != 0) do={
+    :foreach bRp in=($brpARRAY) do={
+        :put ("Deconf: Uninstall Bride Ports - Removing " . [/interface bridge port get $bRp interface] . ".")
+        :log warning ("Deconf: Uninstall Bride Ports - Removing " . [/interface bridge port get $bRp interface]  . ".")
+        /interface bridge port
+        disable $bRp
+        :delay 1
+        remove $bRp
+        :delay 1
+    }
+}
+
+####### Deconf:  Uninstall Bridge ########
+:put ("##### Deconf: Uninstall Bridge Interfaces #####")
+:local bridgeARRAY [/interface bridge find]
+:put ("Deconf: " . [:len $bridgeARRAY] . " bridge interfaces found.")
+:if (:len $bridgeARRAY != 0) do={
+    :foreach i in=($bridgeARRAY) do={
+        :put ("Deconf: Debug - Value of 'i'" . $i . "'.")
+        :put ("Deconf: Uninstall Bridge - Removing " . [/interface bridge get $i name] . ".")
+        :log warning ("Deconf: Uninstall Bridge - Removing " . [/interface bridge get $i name] . ".")
+        /interface bridge remove $i
+    }
+}
+    
+###### Deconf: Reset DNS Servers & Static Entries #####
+:put ("##### Deconf: Reset DNS Servers to Defaults. #####")
+/ip dns set primary-dns="0.0.0.0" secondary-dns="0.0.0.0"
+:delay 1
+:put ("##### Deconf: Remove all Static DNS Entries. #####")
+:local staticDNSarray [/ip dns static find]
+:put ("Deconf: " . [:len $staticDNSarray] . " static entries found.")
+:if ([:len $staticDNSarray] != 0) do={
+    :put ("Deconf: Removing The Following Entries:")
+    :put ("_______________________________________________________________")
+    :put ("| FQDN                   | Address           | TTL             |")
+    :put ("---------------------------------------------------------------")
+    :foreach i in=($staticDNSarray) do={
+        :put ([/ip dns static get $i name] . "        " . [/ip dns static get $i address] . "        " . [/ip dns static get $i ttl])
+        /ip dns static 
+        remove $i
+        :delay 1
+    }
+}
+##### Reset NTP Client #####
+:put ("##### Resetting NTP Client #####")
+/ system ntp client 
+set enabled=no mode=broadcast primary-ntp=0.0.0.0 secondary-ntp=0.0.0.0 
+
+}] . " seconds.")
+#~# "End of Uninstall Script"
+}
+#~# "End of Main Sub"</code>
+Credit: wiki.mikrotik.com
+</pre>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>

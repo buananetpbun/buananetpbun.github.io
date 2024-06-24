@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change Name Interface or Ether To Default Manual - Mikrotik Script RouterOS</title>
+<meta content='Change Name Interface or Ether To Default Manua - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+</head>
+<body>
+<div id="hidelink"></div>
+<h1>Change Name Interface or Ether To Default Manua - Mikrotik Script RouterOS</h1>
+<pre>I made this simple script to make it easier for us to return the interface name (ether) to the factory default name without having to reset the proxy. There are times when we forget the order on the Mikrotik port even though we have given the ether name, for example with the name "LAN" but whether "LAN" is plugged into what port. so the meaning is clear :)
+
+<code class="routeros">#####################################
+# Script by Agus Ramadhani
+# fb.com/buananet.pangkalanbun
+# http://www.o-om.com
+# SCRIPT name interface to default
+######################################
+/interface ethernet
+set [ find default-name=ether1 ] name=ether1
+set [ find default-name=ether2 ] name=ether2
+set [ find default-name=ether3 ] name=ether3
+set [ find default-name=ether4 ] name=ether4
+set [ find default-name=ether5 ] name=ether5
+set [ find default-name=ether6 ] name=ether6
+set [ find default-name=ether7 ] name=ether7
+set [ find default-name=ether8 ] name=ether8
+set [ find default-name=ether9 ] name=ether9
+set [ find default-name=ether10 ] name=ether10
+set [ find default-name=ether11 ] name=ether11
+set [ find default-name=ether12 ] name=ether12
+set [ find default-name=ether13 ] name=ether13
+set [ find default-name=combo1 ] name=combo1
+set [ find default-name=combo2 ] name=combo2
+set [ find default-name=wlan1 ] name=wlan1
+set [ find default-name=wlan2 ] name=wlan2
+set [ find default-name=sfp1 ] name=sfp1
+set [ find default-name=sfp2 ] name=sfp2
+set [ find default-name=sfp3 ] name=sfp3
+set [ find default-name=sfp4 ] name=sfp4
+set [ find default-name=sfp-sfpplus1 ] name=sfp-sfpplus1
+set [ find default-name=sfp-sfpplus2 ] name=sfp-sfpplus2</code>
+Credit: www.o-om.com
+</pre>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automated Usage Script without usermanager - MikroTik RouterOS Script</title>
+<meta content='Automated Usage Script without usermanager - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+<h1>Automated Usage Script without usermanager - MikroTik RouterOS Script</h1>
+<pre>Last Updated: 15th June 2009 Current version: v1.4
+An updated version of this script is available at: MikroTik-RouterOS.com
+If you have any questions you can also email me: admin ( at ) mikrotik-routeros ( dot ) com
+
+Contents
+1	Summary
+2	Todo
+3	Current known bugs
+4	The Scheduler
+4.1	Hourly
+5	The Scripts
+5.1	Script: overseer
+5.2	Script: monthend
+5.3	Script: usagereport
+5.4	Script: monthlyreport
+5.5	Script: manualusagereport
+6	Final Notes
+
+Summary
+I wrote a usage tracking script based on the original Automated Billing Script
+The way I run it is using a Mikrotik box setup to pass everything through transparently then I generated a Queue per IP address to keep track of the usage. On my test box (A PowerRouter 732) I currently have 3 class C blocks passing through with only 3% cpu (Multi CPU enabled).
+This system is built for download-based billing only and will report the amount of downloads used by an IP address (or group if you setup a queue with multiple IP's) each month. (This could easily be switched around thou)
+If you use the alternate version of the monthend script you can set the scheduler to run overseer every 1hour without having to worry about multiple reports coming through.
+Additional, I've since written a smaller manual script for accounts so they can run this at any time and have the usage reports emailed through (see the manual usage report script)
+
+Todo
+- ability to backup to a file on the mikrotik so it will count both data in the queue currently + data usage saved in the file (in case you lose power to the device or have to restart it at any time) Rethought - now saves downloaded data onto the end of comment, so scripts can also be exported if required. Page now updated to save data in the newly added comment field (I've been using this since v3.24)
+- modifying the monthend script further so that it can only be triggered on the last hour of the last day of the month. This means you could then run the usage script hourly to get more frequent updates. This has been done, see original and alternate versions of the Monthend Script See below the script for details on how it works.
+- modify the usage and monthly report scripts to use kbyte variables instead of bytes (this shouldn't be any major issue thou, as the integer variables mikroik have allowed are 64bit, so a number can be as high as 9223372036854775807.
+- allow sending to a client email address AND local support crew. Done: now you can specify a default email address in the usagereport (for sending to your support/accounts people) and the address in the queue becomes the client address to email, if you leave it blank eg: Client!50#!00#0000 instead of Client!50#client@example.com!00#0000 it will just skip sending the report email to the client but still send one to the support/accounts email address
+
+Current known bugs
+Monthend script will not complete (and won't generate end of month reports) if you have starttime set to 00:00:00 for the hourly scheduler. Fix: Set startime to 00:30:00 or you can also run the end of month report script manually if you had missed
+
+The Scheduler
+Hourly
+If you wish to poll hourly ensure that firstly you are using the new short version of the monthend script and also ensure that your start time isn't 00:00:00 (setting it to 30m is ok like below) This ensures that the monthend time (being before >1:00am on the 1st of each month) is correctly matched and generates reports at the end of the month.
+
+<code class="routeros">/system scheduler
+add comment="" disabled=no interval=1h name=Overseer on-event="/system script run overseer" start-date=jan/01/1970 start-time=00:30:00
+The Scripts
+Script: overseer
+Like the automated billing, this also has a calling script "overseer"
+
+/code>:global found
+
+/system script run monthend
+
+:if ([$found] = "true") do={/system script run monthlyreport; :log info "--Completed Monthly Report--"} else={ /system script run usagereport; :log info "--Completed Usage Report--"}
+Script: monthend
+At a set rollover date you want the system to run the monthend script to do the final site tally and reset all counters. By default this is set to run at the begining of each month (00 hour, 1st day) you can however change this to run on any day.
+
+:local date
+:local time
+:local day
+:local month
+:local year
+:local hour
+:global found ""
+ 
+:set date [/system clock get date]
+:set time [/system clock get time]
+:set day [:pick $date 4 6]
+:set hour [:pick $time 0 2]
+
+:if ([$day] = "01" ) do={ :if ([$hour] = "00" ) do={:set found "true" } else={ :set found "false" } } else={ :set found "false" }
+Script: usagereport
+The main usage report, takes the name of each queue and looks firstly for a hint that any data is contained in this. I have used ! to seperate the initial data block so If it finds a ! it will treat this name as data.
+
+The data is then broken up from a name like this: Any Site name!50#info@yourcompany.com!00#0000 this then gives us $sitename (descriptive name) $gigs (gigabyte download limit) $email (address to email report to) $lastwarning (previous usage warning level) $bytesdownsaved (last total usage recording)
+
+In previous versions of the script I had the values stored in the name, but now since it's available the comment is a much better place to store this data. This also means you can give users static URL's to access their own bandwidth graphs/queues.
+
+:local content
+:local i
+:local sitename
+:local gigs
+:local email
+:local megstotal
+:local totalcurrent
+:local bytesdowncurrent
+:local bytesupcurrent
+:local megsdowncurrent
+:local megsupcurrent
+:local percentage
+:local lastwarning
+:local warninglevel
+:local warn
+:local update
+:local newwarning
+:local bytesdownsaved
+:local bytestotal
+
+#Script based on Automated billing script at http://wiki.mikrotik.com/wiki/AutomatedBilling
+#Details:
+#This script checks all current simple queues and using values stored in the queue comment will allow you keep track of usage by each site
+#The details stored in the queue are broken down and used to determine when a user should be sent a usage warning at 50 75 90 and 100%
+#You can create/modify a new entry as long as you follow this format
+#1) If you just want to name an entry you may do so like "XYZ Router" in the queue name
+#2) If you want to determine a data limit, enter it like "sitename!gigabytelimit#emailaddress!00#0000" into the comment.
+#3) If you just want to enter a comment on its own, you can do this so long as you don't have an "!" in the field
+#Breaking it down: sitename is a descriptive name, gigabyte limit is the monthy limit, email address is the address you want notified 
+#00 is the last percentage warning level for this user, 0000 is the default value for a new data store
+#This version created by Andrew Cox - www.accessplus.com.au
+#v1.4 Updated 15/June/2009
+:log info "------ Begining Daily Usage Reports -------"
+
+#For each queue in the list
+:foreach i in=[/queue simple find comment !=""] do={
+
+#Pull comment out of queue and divide up accordingly
+:set content [/queue simple get $i comment]
+
+#Determine variables from comment
+#Format is: sitename ! gigsallowed # who-to-email ! last warning level(0-50-75-90-99)
+:if ([:find $content "!"] != "") do={
+  :local pos1 [:find $content "!"]
+  :local pos4 [:len $content]
+  :local pos2 ([:find [:pick $content ($pos1+1) $pos4] "#"]+$pos1+1)
+  :local pos3 ([:find [:pick $content ($pos2+1) $pos4] "!"]+$pos2)
+  :set sitename [:pick $content 0 ($pos1)]
+  :set gigs [:pick $content ($pos1+1) $pos2]
+  :set email [:pick $content ($pos2+1) ($pos3+1)]
+  :set totalcurrent [/queue simple get $i bytes]
+  :set lastwarning [:pick $content ($pos3+2) ($pos3+4)]
+  :local pos5 [:find $totalcurrent "/"]
+  :local pos6 [:len $totalcurrent]
+  :set bytesupcurrent ([:pick $totalcurrent 0 ($pos5)])
+  :set bytesdowncurrent ([:pick $totalcurrent ($pos5+1) $pos6])
+  :set megsupcurrent ($bytesupcurrent / 1048576)
+  :set bytesdownsaved ([:pick $content ($pos3+5) $pos4])
+  :set bytestotal ($bytesdowncurrent + $bytesdownsaved)
+  :set megsdowncurrent ($bytestotal / 1048576)
+
+#Begin calculating usage percentage
+  :set percentage ( ( $bytestotal * 100) / ($gigs * 1073741824 ) )
+  :log info "$sitename: $percentage%"
+  :if ([$percentage] < 50) do={ :set warninglevel "00" }
+  :if ([$percentage] > 50) do={
+    :if ([$percentage] < 75) do={ :set warninglevel "50" }
+    :if ([$percentage] > 75) do={ :set warninglevel "75" }
+  }
+  :if ([$percentage] > 75) do={
+    :if ([$percentage] < 90) do={ :set warninglevel "75" }
+    :if ([$percentage] > 90) do={ :set warninglevel "90" }
+  }
+  :if ([$percentage] > 90) do={
+    :if ([$percentage] < 100) do={ :set warninglevel "90" }
+    :if ([$percentage] > 100) do={ :set warninglevel "99" }
+  }
+
+# Parse warning necessity
+ :if ([$warninglevel] > $lastwarning ) do={ :set warn "true" ; :set update "true" }
+ :if ([$warninglevel] = $lastwarning ) do={ :set warn "false" ; :set update "false" }
+ :if ([$warninglevel] < $lastwarning ) do={ :set warn "false" ; :set update "true" }
+
+#Update Warning Levels
+ :if ([$update] = true ) do={ :set newwarning $warninglevel } else={ :set newwarning $lastwarning }
+ :if ([$warn] = true ) do={
+#Check for email address in queue comment
+ :if ([$email] != "" ) do={
+  /tool e-mail send to="$email" from="noreply@example.com" server="1.3.3.7" subject="$sitename: Usage at $percentage" body="This message is to inform you of the current usage for $sitename
+The current warning trigger is $warninglevel%.
+
+This site has downloaded $megsdowncurrent MB, which is over $percentage% of the $gigs GB monthly download allowance.
+
+This is an Automatically generated E-mail that is sent out when users reach 50%, 75%, 90% and 100% of their cap.
+
+Traffic Monitor System,
+accounts@example.com"
+}
+#Send email to support/accounts also
+  /tool e-mail send to="accounts@example.com" from="noreply@example.com" server="1.3.3.7" subject="$sitename: Usage at $percentage" body="Current usage for $sitename - trigger is $warninglevel%.
+$megsdowncurrent MB, which is over $percentage% of the $gigs GB monthly download allowance.
+Traffic Monitor System"
+:log info "Sent Warning Level $warninglevel% to $email"
+}
+#Set new warning level on queue comment
+/queue simple set $i comment="$sitename!$gigs#$email!$newwarning#$bytestotal"
+/queue simple reset-counters $i
+}
+}
+
+Script: monthlyreport
+Called by the overseer at the end of the month, this generates reports for Every site and then resets counters and the warning level back to 00
+
+:local content
+:local i
+:local sitename
+:local gigs
+:local email
+:local megstotal
+:local totalcurrent
+:local bytesdowncurrent
+:local bytesupcurrent
+:local megsdowncurrent
+:local megsupcurrent
+:local percentage
+:local bytesdownsaved
+:local bytesdowntotal
+
+#Script based on Automated billing script at http://wiki.mikrotik.com/wiki/AutomatedBilling
+#This version created by Andrew Cox - www.accessplus.com.au
+#v1.4 Updated 15th June 2009
+:log info "------ Begining Monthly Reports -------"
+#For each queue in the list
+:foreach i in=[/queue simple find comment !=""] do={
+
+#Pull comment out of queue and divide up accordingly
+:set content [/queue simple get $i comment] 
+
+#Determine variables from comment
+#Format is: sitename ! gigsallowed # who-to-email ! last warning level(0-50-75-90-100)
+:if ( [ :find $content "!" ] != "" ) do={
+  :local pos1 [:find $content "!"]
+  :local pos4 [:len $content]
+  :local pos2 ([:find [:pick $content ($pos1+1) $pos4] "#"]+$pos1+1)
+  :local pos3 ([:find [:pick $content ($pos2+1) $pos4] "!"]+$pos2)
+  :set sitename [:pick $content 0 ($pos1)]
+  :set gigs [:pick $content ($pos1+1) $pos2]
+  :set email [:pick $content ($pos2+1) ($pos3+1)]
+  :set totalcurrent [/queue simple get $i bytes]
+  :local pos5 [:find $totalcurrent "/"]
+  :local pos6 [:len $totalcurrent]
+  :set bytesupcurrent ([:pick $totalcurrent 0 ($pos5)])
+  :set bytesdowncurrent ([:pick $totalcurrent ($pos5+1) $pos6])
+  :set megsupcurrent ($bytesupcurrent / 1048576)
+  :set bytesdownsaved ([:pick $content ($pos3+5) $pos4])
+  :set bytesdowntotal ($bytesdowncurrent + $bytesdownsaved)
+  :set megsdowncurrent ($bytesdowntotal / 1048576)
+
+#Begin calculating usage percentage
+  :set percentage ( ( $bytesdowntotal * 100 ) / ( $gigs * 1073741824 ) )
+  :log info "$sitename: $percentage%"
+:if ([$email] != "" ) do={
+/tool e-mail send to=$email from=noreply@example.com server=1.3.3.7 subject="$sitename: Monthly Report" body="This message is to inform you of the full monthly usage for $sitename
+
+In this month this site has downloaded $megsdowncurrent MB, which is $percentage% of the $gigs GB monthly download allowance.
+
+This is an Automatically generated E-mail that is sent out at the end of each month.
+
+Traffic Monitor System,
+accounts@example.com"
+}
+#Send email to support/accounts also
+  /tool e-mail send to="accounts@example.com" from="noreply@example.com" server="1.3.3.7" subject="$sitename: Monthly Report" body="Full monthly usage for $sitename
+In this month this site has downloaded $megsdowncurrent MB, which is $percentage% of the $gigs GB monthly download allowance.
+
+Traffic Monitor System,
+accounts@example.com
+Please report any errors in this message to someone@example.com"
+:log info "Sent monthly report for $sitename to $email"
+#Set warning level on queue comment back to 00 and reset counters
+/queue simple set $i comment="$sitename!$gigs#$email!00#0000"
+/queue simple reset-counters $i
+}
+}
+Script: manualusagereport
+This script can be run manually at any time to send through the current usage report.
+
+:local content
+:local i
+:local sitename
+:local gigs
+:local email
+:local megstotal
+:local totalcurrent
+:local bytesdowncurrent
+:local bytesupcurrent
+:local megsdowncurrent
+:local megsupcurrent
+:local percentage
+:local lastwarning
+:local warninglevel
+:local warn
+:local update
+:local newwarning
+:local bytesdownsaved
+:local bytestotal
+:local text
+:local combinedtext
+:set combinedtext ""
+
+#Scripts based on Automated billing script at http://wiki.mikrotik.com/wiki/AutomatedBilling
+# This version created by Andrew Cox - www.mikrotik-routeros.com
+#v1.4 Updated 15th June 2009
+:log info "------ Begining Manual Usage Reports -------"
+
+#For each queue in the list
+:foreach i in=[/queue simple find comment !=""] do={
+
+#Pull comment out of queue and divide up accordingly
+:set content [/queue simple get $i comment] 
+
+#Determine variables from comment
+#Format is: sitename ! gigsallowed # who-to-email ! last warning level(0-50-75-90-99) # data-used (0000)
+:if ([:find $content "!"] != "") do={
+   :local pos1 [:find $content "!"]
+   :local pos4 [:len $content]
+   :local pos2 ([:find [:pick $content ($pos1+1) $pos4] "#"]+$pos1+1)
+   :local pos3 ([:find [:pick $content ($pos2+1) $pos4] "!"]+$pos2)
+   :set sitename [:pick $content 0 ($pos1)]
+   :set gigs [:pick $content ($pos1+1) $pos2]
+   :set email [:pick $content ($pos2+1) ($pos3+1)]
+   :set totalcurrent [/queue simple get $i bytes]
+   :set lastwarning [:pick $content ($pos3+2) ($pos3+4)]
+   :local pos5 [:find $totalcurrent "/"]
+   :local pos6 [:len $totalcurrent]
+   :set bytesupcurrent ([:pick $totalcurrent 0 ($pos5)])
+   :set bytesdowncurrent ([:pick $totalcurrent ($pos5+1) $pos6])
+   :set megsupcurrent ($bytesupcurrent / 1048576)
+   :set bytesdownsaved ([:pick $content ($pos3+5) $pos4])
+   :set bytestotal ($bytesdowncurrent + $bytesdownsaved)
+   :set megsdowncurrent ($bytestotal / 1048576)
+
+#Begin calculating usage percentage
+  :set percentage ( ( $bytestotal * 100) / ($gigs * 1073741824 ) )
+  :log info "$sitename: $percentage% - $megsdowncurrent MB used - Allowance is $gigs GB"
+  :set text "$combinedtext  $sitename: $percentage% - $megsdowncurrent MB used - Allowance is $gigs GB"
+  :set combinedtext "$text"
+ }
+}
+:log info "------ Ending Manual Usage Reports -------"
+:local time [/system clock get time]
+/tool e-mail send server="1.3.3.7" from="noreply@example.com" to="accounts@example.com" subject="Manual usage report" body="Site Usage report - Runtime: $time
+$text
+
+Regards,
+someone@example.com"
+Final Notes
+For those new to scripts, you can copy and paste these into winbox, but make sure that you at least remove the starting spacing from the comment lines (ones with #) if you don't they aren't treated as comments and will cause the script to error.
+
+Quick trick to generate queues
+
+#change the target address range to match what you want to generate.
+:local x
+:for x from 2 to 254 do={/queue simple add target-address="10.2.100.$x" queue="default/default"}
+would generate queues for 10.0.0.2-10.0.0.254 for you.
+
+note: the queue=default is important, as of v3.12 default-small queues with no child queues will be treated as if there was no queue at all (aka: unmonitored)</code>
+Credit: https://wiki.mikrotik.com/wiki/Automated_Usage_Script_without_usermanager
+</pre>
+<br>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>

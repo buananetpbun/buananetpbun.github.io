@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Super Mario Bross Theme Sound Beep - MikroTik Script RouterOS</title>
+<meta content='Super Mario Bross Theme Sound Beep - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+<h1>Super Mario Bross Theme Sound Beep - MikroTik Script RouterOS</h1>
+<pre>This Super Mario Bross Theme Sound Beep script was made without calculating the actual notes (made off the top of my head without listening to the song recently), so it may sound a bit off on a few notes. The next version will have the fully calculated frequencies. I, Ian Harker, wrote this script May 13th and May 14th of 2008 during my spare time at the Chicago, IL MikroTik Essentials Training. The best way to add this script is to just copy/paste the code below into a new script (System -> Scripts -> +), give it a name, and then click "Apply":
+
+<code class="routeros">:beep frequency=660 length=100ms;
+:delay 150ms;
+:beep frequency=660 length=100ms;
+:delay 300ms;
+:beep frequency=660 length=100ms;
+:delay 300ms;
+:beep frequency=510 length=100ms;
+:delay 100ms;
+:beep frequency=660 length=100ms;
+:delay 300ms;
+:beep frequency=770 length=100ms;
+:delay 550ms;
+:beep frequency=380 length=100ms;
+:delay 575ms;
+
+:beep frequency=510 length=100ms;
+:delay 450ms;
+:beep frequency=380 length=100ms;
+:delay 400ms;
+:beep frequency=320 length=100ms;
+:delay 500ms;
+:beep frequency=440 length=100ms;
+:delay 300ms;
+:beep frequency=480 length=80ms;
+:delay 330ms;
+:beep frequency=450 length=100ms;
+:delay 150ms;
+:beep frequency=430 length=100ms;
+:delay 300ms;
+:beep frequency=380 length=100ms;
+:delay 200ms;
+:beep frequency=660 length=80ms;
+:delay 200ms;
+:beep frequency=760 length=50ms;
+:delay 150ms;
+:beep frequency=860 length=100ms;
+:delay 300ms;
+:beep frequency=700 length=80ms;
+:delay 150ms;
+:beep frequency=760 length=50ms;
+:delay 350ms;
+:beep frequency=660 length=80ms;
+:delay 300ms;
+:beep frequency=520 length=80ms;
+:delay 150ms;
+:beep frequency=580 length=80ms;
+:delay 150ms;
+:beep frequency=480 length=80ms;
+:delay 500ms;
+
+:beep frequency=510 length=100ms;
+:delay 450ms;
+:beep frequency=380 length=100ms;
+:delay 400ms;
+:beep frequency=320 length=100ms;
+:delay 500ms;
+:beep frequency=440 length=100ms;
+:delay 300ms;
+:beep frequency=480 length=80ms;
+:delay 330ms;
+:beep frequency=450 length=100ms;
+:delay 150ms;
+:beep frequency=430 length=100ms;
+:delay 300ms;
+:beep frequency=380 length=100ms;
+:delay 200ms;
+:beep frequency=660 length=80ms;
+:delay 200ms;
+:beep frequency=760 length=50ms;
+:delay 150ms;
+:beep frequency=860 length=100ms;
+:delay 300ms;
+:beep frequency=700 length=80ms;
+:delay 150ms;
+:beep frequency=760 length=50ms;
+:delay 350ms;
+:beep frequency=660 length=80ms;
+:delay 300ms;
+:beep frequency=520 length=80ms;
+:delay 150ms;
+:beep frequency=580 length=80ms;
+:delay 150ms;
+:beep frequency=480 length=80ms;
+:delay 500ms;
+
+:beep frequency=500 length=100ms;
+:delay 300ms;
+
+:beep frequency=760 length=100ms;
+:delay 100ms;
+:beep frequency=720 length=100ms;
+:delay 150ms;
+:beep frequency=680 length=100ms;
+:delay 150ms;
+:beep frequency=620 length=150ms;
+:delay 300ms;
+
+:beep frequency=650 length=150ms;
+:delay 300ms;
+:beep frequency=380 length=100ms;
+:delay 150ms;
+:beep frequency=430 length=100ms;
+:delay 150ms;
+
+:beep frequency=500 length=100ms;
+:delay 300ms;
+:beep frequency=430 length=100ms;
+:delay 150ms;
+:beep frequency=500 length=100ms;
+:delay 100ms;
+:beep frequency=570 length=100ms;
+:delay 220ms;
+
+:beep frequency=500 length=100ms;
+:delay 300ms;
+
+:beep frequency=760 length=100ms;
+:delay 100ms;
+:beep frequency=720 length=100ms;
+:delay 150ms;
+:beep frequency=680 length=100ms;
+:delay 150ms;
+:beep frequency=620 length=150ms;
+:delay 300ms;
+
+:beep frequency=650 length=200ms;
+:delay 300ms;
+
+:beep frequency=1020 length=80ms;
+:delay 300ms;
+:beep frequency=1020 length=80ms;
+:delay 150ms;
+:beep frequency=1020 length=80ms;
+:delay 300ms;
+
+:beep frequency=380 length=100ms;
+:delay 300ms;
+:beep frequency=500 length=100ms;
+:delay 300ms;
+
+:beep frequency=760 length=100ms;
+:delay 100ms;
+:beep frequency=720 length=100ms;
+:delay 150ms;
+:beep frequency=680 length=100ms;
+:delay 150ms;
+:beep frequency=620 length=150ms;
+:delay 300ms;
+
+:beep frequency=650 length=150ms;
+:delay 300ms;
+:beep frequency=380 length=100ms;
+:delay 150ms;
+:beep frequency=430 length=100ms;
+:delay 150ms;
+
+:beep frequency=500 length=100ms;
+:delay 300ms;
+:beep frequency=430 length=100ms;
+:delay 150ms;
+:beep frequency=500 length=100ms;
+:delay 100ms;
+:beep frequency=570 length=100ms;
+:delay 420ms;
+
+:beep frequency=585 length=100ms;
+:delay 450ms;
+
+:beep frequency=550 length=100ms;
+:delay 420ms;
+
+:beep frequency=500 length=100ms;
+:delay 360ms;
+
+:beep frequency=380 length=100ms;
+:delay 300ms;
+:beep frequency=500 length=100ms;
+:delay 300ms;
+:beep frequency=500 length=100ms;
+:delay 150ms;
+:beep frequency=500 length=100ms;
+:delay 300ms;
+
+:beep frequency=500 length=100ms;
+:delay 300ms;
+
+:beep frequency=760 length=100ms;
+:delay 100ms;
+:beep frequency=720 length=100ms;
+:delay 150ms;
+:beep frequency=680 length=100ms;
+:delay 150ms;
+:beep frequency=620 length=150ms;
+:delay 300ms;
+
+:beep frequency=650 length=150ms;
+:delay 300ms;
+:beep frequency=380 length=100ms;
+:delay 150ms;
+:beep frequency=430 length=100ms;
+:delay 150ms;
+
+:beep frequency=500 length=100ms;
+:delay 300ms;
+:beep frequency=430 length=100ms;
+:delay 150ms;
+:beep frequency=500 length=100ms;
+:delay 100ms;
+:beep frequency=570 length=100ms;
+:delay 220ms;
+
+:beep frequency=500 length=100ms;
+:delay 300ms;
+
+:beep frequency=760 length=100ms;
+:delay 100ms;
+:beep frequency=720 length=100ms;
+:delay 150ms;
+:beep frequency=680 length=100ms;
+:delay 150ms;
+:beep frequency=620 length=150ms;
+:delay 300ms;
+
+:beep frequency=650 length=200ms;
+:delay 300ms;
+
+:beep frequency=1020 length=80ms;
+:delay 300ms;
+:beep frequency=1020 length=80ms;
+:delay 150ms;
+:beep frequency=1020 length=80ms;
+:delay 300ms;
+
+:beep frequency=380 length=100ms;
+:delay 300ms;
+:beep frequency=500 length=100ms;
+:delay 300ms;
+
+:beep frequency=760 length=100ms;
+:delay 100ms;
+:beep frequency=720 length=100ms;
+:delay 150ms;
+:beep frequency=680 length=100ms;
+:delay 150ms;
+:beep frequency=620 length=150ms;
+:delay 300ms;
+
+:beep frequency=650 length=150ms;
+:delay 300ms;
+:beep frequency=380 length=100ms;
+:delay 150ms;
+:beep frequency=430 length=100ms;
+:delay 150ms;
+
+:beep frequency=500 length=100ms;
+:delay 300ms;
+:beep frequency=430 length=100ms;
+:delay 150ms;
+:beep frequency=500 length=100ms;
+:delay 100ms;
+:beep frequency=570 length=100ms;
+:delay 420ms;
+
+:beep frequency=585 length=100ms;
+:delay 450ms;
+
+:beep frequency=550 length=100ms;
+:delay 420ms;
+
+:beep frequency=500 length=100ms;
+:delay 360ms;
+
+:beep frequency=380 length=100ms;
+:delay 300ms;
+:beep frequency=500 length=100ms;
+:delay 300ms;
+:beep frequency=500 length=100ms;
+:delay 150ms;
+:beep frequency=500 length=100ms;
+:delay 300ms;
+
+:beep frequency=500 length=60ms;
+:delay 150ms;
+:beep frequency=500 length=80ms;
+:delay 300ms;
+:beep frequency=500 length=60ms;
+:delay 350ms;
+:beep frequency=500 length=80ms;
+:delay 150ms;
+:beep frequency=580 length=80ms;
+:delay 350ms;
+:beep frequency=660 length=80ms;
+:delay 150ms;
+:beep frequency=500 length=80ms;
+:delay 300ms;
+:beep frequency=430 length=80ms;
+:delay 150ms;
+:beep frequency=380 length=80ms;
+:delay 600ms;
+
+:beep frequency=500 length=60ms;
+:delay 150ms;
+:beep frequency=500 length=80ms;
+:delay 300ms;
+:beep frequency=500 length=60ms;
+:delay 350ms;
+:beep frequency=500 length=80ms;
+:delay 150ms;
+:beep frequency=580 length=80ms;
+:delay 150ms;
+:beep frequency=660 length=80ms;
+:delay 550ms;
+
+:beep frequency=870 length=80ms;
+:delay 325ms;
+:beep frequency=760 length=80ms;
+:delay 600ms;
+
+:beep frequency=500 length=60ms;
+:delay 150ms;
+:beep frequency=500 length=80ms;
+:delay 300ms;
+:beep frequency=500 length=60ms;
+:delay 350ms;
+:beep frequency=500 length=80ms;
+:delay 150ms;
+:beep frequency=580 length=80ms;
+:delay 350ms;
+:beep frequency=660 length=80ms;
+:delay 150ms;
+:beep frequency=500 length=80ms;
+:delay 300ms;
+:beep frequency=430 length=80ms;
+:delay 150ms;
+:beep frequency=380 length=80ms;
+:delay 600ms;
+
+:beep frequency=660 length=100ms;
+:delay 150ms;
+:beep frequency=660 length=100ms;
+:delay 300ms;
+:beep frequency=660 length=100ms;
+:delay 300ms;
+:beep frequency=510 length=100ms;
+:delay 100ms;
+:beep frequency=660 length=100ms;
+:delay 300ms;
+:beep frequency=770 length=100ms;
+:delay 550ms;
+:beep frequency=380 length=100ms;
+:delay 575ms; </code>
+Credit: wiki.mikrotik.com
+</pre>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>

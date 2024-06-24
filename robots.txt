@@ -1,0 +1,4 @@
+User-agent: *
+allow: /
+allow: /mikrotik/
+disallow: /mikrotik/welcome.html

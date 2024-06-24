@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic DNS Update Script for Hurricane Electric DNS - MikroTik Script RouterOS</title>
+<meta content='Dynamic DNS Update Script for Hurricane Electric DNS - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+
+<h1>Dynamic DNS Update Script for Hurricane Electric DNS - MikroTik Script RouterOS</h1>
+<pre>This script will update the IP address on Hurricane Electric DNS service (http://dns.he.net/)
+
+It updates the A/AAAA record so both IPv4 and IPv6 can be supplied.
+
+It uses the fetch command with the url= parameter. Check that your version of RouterOS -> /tool fetch supports this option.
+
+The following URL to supply update information is used:
+
+For auto IP detection:
+
+<code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com</code>
+For manually setting the IP address:
+
+<code class="routeros">http://dyn.example.com:password@dyn.dns.he.net/nic/update?hostname=dyn.example.com&myip=192.168.0.1</code>
+For more information, see this link: http://dns.he.net/
+
+The script:
+
+<code class="routeros"># Update Hurricane Electric DDNS IPv4 address
+:local ddnshost "<dyndnshost>"
+:local key "key"
+:local updatehost "dyn.dns.he.net"
+:local WANinterface "<if>"
+:local outputfile ("HE_DDNS" . ".txt")
+# Internal processing below...
+# ----------------------------------
+:local ipv4addr
+# Get WAN interface IP address
+:set ipv4addr [/ip address get [/ip address find interface=$WANinterface] address]
+:set ipv4addr [:pick [:tostr $ipv4addr] 0 [:find [:tostr $ipv4addr] "/"]]
+:if ([:len $ipv4addr] = 0) do={
+   :log error ("Could not get IP for interface " . $WANinterface)
+   :error ("Could not get IP for interface " . $WANinterface)
+}
+:log info ("Updating DDNS IPv4 address" . " Client IPv4 address to new IP " . $ipv4addr . "...")
+/tool fetch url="http://$ddnshost:$key@$updatehost/nic/update?hostname=$ddnshost&myip=$ipv4addr"  \
+dst-path=$outputfile                           
+:log info ([/file get ($outputfile) contents])
+/file remove ($outputfile)</code>
+Note: The above script works with ROS 3.x. For the 5.x a minor modification for the fetch command is needed:
+
+<code class="routeros">/tool fetch mode=http url="http://$ddnshost:$key@$updatehost/nic/update?hostname=$ddnshost&myip=$ipv4addr" \
+dst-path=$outputfile</code>
+Credit: https://wiki.mikrotik.com
+</pre>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>

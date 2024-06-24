@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MikroTik Script RouterOS DataBase - BuanaNETPBun.Github.io</title>
+    <meta content='Complete MikroTik RouterOS Script DataBase Unoffical, Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!' name='description'>
+    <meta content='RouterOS, Mikrotik Script, database, search script, mikrotik, router, winbox, termimal, rsc, script' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="MikroTik RouterOS Script - BuanaNETPBun">
+    <meta property="og:description" content="MikroTik RouterOS Script DataBase Unoffical - BuanaNETPBun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/157747198-f83dbf9d-448d-4806-b833-85fc8b90c806.png">
+    <meta property="og:image:alt" content="Mikrotik RouterOS Script">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/mikrotik">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>      
+    <link rel="stylesheet" href="../login/login.css">
+    <style>
+      /* ----------------------------------------------
+      #################################################
+      # MIKROTIK RouterOS [ SCRIPT ]  DATABASE
+      # Designer  : Agus Ramadhani / BuanaNETPbun
+      # Github	  : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # facebook  : https://fb.me/buananet.pbun	
+      #################################################
+      ----------------------------------------------- */  
+      *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
+      body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
+      body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:15px;word-wrap:break-word;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      pre{white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:pre-wrap;word-wrap:break-word}
+      *{box-sizing:border-box}
+      p{display:list-item;list-style:square;padding:3px 0;margin:0 0 0 22px;color:#999}
+      .logo{border-bottom:0 solid #ccc;margin-bottom:20px;margin-top:15px;color:#fff;font-size:30px;font-weight:700}
+      .logo a{color:#fff!important;text-decoration:none!important;font-size:25px;text-decoration:none}
+      .logo-left{float:left}
+      .logo-right{float:right;margin-bottom:5px}
+      #wrap{max-width:1180px;min-width:200px;margin:0 auto}
+      .header{border-radius:5px 5px 0 0;margin-top:24px;padding:10px;padding-top:10px;padding-bottom:5px;display:block;color:#fff;background:url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) repeat right;border-top:2px solid #555;border-left:2px solid #555;border-right:2px solid #555;border-bottom:2px solid #555;clear:both}
+      .header a{color:#f60!important;text-decoration:none!important}
+      .header-left{float:left;width:400px;padding-bottom:5px}
+      .header-right{float:right;margin-top:0;border-radius:5px}
+      .content{float:right;width:64%;padding:0;border-right:2px solid #555;border-bottom:2px solid #555;background:#fff;height:750px;border-radius:0 0 5px 0}
+      .sidebar{overflow:hidden;float:left;width:36%;padding:10px;background-color:#ddd;border-left:2px solid #555;border-right:0 solid #555;border-bottom:2px solid #555;height:750px;border-radius:0 0 0 5px}
+      .footer{font-size:14px;padding:10px;color:#ddd;margin-top:20px;margin-bottom:20px;width:auto;text-align:left;font-size:14px;clear:both}
+      .footer a{color:#f60!important}
+      h1{color:#fff;font-size:20px;margin-top:-2px}
+      h2{color:#f60;font-size:20px}
+      .active1,.linkPress:hover,p{color:#f60!important}
+      a:link{color:#333;text-decoration:none}
+      a:visited{color:#333;text-decoration:none}
+      a:hover{color:#333}
+      a:active{color:#333}
+      button{color:#fff;background-color:#f60;border-color:#f60;border-radius:5px;border:none;margin-top:0;padding:5px;width:60px;font-size:15px;font-weight:700;cursor:pointer}
+      button:hover{background-color:#ccc;color:#111}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:0;resize:vertical;font-size:16px!important;border-radius:5px}
+      label{padding:5px 5px 5px 0;display:inline-block}
+      input[type=submit]{background-color:#4CAF50;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
+      input[type=submit]:hover{background-color:#45a049}
+      .row:after{content:"";display:table;clear:both}
+      .list-script{border-radius:0;height:655px;background:#fff;overflow:scroll;overflow-x:hidden;width:100%;margin-top:3px;padding:0;border:1px solid #ccc}
+      .list-script label{padding:0;display:inline-block}
+      .list-output-content{height:737px;background:#fff;width:100%;padding-left:8px;padding-right:10px;margin:0;border:0 solid #ccc}
+      .mytable{overflow-x:hidden;height:218px;margin:0;border:0 solid #ccc}
+      table{border-collapse:collapse;width:100%}
+      tr{width:100%;border:1px solid #f0f0f0;background:#f5f5f5}
+      tr:nth-child(even){background:#fff;width:100%}
+      .bookmark-font{font-size:15px;text-align:center}
+      iframe{width:100%;height:520px;border:0}
+      .welcome{width:100%;height:520px;padding:10px}
+      .welcome a{color:#f60!important}
+      .backtotop{background:#bbb;text-align:center;width:100%;border-radius:0 0 4px 4px;height:27px;color:#111}
+      .backtotop a{font-size:12px;padding:5px;color:#111;font-weight:700;width:100%;text-transform:uppercase;background:#bbb}
+      .backtotop a:hover{color:#f60}
+      .show-homepage-menu{margin-bottom:3px}
+      @media screen and (max-width: 1024px) {
+      .mikrotik-logo{display:none}
+      }
+      @media screen and (max-width: 800px) {
+      .bookmark-font{font-size:25px;text-align:center}
+      body{margin:0}
+      .footer{border:0;color:#ddd}
+      .logo{margin-left:10px;margin-right:10px}
+      .header{border:none;background:none;margin-top:0}
+      .header h1{font-size:18px}
+      .logo-left{margin-top:-4px;margin-bottom:8px}
+      .logo a{margin-left:10px;margin-right:10px;font-size:22px;color:#ddd!important}
+      #wrap{padding:0;margin:0;width:100%;height:100%}
+      .sidebar{border:0!important;width:100%;height:100%;overflow:hidden}
+      .list-script{width:100%;height:100%;overflow:hidden;border:none}
+      .list-output-content{height:100%;border:none}
+      .content,.welcome,.list-output-content{display:none}
+      .mymenu{width:100%!important}
+      button{margin-top:5px}
+      .header{height:auto}
+      .header-right{float:right;margin-top:-8px;margin-bottom:15px}
+      }
+      @media screen and (max-width: 700px) {
+      .logo-left a{font-size:23px}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
+      .mikrotik-logo{display:flex;justify-content:center}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%;margin-top:15px}
+      .logo-right{text-align:center;width:100%}
+      .header-left{text-align:center;margin-bottom:10px;margin-top:10px}
+      .header-right{text-align:center;margin-bottom:20px}
+      .header-left,.header-right{float:none;display:block;width:auto}
+      }
+      @media screen and (max-width:500px) {
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      .avatar{display:none}
+      }
+      @media screen and (max-width:350px) {
+      .hide-homepage{display:none}
+      }  
+    </style>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>  
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div id="mymenu" class="mymenu">
+      <div class="mikrotik-logo" >
+        <img alt="mikrotik" src="../img/made-for-mikrotik.png">
+      </div>
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+      </ul>
+      <div class="show-homepage-menu">
+        <div id="homepage" class="hide">
+          <button style="width:100px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+          <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+          <span class="hide-homepage">
+          <span class="avatar">
+          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+          </span>
+            <span style="font-weight:normal;font-size:14px"><a href="https://buananetpbun.github.io/login"><img style="vertical-align:middle" width="20" src="../img/gear.png"><span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></a></span>
+          <span style="font-weight:normal; font-size:14px"> [<span class="tooltip"><span class="tooltiptext2">E-mail verified status</span><span id="email_Verified" style="cursor:help"></span></span>]</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div id="wrap">
+      <div class="logo">
+        <div class="logo-right" style="float:right;">
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <img style="margin-left:4px" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div class="logo-left">	  
+          <a href="https://buananetpbun.github.io/mikrotik"><img alt="buananetpbun.github.io" style="margin-bottom:-5px;margin-right:5px" width='35' src="../img/mylogo.png"><span style='color:#ff6600 !important'>Buananetpbun</span>.Github.io</a>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header-left">
+          <h1>MIKROTIK SCRIPT ROUTER-OS DATABASE</h1>
+        </div>
+        <div class="header-right"><b>Contribution your script</b> <button style="margin-left:5px;" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform';">upload</button>
+        </div>
+        <div style='clear: both;'></div>
+      </div>
+      <div id="sidebar_" class="sidebar">
+        <input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="search script.." style="width:100%;margin-bottom:7px;font-size: 16px"> 
+        <div class="list-script">
+          <div class="bookmark-font">
+            <span style="padding-left:5px;padding-top:5px;font-weight:bold; text-align:center;">
+            <a href="#A"><span style="color:#ff6600">A</span></a>
+            <a href="#B"><span style="color:#000">B</span></a>
+            <a href="#C"><span style="color:#ff6600">C</span></a>
+            <a href="#D"><span style="color:#000">D</span></a>
+            <a href="#E"><span style="color:#ff6600">E</span></a>
+            <a href="#F"><span style="color:#000">F</span></a>
+            <a href="#G"><span style="color:#ff6600">G</span></a>
+            <a href="#H"><span style="color:#000">H</span></a>
+            <a href="#I"><span style="color:#ff6600">I</span></a>
+            <a href="#J"><span style="color:#000">J</span></a>
+            <a href="#K"><span style="color:#ff6600">K</span></a>
+            <a href="#L"><span style="color:#000">L</span></a>
+            <a href="#M"><span style="color:#ff6600">M</span></a>
+            <a href="#N"><span style="color:#000">N</span></a>
+            <a href="#O"><span style="color:#ff6600">O</span></a>
+            <a href="#P"><span style="color:#000">P</span></a>
+            <a href="#Q"><span style="color:#ff6600">Q</span></a>
+            <a href="#R"><span style="color:#000">R</span></a>
+            <a href="#S"><span style="color:#ff6600">S</span></a>
+            <a href="#T"><span style="color:#000">T</span></a>
+            <a href="#U"><span style="color:#ff6600">U</span></a>
+            <a href="#V"><span style="color:#000">V</span></a>
+            <a href="#W"><span style="color:#ff6600">W</span></a>
+            <a href="#X"><span style="color:#000">X</span></a>
+            <a href="#Y"><span style="color:#ff6600">Y</span></a>
+            <a href="#Z"><span style="color:#000">Z</span></a>
+            </span>
+          </div>
+          <table id="myTable">
+            <!-- A -->
+            <tr>
+              <td><span id="A" style="margin-left:5px; font-weight:bold">A</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/anti-hack-bootloader.html" onclick="getcontent(this); return truefalseFunction(x);">Anti Hack Protected BootLoader</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/auto-fix-sntp-client-and-timezone-for-indonesia-country.html" onclick="getcontent(this); return truefalseFunction(x);">Auto Fix SNTP and Clock for Indonesia Timezone</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Auto-Simple-Queue-From-DHCP-Server.html" onclick="getcontent(this); return truefalseFunction(x);">Auto Simple Queue From DHCP Server</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Auto-Connect-to-Internet-With-DHCP-Client.html" onclick="getcontent(this); return truefalseFunction(x);">Auto Connect to Internet With DHCP Client</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Auto-Repair-Passthrough-In-Mangle.html" onclick="getcontent(this); return truefalseFunction(x);">Auto Repair Passthrough In Mangle</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/auto-backup-filename-backup-and-send-to-gmail.html" onclick="getcontent(this); return truefalseFunction(x);">Auto Backup Filename.backup and Send To Gmail</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/auto-backup-filename-rsc-and-send-to-gmail.html" onclick="getcontent(this); return truefalseFunction(x);">Auto Backup Filename.rsc and Send To Gmail</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Automated-Usage-Script-without-usermanager.html" onclick="getcontent(this); return truefalseFunction(x);">Automated Usage Script Without User Manager</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Allow-use-ofntporg-pool-service-for-NTP.html" onclick="getcontent(this); return truefalseFunction(x);">Allow Use Of ntp.org Pool Service For NTP</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Auto-upgrade-script-V3x.html" onclick="getcontent(this); return truefalseFunction(x);">Auto upgrade script V3.x</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Audible-signal-test.html" onclick="getcontent(this); return truefalseFunction(x);">Audible Signal Test</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/A-Bit-of-Sounds.html" onclick="getcontent(this); return truefalseFunction(x);">A Bit of Sounds</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/add-a-data-limit-to-trial-hotspot-users.html" onclick="getcontent(this); return truefalseFunction(x);">Add a Data Limit To Trial Hotspot Users</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Auto-Update-RouterOS-Package-From-Script.html" onclick="getcontent(this); return truefalseFunction(x);">Auto Update RouterOS Package From Script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/ARP-Table-To-Dynamic-Simple-Queue.html" onclick="getcontent(this); return truefalseFunction(x);">ARP Table To Dynamic Simple Queue</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Add-Static-DHCP-Leases-to-ARP-List.html" onclick="getcontent(this); return truefalseFunction(x);">Add Static DHCP Leases to ARP List</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Alignment-Script-that-reads-back-RSSI-with-Beeps.html" onclick="getcontent(this); return truefalseFunction(x);">Alignment Script that "reads back" RSSI with Beeps</a></p>
+              </td>
+            </tr>
+            <!-- B -->
+            <tr>
+              <td><span id="B" style="margin-left:5px; font-weight:bold">B</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/bootloader-protector.html" onclick="getcontent(this); return truefalseFunction(x);">Bootloader Protector</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Block-Sites-User-Keywords-Use-The-Dns-Cache.html" onclick="getcontent(this); return truefalseFunction(x);">Block Sites With Keywords Use Dns Cache</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Blog-Website-With-Keywords-Use-DNS-Static.html" onclick="getcontent(this); return truefalseFunction(x);">Block Website With Keywords Use DNS Static</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Bypass-Full-Speed-Local-Transfer-File.html" onclick="getcontent(this); return truefalseFunction(x);">Bypass Full Speed Locat Transfer File</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-To-Backup.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Mikrotik File .Backup</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-Export-rsc.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Export File .rsc</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-hide-sensitive.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Export File .rsc Hide-Sensitive</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-compact.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Export File .rsc Compact</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-terse.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Export File .rsc Terse</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-verbose.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Export File .rsc Verbose</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-To-Backup-rsc-combination.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Export File .rsc With Combination</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-to-Backup-Use-import-rsc.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Import File .rsc</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Bypass-Local-Connection.html" onclick="getcontent(this); return truefalseFunction(x);">Bypass Local Connection / Local IP</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/bypass-user-hotspot-with-macaddress.html" onclick="getcontent(this); return truefalseFunction(x);">Bypass Hotspot User With Mac-Address</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Block-access-to-specific-websites.html" onclick="getcontent(this); return truefalseFunction(x);">Blocking Access To Specific Websites</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Bittorrent-layer-7.html" onclick="getcontent(this); return truefalseFunction(x);">Bittorrent, Torrentwws, Torrentwww Layer-7</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Block-Windows-Update.html" onclick="getcontent(this); return truefalseFunction(x);">Block Windows Update</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-youtube-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Youtube with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-whatsapp-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Whatsapp with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-facebook-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Facebook with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-istagram-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Instagram with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-twitter-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Twitter with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-telegram-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Telegram with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-signal-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Signal with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-bigo-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Bigo with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-netflix-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block Netflix with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-iflix-layer7-content-tls.html" onclick="getcontent(this); return truefalseFunction(x);">Block iflix with "Layer 7" or "Content" Or "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-tracert.html" onclick="getcontent(this); return truefalseFunction(x);">Block Tracert / Traceroute</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Block-Tiktok.html" onclick="getcontent(this); return truefalseFunction(x);">Block TikTok Firewall Rules "TLS"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-tiktok-content-firewall-rules.html" onclick="getcontent(this); return truefalseFunction(x);">Block TikTok Firewall Rules "Content"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-tiktok-layer7-firewall-rules.html" onclick="getcontent(this); return truefalseFunction(x);">Block TikTok Firewall Rules "Layer-7"</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/domain-list-bank-indonesia.html" onclick="getcontent(this); return truefalseFunction(x);">Bank Indonesia Domain List</a></p>
+              </td>
+            </tr>			
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Block-MAC-Address-Device.html" onclick="getcontent(this); return truefalseFunction(x);">Block MAC Address Device</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Blocking-Modem.html" onclick="getcontent(this); return truefalseFunction(x);">Blocking Modem Access</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Backup-graphing-data.html" onclick="getcontent(this); return truefalseFunction(x);">Backup Graphing Data</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Basic-universal-firewall-script.html" onclick="getcontent(this); return truefalseFunction(x);">Basic universal firewall script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-download-based-download-sizes.html" onclick="getcontent(this); return truefalseFunction(x);">Block Download Based Download Sizes</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/basic-traffic-priorities-rev-31.html" onclick="getcontent(this);return false;">Basic Traffic Priorities Rev 3.1</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-higgs-domino-firewall-tls-method.html" onclick="getcontent(this);return false;">Block Higgs Domino Firewall TLS Method</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/backup-full-to-ftp.html" onclick="getcontent(this);return false;">Backup Full to FTP</a></p>
+              </td>
+            </tr>
+            <!-- C -->
+            <tr>
+              <td><span id="C" style="margin-left:5px; font-weight:bold">C</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/how-to-change-mac-address.html" onclick="getcontent(this); return truefalseFunction(x);">Change MAC Address From Terminal</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/change-all-queue-type-in-queue-simple.html" onclick="getcontent(this); return truefalseFunction(x);">Change all Queue type in Queue Simple</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/change-all-queue-type-in-queue-tree.html" onclick="getcontent(this); return truefalseFunction(x);">Change all Queue type in Queue Tree</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Checking-for-the-update-New-Version.html" onclick="getcontent(this); return truefalseFunction(x);">Checking for the Update New Version</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Clear-Log-and-Session-User-Manager.html" onclick="getcontent(this); return truefalseFunction(x);">Clear Log and Session User Manager</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Custom-Limit-Bandwidth-Hotspot-With-Queue-Tree.html" onclick="getcontent(this); return truefalseFunction(x);">Custom Limit Bandwidth Hotspot With Queue Tree</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Custom-Limit-Bandwidth-Hotspot-With-Queue-Simple.html" onclick="getcontent(this); return truefalseFunction(x);">Custom Limit Bandwidth Hotspot With Queue Simple</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Complete-Bandwidth-Monitoring.html" onclick="getcontent(this); return truefalseFunction(x);">Complete Bandwidth Monitoring</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Create-Multiple-Queue-Tree-At-Once.html" onclick="getcontent(this); return truefalseFunction(x);">Create Multiple Queue Tree At Once</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Create-Multiple-Simple-Queue-At-Once.html" onclick="getcontent(this); return truefalseFunction(x);">Create Multiple Simple Queue At Once</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Create-Hotspot-Multi-Login-With-Bandwidth-Limit.html" onclick="getcontent(this); return truefalseFunction(x);">Create Hotspot Multi Login With Bandwidth Limit</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Check-if-RTO-and-send-to-Telegram.html" onclick="getcontent(this); return truefalseFunction(x);">Check if RTO and send to Telegram</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/address-list-dynamic-to-static.html" onclick="getcontent(this); return truefalseFunction(x);">Change All Address List Dynamic To Static</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/change-system-note.html" onclick="getcontent(this); return truefalseFunction(x);">Change System Note</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Speedtest-Mangle-layer7.html" onclick="getcontent(this); return truefalseFunction(x);">Complete Mangle Speedtest with Layer-7</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Get-Day.html" onclick="getcontent(this); return truefalseFunction(x);">Calculates Day Of The Week For a Givien Date</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/change-Interface-ether-Default-1.html" onclick="getcontent(this); return truefalseFunction(x);">Change Name Interface or Ether To Default Auto</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/change-Interface-ether-Default-2.html" onclick="getcontent(this); return truefalseFunction(x);">Change Name Interface or Ether To Default Manual</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/check-ip-change.html" onclick="getcontent(this); return truefalseFunction(x);">Check if IP on interface have changed</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Check-bandwidth-and-add-limitations.html" onclick="getcontent(this); return truefalseFunction(x);">Check Bandwidth and Add Limitations</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Calculate-with-decimal-numbers.html" onclick="getcontent(this); return truefalseFunction(x);">Calculate With Decimal Numbers</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/clear-log-Mikrotik.html" onclick="getcontent(this); return truefalseFunction(x);">Clear LOG info from Terminal</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Create-a-file.html" onclick="getcontent(this); return truefalseFunction(x);">Create A File</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Calea-perl-trafr.html" onclick="getcontent(this); return truefalseFunction(x);">Calea Perl Trafr</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Converting_network_and_gateway_from_routing_table_to_hexadecimal_string.html" onclick="getcontent(this); return truefalseFunction(x);">Converting Gateway From Routing To hexadecimal</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Change-Mikrotik-identity-or-Winbox-Caption.html" onclick="getcontent(this); return truefalseFunction(x);">Change Mikrotik identity or Winbox Caption</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Change-All-Queue-Type-in-Interface-Queue.html" onclick="getcontent(this); return truefalseFunction(x);">Change All Queue Type in Interface Queue</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/check-routeros-update-and-notification.html" onclick="getcontent(this); return truefalseFunction(x);">Check RouterOS Update and Notification to eMail or Telegram</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/create-simple-queue-from-pppoe-secret.html" onclick="getcontent(this); return truefalseFunction(x);">Create Simple QUEUE from PPPoE Secret</a></p>
+              </td>
+            </tr>
+            <!-- D -->
+            <tr>
+              <td><span id="D" style="margin-left:5px; font-weight:bold">D</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/detect-ip-address-on-vpn-tunnel-if-has-been-changed.html" onclick="getcontent(this); return truefalseFunction(x);">Detect IP Address on VPN Tunnel if has been changed</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/block-ads-use-dns-static.html" onclick="getcontent(this); return truefalseFunction(x);">DNS Static adblock For Block Ads</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Dynamic-DNS-on-private-DNS-server.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS on Private DNS Server</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-changeip.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for ChangeIP.com</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-changeip-behind-nat.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for ChangeIP behind NAT</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-dnsomatic.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for DNSoMatic.com</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-dnsomatic-behind-nat.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for DNSoMatic.com behind NAT</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-dyndns.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for dynDNS</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-dyndns-behind-nat.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for dynDNS behind NAT</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-everydns.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for EveryDNS</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-hurricane-electric-dns.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for Hurricane Electric DNS</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-namecheap.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for Namecheap</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dynamic-dns-update-script-for-no-ip-dns.html" onclick="getcontent(this); return truefalseFunction(x);">Dynamic DNS Update Script for No-IP DNS</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Delete-Arp-Trafic-For-Arp-Table.html" onclick="getcontent(this); return truefalseFunction(x);">Delete Arp Trafic For Arp Table</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Default-Filter-Rules.html" onclick="getcontent(this); return truefalseFunction(x);">Default Filter Rules</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/DNSCRYPT-with-OpenDNS.html" onclick="getcontent(this); return truefalseFunction(x);">DNSCRYPT with OpenDNS port 443 or 5353</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/dns-chace-flush.html" onclick="getcontent(this); return truefalseFunction(x);">DNS Cache Flush</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Detect-new-log-entry.html" onclick="getcontent(this); return truefalseFunction(x);">Detect New Log Entry</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Dial_PPPoE_until_a_Certain_IP_Range_is_Obtained.html" onclick="getcontent(this); return truefalseFunction(x);">Dial PPPoE until a Certain IP Range is Obtained</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a href="https://buananetpbun.github.io/mikrotik/discover-unknown-dhcp-server-on-the-network.html">Discover Unknown DHCP Server On The Network (Telegram)</a></p>
+              </td>
+            </tr>
+            <!-- E -->
+            <tr>
+              <td><span id="E" style="margin-left:5px; font-weight:bold">E</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Extract-the-day-of-the-month.html" onclick="getcontent(this); return truefalseFunction(x);">Extract The Day Of The Month</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Automatic-Expired-Hotspot-Page-Without-A-Proxy.html" onclick="getcontent(this); return truefalseFunction(x);">Expired Hotspot Page Without A Proxy</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Enable-Disable-New-Guest-User-Account-Daily-Hotspot.html" onclick="getcontent(this); return truefalseFunction(x);">Enable or Disable New Guest User Account Daily Hotspot</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/expire-users-a-after-number-of-days.html" onclick="getcontent(this); return truefalseFunction(x);">Expire Users Hotspot A After Number Of Days</a></p>
+              </td>
+            </tr>
+            <!-- F -->
+            <tr>
+              <td><span id="F" style="margin-left:5px; font-weight:bold">F</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/enable-fasttrack.html" onclick="getcontent(this); return truefalseFunction(x);">Fasttrack Enable</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/filter-a-command-output.html" onclick="getcontent(this); return truefalseFunction(x);">Filter A Command Output</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/script-to-find-the-day-of-the-week.html" onclick="getcontent(this); return truefalseFunction(x);">Find The Day Of The Week</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/show-usermanager-password.html" onclick="getcontent(this); return truefalseFunction(x);">Forget or Show User Manager Password</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Failover-with-Netwatch.html" onclick="getcontent(this); return truefalseFunction(x);">Failover with Netwatch</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Failover-with-Scripting.html" onclick="getcontent(this); return truefalseFunction(x);">Failover With Scripting</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Force-Disconnect-Wireless-Stations-with-Low-CCQ.html" onclick="getcontent(this); return truefalseFunction(x);">Force Disconnect Wireless Stations with Low CCQ</a></p>
+              </td>
+            </tr>
+            <!-- G -->
+            <tr>
+              <td><span id="G" style="margin-left:5px; font-weight:bold">G</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/gps-text-file-converter-to-google-earth-or-maps.html" onclick="getcontent(this); return truefalseFunction(x);">GPS Text File Converter To Google Earth Or Maps</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/google-domain-list-or-all-google-host.html" onclick="getcontent(this); return truefalseFunction(x);">Google Domain List Or All Google Host</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/get-active-vpn-connections-via-e-mail.html" onclick="getcontent(this); return truefalseFunction(x);">Get Active Vpn Connections Via E-Mail</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Google-Safe-Search-use-DNS-Static.html" onclick="getcontent(this); return truefalseFunction(x);">Google Safe Search use DNS Static</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/How-to-get-todays-date-info.html" onclick="getcontent(this); return truefalseFunction(x);">Get Today's Date Info</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Generate-backup-and-sendit-by-email.html" onclick="getcontent(this); return truefalseFunction(x);">Generate Backup And Send it By E-Mail</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/get-ip-address-list-netflix-with-raw.html" onclick="getcontent(this); return truefalseFunction(x);">Get IP Address List Netflix With RAW</a></p>
+              </td>
+            </tr>
+            <!-- H -->
+            <tr>
+              <td><span id="H" style="margin-left:5px; font-weight:bold">H</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-blocked-meris-botnet.html" onclick="getcontent(this); return truefalseFunction(x);">How To Blocked Meris Botnet</a></p>
+              </td>
+            </tr>			
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/how-to-disable-google-ssl-using-static-dns.html" onclick="getcontent(this); return truefalseFunction(x);">How To Disable Google Ssl Using Static Dns</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Speedtest-domain-List.html" onclick="getcontent(this); return truefalseFunction(x);">Host or Domain list SpeedTest</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Hotspot-Auto-User-logout-user-When-internet-down.html" onclick="getcontent(this); return truefalseFunction(x);">Hotspot Auto logout user When Inet down</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/change-path-database-user-manager-to-disk-or-usb.html" onclick="getcontent(this); return truefalseFunction(x);">How To Change Path DataBase User Manager to Disk or USB</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/hurricane-electric-ipv6-tunnel-ipv4-endpoint-updater.html" onclick="getcontent(this); return truefalseFunction(x);">Hurricane Electric IPv6 Tunnel - IPv4 Endpoint updater</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/how-to-setting-bonding-interface.html" onclick="getcontent(this); return truefalseFunction(x);">How to Setting Bonding Interface</a></p>
+              </td>
+            </tr>
+            <!-- I -->
+            <tr>
+              <td><span id="I" style="margin-left:5px; font-weight:bold">I</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Pool-Statistics.html" onclick="getcontent(this); return truefalseFunction(x);">IP Pool Statistics</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-list-netflix.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address List for Netflix</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-list-tiktok.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address List for Tiktok</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-list-GGC.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address List for GGC Google Global Cache</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-list-ix-nice-rsc.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address List Nice.rsc IIX or IXP</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-List-AWS-EC2-Amazon.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address List AWS EC2 Amazon</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-list-Speedtest.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address list SpeedTest</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-list-Telergram.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address list Telegram</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-list-Facebook.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address list Facebook</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-List-twitter.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address list Twitter</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-List-WhatsApp.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address list WhatsApp</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Address-list-zoom-meeting.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address List Zoom Meeting</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/IP-Private-or-IP-Local-Standard-RFC1918.html" onclick="getcontent(this); return truefalseFunction(x);">IP Private or IP Local Standard RFC 1918</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/ip-address-list-indonesia-ipv4.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address List Indonesia IPv4</a></p>
+              </td>
+            </tr>		
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/ip-address-list-indonesia-ipv6.html" onclick="getcontent(this); return truefalseFunction(x);">IP Address List Indonesia IPv6</a></p>
+              </td>
+            </tr>			
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Include-custom-function-in-another-script.html" onclick="getcontent(this); return truefalseFunction(x);">Include custom function in another script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/initiating-the-update-process-new-version.html" onclick="getcontent(this); return truefalseFunction(x);">Initiating The Update Process New Version</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Improved-Netwatch.html" onclick="getcontent(this); return truefalseFunction(x);">Improved Netwatch</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Improved-Netwatch-2.html" onclick="getcontent(this); return truefalseFunction(x);">Improved Netwatch 2</a></p>
+              </td>
+            </tr>
+            <!-- J -->
+            <tr>
+              <td><span id="J" style="margin-left:5px; font-weight:bold">J</span></td>
+            </tr>
+            <!-- K -->
+            <tr>
+              <td><span id="K" style="margin-left:5px; font-weight:bold">K</span></td>
+            </tr>
+            <!-- L -->
+            <tr>
+              <td><span id="L" style="margin-left:5px; font-weight:bold">L</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Layer-7-For-All-Streaming-Video.html" onclick="getcontent(this); return truefalseFunction(x);">Layer-7 Regex For All Streaming Video</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Layer-7-For-All-Social-Media-Socmed.html" onclick="getcontent(this); return truefalseFunction(x);">Layer-7 Regex For All Social Media (Socmed)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Layer-7-For-All-Media-Extention.html" onclick="getcontent(this); return truefalseFunction(x);">Layer-7 Regex For All Media Extention</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Layer-7-For-All-File-Extention.html" onclick="getcontent(this); return truefalseFunction(x);">Layer-7 Regex For All File Extention</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Layer-7-Regex-For-Telkom-Ads.html" onclick="getcontent(this); return truefalseFunction(x);">Layer-7 Regex For Telkom Ads</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Limit-sharing-Hotspot-with-Change-TTL.html" onclick="getcontent(this); return truefalseFunction(x);">Limit sharing Hotspot with 'Change TTL'</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-PCC-2-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB PCC 2 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-PCC-3-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB PCC 3 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-PCC-4-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB PCC 4 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-PCC-5-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB PCC 5 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-PCC-6-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB PCC 6 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-ECMP-2-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB ECMP 2 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-ECMP-3-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB ECMP 3 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-ECMP-4-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB ECMP 4 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-ECMP-5-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB ECMP 5 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-ECMP-6-Line-ISP.html" onclick="getcontent(this); return truefalseFunction(x);">LB ECMP 6 Line ISP Failover</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LB-ECMP-Failover-Script.html" onclick="getcontent(this); return truefalseFunction(x);">LB ECMP Failover Script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Log-Parser-Event-Trigger-Script.html" onclick="getcontent(this); return truefalseFunction(x);">Log Parser - Event Trigger Script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/limiting-a-user-to-a-given-amount-of-traffic-using-queues.html" onclick="getcontent(this); return truefalseFunction(x);">Limiting A User To A Given Amount Of Traffic Using Queues</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Limiting-a-User-To-a-Given-Amount-Of-Traffic-With-User-Levels.html" onclick="getcontent(this); return truefalseFunction(x);">Limiting a User To a Given Amount Of Traffic With User Levels</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Limit-Different-Bandwidth-In-Day-and-Night.html" onclick="getcontent(this); return truefalseFunction(x);">Limit Different Bandwidth In Day and Night</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/LED-Antenna-Alignment.html" onclick="getcontent(this); return truefalseFunction(x);">LED Antenna Alignment</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/logging-average-ccq-and-wireless-clients-stats.html" onclick="getcontent(this); return truefalseFunction(x);">Logging Average CCQ and Wireless Clients Stats</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/logging-snr-and-thruput-values.html" onclick="getcontent(this); return truefalseFunction(x);">Logging SNR and Thruput Values</a></p>
+              </td>
+            </tr>
+            <!-- M -->
+            <tr>
+              <td><span id="M" style="margin-left:5px; font-weight:bold">M</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-port-service-api-8728.html" onclick="getcontent(this); return truefalseFunction(x);">Mikrotik Port Service API 8728</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-port-service-api-ssl-8729.html" onclick="getcontent(this); return truefalseFunction(x);">Mikrotik Port Service API-SSL 8729</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-port-service-ftp-21.html" onclick="getcontent(this); return truefalseFunction(x);">Mikrotik Port Service FTP 21</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-port-service-ssh-22.html" onclick="getcontent(this); return truefalseFunction(x);">Mikrotik Port Service SSH 22</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-port-service-telnet-23.html" onclick="getcontent(this); return truefalseFunction(x);">Mikrotik Port Service TELNET 23</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-port-service-winbox-8291.html" onclick="getcontent(this); return truefalseFunction(x);">Mikrotik Port Service WINBOX 8291</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-port-service-www-80-webfig.html" onclick="getcontent(this); return truefalseFunction(x);">Mikrotik Port Service WWW 80 (webfig)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/mikrotik-port-service-www-ssl-443-webfig.html" onclick="getcontent(this); return truefalseFunction(x);">Mikrotik Port Service WWW-SSL 443 (webfig)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Monitoring-Script.html" onclick="getcontent(this); return truefalseFunction(x);">Monitoring Script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Mangle-and-Port-UltraViewer.html" onclick="getcontent(this); return truefalseFunction(x);">Mangle and Port UltraViewer (Remote Dekstop)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Mangle-and-Port-TeamViewer.html" onclick="getcontent(this); return truefalseFunction(x);">Mangle and Port TeamViewer (Remote Dekstop)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Mangle-and-Port-AnyDesk.html" onclick="getcontent(this); return truefalseFunction(x);">Mangle and Port AnyDesk (Remote Dekstop)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Mangle-and-Port-RDC.html" onclick="getcontent(this); return truefalseFunction(x);">Mangle and Port Remote Desktop Connection (RDC)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Mangle-and-Port-chrome-remote-desktop.html" onclick="getcontent(this); return truefalseFunction(x);">Mangle and Port Google Chrome Remote Desktop</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Mangle-and-Port-employeespro.html" onclick="getcontent(this); return truefalseFunction(x);">Mangle and Port Net Monitoring for employees pro</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Mangle-and-Port-VNC.html" onclick="getcontent(this); return truefalseFunction(x);">Mangle and Port VNC (Virtual Network Computing</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/make-sure-all-clients-use-router-dns.html" onclick="getcontent(this); return truefalseFunction(x);">Make Sure All Clients Use Router Dns</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Make-an-Automated-Configuration-and-Uninstall.html" onclick="getcontent(this); return truefalseFunction(x);">Make an Automated Configuration and Uninstall</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Monitor-Logs-Send-Email-Alert-Or-Run-Script.html" onclick="getcontent(this); return truefalseFunction(x);">Monitor Logs, Send Email Alert Or Run Script</a></p>
+              </td>
+            </tr>
+            <!-- N -->
+            <tr>
+              <td><span id="N" style="margin-left:5px; font-weight:bold">N</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/No-Mark-Without-Mangle-in-Queue-Tree.html" onclick="getcontent(this); return truefalseFunction(x);">No-Mark Without Mangle in Queue Tree</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/notification-when-public-ip-address-router-changes-to-email-or-telegram.html" onclick="getcontent(this); return truefalseFunction(x);">Notification When Public IP Address Router Changes</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/notification-of-device-connection-to-the-network.html" onclick="getcontent(this); return truefalseFunction(x);">Notification Of Device Connection To The Network</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/netwatch-monitoring-host.html" onclick="getcontent(this); return truefalseFunction(x);">Netwatch Monitoring Host</a></p>
+              </td>
+            </tr>
+            <!-- 0 -->
+            <tr>
+              <td><span id="O" style="margin-left:5px; font-weight:bold">O</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/only-1-hotspot-id-can-login-together.html" onclick="getcontent(this); return truefalseFunction(x);">Only 1 Hotspot Id Can Login Together</a></p>
+              </td>
+            </tr>
+            <!-- P -->
+            <tr>
+              <td><span id="P" style="margin-left:5px; font-weight:bold">P</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/protect-romon-mikrotik.html" onclick="getcontent(this); return truefalseFunction(x);">Protect RoMON RouterOS</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/protect-btest-server.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Btest Server</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/protect-neighbors-discovery.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Neighbors Discovery</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/protect-mac-server.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Mac Address Server</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/PPPoE-Secret-Random-Username-and-Password.html" onclick="getcontent(this); return truefalseFunction(x);">PPPoE Secret Random Username and Password</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Port-Forward-for-All-Remote-Desktop.html" onclick="getcontent(this); return truefalseFunction(x);">Port Forward for All Remote Desktop</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/password-ont-modem-telkom-indihome.html" onclick="getcontent(this); return truefalseFunction(x);">Password and username ONT Modem Telkom Indihome</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Protect-Modem-And-Webfig-Pages-Using-Internal-Proxy.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Modem And Webfig Pages Using Internal Proxy</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Pseudo-Random-Number-Generator.html" onclick="getcontent(this); return truefalseFunction(x);">Pseudo Random Number Generator</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Ping-ICMP-To-Routing-ISP-Games.html" onclick="getcontent(this); return truefalseFunction(x);">Ping ICMP To Routing ISP Games</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/port-game-online-pc-games.html" onclick="getcontent(this); return truefalseFunction(x);">Port Game Online for PC Games</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/port-game-online-mobile-games.html" onclick="getcontent(this); return truefalseFunction(x);">Port Game Online for Mobile Games</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/port-game-online-web-games.html" onclick="getcontent(this); return truefalseFunction(x);">Port Game Online for Web Games</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Protect-Router-from-Port-Scanner.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Router from Port Scanner</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/protect-connection-with-anti-netcut.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Connection With ANTI NETCUT</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Protect-web-open-porxy.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Open Web proxy</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Protect-Open-Recursive-DNS.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Open Recursive DNS</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/protect-default-service-port.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Default Port Service From WAN</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/protect-mikrotik-from-ddos.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Router From DDOS Attacks</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/protect-mikrotik-from-exploit.html" onclick="getcontent(this); return truefalseFunction(x);">Protect Router From Exploit (VULNERABILITY)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/port-knocking-icmp.html" onclick="getcontent(this); return truefalseFunction(x);">Port Knocking Maker or Generator Icmp + Packet Size</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Parse-file-to-add-ppp-secrets.html" onclick="getcontent(this); return truefalseFunction(x);">Parse File To Add PPP Secrets</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Print-function.html" onclick="getcontent(this); return truefalseFunction(x);">Print Function</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Parent-Simple-Queue-Always-On-Top.html" onclick="getcontent(this); return truefalseFunction(x);">Parent Simple Queue Always On Top</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/paypal-with-hotspot-and-walled-garden-bypass.html" onclick="getcontent(this); return truefalseFunction(x);">Paypal With Hotspot And Walled Garden Bypass</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/PPP-Keepalive-ping.html" onclick="getcontent(this); return truefalseFunction(x);">PPP Keepalive Ping</a></p>
+              </td>
+            </tr>
+            <!-- Q -->
+            <tr>
+              <td><span id="Q" style="margin-left:5px; font-weight:bold">Q</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Remove-Default-Configuration.html" onclick="getcontent(this); return truefalseFunction(x);">Quick Set Remove Config to Default Configuration</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Queue-Tree-And-E-Mailing-Stats.html" onclick="getcontent(this); return truefalseFunction(x);">Queue Tree And E-Mailing Stats</a></p>
+              </td>
+            </tr>
+            <!-- R -->
+            <tr>
+              <td><span id="R" style="margin-left:5px; font-weight:bold">R</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/restore-mac-address-to-default-interface.html" onclick="getcontent(this); return truefalseFunction(x);">Restore MAC-Address to Default Interface</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Remove-Default-Simple-Queue-from-Hotspot.html" onclick="getcontent(this); return truefalseFunction(x);">Remove Default Simple Queue From Hotspot</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Routing-FailOver-with-2-ISP-gateway.html" onclick="getcontent(this); return truefalseFunction(x);">Routing FailOver with 2 ISP (gateway)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Routing-FailOver-with-3-ISP-gateway.html" onclick="getcontent(this); return truefalseFunction(x);">Routing FailOver with 3 ISP (gateway)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Reset-Mikrotik-via-Script-from-Terminal.html" onclick="getcontent(this); return truefalseFunction(x);">Reset Mikrotik via Script from Terminal</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Remove-Files-On-Mikrotik.html" onclick="getcontent(this); return truefalseFunction(x);">Remove or Delete Files On Mikrotik</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/remote-ip-public-static.html" onclick="getcontent(this); return truefalseFunction(x);">Remote IP Public Static For Secondary Gateway</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Read-and-write-large-files.html" onclick="getcontent(this); return truefalseFunction(x);">Read and Write Large Files</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Resolve-host-name.html" onclick="getcontent(this); return truefalseFunction(x);">Resolve host-name</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/reset-counter.html" onclick="getcontent(this); return truefalseFunction(x);">Reset All Counter</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/fail-over-recursive-gateway.html" onclick="getcontent(this); return truefalseFunction(x);">Recursive Gateway Fail over</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/rebuild-database-User-Manager.html" onclick="getcontent(this); return truefalseFunction(x);">Rebuild DataBase On User Manager</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Reset-DataBase-User-Manager-to-default.html" onclick="getcontent(this); return truefalseFunction(x);">Reset DataBase User Manager</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Routing-Via-A-Dhcp-Allocated-Gateway.html" onclick="getcontent(this); return truefalseFunction(x);">Routing Via A Dhcp Allocated Gateway</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Reboot-mikrotik-from-terminal.html" onclick="getcontent(this); return truefalseFunction(x);">Reboot or Restart Mikrotik From Terminal</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/remove-firewall-address-lists.html" onclick="getcontent(this); return truefalseFunction(x);">Remove Firewall IP Address Lists From Script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Removing-Busy-Leases-From-Dhcp-Pool.html" onclick="getcontent(this); return truefalseFunction(x);">Removing Busy Leases From Dhcp Pool</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Reboot-Boards-due-to-low-Memory-with-notification.html" onclick="getcontent(this); return truefalseFunction(x);">Reboot Boards due to low Memory with notification</a></p>
+              </td>
+            </tr>
+            <!-- S -->
+            <tr>
+              <td><span id="S" style="margin-left:5px; font-weight:bold">S</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/sending-your-self-an-e-mail-with-dsl-interface-ip-address.html" onclick="getcontent(this); return truefalseFunction(x);">Sending Your Self An E-Mail With Dsl Interface Ip Address</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/sending-text-out-over-a-serial-port.html" onclick="getcontent(this); return truefalseFunction(x);">Sending Text Out Over A Serial Port</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Script-to-Create-Directory.html" onclick="getcontent(this); return truefalseFunction(x);">Script to Create Directory</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Scheduled-Check-For-Loaded-Interfaces.html" onclick="getcontent(this); return truefalseFunction(x);">Scheduled Check For Loaded Interfaces</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Scheduled-WAN-Disconnect.html" onclick="getcontent(this); return truefalseFunction(x);">Scheduled WAN Disconnect</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/setup-and-troubleshooting-routeros-email-function.html" onclick="getcontent(this); return truefalseFunction(x);">Setup And Troubleshooting Routeros Email Function</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/super-mario-bross-theme-sound-beep.html" onclick="getcontent(this); return truefalseFunction(x);">Super Mario Bross Theme Sound Beep</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Setting-NTP-Network-Time-Protocol.html" onclick="getcontent(this); return truefalseFunction(x);">SNTP Client or NTP Network Time Protocol</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Solution-Hotspot-login-Page-LB-PCC.html" onclick="getcontent(this); return truefalseFunction(x);">Solution For Hotspot Login Page with LB PCC</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Signalorg-Mangle-And-Queue.html" onclick="getcontent(this); return truefalseFunction(x);">Signal.org Mangle And Queue</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Speedtest-Regexp-Layer7.html" onclick="getcontent(this); return truefalseFunction(x);">Speedtest Regexp Layer-7</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/strip-ip-address-netmask.html" onclick="getcontent(this); return truefalseFunction(x);">Strip IP Address without netmask</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/A-script-to-set-up-WAN-or-LAN-or-WLAN-to-get-you-started.html" onclick="getcontent(this); return truefalseFunction(x);">Set Up WAN/LAN/WLAN To Get You Started</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Setting-Static-DNS-Record-For-Each-DHCP-Lease.html" onclick="getcontent(this); return truefalseFunction(x);">Setting Static DNS Record For Each DHCP Lease</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Send-Email-About-Reboot.html" onclick="getcontent(this); return truefalseFunction(x);">Send Email About Reboot</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Securing-L2TP-Server-for-IPSec.html" onclick="getcontent(this); return truefalseFunction(x);">Securing L2TP Server for IPSec</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/sync-address-list-from-dns-lookup-results.html" onclick="getcontent(this); return truefalseFunction(x);">Sync Address List from DNS Lookup Results</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/SXT-5HnD-Alignment-Script.html" onclick="getcontent(this); return truefalseFunction(x);">SXT 5HnD Alignment Script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Sync-Address-List-with-DNS-Cache.html" onclick="getcontent(this); return truefalseFunction(x);">Sync Address List with DNS Cache</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Sending-Mails-When-Battery-Low.html" onclick="getcontent(this); return truefalseFunction(x);">Sending Mails When Battery Low (UPS Script)</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/sending-power-on-notification-to-telegram.html" onclick="getcontent(this); return truefalseFunction(x);">Sending Power On Notification To Telegram</a></p>
+              </td>
+            </tr>
+            <!-- T -->
+            <tr>
+              <td><span id="T" style="margin-left:5px; font-weight:bold">T</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Mikrotik-Terminal-Command-Line-and-Keyboard-Command.html" onclick="getcontent(this); return truefalseFunction(x);">Terminal Command Line and Keyboard Command</a></p>
+              </td>
+            </tr>
+            <!-- U -->
+            <tr>
+              <td><span id="U" style="margin-left:5px; font-weight:bold">U</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Updating-The-Firmware-From-Terminal.html" onclick="getcontent(this); return truefalseFunction(x);">Updating The Firmware From Terminal</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/use-mikrotik-as-fail2ban-firewall.html" onclick="getcontent(this); return truefalseFunction(x);">Use Mikrotik as Fail2ban firewall</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Use-string-as-function.html" onclick="getcontent(this); return truefalseFunction(x);">Use String as Function</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/update-static-dns-entries-every-10-minutes.html" onclick="getcontent(this); return truefalseFunction(x);">Update Static DNS Entries Every 10 Minutes</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/UPnP-Multi-WAN.html" onclick="getcontent(this); return truefalseFunction(x);">UPnP Multi-WAN</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Use-Functions-in-CMD-Script.html" onclick="getcontent(this); return truefalseFunction(x);">Use Functions in CMD Script</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Use-Host-Names-In-Firewall-Rules.html" onclick="getcontent(this); return truefalseFunction(x);">Use Host Names In Firewall Rules</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Using-scripting-to-overcome-the-inability-to-specify-number-ranges-on-the-command-line.html" onclick="getcontent(this); return truefalseFunction(x);">Using Scripting To Overcome The Inability To Specify Number Ranges On The Command Line</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Using-Fetch-and-Scripting-to-add-IP-Address-Lists.html" onclick="getcontent(this); return truefalseFunction(x);">Using Fetch and Scripting to add IP Address Lists</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/upnp-redirect-the-port-to-mikrotik-device.html" onclick="getcontent(this); return truefalseFunction(x);">UPnP: Redirect The Port To Mikrotik Device</a></p>
+              </td>
+            </tr>
+            <!-- V -->
+            <tr>
+              <td><span id="V" style="margin-left:5px; font-weight:bold">V</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/vidio-domain-list.html" onclick="getcontent(this); return truefalseFunction(x);">Vidio.com Domain List</a></p>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Virus-and-Malware-Port-Blocking.html" onclick="getcontent(this); return truefalseFunction(x);">Virus and Malware Port Blocking</a></p>
+              </td>
+            </tr>
+            <!-- W -->
+            <tr>
+              <td><span id="W" style="margin-left:5px; font-weight:bold">W</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/wms-auto-login.html" onclick="getcontent(this); return truefalseFunction(x);">WMS or Wifi.id Auto Login</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Write-simple-queue-stats-in-multiple-files.html" onclick="getcontent(this); return truefalseFunction(x);">Write simple queue stats in multiple files</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/wake-on-lan-before-connection-to-remote-desktop.html" onclick="getcontent(this); return truefalseFunction(x);">Wake On Lan Before Connection To Remote Desktop</a></p>
+              </td>
+            </tr>
+            <!-- X -->
+            <tr>
+              <td><span id="X" style="margin-left:5px; font-weight:bold">X</span></td>
+            </tr>
+            <!-- Y -->
+            <tr>
+              <td><span id="Y" style="margin-left:5px; font-weight:bold">Y</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Youtube-Restricted-Mode-use-DNS-Static.html" onclick="getcontent(this); return truefalseFunction(x);">Youtube Restricted Mode use DNS Static</a></p>
+              </td>
+            </tr>
+            <!-- Z -->
+            <tr>
+              <td><span id="Z" style="margin-left:5px; font-weight:bold">Z</span></td>
+            </tr>
+            <tr>
+              <td>
+                <p><a class="linkPress" href="https://buananetpbun.github.io/mikrotik/Complete-zoom-mangle-and-queue-.html" onclick="getcontent(this); return truefalseFunction(x);">Zoom Meeting Mangle and Queue</a></p>
+              </td>
+            </tr>
+            <!-- WELCOME -->
+            <tr>
+              <td>
+                <p><a class="linkPress active1" href="https://buananetpbun.github.io/mikrotik/welcome.html" onclick="getcontent(this); return truefalseFunction(x);">Welcome</a></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class='backtotop'><a href='#top'>Back to Top</a></div>
+      </div>
+      <div class="content">
+        <div class="list-output-content">
+          <div id="reloadads1" style="width:100%; height:90px; margin-top:10px; margin-left:5px; margin-bottom:10px">
+            <!-- MIKROTIK SCRIPT DB3 -->
+            <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-9740800920365268"
+              data-ad-slot="4637807296"></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> 
+          </div>
+          <div class="welcome" id="welcome">
+            <h2>COMPLETE MIKROTIK SCRIPT ROUTEROS DATABASE</h2>
+            <pre>
+<span style="line-height: 1.4;">
+We try to collect all the scripts found on the internet and combine them in one DataBase. Scripting host provides a way to automate some router maintenance tasks by means of executing user-defined scripts bounded to some event occurrence. Scripts can be stored in the Script repository or can be written directly to the console. The events used to trigger script execution include, but are not limited to the System Scheduler, the Traffic Monitoring Tool, and the Netwatch Tool generated events.</span>
+<span style="font-size:14px; font-weight:bold;">
+MMM      MMM       KKK                          TTTTTTTTTTT      KKK
+MMMM    MMMM       KKK                          TTTTTTTTTTT      KKK
+MMM MMMM MMM  III  KKK  KKK  RRRRRR     OOOOOO      TTT     III  KKK  KKK
+MMM  MM  MMM  III  KKKKK     RRR  RRR  OOO  OOO     TTT     III  KKKKK
+MMM      MMM  III  KKK KKK   RRRRRR    OOO  OOO     TTT     III  KKK KKK
+MMM      MMM  III  KKK  KKK  RRR  RRR   OOOOOO      TTT     III  KKK  KKK
+
+Mikrotik RouterOS Script          https://buananetpbun.github.io/mikrotik</span>
+<span style="line-height: 1.4; text-align:justify !important;">
+Enjoy the most complete script to make it easier for you to learn Mikrotik RouterOS scripts!
+
+Send Your Mikrotik RouterOS Script For Contribution -> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbuzYtFCI57y7nJHgnL1w0aiCY5g45Uon90u3XQm6pAi56BQ/viewform"><b>Upload</b></a></span>
+</pre>
+          </div>
+          <iframe id="change-iframe-url" src=""></iframe>
+          <div id="reloadads2" style="width:100%; height:90px; margin-top:10px; margin-left:5px;">
+            <!-- MIKROTIK SCRIPT DB3 -->
+            <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-9740800920365268"
+              data-ad-slot="4637807296"></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> 
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+        <div style="margin-top:1px; color:#888; font-size:11px">
+          Project by <a target="_blank" href="https://github.com/buananetpbun">Agus Ramadhani</a> site <a target="_blank" href="https://www.o-om.com/">o-om.com</a> P.Bun 74112, INDONESIA
+        </div>
+      </div>
+    </div>
+    <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen">
+      <div id="center-screen1" class="center-screen"><div style="font-size:20px; background-color:#333; padding:20px; border-radius:10px">Please Activate Your Email.<br><button id="verify">VERIFY YOUR E-MAIL NOW</button><div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown2"></div></div></div>
+      <div id="center-screen2" class="center-screen"><div style="font-size:20px;background-color:#333; padding:20px; border-radius:10px">GET PREMIUM ACCESS<br>PLEASE SUBSCRIBE<br><button id="not-subscribe">GO TO BUANANET.COM</button><div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown3">redirected to the new domain https://buananet.com</div></div>
+	  </div>	  
+    </div>
+    <div oncontextmenu="return false;" id="myLogin" class="modal-login">
+      <div class="modal-content">
+        <div class="forms-out">
+          <span class="myButtonGoogle">
+          <img alt="google" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiElEQVRoge2Xb0gTcRjHp5tlYJRlkRK9iF5I9ke7O5WhnbstU+yPu2OVhQTSu5IIiiCqm5EFvYgiCbJId3OQKxAiNyWwF/2BikFpRBhoyW41ndsEZyXl9Zz5Z+q8uXm79eK+8GUwdj8+3+f3/J77TaGQJUuWLFmyZE2rT4dsZQnsmFOL3QAzLIE2s1qszkmgNEvklg+o1cvjzThHvfj2lQB7HmC7AZYL41EI+JQlkF3x5lZwCkUCQJ8EDy4AfI6dBPbimwbLigu8qyR7zXglowCfFWKY1WGHJYX/qsvJgJ7+uFj4ILdyBoNSEnj+EDq16Aex4KEQ9u6STUslgefFalFrmJYIwOd9VoNUuDR5CFuMZLI6pMCpQU/D969nwbf14niyZPAwafYIVpRATSyOpIVbA3bwO7hdUniOViS6D2W1hKy6FhuDsXhioWt92Y2k9+XnL4sl7xwF7Mp9I3YV5zmz4dX4LJ8ZwigpTDQCeCsfgPfQ7dT30ALuieo7JJsg0YqzKpQjNpV/MgDvwKNkt6ss28FfD+LNF1Y/25ZkBsNP+UmSh6NxldCzGqO3mjB670RqHT2QIVqAgE25N2QAm8oe7lnC6GsFcxG7xlsoWoARe2Jl6ADKu7EKUFTjo2IeACbTvVgF0NC+KtECxKOFtEb/QdECzHuIbSqPwSo8QqNvIS8uWgB+jAbsqqFg+GFbkvtUs/oNYqL2Cz2L0+6Ugqv+1FAupv2rCNrbHypA4eX+dNEC8Ap+kfW3Jr8rtZS6UDPFoQzlCLcL80lDe3eG7n9vj6jwvCbPwdvHaS/zm8pHx+GnTF6MdD2DlVNqjL7nIQMYfbdED8Bf5q48zG6ZCT5hhhoDH49gtQQect4zQPtzRQ/ACzHry0IGmDBiphowU/lqoTVyzfr16pumeeGhfTpiAj8VgqEeCIWAdhpGGLIeNVEkyui3oBZyIwTfgZrIStglC2Imf/C/y6s/21FUM/BrFvxv7SVfTkwDbLYaUqDSXcIhFmas8UgXXvvZOd373gsxhZ8U1mBYhzJkpxghYEcHC661d8Kbt4mmuURJAvBCLBVpANC2+BDkH4Q5UIvTnOCtNjbiFAnQ39XQUp6oqm8mezBGXyI9+CwhVsMKADoHh/dTWPB/I9cBoY/iz4T/S8RFWCOVBaBV0BrXwSYI1QyVroMzQwN0xTZGvzbejLJkyZIlS9Z/o7/Q0bCX5++bJAAAAABJRU5ErkJggg==">
+          <span id="google-sign-in">Sign-In with Google</span>
+          </span>         
+          <div class="forms-in">
+            <div id="registration-page" class="hide">
+              <h2>SIGN UP</h2>
+              <br><br><br>
+              <label>E-Mail <span style="color:#ff6600">*</span></label>
+              <input type="email" id="registration-email" placeholder="E-Mail">
+              <label>Confirm E-mail <span style="color:#ff6600">*</span></label> 
+              <input type="email" id="registration-reemail" autocomplete="off" placeholder="Confirm E-Mail">
+              <label>Password <span style="color:#ff6600">*</span><span style="font-weight:normal; font-size:13px"></span></label>
+              <input type="password" id="registration-password" placeholder="Password">
+              <span style="float:left; margin-top:8px" id="captcha-signup"></span><input autocomplete="off" style="margin-top:10px;width:140px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignUp">
+              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
+              <br>
+            </div>
+            <div id="login-page">
+              <h2>SIGN IN</h2>
+              <br><br><br>
+              <label>E-Mail</label>
+              <input type="email" id="login-email" placeholder="E-Mail">
+              <label>Password</label>
+              <input type="password" id="login-password" placeholder="Password">
+              <span style="float:left; margin-top:8px" id="captcha-signin"></span><input autocomplete="off" style="margin-top:10px;width:140px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignIn">
+              <button style="width:100% !important;" id="login">Login</button>
+              <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
+              <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+            </div>
+          </div>
+          <div style="clear:both"></div>
+          <div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown"></div>
+        </div>
+      </div>
+    </div>
+    <div oncontextmenu="return false;" id="myModal" class="modal">
+      <div style="width: 605px;" class="modal-content">
+        <span class="close">&times;</span>
+        <div style="text-align:justify; float:right;margin-right:10px">
+          <span style="font-size:14px;">Bank Transfer via [ QRIS ]</span><br><span style="font-size:13px;color:#ff6600;">BUANANET-PBUN - AGUS R.</span>
+          <div style="margin-right:0px; padding-top:3px">
+            <img alt="qris" style="border:7px solid #ffffff; border-radius:10px" src="data:image/png;base64,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">
+          </div>
+        </div>
+        <div style="font-size:20px;font-weight:bold">Want to give me a Gift ?</div>
+        <div style="font-weight:bold; margin-top:10px; color:#fff !important">
+          <p><span style="color:#ffffff !important; font-size:16px">Saweria</span> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>          
+		  <p><span style="color:#ffffff !important; font-size:16px">PayPal</span> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+		  <p><span style="color:#ffffff !important; font-size:16px">Wise</span> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://wise.com/share/agusr112">wise.com/share/agusr112</a></p>		  
+          <p><span style="color:#ffffff !important; font-size:16px">Buymeacoffee</span> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
+          <p><span style="color:#ffffff !important; font-size:16px">Bitcoin</span> <span style="font-size:11px;color:#ff6600">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+          <br>
+          <div style="float:left;margin-right:3px; margin-top:0px">
+            <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+          </div>
+          <div style="margin-top:0px">    
+            <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+            <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+            <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+      <div>
+        <div id="dialogboxhead"></div>
+        <div id="dialogboxbody"></div>
+        <div id="dialogboxfoot"></div>
+      </div>
+    </div>
+    <script src="../login/login.js"></script>
+    <script>
+
+document.querySelector("#year").innerHTML = new Date().getFullYear();
+let div_disable = document.getElementById('sidebar_');
+elements_disable = div_disable.querySelectorAll('button, input, select, textarea, checkbox, radio');
+for (i = 0; i < elements_disable.length; i++) {
+elements_disable[i].setAttribute('disabled', true);
+}
+
+      var _0x1c0c08=_0x2093;(function(_0x5d0f63,_0x437eb4){var _0x1c16af=_0x2093,_0xc066d1=_0x5d0f63();while(!![]){try{var _0x2b24f2=-parseInt(_0x1c16af(0x1a2))/0x1+parseInt(_0x1c16af(0x18f))/0x2+parseInt(_0x1c16af(0x180))/0x3*(parseInt(_0x1c16af(0x189))/0x4)+-parseInt(_0x1c16af(0x19e))/0x5+parseInt(_0x1c16af(0x192))/0x6*(parseInt(_0x1c16af(0x199))/0x7)+-parseInt(_0x1c16af(0x19d))/0x8+-parseInt(_0x1c16af(0x1a1))/0x9*(-parseInt(_0x1c16af(0x19f))/0xa);if(_0x2b24f2===_0x437eb4)break;else _0xc066d1['push'](_0xc066d1['shift']());}catch(_0x4d81b1){_0xc066d1['push'](_0xc066d1['shift']());}}}(_0xb894,0xbee86));function truefalseFunction(_0x44ce18){var _0x76d35c=_0x2093;return _0x44ce18[_0x76d35c(0x18a)]?!![]:![];}var host1=_0x1c0c08(0x17f),host2=_0x1c0c08(0x182),host3=_0x1c0c08(0x188),host4='github',host5='io',host6=host1+host2+host3+'.'+host4+'.'+host5;window['location']['href']!==host6+'/mikrotik/index.html'&&location[_0x1c0c08(0x1a4)](host6+_0x1c0c08(0x191));var x=window[_0x1c0c08(0x196)](_0x1c0c08(0x198));function _0x2093(_0x5ee661,_0x518cbc){var _0xb89434=_0xb894();return _0x2093=function(_0x2093bb,_0x3034e5){_0x2093bb=_0x2093bb-0x17e;var _0x236d71=_0xb89434[_0x2093bb];return _0x236d71;},_0x2093(_0x5ee661,_0x518cbc);}truefalseFunction(x),x[_0x1c0c08(0x194)](truefalseFunction),document[_0x1c0c08(0x19a)](_0x1c0c08(0x17e))['hidden']=!![];function reloadads1(){var _0x10a694=_0x1c0c08;document[_0x10a694(0x19a)](_0x10a694(0x190))[_0x10a694(0x1a8)]=document[_0x10a694(0x19a)]('reloadads1')[_0x10a694(0x1a8)];}function reloadads2(){var _0x5c663a=_0x1c0c08;document['getElementById']('reloadads2')['innerHTML']=document['getElementById']('reloadads2')[_0x5c663a(0x1a8)];}function content(_0x35c6ed){var _0x2707fb=_0x1c0c08,_0x39d88c=document[_0x2707fb(0x19a)](_0x2707fb(0x17e));_0x39d88c[_0x2707fb(0x197)]('src',_0x35c6ed),document[_0x2707fb(0x19a)]('change-iframe-url')['hidden']=![],document[_0x2707fb(0x19a)](_0x2707fb(0x19c))[_0x2707fb(0x193)]=!![];}function getcontent(_0x3ff643){var _0x5b7c21=_0x1c0c08,_0x35065c=document[_0x5b7c21(0x19a)]('change-iframe-url'),_0x4ee688=_0x3ff643['getAttribute'](_0x5b7c21(0x1a7));_0x35065c[_0x5b7c21(0x197)](_0x5b7c21(0x18c),_0x4ee688),document[_0x5b7c21(0x19a)](_0x5b7c21(0x17e))[_0x5b7c21(0x193)]=![],document[_0x5b7c21(0x19a)]('welcome')[_0x5b7c21(0x193)]=!![],reloadads1(),reloadads2();}function myFunctionSearch(){var _0x4adcfd=_0x1c0c08,_0x48eafd,_0x5d42aa,_0x164367,_0x4939f1,_0x455ff2,_0x1c3f2c,_0x1ca6eb;_0x48eafd=document[_0x4adcfd(0x19a)](_0x4adcfd(0x186)),_0x5d42aa=_0x48eafd[_0x4adcfd(0x187)]['toUpperCase'](),_0x164367=document[_0x4adcfd(0x19a)]('myTable'),_0x4939f1=_0x164367['getElementsByTagName']('tr');for(_0x1c3f2c=0x0;_0x1c3f2c<_0x4939f1['length'];_0x1c3f2c++){_0x455ff2=_0x4939f1[_0x1c3f2c][_0x4adcfd(0x184)]('td')[0x0],_0x455ff2&&(_0x1ca6eb=_0x455ff2[_0x4adcfd(0x18d)]||_0x455ff2[_0x4adcfd(0x1a6)],_0x1ca6eb['toUpperCase']()[_0x4adcfd(0x185)](_0x5d42aa)>-0x1?_0x4939f1[_0x1c3f2c][_0x4adcfd(0x1a5)][_0x4adcfd(0x18b)]='':_0x4939f1[_0x1c3f2c][_0x4adcfd(0x1a5)][_0x4adcfd(0x18b)]='none');}}var header=document[_0x1c0c08(0x19a)](_0x1c0c08(0x181)),btns=header['getElementsByClassName'](_0x1c0c08(0x1a3));for(var i=0x0;i<btns[_0x1c0c08(0x18e)];i++){btns[i]['addEventListener'](_0x1c0c08(0x1a0),function(){var _0xc43121=_0x1c0c08,_0x3714b4=document[_0xc43121(0x195)]('active1');_0x3714b4[0x0][_0xc43121(0x183)]=_0x3714b4[0x0]['className'][_0xc43121(0x1a4)](_0xc43121(0x19b),''),this['className']+=_0xc43121(0x19b);});}function _0xb894(){var _0x47304a=['https://','52803nsSgZY','myTable','buananet','className','getElementsByTagName','indexOf','myInput','value','pbun','36jFYTcP','matches','display','src','textContent','length','197556eqwijr','reloadads1','/mikrotik/index.html','1822164XmaMym','hidden','addListener','getElementsByClassName','matchMedia','setAttribute','(max-width:\x201024px)','7klxMkS','getElementById','\x20active1','welcome','7699440mKnBCx','5486565IpGHDl','70byCeIl','click','4822533AAFaYC','1470039OiwOrH','linkPress','replace','style','innerText','href','innerHTML','change-iframe-url'];_0xb894=function(){return _0x47304a;};return _0xb894();}	
+    </script>
+		
+  </body>
+</html>

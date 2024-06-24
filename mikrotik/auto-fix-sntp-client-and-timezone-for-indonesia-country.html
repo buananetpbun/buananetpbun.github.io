@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Fix SNTP and Clock for Indonesia Timezone - MikroTik Script RouterOS</title>
+<meta content='Auto Fix SNTP and Clock for Indonesia Timezone - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+<h1>Auto Fix SNTP and Clock for Indonesia Timezone - MikroTik Script RouterOS</h1>
+<pre>Time is very important for computers to do the right thing. If your clock is wrong by a minute authenticator apps won't work. Wrong by an hour and Windows Networking has problems. Wrong by days and you risk SSL certificates expiring earlier (or later) than they should. VPNs may stop working. Datestamps on logs will be misleading. Generally, wrong time is a Bad Thing, and what is worse is the time the hotspot is out of sync with the Hotpspot Billing. Because Correct time is very important.
+
+Manual Setup:
+
+<code class="routeros">#==============================================
+# Auto Repair TimeZone and clock By BuanaNET
+#==============================================
+# Waktu Indonesia Barat (WIB)  = +07:00
+# Waktu Indonesia Tengah (WITA) = +08:00
+# Waktu Indonesia Timur (WIT)  = +09:00 
+#==============================================
+# Ganti "+07:00" sesuaikan dengan daerah masing-masing
+#==============================================
+/system clock manual set time-zone="+07:00";
+/system clock set time-zone-autodetec=no;
+/system clock set time-zone-name="manual";
+/ip cloud set update-time=no;
+:local ntpServer "asia.pool.ntp.org";
+:local primary [resolve $ntpServer];
+:local secondary [resolve $ntpServer];
+/system ntp client set primary-ntp $primary;
+/system ntp client set secondary-ntp $secondary;
+/system ntp client set enabled=yes;</code>
+Complete Script With Scheduler
+
+<code class="routeros">/system scheduler
+add interval=1d name=SETTING-TIMEZONE on-event="#=============================\
+=================\r\
+# Auto Repair TimeZone and clock By BuanaNET\r\
+#==============================================\r\
+# Waktu Indonesia Barat (WIB)  = +07:00\r\
+# Waktu Indonesia Tengah (WITA) = +08:00\r\
+# Waktu Indonesia Timur (WIT)  = +09:00 \r\
+#==============================================\r\
+# Ganti \"+07:00\" sesuaikan dengan daerah masing-masing\r\
+#==============================================\r\
+/system clock manual set time-zone=\"+07:00\";\r\
+/system clock set time-zone-autodetec=no;\r\
+/system clock set time-zone-name=\"manual\";\r\
+/ip cloud set update-time=no;\r\
+:local ntpServer \"asia.pool.ntp.org\";\r\
+:local primary [resolve \$ntpServer];\r\
+:local secondary [resolve \$ntpServer];\r\
+/system ntp client set primary-ntp \$primary;\r\
+/system ntp client set secondary-ntp \$secondary;\r\
+/system ntp client set enabled=yes;" policy=\
+ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup</code>
+Credit: www.o-om.com
+</pre>
+
+<br>
+<div id="hidelink"></div>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>

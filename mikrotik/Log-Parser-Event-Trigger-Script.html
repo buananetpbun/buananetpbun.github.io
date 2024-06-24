@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log Parser - Event Trigger Script - MikroTik Script RouterOS</title>
+<meta content='Log Parser - Event Trigger Script - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+<h1>Log Parser - Event Trigger Script - MikroTik Script RouterOS</h1>
+<pre>
+This script will parse a log buffer, and take specified action if a log entry has been added.
+
+There is an official "detect new log entry" script Manual:Scripting-examples#Detect_new_log_entry, however, this will only detect the last log entry. If multiple log entries have occurred since last check, you would only receive the last one.
+
+This script will solve that problem by first reading the log buffer to internal memory, clearing the log buffer, then parsing the log entries (now loaded in memory). This allows for a very accurate log reading, and insures you will not miss multiple log entries before the next script execution. Also, it will produce a standard time format when reading the logs (mmm/dd/yyyy hh:mm:ss), meaning no extra conversion is necessary when reading log entries from the current day, or current year. For more details on this visit: [[1]] This script is also very fast, as it uses print as-value instead of find to read the log buffer.
+
+First, you must create a memory log buffer to hold the information you want to parse.
+
+<code class="routeros">/system logging action add memory-lines=100 memory-stop-on-full=no name=logParse target=memory</code>
+Next, create the topics to store in the newly created log buffer.
+
+<code class="routeros">/system logging add action=logParse disabled=no prefix="" topics=system,info
+/system logging add action=logParse disabled=no prefix="" topics=system,error,critical
+/system logging add action=logParse disabled=no prefix="" topics=dhcp</code>
+Log Parser Script
+
+<code class="routeros"># Script Name: Log-Parser
+# This script reads a specified log buffer.  At each log entry read,
+# the global variable 'logParseVar' is set to "<log entry time>,<log entry topics>,<log entry message>"
+# then a parser action script is run.  The parser action script reads the global variable, and performs specified actions.
+# The log buffer is then cleared, so only new entries are read each time this script gets executed.
+# Set this to a "memory" action log buffer
+:local logBuffer "logParse"
+# Set to name of parser script to run against each log entry in buffer
+:local logParserScript "Log-Parser-Script"
+# Internal processing below....
+# -----------------------------------
+:global logParseVar ""
+:local loglastparsetime
+:local loglastparsemessage
+:local findindex
+:local property
+:local value
+:local logEntryTopics
+:local logEntryTime
+:local logEntryMessage
+:local curDate
+:local curMonth
+:local curDay
+:local curYear
+:local clearedbuf
+:local lines
+# Get current date settings
+:set curDate [/system clock get date]
+:set curMonth [:pick [:tostr $curDate] 0 3]
+:set curDay [:pick [:tostr $curDate] 4 6]
+:set curYear [:pick [:tostr $curDate] 7 11]
+:set clearedbuf 0
+:foreach rule in=[/log print as-value where buffer=($logBuffer)] do={
+# Now all data is collected in memory..
+# Clear log buffer right away so new entries come in
+   :if ($clearedbuf = 0) do={
+      /system logging action {
+         :set lines [get ($logBuffer) memory-lines]
+         set ($logBuffer) memory-lines 1
+         set ($logBuffer) memory-lines $lines
+      }
+      :set clearedbuf 1
+   }
+# End clear log buffer
+   :set logEntryTime ""
+   :set logEntryTopics ""
+   :set logEntryMessage ""
+
+# Get each log entry's properties
+   :foreach item in=[:toarray $rule] do={
+      :set findindex [:find [:tostr $item] "="]
+      :set property [:tostr [:pick [:tostr $item] 0 $findindex]]
+      :set value [:tostr [:pick [:tostr $item] ($findindex + 1) [:len [:tostr $item]]]]
+      :if ([:tostr $property] = "time") do={ :set logEntryTime $value }
+      :if ([:tostr $property] = "topics") do={ :set logEntryTopics $value }
+      :if ([:tostr $property] = "message") do={ :set logEntryMessage $value }
+# end foreach item
+   }
+# Set logEntryTime to full time format (mmm/dd/yyyy HH:MM:SS)
+   :set findindex [:find [:tostr $logEntryTime] " "]
+# If no spaces are found, only time is given (HH:MM:SS), insert mmm/dd/yyyy
+   :if ([:len $findindex] = 0) do={
+      :set logEntryTime ($curMonth . "/" . $curDay . "/" . $curYear . " " . \
+                                    [:tostr $logEntryTime])
+   }
+# Only (mmm/dd HH:MM:SS) is given, insert year
+   :if ($findindex = 6) do={
+      :set logEntryTime ([:pick [:tostr $logEntryTime] 0 $findindex] . "/" . $curYear . \
+                                    [:pick [:tostr $logEntryTime] $findindex [:len [:tostr $logEntryTime]]])
+   }
+# Only (mmm HH:MM:SS) is given, insert day and year
+   :if ($findindex = 3) do={
+      :set logEntryTime ([:pick [:tostr $logEntryTime] 0 $findindex] . "/" . $curDay . "/" . $curYear . \
+                                    [:pick [:tostr $logEntryTime] $findindex [:len [:tostr $logEntryTime]]])
+   }
+# End set logEntryTime to full time format
+
+# Skip if logEntryTime and logEntryMessage are the same as previous parsed log entry
+   :if ($logEntryTime = $loglastparsetime && $logEntryMessage = $loglastparsemessage) do={
+   } else={
+#   Set logParseVar, then run parser script
+      :set logParseVar ($logEntryTime . "," . $logEntryTopics . "," . $logEntryMessage)
+      /system script run ($logParserScript)
+
+#   Update last parsed time, and last parsed message
+      :set loglastparsetime $logEntryTime
+      :set loglastparsemessage $logEntryMessage
+   }
+# end foreach rule
+} </code>
+Parser Action Script
+Next, create the parser action script that will run after each log entry is read.
+
+<code class="routeros"># Script Name: Log-Parser-Script
+#
+# This is an EXAMPLE script.  Modify it to your requirements.
+#
+# This script will work with all v3.x and v4.x
+# If your version >= v3.23, you can use the ~ operator to match against
+# regular expressions.
+# Get log entry data from global variable and store it locally
+:global logParseVar
+:local logTime [:pick [:toarray $logParseVar] 0]
+:local logTopics [:pick [:toarray $logParseVar] 1]
+:local logMessage [:pick [:toarray $logParseVar] 2]
+:set logParseVar ""
+:local ruleop
+:local loguser
+:local logsettings
+:local findindex
+:local tmpstring
+# Uncomment to view the log entry's details
+#:put ("Log Time: " . $logTime
+#:put ("Log Topics: " . $logTopics)
+#:put ("Log Message: " . $logMessage)
+# Check for login failure
+:if ([:find [:tostr $logMessage] "login failure"] != "") do={
+   :beep frequency=90 length=500ms
+   :beep frequency=130 length=500ms
+   :put ("A login failure has occured.  Take some action")
+}
+# End check for login failure
+# Check for logged in users
+:if ([:find [:tostr $logMessage] "logged in"] != "") do={
+   :beep frequency=900 length=300ms
+   :beep frequency=1300 length=200ms
+   :put ("A user has logged in.")
+}
+# End check for logged in users
+# Check for configuration changes: added, changed, or removed
+:if ([:tostr $logTopics] = "system;info") do={
+   :set ruleop ""
+   :if ([:len [:find [:tostr $logMessage] "changed "]] > 0) do={ :set ruleop "changed" }
+   :if ([:len [:find [:tostr $logMessage] "added "]] > 0) do={ :set ruleop "added" }
+   :if ([:len [:find [:tostr $logMessage] "removed "]] > 0) do={ :set ruleop "removed" }
+
+   :if ([:len $ruleop] > 0) do={
+      :set tmpstring $logMessage
+      :set findindex [:find [:tostr $tmpstring] [:tostr $ruleop]]
+      :set tmpstring ([:pick [:tostr $tmpstring] 0 $findindex] . \
+                               [:pick [:tostr $tmpstring] ($findindex + [:len [:tostr $ruleop]]) [:len [:tostr $tmpstring]]])
+      :set findindex [:find [:tostr $tmpstring] " by "]
+      :set loguser ([:pick [:tostr $tmpstring] ($findindex + 4) [:len [:tostr $tmpstring]]])
+      :set logsettings [:pick [:tostr $tmpstring] 0 $findindex]
+
+      :put ($loguser . " " . $ruleop . " " . $logsettings . " configuration.  We should take a backup now.")
+   }
+}
+# End check for configuration changes
+# Check for DHCP lease assigned/deassigned
+:if ([:tostr $logTopics] = "dhcp;info") do={
+   :set ruleop ""
+   :if ([:len [:find [:tostr $logMessage] "assigned "]] > 0) do={ :set ruleop "assigned" }
+   :if ([:len [:find [:tostr $logMessage] "deassigned "]] > 0) do={ :set ruleop "deassigned" }
+
+   :if ([:len $ruleop] > 0) do={
+      :if ($ruleop = "assigned") do={
+         :put ("A new dhcp lease has been assigned.  Check the DHCP IP Pool addresses")
+      }
+      :if ($ruleop = "deassigned") do={
+         :put ("A dhcp lease has been removed.  Remove the host-name from static DNS")
+      }
+   }
+}
+# End check for new DHCP lease assigned </code>
+Now, you have a way to trigger events based on log entries (and any event in RouterOS that is logged).
+
+Credit: wiki.mikrotik.com
+</pre>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>

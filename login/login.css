@@ -1,0 +1,382 @@
+/* CUSTOM ALERT */
+#dialogoverlay {
+display: none;
+opacity: .5;
+position: fixed;
+top: 0px;
+left: 0px;
+background: #292929;
+width: 100%;
+z-index: 10;
+}
+
+#dialogbox {
+display: none;
+position: fixed;
+background: #000;
+border-radius: 5px;
+width: 400px;
+z-index: 10;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#dialogbox>div {
+border-radius: 5px;
+margin: 3px;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat;
+}
+
+#dialogbox>div>#dialogboxhead {
+background: #111;
+opacity: 0.5;
+font-weight: bold;
+font-size: 16px;
+padding: 10px;
+color: #fff;
+}
+
+#dialogbox>div>#dialogboxbody {
+font-weight: normal;
+font-size: 15px;
+padding: 20px;
+color: #ccc;
+}
+
+#dialogbox>div>#dialogboxfoot {
+padding: 10px;
+text-align: right;
+}
+
+/* The Main Menu */
+.mymenu {
+color:#292929 !important; 	
+z-index: 4;
+margin: 0 auto;
+background-color: #ffffff;
+width: 700px;
+border-radius: 0 0 5px 5px;
+border: 2px solid #ffffff;
+font-weight: bold;
+font-size: 15px;
+position: relative;
+padding-left:12px;
+padding-right:12px;
+margin-bottom:40px;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mymenu ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #ffffff;
+background: url("../img/made-for-mikrotik.png") no-repeat right !important;
+margin-right: 10px;
+}
+
+.mymenu li {
+float: left;
+}
+
+.mymenu li a {
+display: block;
+color: #31363A;
+text-align: center;
+padding: 8px 10px;
+text-decoration: none;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.mymenu li a:hover {
+background-color: #292929;
+color: #ffffff;
+border-radius:5px;
+}
+
+/* LOGIN Content */
+.forms-out {
+margin: 0 auto;
+padding: 0;
+font-size: 14px;
+}
+
+.forms-in {
+width: 100%;
+margin: 0 auto;
+color: white;
+padding: 0;
+font-size: 14px;
+}
+
+.forms-in div {
+padding: 0;
+max-width: 350px;
+margin: 0 auto;
+border-radius: 5px;
+margin-bottom: 15px;
+}
+
+.forms-in h3 {
+text-align: center;
+}
+
+.forms-in input {
+border: none;
+width: 100%;
+margin-bottom: 15px;
+padding: 10px;
+box-sizing: border-box;
+border-radius: 3px;
+}
+
+.forms-in button {
+border: none;
+padding: 7px 20px;
+border-radius: 4px;
+cursor: pointer;
+font-weight: bold;
+margin-top: 10px;
+margin-bottom: 15px;
+}
+
+.forms-in button:hover {
+opacity: 0.7;
+}
+
+.hide {
+display: none;
+}
+
+#forgot-password {
+cursor: pointer;
+}
+
+#forgot-password:hover {
+opacity: 0.7;
+}
+
+#show-register {
+cursor: pointer;
+}
+
+#show-register:hover {
+opacity: 0.7;
+}
+
+#show-login {
+cursor: pointer;
+}
+
+#show-login:hover {
+opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+display: none;
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 2;
+/* Sit on top */
+padding-top: 150px;
+/* Location of the box */
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.6);
+/* Black w/ opacity */
+}
+
+.modal-login {
+display: none;
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 3;
+/* Sit on top */
+padding-top: 150px;
+/* Location of the box */
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.6);
+/* Black w/ opacity */
+}
+
+.lock-screen {
+
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 1;
+/* Sit on top */
+padding-top: 150px;
+/* Location of the box */
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.6);
+/* Black w/ opacity */
+text-align: center;
+color: #fff;
+font-size: 20pt;
+font-weight: bold;
+}
+
+.center-screen {
+position: fixed;
+/* or absolute */
+top: 40%;
+left: 50%;
+/* bring your own prefixes */
+transform: translate(-50%, -50%);
+}
+
+.center-screen button {
+width: 250px !important;
+padding: 7px;
+margin: 4px;
+margin-top:10px;
+font-weight: bold;
+font-size: 15px;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Modal Content */
+.modal-content {
+line-height: 1.3;
+border-radius: 5px;
+background: #292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;
+color: #ddd;
+margin: auto;
+padding: 20px;
+border: 1px solid #444;
+width: 350px;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+font-weight: bold;
+}
+
+.modal-content p {
+padding: 0;
+margin: 5px 5px 0 17px;
+display: list-item;
+line-height: 2.0;
+list-style: disc;
+}
+
+.modal-content h2 {
+color: #ff6600;
+float: left;
+font-size:23px;
+padding:0;
+margin:0;
+}
+
+/* The Close Button */
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 20px;
+font-weight: bold;
+margin-top: -25px;
+margin-right: -15px;
+}
+
+.close:hover,
+.close:focus {
+color: orange;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* The Google Button */
+.myButtonGoogle {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: auto;
+cursor: pointer;
+font-weight: normal;
+float: right;
+}
+
+.myButtonGoogle :hover {
+opacity: 0.7;
+}
+
+.myButtonGoogle img {
+width: 32px;
+padding: 0;
+margin: 0;
+}
+
+.myButtonGoogle .text {
+padding: 0;
+margin: 0;
+}
+
+.mikrotik-logo {
+display: none;
+margin-top:20px;
+}
+
+.avatar img {
+margin-bottom:-13px;
+margin-left:5px;
+margin-right:5px;
+width: 40px;
+height: 40px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+-webkit-border-radius: 99em;
+-moz-border-radius: 99em;
+border-radius: 99em;
+border: 2px solid #292929;
+}
+
+#homepage{
+margin-bottom:3px;	  
+}
+
+#ShowProfile{
+display:none;
+	}
+	
+.tooltip{position:relative;display:inline-block; font-size:13px}
+.tooltip .tooltiptext{visibility:hidden;width:200px;background-color:#555;color:#fff;text-align:center;border-radius:6px;padding:10px;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:15px;opacity:0.9;transition:opacity .3s}
+.tooltiptext2{visibility:hidden;width:150px;background-color:#555;color:#fff;text-align:center;border-radius:6px;padding:10px;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:-60px;opacity:0.9;transition:opacity .3s}
+.tooltip .tooltiptext::after{content:"";position:absolute;top:100%;left:50%;margin-left:-50px;border-width:5px;border-style:solid;border-color:#555 transparent transparent}
+.tooltip .tooltiptext2::after{content:"";position:absolute;top:100%;left:50%;margin-left:-20px;border-width:5px;border-style:solid;border-color:#555 transparent transparent}
+.tooltip:hover .tooltiptext{visibility:visible;opacity:0.9}
+.tooltip:hover .tooltiptext2{visibility:visible;opacity:0.9}
+	  
+@media screen and (max-width:700px) {
+.mymenu {
+margin-bottom:15px
+}
+}	

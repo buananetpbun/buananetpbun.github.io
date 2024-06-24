@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pseudo Random Number Generator - MikroTik Script RouterOS</title>
+<meta content='Pseudo Random Number Generator - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+<h1>Pseudo Random Number Generator - MikroTik Script RouterOS</h1>
+<pre>The following script was created to produce better (pseudo) random generated numbers on a MikroTik router. The script is based on the Mersenne Twister (MT) algorithm. The script will work as written, cut-and-paste, for demonstration purposes. The script is intended to be modified for use with other scripts by either changing the "arrAdjRandNumValues" local variable to a global scope or by storing the variable's contents to a file. The output generated from this script can be used as input to another script requiring random numbers.
+
+The script can use either a static seed (integer) defined in the script or by default can generate a dynamic seed. The dynamic seed uses a combination of date, time and other values to seed a formula loosely based on the rand() function of the C programming language. The results are then used as the seed for the MT algorithm. The script is meant to generate positive integers. The script outputs the numbers generated to the console.
+
+The script started out as an experiment and out of my own (obsessive) curiosity. I've opted not to put too much more time and effort into the script. The script has very limited usefulness since other alternatives exist. However, the script was intended to be a standalone solution. The script may prove useful under the right circumstances.
+
+<code class="routeros"># A pseudo random number generator MikroTik script. 
+# Based on the Mersenne Twister pseudorandom number algorithm. 
+# v1.3 Tested and Developed on ROS v5.8
+
+# Configuration Parameters
+# intNumberOfRands - Number of pseudorandom number values to generate
+:local intNumberOfRands 100
+# intRandFloor - Lowest numeric range for generated values (must be positive value)
+:local intRandFloor 0 
+# intRandCeiling - Highest numeric range for generated values (must be positive value)
+:local intRandCeiling 100
+# blnShowStats - Displays distribution for generated numbers (default false)
+:local blnShowStats false
+# blnOneRndPerLine - Display generated values one per line on program completions (default false)
+:local blnOneRndPerLine false
+# blnGenerateSeed - Use a system generated seed for value generation (default true)
+:local blnGenerateSeed true
+# intSeed - Static seed value above Boolean value must be false to use (default 19650218)
+:local intSeed 19650218
+# Remaining values are associated with system generated seed values, blnGeneratedSeed=true to use
+# blnUseWiFi - Use wireless statistics as part of seed generation, experimental (default false)
+:local blnUseWiFi false
+# strWiFiName - Name of wireless interface, above blnUseWiFi must be true (default wlan1)
+:local strWiFiName "wlan1"
+# strOutFile - Temporary file used to gather wireless statistics
+:local strOutFile "RndOutTraff"
+# No need to modify variable beyond this line
+:local arrInitValues { 0x123; 0x234; 0x345; 0x456 }
+:local intInitArrayLen [ :len $arrInitValues ]
+:local arrLngRandNumValues {}
+:local arrAdjRandNumValues {}
+:local N 624
+:local M 397
+:local intUpperBitMask 0x80000000
+:local intLowerBitMask 0x7fffffff
+:local intMatrixA 0x9908b0df
+:local arrMagicValues [ :toarray ( 0, $intMatrixA ) ]
+:local intProgressEvery 0
+:local intPctDone 0
+:local arrMerTwist {}
+:local intMersTwistArrLen ( $N + 1 )
+:local intTotalValues 0
+:local intWiHiValue 0
+:local intWiLowValue 0
+:local intRandNumber 0
+:local intSeenValue 0
+:local arrSeenValues [ :toarray $intSeenValue ]
+:put "Running..."
+:for i from=( $intRandFloor ) to=( $intRandCeiling - 1 ) do={
+    :set arrSeenValues ( $arrSeenValues, $intSeenValue )
+} 
+:if ( $blnGenerateSeed = true ) do={
+    :put "Generating seed value from system events."
+    :local intUpTime [ /system resource get uptime ];
+    :if ( $blnUseWiFi = true ) do={
+        :put "Using wireless for seed generation."
+        :local lcv 1
+        :local blnContinue true
+        :do {
+            :put "Attempt $lcv to gather wireless traffic statistics."
+            /interface monitor-traffic $strWiFiName once file=$strOutFile
+            /delay 3s
+            :local strInFile ($strOutFile . ".txt")
+            :local strContent [/file get [/file find name=$strInFile] contents]
+            :if ( [ :len $strContent ] < 1 ) do={
+                :put "No content generated for wireless statistics."
+            } else={
+                :local intLocXmitBps ( [ :tonum [ :find $strContent \
+                  "tx-bits-per-second:" 0 ] ] + 20 )
+                :local intXmitBps [ :pick $strContent $intLocXmitBps ( [ :tonum \
+                  [ :find $strContent "bps" $intLocXmitBps ] ] - 1 ) ]
+                :local intXmitDecimalLoc [ :tonum [ :find $intXmitBps "." 0 ] ]
+                :set intWiHiValue [ :tonum [ :pick $intXmitBps 0 $intXmitDecimalLoc ] ]
+                :set intWiLowValue [ :tonum [ :pick $intXmitBps ( $intXmitDecimalLoc + 1 ) \
+                  ( $intXmitDecimalLoc + 2 ) ] ] 
+                :if ( [ :len [ :tostr intWiHiValue ] ] > 0 ) do={
+                    :if ( [ :len [ :tostr intWiLowValue ] ] > 0 ) do={
+                        :set blnContinue false
+                    }
+                } else={
+                    :if ( lcv > 3 ) do={
+                        :set intWiHiValue 0
+                        :set intWiLowValue 0
+                        :set blnContinue false
+                    }
+                }
+                /file remove [ /file find name=$strInFile ];
+            } 
+            :set lcv ( $lcv + 1 )
+        } while=( $blnContinue = true )
+    }
+    :local intClockValue ( [ :tonum [ :pick [ /system clock get time ] 6 8 ] ] % 6 )
+    /delay 1s
+    :local intCpuValue [/system resource get cpu-load ];
+    :local strSysTime [ :tostr [ /system clock get time ] ]
+    :local intSeconds ( ( [ :tonum [ :pick $strSysTime 0 2 ] ] ) * 3600 )
+    :set intSeconds ( $intSeconds + ( ( [ :tonum [ :pick $strSysTime 3 5 ] ] ) * 60 ) )
+    :set intSeconds ( $intSeconds + ( ( [ :tonum [ :pick $strSysTime 6 8 ] ] ) * ( \
+      [ :tonum $intWiHiValue ] + [ :tonum $intWiLowValue ] ) ) )
+    :local arrMons [ :toarray "jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec" ]
+    :local strDate [ :tostr [ /system clock get date ] ]
+    :local intDayCount ( ( [ :tonum [ :find $arrMons \
+      [ :pick $strDate 0 3 ] ] ] * 30 ) + [ :tonum [ :pick $strDate 4 6 ] ] )
+    :local intYear ( ( [ :tonum [ :pick $strDate 7 [ :len $strDate ] ] ] - 2011 ) * 365 )
+    :set intSeed ( ( ( ( $intYear  + $intDayCount ) * 86400 ) + $intSeconds ) + \
+      [ :tonum $intClockValue ] + [ :tonum $intCpuValue ] + \
+      [ :tonum $intUpTime ] + [ :tonum $intWiHiValue ] + [ :tonum $intWiLowValue ] )
+    :set intSeed ( ( ( $intSeed * 1103515245 + 12345 ) / 65536) % 32768 ) 
+    :put "Using system dynamically generated seed value: $intSeed"
+ } else {
+     :put "Using static seed stored in script variable with value: $intSeed"
+     :put "Numbers will be testable and repeatable (deterministic)."
+ }
+# End of creating seed
+# $arrMerTwist[N] is array for the state vector
+:put "Step 1: Initializing (seeding) array for state vector."
+:set arrMerTwist [ :toarray ( [ :tonum $intSeed ] & 0xffffffff ) ]
+:set intTotalValues ( $N - 1 )
+:set intProgressEvery ( $intTotalValues / 20 )
+:set intPctDone 0
+# if ( $intMersTwistArrLen = N+1 ) means arrMerTwist[N] is not initialized */
+:set intMersTwistArrLen ( $N + 1 )
+:for lcv from=1 to=( $N - 1 ) do={
+    :if ( ( $lcv % $intProgressEvery ) = 0 ) do={
+        :set intPctDone ( $intPctDone + 5 )
+        :put "Step 1: $intPctDone% completed."
+    }
+    :local intValue1 [ :tonum [ :pick $arrMerTwist ( $lcv - 1 ) ] ]
+    :set intValue1 ( $intValue1 ^ ( $intValue1 >> 30 ) )
+    :set intValue1 ( $intValue1 * 1812433253 )
+    :set intValue1 ( $intValue1 + $lcv )
+    :set intValue1 ( $intValue1 & 0xffffffff )
+    :set arrMerTwist [ :toarray ( [ :pick $arrMerTwist 0 $lcv ], $intValue1 ) ]
+    :set intMersTwistArrLen [ :tonum $lcv ]
+}
+:set intMersTwistArrLen ( $intMersTwistArrLen + 1 )
+:put "Step 2: Starting initialization by array"
+:local i 1
+:local j 0
+:local k [ :tonum $intInitArrayLen ]
+:if ( $N > $intInitArrayLen ) do={
+    :set k [ :tonum $N ]
+}
+:local intTotalValues ( [ :tonum $k ] - 1 )
+:set intProgressEvery ( $intTotalValues / 20 )
+:set intPctDone 0
+:while ( $k > 0 ) do={
+    :if ( ( $k % $intProgressEvery ) = 0 ) do={
+        :set intPctDone ( $intPctDone + 5 )
+        :put "Step 2: $intPctDone% completed."
+    }      
+    :local intValue1 [ :tonum [ :pick $arrMerTwist ( $i - 1 ) ] ]
+    :set intValue1 ( $intValue1 ^ ( $intValue1 >> 30 ) )
+    :set intValue1 ( $intValue1 * 1664525 )
+    :set intValue1 ( ( [ :tonum [ :pick $arrMerTwist $i ] ] ) ^ $intValue1 )
+    :set intValue1 ( $intValue1 + ( [ :tonum [ :pick $arrInitValues $j ] ] ) )
+    :set intValue1 ( $intValue1 + [ :tonum $j ] )
+    :set intValue1 ( $intValue1 & 0xffffffff )
+    :set arrMerTwist [ :toarray ( [ :pick $arrMerTwist 0 $i ], $intValue1, \
+      [ :pick $arrMerTwist ( $i + 1 ) [ :len $arrMerTwist ] ] ) ]
+    :set i ( $i + 1 )
+    :set j ( $j + 1 )
+    :if ( $i >= $N ) do={
+        :set arrMerTwist [ :toarray ( [ :pick $arrMerTwist ( $N - 1 ) ], \
+          [ :pick $arrMerTwist 1 [ :len $arrMerTwist ] ] ) ]
+        :set i 1
+    }
+    :if ( $j >= $intInitArrayLen ) do={
+        :set j 0
+    }
+    :set k ( $k - 1 )
+}
+:put "Step 3: Last portion of initialization by array."
+:set k ( $N - 1 )
+:set intTotalValues $k 
+:set intProgressEvery ( $intTotalValues / 20 )
+:set intPctDone 0
+:while ( $k > 0 ) do={
+    :if ( ( $k % $intProgressEvery ) = 0 ) do={
+        :set intPctDone ( $intPctDone + 5 )
+        :put "Step 3: $intPctDone% completed."
+    }
+    :local intValue1 [ :tonum [ :pick $arrMerTwist ( $i - 1 ) ] ]
+    :set intValue1 ( $intValue1 ^ ( $intValue1 >> 30 ) )
+    :set intValue1 ( $intValue1 * 1566083941 )
+    :set intValue1 ( ( [ :tonum [ :pick $arrMerTwist $i ] ] ) ^ $intValue1 )
+    :set intValue1 ( $intValue1 - $i )
+    :set intValue1 ( $intValue1 & 0xffffffff )
+    :set arrMerTwist [ :toarray ( [ :pick $arrMerTwist 0 $i ], $intValue1, \
+      [ :pick $arrMerTwist ( $i + 1 ) [ :len $arrMerTwist ] ] ) ]
+    :set i ( $i + 1 )
+    :if ( $i >= $N ) do={
+        :set arrMerTwist [ :toarray ( [ :pick $arrMerTwist ( $N - 1 ) ], \
+          [ :pick $arrMerTwist 1 [ :len $arrMerTwist ] ] ) ]
+        :set  i 1
+    }
+    :set k ( $k - 1 )
+}
+# MSB is 1; assuring non-zero initial array
+:set arrMerTwist [ :toarray ( [ :tonum 0x80000000 ], [ :pick $arrMerTwist 1 \
+  [ :len $arrMerTwist]  ] ) ]
+:put "Initialization completed."
+# Main Program generate pseudorandom numbers
+:put "Starting number generation."
+:local intRandNumVal 0
+:for i from=0 to=( $intNumberOfRands - 1 ) do={
+    :put ("Generating random number " . ( $i + 1 ) . " of $intNumberOfRands.")
+    :if ( $intMersTwistArrLen >= $N ) do={
+        :if ( $intMersTwistArrLen = ( $N + 1 ) ) do={
+            :put "** ERROR state vector array is uninitalized. **"
+            :error "Unrecoverable error program terminiated."
+        }
+        :local intValue1 0
+        :local intValue2 0
+        :local kk 0
+        :set intTotalValues ( $N - $M ) 
+        :set intProgressEvery ( $intTotalValues / 20 )
+        :set intPctDone 0
+        :while ( $kk < ( $N - $M ) ) do={
+            :if ( ( $kk % $intProgressEvery ) = 0 ) do={
+                :put "Main Program sub task A: $intPctDone% completed."
+                :set intPctDone ( $intPctDone + 5 )
+            }
+            :set intValue1 [ :tonum [ :pick $arrMerTwist $kk ] ]
+            :set intValue2 [ :tonum [ :pick $arrMerTwist ( $kk + 1 ) ] ]
+            :set intRandNumVal [ :tonum ( ( $intValue1 & $intUpperBitMask ) | \
+              ( $intValue2 & $intLowerBitMask ) ) ]
+            :set intValue1 ( [ :tonum $intRandNumVal ] & 1 )
+            :set intValue1 [ :tonum [ :pick $arrMagicValues $intValue1 ] ]
+            :set intValue2 [ :tonum [ :pick $arrMerTwist ( $kk + $M ) ] ]
+            :set intValue1 [ :tonum ( ( $intValue2 ^ ( $intRandNumVal >> 1 ) ) ^ $intValue1 ) ]
+            :if ( $kk < 1 ) do={
+                :set arrMerTwist ( $intValue1, [ :pick $arrMerTwist 1 [ :len $arrMerTwist ] ] )
+            } else={
+                :set arrMerTwist ( [ :pick $arrMerTwist 0 $kk ], $intValue1, \
+                  [ :pick $arrMerTwist ( $kk + 1 ) [ :len $arrMerTwist ] ] ) 
+            }
+            :set kk ( $kk + 1 )
+        }
+        :set intTotalValues ( $N - 1 ) 
+        :set intProgressEvery ( $intTotalValues / 20 )
+        :set intPctDone 0
+        :while ( $kk < ( $N - 1 ) ) do={
+            :if ( ( $kk % $intProgressEvery ) = 0 ) do={
+                :set intPctDone ( $intPctDone + 5 )
+                :put "Main Program sub task B: $intPctDone% completed."
+            }
+            :set intValue1 [ :tonum [ :pick $arrMerTwist $kk ] ]
+            :set intValue2 [ :tonum [ :pick $arrMerTwist ( $kk + 1 ) ] ]
+            :set intRandNumVal [ :tonum ( ( $intValue1 & $intUpperBitMask ) | \
+              ( $intValue2 & $intLowerBitMask ) ) ]
+	        :set intValue1 ( [ :tonum $intRandNumVal ] & 1 )
+            :set intValue1 [ :tonum [ :pick $arrMagicValues $intValue1 ] ]
+            :set intValue2 [ :tonum [ :pick $arrMerTwist ( $kk + ( $M - $N ) ) ] ]
+            :set intValue1 [ :tonum ( ( $intValue2 ^ ( $intRandNumVal >> 1 ) ) ^ $intValue1 ) ]
+            :if ( $kk < 1 ) do={
+                :set arrMerTwist ( $intValue1, [ :pick $arrMerTwist 1 [ :len $arrMerTwist ] ] )
+            } else={
+                :set arrMerTwist ( [ :pick $arrMerTwist 0 $kk ], $intValue1, \
+                  [ :pick $arrMerTwist ( $kk + 1 ) [ :len $arrMerTwist ] ] ) 
+            }
+            :set kk ( $kk + 1 )
+        }
+        :set intValue1 [ :tonum [ :pick $arrMerTwist ( $N - 1 ) ] ]
+        :set intValue2 [ :tonum [ :pick $arrMerTwist 0 ] ]
+        :set intRandNumVal [ :tonum ( ( $intValue1 & $intUpperBitMask ) | \
+          ( $intValue2 & $intLowerBitMask ) ) ]
+        :set intValue1 ( [ :tonum $intRandNumVal ] & 1 )
+        :set intValue1 [ :tonum [ :pick $arrMagicValues $intValue1 ] ]
+        :set intValue2 [ :tonum [ :pick $arrMerTwist ( $M - 1 ) ] ]
+        :set intValue1 [ :tonum ( ( $intValue2 ^ ( $intRandNumVal >> 1 ) ) ^ $intValue1 ) ]
+# Next line is for saftey, but ($N - 1) should never be < 1         
+        :if ( ( $N - 1 ) < 1 ) do={
+            :set arrMerTwist ( $intValue1, [ :pick $arrMerTwist 1 [ :len $arrMerTwist ] ] )
+        } else={
+            :set arrMerTwist ( [ :pick $arrMerTwist 0 ( $N - 1 ) ], $intValue1, \
+              [ :pick $arrMerTwist [ :tonum $N ] [ :len $arrMerTwist ] ] ) 
+        }
+        :set intMersTwistArrLen 0
+    }
+    :set intRandNumVal [ :tonum [ :pick $arrMerTwist $intMersTwistArrLen ] ]
+    :set intMersTwistArrLen ( $intMersTwistArrLen + 1 )
+# Tempering
+    :set intRandNumVal [ :tonum ( $intRandNumVal ^ ( $intRandNumVal >> 11 ) ) ]
+    :set intRandNumVal [ :tonum ( $intRandNumVal ^ ( ( [ :tonum $intRandNumVal ] << 7 ) \
+      & 0x9d2c5680 ) ) ]
+    :set intRandNumVal [ :tonum ( $intRandNumVal ^ ( ( [ :tonum $intRandNumVal ] << 15 ) \
+      & 0xefc60000 ) ) ]
+    :set intRandNumVal [ :tonum ( $intRandNumVal ^ ( [ :tonum $intRandNumVal ] >> 18 ) ) ]
+# end genrand_int32
+    :set arrLngRandNumValues ( $arrLngRandNumValues, $intRandNumVal )
+# Some Error checking
+    :if ( ( [ :len [ :tostr $intRandNumVal ] ] < 1 ) or ( [ :tonum $intRandNumVal ] = 0 ) ) \
+      do={
+        :put "** DIAGNOSTICS **"
+        :put ("intRandNumVal($intRandNumVal) intMersTwistArrLen($intMersTwistArrLen) \
+          intSeed($intSeed) len_mt(" . [ :len $arrMerTwist ] . ")")
+        :put "Contents of \$arrMerTwist array:"
+        :put $arrMerTwist
+        :error "** ERROR ** Program execution halted no \$intRandNumVal value generated"
+    }
+# Done with error checking and diagnostic reporting    
+    :set intRandNumber ( ( $intRandNumVal % ( $intRandCeiling - $intRandFloor + 1 ) ) \
+      + $intRandFloor )    
+    :set arrAdjRandNumValues ( $arrAdjRandNumValues, $intRandNumber )
+    :set intSeenValue [ :tonum [ :pick $arrSeenValues ( $intRandNumber - $intRandFloor ) ] ]
+    :set intSeenValue ( $intSeenValue + 1 )
+    :if ( ( $intRandNumber - $intRandFloor ) = 0 ) do={
+        :set arrSeenValues [ :toarray ( [ :tonum $intSeenValue ], [ :pick $arrSeenValues 1 \
+          [ :len $arrSeenValues ] ] ) ]
+    } else={
+        :set arrSeenValues [ :toarray ( [ :pick $arrSeenValues 0 \
+          ( $intRandNumber - $intRandFloor ) ], [ :tonum $intSeenValue ], \
+          [ :pick $arrSeenValues ( ( $intRandNumber - $intRandFloor ) + 1 ) \
+          [ :len $arrSeenValues ] ] ) ]
+    }
+#    :put "Generated raw random number is $intRandNumVal"
+#    :put "Adjusted random value is: $intRandNumber"
+}
+:if ( $blnShowStats = true ) do={
+    :if ( $blnGenerateSeed = true ) do={
+        :put "Used dyamically generated seed value: $intSeed"
+    } else={
+        :put "Used static seed based on script \$intSeed value: $intSeed"
+    }
+    :put "Distribution of Numbers Generated [ #/Occurence ]"
+    :local intTotalRandsGen 0
+    :for i from=0 to=( [ :len $arrSeenValues ] - 1 ) do={
+        :local intSeenCount [ :tonum [ :pick $arrSeenValues $i ] ]
+        :set intTotalRandsGen ( $intTotalRandsGen + $intSeenCount )
+        :set intRandNumber ( $i + $intRandFloor )
+        :local strOutLine ( $intRandNumber . "/" . $intSeenCount )
+        :for j from=1 to=( 16 - [ :len [ :tostr $strOutLine ] ] ) do={
+            :set strOutLine " $strOutLine"
+        }
+        :set strOutLine "[$strOutLine] "
+        :local intDrawToCol [ :tonum $intSeenCount ]
+        :if ( $intDrawToCol > 62 ) do={
+            :set intDrawToCol 62
+        }
+        :set j 1
+        :while ( $j <= $intDrawToCol ) do={
+            :set strOutLine [ :tostr ( $strOutLine . "*" ) ]
+            :set j ( $j + 1 )
+        }
+        :put "$strOutLine"
+    }
+    :put "Total random numbers generated: $intTotalRandsGen"
+}
+:if ( $blnOneRndPerLine = true ) do={
+    :foreach intRndValue in=( $arrAdjRandNumValues ) do={
+        :put $intRndValue
+    }
+} else={
+#    :put $arrLngRandNumValues
+    :put $arrAdjRandNumValues
+}
+:put "Done."</code>
+Credit: <a target="_blank" href="https://forum.mikrotik.com/viewtopic.php?f=9&t=56933" >https://forum.mikrotik.com/viewtopic.php?f=9&t=56933</a>
+</pre>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>
+

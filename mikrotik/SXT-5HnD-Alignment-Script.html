@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SXT 5HnD Alignment Script - MikroTik Script RouterOS</title>
+<meta content='SXT 5HnD Alignment Script - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+<h1>SXT 5HnD Alignment Script - MikroTik Script RouterOS</h1>
+<pre>
+This script recognizes 9 different "signal levels" and 3 assoc. statuses (connected, searching, other) Currently, "signal levels" indicate the SNR/margin measurement. Higher signal-to-noise measurements correspond to higher levels. So level 8 would be the best, below 1 would be the worst. The better the signal-to-noise, the more LEDs you get, and # the faster the beeps get. Only 4 LEDs are used, (the 5th being left alone, for NAND access ind.) with intermediate signal levels resulting in a combination of solid and flashing LEDs, shown.
+
+<code class="routeros"># Mikrotik RB411/433 "Lights and Sound" alignment script
+# written by Mark Shumate Feb 2009
+# Edited by enuro12 Mar 2011
+#
+# NOTE: I have replaced user-led with led5. That is the
+# only modification over the original script. I've tested 
+# this on v5.2 of RouterOS on my SXT 5HnD.
+#
+# This script recognizes 9 different "signal levels"
+# and 3 assoc. statuses (connected, searching, other)
+# Currently, "signal levels" indicate the SNR/margin
+# measurement. Higher signal-to-noise measurements
+# correspond to higher levels. So level 8 would be
+# the best, below 1 would be the worst. The better
+# the signal-to-noise, the more LEDs you get, and
+# the faster the beeps get. Only 4 LEDs are used,
+# (the 5th being left alone, for NAND access ind.)
+# with intermediate signal levels resulting in a
+# combination of solid and flashing LEDs, shown
+# here:
+#
+# >= Level 8 : 4 solid (100ms beeps)
+# >= Level 7 : 3 solid, 4th flashing (300ms beeps)
+# >= Level 6 : 3 solid (500ms beep cycle)
+# >= Level 5 : 2 solid, 3rd flashing (700ms beeps)
+# >= Level 4 : 2 solid (900ms beeps)
+# >= Level 3 : 1 solid, 2nd flashing (1100ms beeps)
+# >= Level 2 : 1 solid (1300ms beeps)
+# >= Level 1 : 1 flashing (1500ms beeps)
+# <  Level 1 : no LEDs, beeps only (1700ms beeps)
+#
+# The led5 (green LED above the blue power LED)
+# is used to display the association status. If the
+# wireless interface is associated, the led5 is
+# solid. If the wireless interface is actively
+# searching, but not yet associated, the led5 is
+# blinking twice a second, with a pause while a
+# rising trill of 3 beeps is played. If the wireless
+# interface is neither associated, nor searching
+# (like disabled, or something weird) then the light
+# will flicker rapidly every 2 seconds, and a
+# falling trill of 2 beeps is played.
+
+# Finally, the script plays startup (rising) and
+# shutdown (falling) tones.
+
+# For reference, the delay times associated with the
+# different signal levels are shown here:
+#:local lnsdelaytime 100ms;  <---signals at/above lvl 8
+#:local lnsdelaytime 300ms;  <---signals between 7 and 8
+#:local lnsdelaytime 500ms;  <---signals between 6 and 7
+#:local lnsdelaytime 700ms;  <---signals between 5 and 6
+#:local lnsdelaytime 900ms:  <---signals between 4 and 5
+#:local lnsdelaytime 1100ms; <---signals between 3 and 4
+#:local lnsdelaytime 1300ms; <---signals between 2 and 3
+#:local lnsdelaytime 1500ms; <---signals between 1 and 2
+#:local lnsdelaytime 1750ms; <---signals below lvl 1
+#:local lnsdelaytime 2000ms; <---signal not available
+
+# default delaytime
+:local lnsdelaytime "2000ms";
+
+# name of wireless interface to monitor (default wlan1)
+:local lnsintname "wlan1";
+
+# frequency (as in pitch) of beep (recommend 700 - 1000)
+:local lnsbeepfreq 800;
+
+# Here, the different signal levels are assigned to
+# signal-to-noise measurements. I haven't really tweaked
+# these yet to be in line with field testing, so they
+# may need quite a bit of adjusting.
+:local lnslevel8 70;
+:local lnslevel7 65;
+:local lnslevel6 60;
+:local lnslevel5 55;
+:local lnslevel4 50;
+:local lnslevel3 45;
+:local lnslevel2 40;
+:local lnslevel1 35;
+
+# The (veery approximate, heh) running time of the script
+# is set here. I am too lazy right now to do this a
+# better way...besides, who cares if the thing beeps or 
+# flashes a couple extra minutes right?!? :)
+:local lnsrunningtime 60m;
+
+# Here, we set how long the script will beep. NOTE that
+# startup/shutdown tones will still be played. 
+# I like this feature when using an access point where
+# the LEDs are clearly visible. If you don't want this
+# feature, set it to the same as $lnsrunningtime
+# (above).
+:local lnsbeeptime 10m;
+
+# figure out beep cutoff time
+:local lnsrunbeepdiff;
+:set lnsrunbeepdiff ($lnsrunningtime - $lnsbeeptime);
+
+
+# initialize LEDs, play starting tones
+:delay 50ms;
+:led led5=no led4=no led3=no led2=no led1=no;
+:delay 50ms;
+:beep frequency=($lnsbeepfreq - 300) length=50ms;
+:delay 50ms;
+:beep frequency=($lnsbeepfreq - 200) length=50ms;
+:delay 50ms;
+
+# main monitoring cycle
+:while ($lnsrunningtime > 0s) do={
+  /interface wireless monitor "$lnsintname" once do={
+    :if ($"status" = "connected-to-ess") do={
+      :if ($"signal-to-noise" >= $lnslevel8) do={
+        :set lnsdelaytime 100ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :led led5=yes led4=yes led3=yes led2=yes led1=yes;
+        :delay $lnsdelaytime;
+      }
+      :if ($"signal-to-noise" >= $lnslevel7 && $"signal-to-noise" < $lnslevel8) do={
+        :set lnsdelaytime 300ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :for i from=1 to=3 do={
+          :led led5=yes led4=no led3=yes led2=yes led1=yes;
+          :delay ($lnsdelaytime / 6);
+          :led led5=yes led4=yes led3=yes led2=yes led1=yes;
+          :delay ($lnsdelaytime / 6);
+        }
+      }
+      :if ($"signal-to-noise" >= $lnslevel6 && $"signal-to-noise" < $lnslevel7) do={
+        :set lnsdelaytime 500ms;
+        :led led5=yes led4=no led3=yes led2=yes led1=yes;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :delay $lnsdelaytime;
+      }
+      :if ($"signal-to-noise" >= $lnslevel5 && $"signal-to-noise" < $lnslevel6) do={
+        :set lnsdelaytime 700ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :for i from=1 to=3 do={
+          :led led5=yes led4=no led3=no led2=yes led1=yes;
+          :delay ($lnsdelaytime / 6);
+          :led led5=yes led4=no led3=yes led2=yes led1=yes;
+          :delay ($lnsdelaytime / 6);
+        }
+      }
+      :if ($"signal-to-noise" >= $lnslevel4 && $"signal-to-noise" < $lnslevel5) do={
+        :set lnsdelaytime 900ms;
+        :led led5=yes led4=no led3=no led2=yes led1=yes;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :delay $lnsdelaytime;
+      }
+      :if ($"signal-to-noise" >= $lnslevel3 && $"signal-to-noise" < $lnslevel4) do={
+        :set lnsdelaytime 1100ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :for i from=1 to=3 do={
+          :led led5=yes led4=no led3=no led2=no led1=yes;
+          :delay ($lnsdelaytime / 6);
+          :led led5=yes led4=no led3=no led2=yes led1=yes;
+          :delay ($lnsdelaytime / 6);
+        }
+      }
+      :if ($"signal-to-noise" >= $lnslevel2 && $"signal-to-noise" < $lnslevel3) do={
+        :set lnsdelaytime 1300ms;
+        :led led5=yes led4=no led3=no led2=no led1=yes;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :delay $lnsdelaytime;
+      }
+      :if ($"signal-to-noise" >= $lnslevel1 && $"signal-to-noise" < $lnslevel2) do={
+        :set lnsdelaytime 1500ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :for i from=1 to=3 do={
+          :led led5=yes led4=no led3=no led2=no led1=no;
+          :delay ($lnsdelaytime / 6);
+          :led led5=yes led4=no led3=no led2=no led1=yes;
+          :delay ($lnsdelaytime / 6);
+        }
+      }
+      :if ($"signal-to-noise" < $lnslevel1) do={
+        :set lnsdelaytime 1700ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=($lnsdelaytime / 2);
+        }
+        :led led5=yes led4=no led3=no led2=no led1=no;
+        :delay $lnsdelaytime;
+      }
+    } else={
+      :if ($"status" = "searching-for-network") do={
+        :set lnsdelaytime 2000ms;
+        :led led5=no led4=no led3=no led2=no led1=no;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=$lnsbeepfreq length=100ms;
+        }
+        :delay 100ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=($lnsbeepfreq + 100) length=75ms;
+        }
+        :delay 75ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=($lnsbeepfreq + 200) length=50ms;
+        }
+        :delay 50ms;
+        :for i from=1 to=4 do={
+          :led led5=no;
+          :delay ($lnsdelaytime / 8)
+          :led led5=yes;
+          :delay ($lnsdelaytime / 8)
+        }
+        :set lnsdelaytime ($lnsdelaytime + (50ms + 75ms + 100ms));
+      } else={
+        :set lnsdelaytime 2000ms;
+        :led led5=no led4=no led3=no led2=no led1=no;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=($lnsbeepfreq - 150) length=150ms;
+        }
+        :delay 150ms;
+        :if ($lnsrunningtime > $lnsrunbeepdiff) do={
+          :beep frequency=($lnsbeepfreq - 350) length=100ms;
+        }
+        :delay 100ms;
+        :for i from=1 to=4 do={
+          :led led5=yes;
+          :delay 50ms;
+          :led led5=no;
+          :delay 50ms;
+        }
+        :delay 1550ms;
+      }
+    }
+  }
+:set lnsrunningtime ("$lnsrunningtime" - "$lnsdelaytime");
+}
+
+# shut off LEDs, play shutdown tones
+:delay 50ms;
+:led led5=no led4=no led3=no led2=no led1=no;
+:delay 50ms;
+:beep frequency=($lnsbeepfreq - 200) length=50ms;
+:delay 50ms;
+:beep frequency=($lnsbeepfreq - 300) length=50ms;
+:delay 50ms;</code>
+Credit: Unknown (?)
+</pre>
+
+<br>
+<div id="hidelink"></div>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>
+

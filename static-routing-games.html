@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Static Routing Games Script Generator For Mikrotik RouterOS - BuanaNETPBun.Github.io</title>
+    <meta content='Static Routing Games Script Generator For Mikrotik RouterOS - BuanaNETPBun.Github.io' name='description'>
+    <meta content='game, routing, port, ip, script generator, mikrotik, router, winbox, termimal, rsc, script' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Static Routing Games Script Generator For Mikrotik RouterOS By BuanaNET-Pbun">
+    <meta property="og:description" content="Static Routing Games Script Generator For Mikrotik RouterOS By BuanaNET-Pbun">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/42666125/173181945-c6e04633-7ef0-4306-b222-b2e93db47217.png">
+    <meta property="og:image:alt" content="Static Routing Games Script Generator For Mikrotik RouterOS By BuanaNET-Pbun">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io/static-routing-games.html">
+    	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>  
+    <link rel="stylesheet" href="./login/login.css">
+    <style>
+      /* ---------------------------------------------------------------
+      ##################################################################
+      # Static Routing Games Script Generator By BuanaNETPBun.Github.io!
+      # Designer  : Agus Ramadhani / BuanaNET
+      # Github    : https://buananetpbun.github.io
+      # Site      : http://www.o-om.com
+      # Sosmed    : https://fb.me/buananetmikrotik
+      ##################################################################
+      ------------------------------------------------------------------ */  
+      *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
+      body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td,tr,table{margin:0;padding:0}
+      body{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
+      html,body{color:#292929;height:100%;width:100%;margin-top:0;padding:0;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      *{box-sizing:border-box}
+      .logo{margin-top:10px;color:#ddd;text-decoration:none;font-size:25px;font-weight:700}
+      .logo a{color:#fff!important;text-decoration:none!important}
+      #wrap{max-width:970px;margin:0 auto;padding:0 5px 0 5px}
+      .header{height:auto;width:100%;margin-top:0px;margin-bottom:0px;border-top:0px solid #555}
+      .main-wrap{display:flex}
+      .content{float:right;width:65%;padding:15px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-right:1px solid #ccc;background:#eee;height:auto;border-radius:0 5px 5px 0}
+      .sidebar{float:left;width:35%;background-color:#eee;border:1px solid #ccc;height:auto;border-radius:5px 0 0 5px;padding:15px}
+      .footer{padding-top:15px;padding-bottom:15px;clear:both;width:auto;font-size:13px;color:#ddd}
+      h2{color:#f60}
+      h1{color:#fff;font-size:22px;margin-bottom:5px;margin-top:10px}
+      a:link{color:#f60}
+      a:visited{color:#f60}
+      a:hover{color:#f60}
+      a:active{color:#f60}
+      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:7px;width:110px;font-size:14px;font-weight:700;cursor:pointer;border-radius:5px}
+      button:hover{background-color:#ccc;color:#111}
+      .row:after{content:"";display:table;clear:both}
+      input[type=checkbox]{margin-right:7px}
+      input[type=text],select,textarea{width:100%;padding:5px;border:1px solid #ccc;border-radius:1px;resize:vertical;font-size:14px!important;border-radius:5px; margin-bottom:10px; margin-bottom:10px}
+      label{padding-bottom:5px;display:inline-block;font-weight:600}
+      input[type=submit]{background-color:#f60;color:#fff;padding:13px 20px;border:none;border-radius:1px;cursor:pointer;float:right}
+      input[type=submit]:hover{background-color:#45a049}
+      .col-25{float:left;width:25%;margin-top:6px}
+      .col-75{float:left;width:75%;margin-top:6px}
+      .row:after{content:"";display:table;clear:both}
+      .list-game{height:352px;background:#fff;overflow:scroll;overflow-x:hidden;width:100%;margin-top:2px;padding:3px;border:1px solid rgba(0,0,0,0.25);border-radius:5px}
+      .list-game label{padding:0;display:inline-block;font-weight:normal}
+      .list-output-content{border-radius:5px;height:530px;background:#fff;overflow:scroll;width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;white-space:nowrap}
+      table,tr,td{border:none}
+      .mikrotik-logo {display:none}	  
+      @media screen and (max-width:700px) {
+      .list-output-content{height:auto;}
+      .main-wrap{display:block}
+      .sidebar,.content{border-radius:5px;display:block;width:100%; padding:10px}
+      .sidebar{height:auto;margin-bottom:5px}
+      .header h1{max-width:100%;justify-content:center}
+	  .header {border:none}	  
+      .logo-left a{margin-top:10px!important;font-size:23px}
+      .logo-left img{width:40px;margin-top:-5px!important}
+      h1{font-size:21px;text-align:center}
+      .mymenu{width:100%!important}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%}
+      .logo-right{justify-content:center;width:100%;display:flex}
+      .footer{font-size:13px;padding-left:5px;padding-right:5px}
+      }
+      @media screen and (max-width:600px) {
+	  button{margin-bottom:5px;}
+      h1{font-size:19px}
+      .logo-left a{margin-top:10px!important;font-size:20px}
+      .logo-left img{width:40px;margin-top:-5px!important}
+      .sidebar{padding:10px}
+      .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%;clear:both}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
+      }
+      @media screen and (max-width:500px) {
+	  .list-game{height:200px;}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      .avatar{display:none}
+      }
+      @media screen and (max-width:350px) {
+      .hide-homepage{display:none}
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>   
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div id="wrap">
+    <div id="mymenu" class="mymenu">
+      <div class="mikrotik-logo" >
+        <img alt="mikrotik" src="./img/made-for-mikrotik.png">
+      </div>
+      <ul>
+        <li><a target="_blank" href="https://buananetpbun.github.io">HOME</a></li>
+        <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+        <li><a href="javascript:callmodal()">DONATE</a></li>
+        <li><a target="_blank" href="https://fb.me/buananet.pbun">CONTACT</a></li>
+      </ul>
+      <div class="show-homepage-menu">
+        <div id="homepage" class="hide">
+          <button style="width:90px !important; padding:6px; margin:4px; margin-left:10px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+          <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+          <span class="hide-homepage">
+          <span class="avatar">
+          <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+          </span>		
+          <span style="font-weight:normal;font-size:14px"><a href="https://buananetpbun.github.io/login"><img style="vertical-align:middle" width="20" src="./img/gear.png"><span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></a></span>
+          <span style="font-weight:normal; font-size:14px"> [<span class="tooltip"><span class="tooltiptext2">E-mail verified status</span><span id="email_Verified" style="cursor:help"></span></span>]</span>
+          </span>
+        </div>
+      </div>
+    </div>
+      <div class="logo">
+        <div class="logo-right" style="float:right;">
+          <div style="float:right; margin-right:5px;">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+          </div>
+          <div style="float:right; margin-right:5px; margin-top:1px">
+            <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+          </div>
+        </div>
+        <div class="logo-left" style="float:left;"> 
+          <a href="https://buananetpbun.github.io/static-routing-games.html"><img alt="buananetpbun" style="float:left; margin-top:0px;margin-right:5px" width='35' src="./img/mylogo.png"><span style='color:#ff6600 !important'>Buananetpbun</span>.Github.io</a>  
+        </div>
+      </div>
+      <div style="clear:both"></div>
+      <div class="header">
+        <h1>MIKROTIK <span style="color:#ff6600;">STATIC ROUTING GAMES</span> SCRIPT GENERATOR</h1>
+      </div>
+      <div class="main-wrap">
+        <div id="sidebar_" class="sidebar">
+          <label>RouterOS Version</label><br>
+          <select onchange="myFunction()" id="ros-list">
+            <option value="ros6">RouterOS v6.xx</option>
+            <option value="ros7">RouterOS v7.xx</option>
+          </select>
+          <div style="margin-top:10px;margin-bottom:10px">
+            <label>Gateway to WAN or ISP Game</label>
+            <input type="text" id="ip-gateway-input" placeholder="ex: 192.168.2.1 or pppoe-out"><br>
+          </div>
+          <label>Select Mangle Games</label> <input style="margin-bottom:2px" type="text" id="myInput" onkeyup="myFunctionGames()" placeholder="find Game.."> 
+          <div class="list-game">
+            <table id="myTable" style="font-size:14px">
+              <!-- MOBILE GAMES -->
+              <tr>
+                <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">MOBILE GAMES</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ArenaOfValor-Mobile"><label for="ArenaOfValor-Mobile">Arena Of Valor (AOV) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="AmongUs-Mobile"><label for="AmongUs-Mobile">Among Us - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BooyaCapsaSusun-Mobile"><label for="BooyaCapsaSusun-Mobile">Booya Capsa Susun - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BooyaDominoQiuqiu-Mobile"><label for="BooyaDominoQiuqiu-Mobile">Booya Domino Qiuqiu - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ClashOfClans-Mobile"><label for="ClashOfClans-Mobile">Clash Of Clans (C0C) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ClashRoyale-Mobile"><label for="ClashRoyale-Mobile">Clash Royale - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CODCallOfDuty-Mobile"><label for="CODCallOfDuty-Mobile">Call of Duty (COD) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DOTA2-Mobile"><label for="DOTA2-Mobile">DOTA2 - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DominoQq-Mobile"><label for="DominoQq-Mobile">Domino Qq - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DragonNest-Mobile"><label for="DragonNest-Mobile">DragonNest (DN) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DreamLeagueSoccer-Mobile"><label for="DreamLeagueSoccer-Mobile">Dream League Soccer - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="FIFAONLINE-Mobile"><label for="FIFAONLINE-Mobile">Fifa Online - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="FreeFire-Mobile"><label for="FreeFire-Mobile">FreeFire (FF) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="GenshinImpact-Mobile"><label for="GenshinImpact-Mobile">Genshin Impact - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="HiggsDomino-Mobile"><label for="HiggsDomino-Mobile">Higgs Domino Island - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LeagueofLegends-Mobile"><label for="LeagueofLegends-Mobile">League of Legends (LOL) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LastEmpireWarZ-Mobile"><label for="LastEmpireWarZ-Mobile">Last Empire War Z - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LineLetsGetRich-Mobile"><label for="LineLetsGetRich-Mobile">Line Lets Get Rich - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Minecraft-Mobile"><label for="Minecraft-Mobile">Minecraft - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="MobileLegends-Mobile"><label for="MobileLegends-Mobile">Mobile Legends (ML) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Mostly-Mobile"><label for="Mostly-Mobile">Mostly - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="NarutoLittleNinja-Mobile"><label for="NarutoLittleNinja-Mobile">Naruto Little Ninja - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Netmarble-Mobile"><label for="Netmarble-Mobile">Netmarble - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PointBlank-Mobile"><label for="PointBlank-Mobile">PointBlank (PB) - Mobile </label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PUBG-Mobile"><label for="PUBG-Mobile">PUBG - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Roblox-Mobile"><label for="Roblox-Mobile">Roblox - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="RpgToramOnline-Mobile"><label for="RpgToramOnline-Mobile">Rpg Toram Online - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="RulesOfSurvival-Mobile"><label for="RulesOfSurvival-Mobile">RulesOfSurvival (ROS) - Mobile</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ShinobiHeroes-Mobile"><label for="ShinobiHeroes-Mobile">Shinobi Heroes - Mobile</label></td>
+              </tr>
+              <!-- WEB GAMES -->   
+              <tr>
+                <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">WEB GAMES</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BallPool-WebGames"><label for="BallPool-WebGames">8 Ball Pool - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CastleVille-WebGames"><label for="CastleVille-WebGames">Castle Ville - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Headshot-WebGames"><label for="Headshot-WebGames">Headshot - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="EmpireAllies-WebGames"><label for="EmpireAllies-WebGames">Empire Allies - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LeagueofAngels-WebGames"><label for="LeagueofAngels-WebGames">League of Angels 2 - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="MegarealmRiseOfChaos-WebGames"><label for="MegarealmRiseOfChaos-WebGames">Megarealm RiseOfChaos-WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PerjuanganSemut-WebGames"><label for="PerjuanganSemut-WebGames">Perjuangan Semut - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Roblox-WebGames"><label for="Roblox-WebGames">Roblox - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="SwordofAngels-WebGames"><label for="SwordofAngels-WebGames">Sword of Angels - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="TexasHoldEmPoker-WebGames"><label for="TexasHoldEmPoker-WebGames">Texas Hold EmPoker - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Warflare-WebGames"><label for="Warflare-WebGames">Warflare - WebGames</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WildOnes-WebGames"><label for="WildOnes-WebGames">WildOnes - WebGames</label></td>
+              </tr>
+              <!-- DEKSTOP / PC GAMES -->    
+              <tr>
+                <td><label style="font-weight:bold;color:#ff6600;padding-left:5px">DEKSTOP / PC GAMES</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Atlantica-PC"><label for="Atlantica-PC">Atlantica - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="AuraKingdom-PC"><label for="AuraKingdom-PC">Aura Kingdom - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Ayodance-PC"><label for="Ayodance-PC">AyoDance - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="OriginAPEXLegends-PC"><label for="OriginAPEXLegends-PC">APEX Legends - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlackDesertOnline-PC"><label for="BlackDesertOnline-PC">BlackDesert (BDO) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlackDesertOnlinePS-PC"><label for="BlackDesertOnlinePS-PC">BlackDesert (BDO) - Playstaion</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlackDesertOnlineSteam-PC"><label for="BlackDesertOnlineSteam-PC">BlackDesert Steam (BDO) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlackDesertOnlineXbox-PC"><label for="BlackDesertOnlineXbox-PC">Black Desert (BDO) - Xbox</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Blackretribution-PC"><label for="Blackretribution-PC">Blackretribution - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BlizzardBattleNet-PC"><label for="BlizzardBattleNet-PC">Blizzard BattleNet - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="BountyHound-PC"><label for="BountyHound-PC">Bounty Hound - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CabalExtremePrivate-PC"><label for="CabalExtremePrivate-PC">Cabal Extreme - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CabalIndonesia-PC"><label for="CabalIndonesia-PC">Cabal Indonesia - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyBO-PC"><label for="CallofDutyBO-PC">CallofDuty(COD)BO - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyBOPS-PC"><label for="CallofDutyBOPS-PC">CallofDuty(COD)BO - PlaySt..</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyBOXBox-PC"><label for="CallofDutyBOXBox-PC">CallofDuty(COD)BO - XBox</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyMWPC-PC"><label for="CallofDutyMWPC-PC">CallofDuty(COD)MW - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyMWPS-PC"><label for="CallofDutyMWPS-PC">CallofDuty COD)MW - Playst..</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CallofDutyMWXBox-PC"><label for="CallofDutyMWXBox-PC">CallofDuty (COD)MW - XBox </label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ClashofGod-PC"><label for="ClashofGod-PC">Clash of God - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CSGOPlaystation-PC"><label for="CSGOPlaystation-PC">CSGO Playstation</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CSGOSteam-PC"><label for="CSGOSteam-PC">CSGO Steam - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CSGOXbox-PC"><label for="CSGOXbox-PC">CSGO Xbox - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="CrossFireindonesia-PC"><label for="CrossFireindonesia-PC">Cross Fire indonesia - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DiabloIII-PC"><label for="DiabloIII-PC">Diablo III - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DiabloII-PC"><label for="DiabloII-PC">Diablo II - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Diablo-PC"><label for="Diablo-PC">Diablo I - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Dota2Steam-PC"><label for="Dota2Steam-PC">DOTA 2 Steam - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="DragonNest-PC"><label for="DragonNest-PC">DragonNest (DN) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Dragona-PC"><label for="Dragona-PC">Dragona - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="FifaOnline3-PC"><label for="FifaOnline3-PC">Fifa Online 3 (FO3) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="FORTNITEEPICGAMES-PC"><label for="FORTNITEEPICGAMES-PC">Fortnite Epic - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LeagueofLegend-PC"><label for="LeagueofLegend-PC">League of Legend (LOL) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="GrandChase-PC"><label for="GrandChase-PC">Grand Chase - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Hearthstone-PC"><label for="Hearthstone-PC">Hearthstone - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="HeroesoftheStorm-PC"><label for="HeroesoftheStorm-PC">Heroes of the Storm - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="HONHeroesofNewerth-PC"><label for="HONHeroesofNewerth-PC">Heroes of Newerth (HON) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="HeroesofAtarsia-PC"><label for="HeroesofAtarsia-PC">Heroes of Atarsia (HOA) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="IdolStreet-PC"><label for="IdolStreet-PC">Idol Street - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Left4Dead2Steam-PC"><label for="Left4Dead2Steam-PC">Left4Dead 2 Steam - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Lineage2-PC"><label for="Lineage2-PC">Lineage 2 - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="LostSaga-PC"><label for="LostSaga-PC">LostSaga (LS) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Luneofeden-PC"><label for="Luneofeden-PC">Lune of eden - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Mercenaryops-PC"><label for="Mercenaryops-PC">Mercenary ops - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Mircovolt-PC"><label for="Mircovolt-PC">Mircovolt - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ModoMarble-PC"><label for="ModoMarble-PC">Modo Marble - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Overwatch-PC"><label for="Overwatch-PC">Overwatch - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PaladinsHiRez-PC"><label for="PaladinsHiRez-PC">Paladins Hi-Rez - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PointBlank-PC"><label for="PointBlank-PC">PointBlank (PB) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="PUBG-PC"><label for="PUBG-PC">PUBG - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Ragnarok2-PC"><label for="Ragnarok2-PC">Ragnarok 2 - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="RFRisingForce-PC"><label for="RFRisingForce-PC">RF Rising Force - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ROERingofElysium-PC"><label for="ROERingofElysium-PC">Ring of Elysium (ROE) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="ROSRulesOfSurvival-PC"><label for="ROSRulesOfSurvival-PC">Rules Of Survival (ROS) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="SealOnline-PC"><label for="SealOnline-PC">Seal Online - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="SpecialForce-PC"><label for="SpecialForce-PC">Special Force - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="StarCraftII-PC"><label for="StarCraftII-PC">StarCraft II - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="StarCraft-PC"><label for="StarCraft-PC">StarCraft - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Valorant-PC"><label for="Valorant-PC">Valorant (RIOT) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WarcraftIIBattleNet-PC"><label for="WarcraftIIBattleNet-PC">Warcraft II - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WarcraftIII-PC"><label for="WarcraftIII-PC">Warcraft III - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="Warframe-PC"><label for="Warframe-PC">Warframe - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WorldofTanks-PC"><label for="WorldofTanks-PC">World of Tanks (WOT) - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="WorldofWarcraft-PC"><label for="WorldofWarcraft-PC">World of Warcraft - PC</label></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="XshotIndonesia-PC"><label for="XshotIndonesia-PC">X-shot Indonesia - PC</label></td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <button style="margin-right:2px" type="button" onclick="myFunction()">Generate</button> 
+          <button type="button" onclick="location.reload()">Clear All</button> 
+          <br>
+        </div>
+        <div class="content">
+          <span style="margin-left:2px;font-weight:600">Script Generator Result</span>
+          <div class="list-output-content">
+            <div id="showScript">
+                  <span style="color:#ff6600;font-weight:600">
+                  ##############################################################<br>
+                  # Static Routing Games Script Generator By BuanaNETPBun.Github.io<br>
+                  # Date/Time: <span id="tanggalwaktu"></span><br>
+                  # Created By: BuanaNETPBun.Github.io - fb.me/buananet.pbun<br>
+                  ##############################################################<br>
+                  </span>
+                  <b>/ip firewall address-list</b><br>
+                  add list=LOCAL-IP address=10.0.0.0/8 comment="Routing Games by buananetpbun.github.io"<br>
+                  add list=LOCAL-IP address=172.16.0.0/12 comment="Routing Games by buananetpbun.github.io"<br>
+                  add list=LOCAL-IP address=192.168.0.0/16 comment="Routing Games by buananetpbun.github.io"<br>
+                  <span id="show-hide-routing-table" style="display:none">
+                  <b>/routing table</b><br>
+                  add name=routing-game fib comment="Routing Games by buananetpbun.github.io"<br>
+                  </span>	
+                  <span style="font-weight:600">/ip route</span><br>
+                  add gateway=<span id="gateway-input">x.x.x.x</span> <span id="routing-option">routing-mark</span>=routing-game comment="Routing Games by buananetpbun.github.io"<br>
+                  <span style="font-weight:600">/ip firewall mangle</span><br>
+                  add action=mark-routing chain=prerouting connection-mark=conn-game new-routing-mark=routing-game passthrough=no src-address-list=LOCAL-IP comment="Routing Games by buananetpbun.github.io" place-before=*0<br>
+                  add action=mark-connection chain=prerouting dst-address-list=List-IP-Games new-connection-mark=conn-game passthrough=yes comment="Routing Games by buananetpbun.github.io" place-before=*0<br>
+                  <span style="color:green;font-weight:600">##############################################################<br>
+                  # If you want to add a game script only, you can ignore the script above<br>
+                  ##############################################################<br></span>
+                  <span style="font-weight:600">/ip firewall raw</span><br>
+                  <!-- MOBILE GAMES -->
+                  <span id="ArenaOfValorMobile" style="display:none"><span style="color:#ff6600"># Arena Of Valor - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Arena Of Valor - Mobile" dst-address-list=!LOCAL-IP dst-port=10001-10094  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=10101-10201,10080-10110,17000-18000 protocol=udp</span>
+                  <span id="AmongUsMobile" style="display:none"><span style="color:#ff6600"># Among Us - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Among Us - Mobile" dst-address-list=!LOCAL-IP dst-port=27015-27030,27036-27037  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=4380,27000-27031,27036 protocol=udp</span>
+                  <span id="BooyaCapsaSusunMobile" style="display:none"><span style="color:#ff6600"># Booya Capsa Susun - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Booya Capsa Susun - Mobile" dst-address-list=!LOCAL-IP dst-port=7090-7100  protocol=tcp</span>
+                  <span id="BooyaDominoQiuqiuMobile" style="display:none"><span style="color:#ff6600"># Booya Domino Qiuqiu - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Booya Domino Qiuqiu - Mobile" dst-address-list=!LOCAL-IP dst-port=7020-7030  protocol=tcp</span>
+                  <span id="ClashOfClansMobile" style="display:none"><span style="color:#ff6600"># Clash Of Clans - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Clash Of Clans - Mobile" dst-address-list=!LOCAL-IP dst-port=9330-9340  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=9330-9340  protocol=udp</span>
+                  <span id="ClashRoyaleMobile" style="display:none"><span style="color:#ff6600"># Clash Royale (Cry) - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Clash Royale (Cry) - Mobile" dst-address-list=!LOCAL-IP dst-port=9330-9340  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=9330-9340  protocol=udp</span>
+                  <span id="CODCallOfDutyMobile" style="display:none"><span style="color:#ff6600"># Call Of Duty - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Call Of Duty - Mobile" dst-address-list=!LOCAL-IP dst-port=3013,10000-10019,18082,50000,65010,65050  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=7085-7995,8700,9030,10010-10019,17000-20100  protocol=udp</span>
+                  <span id="DOTA2Mobile" style="display:none"><span style="color:#ff6600"># DOTA2 - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="DOTA2 - Mobile" dst-address-list=!LOCAL-IP dst-port=9100-9200,8230-8250,8110-8120,27000-28998  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=27000-28998,39000 protocol=udp</span>
+                  <span id="DominoQqMobile" style="display:none"><span style="color:#ff6600"># Domino Qq - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Domino Qq - Mobile" dst-address-list=!LOCAL-IP dst-port=9122,11000-11150  protocol=tcp</span>
+                  <span id="DragonNestMobile" style="display:none"><span style="color:#ff6600"># Dragon Nest - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Dragon Nest - Mobile" dst-address-list=!LOCAL-IP dst-port=10514 protocol=tcp</span>
+                  <span id="DreamLeagueSoccerMobile" style="display:none"><span style="color:#ff6600"># Dream League Soccer - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Dream League Soccer - Mobile" dst-address-list=!LOCAL-IP dst-port=60970-60980  protocol=udp</span>
+                  <span id="FIFAONLINEMobile" style="display:none"><span style="color:#ff6600"># FIFA ONLINE - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="FIFA ONLINE - Mobile" dst-address-list=!LOCAL-IP dst-port=7770-7790  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=16300-16350 protocol=udp</span>
+                  <span id="FreeFireMobile" style="display:none"><span style="color:#ff6600"># Free Fire - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Free Fire - Mobile" dst-address-list=!LOCAL-IP dst-port=6006,6674,7006,7889,8001-8012,9006,9137,10000-10012,11000-11019 protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting  dst-address-list=!LOCAL-IP dst-port=12006,12008,13006,15006,20561,39003,39006,39698,39779,39800 protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=6006,6008,7008,8008,8130,8443,9008,9120,10000-10015,10100,11000-11019,12008,13008  protocol=udp</span>
+                  <span id="GenshinImpactMobile" style="display:none"><span style="color:#ff6600"># Genshin Impact - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Genshin Impact - Mobile" dst-address-list=!LOCAL-IP dst-port=42472  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=42472,22101-22102 protocol=udp</span>
+                  <span id="HiggsDominoMobile" style="display:none"><span style="color:#ff6600"># Higgs Domino Island - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Higgs Domino Island - Mobile" dst-address-list=!LOCAL-IP dst-port=50000-50500  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=40000-40010 protocol=udp</span>
+                  <span id="LeagueofLegendsMobile" style="display:none"><span style="color:#ff6600"># League of Legends (LOL) - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="League of Legends - Mobile" dst-address-list=!LOCAL-IP dst-port=2080-2099  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=5100 protocol=udp</span>
+                  <span id="LastEmpireWarZMobile" style="display:none"><span style="color:#ff6600"># Last Empire War Z - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Last Empire War Z - Mobile" dst-address-list=!LOCAL-IP dst-port=9930-9940  protocol=tcp</span>
+                  <span id="LineLetsGetRichMobile" style="display:none"><span style="color:#ff6600"># Line Lets Get Rich - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Line Lets Get Rich - Mobile" dst-address-list=!LOCAL-IP dst-port=10500-10515  protocol=tcp</span>
+                  <span id="MinecraftMobile" style="display:none"><span style="color:#ff6600"># Minecraft - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Minecraft - Mobile" dst-address-list=!LOCAL-IP dst-port=25565,19132-19133   protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=25565,19132-19133 protocol=udp</span>
+                  <span id="MobileLegendsMobile" style="display:none"><span style="color:#ff6600"># Mobile Legends - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Mobile Legends - Mobile" dst-address-list=!LOCAL-IP dst-port=5000-5221,5224-5227,5229-5241,5243-5508,5551-5559,5601-5700,9000-9010,9443  protocol=tcp<br>
+                  add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=5520-5529,10003,30000-30300,8443  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=4001-4009,5000-5221,5224-5241,5243-5509,5551-5559,5601-5700,8130,8443,9120  protocol=udp<br>
+                  add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=2702,3702,5517,5520-5529,8001,9000-9010,9992,10003,30000-30300  protocol=udp
+                  </span>
+                  <span id="MostlyMobile" style="display:none"><span style="color:#ff6600"># Mostly - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Mostly - Mobile" dst-address-list=!LOCAL-IP dst-port=9933  protocol=tcp</span>
+                  <span id="NarutoLittleNinjaMobile" style="display:none"><span style="color:#ff6600"># Naruto Little Ninja (China) - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Naruto Little Ninja (China) - Mobile" dst-address-list=!LOCAL-IP dst-port=6170-6180  protocol=tcp</span>
+                  <span id="NetmarbleMobile" style="display:none"><span style="color:#ff6600"># Netmarble - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Netmarble - Mobile" dst-address-list=!LOCAL-IP dst-port=12000-12010  protocol=tcp</span>
+                  <span id="PointBlankMobile" style="display:none"><span style="color:#ff6600"># Point Blank - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=44590-44610  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Point Blank - Mobile" dst-address-list=!LOCAL-IP dst-port=40000-40010  protocol=udp</span>
+                  <span id="PUBGMobile" style="display:none"><span style="color:#ff6600"># PUBG - Mobile</span> <br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="PUBG - Mobile" dst-address-list=!LOCAL-IP dst-port=7889,10012,13004,14000,17000,17500,18081,20000-20002,20371  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=8011,9030,10491,10612,12235,13004,13748,17000,17500,20000-20002 protocol=udp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=7086-7995,10039,10096,11455,12070-12460,13894,13972,41182-41192 protocol=udp</span>
+                  <span id="RobloxMobile" style="display:none"><span style="color:#ff6600"># Roblox - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Roblox - Mobile" dst-address-list=!LOCAL-IP dst-port=3074  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=88,500,3074,3544,4500,49152-65535 protocol=udp</span>
+                  <span id="RpgToramOnlineMobile" style="display:none"><span style="color:#ff6600"># Rpg Toram Online - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Rpg Toram Online - Mobile" dst-address-list=!LOCAL-IP dst-port=30100-30110  protocol=tcp</span>
+                  <span id="RulesOfSurvivalMobile" style="display:none"><span style="color:#ff6600"># Rules Of Survival - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Rules Of Survival - Mobile" dst-address-list=!LOCAL-IP dst-port=24000-24050  protocol=udp</span>
+                  <span id="ShinobiHeroesMobile" style="display:none"><span style="color:#ff6600"># Shinobi Heroes - Mobile</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Shinobi Heroes - Mobile" dst-address-list=!LOCAL-IP dst-port=10005-10020  protocol=tcp</span>
+                  <!-- WEB GAMES -->
+                  <span id="BallPoolWebGames" style="display:none"><span style="color:#ff6600"># 8 Ball Pool - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="8 Ball Pool (Miniclips - Web Games" dst-address-list=!LOCAL-IP dst-port=4000  protocol=tcp</span>
+                  <span id="CastleVilleWebGames" style="display:none"><span style="color:#ff6600">#CastleVille - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="CastleVille - Web Games" dst-address-list=!LOCAL-IP dst-port=8890  protocol=tcp</span>
+                  <span id="HeadshotWebGames" style="display:none"><span style="color:#ff6600"># Headshot - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Headshot - Web Games" dst-address-list=!LOCAL-IP dst-port=1800-1810  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=1845-1860  protocol=udp</span>
+                  <span id="EmpireAlliesWebGames" style="display:none"><span style="color:#ff6600"># Empire & Allies - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Empire & Allies - Web Games" dst-address-list=!LOCAL-IP dst-port=8890  protocol=tcp</span>
+                  <span id="LeagueofAngelsWebGames" style="display:none"><span style="color:#ff6600"># League of Angels 2 - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="League of Angels 2 - Web Games" dst-address-list=!LOCAL-IP dst-port=51700-51715  protocol=tcp</span>
+                  <span id="MegarealmRiseOfChaosWebGames" style="display:none"><span style="color:#ff6600"># Megarealm: Rise Of Chaos - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Megarealm: Rise Of Chaos" dst-address-list=!LOCAL-IP dst-port=26590-26600  protocol=tcp</span>
+                  <span id="PerjuanganSemutWebGames" style="display:none"><span style="color:#ff6600"># Perjuangan Semut  - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Perjuangan Semut  - Web Games" dst-address-list=!LOCAL-IP dst-port=7200-7210,7450-7460  protocol=tcp</span>
+                  <span id="RobloxWebGames" style="display:none"><span style="color:#ff6600"># Roblox - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Roblox - Web Games" dst-address-list=!LOCAL-IP dst-port=49152-65535  protocol=udp</span>
+                  <span id="SwordofAngelsWebGames" style="display:none"><span style="color:#ff6600"># Sword of Angels - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Sword of Angels - Web Games" dst-address-list=!LOCAL-IP dst-port=15490-15510  protocol=tcp</span>
+                  <span id="TexasHoldEmPokerWebGames" style="display:none"><span style="color:#ff6600"># Texas HoldEm Poker - Games Web</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Texas HoldEm Poker - Games Web" dst-address-list=!LOCAL-IP dst-port=9339  protocol=tcp</span>
+                  <span id="WarflareWebGames" style="display:none"><span style="color:#ff6600"># Warflare - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Warflare - Web Games" dst-address-list=!LOCAL-IP dst-port=64990-65010  protocol=tcp</span>
+                  <span id="WildOnesWebGames" style="display:none"><span style="color:#ff6600"># WildOnes - Web Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="WildOnes - Web Games" dst-address-list=!LOCAL-IP dst-port=8000  protocol=tcp</span>
+                  <!-- DEKSTOP / PC GAMES -->
+                  <span id="AtlanticaPC" style="display:none"><span style="color:#ff6600"># Atlantica - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Atlantica - PC" dst-address-list=!LOCAL-IP dst-port=4300  protocol=tcp</span>
+                  <span id="AuraKingdomPC" style="display:none"><span style="color:#ff6600"># Aura Kingdom - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Aura Kingdom - PC" dst-address-list=!LOCAL-IP dst-port=5540-5580  protocol=tcp</span>
+                  <span id="AyodancePC" style="display:none"><span style="color:#ff6600"># Ayo Dance - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Ayodance - PC" dst-address-list=!LOCAL-IP dst-port=18900-18910  protocol=tcp</span>
+                  <span id="OriginAPEXLegendsPC" style="display:none"><span style="color:#ff6600"># Origin APEX Legends - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Origin APEX Legends - PC" dst-address-list=!LOCAL-IP dst-port=9960-9969,1024-1124,3216,18000,18120,18060,27900,28910,29900  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=1024-1124,18000,29900,37000-40000  protocol=udp</span>
+                  <span id="BlackDesertOnlinePC" style="display:none"><span style="color:#ff6600"># Black Desert Online - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Black Desert Online - PC" dst-address-list=!LOCAL-IP dst-port=8888,9991-9993  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=8888,9991-9993  protocol=udp</span>
+                  <span id="BlackDesertOnlinePSPC" style="display:none"><span style="color:#ff6600"># Black Desert Online - Playstation </span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Black Desert Online Playstation" dst-address-list=!LOCAL-IP dst-port=1935,3478-3480  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=3074,3478-3479  protocol=udp</span>
+                  <span id="BlackDesertOnlineSteamPC" style="display:none"><span style="color:#ff6600"># Black Desert Online Steam - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Black Desert Online Steam - PC" dst-address-list=!LOCAL-IP dst-port=8888,9991-9993,27015-27030,27036-27037  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=4380,8888,9991-9993,27000-27031,27036  protocol=udp</span>
+                  <span id="BlackDesertOnlineXboxPC" style="display:none"><span style="color:#ff6600"># Black Desert Online - Xbox</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Black Desert Online Xbox - PC" dst-address-list=!LOCAL-IP dst-port=3074  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=88,500,3074,3544,4500  protocol=udp</span>
+                  <span id="BlackretributionPC" style="display:none"><span style="color:#ff6600"># Black retribution - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Blackretribution - PC" dst-address-list=!LOCAL-IP dst-port=7020-7050,8200-8220,9000-9020  protocol=udp</span>
+                  <span id="BlizzardBattleNetPC" style="display:none"><span style="color:#ff6600"># Blizzard BattleNet - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Blizzard BattleNet - PC" dst-address-list=!LOCAL-IP dst-port=1119  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=1119  protocol=udp</span>
+                  <span id="BountyHoundPC" style="display:none"><span style="color:#ff6600"># Bounty Hound - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Bounty Hound - PC" dst-address-list=!LOCAL-IP dst-port=9810-9860  protocol=tcp</span>
+                  <span id="CabalExtremePrivatePC" style="display:none"><span style="color:#ff6600"># Cabal Extreme Private - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Cabal Extreme Private - PC" dst-address-list=!LOCAL-IP dst-port=60170-60180,63000-64000,38101,38110-38600  protocol=tcp</span>
+                  <span id="CabalIndonesiaPC" style="display:none"><span style="color:#ff6600"># Cabal Indonesia - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Cabal Indonesia - PC" dst-address-list=!LOCAL-IP dst-port=63000-64000,38101,38110-38130  protocol=tcp</span>
+                  <span id="CallofDutyBOPC" style="display:none"><span style="color:#ff6600"># Call of Duty BO - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Call of Duty BO - PC" dst-address-list=!LOCAL-IP dst-port=3074,27014-27050  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=3478,4379-4380,27000-27031,27036  protocol=udp</span>
+                  <span id="CallofDutyBOPSPC" style="display:none"><span style="color:#ff6600"># Callof Duty BO - Playstation</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Call of Duty BO - Playstation" dst-address-list=!LOCAL-IP dst-port=80,443,1935,3478-3480  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=3478-3479  protocol=udp</span>
+                  <span id="CallofDutyBOXBoxPC" style="display:none"><span style="color:#ff6600"># Call of Duty BO - XBox</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Call of Duty BO - XBox" dst-address-list=!LOCAL-IP dst-port=53,80,3074  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=88,500,3074,3075,3544,4500  protocol=udp</span>
+                  <span id="CallofDutyMWPCPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Call of Duty MW PC - PC" dst-address-list=!LOCAL-IP dst-port=3074,27014-27050  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=3074,3478,4379-4380,27000-27031,27036  protocol=udp</span>
+                  <span id="CallofDutyMWPSPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - Playstation</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Call of Duty MW Playstation" dst-address-list=!LOCAL-IP dst-port=1935,3478-3480  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=3074,3478-3479  protocol=udp</span>
+                  <span id="CallofDutyMWXBoxPC" style="display:none"><span style="color:#ff6600"># Call of Duty MW - XBox</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Call of Duty MW - XBox" dst-address-list=!LOCAL-IP dst-port=3074  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=88,500,3074,3075,3544,4500  protocol=udp</span>
+                  <span id="ClashofGodPC" style="display:none"><span style="color:#ff6600"># Clash of God - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Clash of God - PC" dst-address-list=!LOCAL-IP dst-port=9430-9450,5220-5230  protocol=tcp</span>
+                  <span id="CSGOPlaystationPC" style="display:none"><span style="color:#ff6600"># CSGO - Playstation </span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="CSGO - Playstation" dst-address-list=!LOCAL-IP dst-port=3478-3480,5223,8080  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=3074,3478-3479,3658  protocol=udp</span>
+                  <span id="CSGOSteamPC" style="display:none"><span style="color:#ff6600"># CSGO Steam - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="CSGO Steam - PC" dst-address-list=!LOCAL-IP dst-port=27015-27030,27036-27037  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=4380,27000-27031,27036  protocol=udp</span>
+                  <span id="CSGOXboxPC" style="display:none"><span style="color:#ff6600"># CSGO - Xbox</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="CSGO - Xbox" dst-address-list=!LOCAL-IP dst-port=3074  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=88,3074  protocol=udp</span>
+                  <span id="CrossFireindonesiaPC" style="display:none"><span style="color:#ff6600"># CrossFire indonesia - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Cross Fire indonesia - PC" dst-address-list=!LOCAL-IP dst-port=10009,13008,16666,28012  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=12020-12080,13000-13080  protocol=udp</span>
+                  <span id="DiabloIIIPC" style="display:none"><span style="color:#ff6600"># Diablo III - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Diablo III - PC" dst-address-list=!LOCAL-IP dst-port=1119  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=1119,6120  protocol=udp</span>
+                  <span id="DiabloIIPC" style="display:none"><span style="color:#ff6600"># Diablo II - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Diablo II - PC" dst-address-list=!LOCAL-IP dst-port=6112,4000  protocol=tcp</span>
+                  <span id="DiabloPC" style="display:none"><span style="color:#ff6600"># Diablo I - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Diablo - PC" dst-address-list=!LOCAL-IP dst-port=6112-6119  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=6112-6119  protocol=udp</span>
+                  <span id="Dota2SteamPC" style="display:none"><span style="color:#ff6600"># DOTA2 Steam - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Dota 2 Steam - PC" dst-address-list=!LOCAL-IP dst-port=9100-9200,8230-8250,8110-8120  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=28010-28200,27010-27200,39000  protocol=udp</span>
+                  <span id="DragonNestPC" style="display:none"><span style="color:#ff6600"># Dragon Nest - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Dragon Nest - PC" dst-address-list=!LOCAL-IP dst-port=14300-15512  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=15000-15500  protocol=udp</span>
+                  <span id="DragonaPC" style="display:none"><span style="color:#ff6600"># Dragona - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Dragona - PC" dst-address-list=!LOCAL-IP dst-port=10000-10030  protocol=tcp</span>
+                  <span id="FifaOnline3PC" style="display:none"><span style="color:#ff6600"># Fifa Online 3 - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Fifa Online 3 - PC" dst-address-list=!LOCAL-IP dst-port=7770-7790  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=16300-16350  protocol=udp</span>
+                  <span id="FORTNITEEPICGAMESPC" style="display:none"><span style="color:#ff6600"># FORTNITE EPIC GAMES - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="FORTNITE EPIC GAMES - PC" dst-address-list=!LOCAL-IP dst-port=9000-9100  protocol=udp</span>
+                  <span id="LeagueofLegendPC" style="display:none"><span style="color:#ff6600"># League of Legend - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="League of Legend - PC" dst-address-list=!LOCAL-IP dst-port=2080-2099  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port="5100  protocol=udp</span>
+                  <span id="GrandChasePC" style="display:none"><span style="color:#ff6600"># Grand Chase - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Grand Chase - PC" dst-address-list=!LOCAL-IP dst-port=9300,9400,9700  protocol=tcp</span>
+                  <span id="HearthstonePC" style="display:none"><span style="color:#ff6600"># Hearthstone - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Hearthstone - PC" dst-address-list=!LOCAL-IP dst-port=1119,3724  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port="1119,3724  protocol=udp</span>
+                  <span id="HeroesoftheStormPC" style="display:none"><span style="color:#ff6600"># Heroes of the Storm - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Heroes of the Storm - PC" dst-address-list=!LOCAL-IP dst-port=1119-1120,3724,6113  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=1119-1120,3478-3479,3724,5060,5062,6113,6250,12000-64000  protocol=udp</span>
+                  <span id="HONHeroesofNewerthPC" style="display:none"><span style="color:#ff6600"># HON Heroes of Newerth - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="HON Heroes of Newerth - PC" dst-address-list=!LOCAL-IP dst-port=9100-9200,11200-11500  protocol=udp</span>
+                  <span id="HeroesofAtarsiaPC" style="display:none"><span style="color:#ff6600"># Heroes of Atarsia - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Heroes of Atarsia - PC" dst-address-list=!LOCAL-IP dst-port=7777,9400  protocol=tcp</span>
+                  <span id="IdolStreetPC" style="display:none"><span style="color:#ff6600"># Idol Street - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Idol Street - PC" dst-address-list=!LOCAL-IP dst-port=2001-2010  protocol=tcp</span>
+                  <span id="Left4Dead2SteamPC" style="display:none"><span style="color:#ff6600"># Left4Dead 2 Steam - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Left4Dead 2 Steam - PC" dst-address-list=!LOCAL-IP dst-port=4360-4390  protocol=udp</span>
+                  <span id="Lineage2PC" style="display:none"><span style="color:#ff6600"># Lineage 2 - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Lineage 2 - PC" dst-address-list=!LOCAL-IP dst-port=7777,10000,11000,13000  protocol=tcp</span>
+                  <span id="LostSagaPC" style="display:none"><span style="color:#ff6600"># Lost Saga - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Lost Saga - PC" dst-address-list=!LOCAL-IP dst-port=14000-14010  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=14000-14010  protocol=udp</span>
+                  <span id="LuneofedenPC" style="display:none"><span style="color:#ff6600"># Lune of eden - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Lune of eden - PC" dst-address-list=!LOCAL-IP dst-port=8400  protocol=tcp</span>
+                  <span id="MercenaryopsPC" style="display:none"><span style="color:#ff6600"># Mercenary ops - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Mercenary ops - PC" dst-address-list=!LOCAL-IP dst-port=6000-6125  protocol=tcp</span>
+                  <span id="MircovoltPC" style="display:none"><span style="color:#ff6600"># Mircovolt - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Mircovolt - PC" dst-address-list=!LOCAL-IP dst-port=13000  protocol=tcp</span>
+                  <span id="ModoMarblePC" style="display:none"><span style="color:#ff6600"># Modo Marble - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Modo Marble - PC" dst-address-list=!LOCAL-IP dst-port=28900-28914  protocol=tcp</span>
+                  <span id="OverwatchPC" style="display:none"><span style="color:#ff6600"># Overwatch - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Overwatch - PC" dst-address-list=!LOCAL-IP dst-port=1119,3724,6113  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=3478-3479,5060,5062,6250,12000-64000  protocol=udp</span>
+                  <span id="PaladinsHiRezPC" style="display:none"><span style="color:#ff6600"># Paladins Hi-Rez - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Paladins Hi-Rez - PC" dst-address-list=!LOCAL-IP dst-port=9000-9999  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=9002-9999  protocol=udp</span>
+                  <span id="PointBlankPC" style="display:none"><span style="color:#ff6600"># Point Blank - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Point Blank - PC" dst-address-list=!LOCAL-IP dst-port=39190-39200  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=40000-40010  protocol=udp</span>
+                  <span id="PUBGPC" style="display:none"><span style="color:#ff6600"># PUBG Playerunknown Battlegrounds - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="PUBG Playerunknown Battlegrounds - PC" dst-address-list=!LOCAL-IP dst-port=7080-8000  protocol=udp</span>
+                  <span id="Ragnarok2PC" style="display:none"><span style="color:#ff6600"># Ragnarok 2 - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Ragnarok 2 - PC" dst-address-list=!LOCAL-IP dst-port=7201-7210,7401-7410  protocol=tcp</span>
+                  <span id="RFRisingForcePC" style="display:none"><span style="color:#ff6600"># RF Rising Force - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="RF Rising Force - PC" dst-address-list=!LOCAL-IP dst-port=27780  protocol=tcp</span>
+                  <span id="ROERingofElysiumPC" style="display:none"><span style="color:#ff6600"># ROE Ring of Elysium - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="ROE Ring of Elysium - PC" dst-address-list=!LOCAL-IP dst-port=9002,10000-10015  protocol=tcp</span>
+                  <span id="ROSRulesOfSurvivalPC" style="display:none"><span style="color:#ff6600"># ROS Rules Of Survival - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="ROS Rules Of Survival - PC" dst-address-list=!LOCAL-IP dst-port=24000-24100  protocol=udp</span>
+                  <span id="SealOnlinePC" style="display:none"><span style="color:#ff6600"># Seal Online - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Seal Online - PC" dst-address-list=!LOCAL-IP dst-port=1818  protocol=tcp</span>
+                  <span id="SpecialForcePC" style="display:none"><span style="color:#ff6600"># Special Force - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Special Force - PC" dst-address-list=!LOCAL-IP dst-port=27920-27940  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=30000-30030  protocol=udp</span>
+                  <span id="StarCraftIIPC" style="display:none"><span style="color:#ff6600"># StarCraft II - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="StarCraft II - PC" dst-address-list=!LOCAL-IP dst-port=1119,6113,1120,80,3724  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=1119,6113,1120,80,3724  protocol=udp</span>
+                  <span id="StarCraftPC" style="display:none"><span style="color:#ff6600"># StarCraft - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="StarCraft - PC" dst-address-list=!LOCAL-IP dst-port=6112  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=9401,9600,16440-16450  protocol=udp</span>
+                  <span id="ValorantPC" style="display:none"><span style="color:#ff6600"># Valorant - PC Games</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Valorant - PC Games" dst-address-list=!LOCAL-IP dst-port=2099,5222-5223,8088,8393-8400  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=7000-7500,8088  protocol=udp</span>
+                  <span id="WarcraftIIBattleNetPC" style="display:none"><span style="color:#ff6600"># Warcraft II BattleNet - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Warcraft II BattleNet - PC" dst-address-list=!LOCAL-IP dst-port=6112-6119  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=6112-6119  protocol=udp</span>
+                  <span id="WarcraftIIIPC" style="display:none"><span style="color:#ff6600"># Warcraft III - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Warcraft III - PC" dst-address-list=!LOCAL-IP dst-port=6112,6113-6119  protocol=tcp</span>
+                  <span id="WarframePC" style="display:none"><span style="color:#ff6600"># Warframe - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Warframe - PC" dst-address-list=!LOCAL-IP dst-port=4950-4955  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=6695-6699  protocol=udp</span>
+                  <span id="WorldofTanksPC" style="display:none"><span style="color:#ff6600"># World of Tanks - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="World of Tanks - PC" dst-address-list=!LOCAL-IP dst-port=20000-25000,8081,8088,32801,3280  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=12000-29999,32801-32825, 5060,5062,3478,3479,20014  protocol=udp</span>
+                  <span id="WorldofWarcraftPC" style="display:none"><span style="color:#ff6600"># World of Warcraft - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="World of Warcraft - PC" dst-address-list=!LOCAL-IP dst-port=3724,1119,6012  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=3724,1119,6012  protocol=udp</span>
+                  <span id="XshotIndonesiaPC" style="display:none"><span style="color:#ff6600"># Xshot Indonesia - PC</span><br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting comment="Xshot Indonesia - PC" dst-address-list=!LOCAL-IP dst-port=7320-7350  protocol=tcp<br>add action=add-dst-to-address-list address-list="List-IP-Games" address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP dst-port=7800-7850,30000  protocol=udp</span>
+            </div>
+          </div>
+          <br>
+          <button id="copyscript" type="button" onclick="selectElementContents(document.getElementById('showScript'))">Copy Script</button><span style="padding:7px; font-weight:600;margin-left:10px;font-size:14px">Copy-Paste to Terminal.</span>
+        </div>
+      </div>
+      <div class="footer">
+        <span style="color:#ff6600"><b># This Script for remove all Script from this Generator:</b></span><br>
+        /ip route remove [find comment="Routing Games by buananetpbun.github.io"<br>
+        /ip firewall mangle remove [find comment="Routing Games by buananetpbun.github.io"<br>
+        /ip firewall raw remove [find address-list="List-IP-Games"]<br>
+        /ip firewall address-list remove [find list="List-IP-Games"]<br>
+        /ip firewall address-list remove [find comment="Routing Games by buananetpbun.github.io"<br>
+        /routing table remove [find comment="Routing Games by buananetpbun.github.io"
+        <div style="margin-top:15px; padding-top:10px; border-top: 1px solid #555;">
+          © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+        </div>
+        <div style="margin-top:1px; color:#888; font-size:11px">
+          Project by <a target="_blank" href="https://github.com/buananetpbun">Agus Ramadhani</a> site <a target="_blank" href="https://www.o-om.com/">o-om.com</a> P.Bun 74112, INDONESIA
+        </div>		
+      </div>
+    </div>
+    <div oncontextmenu="return false;" id="myLockScreen" class="lock-screen">
+      <div id="center-screen1" class="center-screen"><div style="font-size:20px; background-color:#333; padding:20px; border-radius:10px">Please Activate Your Email.<br><button id="verify">VERIFY YOUR E-MAIL NOW</button><div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown2"></div></div></div>
+      <div id="center-screen2" class="center-screen"><div style="font-size:20px;background-color:#333; padding:20px; border-radius:10px">GET PREMIUM ACCESS<br>PLEASE SUBSCRIBE<br><button id="not-subscribe">GO TO BUANANET.COM</button><div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown3">redirected to the new domain https://buananet.com</div></div>
+	  </div>	  
+    </div>
+    <div oncontextmenu="return false;" id="myLogin" class="modal-login">
+      <div class="modal-content">
+        <div class="forms-out">
+          <div class="forms-in">
+            <div class="myButtonGoogle">
+              <img alt="google" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiElEQVRoge2Xb0gTcRjHp5tlYJRlkRK9iF5I9ke7O5WhnbstU+yPu2OVhQTSu5IIiiCqm5EFvYgiCbJId3OQKxAiNyWwF/2BikFpRBhoyW41ndsEZyXl9Zz5Z+q8uXm79eK+8GUwdj8+3+f3/J77TaGQJUuWLFmyZE2rT4dsZQnsmFOL3QAzLIE2s1qszkmgNEvklg+o1cvjzThHvfj2lQB7HmC7AZYL41EI+JQlkF3x5lZwCkUCQJ8EDy4AfI6dBPbimwbLigu8qyR7zXglowCfFWKY1WGHJYX/qsvJgJ7+uFj4ILdyBoNSEnj+EDq16Aex4KEQ9u6STUslgefFalFrmJYIwOd9VoNUuDR5CFuMZLI6pMCpQU/D969nwbf14niyZPAwafYIVpRATSyOpIVbA3bwO7hdUniOViS6D2W1hKy6FhuDsXhioWt92Y2k9+XnL4sl7xwF7Mp9I3YV5zmz4dX4LJ8ZwigpTDQCeCsfgPfQ7dT30ALuieo7JJsg0YqzKpQjNpV/MgDvwKNkt6ss28FfD+LNF1Y/25ZkBsNP+UmSh6NxldCzGqO3mjB670RqHT2QIVqAgE25N2QAm8oe7lnC6GsFcxG7xlsoWoARe2Jl6ADKu7EKUFTjo2IeACbTvVgF0NC+KtECxKOFtEb/QdECzHuIbSqPwSo8QqNvIS8uWgB+jAbsqqFg+GFbkvtUs/oNYqL2Cz2L0+6Ugqv+1FAupv2rCNrbHypA4eX+dNEC8Ap+kfW3Jr8rtZS6UDPFoQzlCLcL80lDe3eG7n9vj6jwvCbPwdvHaS/zm8pHx+GnTF6MdD2DlVNqjL7nIQMYfbdED8Bf5q48zG6ZCT5hhhoDH49gtQQect4zQPtzRQ/ACzHry0IGmDBiphowU/lqoTVyzfr16pumeeGhfTpiAj8VgqEeCIWAdhpGGLIeNVEkyui3oBZyIwTfgZrIStglC2Imf/C/y6s/21FUM/BrFvxv7SVfTkwDbLYaUqDSXcIhFmas8UgXXvvZOd373gsxhZ8U1mBYhzJkpxghYEcHC661d8Kbt4mmuURJAvBCLBVpANC2+BDkH4Q5UIvTnOCtNjbiFAnQ39XQUp6oqm8mezBGXyI9+CwhVsMKADoHh/dTWPB/I9cBoY/iz4T/S8RFWCOVBaBV0BrXwSYI1QyVroMzQwN0xTZGvzbejLJkyZIlS9Z/o7/Q0bCX5++bJAAAAABJRU5ErkJggg==">
+              <span id="google-sign-in">Sign-In with Google</span>
+            </div>
+            <div id="registration-page" class="hide">
+              <h2>SIGN UP</h2>
+              <br><br><br>
+              <label>E-Mail <span style="color:#ff6600">*</span></label>
+              <input type="email" id="registration-email" placeholder="E-Mail">
+              <label>Confirm E-mail <span style="color:#ff6600">*</span></label> 
+              <input type="email" id="registration-reemail" autocomplete="off" placeholder="Confirm E-Mail">
+              <label>Password <span style="color:#ff6600">*</span><span style="font-weight:normal; font-size:13px"></span></label>
+              <input type="password" id="registration-password" placeholder="Password">
+              <span style="float:left; margin-top:8px" id="captcha-signup"></span><input autocomplete="off" style="margin-top:10px;width:140px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignUp">
+              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
+              <br>
+            </div>
+            <div id="login-page">
+              <h2>SIGN IN</h2>
+              <br><br><br>
+              <label>E-Mail</label>
+              <input type="email" id="login-email" placeholder="E-Mail">
+              <label>Password</label>
+              <input type="password" id="login-password" placeholder="Password">
+              <span style="float:left; margin-top:8px" id="captcha-signin"></span><input autocomplete="off" style="margin-top:10px;width:140px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignIn">
+              <button style="width:100% !important;" id="login">Login</button>
+              <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
+              <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+            </div>
+          </div>
+          <div style="clear:both"></div>
+          <div style="font-size:11px; color:#888; text-align:center; font-weight:normal; margin-top:10px" id="countdown"></div>
+        </div>
+      </div>
+    </div>
+    <div oncontextmenu="return false;" id="myModal" class="modal">
+      <div style="width: 605px;" class="modal-content">
+        <span class="close">&times;</span>
+        <div style="text-align:justify; float:right;margin-right:10px">
+          <span style="font-size:14px;">Bank Transfer via [ QRIS ]</span><br><span style="font-size:13px;color:#ff6600;">BUANANET-PBUN - AGUS R.</span>
+          <div style="margin-right:0px; padding-top:3px">
+            <img alt="qris" style="border:7px solid #ffffff; border-radius:10px" src="data:image/png;base64,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">
+          </div>
+        </div>
+        <div style="font-size:22px;font-weight:bold">Want to give me a Gift ?</div>
+        <div style="font-size:16px;font-weight:bold;margin-bottom:17px; margin-top:10px">
+          <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>		
+          <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+		  <p><b>Wise</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://wise.com/share/agusr112">wise.com/share/agusr112</a></p>		  
+          <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
+          <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        </div>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-bottom:10px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+          <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+          <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>	
+        </div>
+      </div>
+    </div>
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+      <div>
+        <div id="dialogboxhead"></div>
+        <div id="dialogboxbody"></div>
+        <div id="dialogboxfoot"></div>
+      </div>
+    </div>
+	
+    <script src="./login/login.js"></script>	
+<script>
+(function(_0x3d2c59,_0x598e78){function _0x1cf503(_0x35a7e1,_0x258e78,_0x118fcc,_0xe242c,_0x540901){return _0x499d(_0x35a7e1- -0x307,_0x118fcc);}function _0x21bd0c(_0x3950ab,_0x13b97d,_0x4c60bf,_0x3ad824,_0x291bfa){return _0x499d(_0x291bfa- -0x25c,_0x4c60bf);}const _0x3640a1=_0x3d2c59();function _0x134bb9(_0x53847b,_0x258c39,_0xe7fa8f,_0x4b509a,_0x5260db){return _0x499d(_0xe7fa8f- -0x2e3,_0x53847b);}function _0x402c21(_0x40d100,_0x53b72d,_0x3f98c8,_0x22df4f,_0x466dfc){return _0x499d(_0x466dfc-0x16e,_0x53b72d);}function _0x35d2f8(_0x197107,_0x218b6d,_0x5161a5,_0x42eb05,_0x4f839d){return _0x499d(_0x197107- -0x256,_0x4f839d);}while(!![]){try{const _0x1843e2=-parseInt(_0x1cf503(-0x254,-0x246,'R5%F',-0x1f1,-0x296))/(-0x614*0x2+-0xac*-0x25+-0xcb3)*(-parseInt(_0x402c21(0x188,'8ocy',0x23b,0x1bc,0x1f7))/(-0x1cba+-0x62b*0x2+0x2912))+-parseInt(_0x35d2f8(-0x193,-0x119,-0x14c,-0x16f,'4GR^'))/(0x25cf*0x1+-0x21c6+-0x406)+-parseInt(_0x402c21(0x2c0,'n5Y*',0x279,0x2de,0x280))/(0x2b4*0xe+-0x1*0x1669+-0xf6b)*(-parseInt(_0x402c21(0x233,'QDz3',0x24d,0x264,0x204))/(-0x16ea*-0x1+0x1d37+-0x341c))+parseInt(_0x35d2f8(-0x134,-0x107,-0x1a6,-0xd7,'fdCM'))/(0x6cf+-0x1ca4+0x15db)+-parseInt(_0x21bd0c(-0x175,-0x187,'n5Y*',-0x116,-0x179))/(-0x1*-0x2477+-0x1805*-0x1+-0x3c75)*(parseInt(_0x134bb9('jeoF',-0x209,-0x1b5,-0x1d1,-0x149))/(-0x1fee+0x1d21*0x1+-0x19*-0x1d))+-parseInt(_0x402c21(0x316,'@oqs',0x2f0,0x253,0x2b4))/(0x4*-0x1a6+0x22f6+0x1c55*-0x1)+-parseInt(_0x21bd0c(-0x143,-0xbb,'EjCD',-0x156,-0x115))/(-0x1739+-0x19d9+0x311c*0x1)*(-parseInt(_0x1cf503(-0x23e,-0x29e,'bS4W',-0x275,-0x254))/(0x553+0xb58+-0x10a0));if(_0x1843e2===_0x598e78)break;else _0x3640a1['push'](_0x3640a1['shift']());}catch(_0x17a98a){_0x3640a1['push'](_0x3640a1['shift']());}}}(_0x2831,-0x6ce32+0xa567f+-0x1*-0x2032c));const _0x8088dd=(function(){const _0x532c09={};function _0x4fc886(_0x5a022a,_0x593b4f,_0x123050,_0x3a494f,_0xc2b75e){return _0x499d(_0x593b4f- -0x298,_0x5a022a);}_0x532c09[_0x4fc886('Y^#)',-0x1d2,-0x158,-0x188,-0x228)]=_0x59aa99(-0x1b5,-0x19b,-0x1be,-0x1d4,'SAyY')+_0x59aa99(-0x17d,-0x122,-0xf8,-0xcc,'xYXR')+'+$',_0x532c09[_0x59aa99(-0x1d2,-0x1a5,-0x20f,-0x187,'%3*u')]=function(_0x4f98e6,_0xe622eb){return _0x4f98e6===_0xe622eb;};function _0x59aa99(_0x37570d,_0xf8ffd5,_0x1207a0,_0x3fff16,_0x586ec7){return _0x499d(_0xf8ffd5- -0x21f,_0x586ec7);}_0x532c09[_0x4df327(0x201,0x1a9,'TW*3',0x1ff,0x1da)]=_0x59aa99(-0x1f0,-0x199,-0x14c,-0x1e4,'3h#y'),_0x532c09[_0x20d4a9(-0x14,0x5e,0x95,0xdc,'i!qa')]=_0x429a99(-0x289,-0x308,'X(y*',-0x305,-0x2ec);function _0x20d4a9(_0xd11e94,_0x5a46ff,_0x5128fb,_0x3e6329,_0x589f8c){return _0x499d(_0x5a46ff- -0x97,_0x589f8c);}_0x532c09[_0x429a99(-0x2d5,-0x30e,'3h#y',-0x29c,-0x35c)]=function(_0x8b6718,_0x447bf4){return _0x8b6718!==_0x447bf4;},_0x532c09[_0x4fc886('O3m7',-0x1bf,-0x23b,-0x217,-0x1d9)]=_0x4df327(0x187,0x1a0,'Z]*r',0x1dd,0x182),_0x532c09[_0x4df327(0x235,0x283,'%3*u',0x2de,0x241)]=function(_0x29606d,_0xf3ee65){return _0x29606d!==_0xf3ee65;};function _0x429a99(_0x19b588,_0x10b1ac,_0x6c6f75,_0x360007,_0x28a26f){return _0x499d(_0x10b1ac- -0x379,_0x6c6f75);}_0x532c09[_0x20d4a9(0xa4,0x5d,0x51,0xbd,'xYXR')]=_0x4fc886('Y^#)',-0x18c,-0x18f,-0x208,-0x1ce),_0x532c09[_0x4df327(0x1fb,0x1a5,'EjCD',0x146,0x188)]=_0x59aa99(-0x1be,-0x148,-0x120,-0xe3,'&@vg');function _0x4df327(_0x5882bb,_0x29d415,_0x1b7cf2,_0x122b5c,_0x1dd9f8){return _0x499d(_0x29d415-0x127,_0x1b7cf2);}const _0x479540=_0x532c09;let _0x2f2446=!![];return function(_0x46b109,_0x4b69fd){function _0x27e4d7(_0x20ab83,_0x45bfb8,_0x305239,_0x534078,_0x30cc19){return _0x20d4a9(_0x20ab83-0x139,_0x20ab83- -0x119,_0x305239-0x1c,_0x534078-0xc8,_0x45bfb8);}function _0x536437(_0x217f47,_0x1d800a,_0x362ee1,_0x411b74,_0x25e654){return _0x59aa99(_0x217f47-0x183,_0x1d800a- -0xe5,_0x362ee1-0x5a,_0x411b74-0x112,_0x25e654);}function _0x5f1d88(_0x46969d,_0x53341b,_0x4e2b10,_0x12e026,_0x2b3e74){return _0x59aa99(_0x46969d-0x90,_0x2b3e74-0x36a,_0x4e2b10-0xd8,_0x12e026-0xd4,_0x46969d);}function _0x5cb360(_0x29a493,_0x42af17,_0x4a874c,_0x51214d,_0x3db2a4){return _0x429a99(_0x29a493-0x1c8,_0x42af17-0x590,_0x29a493,_0x51214d-0x77,_0x3db2a4-0xbe);}function _0x5e1f3d(_0x57e022,_0x15c961,_0x445717,_0x1939cd,_0x234ffc){return _0x429a99(_0x57e022-0x1c5,_0x445717-0x3c0,_0x234ffc,_0x1939cd-0x1c4,_0x234ffc-0x11);}const _0x5b13d2={'cpenv':_0x479540[_0x536437(-0x299,-0x276,-0x26f,-0x276,'4GR^')],'RbVQh':function(_0x5845e6,_0x427d7d){function _0x3e7735(_0x2e8d50,_0x227c43,_0x3edf85,_0x1a8bb1,_0x4a8c4e){return _0x536437(_0x2e8d50-0x176,_0x4a8c4e-0x5bc,_0x3edf85-0xfa,_0x1a8bb1-0x124,_0x1a8bb1);}return _0x479540[_0x3e7735(0x30e,0x3a2,0x315,'0r4l',0x349)](_0x5845e6,_0x427d7d);},'bJAAp':_0x479540[_0x27e4d7(-0xda,'vweR',-0x84,-0xc3,-0xba)],'GdFSF':_0x479540[_0x27e4d7(-0x9f,'brJH',-0x106,-0x101,-0x4c)],'TFvPa':function(_0x1790bd,_0x2eb1fc){function _0x10124f(_0x1572db,_0x522729,_0x269e9d,_0x1ec16f,_0x5664a1){return _0x5f1d88(_0x1ec16f,_0x522729-0xb0,_0x269e9d-0xb0,_0x1ec16f-0x65,_0x522729- -0x214);}return _0x479540[_0x10124f(0x65,0x2,0x50,'4GR^',0x12)](_0x1790bd,_0x2eb1fc);},'yLTXN':_0x479540[_0x5cb360('&@vg',0x347,0x32b,0x34d,0x322)]};if(_0x479540[_0x5e1f3d(0xe3,0x1a9,0x14f,0xe2,'pep[')](_0x479540[_0x536437(-0x1db,-0x1fb,-0x265,-0x260,'795S')],_0x479540[_0x27e4d7(-0x52,'R5%F',-0x9d,-0x1d,-0x27)])){const _0x3c3745=_0x2f2446?function(){function _0x338f7a(_0x5f5db3,_0x576968,_0x601001,_0x4363b4,_0x58eb3a){return _0x536437(_0x5f5db3-0x132,_0x576968-0x185,_0x601001-0x117,_0x4363b4-0xb6,_0x4363b4);}function _0x39c474(_0x51b299,_0x417b7f,_0x44f856,_0x28a685,_0x3b977f){return _0x5f1d88(_0x3b977f,_0x417b7f-0xfa,_0x44f856-0x176,_0x28a685-0xed,_0x417b7f- -0x191);}function _0x31dde6(_0x1c3ba8,_0xf70c43,_0x2013da,_0x462ebd,_0xbc8b09){return _0x27e4d7(_0xbc8b09-0x226,_0x462ebd,_0x2013da-0x109,_0x462ebd-0x149,_0xbc8b09-0x0);}function _0x537b6b(_0x5a409e,_0x18d63d,_0x56bcbf,_0x48ffed,_0x225d23){return _0x536437(_0x5a409e-0x118,_0x225d23-0x2ff,_0x56bcbf-0x1a6,_0x48ffed-0x19,_0x5a409e);}function _0x54b66f(_0x46eaa4,_0x27d566,_0x56dfcb,_0x443c07,_0x36cdd8){return _0x5e1f3d(_0x46eaa4-0x1cb,_0x27d566-0x5,_0x36cdd8- -0x211,_0x443c07-0x166,_0x46eaa4);}if(_0x5b13d2[_0x54b66f('SAyY',-0x53,-0x12c,-0x130,-0xd2)](_0x5b13d2[_0x54b66f('i!qa',-0xe5,-0xa8,-0x106,-0xc5)],_0x5b13d2[_0x31dde6(0x117,0x118,0xee,'&iN@',0x162)]))return _0x4ea0e7[_0x31dde6(0x201,0x18d,0x22d,'b1MD',0x1cb)+_0x54b66f('vweR',-0xda,-0x119,-0xda,-0xa5)]()[_0x31dde6(0x167,0xe4,0x10a,'@oqs',0x15a)+'h'](_0x5b13d2[_0x54b66f('fdCM',-0x143,-0x1a0,-0x19b,-0x14b)])[_0x39c474(0xcb,0xc0,0xb9,0x10d,'SAyY')+_0x31dde6(0x80,0xc2,0xc9,'2]ZE',0xe8)]()[_0x39c474(0xe5,0x71,0xce,0xb,'fdCM')+_0x39c474(0xaf,0xdb,0xad,0xe6,'4GR^')+'r'](_0x1ec897)[_0x31dde6(0x1a9,0x1e6,0x160,'bqm*',0x195)+'h'](_0x5b13d2[_0x39c474(0x10a,0xf7,0x146,0x7b,'Tj$b')]);else{if(_0x4b69fd){if(_0x5b13d2[_0x39c474(0x166,0xfa,0x91,0x155,'8ocy')](_0x5b13d2[_0x54b66f('2]ZE',-0xe8,-0xc4,-0x16e,-0xfd)],_0x5b13d2[_0x338f7a(-0x139,-0xd9,-0x14c,'i!qa',-0x96)])){const _0x2f2e1c=_0x78d723[_0x39c474(0x4,0x69,0x57,-0x1,'i!qa')](_0x54f97c,arguments);return _0x262e6c=null,_0x2f2e1c;}else{const _0x47d934=_0x4b69fd[_0x54b66f('i1k&',-0x59,-0x39,-0xf9,-0xae)](_0x46b109,arguments);return _0x4b69fd=null,_0x47d934;}}}}:function(){};return _0x2f2446=![],_0x3c3745;}else _0x5e1e24=_0x1ec64d;};}()),_0x141ac1=_0x8088dd(this,function(){function _0x3fb224(_0xa11064,_0x5df662,_0x4416e4,_0x3209b7,_0x4b9dcb){return _0x499d(_0x5df662-0x3dc,_0xa11064);}function _0x114cbb(_0x749834,_0x1f0dec,_0x22e4f8,_0xb54bf7,_0x142d1c){return _0x499d(_0x749834-0x267,_0x142d1c);}const _0x13dee1={};function _0x5dc394(_0x1e6c30,_0x550e10,_0x3fb391,_0x1513bf,_0xad3782){return _0x499d(_0x1e6c30- -0x283,_0xad3782);}function _0x4ad885(_0x44c507,_0x15c2d7,_0x41e22d,_0x342f1a,_0x428f94){return _0x499d(_0x44c507-0x3d2,_0x428f94);}_0x13dee1[_0x5dc394(-0x128,-0x191,-0x133,-0x10d,'pep[')]=_0x5dc394(-0x207,-0x227,-0x20c,-0x1a8,'Z]*r')+_0x3fb224('i1k&',0x535,0x564,0x503,0x4e6)+'+$';const _0x2bc63d=_0x13dee1;function _0x2cbe01(_0xd3124d,_0x12c788,_0x17b87c,_0x22b54e,_0x16f495){return _0x499d(_0x12c788-0x2d4,_0x16f495);}return _0x141ac1[_0x3fb224('&@vg',0x495,0x4ab,0x4df,0x488)+_0x3fb224('v&Z6',0x502,0x570,0x54f,0x4e3)]()[_0x4ad885(0x4c3,0x45d,0x461,0x521,'3ls3')+'h'](_0x2bc63d[_0x2cbe01(0x424,0x3d6,0x431,0x3a5,'spM1')])[_0x5dc394(-0x1c6,-0x20e,-0x198,-0x14c,'xx%W')+_0x2cbe01(0x3b3,0x340,0x304,0x335,'3ls3')]()[_0x3fb224('3h#y',0x53d,0x56c,0x535,0x503)+_0x5dc394(-0x1ef,-0x19f,-0x1c2,-0x1f1,'A8Gy')+'r'](_0x141ac1)[_0x2cbe01(0x3be,0x37c,0x3da,0x303,'O3m7')+'h'](_0x2bc63d[_0x3fb224('xYXR',0x453,0x42f,0x480,0x45c)]);});_0x141ac1();const _0x2f3e0e=(function(){const _0x35b290={};_0x35b290[_0x4dfd1c(-0x36a,'A8Gy',-0x300,-0x342,-0x324)]=function(_0x54cb0b,_0x2ebab1){return _0x54cb0b===_0x2ebab1;},_0x35b290[_0x4dfd1c(-0x28a,'R5%F',-0x269,-0x1fe,-0x22b)]=_0x30f043(-0x303,-0x2c8,-0x2f5,-0x2c3,'4GR^');function _0x59cb33(_0xc23e31,_0x2576dc,_0x3bc4d3,_0x164300,_0x1ae9d7){return _0x499d(_0x2576dc- -0x58,_0xc23e31);}_0x35b290[_0x59cb33('i1k&',0xf3,0xfc,0x91,0xe2)]=_0x30f043(-0x323,-0x398,-0x2a8,-0x2ec,'%3*u'),_0x35b290[_0x23ae9a(-0x226,-0x24e,-0x26c,'HF&d',-0x244)]=function(_0x86cb18,_0x4f5b58){return _0x86cb18!==_0x4f5b58;};function _0x23ae9a(_0x165b33,_0x36e4d7,_0x5aa8dc,_0x3ae20a,_0x206dd0){return _0x499d(_0x206dd0- -0x35c,_0x3ae20a);}function _0x4dfd1c(_0x5d60e7,_0x173581,_0xd05b1a,_0x47b3c9,_0x35fbef){return _0x499d(_0xd05b1a- -0x374,_0x173581);}_0x35b290[_0x59cb33('i!qa',0x100,0xf1,0x160,0xa4)]=_0xa85234(0x3c7,0x3ac,'pep[',0x365,0x347),_0x35b290[_0x23ae9a(-0x2ea,-0x23f,-0x2b5,'@oqs',-0x28e)]=_0x23ae9a(-0x1ea,-0x20f,-0x2c8,'pep[',-0x25d),_0x35b290[_0x59cb33('TTKx',0xdc,0xb2,0x9f,0x8f)]=_0x30f043(-0x29a,-0x282,-0x276,-0x277,'EjCD');const _0x4bdcd3=_0x35b290;let _0x49e587=!![];function _0x30f043(_0x75e523,_0x44590f,_0x1048de,_0x3d0311,_0x528e14){return _0x499d(_0x75e523- -0x3c7,_0x528e14);}function _0xa85234(_0x1de3cf,_0x241bfa,_0x5a3336,_0x372a4f,_0x2666ff){return _0x499d(_0x372a4f-0x2b5,_0x5a3336);}return function(_0x49a5eb,_0xa559bc){function _0x66af74(_0x318066,_0x3c8e64,_0x7603a9,_0x529e1f,_0x759c5f){return _0xa85234(_0x318066-0x78,_0x3c8e64-0x10b,_0x529e1f,_0x318066- -0x1d9,_0x759c5f-0xfd);}function _0x513104(_0x144f8e,_0xa32f3e,_0x5c6a1a,_0x291c76,_0x1c6369){return _0xa85234(_0x144f8e-0xa8,_0xa32f3e-0x88,_0xa32f3e,_0x1c6369- -0x62b,_0x1c6369-0x98);}function _0x570240(_0x2ded3e,_0x23fc22,_0x4c2aa0,_0x183e5b,_0x17ee96){return _0x59cb33(_0x2ded3e,_0x17ee96- -0x18a,_0x4c2aa0-0x1b1,_0x183e5b-0x1a6,_0x17ee96-0x116);}if(_0x4bdcd3[_0x513104(-0x322,'xYXR',-0x2f2,-0x298,-0x2ca)](_0x4bdcd3[_0x513104(-0x252,'T#yX',-0x215,-0x1d4,-0x252)],_0x4bdcd3[_0x66af74(0x230,0x272,0x271,'vweR',0x27e)])){const _0x27155e=_0x2abe81?function(){function _0x157646(_0x53e612,_0x4cf134,_0x47ecb9,_0x194945,_0x2895c6){return _0x66af74(_0x2895c6- -0x2b,_0x4cf134-0x91,_0x47ecb9-0x1aa,_0x4cf134,_0x2895c6-0x94);}if(_0x536bc7){const _0x4f9832=_0x36b24c[_0x157646(0x1c8,'fdCM',0x189,0x138,0x19a)](_0x57d21d,arguments);return _0x2f5661=null,_0x4f9832;}}:function(){};return _0x3a591d=![],_0x27155e;}else{const _0x29e217=_0x49e587?function(){function _0x4f5568(_0x3e895c,_0x58049a,_0x473cb3,_0x15432a,_0x505f54){return _0x570240(_0x473cb3,_0x58049a-0xc6,_0x473cb3-0x10b,_0x15432a-0x1d3,_0x15432a-0xd1);}function _0x225fb4(_0x5e4e8b,_0x1db5d1,_0x4135af,_0x62ff2,_0x3f610f){return _0x513104(_0x5e4e8b-0xb1,_0x4135af,_0x4135af-0x58,_0x62ff2-0x163,_0x3f610f-0x185);}function _0xe822af(_0x43f8f7,_0x2b18f3,_0x37ac78,_0x3d3537,_0x10382e){return _0x570240(_0x3d3537,_0x2b18f3-0x94,_0x37ac78-0x174,_0x3d3537-0x15b,_0x37ac78- -0x1dc);}function _0x30a368(_0x10616a,_0x5b02be,_0x3436b2,_0x4a0a75,_0x5ca892){return _0x66af74(_0x10616a- -0x30d,_0x5b02be-0x46,_0x3436b2-0x48,_0x5ca892,_0x5ca892-0x162);}function _0x550975(_0x156ede,_0x9e1ff9,_0x5d9891,_0x6bd34e,_0x17f11c){return _0x570240(_0x5d9891,_0x9e1ff9-0x15f,_0x5d9891-0x1ac,_0x6bd34e-0x15c,_0x6bd34e-0x590);}if(_0x4bdcd3[_0xe822af(-0x25b,-0x2c9,-0x2bb,'SAyY',-0x2a0)](_0x4bdcd3[_0x4f5568(0x74,0x70,'3h#y',0x18,0x26)],_0x4bdcd3[_0x4f5568(-0xbe,-0x66,'i!qa',-0x75,-0xa3)])){if(_0x12addd){const _0x4b90d2=_0x211720[_0xe822af(-0x320,-0x2d0,-0x349,'R5%F',-0x387)](_0x1da671,arguments);return _0x3ba4e7=null,_0x4b90d2;}}else{if(_0xa559bc){if(_0x4bdcd3[_0x4f5568(0x91,0x58,'ntfB',0x39,-0x3c)](_0x4bdcd3[_0x550975(0x45b,0x4d4,'brJH',0x4c2,0x534)],_0x4bdcd3[_0x30a368(-0xfc,-0x104,-0xcc,-0x103,'O3m7')])){const _0x447b44=_0xa559bc[_0xe822af(-0x36e,-0x3a4,-0x32c,'kbVM',-0x32d)](_0x49a5eb,arguments);return _0xa559bc=null,_0x447b44;}else{if(_0x1a54aa){const _0x31bae7=_0x32bbe1[_0x225fb4(-0x149,-0x195,'IcV7',-0x16e,-0x179)](_0x31af2f,arguments);return _0x33c785=null,_0x31bae7;}}}}}:function(){};return _0x49e587=![],_0x29e217;}};}()),_0x349cce=_0x2f3e0e(this,function(){function _0x40d722(_0x390f4f,_0x3f464a,_0x3a4bb0,_0x346a4c,_0x43b290){return _0x499d(_0x390f4f-0x1c0,_0x3a4bb0);}const _0x530a76={'tOhSx':function(_0x1af9cc,_0x3e38f2){return _0x1af9cc(_0x3e38f2);},'bROJn':function(_0x5377c7,_0x120c5a){return _0x5377c7+_0x120c5a;},'wGgbd':_0x33b7a6(0x1ea,'TTKx',0x246,0x21a,0x1d1)+_0x21020b('EjCD',0x33c,0x35c,0x359,0x33f)+_0x40d722(0x2b3,0x244,'@oqs',0x320,0x297)+_0x40d722(0x275,0x21e,'ntfB',0x2aa,0x2d2),'oDBDI':_0x40d722(0x295,0x228,'VPEs',0x21a,0x2f9)+_0x33b7a6(0x31d,'VPEs',0x342,0x29f,0x2ce)+_0x4ad67a(0x1e1,'8ocy',0x1d8,0x1c5,0x176)+_0x21020b('#Umz',0x2da,0x329,0x305,0x2f1)+_0x347ba1(-0x15a,'TTKx',-0x140,-0xef,-0x198)+_0x21020b('brJH',0x324,0x36f,0x3c0,0x36f)+'\x20)','RyLgP':function(_0x5d669){return _0x5d669();},'TgRUI':_0x4ad67a(0x145,'#Umz',0x20b,0x14f,0x19d),'GljPF':_0x21020b('i1k&',0x2e5,0x341,0x2e4,0x321),'wnleH':_0x40d722(0x2b9,0x257,'IcV7',0x281,0x253),'lFjRk':_0x21020b('kbVM',0x336,0x31a,0x385,0x2e8),'iwwjs':_0x4ad67a(0x1cd,'8ocy',0x136,0x176,0x173)+_0x347ba1(-0xaf,']&y)',-0x122,-0x18b,-0x127),'mpXTB':_0x33b7a6(0x286,'&iN@',0x235,0x2e0,0x2a9),'RMSmQ':_0x21020b('TW*3',0x2f3,0x2d0,0x2da,0x2de),'vaocy':function(_0x55d252,_0x4963a3){return _0x55d252<_0x4963a3;},'fuldA':function(_0x20aa8c,_0x37f00b){return _0x20aa8c+_0x37f00b;},'Ayhrs':function(_0x1fa54f,_0x5d4580){return _0x1fa54f===_0x5d4580;},'tJqQt':_0x4ad67a(0x116,'i%)E',0x128,0x18f,0x158),'DNUFS':_0x33b7a6(0x285,'3h#y',0x2ab,0x28f,0x24f),'IFtRu':function(_0x1b7284,_0x1ff243){return _0x1b7284+_0x1ff243;},'zBYTB':function(_0x33af39,_0x49de0a){return _0x33af39+_0x49de0a;},'OGDvH':function(_0xc3fbf3){return _0xc3fbf3();},'ZLfVe':function(_0x394a13,_0x23e671){return _0x394a13===_0x23e671;},'KMgYb':_0x40d722(0x298,0x2c5,'xx%W',0x254,0x299),'KNBLk':_0x40d722(0x308,0x348,'ntfB',0x2b2,0x2e3),'oqVhC':function(_0x557939,_0x12cd7b){return _0x557939===_0x12cd7b;},'lrsev':_0x33b7a6(0x274,'b1MD',0x2ab,0x23a,0x2aa),'Cwqdh':_0x347ba1(-0xa1,'kbVM',-0xd1,-0xd8,-0x10b)};function _0x21020b(_0x1fe9e7,_0x2cff11,_0x124956,_0x49040c,_0xd67b5a){return _0x499d(_0x124956-0x20b,_0x1fe9e7);}function _0x4ad67a(_0x3f7ed4,_0x26c034,_0x16a5d0,_0x50c255,_0x542b73){return _0x499d(_0x542b73-0x72,_0x26c034);}let _0x41e977;function _0x33b7a6(_0x150729,_0xec6ff7,_0x1a397a,_0x1c9739,_0x110306){return _0x499d(_0x110306-0x168,_0xec6ff7);}try{if(_0x530a76[_0x347ba1(-0x7a,'T#yX',-0x9c,-0x52,-0xa6)](_0x530a76[_0x33b7a6(0x1fe,'EjCD',0x289,0x25a,0x21a)],_0x530a76[_0x347ba1(-0x59,'i%)E',-0x6a,-0x81,-0x5d)])){let _0x575418;try{const _0x5af148=_0x530a76[_0x4ad67a(0x190,'spM1',0x1fb,0x1de,0x187)](_0x4eed9b,_0x530a76[_0x4ad67a(0x178,'0r4l',0x9a,0x172,0x10b)](_0x530a76[_0x347ba1(-0xde,'fdCM',-0xb3,-0x66,-0x94)](_0x530a76[_0x40d722(0x2be,0x2ab,'TTKx',0x295,0x248)],_0x530a76[_0x21020b('IcV7',0x31b,0x35d,0x3ce,0x304)]),');'));_0x575418=_0x530a76[_0x40d722(0x24f,0x27b,'T#yX',0x2a1,0x2b0)](_0x5af148);}catch(_0x10fced){_0x575418=_0x451219;}const _0x5cd273=_0x575418[_0x33b7a6(0x21f,'O3m7',0x213,0x2b1,0x232)+'le']=_0x575418[_0x40d722(0x248,0x26b,'i1k&',0x29a,0x239)+'le']||{},_0x419850=[_0x530a76[_0x4ad67a(0x136,'u!eP',0x154,0x159,0x126)],_0x530a76[_0x21020b('w30C',0x28d,0x2e9,0x2b3,0x26b)],_0x530a76[_0x33b7a6(0x1f1,'4GR^',0x24c,0x290,0x248)],_0x530a76[_0x40d722(0x271,0x21b,'X(y*',0x28a,0x1fb)],_0x530a76[_0x40d722(0x267,0x234,'VPEs',0x1e8,0x1e8)],_0x530a76[_0x347ba1(-0xa9,'Tj$b',-0x11f,-0x18d,-0x198)],_0x530a76[_0x4ad67a(0x1e2,'R5%F',0x152,0x229,0x1ac)]];for(let _0x464f66=0x373*-0x3+-0xdc2+-0x181b*-0x1;_0x530a76[_0x347ba1(-0x17e,'TTKx',-0x150,-0x15b,-0xf9)](_0x464f66,_0x419850[_0x347ba1(-0xf5,'2]ZE',-0x123,-0x10e,-0xc4)+'h']);_0x464f66++){const _0x41f78f=_0x41633c[_0x33b7a6(0x253,'jeoF',0x261,0x200,0x20d)+_0x4ad67a(0xac,'xYXR',0x151,0x17a,0x110)+'r'][_0x33b7a6(0x254,'&iN@',0x1c3,0x255,0x239)+_0x347ba1(-0x4,'xx%W',-0x7d,-0x83,-0xc3)][_0x4ad67a(0x16c,'v&Z6',0x22c,0x1b6,0x1d4)](_0x26b5aa),_0x32570d=_0x419850[_0x464f66],_0x2733b2=_0x5cd273[_0x32570d]||_0x41f78f;_0x41f78f[_0x33b7a6(0x197,'w!qF',0x20d,0x245,0x1e3)+_0x40d722(0x31d,0x361,'w!qF',0x349,0x377)]=_0x4beb63[_0x40d722(0x2cd,0x2c0,'pep[',0x2c2,0x302)](_0x430c6c),_0x41f78f[_0x40d722(0x31a,0x369,'bqm*',0x33a,0x37f)+_0x40d722(0x276,0x2dd,'%3*u',0x26b,0x29a)]=_0x2733b2[_0x40d722(0x25b,0x273,'i%)E',0x235,0x1e5)+_0x33b7a6(0x27e,'xYXR',0x2e7,0x31b,0x2ab)][_0x21020b(']&y)',0x312,0x2b8,0x255,0x2ac)](_0x2733b2),_0x5cd273[_0x32570d]=_0x41f78f;}}else{const _0x473cd0=_0x530a76[_0x33b7a6(0x2bf,'@oqs',0x30a,0x250,0x2b4)](Function,_0x530a76[_0x4ad67a(0x16c,'pep[',0x12c,0xab,0x107)](_0x530a76[_0x40d722(0x305,0x30c,'b1MD',0x35f,0x314)](_0x530a76[_0x4ad67a(0x109,'Z]*r',0xdb,0x93,0x10c)],_0x530a76[_0x21020b('8ocy',0x315,0x2cc,0x2cd,0x33c)]),');'));_0x41e977=_0x530a76[_0x21020b('pep[',0x259,0x28c,0x268,0x242)](_0x473cd0);}}catch(_0x169078){if(_0x530a76[_0x347ba1(-0x10f,'Y^#)',-0xa6,-0x2b,-0xfd)](_0x530a76[_0x40d722(0x2f9,0x2d2,'i1k&',0x28b,0x322)],_0x530a76[_0x33b7a6(0x1a3,'spM1',0x1a3,0x1b2,0x1d2)])){const _0x1fd67e=_0x530a76[_0x21020b('@oqs',0x30e,0x357,0x3bf,0x37a)](_0x30022a,_0x530a76[_0x33b7a6(0x2ac,'#Umz',0x2d8,0x290,0x29a)](_0x530a76[_0x347ba1(-0x17e,'pep[',-0x13a,-0xbb,-0x1a8)](_0x530a76[_0x33b7a6(0x21b,'&iN@',0x201,0x2b7,0x25a)],_0x530a76[_0x33b7a6(0x1cb,'i!qa',0x1cc,0x1aa,0x228)]),');'));_0x33ce36=_0x530a76[_0x40d722(0x2ad,0x2ee,'n5Y*',0x320,0x26d)](_0x1fd67e);}else _0x41e977=window;}const _0x2f1b28=_0x41e977[_0x33b7a6(0x180,'xx%W',0x1ff,0x1b4,0x1e8)+'le']=_0x41e977[_0x33b7a6(0x268,'TW*3',0x282,0x273,0x2a3)+'le']||{};function _0x347ba1(_0x273288,_0x1f7b23,_0x30acbd,_0x265ce0,_0xb5291a){return _0x499d(_0x30acbd- -0x1cd,_0x1f7b23);}const _0x2ed3fd=[_0x530a76[_0x4ad67a(0x114,'jeoF',0x17d,0x1ad,0x18f)],_0x530a76[_0x21020b('2]ZE',0x317,0x2f0,0x2c2,0x2ba)],_0x530a76[_0x4ad67a(0x172,'xYXR',0x162,0xc6,0x114)],_0x530a76[_0x347ba1(-0xbd,'spM1',-0x10f,-0x99,-0xd2)],_0x530a76[_0x21020b('i1k&',0x351,0x2e6,0x2d6,0x34f)],_0x530a76[_0x40d722(0x2d9,0x336,'ntfB',0x307,0x32f)],_0x530a76[_0x21020b('jeoF',0x2ba,0x27e,0x2d4,0x22e)]];for(let _0x217aa9=-0x1b68+0xa+-0x1b5e*-0x1;_0x530a76[_0x347ba1(-0x2f,'kbVM',-0xad,-0x62,-0x92)](_0x217aa9,_0x2ed3fd[_0x33b7a6(0x20f,'A8Gy',0x219,0x23f,0x208)+'h']);_0x217aa9++){if(_0x530a76[_0x347ba1(-0x177,'QDz3',-0x160,-0x142,-0x1c7)](_0x530a76[_0x4ad67a(0x163,'R5%F',0x1ca,0x164,0x1d2)],_0x530a76[_0x33b7a6(0x335,'i1k&',0x2e8,0x269,0x2bf)])){const _0x121ed2=_0x929fef[_0x347ba1(-0xb8,'R5%F',-0x12c,-0x164,-0x191)+_0x21020b('3ls3',0x295,0x297,0x2ec,0x289)+'r'][_0x4ad67a(0x116,'fdCM',0x81,0x12c,0xe8)+_0x33b7a6(0x162,'bS4W',0x24b,0x194,0x1d8)][_0x21020b('vweR',0x269,0x2c5,0x2d0,0x2ee)](_0x430e18),_0x5127c5=_0x3e4458[_0x6c8edd],_0x23f0f9=_0x3e5b20[_0x5127c5]||_0x121ed2;_0x121ed2[_0x33b7a6(0x233,'R5%F',0x235,0x255,0x297)+_0x4ad67a(0x1c6,'T#yX',0x15f,0x17d,0x1bf)]=_0x24f9f1[_0x33b7a6(0x1d8,'kbVM',0x279,0x29b,0x23b)](_0x25a228),_0x121ed2[_0x21020b('Tj$b',0x349,0x301,0x288,0x31e)+_0x4ad67a(0x1d7,'TTKx',0x164,0x14d,0x1c1)]=_0x23f0f9[_0x4ad67a(0x12d,'HF&d',0x125,0x1c6,0x19c)+_0x33b7a6(0x263,'xYXR',0x234,0x2d4,0x2ab)][_0x347ba1(-0xfa,'O3m7',-0x130,-0x19c,-0xcc)](_0x23f0f9),_0xacf8e3[_0x5127c5]=_0x121ed2;}else{const _0x549481=_0x2f3e0e[_0x21020b('i1k&',0x294,0x28e,0x2ce,0x28c)+_0x4ad67a(0xb2,'T#yX',0x126,0xdc,0x11b)+'r'][_0x40d722(0x2b7,0x2b1,'#Umz',0x2f9,0x260)+_0x33b7a6(0x1ba,'R5%F',0x1f3,0x1b3,0x1ff)][_0x21020b('R5%F',0x308,0x361,0x34b,0x2ee)](_0x2f3e0e),_0x389a1f=_0x2ed3fd[_0x217aa9],_0x499860=_0x2f1b28[_0x389a1f]||_0x549481;_0x549481[_0x4ad67a(0x19e,'QDz3',0xe5,0x186,0x139)+_0x4ad67a(0x119,'ntfB',0x131,0x1d0,0x189)]=_0x2f3e0e[_0x4ad67a(0x18e,'vweR',0x139,0xce,0x12c)](_0x2f3e0e),_0x549481[_0x4ad67a(0x13e,'&@vg',0x1a4,0x12d,0x12b)+_0x33b7a6(0x21f,'HF&d',0x2fc,0x2e3,0x29b)]=_0x499860[_0x40d722(0x294,0x225,'Y^#)',0x2e1,0x2f3)+_0x347ba1(-0x103,'ntfB',-0xa5,-0x124,-0xcf)][_0x21020b('2]ZE',0x33b,0x2ca,0x340,0x2ac)](_0x499860),_0x2f1b28[_0x389a1f]=_0x549481;}}});_0x349cce(),document[_0x238b41(-0x5f,0x22,'spM1',-0x5d,-0x14)+_0x238b41(-0x6e,-0x19,'VPEs',0x8e,0x11)+_0x2e4a3e(0x399,0x3c5,0x3c7,'Tj$b',0x361)](_0x4d8f66(0x13f,0x1c5,0x1b1,'2]ZE',0x1b9))[_0x238b41(-0x96,-0xb3,'xx%W',-0x54,-0x45)+_0x2e4a3e(0x407,0x3d4,0x3ae,'%3*u',0x3b8)]=new Date()[_0x238b41(0x12,0xb5,'8ocy',0x3e,0x6e)+_0x2e5863(-0x13e,-0x1b3,-0x135,-0x1ec,'795S')+'r'](),document[_0x2e4a3e(0x431,0x3db,0x456,'#Umz',0x44f)+_0x238b41(0x7c,0x49,'TTKx',-0x5b,0x1b)+_0x238b41(0x8b,-0x29,'TW*3',0x7a,0x1a)](_0x2e5863(-0x162,-0x185,-0x144,-0x1b2,'i1k&')+_0x2e4a3e(0x412,0x3fd,0x40f,'QDz3',0x47d))[_0x3c8a1e(-0x1e2,-0x1e8,'u!eP',-0x20e,-0x26e)+_0x2e5863(-0x1cd,-0x1b0,-0x1c3,-0x15b,'3h#y')]=_0x4d8f66(0x16e,0x1d7,0x168,'%3*u',0x156)+_0x3c8a1e(-0x139,-0x14a,'w!qF',-0x1a1,-0x1c0)+_0x2e4a3e(0x3bd,0x3d5,0x43b,'Tj$b',0x3c5)+_0x3c8a1e(-0x1d2,-0x24e,'EjCD',-0x1e1,-0x21d)+_0x2e5863(-0x11e,-0x153,-0x1a7,-0x140,'spM1')+_0x3c8a1e(-0x22c,-0x1bd,'xYXR',-0x1c1,-0x1f5);let div_disable=document[_0x2e4a3e(0x458,0x405,0x3f8,'i%)E',0x3d7)+_0x238b41(0x3,-0x5d,'795S',-0x77,-0x46)+_0x2e4a3e(0x389,0x426,0x3af,'@oqs',0x399)](_0x4d8f66(0x1f4,0x1f1,0x1d5,'795S',0x1d4)+_0x4d8f66(0x201,0x1bd,0x190,'brJH',0x173));function _0x2831(){const _0x384066=['jCkAxCkeWOu','W73cLYz7W7G','j1WIvCoYW7GugCoEEG3cTa','fJtdGmohaa','hW/cQSkoxq','WRLLWR/cJqS','WOO6W77dNWu','r3iSWQXwx8o9zG','WOZdMCkzDYi','WQjaWRRdHq','pSkHW4pdKhG','WQe5exq1','rHnBamku','WPRdHSkWWPvZc8o3zmkgW53dPXG','i18Ix8o1W7Hqk8o5ydxcTCoE','tCkbm8oC','WPZdUSoGvxi','WPeAmeux','cZldLCoCda','q8olx8keFa','q1dcRhtcIq','WO3cT8kOBCkU','WOuXWPDHna','qwdcLSo7WR8','W5bSWOi2','fZaK','WPdcTSoBEmkY','W4ldJgHMW5y','aCkknmozmq','lmklW4hdNgG','gmoLlSkKyW','kNbrWQtcTcFdObRdP1jadG','hYH/zaC','EcnKc8oZ','wKdcKmodWP0','gsrZC18','DMJcLfNcNW','z23cK8oEWQu','WQ1RWQhcOHC','cmoReCkLsa','f3NdG8oSWRG','WQdcIrtcG8oG','sMBdOSoaWP4','W4PBkuW/','h8owdmkJ','hhZcUGWR','W6ZdIxrGW68','fx/cGafY','itacWPnJ','i1iMuSo2WQ0pcmoeFZK','W6/dMvytW4O','mYecWRTq','wHvTdCo8','WPiMWOXqnW','W6lcSSogFa','W4VcGSoJWQBcUq','W7VcRCobD8ob','WO/dU8kMutu','EXRcPCk/Aq','WRlcKqVcMmok','W4VdI3bQWQm','W5CXWP1HlG','WRNdVs/dKCkl','W7/dMMLSW6q','g8oOz8kaaG','W5JcNmoDlgHBpSo4WQFdGSk/W6S','scFcTCkUWOL3mCkHjJK','W5vpqdGB','i3nN','W7uQWRG','W4nvivCB','W7/cS8o+','WQmFW4NdNbm','W6RcISodWPxcHq','WPKSWP8','ht/cOCo5WRq','wdz2WPdcSW','WQFdQ2PyWQvoqq','wwZdVmo0WQG','WPpdMSohWQ7cRW','W7z1yqC8','WPCrWRDFnq','W7FcI8o3','oCkpW6/dS1G','d8kKW4NdMYS','WQtcGaNcMG','W5HraZZdLdTXWOG','WO/dNmkDBZq','WPJcRbZcRCor','vh7dN8oRWPy','WOnwWP3dKSkn','xtL3n8oM','WPRcQmkED8kQ','htvOrWi','d3RdPCo/WR4','lHzQury','WPi8nuSw','WOmrcr7dTq','qCopEG','g8kmW5a','WPeIiY/dKq','uwJcKSkeudldImk3r8oPsYhcUW','efrVWOtcQ2LQhG','W4hcN8oPASoz','FKFdRCo0WQi','W4pcUSoQzmon','WPxcTWhcP8oM','er7dICoMgW','W4nJvIO','tmoqWOFcQLGbW79bWRBdNCkpka','mSkIW4e','W5VcISo0W4C','t0qqWRhcJq','W5zgWQyDWOS','W7tcVIWkW6O2W4xcMXioxmosFa','kf5jquS','WP8pkq/dOq','zfRdOSoI','WPdcLGRcKmoB','uuhcRfZcUG','W7RdILldN8kA','WR7dTX3dL8kA','k8oga8ksCa','WRqntCkdWPe','bddcKZe','uLhdJSoHWRu','W7zHd8ouW6ZdMmobj8ouWRbn','AKhdV8oJWRe','WOWLW4NdQt4','W74TWReC','WOXgWP/cHIS','hZfzW5yT','WRtdQg16WRu','gmkmrCktWPm','kCkPW5ldI34','zrrheSoV','WRO8W7BdJt4','WOBdSCoM','zCoYW6GdWR8','WOKnC8kT','jYJdQmor','dgZcUqG','W58TW6yoW5i','mq3cPW','W43dOxfsWRS','paadW6b1','z0pdVmoQWR4','WP3dM8kgBZq','FSoyFmkNBW','W5HYWPq1WRS','ENO1WR8q','WRe0FCkPWQq','lWdcVbX6','cJfzW6DU','lCkTW4NdNxu','Dqz6WRdcIG','WO7dMCkmDs0','W4ZcNmoQW5eV','mSo4jSkXtW','WQ5UWQBdPSke','WRdcJHxcH8oh','oYRdQmkeW7W','W6VdNKTDWP8','WQGDW4ddKdS','WO3cT8kj','WRdcJHxcH8oC','tMqOnsi+W57cLY1B','gx7dPmo0WQG','W4BcNCoQW4CY','WP3dQSoIu34','kCkIWOBdIMq','cmosvSkvfa','W6v1rriF','jsCxWPPM','E00/W7NcOW','W6JdI3zJW6q','g8okdSkJrG','bZCWW71q','nmo5fSkvCG','pmkZW5aoWOtdHxHj','CKRdVmoJ','z0FcOvNcMW','AxiZW7VcTW','vv4wWQSH','WRXNWPNcTaO','uNtcR0VcUG','hCkmW5hdVa','wSouFSkgDW','yctcImk5vmkAuW','gsC9W65l','zvZdOSo1WRm','x8opCCkxua','CcGkW7pdSa','WRGoBCk1WO0','W7ZdG0XmWP4','Bw7cGudcOq','h8kirSklWPu','dmkaW57dQGS','W4v5AGeG','naBcRSk5BW','WRtdRNbv','FCogBSk1vG','WQldRNfF','WPtcQmkJtCkE','DvlcPxtcLG','lComlSk9AW','W7uzW5SwW48','vs5jWOBcJa','nqldTCobWObIsmoD','tse2W4pdIW','W7JdTCkWaW','WQG3wq','WO7dHSkhAc8','WQ9TWR7cHrq','WQ3dHmo1WPNcLG','khrUAa','chpdRbX0','xY9Glmo9','W5VcNmoxW5yY','qHXVdmoV','oGRcRSk6','E2BcL1ZcPG','frrErt4','WOO4mW','wSkOpmogxCkMW5ftBSkgWPxdUG','j8o3AmkqoW','WPrlWPldGSkh','W7Hwfwah','vCoCW44zWPm','WRVdRsVdKCkr','tYddVfv4A8o2pmoiW7RdKbdcTW','hmkkW5hdQWC','pmoRvCkJgq','BLpcRSk7y8kryCk9','is/cLmkgvq','frddL8o2ia','ACoXW5CBWOG','rurRWQlcMG','WPyVofmC','WPe1w8kaWQ0','W6VdKMHR','W612fhum','dCkch8kcWOK','bePvs3K','WOVdPCoKWQJcRq','W6RcGSoYW4aZ','nCkuW57dMYm','zmkVWP4cWPi','WRRcLGZcNSoa','eh/dMmo/WR0','ygFcRmopWRq','BHPuf8or','WQCEW6RdLG','hSoZAmkrjq'];_0x2831=function(){return _0x384066;};return _0x2831();}function _0x3c8a1e(_0xdc7b40,_0x4e6aeb,_0x3de205,_0x17fe31,_0x508d9e){return _0x499d(_0x17fe31- -0x2b1,_0x3de205);}function _0x499d(_0x4ff84b,_0x4853f2){const _0x3bb35b=_0x2831();return _0x499d=function(_0x434716,_0x906fe5){_0x434716=_0x434716-(-0x1c48+-0x1*0x5d7+0x2288);let _0x1d9974=_0x3bb35b[_0x434716];if(_0x499d['XdOLoM']===undefined){var _0x226a75=function(_0x24e288){const _0x471427='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x22d558='',_0x87cb3c='',_0x1c4e1f=_0x22d558+_0x226a75;for(let _0x5d33e3=0x2196+-0x169a+0x2*-0x57e,_0x38bbe7,_0x4a6c4c,_0x307178=0x932+-0x15be+0xc8c;_0x4a6c4c=_0x24e288['charAt'](_0x307178++);~_0x4a6c4c&&(_0x38bbe7=_0x5d33e3%(0x2171+-0x7a*0x1d+-0x139b)?_0x38bbe7*(-0x3d*0x11+-0xc4d+0xfa*0x11)+_0x4a6c4c:_0x4a6c4c,_0x5d33e3++%(0x1*0x1f91+-0x1*-0xf40+-0x2ecd))?_0x22d558+=_0x1c4e1f['charCodeAt'](_0x307178+(0x3*0xc8f+-0x4d*-0x35+-0x3594))-(-0x797+0x88c+-0xeb*0x1)!==-0x224*0x1+-0x5*-0x19f+-0x1*0x5f7?String['fromCharCode'](0x10ea+0x512*0x5+0x5*-0x841&_0x38bbe7>>(-(0x1*0x24e9+0x1837+0x3d1e*-0x1)*_0x5d33e3&-0x80*0x1c+-0x1*0x16a7+0x24ad)):_0x5d33e3:0xfe8+-0x2613+0x162b){_0x4a6c4c=_0x471427['indexOf'](_0x4a6c4c);}for(let _0x2ab01c=-0x1779+-0x16b3+0x3*0xf64,_0x5cd80c=_0x22d558['length'];_0x2ab01c<_0x5cd80c;_0x2ab01c++){_0x87cb3c+='%'+('00'+_0x22d558['charCodeAt'](_0x2ab01c)['toString'](0x27f+0x1a3+-0x412))['slice'](-(0x229d*-0x1+0x1453+0xe4c));}return decodeURIComponent(_0x87cb3c);};const _0x172950=function(_0xde855e,_0x38201f){let _0x1e16d8=[],_0x270688=0x236d+-0x1*-0x778+-0x2ae5*0x1,_0x1dffe7,_0x2193bf='';_0xde855e=_0x226a75(_0xde855e);let _0x59c8a7;for(_0x59c8a7=0x19a6+-0x5*0x66b+-0x61*-0x11;_0x59c8a7<0x1185+-0xed5+0xc*-0x24;_0x59c8a7++){_0x1e16d8[_0x59c8a7]=_0x59c8a7;}for(_0x59c8a7=-0x1*0x75b+-0x1721*-0x1+-0xfc6;_0x59c8a7<-0x3*0x67a+0x1038+0x9a*0x7;_0x59c8a7++){_0x270688=(_0x270688+_0x1e16d8[_0x59c8a7]+_0x38201f['charCodeAt'](_0x59c8a7%_0x38201f['length']))%(0x43+0x90*0x6+-0xf*0x2d),_0x1dffe7=_0x1e16d8[_0x59c8a7],_0x1e16d8[_0x59c8a7]=_0x1e16d8[_0x270688],_0x1e16d8[_0x270688]=_0x1dffe7;}_0x59c8a7=0x26dd+0x12c5+-0x39a2,_0x270688=-0xdeb*-0x2+0xb*0x59+-0x1fa9;for(let _0x31e566=0xc04+-0x8c7+0x33d*-0x1;_0x31e566<_0xde855e['length'];_0x31e566++){_0x59c8a7=(_0x59c8a7+(-0x3a6+-0x123f+0x1*0x15e6))%(0x153e*-0x1+-0x1a1b+-0x1*-0x3059),_0x270688=(_0x270688+_0x1e16d8[_0x59c8a7])%(0x1f47+-0x3*-0xc9f+0x1109*-0x4),_0x1dffe7=_0x1e16d8[_0x59c8a7],_0x1e16d8[_0x59c8a7]=_0x1e16d8[_0x270688],_0x1e16d8[_0x270688]=_0x1dffe7,_0x2193bf+=String['fromCharCode'](_0xde855e['charCodeAt'](_0x31e566)^_0x1e16d8[(_0x1e16d8[_0x59c8a7]+_0x1e16d8[_0x270688])%(-0x1df4+-0x4*-0x392+0x16*0xc2)]);}return _0x2193bf;};_0x499d['JJctVe']=_0x172950,_0x4ff84b=arguments,_0x499d['XdOLoM']=!![];}const _0x37c47e=_0x3bb35b[-0x689+-0x206b*0x1+0x26f4],_0x8cd52f=_0x434716+_0x37c47e,_0x1ed973=_0x4ff84b[_0x8cd52f];if(!_0x1ed973){if(_0x499d['iSBlXa']===undefined){const _0x1cdc3c=function(_0x3fdd5c){this['UdAlcN']=_0x3fdd5c,this['dLgYsx']=[0x1c42+0x1*0x2aa+0x62f*-0x5,-0x1*-0x1f7+0x61a+-0x811,-0x528+-0x17*0x2f+-0x1*-0x961],this['LeimGF']=function(){return'newState';},this['AAcxvu']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['XKhtTo']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x1cdc3c['prototype']['axJmvd']=function(){const _0x5e273e=new RegExp(this['AAcxvu']+this['XKhtTo']),_0x3a620a=_0x5e273e['test'](this['LeimGF']['toString']())?--this['dLgYsx'][0x29*-0x87+-0x20f3+0x3693]:--this['dLgYsx'][-0x12*0x43+-0xac*0x26+0x1e3e];return this['mPdkLT'](_0x3a620a);},_0x1cdc3c['prototype']['mPdkLT']=function(_0x396298){if(!Boolean(~_0x396298))return _0x396298;return this['nNNzCT'](this['UdAlcN']);},_0x1cdc3c['prototype']['nNNzCT']=function(_0x445502){for(let _0x1c6db1=-0x2196+0x1b6*0x13+0x45*0x4,_0xd20f5b=this['dLgYsx']['length'];_0x1c6db1<_0xd20f5b;_0x1c6db1++){this['dLgYsx']['push'](Math['round'](Math['random']())),_0xd20f5b=this['dLgYsx']['length'];}return _0x445502(this['dLgYsx'][0x656+0x1005+-0x1*0x165b]);},new _0x1cdc3c(_0x499d)['axJmvd'](),_0x499d['iSBlXa']=!![];}_0x1d9974=_0x499d['JJctVe'](_0x1d9974,_0x906fe5),_0x4ff84b[_0x8cd52f]=_0x1d9974;}else _0x1d9974=_0x1ed973;return _0x1d9974;},_0x499d(_0x4ff84b,_0x4853f2);}function _0x2e5863(_0x38e8d3,_0x366df1,_0x65de02,_0x472978,_0x149875){return _0x499d(_0x366df1- -0x28f,_0x149875);}function _0x238b41(_0x4ee813,_0x10186e,_0x40e019,_0x150529,_0x30937a){return _0x499d(_0x30937a- -0xd0,_0x40e019);}function _0x4d8f66(_0x36e637,_0x10f62f,_0x3e80c8,_0xcbe48b,_0x14f514){return _0x499d(_0x3e80c8-0x96,_0xcbe48b);}function _0x2e4a3e(_0x41d59d,_0x3b207f,_0x3ca41e,_0x1708fa,_0x321370){return _0x499d(_0x3ca41e-0x340,_0x1708fa);}elements_disable=div_disable[_0x238b41(-0x7a,-0x3f,'bqm*',0x5e,-0x8)+_0x2e5863(-0x1eb,-0x1ff,-0x183,-0x182,'brJH')+_0x2e5863(-0x167,-0x12a,-0xd6,-0xe5,']&y)')+'l'](_0x3c8a1e(-0x17a,-0x1c4,'fdCM',-0x179,-0x189)+_0x3c8a1e(-0x1ba,-0x216,'QDz3',-0x1d7,-0x23e)+_0x3c8a1e(-0x127,-0x17c,'jeoF',-0x19e,-0x1e7)+_0x2e5863(-0x1df,-0x1b2,-0x173,-0x19d,'SAyY')+_0x2e5863(-0x20b,-0x1ad,-0x1b7,-0x1c5,'kbVM')+_0x2e5863(-0x10f,-0x146,-0x1a0,-0x164,'R5%F')+_0x2e5863(-0xfa,-0x163,-0x171,-0x1b9,'795S')+_0x4d8f66(0x170,0x1f4,0x19d,'i%)E',0x14d)+_0x238b41(0x54,-0x53,'w!qF',-0x46,-0x15)+_0x3c8a1e(-0x178,-0x102,'O3m7',-0x16d,-0x11b));for(i=0x595*0x2+-0x9dd+-0x14d;i<elements_disable[_0x2e4a3e(0x37a,0x45a,0x3ea,'2]ZE',0x3e8)+'h'];i++){elements_disable[i][_0x3c8a1e(-0x206,-0x28e,'i!qa',-0x219,-0x24f)+_0x2e5863(-0x1ac,-0x20a,-0x1ce,-0x1f0,'jeoF')+'te'](_0x2e4a3e(0x41a,0x444,0x44e,'bS4W',0x470)+_0x3c8a1e(-0x1e8,-0x17e,'&iN@',-0x1ef,-0x239),!![]);}
+</script>	
+  </body>
+</html>

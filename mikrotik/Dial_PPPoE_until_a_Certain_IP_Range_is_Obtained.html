@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dial PPPoE until a Certain IP Range is Obtained - Mikrotik Script RouterOS</title>
+<meta content='Dial PPPoE until a Certain IP Range is Obtained - Mikrotik Script' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+
+<h1>Dial PPPoE until a Certain IP Range is Obtained - Mikrotik Script RouterOS</h1><pre>
+Dial PPPoE until a Certain IP Range is Obtained
+This script is for those who wants a certain IP range when connecting with PPPoE to your ISP. Instead of constantly disabling and enabling the pppoe client, all you have to do is run this script.
+
+You may want a certain IP range for any number of reasons. Sometimes I use this to check the routes that my ISP uses. The routes they use differs for certain IP ranges. Hope someone finds this useful.
+Forum thread for discussion
+3 variables to set, if, targetip and pppoedelay. if: name of your pppoe-client interface targetip: eg: 177.0.0.0/8 or 65.50.0.0/16 pppoedelay: Enough delay so that your ISP gives a new IP instead of the previous one. You can play around with this.
+
+<code class="routeros">:global if "pppoe-out1"
+:global targetip 210.0.0.0/8
+:global currentip [/ip address get [/ip address find interface=$if ] address]
+:global ip $currentip
+:global pppoedelay 10s
+
+:put "Current IP: $currentip\rTarget: $targetip\r"
+
+:while (!($currentip in $targetip)) do={
+     put "$currentip is not in $targetip. Getting new IP. $pppoedelay delay"
+     /interface disable $if
+     :delay $pppoedelay
+     /interface enable $if
+     :do {delay 1s; put "waiting for pppoe-server"} while=( [/interface get unifi running]=false)
+     :set currentip [/ip address get [/ip address find interface=$if ] address]
+     :set currentip ([[:parse ":return $currentip"]])
+     :set ip $currentip
+     }
+:put "Target obtained: $currentip"</code>
+
+Best to run from the CLI so you can see the output. Example:
+
+[admin@RB2011UAS] /system script> run pppoe-ip-cidr 
+Current IP: 175.144.175.247/32
+Target: 210.0.0.0/8
+
+175.144.175.247/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+175.144.175.247/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+175.136.3.130/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+175.136.3.130/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+118.101.248.194/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+175.144.175.247/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+118.100.151.60/32 is not in 210.0.0.0/8. Getting new IP. 00:00:10 delay
+waiting for pppoe-server
+waiting for pppoe-server
+Target obtained: 210.187.203.102/32
+[admin@RB2011UAS] /system script> 
+
+Credit: https://wiki.mikrotik.com/wiki/Dial_PPPoE_until_a_Certain_IP_Range_is_Obtained
+</pre>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>

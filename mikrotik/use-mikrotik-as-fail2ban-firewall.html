@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Use Mikrotik as Fail2ban firewall - MikroTik Script RouterOS</title>
+<meta content='Use Mikrotik as Fail2ban firewall - MikroTik RouterOS Script DataBase' name='description'/>
+<meta content='mikrotik script, routeros script, script database, script, mikrotik, routeros, router, hotspot, rtrwnet' name='keywords'/>
+<meta content='index, follow, noodp' name='robots'/>
+<link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/stytes.css">
+<link rel="stylesheet" href="//buananetpbun.github.io/mikrotik/highlightjs/styles/github.css">
+<script src="//buananetpbun.github.io/mikrotik/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>  
+<body>
+<div id="hidelink"></div>
+<h1>Use Mikrotik as Fail2ban firewall - MikroTik Script RouterOS</h1>
+<pre>
+The Explanation
+This tutorial is about how to configure Fail2ban to use Mikrotik as Firewall. Fail2ban is very halpfull application Its allows system administrators easily detect and prevent attack attempts. It's scaning log files (e.g. /var/log/auth.log) and bans IPs that show the malicious signs (too many password failures, seeking for exploits, etc..). By default Fail2ban using IPTables as firewall software but today I will show you how to configure system to put all firewall rules in one place.
+
+P.S Fail2Ban comes with filters for various services (apache, curier, ssh, postfix, asterisk, etc).
+
+OK lets start :-)
+
+Preparing
+Our first point must be generation SSH key for secure remote login
+
+Note that RouterOS 2.9.13 and upper versions supporting SSH logins.
+
+<code class="routeros">Note: New RouterOS versions v6 and up requires RSA keys</code>
+Use this command to generate keys.
+
+<code class="routeros">admin@linux:/$ ssh-keygen -t dsa
+
+Generating public/private dsa key pair.
+Enter file in which to save the key (/root/.ssh/id_dsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_dsa.
+Your public key has been saved in /root/.ssh/id_dsa.pub.
+The key fingerprint is:
+b8:ea:79:ad:61:c4:e0:1a:66:46:5b:0e:70:b6:aa:38 user@example.org
+The key's randomart image is:
++--[ DSA 1024]----+
+|. o        |
+| + .        |
+|  + o        |
+| o * o .         |
+|. * o + S    |
+|o+ o . .         |
+|E .   +.      |
+| .   +...         |
+|   .+...       |
++---------+</code>
+DO NOT WRITE ANY PASSPHRASE. Now we need to upload and import id_dsa.pub key to mikrotik. File is located at /home/user/.ssh/id_dsa.pub if you are using root account then /root/.ssh/id_dsa.pub
+
+Configuration on Mikrotik side
+
+<code class="routeros">[admin@mikrotik] > user add name=linux address=LINUX-SERVER-IP-ADDRESS group=full</code>
+This command will add a user without password with full permissions login allowed from only your linux machine.
+
+<code class="routeros">[admin@mikrotik]> user ssh-keys import public-key-file=id_dsa.pub user=linux</code>
+This command will import your uploaded id_dsa public key to key mikrotik store.
+
+Configuration on Linux side
+On Linux side we must create a file named mikrotik to /usr/bin/ dir.
+
+<code class="routeros">touch /usr/bin/mikrotik</code>
+and put this bash script into this file.
+
+<code class="routeros">#!/bin/bash
+ssh -l linux -p22 -i /root/.ssh/id_dsa MIKROTIK-IP-ADDRESS "$1"</code>
+OK.
+
+<code class="routeros">now create a new file in /etc/fail2ban/action.d/ directory </code>
+with name mikrotik.conf
+
+<code class="routeros">nano /etc/fail2ban/action.d/mikrotik.conf</code> 
+and put this text to that file.
+
+<code class="routeros"># Fail2Ban configuration file
+#
+# Author: Ludwig Markosyan
+# Release 09/02/2013
+#
+# $Version: 1.0 BETA $
+#
+
+[Definition]
+
+# Option:  actionstart
+# Notes.:  command executed once at the start of Fail2Ban.
+# Values:  CMD
+#
+actionstart =
+
+
+# Option:  actionstop
+# Notes.:  command executed once at the end of Fail2Ban
+# Values:  CMD
+#
+actionstop =
+
+
+# Option:  actioncheck
+# Notes.:  command executed once before each actionban command
+# Values:  CMD
+#
+actioncheck =
+
+
+# Option:  actionban
+# Notes.:  command executed when banning an IP. Take care that the
+#          command is executed with Fail2Ban user rights.
+# Tags:    <ip>  IP address
+#          <failures>  number of failures
+#          <time>  unix timestamp of the ban time
+# Values:  CMD
+#
+actionban = mikrotik ":ip firewall filter add action=drop chain=forward dst-address=<ip> comment=AutoFail2ban-<ip>"
+
+
+# Option:  actionunban
+# Notes.:  command executed when unbanning an IP. Take care that the
+#          command is executed with Fail2Ban user rights.
+# Tags:    <ip>  IP address
+#          <failures>  number of failures
+#          <time>  unix timestamp of the ban time
+# Values:  CMD
+#
+
+actionunban =  mikrotik ":ip firewall filter remove [:ip firewall filter find comment=AutoFail2ban-<ip>]"</code>
+
+Note: Instead of adding drop rule for each IP, you could use single drop rule and address list to save CPU resources
+
+OK now we configured ban and unban actions
+
+Then we must edit jail.conf file to tell Fail2ban to use mikrotik as ban action.
+
+<code class="routeros">nano /etc/fail2ban/jail.conf</code>
+I will show you example for ASTERISK jail you can use any other as you want.
+
+<code class="routeros">[ASTERISK]
+enabled  = true
+filter   = asterisk
+action = mikrotik
+          sendmail-whois[name=ASTERISK, dest=me@ludnix.info, sender=fail2ban@ludnix.info]
+logpath  = /var/log/asterisk/full
+maxretry = 10
+bantime = 3600</code>
+OK It's all. I'm opened to listen any questions and remarks about this script. you can write me at "ludwig@markosyan.info'
+
+Thanks for your interest.
+
+Credit: wiki.mikrotik.com
+</pre>
+<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script> <script async defer src="https://buttons.github.io/buttons.js"></script><script>if (window.top != window.self){document.getElementById("hidelink").innerHTML = "";} else {document.getElementById("hidelink").innerHTML = "<div class='logo'><div class='logo-right' style='float:right'><div style='float:right;margin-right:5px'><img src='https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false' alt='Hits'></div><div style='float:right;margin-right:5px;margin-top:1px'><div class='fb-like' data-href='https://www.facebook.com/buananetmikrotik' data-width='' data-layout='button_count' data-action='like' data-size='small' data-share='false'></div></div><span style='margin-right:4px'><a class='github-button' href='https://github.com/buananetpbun' data-show-count='true' aria-label='Follow'>Follow</a></span></div><div class='logo-left' style='float:left'><a href='https://buananetpbun.github.io/mikrotik'><img alt='buananetpbun' style='float:left;margin-top:0;margin-right:7px' width='35' src='../img/mylogo.png'><span style='color:#f60!important'>Buananetpbun</span>.Github.io</a></div><div style='clear:both'></div></div><div class='header'><span class='header-left'><span style='color:#fff;font-weight:700;font-size:19px'>MIKROTIK SCRIPT ROUTEROS DATABASE</span></span><div style='clear:both'></div></div>"}</script>
+<br>
+</body>
+</html>
