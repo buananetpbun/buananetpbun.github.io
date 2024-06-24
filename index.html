@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+    <title>Free MikroTik RouterOS Online Tools Generator - BuanaNETPBun.Github.io</title>
+    <meta content='Free MikroTik RouterOS Online Tools Generator, the most complete Router tools to make it easier for you maker RouterOS Mikrotik scripts!
+      By BuanaNETPBun.Github.io' name='description'>
+    <meta content='mikrotik, router os, tools, load balancing, queue, vpn, routing, winbox, termimal, rsc, script, hotspot, wireless, mangle, nat' name='keywords'>
+    <meta content='index, follow, noodp' name='robots'>
+    <link rel="shortcut icon" href="https://buananetpbun.github.io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://buananetpbun.github.io/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://buananetpbun.github.io/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://buananetpbun.github.io/img/favicon-16x16.png">
+    <link rel="manifest" href="https://buananetpbun.github.io/img/site.webmanifest">
+    <meta name="google-site-verification" content="VjnLBZ-ypbNyJxYE9KWmaIHeQ3K-4GO4h8Ddb1zMD28" >
+    <meta property="og:title" content="Free MikroTik RouterOS Online Tools Generator - BuanaNETPBun.Github.io">
+    <meta property="og:description" content="Free MikroTik RouterOS Online Tools Generator, the most complete Router tools to make it easier for you maker RouterOS Mikrotik scripts from BuanaNETPBun.Github.io">
+    <meta property="og:image" content="https://github-production-user-asset-6210df.s3.amazonaws.com/42666125/264943645-711122b2-46e4-4d56-93a6-163e5c14b625.png">
+    <meta property="og:image:alt" content="BuanaNETPBun.Github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buananetpbun.github.io">
+    <meta name="yandex-verification" content="2185da3345ca44f7" >
+    <script async defer src="https://buttons.github.io/buttons.js"></script>   
+    <style>
+      /* --------------------------------------------
+      ################################################
+      # Tools For Mikrotik By BuanaNETPBun.Github.io
+      # Designer  : Agus Ramadhani / Buananet.com
+      # Github    : https://buananetpbun.github.io
+      # Site      : https://www.o-om.com
+      # Sosmed    : https://fb.me/buananetmikrotik
+      ################################################
+      ----------------------------------------------- */  
+      *{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;transition:all .3s ease-in}
+      body{font-size:16px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";margin:0}
+      html,body{color:#292929;height:100%;width:100%;margin:0px;padding:0;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      *{box-sizing:border-box}
+      h1{font-size:48px;font-size:3rem;font-weight:700;letter-spacing:-1.6px;letter-spacing:-.1rem;line-height:1;text-align:center}
+      h1 span.light{font-weight:300}
+      h1 strong{font-weight:600}
+      h2{font-weight:600;font-size:21px;color:#292929;border-bottom:1px solid #ccc;margin-bottom:6px;padding-bottom:3px}
+      h3,h4,h5,h6{font-weight:400;font-size:17px;color:#292929;margin-bottom:10px;padding-bottom:10px}
+      pre{white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:pre-wrap;word-wrap:break-word}
+      b{font-size:15px}
+      p{padding:0;margin:4px 0 0 17px;display:list-item;list-style:disc}
+      .logo{color:#fff;text-decoration:none;font-size:25px;font-weight:700;border-radius:5px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;margin-bottom:15px;margin-top:10px;padding:25px;clear:both}
+      .logo a{color:#fff!important;font-size:25px}
+      #wrap{min-width:200px;max-width:900px;margin:0 auto;padding:0 5px;}
+      .content{max-width:100%;margin:0 auto;margin-top:20px;margin-bottom:20px;padding:20px 30px 30px 30px;border-radius:5px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19);background:#fff;line-height:1.7}
+      a:link{color:#f60;text-decoration:none;font-weight:700}
+      a:visited{color:#f60;text-decoration:none}
+      a:hover{color:#292929}
+      .mymenu{margin:0 auto;background-color:#fff;width:700px;border-radius:0 0 5px 5px;border:2px solid #fff;font-weight:700;font-size:15px;position:relative;padding-left:10px;padding-right:10px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19)}
+      .mymenu ul{list-style-type:none;margin:0;padding:0;overflow:hidden;background-color:#fff;margin-right:10px;background:url(./img/made-for-mikrotik.png) no-repeat right!important}
+      .mymenu li{float:left}
+      .mymenu li a{display:block;color:#292929;text-align:center;padding:8px 10px;text-decoration:none;margin-top:5px;margin-bottom:5px}
+      .mymenu li a:hover{background-color:#292929;color:#fff;border-radius:5px}
+      button{color:#fff;background-color:#f60;border-color:#f60;border:none;padding:8px;width:135px;font-size:15px;font-weight:700;cursor:pointer;border-radius:5px}
+      button:hover{background-color:#ccc;color:#292929}
+      .forms-out{margin:0 auto;padding:0;font-size:14px}
+      .forms-in{width:100%;margin:0 auto;color:#fff;padding:0;font-size:14px}
+      .forms-in div{padding:0;max-width:350px;margin:0 auto;border-radius:5px;margin-bottom:15px}
+      .forms-in h3{text-align:center}
+      .forms-in input{border:none;width:100%;margin-bottom:15px;padding:10px;box-sizing:border-box;border-radius:3px}
+      .forms-in button{border:none;padding:7px 20px;border-radius:4px;cursor:pointer;font-weight:700;margin-top:10px;margin-bottom:15px}
+      .forms-in button:hover{opacity:.7}
+      .hide{display:none}
+      #forgot-password{cursor:pointer}
+      #forgot-password:hover{opacity:.7}
+      #show-register{cursor:pointer}
+      #show-register:hover{opacity:.7}
+      #show-login{cursor:pointer}
+      #show-login:hover{opacity:.7}
+      .modal{display:block;position:fixed;z-index:1;padding-top:170px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,0.6)}
+      .modal-login{display:none;position:fixed;z-index:1;padding-top:170px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,0.6)}
+      .modal-content{line-height:1.4;border-radius:5px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat top left;color:#ddd;margin:auto;padding:20px;border:1px solid #444;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19);font-weight:700;font-size:14px}
+      .modal-content p{padding:0;margin:5px 5px 0 17px;display:list-item;line-height:2;list-style:disc}
+      .modal-content h2{color:#f60;float:left;padding:0;margin:0}
+      .close{color:#aaa;float:right;font-size:20px;font-weight:700;margin-top:-25px;margin-right:-15px}
+      .close:hover,.close:focus{color:orange;text-decoration:none;cursor:pointer}
+      .myButtonGoogle{display:flex;justify-content:space-between;align-items:center;width:auto;cursor:pointer;font-weight:400;float:right}
+      .myButtonGoogle :hover{opacity:.7}
+      .myButtonGoogle img{width:32px;padding:0;margin:0}
+      .myButtonGoogle .text{padding:0;margin:0}
+      .gsib_a{height:30px;padding-left:10px!important}
+      .gsc-input input{font-size:14px;color:#333;background:#fff!important}
+      .gsc-input-box{border-radius:5px;height:34px;background:#fff!important;margin-right:-6px!important;line-height:normal!important}
+      .gsc-search-button-v2{border-radius:5px!important;height:34px!important}
+      .gsc-control-cse{background:#fff!important;border:none!important;clear:both}
+      .google-search, .gcse-searchbox {float:right;width:250px;}
+      div#container_notlike,div#container_like{display:none}
+      #dialogoverlay{display:none;opacity:.5;position:fixed;top:0;left:0;background:#292929;width:100%;z-index:10}
+      #dialogbox{display:none;position:fixed;background:#292929;border-radius:5px;width:400px;z-index:10;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19)}
+      #dialogbox>div{border-radius:5px;margin:3px;background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      #dialogbox>div>#dialogboxhead{background:#292929;opacity:.5;font-weight:700;font-size:15px;padding:10px;color:#fff}
+      #dialogbox>div>#dialogboxbody{font-weight:400;font-size:15px;padding:20px;color:#ccc}
+      #dialogbox>div>#dialogboxfoot{padding:10px;text-align:right}
+      .show-login-menu{width:100%;margin-bottom:10px}
+      .mikrotik-logo{display:none}
+      .column{float:left;width:50%}
+      .column a{font-weight:600}
+      .row:after{content:"";display:table;clear:both}
+      .member-only{margin-left:5px;height:13px;width:12px}
+      .footer{margin-top:15px;text-align:center;font-size:13px}
+      .show-homepage-menu{margin-bottom:3px}
+      .avatar img{margin-bottom:-13px;margin-left:5px;margin-right:5px;width:40px;height:40px;background-size:cover;background-repeat:no-repeat;background-position:center center;-webkit-border-radius:99em;-moz-border-radius:99em;border-radius:99em;border:2px solid #292929}
+      .terminal{margin-bottom:15px;width:100%;display:none}
+      .terminal img{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
+      .tooltip{position:relative;display:inline-block;font-size:13px}
+      .tooltip .tooltiptext{visibility:hidden;width:150px;background-color:#555;color:#fff;text-align:center;border-radius:6px;padding:10px;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:-60px;opacity:.9;transition:opacity .3s}
+      .tooltip .tooltiptext::after{content:"";position:absolute;top:100%;left:50%;margin-left:-18px;border-width:5px;border-style:solid;border-color:#555 transparent transparent}
+      .tooltip:hover .tooltiptext{visibility:visible;opacity:.9}
+      .disclaimer{margin-top:0px;margin-bottom:25px;color:#fff !important;padding:10px;border-radius:5px;font-size:14px; background:#292929 url(https://user-images.githubusercontent.com/42666125/147363663-30767ef4-09af-48d6-8ea1-ee7a1c09e90f.png) no-repeat}
+      @media screen and (max-width:1024px) {
+      h1{font-size:45px}
+      h2{font-size:20px}
+      .logo-left a{font-size:21px}
+      }
+      @media screen and (max-width:768px) {
+      .logo-left a{margin-top:5px!important;font-size:20px}
+      .logo-left img{width:40px;}
+      h1{font-size:40px}
+      h2{font-size:19px}
+      .content{width:100%!important;padding:15px}
+      .mymenu{width:100%!important}
+      .logo{width:100%}
+      .logo-left{justify-content:center;display:flex;width:100%}
+      .logo-right{text-align:center;width:100%}
+      .footer{margin-bottom:15px}
+      }
+      @media screen and (max-width:700px) {
+      h1{font-size:35px}
+      }
+      @media screen and (max-width:600px) {
+      .disclaimer{padding:5px;font-size:13px}
+      .column{float:left;width:100%}
+      .text-join-now{display:none}
+      .show-login-menu{display:flex;justify-content:center;width:100%;margin-bottom:10px}
+      .show-homepage-menu{display:flex;justify-content:center;width:100%}
+      h1{font-size:30px}
+      h2{font-size:18px}
+      .mikrotik-logo{display:flex;justify-content:center;margin-top:15px}
+      .mymenu{padding-left:0;padding-right:0}
+      .mymenu ul{background:none!important;justify-content:center;display:flex}
+      }
+      @media screen and (max-width:500px) {
+      .google-search, .gcse-searchbox{margin-top:6px;width:100% !important}	  
+      .google-search, .gcse-searchbox{width:100% !important}	  
+      h1{font-size:25px}
+      h2{font-size:17px}
+      .hide-homepage{display:none}
+      }
+      @media print {
+      body,.body-fauxcolumn-outer{background:none!important;font-size:10pt}
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>  
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=379827522913428&autoLogAppEvents=1" nonce="Esvux9Cl"></script>
+    <div id="wrap">
+      <div id="mymenu" class="mymenu">
+        <div class="mikrotik-logo" >
+          <img alt="mikrotik" src="./img/made-for-mikrotik.png">
+        </div>
+        <ul>
+          <li><a href="https://buananetpbun.github.io">HOME</a></li>
+          <li><a target="_blank" href="https://github.com/buananetpbun">GITHUB</a></li>
+          <li><a href="javascript:callmodal()">DONATE</a></li>
+          <li><a target="_blank" href="https://fb.me/buananetmikrotik/">CONTACT</a></li>
+        </ul>
+        <div class="show-login-menu" id="show-login-menu">
+          <button style="width:100px !important;  padding:6px; margin:4px; font-weight:bold;font-size:14px; margin-left:12px !important" onclick="window.location.href = 'http://buananet.com/login/#sign-in'">Login</button>
+          <button style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px" onclick="window.location.href = 'http://buananet.com/login/#sign-up'">Sign Up</button>
+          <span class="text-join-now" style="font-size:14px; font-weight:bold; margin-left:5px">40.000+ members have joined.</span>
+        </div>
+        <div class="show-homepage-menu">
+          <div id="homepage" class="hide">
+            <button style="width:100px !important; padding:6px; margin:4px; margin-left:12px; margin-bottom:10px; font-weight:bold; font-size:14px" id="signout">Logout</button>
+            <button id="ShowProfile" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px;" onclick="location.href = 'https://buananetpbun.github.io/login'">My Profile</button>
+            <span class="hide-homepage">
+            <span class="avatar">
+            <img alt="avatar" id="myavatar" src="https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png" >
+            </span>
+            <span style="font-weight:normal;font-size:13px">Hi, <span style="color:#ff6600;font-weight:bold;" id="welcome-email"></span></span>
+            <span style="font-weight:normal; font-size:14px"> [<span class="tooltip"><span class="tooltiptext">E-mail verified status</span><span id="email_Verified" style="cursor:help"></span></span>]</span>
+            </span>
+            <button id="verify" style="width:100px !important; padding:6px; margin:4px; font-weight:bold;font-size:14px; background-color:red">Verify E-Mail</button>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h1><span class="light">easy config with generator tools.<br>made for <strong>MikroTik Router<i>OS</i></strong></span></h1>
+        <div class="terminal">    
+          <img src="./img/terminal.png" alt="MikroTik Terminal">
+        </div>
+        <div style="float:left; margin-right:5px; margin-top:8px; ">
+          <div class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="float:left;margin-top:8px">    
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuananetpbun.github.io%2F&count_bg=%23C83D3D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
+        </div>
+        <script async src="https://cse.google.com/cse.js?cx=751bf7c3dc13f7e72"></script>
+        <div class="google-search">
+          <div class="gcse-searchbox"></div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="logo">
+          <div class="logo-right" style="float:right;"> 
+            <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+            <a class="github-button" href="https://github.com/buananetpbun/buananetpbun.github.io" data-icon="octicon-star" data-show-count="true" aria-label="star">Star</a>
+            <a class="github-button" href="https://github.com/sponsors/buananetpbun" data-icon="octicon-heart" aria-label="Sponsor">Sponsor</a>		
+          </div>
+          <div class="logo-left">	  
+            <a href="https://buananetpbun.github.io"><img alt="buananetpbun.github.io" style="float:left; margin-right:7px" width="45" src="./img/mylogo2.png"><span style='color:#ff6600 !important'>Buananetpbun</span>.Github.io</a>
+          </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div style="margin-bottom:-30px; margin-top:-12px">
+          <div class="gcse-searchresults"></div>
+        </div>
+        <h2>FIND MIKROTIK ROUTEROS SCRIPT</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik">MikroTik RouterOS Script DataBase</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananet.com/search/">Search All About MikroTik RouterOS</a></p>
+          </div>
+        </div>
+        <h2>MIKROTIK ROUTEROS GENERATOR TOOLS</h2>
+        <span style="font-size:16px;font-weight:600;"> <img alt="hot" src="https://github-production-user-asset-6210df.s3.amazonaws.com/42666125/268599127-a76d159b-00ef-46e0-94f3-9cb8a0e289c4.png"> MOST POPULAR TOOLS</span>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-hide-my-router-from-isp.html">MikroTik Ninja: Hide Routerboard Scanning</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-backup-to-mail.html">MikroTik Auto Backup to E-Mail</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Recursive Gateway</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/static-routing-games.html">Games Static Routing</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:600;">☰ ROUTE <span style="color:#ff6600">//</span> MANGLE <span style="color:#ff6600">//</span> NAT <span style="color:#ff6600">//</span> VPN</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/pcc.html">Load Balancing PCC</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/nth.html">Load Balancing NTH</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/ecmp.html">Load Balancing ECMP</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-failover-script-generator.html">Failover Recursive Gateway</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/static-routing-games.html">Games Static Routing Using Filter Raw</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/static-routing-games-mangle-port.html">Games Static Routing Using Mangle Port</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/policy-based-routing-website.html">Website Static Routing</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-local-ip-pbr.html">Local Client IP Static Routing</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-port-forward-generator.html">Port Forwarding with NAT</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-port-static-routing.html">Port TCP/UDP Static Routing</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-tunnel-all-traffic-script-generator.html">All Traffic to VPN Tunnel</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/remote-ip-public-static.html">Remote Access ISP "Public IP Static"</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator.html">VPN Routing Port Games</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-game-generator2.html">VPN Routing IP Address Games</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/vpn-remote-generator.html">VPN Remote SSTP - L2TP - PPTP - OVPN</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-static-routing.html">Static Routing Youtube, Tiktok, FB, WA, etc.</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:600; ">☰ SIMPLE QUEUE <span style="color:#ff6600">//</span> QUEUE TREE <span style="color:#ff6600">//</span> QUEUE TYPE</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-burst-limit-calculator.html">Burst Limit Calculator</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-burst-rate-queue-size-generator.html">PCQ Burst Rate + Queue Size Calculator</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator.html">Simple Queue + Tocken Bucket</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/simple-queue-generator-shared.html">Simple Queue + Bandwidth Shared Up-To</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/queue-tree-generator-shared.html">Queue Tree + Bandwidth Shared Up-To</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-pcq-generator.html">PCQ for Queue Tree and Queue Simple</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a disabled target="_blank"  href="https://buananetpbun.github.io/mikrotik-queue-qos.html">QoS Priority Youtube, Tiktok, WA, FB, etc.</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:600">☰ HOTSPOT <span style="color:#ff6600">//</span> PPPOE <span style="color:#ff6600">//</span> PPP</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-qr-code-generator.html">Free Hotspot Wi-Fi QR Code Template</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-sharing-hotspot.html">Block Sharing Hotspot with "Change TTL"</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-hotspot-wizard.html">Easy Hotspot Configuration Wizard</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-ppp-generator.html">PPP Secrets Username Password Generator</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-username-password-hotspot-generator.html">Hotspot Username Password Generator</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-share-user-multi-login.html">Bandwidth Share Up-To for Hotspot</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-expired-isolate-pppoe-hotspot.html">Expired Notification Hotspot + PPPoE</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:600">☰ DNS <span style="color:#ff6600">//</span> NETWATCH <span style="color:#ff6600">//</span> INTERFACE <span style="color:#ff6600">//</span> MAC <span style="color:#ff6600">//</span> DHCP</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dns-over-https-doh.html">DNS over HTTPS (DoH) Servers</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-netwatch-monitoring.html">Netwatch to Telegram, WA, Email, SMS</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-change-mac-address.html">Change or Random Mac Address Interface Generator</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-bonding-interface.html">Bonding Interface / Link Aggregation</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-dhcp-rogue.html">Looping / Unknown DHCP Rogue Server</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:600">☰ PROTECTION <span style="color:#ff6600">//</span> BLOCK <span style="color:#ff6600">//</span> BACKUP</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-hide-my-router-from-isp.html">MikroTik Ninja: Hide Routerboard from ISP</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/advanced-mikrotik-protection.html">Advanced MikroTik Router-OS Protection</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-backup-to-mail.html">MikroTik Auto Backup to E-Mail</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-access-block.html">Block For Youtube, Tiktok, WA, FB, etc.</a><img alt="member-only" class="member-only" src="./img/user.png"></p>			
+     
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/port-knocking-icmp.html">Port Knocking with ICMP + Packet Size</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-block-website-generator.html">Block Websites Generator</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mikrotik-mangle-script-obfuscator.html">Mangle Chain Obfuscator / Encryption</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px"><span style="font-size:16px;font-weight:600">☰ ROUTER-OS OTHER TOOLS</span></div>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/pcc-calculation.html">Load Balancing PCC Calculation</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+            <p><a target="_blank"  href="https://buananetpbun.github.io/mirkotik-indonesia-timezone.html">Indonesia Time Zone NTP/SNTP Client</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://buananetpbun.github.io/wifid-wms-seamless.html">Wifi.id WMS and Seamless Auto Login</a><img alt="member-only" class="member-only" src="./img/user.png"></p>
+          </div>
+        </div>
+        <h2>MIKROTIK TOOLS OFFICIAL FOR WINDOWS </h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://mt.lv/winbox64">Winbox-64 (64bit)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mt.lv/winbox">Winbox-32 (32bit)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">The Dude</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">Netinstall</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mt.lv/btest">Bandwidth Test</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://i.mt.lv/files/exe/MT_Syslog.exe">MT Syslog Daemon</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download/TrafficCounter.zip">MT Traffic Counter</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/supout">Supout.rif viewer (need login)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/branding">Branding maker (need login)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://merch.mikrotik.com/">MikroTik Logo, Walpaper, T-Shirt</a></p>
+          </div>
+        </div>
+        <h2>MIKROTIK MOBILE TOOLS ANDROID IPHONE</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://apps.apple.com/id/app/mikrotik/id1323064830?l=id">MikroTik Winbox iPhone</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.tikapp&hl=in">MikroTik Winbox Android</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.mikrotikhome">MikroTik HOME</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://play.google.com/store/apps/details?id=com.mikrotik.android.bt5">MikroTik Beacon Manager</a></p>
+          </div>
+        </div>
+        <h2>MIKROTIK ROUTEROS SOFTWARE DOWNLOAD</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/download">Mikrotik RouterOS Download Official</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://www.routeros.co.id">Routeros.co.id (Indonesia Server)</a></p>
+          </div>
+        </div>
+        <h2>MIKROTIK WIRELESS TOOLS</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://github.com/buananetpbun/unlock-mikrotik-wireless-frequency-mode">Unlock Wireless Frequency Mode</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://shop.duxtel.com.au/article_info.php?articles_id=53">MikroTik Link Planner</a> </p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.mikrotik.co.id/getfile.php?nf=wireless_abg.zip">Wireless MiniPCI A/B/G</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://www.mikrotik.co.id/test_tower.php">Antenna Height Calculation</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/calculator">Wireless link calculator (need login)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikrotik.com/client/distributorLockpack">Lockpack creator (need login)</a></p>
+          </div>
+        </div>
+        <h2>MIKROTIK TOOLS CALCULATOR AND MONITOR</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://www.mikrotik.id/artikel_lihat.php?id=215">Traffic Monitor with Cacti linux</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.routerboard.co.id/">RouterBoard Comparison Table</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.irouteros.com/duibi/duibi.php">MikroTik Product Comparison</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.mikrotik.co.id/test_proxy.php">RAM Proxy MikroTik Calculator</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.mikrotik.co.id/getfile.php?nf=neighbour.zip">Neighbour Viewer dan Mac Telnet</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://www.mikrotik.co.id/getfile.php?nf=trafr.tgz">Trafr Sniffer linux</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://forum.mikrotik.com/viewtopic.php?t=77193">ATTIX5 Traffic Monitor</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://k3dt.eu/supout-reader/">Supout.rif Reader (Unofficial)</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.mkesolutions.net/pdf/routeros-cheat-sheet-v1.1.pdf">PDF RouterOS Console Cheat Sheet</a></p>
+          </div>
+        </div>
+        <h2>MIKROTIK SKIN AND BRANDING</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://github.com/buananetpbun/webfig-mikrotik-skin">Webfig Mikrotik Skin</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://github.com/buananetpbun/Branding-Maker_Mikrotik">Branding Maker Mikrotik</a></p>
+          </div>
+        </div>
+        <h2>MIKROTIK RADIUS BILLING HOTSPOT OR PPPOE</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://freeradius.org">FREERADIUS</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://dmasoftlab.com">DMA Radius Manager</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://billingku.net">Billingku</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://laksa19.github.io">Mikhmon Billing Hotspot</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://sarang.my.id">Billing Hotspot Sarang-Net</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://topsetting.com">MIXRadius</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://rlradius.id">RL-Radius</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank" rel="nofollow"  href="https://radiusku.net">Radiusku</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://sourceforge.net/projects/the-userman">TheUserman</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://github.com/ibnux/phpmixbill">PHPMixBill</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://github.com/aviantorichad/MIKROSTATOR">MIKROSTATOR</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://mikbotam.net">MIKBOTAM</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.radboox.com">RadbooX</a></p>
+            <p><a target="_blank" rel="nofollow"  href="https://www.daloradius.com">Daloradius</a></p>
+          </div>
+        </div>
+        <h2>OTHER MIKROTIK BATCH TOOLS</h2>
+        <div class="row">
+          <div class="column">
+            <p><a target="_blank"  href="https://github.com/buananetpbun/FREE-DNS-PING-TEST-DOS-BATCH">Batch: DNS Ping Test</a></p>
+            <p><a target="_blank"  href="https://github.com/buananetpbun/mikrotik-port-scanner">Batch: Winbox Port Scanner</a></p>
+          </div>
+          <div class="column">
+            <p><a target="_blank"  href="https://github.com/buananetpbun/MIKROTIK-AUTO-BACKUP-FROM-BATCH">Batch: RouterOS Auto Backup</a></p>
+            <p><a target="_blank"  href="https://github.com/buananetpbun/Restore-Winbox-Sessions-to-Default">Batch: Restore Winbox Session</a></p>
+          </div>
+        </div>
+        <br>
+        <div class="footer">
+          <div class="disclaimer">
+            <span style="font-weight:700; font-size:14px; padding-left:6px; padding-right:6px; border-left:6px solid #f60; border-right:6px solid #f60; color:#f60;margin-right:5px ">DISCLAIMER</span> <span style="text-decoration:underline; font-size:12px;margin-right:0px "></span> 
+            We are not responsible for any error, failure, damage or your router being locked due to intentional or accidental factors. Our Tool works independently, not under the auspices of the MikroTik Company, all problems that occur on your router are your own responsibility and you must be prepared to accept all the risks. If you "Agree", please continue.
+          </div>
+          © Copyright 2020-<span id="year">2022</span> <a target="_blank" href="https://buananetpbun.github.io/">buananetpbun.github.io</a> is proudly powered by <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+          <div style="margin-top:0px; color:#777; font-size:11px">
+            Project by <a target="_blank" href="https://github.com/buananetpbun">Agus Ramadhani</a> site <a target="_blank" href="https://buananet.com/">MikroTik Generator Tools</a> P.Bun 74112, INDONESIA
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="myLogin" class="modal-login">
+      <div style="width: 350px;" class="modal-content">
+        <div class="forms-out">
+          <div class="forms-in">
+            <div class="myButtonGoogle">
+              <img alt="google" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiElEQVRoge2Xb0gTcRjHp5tlYJRlkRK9iF5I9ke7O5WhnbstU+yPu2OVhQTSu5IIiiCqm5EFvYgiCbJId3OQKxAiNyWwF/2BikFpRBhoyW41ndsEZyXl9Zz5Z+q8uXm79eK+8GUwdj8+3+f3/J77TaGQJUuWLFmyZE2rT4dsZQnsmFOL3QAzLIE2s1qszkmgNEvklg+o1cvjzThHvfj2lQB7HmC7AZYL41EI+JQlkF3x5lZwCkUCQJ8EDy4AfI6dBPbimwbLigu8qyR7zXglowCfFWKY1WGHJYX/qsvJgJ7+uFj4ILdyBoNSEnj+EDq16Aex4KEQ9u6STUslgefFalFrmJYIwOd9VoNUuDR5CFuMZLI6pMCpQU/D969nwbf14niyZPAwafYIVpRATSyOpIVbA3bwO7hdUniOViS6D2W1hKy6FhuDsXhioWt92Y2k9+XnL4sl7xwF7Mp9I3YV5zmz4dX4LJ8ZwigpTDQCeCsfgPfQ7dT30ALuieo7JJsg0YqzKpQjNpV/MgDvwKNkt6ss28FfD+LNF1Y/25ZkBsNP+UmSh6NxldCzGqO3mjB670RqHT2QIVqAgE25N2QAm8oe7lnC6GsFcxG7xlsoWoARe2Jl6ADKu7EKUFTjo2IeACbTvVgF0NC+KtECxKOFtEb/QdECzHuIbSqPwSo8QqNvIS8uWgB+jAbsqqFg+GFbkvtUs/oNYqL2Cz2L0+6Ugqv+1FAupv2rCNrbHypA4eX+dNEC8Ap+kfW3Jr8rtZS6UDPFoQzlCLcL80lDe3eG7n9vj6jwvCbPwdvHaS/zm8pHx+GnTF6MdD2DlVNqjL7nIQMYfbdED8Bf5q48zG6ZCT5hhhoDH49gtQQect4zQPtzRQ/ACzHry0IGmDBiphowU/lqoTVyzfr16pumeeGhfTpiAj8VgqEeCIWAdhpGGLIeNVEkyui3oBZyIwTfgZrIStglC2Imf/C/y6s/21FUM/BrFvxv7SVfTkwDbLYaUqDSXcIhFmas8UgXXvvZOd373gsxhZ8U1mBYhzJkpxghYEcHC661d8Kbt4mmuURJAvBCLBVpANC2+BDkH4Q5UIvTnOCtNjbiFAnQ39XQUp6oqm8mezBGXyI9+CwhVsMKADoHh/dTWPB/I9cBoY/iz4T/S8RFWCOVBaBV0BrXwSYI1QyVroMzQwN0xTZGvzbejLJkyZIlS9Z/o7/Q0bCX5++bJAAAAABJRU5ErkJggg==">
+              <span id="google-sign-in">Sign-In with Google</span>
+            </div>
+            <div id="registration-page" class="hide">
+              <span style="font-size:23px !important;color:#ff6600;">SIGN UP</span>
+              <br><br>
+              <label>E-Mail <span style="color:#ff6600">*</span></label>
+              <input style="margin-top:5px" type="email" id="registration-email" placeholder="E-Mail">
+              <label>Confirm E-mail <span style="color:#ff6600">*</span></label> 
+              <input style="margin-top:5px" type="email" id="registration-reemail" autocomplete="off" placeholder="Confirm E-Mail">
+              <label>Password <span style="color:#ff6600">*</span><span style="font-weight:normal; font-size:13px"></span></label>
+              <input style="margin-top:5px" type="password" id="registration-password" placeholder="Password">
+              <span style="float:left; margin-top:8px" id="captcha-signup"></span><input autocomplete="off" style="margin-top:10px;width:140px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignUp">
+              <button style="width:100% !important;" id="register">Sign Up</button><br>
+              <span style="font-weight:normal !important; float:right"><span id="show-login">Already a member? Sign-In</span></span>
+              <br>
+            </div>
+            <div id="login-page">
+              <span style="font-size:23px !important; color:#ff6600;">SIGN IN</span>
+              <br><br>
+              <label>E-Mail</label>
+              <input style="margin-top:5px" type="email" id="login-email" placeholder="E-Mail">
+              <label>Password</label>
+              <input style="margin-top:5px" type="password" id="login-password" placeholder="Password">
+              <span style="float:left; margin-top:8px" id="captcha-signin"></span><input autocomplete="off" style="margin-top:10px;width:140px;float:right" type="text" placeholder="Captcha" id="cpatchaTextBoxSignIn">
+              <button style="width:100% !important;" id="login">Login</button>
+              <br>
+              <span style="font-weight:normal"> <span id="forgot-password">Forgot Password?</span></span>
+              <span style="font-weight:normal !important; float:right"><span id="show-register">Not a member? Sign-Up</span></span>	
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:none"  id="myModal" class="modal">
+      <div style="width: 600px;" class="modal-content">
+        <span class="close">&times;</span>
+        <div class="qris" style="text-align:justify; float:right; margin-right:10px">
+          <span style="font-size:15px">Bank Transfer via [ QRIS ]</span><br><span style="font-size:13px;color:#ff6600;">BUANANET-PBUN - AGUS R.</span>
+          <div  style="margin-right:0px; padding-top:3px">
+            <img alt="qris" style="border:7px solid #ffffff; border-radius:10px" src="data:image/png;base64,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">
+          </div>
+        </div>
+        <div style="font-size:22px;font-weight:bold">Want to give me a Gift ?</div>
+        <div style="font-size:15px;font-weight:bold;margin-bottom:17px; margin-top:10px">
+          <p><b>Saweria</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://saweria.co/buananetpbun">saweria.co/buananetpbun</a></p>
+          <p><b>PayPal</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://paypal.me/agusramadhani1">paypal.me/agusramadhani1</a></p>
+          <p><b>Wise</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://wise.com/share/agusr112">wise.com/share/agusr112</a></p>
+          <p><b>Buymeacoffee</b> <a style="font-size:14px;color:#ff6600;" target="_blank" href="https://www.buymeacoffee.com/bntpbun">buymeacoffee.com/bntpbun</a></p>
+          <p><b>Bitcoin</b> <span style="font-size:11px;color:#ff6600;">bc1qazx09937at9za695m39xzjvqt8tjncgwep4ymf</span></p>
+        </div>
+        <div style="float:left;margin-right:3px; margin-top:0px">
+          <div  class="fb-like" data-href="https://www.facebook.com/buananetmikrotik" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+        </div>
+        <div style="margin-bottom:8px">    
+          <a class="github-button" href="https://github.com/buananetpbun" data-show-count="true" aria-label="Follow">Follow</a> 
+        </div>
+      </div>
+    </div>
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+      <div>
+        <div id="dialogboxhead"></div>
+        <div id="dialogboxbody"></div>
+        <div id="dialogboxfoot"></div>
+      </div>
+    </div>
+    <script>			
+      var _0x15f972=_0x41fb;(function(_0x371895,_0xb7e77f){var _0x11c705=_0x41fb,_0x592a3a=_0x371895();while(!![]){try{var _0x3266e1=parseInt(_0x11c705(0x20a))/0x1*(parseInt(_0x11c705(0x223))/0x2)+-parseInt(_0x11c705(0x24e))/0x3+parseInt(_0x11c705(0x1c8))/0x4*(parseInt(_0x11c705(0x20e))/0x5)+-parseInt(_0x11c705(0x1e0))/0x6*(-parseInt(_0x11c705(0x1eb))/0x7)+-parseInt(_0x11c705(0x213))/0x8*(parseInt(_0x11c705(0x239))/0x9)+-parseInt(_0x11c705(0x228))/0xa+parseInt(_0x11c705(0x232))/0xb;if(_0x3266e1===_0xb7e77f)break;else _0x592a3a['push'](_0x592a3a['shift']());}catch(_0x4eac5e){_0x592a3a['push'](_0x592a3a['shift']());}}}(_0x1d48,0xe4b3b),(function(){var _0x2345d9=_0x41fb,_0x56dd05=_0x2345d9(0x241),_0x2488a6=document[_0x2345d9(0x257)](_0x2345d9(0x1fe));_0x2488a6[_0x2345d9(0x22a)]=_0x2345d9(0x225),_0x2488a6[_0x2345d9(0x209)]=!![],_0x2488a6['src']=_0x2345d9(0x1ef)+_0x56dd05;var _0x9aa2f3=document[_0x2345d9(0x227)](_0x2345d9(0x1fe))[0x0];_0x9aa2f3[_0x2345d9(0x23e)]['insertBefore'](_0x2488a6,_0x9aa2f3);}()),window[_0x15f972(0x22c)]=function(){var _0x3b365b=_0x15f972;document[_0x3b365b(0x1f5)](_0x3b365b(0x1db))[_0x3b365b(0x229)]='Search\x20Script',createCaptchaSignIn(),createCaptchaSignUp();});var code_signin;function createCaptchaSignIn(){var _0x7cc44=_0x15f972;document[_0x7cc44(0x1f5)](_0x7cc44(0x1e7))[_0x7cc44(0x24c)]='';var _0x49b1c7='0123456789',_0xd872a3=0x4,_0x261cd1=[];for(var _0xa0ab04=0x0;_0xa0ab04<_0xd872a3;_0xa0ab04++){var _0x25022e=Math[_0x7cc44(0x22f)](Math[_0x7cc44(0x21a)]()*_0x49b1c7[_0x7cc44(0x1d8)]);if(_0x261cd1[_0x7cc44(0x261)](_0x49b1c7[_0x25022e])==-0x1)_0x261cd1[_0x7cc44(0x1e8)](_0x49b1c7[_0x25022e]);else _0xa0ab04--;}var _0x5f2bb1=document[_0x7cc44(0x257)](_0x7cc44(0x1f7));_0x5f2bb1['id']='captcha',_0x5f2bb1[_0x7cc44(0x240)]=0x96,_0x5f2bb1[_0x7cc44(0x1ed)]=0x28;var _0x1f9875=_0x5f2bb1[_0x7cc44(0x23c)]('2d');_0x1f9875[_0x7cc44(0x249)]=_0x7cc44(0x24f);var _0x4ea14a=_0x1f9875[_0x7cc44(0x1de)](0x0,0x0,_0x5f2bb1[_0x7cc44(0x240)],0x0);_0x4ea14a[_0x7cc44(0x20c)]('0',_0x7cc44(0x1d2)),_0x4ea14a['addColorStop'](_0x7cc44(0x21e),_0x7cc44(0x1d4)),_0x4ea14a['addColorStop'](_0x7cc44(0x203),_0x7cc44(0x25c)),_0x1f9875[_0x7cc44(0x226)]=_0x4ea14a,_0x1f9875[_0x7cc44(0x212)]=0x2,[_0x7cc44(0x1e4),_0x7cc44(0x211),_0x7cc44(0x250)]['forEach']((_0x511f6d,_0x5d3de6)=>{var _0x590b6d=_0x7cc44;_0x1f9875[_0x590b6d(0x204)]=_0x511f6d,_0x1f9875[_0x590b6d(0x1f4)](),_0x1f9875[_0x590b6d(0x231)](0x0,0x0),_0x1f9875[_0x590b6d(0x243)](0x8c,0x28),_0x1f9875[_0x590b6d(0x238)]();}),_0x1f9875['strokeText'](_0x261cd1['join'](''),0x14,0x23),code_signin=_0x261cd1[_0x7cc44(0x1cc)](''),document[_0x7cc44(0x1f5)](_0x7cc44(0x1e7))[_0x7cc44(0x25d)](_0x5f2bb1);}var code_signup;function createCaptchaSignUp(){var _0x57c0b1=_0x15f972;document['getElementById'](_0x57c0b1(0x25e))[_0x57c0b1(0x24c)]='';var _0x45399d='0123456789',_0x5aea2d=0x4,_0x5a1e50=[];for(var _0x544b73=0x0;_0x544b73<_0x5aea2d;_0x544b73++){var _0x4da6cf=Math[_0x57c0b1(0x22f)](Math[_0x57c0b1(0x21a)]()*_0x45399d['length']);if(_0x5a1e50[_0x57c0b1(0x261)](_0x45399d[_0x4da6cf])==-0x1)_0x5a1e50[_0x57c0b1(0x1e8)](_0x45399d[_0x4da6cf]);else _0x544b73--;}var _0x4d029f=document[_0x57c0b1(0x257)](_0x57c0b1(0x1f7));_0x4d029f['id']=_0x57c0b1(0x253),_0x4d029f[_0x57c0b1(0x240)]=0x96,_0x4d029f[_0x57c0b1(0x1ed)]=0x28;var _0x510412=_0x4d029f[_0x57c0b1(0x23c)]('2d');_0x510412['font']='38px\x20verdana';var _0x21d28d=_0x510412['createLinearGradient'](0x0,0x0,_0x4d029f[_0x57c0b1(0x240)],0x0);_0x21d28d[_0x57c0b1(0x20c)]('0','magenta'),_0x21d28d['addColorStop'](_0x57c0b1(0x21e),_0x57c0b1(0x1d4)),_0x21d28d['addColorStop']('1.0',_0x57c0b1(0x25c)),_0x510412['strokeStyle']=_0x21d28d,_0x510412['lineWidth']=0x2,[_0x57c0b1(0x1e4),'bevel','miter'][_0x57c0b1(0x1ff)]((_0x4e9b4f,_0x54b710)=>{var _0x395ac8=_0x57c0b1;_0x510412[_0x395ac8(0x204)]=_0x4e9b4f,_0x510412['beginPath'](),_0x510412[_0x395ac8(0x231)](0x0,0x0),_0x510412[_0x395ac8(0x243)](0x8c,0x28),_0x510412[_0x395ac8(0x238)]();}),_0x510412[_0x57c0b1(0x1f3)](_0x5a1e50['join'](''),0x14,0x23),code_signup=_0x5a1e50[_0x57c0b1(0x1cc)](''),document[_0x57c0b1(0x1f5)](_0x57c0b1(0x25e))[_0x57c0b1(0x25d)](_0x4d029f);}document[_0x15f972(0x24d)](_0x15f972(0x205))[_0x15f972(0x237)](_0x15f972(0x221),_0x1e5369=>{var _0x57d3df=_0x15f972;event['keyCode']===0xd&&(_0x1e5369[_0x57d3df(0x21b)](),login());}),document[_0x15f972(0x24d)](_0x15f972(0x1dd))[_0x15f972(0x237)](_0x15f972(0x221),_0x56b8e5=>{var _0x1cd18d=_0x15f972;event[_0x1cd18d(0x1ec)]===0xd&&(_0x56b8e5[_0x1cd18d(0x21b)](),register());}),document[_0x15f972(0x24d)](_0x15f972(0x1fc))['innerHTML']=new Date()[_0x15f972(0x248)]();var modal_click=document[_0x15f972(0x24d)](_0x15f972(0x220)),span_click=document[_0x15f972(0x262)](_0x15f972(0x1ea))[0x0];function callmodal(){var _0x160dd0=_0x15f972;modal_click[_0x160dd0(0x1da)][_0x160dd0(0x222)]=_0x160dd0(0x23d);}function _0x1d48(){var _0x19b2d1=['createUserWithEmailAndPassword','#email_Verified','captcha','https://user-images.githubusercontent.com/42666125/199234814-c320e1fc-da95-489e-a955-43b82e3f4b46.png','#dialogbox','innerWidth','createElement','❌\x20Enter\x20Your\x20E-mail.','photoURL','accessToken','catch','red','appendChild','captcha-signup','#show-login-menu','#registration-email','indexOf','getElementsByClassName','❌\x20invalid\x20e-mail\x20or\x20bad\x20network\x20connection.','30216rpgEtp','✔️\x20Verification\x20link\x20sent\x20to\x20your\x20email.\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','Sign-Up\x20with\x20Google','https://buananetpbun.github.io/','join','cpatchaTextBoxSignUp','onAuthStateChanged','#dialogboxfoot','remove','add','magenta','#registration-password','pink','#myLogin','GoogleAuthProvider','uid','length','#dialogboxbody','style','gsc-i-id1','❌\x20Enter\x20Password.','#cpatchaTextBoxSignUp','createLinearGradient','credential','2281452UBdjSx','onclick','signInWithPopup','#myavatar','round','912166778245','❌\x20error\x20signing\x20out,\x20check\x20network\x20connection','captcha-signin','push','1:912166778245:web:c845ec7e720f7bd84580ec','close','14BgdRDF','keyCode','height','message','https://cse.google.com/cse.js?cx=','click','#welcome-email','currentUser','strokeText','beginPath','getElementById','#show-register','canvas','classList','cpatchaTextBoxSignIn','innerHeight','top','#year','initializeApp','script','forEach','#show-login','✔️\x20Send\x20to\x20your\x20e-mail\x20successfully!\x20if\x20you\x20don\x27t\x20see\x20it,\x20please\x20check\x20your\x20mail\x20inbox\x20in\x20spam\x20folder.','trim','1.0','lineJoin','#cpatchaTextBoxSignIn','❌\x20emails\x20do\x20not\x20match.','src','#verify','async','1389XqjmaD','code','addColorStop','#signout','500QymeZs','❌\x20Password\x20must\x20be\x20at\x20least\x206\x20characters.','Sign-In\x20with\x20Google','bevel','lineWidth','16VULfLM','#login-password','email','G-FSDV7HGD99','#login-page','hide','signInWithEmailAndPassword','random','preventDefault','<button\x20style=\x22width:100px\x22\x20onclick=\x22Alert.ok()\x22>OK</button>','#login-email','0.5','then','#myModal','keyup','display','1662oqCSxS','none','text/javascript','strokeStyle','getElementsByTagName','6755450yuuStb','placeholder','type','❌\x20Invalid\x20Captcha.\x20try\x20Again','onload','#registration-page','buananetpbun-5d979.appspot.com','floor','render','moveTo','23457852SDkqDM','#dialogoverlay','<i>Information!</i>','values','#register','addEventListener','stroke','6683121DamVsw','auth','#registration-reemail','getContext','block','parentNode','#dialogboxhead','width','751bf7c3dc13f7e72','object','lineTo','❌\x20Enter\x20E-mail.','#google-sign-in','reload','buananetpbun-5d979','getFullYear','font','#login','value','innerHTML','querySelector','5115687WKLyjO','38px\x20verdana','miter'];_0x1d48=function(){return _0x19b2d1;};return _0x1d48();}span_click[_0x15f972(0x1e1)]=function(){var _0x2bd35e=_0x15f972;modal_click['style'][_0x2bd35e(0x222)]='none';};var modal_login=document[_0x15f972(0x24d)](_0x15f972(0x1d5));function callmodalLogin(){var _0xb0e060=_0x15f972;modal_login[_0xb0e060(0x1da)][_0xb0e060(0x222)]=_0xb0e060(0x23d);}window[_0x15f972(0x1e1)]=function(_0x20bb7e){var _0xd843aa=_0x15f972;_0x20bb7e['target']==modal_login&&(modal_login[_0xd843aa(0x1da)][_0xd843aa(0x222)]=_0xd843aa(0x224)),_0x20bb7e['target']==modal_click&&(modal_click[_0xd843aa(0x1da)]['display']='none');};var firebaseConfig={'apiKey':'AIzaSyAVAJkbUGmPHogF_WJRa3vxZ2YuKDsvqns','authDomain':'buananetpbun-5d979.firebaseapp.com','databaseURL':'https://buananetpbun-5d979-default-rtdb.asia-southeast1.firebasedatabase.app','projectId':_0x15f972(0x247),'storageBucket':_0x15f972(0x22e),'messagingSenderId':_0x15f972(0x1e5),'appId':_0x15f972(0x1e9),'measurementId':_0x15f972(0x216)};firebase[_0x15f972(0x1fd)](firebaseConfig);const auth=firebase[_0x15f972(0x23a)](),user=firebase[_0x15f972(0x23a)]()[_0x15f972(0x1f2)],provider=new firebase[(_0x15f972(0x23a))][(_0x15f972(0x1d6))]();document[_0x15f972(0x24d)](_0x15f972(0x245))[_0x15f972(0x237)]('click',()=>{var _0x2e4a8c=_0x15f972;firebase[_0x2e4a8c(0x23a)]()[_0x2e4a8c(0x1e2)](provider)[_0x2e4a8c(0x21f)](function(_0x2cb1ba){var _0x526258=_0x2e4a8c,_0x4e283d=_0x2cb1ba[_0x526258(0x1df)][_0x526258(0x25a)],_0x8540c8=_0x2cb1ba['user'];})[_0x2e4a8c(0x25b)](function(_0x280ad3){var _0x1a7f9a=_0x2e4a8c,_0x1d6186=_0x280ad3[_0x1a7f9a(0x20b)],_0x6bbca9=_0x280ad3[_0x1a7f9a(0x1ee)],_0x20cc72=_0x280ad3[_0x1a7f9a(0x215)],_0x5997a3=_0x280ad3[_0x1a7f9a(0x1df)];});}),document[_0x15f972(0x24d)](_0x15f972(0x208))[_0x15f972(0x237)]('click',()=>{var _0x29a695=_0x15f972,_0x187992={'url':_0x29a695(0x1cb),'handleCodeInApp':![]};firebase[_0x29a695(0x23a)]()[_0x29a695(0x1f2)]['sendEmailVerification'](_0x187992)[_0x29a695(0x21f)](function(){var _0x416456=_0x29a695;Alert['render'](_0x416456(0x1c9));})[_0x29a695(0x25b)](function(_0x2118e6){var _0x17ea91=_0x29a695,_0x4ce513=_0x2118e6[_0x17ea91(0x20b)],_0x3c77e2=_0x2118e6['message'];Alert[_0x17ea91(0x230)]('❌\x20'+_0x3c77e2);});}),firebase['auth']()[_0x15f972(0x1ce)](_0x7a62ed=>{var _0x21c891=_0x15f972;if(_0x7a62ed){const _0x1e9df4=_0x7a62ed[_0x21c891(0x1d7)],_0x26de99=_0x7a62ed[_0x21c891(0x215)],_0x4b3a07=_0x7a62ed['emailVerified'];document['querySelector'](_0x21c891(0x1f1))[_0x21c891(0x24c)]=_0x26de99,document[_0x21c891(0x24d)](_0x21c891(0x1e3))[_0x21c891(0x207)]=firebase[_0x21c891(0x23a)]()[_0x21c891(0x1f2)][_0x21c891(0x259)];function _0x44abc1(_0x4fde09,_0x1deaef,_0xa110e1){var _0xdb30f0=_0x21c891;let _0x3c2fb0=[];if(_0x4fde09 instanceof HTMLElement)_0x3c2fb0=[_0x4fde09];else{if(typeof _0x4fde09===_0xdb30f0(0x242))_0x3c2fb0=Object[_0xdb30f0(0x235)](_0x4fde09);}return _0x3c2fb0['forEach'](_0x5ec9ae=>_0x5ec9ae[_0xdb30f0(0x1da)][_0x1deaef]=_0xa110e1),_0x3c2fb0;}firebase[_0x21c891(0x23a)]()[_0x21c891(0x1f2)]['photoURL']==null&&(document[_0x21c891(0x24d)](_0x21c891(0x1e3))['src']=_0x21c891(0x254)),_0x4b3a07==!![]?(document[_0x21c891(0x24d)](_0x21c891(0x208))[_0x21c891(0x1da)][_0x21c891(0x222)]='none',document[_0x21c891(0x24d)](_0x21c891(0x252))[_0x21c891(0x24c)]='✔️',_0x44abc1(document[_0x21c891(0x262)]('member-only'),'display',_0x21c891(0x224))):document[_0x21c891(0x24d)]('#email_Verified')[_0x21c891(0x24c)]='❌';}else{}}),document[_0x15f972(0x24d)](_0x15f972(0x1f6))[_0x15f972(0x237)]('click',()=>{showRegistration();});const showRegistration=()=>{var _0x4b5837=_0x15f972;document['querySelector'](_0x4b5837(0x22d))[_0x4b5837(0x1f8)]['remove']('hide'),document['querySelector'](_0x4b5837(0x217))[_0x4b5837(0x1f8)][_0x4b5837(0x1d1)](_0x4b5837(0x218)),document['querySelector']('#homepage')[_0x4b5837(0x1f8)]['add'](_0x4b5837(0x218)),document[_0x4b5837(0x24d)](_0x4b5837(0x200))[_0x4b5837(0x1f8)][_0x4b5837(0x1d0)](_0x4b5837(0x218)),document[_0x4b5837(0x24d)](_0x4b5837(0x1f6))[_0x4b5837(0x1f8)][_0x4b5837(0x1d1)](_0x4b5837(0x218)),document[_0x4b5837(0x24d)](_0x4b5837(0x245))[_0x4b5837(0x24c)]=_0x4b5837(0x1ca);};document[_0x15f972(0x24d)](_0x15f972(0x200))[_0x15f972(0x237)](_0x15f972(0x1f0),()=>{showLogin();});const showLogin=()=>{var _0x15f98b=_0x15f972;document[_0x15f98b(0x24d)](_0x15f98b(0x22d))[_0x15f98b(0x1f8)][_0x15f98b(0x1d1)](_0x15f98b(0x218)),document['querySelector'](_0x15f98b(0x217))['classList']['remove'](_0x15f98b(0x218)),document[_0x15f98b(0x24d)]('#homepage')[_0x15f98b(0x1f8)][_0x15f98b(0x1d1)](_0x15f98b(0x218)),document[_0x15f98b(0x24d)](_0x15f98b(0x200))[_0x15f98b(0x1f8)][_0x15f98b(0x1d1)](_0x15f98b(0x218)),document[_0x15f98b(0x24d)](_0x15f98b(0x1f6))['classList'][_0x15f98b(0x1d0)](_0x15f98b(0x218)),document[_0x15f98b(0x24d)](_0x15f98b(0x245))[_0x15f98b(0x24c)]=_0x15f98b(0x210);};document[_0x15f972(0x24d)](_0x15f972(0x20d))[_0x15f972(0x237)](_0x15f972(0x1f0),()=>{signOut();});const register=()=>{var _0xec253e=_0x15f972;const _0x4c8491=document[_0xec253e(0x24d)](_0xec253e(0x260))[_0xec253e(0x24b)],_0x35be53=document['querySelector'](_0xec253e(0x23b))[_0xec253e(0x24b)],_0x9284eb=document['querySelector'](_0xec253e(0x1d3))[_0xec253e(0x24b)];if(_0x4c8491[_0xec253e(0x202)]()=='')Alert['render'](_0xec253e(0x244));else{if(_0x9284eb[_0xec253e(0x202)]()[_0xec253e(0x1d8)]<0x6)Alert['render'](_0xec253e(0x20f));else _0x4c8491!=_0x35be53?Alert['render'](_0xec253e(0x206)):(event[_0xec253e(0x21b)](),document['getElementById'](_0xec253e(0x1cd))[_0xec253e(0x24b)]==code_signup?auth[_0xec253e(0x251)](_0x4c8491,_0x9284eb)[_0xec253e(0x25b)](function(_0x26b273){var _0x26ca7d=_0xec253e,_0x5940b4=_0x26b273[_0x26ca7d(0x20b)],_0x60d5f1=_0x26b273[_0x26ca7d(0x1ee)];Alert['render']('❌\x20'+_0x60d5f1);}):(Alert['render'](_0xec253e(0x22b)),createCaptchaSignUp(),document[_0xec253e(0x1f5)](_0xec253e(0x1cd))[_0xec253e(0x24b)]=''));}};document[_0x15f972(0x24d)](_0x15f972(0x236))[_0x15f972(0x237)](_0x15f972(0x1f0),()=>{register();}),document[_0x15f972(0x24d)](_0x15f972(0x1d3))[_0x15f972(0x237)]('keyup',_0xd03f16=>{var _0x3220d7=_0x15f972;event[_0x3220d7(0x1ec)]===0xd&&(_0xd03f16['preventDefault'](),register());});const login=()=>{var _0xe3fc05=_0x15f972;const _0x1274ee=document[_0xe3fc05(0x24d)](_0xe3fc05(0x21d))['value'],_0x13ad0a=document[_0xe3fc05(0x24d)](_0xe3fc05(0x214))[_0xe3fc05(0x24b)];if(_0x1274ee[_0xe3fc05(0x202)]()=='')Alert[_0xe3fc05(0x230)]('❌\x20Enter\x20E-mail.');else _0x13ad0a[_0xe3fc05(0x202)]()==''?Alert[_0xe3fc05(0x230)](_0xe3fc05(0x1dc)):(event['preventDefault'](),document[_0xe3fc05(0x1f5)]('cpatchaTextBoxSignIn')[_0xe3fc05(0x24b)]==code_signin?authenticate(_0x1274ee,_0x13ad0a):(Alert['render'](_0xe3fc05(0x22b)),document[_0xe3fc05(0x1f5)](_0xe3fc05(0x1f9))[_0xe3fc05(0x24b)]='',createCaptchaSignIn()));};document[_0x15f972(0x24d)](_0x15f972(0x24a))['addEventListener'](_0x15f972(0x1f0),()=>{login();}),document[_0x15f972(0x24d)](_0x15f972(0x214))[_0x15f972(0x237)](_0x15f972(0x221),_0x1ba7ba=>{var _0x3cda5f=_0x15f972;event[_0x3cda5f(0x1ec)]===0xd&&(_0x1ba7ba['preventDefault'](),login());});const authenticate=(_0x4aeba1,_0x393394)=>{var _0x534a08=_0x15f972;const _0x2e5f97=firebase['auth']();_0x2e5f97['signInWithEmailAndPassword'](_0x4aeba1,_0x393394),firebase['auth']()[_0x534a08(0x219)](_0x4aeba1,_0x393394)[_0x534a08(0x25b)](function(_0x107733){var _0x1e6ca2=_0x534a08,_0x220d34=_0x107733[_0x1e6ca2(0x20b)],_0x322b3a=_0x107733[_0x1e6ca2(0x1ee)];Alert[_0x1e6ca2(0x230)]('❌\x20'+_0x322b3a);});},showHomepage=()=>{var _0x390dee=_0x15f972;document[_0x390dee(0x24d)]('#registration-page')[_0x390dee(0x1f8)][_0x390dee(0x1d1)](_0x390dee(0x218)),document[_0x390dee(0x24d)](_0x390dee(0x217))[_0x390dee(0x1f8)][_0x390dee(0x1d1)]('hide'),document[_0x390dee(0x24d)]('#homepage')['classList'][_0x390dee(0x1d0)](_0x390dee(0x218)),document[_0x390dee(0x24d)](_0x390dee(0x1d5))[_0x390dee(0x1da)][_0x390dee(0x222)]=_0x390dee(0x224),document[_0x390dee(0x24d)](_0x390dee(0x25f))[_0x390dee(0x1da)][_0x390dee(0x222)]='none';},signOut=()=>{var _0x38e7a6=_0x15f972;firebase[_0x38e7a6(0x23a)]()['signOut']()[_0x38e7a6(0x21f)](function(){var _0x4867ff=_0x38e7a6;location[_0x4867ff(0x246)]();})[_0x38e7a6(0x25b)](function(_0x5dbbb8){var _0x5c8a4b=_0x38e7a6;Alert[_0x5c8a4b(0x230)](_0x5c8a4b(0x1e6));});};auth[_0x15f972(0x1ce)](_0x44a465=>{_0x44a465&&showHomepage();}),document[_0x15f972(0x24d)]('#forgot-password')[_0x15f972(0x237)](_0x15f972(0x1f0),()=>{var _0x2e6f69=_0x15f972;const _0x236ea2=document['querySelector'](_0x2e6f69(0x21d))[_0x2e6f69(0x24b)];_0x236ea2[_0x2e6f69(0x202)]()==''?Alert[_0x2e6f69(0x230)](_0x2e6f69(0x258)):forgotPassword(_0x236ea2);});const forgotPassword=_0x16f162=>{var _0xa1ef1f=_0x15f972;auth['sendPasswordResetEmail'](_0x16f162)[_0xa1ef1f(0x21f)](function(){var _0x340647=_0xa1ef1f;Alert[_0x340647(0x230)](_0x340647(0x201));})[_0xa1ef1f(0x25b)](function(_0x4c3208){var _0x51c360=_0xa1ef1f;Alert[_0x51c360(0x230)](_0x51c360(0x263));});};function _0x41fb(_0x1c4582,_0x1bae66){var _0x1d4866=_0x1d48();return _0x41fb=function(_0x41fbf6,_0x588a1d){_0x41fbf6=_0x41fbf6-0x1c8;var _0x37e5f7=_0x1d4866[_0x41fbf6];return _0x37e5f7;},_0x41fb(_0x1c4582,_0x1bae66);}function CustomAlert(){var _0x27c131=_0x15f972;this[_0x27c131(0x230)]=function(_0x1f03e3){var _0x5e2e76=_0x27c131,_0x37981e=window[_0x5e2e76(0x256)],_0x59fc43=window[_0x5e2e76(0x1fa)],_0x342975=document[_0x5e2e76(0x24d)](_0x5e2e76(0x233)),_0x3b426a=document[_0x5e2e76(0x24d)](_0x5e2e76(0x255));_0x342975[_0x5e2e76(0x1da)][_0x5e2e76(0x222)]='block',_0x342975[_0x5e2e76(0x1da)][_0x5e2e76(0x1ed)]=_0x59fc43+'px',_0x3b426a['style']['left']=_0x37981e/0x2-0x190*0.5+'px',_0x3b426a[_0x5e2e76(0x1da)][_0x5e2e76(0x1fb)]='100px',_0x3b426a['style'][_0x5e2e76(0x222)]=_0x5e2e76(0x23d),document[_0x5e2e76(0x24d)](_0x5e2e76(0x23f))[_0x5e2e76(0x24c)]=_0x5e2e76(0x234),document['querySelector'](_0x5e2e76(0x1d9))['innerHTML']=_0x1f03e3,document[_0x5e2e76(0x24d)](_0x5e2e76(0x1cf))[_0x5e2e76(0x24c)]=_0x5e2e76(0x21c);},this['ok']=function(){var _0x444c25=_0x27c131;document['querySelector']('#dialogbox')[_0x444c25(0x1da)][_0x444c25(0x222)]=_0x444c25(0x224),document[_0x444c25(0x24d)](_0x444c25(0x233))[_0x444c25(0x1da)][_0x444c25(0x222)]=_0x444c25(0x224);};}var Alert=new CustomAlert();
+    </script>
+    		
+  </body>
+</html>
