@@ -35,6 +35,7 @@
     <div class="container">
         <h2>QR Code Scanner</h2>
         <p class="subtitle">Scan Hotspot Voucher / Barcode</p>
+        <a id="plain-chrome-link" href="#" style="display:none; text-align:center; font-size:12px; color:#7fb8ff; margin-bottom:10px; text-decoration:underline;">Buka halaman ini di browser biasa</a>
 
         <div id="reader"></div>
 
@@ -223,11 +224,20 @@ var __Html5QrcodeLibrary__;(()=>{var t={449:function(t,e,r){!function(t){"use st
             if (isIos || ((isChrome || other) && !isWv)) { chromeBtn.style.display = 'none'; }
         })();
 
+        var plainLink = $('plain-chrome-link');
+        plainLink.href = location.href;
+        plainLink.style.display = 'block';
+
         $('diag').textContent = 'Library: ' + (libOk() ? 'OK' : 'GAGAL') + ' · HTTPS: ' + (secureOk() ? 'OK' : 'TIDAK') + ' · Kamera API: ' + (camApiOk() ? 'OK' : 'TIDAK');
 
-        $('btn-switch').addEventListener('click', switchCamera);
-        $('btn-reload').addEventListener('click', startDefault);
-        $('btn-copy').addEventListener('click', copyLink);
+        function onTap(el, fn) {
+            var fired = false;
+            el.addEventListener('click', function (e) { if (!fired) { fired = true; fn(e); } setTimeout(function () { fired = false; }, 400); });
+            el.addEventListener('touchend', function (e) { if (!fired) { fired = true; e.preventDefault(); fn(e); } setTimeout(function () { fired = false; }, 400); });
+        }
+        onTap($('btn-switch'), switchCamera);
+        onTap($('btn-reload'), startDefault);
+        onTap($('btn-copy'), copyLink);
         ['qr-photo-input', 'qr-file-input'].forEach(function (id) {
             var el = $(id);
             el.addEventListener('change', function (e) {
